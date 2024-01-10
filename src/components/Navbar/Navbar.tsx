@@ -13,9 +13,7 @@ const Navbar = (props: Props) => {
         <div className="logoDiv">
           <img src={logo} alt="rent2go-logo" className="logo" />
         </div>
-      </div>
-
-      <div className="navbar">
+        <div className="navbar">
         <ul className="menu">
           <li className="listItem">
             <a href="/" className="link">
@@ -39,13 +37,18 @@ const Navbar = (props: Props) => {
           </li>
         </ul>
 
-        <IoIosCloseCircle className="icon" />
+        <IoIosCloseCircle className="icon closeIcon" />
       </div>
 
       <div className="signUp flex">
-        <div className="text">Sign Up</div>
+        <div className="text">
+          Sign Up 
+        </div>
         <IoIosMenu className="icon" />
       </div>
+      </div>
+
+      
     </>
   );
 };
