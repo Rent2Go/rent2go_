@@ -4,7 +4,7 @@ type Props = {}
 
 const BrandCard = (props: Props) => {
   return (
-    <div>BrandCard</div>
+    <div>Brand List</div>
   )
 }
 

@@ -2,7 +2,7 @@ import React from "react";
 import logo from "./assets/img/logo-dark.png";
 import { Footer, Navbar } from "./components";
 import { Route, Routes } from "react-router-dom";
-import { CarPage, Homepage, Login } from "./pages";
+import { CarPage, Homepage, Login, BrandPage } from "./pages";
 
 
 import "./App.css";
@@ -16,6 +16,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/cars" element={<CarPage />} />
+          <Route path="/brands" element={<BrandPage />} />
         </Routes>
       </main>
       <Footer />
