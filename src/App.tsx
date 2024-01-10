@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./logo.svg";
+import logo from "./assets/img/logo-dark.png";
 import "./App.css";
 import { Footer, Navbar } from "./components";
 import { Route, Routes } from "react-router-dom";
