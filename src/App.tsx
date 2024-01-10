@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./assets/img/logo-dark.png";
 import { Footer, Navbar } from "./components";
 import { Route, Routes } from "react-router-dom";
 import { CarPage, Homepage, Login, BrandPage } from "./pages";
