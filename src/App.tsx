@@ -1,5 +1,5 @@
 import React from "react";
-import { Footer, Navbar } from "./components";
+import { Footer, Navbar, Search } from "./components";
 import { Route, Routes } from "react-router-dom";
 import { CarPage, Homepage, Login, BrandPage } from "./pages";
 
@@ -11,6 +11,7 @@ function App() {
     <>
       <Navbar />
       <main>
+        
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/login" element={<Login />} />
@@ -18,6 +19,7 @@ function App() {
           <Route path="/brands" element={<BrandPage />} />
         </Routes>
       </main>
+      <Search />
       <Footer />
     </>
   );
