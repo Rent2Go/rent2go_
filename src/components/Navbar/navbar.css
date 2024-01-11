@@ -18,7 +18,7 @@
     position: absolute;
     background: var(--secondaryColor);
     width: 80%;
-    top: 7rem;
+    top: -100rem;
     right: 50%;
     left: 50%;
     transform: translate(-50%);
@@ -80,4 +80,15 @@
 .signUp .text:hover {
   background: var(--secondaryColor);
   color: var(--blackColor);
+}
+.signUp .toggleNavbarIcon{
+  background: none;
+  color: var(--primaryColor);
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.showNavbar{
+    top:.7rem;
+    transition: .5s ease;
 }
