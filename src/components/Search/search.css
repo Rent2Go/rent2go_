@@ -1,0 +1,30 @@
+.search{
+    padding: 2rem 0;
+
+}
+.search .title{
+    color: var(--blackColor);
+    font-size: 22px;
+    padding: 1rem 0;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.7rem;
+}
+
+.search .searchDiv{
+    gap:.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+.search .searchDiv input{
+    border-radius: 10px;
+    border:1px solid var(--secondaryColor);
+    padding: 5px 10px;
+    outline: none;
+    width: 100%;
+}
+.search .searchDiv input:focus{
+    border: none;
+    border:1px solid var(--primaryColor);
+
+}
