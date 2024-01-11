@@ -92,3 +92,8 @@
     top:.7rem;
     transition: .5s ease;
 }
+
+.addBg{
+  background: var(--secondaryColor);
+  box-shadow: none;
+}

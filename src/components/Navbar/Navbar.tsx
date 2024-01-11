@@ -14,11 +14,21 @@ const Navbar = (props: Props) => {
     setNavbar('navbar showNavbar')
   }
   const removeNavbar = () => {
-    setNavbar('navbar ')
+    setNavbar('navbar')
   }
+
+  const[header, setHeader] = useState('header')
+  const addBg = () => {
+    if(window.scrollY >= 20) {
+      setHeader('header addBg')
+    }
+  }
+
+  window.addEventListener('scroll', addBg);
+
   return (
     <>
-      <div className="header">
+      <div className={header}>
         <div className="logoDiv">
           <img src={logo} alt="rent2go-logo" className="logo" />
         </div>
