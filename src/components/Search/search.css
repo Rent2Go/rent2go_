@@ -26,5 +26,13 @@
 .search .searchDiv input:focus{
     border: none;
     border:1px solid var(--primaryColor);
-
+}
+.search .searchDiv .btn{
+    justify-content: center;
+    width: 100%;
+    align-self: center;
+    gap: .3rem;
+}
+.search .searchDiv .btn .icon{
+    font-size: 15px;
 }
