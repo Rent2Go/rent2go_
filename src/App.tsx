@@ -1,5 +1,5 @@
 import React from "react";
-import { Footer, Navbar, Search } from "./components";
+import { Footer, Navbar, Search, Trending } from "./components";
 import { Route, Routes } from "react-router-dom";
 import { CarPage, Homepage, Login, BrandPage } from "./pages";
 
@@ -20,6 +20,7 @@ function App() {
         </Routes>
       </main>
       <Search />
+      <Trending />
       <Footer />
     </>
   );
