@@ -1,3 +1,31 @@
-.footer{
-    
+.footer {
+  padding-top: 4rem;
+  margin: 1.5rem;
+  .footerContainer {
+    padding: 2rem;
+    background: var(--greyColor);
+    border-radius: 10px;
+    gap: 1.5rem;
+
+    .singleGrid {
+      .footerTitle {
+        display: block;
+        padding-top: 0.5rem;
+        font-size: 16px;
+        color: var(--blackColor);
+        font-weight: 700;
+      }
+      .footerUl{
+        color:red;
+        gap:.5rem;
+        .footerLi{
+            color: var(--textColor);
+             &:hover{
+                color: var(--blackColor);
+                transform: translateX(5px);
+                transition: .3s;
+               }
+      }
+    }
+  }
 }
