@@ -1,0 +1,36 @@
+.search {
+	padding: 2rem 0;
+	.title {
+		color: var(--blackColor);
+		font-size: 22px;
+		padding: 1rem 0;
+		text-align: center;
+		font-weight: 700;
+		line-height: 1.7rem;
+	}
+	.searchDiv {
+		gap: .5rem;
+		grid-template-columns: repeat(2, 1fr);
+		align-items: center;
+		input {
+			border-radius: 10px;
+			border: 1px solid var(--secondaryColor);
+			padding: 5px 10px;
+			outline: none;
+			width: 100%;
+			&:focus {
+				border: none;
+				border: 1px solid var(--focusColor);
+			}
+		}
+		.btn {
+			justify-content: center;
+			width: 100%;
+			align-self: center;
+			gap: .3rem;
+			.icon {
+				font-size: 15px;
+			}
+		}
+	}
+}
