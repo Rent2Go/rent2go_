@@ -1,5 +1,5 @@
 import React from "react";
-import { Auction, Footer, Navbar, Search, Sellers, Trending } from "./components";
+import { Auction, Footer, Navbar, Review, Search, Sellers, Trending } from "./components";
 import { Route, Routes } from "react-router-dom";
 import { CarPage, Homepage, Login, BrandPage } from "./pages";
 
@@ -21,6 +21,7 @@ function App() {
       <Trending />
       <Sellers />
       <Auction />
+      <Review />
       <Footer />
     </>
   );
