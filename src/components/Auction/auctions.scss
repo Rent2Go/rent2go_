@@ -1,0 +1,96 @@
+.auction {
+	.secContainer {
+		.secHeading {
+			justify-content: space-between;
+			padding: 1rem 0;
+			.navBtns {
+				gap: 0.5rem;
+				.icon {
+					padding: 3px 5px;
+					background: var(--secondaryColor);
+					border-radius: 3px;
+					font-size: 30px;
+					cursor: pointer;
+					&:hover {
+						background: var(--primaryColor);
+						color: var(--whiteColor);
+					}
+				}
+			}
+		}
+		.carContainer {
+			gap: 2rem;
+			.singleCar {
+				transition: 0.3s ease-in-out;
+				text-align: left;
+				padding: 1rem;
+				border-radius: 10px;
+				.imgDiv {
+					height: 200px;
+					width: 100%;
+					overflow: hidden;
+					border-radius: 10px;
+					border: 5px solid transparent;
+					img {
+						height: 100%;
+						width: 100%;
+						object-fit: contain;
+					}
+				}
+				.carTitle {
+					color: var(--blackColor);
+					font-size: 15px;
+					padding-top: 10px;
+				}
+				.miles {
+					color: var(--blackColor);
+					opacity: 0.7;
+					font-size: 14px;
+				}
+				.AWD {
+					padding: 1rem 0;
+					color: var(--blackColor);
+					font-weight: 600;
+					font-size: 15px;
+				}
+				.price_buyBtn {
+					gap: 1rem;
+					span {
+						padding: 0.5rem 1rem;
+						border-radius: 3px;
+						font-weight: 600;
+						border: 1px solid var(--primaryColor);
+						&.price {
+							background: var(--secondaryColor);
+							color: var(--primaryColor);
+						}
+						&.buyBtn {
+							background: var(--primaryColor);
+							color: var(--whiteColor);
+							cursor: pointer;
+							&:hover {
+								background: var(--secondaryColor);
+								color: var(--primaryColor);
+								cursor: pointer;
+							}
+						}
+					}
+				}
+				&:hover {
+					transform: translateY(-7px);
+					padding: 1rem;
+					background-color: var(--secondaryColor);
+				}
+			}
+			.singleCarActive {
+				padding: 1rem;
+				background: var(--secondaryColor);
+				.price_buyBtn {
+					span {
+						border: 2px solid var(--primaryColor);
+					}
+				}
+			}
+		}
+	}
+}
