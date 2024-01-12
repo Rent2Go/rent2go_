@@ -15,17 +15,22 @@
         color: var(--blackColor);
         font-weight: 700;
       }
-      .footerUl{
-        color:red;
-        gap:.5rem;
-        .footerLi{
-            color: var(--textColor);
-             &:hover{
-                color: var(--blackColor);
-                transform: translateX(5px);
-                transition: .3s;
-               }
+      .footerUl {
+        gap: 5px;
+        padding-left: 0;
+        .footerLi {
+          color: var(--textColor);
+          &:hover {
+            color: var(--blackColor);
+            transform: translateX(5px);
+            transition: 0.3s;
+          }
+        }
       }
     }
+  }
+  .lowerSection {
+    padding: 1rem;
+    text-align: center;
   }
 }

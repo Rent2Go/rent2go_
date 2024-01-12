@@ -15,17 +15,19 @@
   color: var(--blackColor);
   font-weight: 700;
 }
-.footer .footerContainer .singleGrid .footerUI {
-  gap: 0.5rem;
+.footer .footerContainer .singleGrid .footerUl {
+  gap: 5px;
+  padding-left: 0;
 }
-.footer .footerContainer .singleGrid .footerUI .footeLi {
+.footer .footerContainer .singleGrid .footerUl .footerLi {
   color: var(--textColor);
 }
-.footer .footerContainer .singleGrid .footerUI .footeLi:hover {
+.footer .footerContainer .singleGrid .footerUl .footerLi:hover {
   color: var(--blackColor);
   transform: translateX(5px);
-  -webkit-transform: translateX(5px);
-  -moz-transform: translateX(5px);
-  -ms-transform: translateX(5px);
-  -o-transform: translateX(5px);
+  transition: 0.3s;
+}
+.footer .lowerSection {
+  padding: 1rem;
+  text-align: center;
 }/*# sourceMappingURL=footer.css.map */
