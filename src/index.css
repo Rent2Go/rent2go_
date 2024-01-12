@@ -12,8 +12,15 @@
   --color-text: #81AFDD;
   --color-subtext: #FF8A71;
 
-  --primaryColor: #7a63f1;
+  /*--primaryColor: #7a63f1;
   --secondaryColor: #ebe8fc;
+  --textColor:#a3a3a3;
+  --greyColor:#e8e8e8;
+  --whiteColor:#f5f4fa;
+  --blackColor:#434344;*/
+
+  --primaryColor: #8C8372;
+  --secondaryColor: #A59E8C;
   --textColor:#a3a3a3;
   --greyColor:#e8e8e8;
   --whiteColor:#f5f4fa;
