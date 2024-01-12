@@ -25,7 +25,7 @@
 }
 .search .searchDiv input:focus{
     border: none;
-    border:1px solid var(--primaryColor);
+    border:1px solid var(--focusColor);
 }
 .search .searchDiv .btn{
     justify-content: center;
