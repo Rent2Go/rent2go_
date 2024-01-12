@@ -1,107 +1,188 @@
 .header {
-	position: fixed;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	width: 100%;
-	padding: 1.5rem 2rem;
-	box-shadow: 0 4px 6px rgb(237 237 237);
-	z-index: 1000;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 6px rgb(237 237 237);
+  z-index: 1000;
 }
 .logoDiv {
-	.logo {
-		width: 25px;
-	}
+  .logo {
+    width: 25px;
+  }
 }
 
-@media screen and (max-width: 768px) {
-    .navbar {
-        position: absolute;
-        background: var(--secondaryColor);
-        width: 80%;
-        top: -100rem;
-        right: 50%;
-        left: 50%;
-        transform: translate(-50%);
-        border-radius: 10px;
+@media screen and (max-width: 769px) {
+  .navbar {
+    position: absolute;
+    background: var(--secondaryColor);
+    width: 80%;
+    top: -100rem;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 10px;
+    text-align: center;
+    padding: 2rem;
+    transition: 0.3s ease;
+    z-index: 2000;
+  }
+  .closeIcon {
+    position: absolute;
+    bottom: -15px;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    background: var(--secondaryColor);
+    color: var(--primaryColor);
+    padding: 3px;
+    border-radius: 50%;
+    font-size: 35px;
+    &:hover {
+      color: red;
+    }
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .listItem {
+      padding: 0.5rem 2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      a {
+        font-size: 15px;
+        color: var(--greyColor);
         text-align: center;
-        padding: 2rem;
-        transition: 0.3s ease;
-        z-index: 2000;
-        -webkit-transform: translate(-50%);
-        -moz-transform: translate(-50%);
-        -ms-transform: translate(-50%);
-        -o-transform: translate(-50%);
-    }
-    .closeIcon {
-        position: absolute;
-        bottom: -15px;
-        right: 50%;
-        left: 50%;
-        transform: translate(-50%);
-        background: var(--secondaryColor);
-        color: var(--primaryColor);
-        padding: 3px;
-        border-radius: 50%;
-        font-size: 35px;
         &:hover {
-            color: red;
+          color: var(--whiteColor);
         }
+      }
+      &:hover {
+        background: var(--primaryColor);
+        color: var(--whiteColor);
+        transition: 0.3s ease;
+      }
     }
-    .menu {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        .listItem {
-            padding: 0.5rem 2rem;
-            border-radius: 10px;
-            cursor: pointer;
-            a {
-                font-size: 15px;
-                color: var(--greyColor);
-                text-align: center;
-                &:hover {
-                    color: var(--whiteColor);
-                }
-            }
-            &:hover {
-                background: var(--primaryColor);
-                color: var(--whiteColor);
-                transition: 0.3s ease;
-            }
-        }
-    }
-    
-
-
+  }
 }
-
 .signUp {
-	gap: 0.5rem;
-	.text {
-		padding: 3px 10px;
-		background: var(--primaryColor);
-		border-radius: 3px;
-		color: var(--whiteColor);
-		cursor: pointer;
-		font-size: 14px;
-		&:hover {
-			background: var(--secondaryColor);
-			color: var(--blackColor);
-		}
-	}
-	.toggleNavbarIcon {
-		background: none;
-		color: var(--primaryColor);
-		font-weight: 600;
-		font-size: 25px;
-	}
+  gap: 0.5rem;
+  .text {
+    padding: 3px 10px;
+    background: var(--primaryColor);
+    border-radius: 3px;
+    color: var(--whiteColor);
+    cursor: pointer;
+    font-size: 14px;
+    &:hover {
+      background: var(--secondaryColor);
+      color: var(--blackColor);
+    }
+  }
+  .toggleNavbarIcon {
+    background: none;
+    color: var(--primaryColor);
+    font-weight: 600;
+    font-size: 25px;
+  }
 }
 .showNavbar {
-	top: 7rem;
-	transition: .5s ease;
+  top: 7rem;
+  transition: 0.5s ease;
 }
 .addBg {
-	background: var(--secondaryColor);
-	box-shadow: none;
+  background: var(--secondaryColor);
+  box-shadow: none;
+}
+
+@media screen and (min-width: 520px) {
+  .header {
+    .logoDiv {
+      img {
+        width: 30px;
+      }
+    }
+    .signUp {
+      .text {
+        padding: 6px;
+        font-size: 16px;
+      }
+
+      .toggleNavbarIcon {
+        font-size: 30px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 770px) {
+  .header {
+    .navbar {
+      .closeIcon {
+        display: none;
+      }
+      .menu {
+        display: flex;
+        flex-direction: row;
+        .listItem {
+          padding: 0.3rem 1rem;
+          border-radius: 3px;
+          a {
+            color: var(--primaryColor);
+            font-size: 15px;
+          }
+          &:hover {
+            background: var(--primaryColor);
+            color: var(--whiteColor);
+            transition: 0.3s ease;
+          }
+          &:hover a {
+            color: var(--whiteColor);
+          }
+        }
+      }
+    }
+
+    .signUp {
+      .text {
+        padding: 6px 10px;
+      }
+      .toggleNavbarIcon {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1064px) {
+  .header {
+    padding: 2rem 7rem;
+    .navbar {
+      .menu {
+        .listItem {
+          a {
+            font-size: 17px;
+          }
+        }
+      }
+    }
+    .signUp {
+      .text {
+        font-size: 18px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1400px) {
+  .header {
+    .navbar {
+      .menu {
+        .listItem {
+          margin: 0 0.8rem;
+        }
+      }
+    }
+  }
 }
