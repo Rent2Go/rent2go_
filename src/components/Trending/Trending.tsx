@@ -1,7 +1,7 @@
 import React from "react";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 
-import car1 from "../../assets/img/carModels/audi-a4-siyah.png";
+import car1 from "../../assets/img/carModels/maserati-quattroporte-mavi.png";
 import car2 from "../../assets/img/carModels/bmw320-kırmızı.png";
 import car3 from "../../assets/img/carModels/mercedesc200-beyaz.png";
 
