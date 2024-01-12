@@ -39,12 +39,15 @@
   background: var(--whiteColor);
   color: var(--textColor);
 }
+.homeText .btns .btn:nth-child(2) {
+  background: var(--primaryColor);
+  color: var(--whiteColor);
+}
 .homeText .btns .btn:nth-child(1):hover {
   background: var(--primaryColor);
   color: var(--whiteColor);
 }
-.homeText .btns .btn:nth-child(2) {
-}
+
 .homeText .btns .btn:nth-child(2):hover {
   background: var(--whiteColor);
   color: var(--textColor);
