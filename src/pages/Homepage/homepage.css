@@ -53,4 +53,54 @@
 
 .homeImage {
   margin: auto;
+}
+
+@media screen and (min-width: 520px) {
+  .home .secContainer .homeText .homeSpan {
+    font-size: 18px;
+  }
+  .home .secContainer .homeText .homeTitle {
+    font-size: 35px;
+  }
+  .home .secContainer .homeText .btns .btn {
+    font-size: 14px;
+  }
+  .home .secContainer .homeImage {
+    max-width: 85%;
+  }
+}
+@media screen and (min-width: 770px) {
+  .home {
+    padding-top: 10rem;
+  }
+  .home .secContainer {
+    gap: 2.5rem;
+  }
+  .home .secContainer .homeText .homeSpan {
+    font-size: 21px;
+  }
+  .home .secContainer .homeText .homeTitle {
+    font-size: 45px;
+  }
+  .home .secContainer .homeText .btns {
+    margin-top: 1rem;
+  }
+}
+@media screen and (min-width: 996px) {
+  .home {
+    padding-top: 12rem;
+  }
+  .home .secContainer {
+    gap: 3rem;
+  }
+  .home .secContainer .homeText .homeSpan {
+    font-size: 25px;
+  }
+  .home .secContainer .homeText .homeTitle {
+    font-size: 55px;
+  }
+  .home .secContainer .homeText .btns .btn {
+    font-size: 16px;
+    padding: 1rem 2rem;
+  }
 }/*# sourceMappingURL=homepage.css.map */
