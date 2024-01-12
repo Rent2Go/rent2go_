@@ -1,0 +1,30 @@
+.review {
+	.secContainer {
+		.secHeading {
+			justify-content: space-between;
+			padding: 1rem 0;
+			.navBtns {
+				gap: 0.5rem;
+				.icon {
+					padding: 3px 5px;
+					background: var(--secondaryColor);
+					border-radius: 3px;
+					font-size: 30px;
+					cursor: pointer;
+					&:hover {
+						background: var(--primaryColor);
+						color: var(--whiteColor);
+					}
+				}
+			}
+		}
+		.reviewContainer {
+			gap: 1.5rem;
+			.singleReview {
+				transition: .3s ease-in-out;
+				.imgDiv {
+				}
+			}
+		}
+	}
+}
