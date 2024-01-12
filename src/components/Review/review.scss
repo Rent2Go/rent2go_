@@ -1,30 +1,98 @@
 .review {
-	.secContainer {
-		.secHeading {
-			justify-content: space-between;
-			padding: 1rem 0;
-			.navBtns {
-				gap: 0.5rem;
-				.icon {
-					padding: 3px 5px;
-					background: var(--secondaryColor);
-					border-radius: 3px;
-					font-size: 30px;
-					cursor: pointer;
-					&:hover {
-						background: var(--primaryColor);
-						color: var(--whiteColor);
-					}
-				}
-			}
-		}
-		.reviewContainer {
-			gap: 1.5rem;
-			.singleReview {
-				transition: .3s ease-in-out;
-				.imgDiv {
-				}
-			}
-		}
-	}
+  .secContainer {
+    .secHeading {
+      justify-content: space-between;
+      padding: 1rem 0;
+      .navBtns {
+        gap: 0.5rem;
+        .icon {
+          padding: 3px 5px;
+          background: var(--secondaryColor);
+          border-radius: 3px;
+          font-size: 30px;
+          cursor: pointer;
+          &:hover {
+            background: var(--primaryColor);
+            color: var(--whiteColor);
+          }
+        }
+      }
+    }
+    .reviewContainer {
+      gap: 1.5rem;
+      .singleReview {
+        transition: 0.3s ease-in-out;
+        .imgDiv {
+          height: 200px;
+          width: 100%;
+          overflow: hidden;
+          border-radius: 10px;
+          border: 5px solid transparent;
+
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+          }
+        }
+        .reviewTitle {
+          color: var(--blackColor);
+          font-size: 16px;
+          padding-top: 10px;
+        }
+        .desc {
+          color: var(--blackColor);
+          opacity: 0.7;
+          font-size: 14px;
+        }
+        .reviewerDiv {
+          justify-content: space-between;
+          margin-top: 1rem;
+          align-items: self-start;
+
+          .leftDiv {
+            gap: 0.8rem;
+            align-items: flex-start;
+            .reviewerImage {
+              border: 2px solid var(--whiteColor);
+              height: 50px;
+              width: 50px;
+              overflow: hidden;
+              border-radius: 50%;
+              box-shadow: 0 4px 5px rgb(222, 222, 222);
+            }
+            .aboutReviewer {
+              .name {
+                color: var(--blackColor);
+                font-weight: 600;
+                padding-bottom: 0.5rem;
+                font-size: 15px;
+              }
+              p {
+                color: var(--textColor);
+                font-size: 14px;
+              }
+            }
+          }
+          .rightDiv {
+            gap: 0.3rem;
+            align-items: flex-start;
+            .icon {
+              color: rgb(255, 165, 0);
+            }
+            blockquote {
+              font-weight: 600;
+              font-size: 14px;
+            }
+          }
+        }
+        &:hover {
+          transform: translateY(-7px);
+          .imgDiv {
+            border: 5px solid var(--primaryColor);
+          }
+        }
+      }
+    }
+  }
 }

@@ -21,4 +21,71 @@
 }
 .review .secContainer .reviewContainer .singleReview {
   transition: 0.3s ease-in-out;
+}
+.review .secContainer .reviewContainer .singleReview .imgDiv {
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 5px solid transparent;
+}
+.review .secContainer .reviewContainer .singleReview .imgDiv img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.review .secContainer .reviewContainer .singleReview .reviewTitle {
+  color: var(--blackColor);
+  font-size: 16px;
+  padding-top: 10px;
+}
+.review .secContainer .reviewContainer .singleReview .desc {
+  color: var(--blackColor);
+  opacity: 0.7;
+  font-size: 14px;
+}
+.review .secContainer .reviewContainer .singleReview .reviewerDiv {
+  justify-content: space-between;
+  margin-top: 1rem;
+  align-items: self-start;
+}
+.review .secContainer .reviewContainer .singleReview .reviewerDiv .leftDiv {
+  gap: 0.8rem;
+  align-items: flex-start;
+}
+.review .secContainer .reviewContainer .singleReview .reviewerDiv .leftDiv .reviewerImage {
+  border: 2px solid var(--whiteColor);
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 4px 5px rgb(222, 222, 222);
+}
+.review .secContainer .reviewContainer .singleReview .reviewerDiv .leftDiv .aboutReviewer .name {
+  color: var(--blackColor);
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  font-size: 15px;
+}
+.review .secContainer .reviewContainer .singleReview .reviewerDiv .leftDiv .aboutReviewer p {
+  color: var(--textColor);
+  font-size: 14px;
+}
+.review .secContainer .reviewContainer .singleReview .reviewerDiv .rightDiv {
+  gap: 0.3rem;
+  align-items: flex-start;
+}
+.review .secContainer .reviewContainer .singleReview .reviewerDiv .rightDiv .icon {
+  color: rgb(255, 165, 0);
+}
+.review .secContainer .reviewContainer .singleReview .reviewerDiv .rightDiv blockquote {
+  font-weight: 600;
+  font-size: 14px;
+}
+.review .secContainer .reviewContainer .singleReview:hover {
+  transform: translateY(-7px);
+}
+.review .secContainer .reviewContainer .singleReview:hover .imgDiv {
+  border: 5px solid var(--primaryColor);
 }/*# sourceMappingURL=review.css.map */
