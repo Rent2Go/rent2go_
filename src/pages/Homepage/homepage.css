@@ -1,6 +1,7 @@
 .home {
   padding-top: 8rem;
 }
+
 .secContainer {
   padding: 0 1.5rem;
   text-align: center;
@@ -8,8 +9,6 @@
   gap: 2rem;
 }
 
-.homeText {
-}
 .homeText .homeSpan {
   color: var(--textColor);
   font-weight: 400;
@@ -47,7 +46,6 @@
   background: var(--primaryColor);
   color: var(--whiteColor);
 }
-
 .homeText .btns .btn:nth-child(2):hover {
   background: var(--whiteColor);
   color: var(--textColor);
@@ -55,4 +53,4 @@
 
 .homeImage {
   margin: auto;
-}
+}/*# sourceMappingURL=homepage.css.map */

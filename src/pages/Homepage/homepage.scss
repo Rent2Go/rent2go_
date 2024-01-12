@@ -1,0 +1,55 @@
+.home {
+	padding-top: 8rem;
+}
+.secContainer {
+	padding: 0 1.5rem;
+	text-align: center;
+	display: grid;
+	gap: 2rem;
+}
+.homeText {
+	.homeSpan {
+		color: var(--textColor);
+		font-weight: 400;
+		font-size: 15px;
+	}
+	.homeTitle {
+		color: var(--blackColor);
+		font-weight: 700;
+		font-size: 30px;
+	}
+	.btns {
+		gap: 1.5rem;
+		justify-content: center;
+		.btn {
+			padding: 10px 15px;
+			border-radius: 3px;
+			font-weight: 600;
+			margin-top: 0.5rem;
+			font-size: 12px;
+			&:hover {
+				background: var(--primaryColor);
+				color: var(--whiteColor);
+			}
+			&:nth-child(1) {
+				background: var(--whiteColor);
+				color: var(--textColor);
+			}
+			&:nth-child(2) {
+				background: var(--primaryColor);
+				color: var(--whiteColor);
+			}
+			&:nth-child(1):hover {
+				background: var(--primaryColor);
+				color: var(--whiteColor);
+			}
+			&:nth-child(2):hover {
+				background: var(--whiteColor);
+				color: var(--textColor);
+			}
+		}
+	}
+}
+.homeImage {
+	margin: auto;
+}
