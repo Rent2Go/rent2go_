@@ -2,13 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-
-  -webkit-transition: 0.2s ease-in-out;
-  -moz-transition: 0.2s ease-in-out;
-  -ms-transition: 0.2s ease-in-out;
-  -o-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
-
   font-family: var(--font-family);
 }
 
@@ -54,19 +48,24 @@ p {
   background: var(--secondaryColor);
   color: var(--blackColor);
 }
+
 .container {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   text-align: left;
 }
+
 .section {
   padding: 4rem 0 2rem;
 }
+
 img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
+
 .icon {
   font-size: 25px;
   cursor: pointer;
@@ -75,7 +74,4 @@ img {
 .secTitle {
   color: var(--blackColor);
   font-size: 20px;
-}
-/*.secHeading {
-  text-align: left;
-}*/
+}/*# sourceMappingURL=App.css.map */
