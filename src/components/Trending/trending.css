@@ -2,11 +2,9 @@
   justify-content: space-between;
   padding: 1rem 0;
 }
-
 .trending .secContainer .secHeading .navBtns {
   gap: 0.5rem;
 }
-
 .trending .secContainer .secHeading .navBtns .icon {
   padding: 3px 5px;
   background: var(--secondaryColor);
@@ -14,21 +12,17 @@
   font-size: 30px;
   cursor: pointer;
 }
-
 .trending .secContainer .secHeading .navBtns .icon:hover {
   background: var(--primaryColor);
   color: var(--whiteColor);
 }
-
 .trending .secContainer .carContainer {
   gap: 2rem;
 }
-
 .trending .secContainer .carContainer .singleCar {
   transition: 0.3s ease-in-out;
   text-align: left;
 }
-
 .trending .secContainer .carContainer .singleCar .imgDiv {
   height: 200px;
   width: 100%;
@@ -36,60 +30,47 @@
   border-radius: 10px;
   border: 5px solid transparent;
 }
-
 .trending .secContainer .carContainer .singleCar .imgDiv img {
   height: 100%;
   width: 100%;
 }
-
 .trending .secContainer .carContainer .singleCar .carTitle {
   color: var(--blackColor);
   font-size: 15px;
   padding-top: 10px;
 }
-
 .trending .secContainer .carContainer .singleCar .miles {
   color: var(--blackColor);
   opacity: 0.7;
   font-size: 14px;
 }
-
 .trending .secContainer .carContainer .singleCar .AWD {
   padding: 1rem 0;
   color: var(--blackColor);
   font-weight: 600;
   font-size: 15px;
 }
-
 .trending .secContainer .carContainer .singleCar .price_seller {
   gap: 1rem;
 }
-
 .trending .secContainer .carContainer .singleCar .price_seller span {
   cursor: pointer;
   padding: 0.5rem 1rem;
   border-radius: 3px;
   font-weight: 600;
 }
-
 .trending .secContainer .carContainer .singleCar .price_seller span.price {
   background: var(--secondaryColor);
   color: var(--primaryColor);
 }
-
 .trending .secContainer .carContainer .singleCar .price_seller span.seller {
   background: var(--greyColor);
   color: var(--textColor);
 }
-
 .trending .secContainer .carContainer .singleCar .price_seller span:hover {
   transform: translateY(-7px);
   -webkit-transform: translateY(-7px);
   -moz-transform: translateY(-7px);
   -ms-transform: translateY(-7px);
   -o-transform: translateY(-7px);
-}
-
-.trending .secContainer .carContainer .singleCar .imgDiv {
-  /*border: 5px solid var(--primaryColor);*/
 }/*# sourceMappingURL=trending.css.map */
