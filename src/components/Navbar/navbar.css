@@ -5,7 +5,7 @@
   justify-content: space-between;
   width: 100%;
   padding: 1.5rem 2rem;
-  box-shadow: 0 4px 6px rgb(237 237 237);
+  box-shadow: 0 4px 6px rgb(237, 237, 237);
   z-index: 1000;
 }
 
@@ -27,6 +27,10 @@
     padding: 2rem;
     transition: 0.3s ease;
     z-index: 2000;
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
   }
   .closeIcon {
     position: absolute;
@@ -58,16 +62,15 @@
     color: var(--greyColor);
     text-align: center;
   }
+  .menu .listItem a:hover {
+    color: var(--whiteColor);
+  }
   .menu .listItem:hover {
     background: var(--primaryColor);
     color: var(--whiteColor);
     transition: 0.3s ease;
   }
-  .menu .listItem a:hover {
-    color: var(--whiteColor);
-  }
 }
-
 .signUp {
   gap: 0.5rem;
 }
@@ -83,19 +86,19 @@
   background: var(--secondaryColor);
   color: var(--blackColor);
 }
-.signUp .toggleNavbarIcon{
+.signUp .toggleNavbarIcon {
   background: none;
   color: var(--primaryColor);
   font-weight: 600;
   font-size: 25px;
 }
 
-.showNavbar{
-    top:7rem;
-    transition: .5s ease;
+.showNavbar {
+  top: 7rem;
+  transition: 0.5s ease;
 }
 
-.addBg{
+.addBg {
   background: var(--secondaryColor);
   box-shadow: none;
-}
+}/*# sourceMappingURL=navbar.css.map */
