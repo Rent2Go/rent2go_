@@ -1,5 +1,5 @@
 import React from "react";
-import { Action, Footer, Navbar, Search, Sellers, Trending } from "./components";
+import { Auction, Footer, Navbar, Search, Sellers, Trending } from "./components";
 import { Route, Routes } from "react-router-dom";
 import { CarPage, Homepage, Login, BrandPage } from "./pages";
 
@@ -20,7 +20,7 @@ function App() {
       <Search />
       <Trending />
       <Sellers />
-      <Action />
+      <Auction />
       <Footer />
     </>
   );

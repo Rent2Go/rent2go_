@@ -1,11 +1,13 @@
 import React from 'react'
 
-import "./action.css"
+import "./auction.css"
 type Props = {}
 
 const Action = (props: Props) => {
   return (
-    <div>Action</div>
+    <div className='auction'>
+
+    </div>
   )
 }
 
