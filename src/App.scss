@@ -66,3 +66,18 @@ img {
   color: var(--blackColor);
   font-size: 20px;
 }
+
+@media screen and (min-width: 940px) {
+  .section{
+    padding: 6rem 0 4rem;
+  }
+  .container{
+    width: 90%;
+    margin:auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container{
+    width: 75%;
+  }
+}
