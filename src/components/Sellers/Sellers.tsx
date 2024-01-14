@@ -12,7 +12,6 @@ type Props = {};
 const Sellers = (props: Props) => {
   return (
     <div className="sellers section">
-      <div className="secContainer container">
         <div className="secHeading grid">
           <h3 className="secTitle">Explore top sellers in town</h3>
 
@@ -21,7 +20,9 @@ const Sellers = (props: Props) => {
             greatest salesman int the world
           </p>
         </div>
-        <div className="sellersContainer ">
+      <div className="secContainer container">
+      
+        <div className="sellersContainer  grid">
           <div className="singleSeller flex">
             <div className="imgDiv flex">
               <img src={sellerToyota} alt="sellerImg" className="img" />
@@ -32,7 +33,7 @@ const Sellers = (props: Props) => {
             </span>
           </div>
         </div>
-        <div className="sellersContainer ">
+        <div className="sellersContainer grid ">
           <div className="singleSeller flex">
             <div className="imgDiv flex">
               <img src={sellerAudi} alt="sellerImg" className="img" />
@@ -43,7 +44,7 @@ const Sellers = (props: Props) => {
             </span>
           </div>
         </div>
-        <div className="sellersContainer ">
+        <div className="sellersContainer  grid">
           <div className="singleSeller flex">
             <div className="imgDiv flex">
               <img src={sellerRenault} alt="sellerImg" className="img" />
@@ -54,7 +55,7 @@ const Sellers = (props: Props) => {
             </span>
           </div>
         </div>
-        <div className="sellersContainer ">
+        <div className="sellersContainer  grid">
           <div className="singleSeller flex">
             <div className="imgDiv flex">
               <img src={sellerMercedes} alt="sellerImg" className="img" />

@@ -40,4 +40,35 @@
 .sellers .secContainer .secHeading,
 .sellersContainer {
   text-align: left;
+}
+
+@media screen and (min-width: 520px) {
+  .sellers .secHeading {
+    margin: 0 2rem 2rem 1rem;
+  }
+  .sellers .secHeading .secTitle {
+    font-size: 25px;
+  }
+  .sellers .secHeading p {
+    font-size: 18px;
+  }
+  .sellers .secContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .sellers .secContainer .singleSeller {
+    gap: 1.5rem;
+  }
+}
+@media screen and (min-width: 840px) {
+  .sellers .secHeading {
+    margin: 0 2rem 2rem 1rem;
+  }
+  .sellers .secHeading .secTitle {
+    font-size: 30px;
+  }
+  .sellers .secHeading p {
+    font-size: 20px;
+  }
 }/*# sourceMappingURL=seller.css.map */
