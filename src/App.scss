@@ -8,6 +8,23 @@
   -o-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   font-family: var(--font-family);
+  scrollbar-width: thin;
+  --scrollbar-color: var(--primaryColor) #e8e8e8;
+}
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--whiteColor);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--pureWhiteColor);
+  border-radius: 2px;
+  border: 0px solid var(--secondaryColor);
+  box-shadow: -3px 7px 16px -4px rgba(140, 131, 114, 0.83);
 }
 li {
   list-style: none;
@@ -68,16 +85,16 @@ img {
 }
 
 @media screen and (min-width: 940px) {
-  .section{
+  .section {
     padding: 6rem 0 4rem;
   }
-  .container{
+  .container {
     width: 90%;
-    margin:auto;
+    margin: auto;
   }
 }
 @media screen and (min-width: 1024px) {
-  .container{
+  .container {
     width: 75%;
   }
 }
