@@ -9,7 +9,7 @@
           padding: 3px 5px;
           background: var(--secondaryColor);
           border-radius: 3px;
-          font-size: 30px;
+          font-size: 35px;
           cursor: pointer;
           &:hover {
             background: var(--primaryColor);
@@ -17,7 +17,7 @@
           }
         }
       }
-    }
+    } ///icons-size will be update as 30
     .reviewContainer {
       gap: 1.5rem;
       .singleReview {
@@ -37,7 +37,7 @@
         }
         .reviewTitle {
           color: var(--blackColor);
-          font-size: 16px;
+          font-size: 17px;
           padding-top: 10px;
         }
         .desc {
@@ -82,7 +82,7 @@
             }
             blockquote {
               font-weight: 600;
-              font-size: 14px;
+              font-size: 16px;
             }
           }
         }
@@ -93,6 +93,74 @@
           }
         }
       }
+    }
+  }
+}
+
+@media screen and (min-width: 520px) {
+  .review {
+    .secContainer {
+      .secHeading {
+        margin-top: 1rem;
+      }
+      .secTitle {
+        font-size: 23px;
+      }
+      .navBtns {
+        gap: 0.5rem;
+        .icon {
+          font-size: 40px;
+        }
+      }
+    }
+    .reviewContainer {
+      grid-template-columns: repeat(2, 1fr);
+      .singleReview {
+        .reviewTitle {
+          font-size: 18px;
+        }
+        .desc {
+          font-size: 16px;
+        }
+        .reviewerDiv {
+          .leftDiv {
+            .aboutReviewer {
+              .name {
+                font-size: 17px;
+              }
+              p {
+                font-size: 16px;
+              }
+            }
+          }
+          .rightDiv {
+            .icon {
+              font-size: 16px;
+            }
+            blockquote {
+              font-weight: 600;
+              font-weight: 17px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 940px) {
+  .review {
+    .secContainer {
+      .secHeading {
+      }
+      .secTitle {
+        font-size: 28px;
+      }
+      .navBtns {
+        gap: 1rem;
+      }
+    }
+    .reviewContainer {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 }

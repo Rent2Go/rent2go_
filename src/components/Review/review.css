@@ -9,7 +9,7 @@
   padding: 3px 5px;
   background: var(--secondaryColor);
   border-radius: 3px;
-  font-size: 30px;
+  font-size: 35px;
   cursor: pointer;
 }
 .review .secContainer .secHeading .navBtns .icon:hover {
@@ -37,7 +37,7 @@
 }
 .review .secContainer .reviewContainer .singleReview .reviewTitle {
   color: var(--blackColor);
-  font-size: 16px;
+  font-size: 17px;
   padding-top: 10px;
 }
 .review .secContainer .reviewContainer .singleReview .desc {
@@ -81,11 +81,59 @@
 }
 .review .secContainer .reviewContainer .singleReview .reviewerDiv .rightDiv blockquote {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
 }
 .review .secContainer .reviewContainer .singleReview:hover {
   transform: translateY(-7px);
 }
 .review .secContainer .reviewContainer .singleReview:hover .imgDiv {
   border: 5px solid var(--primaryColor);
+}
+
+@media screen and (min-width: 520px) {
+  .review .secContainer .secHeading {
+    margin-top: 1rem;
+  }
+  .review .secContainer .secTitle {
+    font-size: 23px;
+  }
+  .review .secContainer .navBtns {
+    gap: 0.5rem;
+  }
+  .review .secContainer .navBtns .icon {
+    font-size: 40px;
+  }
+  .review .reviewContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .review .reviewContainer .singleReview .reviewTitle {
+    font-size: 18px;
+  }
+  .review .reviewContainer .singleReview .desc {
+    font-size: 16px;
+  }
+  .review .reviewContainer .singleReview .reviewerDiv .leftDiv .aboutReviewer .name {
+    font-size: 17px;
+  }
+  .review .reviewContainer .singleReview .reviewerDiv .leftDiv .aboutReviewer p {
+    font-size: 16px;
+  }
+  .review .reviewContainer .singleReview .reviewerDiv .rightDiv .icon {
+    font-size: 16px;
+  }
+  .review .reviewContainer .singleReview .reviewerDiv .rightDiv blockquote {
+    font-weight: 600;
+    font-weight: 17px;
+  }
+}
+@media screen and (min-width: 940px) {
+  .review .secContainer .secTitle {
+    font-size: 28px;
+  }
+  .review .secContainer .navBtns {
+    gap: 1rem;
+  }
+  .review .reviewContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }/*# sourceMappingURL=review.css.map */
