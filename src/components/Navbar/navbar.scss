@@ -92,6 +92,7 @@
 .showNavbar {
   top: 7rem;
   transition: 0.5s ease;
+  width: 250px;
 }
 .addBg {
   justify-content: space-around;
@@ -118,6 +119,9 @@
         font-size: 30px;
       }
     }
+  }
+  .addBg{
+    justify-content: space-between;
   }
 }
 @media screen and (min-width: 770px) {

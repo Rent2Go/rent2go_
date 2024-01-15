@@ -71,6 +71,17 @@
     }
   }
 }
+@media screen and (min-width: 520px) {
+  .sellers {
+    .secContainer {
+      .sellersContainer {
+        .singleSeller {
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+}
 @media screen and (min-width: 840px) {
   .sellers {
     .secHeading {
@@ -89,7 +100,7 @@
     justify-content: flex-start;
     display: flex;
     flex-direction: column;
-    align-items:center ;
+    align-items: center;
 
     .secHeading {
       margin: 0 5rem 2rem 8rem;

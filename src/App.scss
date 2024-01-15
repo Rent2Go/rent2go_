@@ -9,7 +9,7 @@
   transition: 0.2s ease-in-out;
   font-family: var(--font-family);
   scrollbar-width: thin;
-  --scrollbar-color: var(--primaryColor) #e8e8e8;
+  scrollbar-color: var(--primaryColor) #e8e8e8;
 }
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
