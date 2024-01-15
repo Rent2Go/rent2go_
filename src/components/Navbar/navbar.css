@@ -95,8 +95,10 @@
 }
 
 .addBg {
-  background: var(--secondaryColor);
+  justify-content: space-around;
+  background: var(--pureWhiteColor);
   box-shadow: none;
+  opacity: 95%;
 }
 
 @media screen and (min-width: 520px) {
@@ -144,17 +146,26 @@
 }
 @media screen and (min-width: 1064px) {
   .header {
-    padding: 2rem 7rem;
+    padding: 1rem 7rem;
+  }
+  .header .logoDiv img {
+    width: 64px;
   }
   .header .navbar .menu .listItem a {
-    font-size: 17px;
+    font-size: 20px;
   }
   .header .signUp .text {
     font-size: 18px;
   }
+  .addBg {
+    padding: 3rem 7rem 0;
+  }
 }
 @media screen and (min-width: 1400px) {
   .header .navbar .menu .listItem {
-    margin: 0 0.8rem;
+    margin: 0 1.8rem;
+  }
+  .header .navbar .menu .listItem a {
+    font-size: 20px;
   }
 }/*# sourceMappingURL=navbar.css.map */

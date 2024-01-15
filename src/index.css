@@ -3,7 +3,7 @@
 :root {
   --font-family: 'Roboto', sans-serif;
 
-  --gradient-text: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
+  --gradient-text: linear-gradient(120.97deg, #c7bcad 0.84%, #A59E8C 102.67%);
   --gradient-bar: linear-gradient(103.22deg, #AE67FA -13.86%, #F49867 99.55%);
   
   --color-bg: #040C18;
@@ -21,9 +21,12 @@
 
   --primaryColor: #8C8372;
   --secondaryColor: #A59E8C;
+  --thirdColor: #F2D7B6;
+  --fourthColor: #c7bcad;
   --focusColor: #837a6a;
   --textColor:#a3a3a3;
   --greyColor:#f4f4f4;
   --whiteColor:#f5f4fa;
   --blackColor:#434344;
+  --pureWhiteColor:#FFFFFF
 }

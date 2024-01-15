@@ -22,7 +22,11 @@ const Trending = (props: Props) => {
         </div>
         <div className="carContainer grid">
           <div className="singleCar grid">
-            <div className="imgDiv">
+            <div
+              data-aos="fade-right"
+              data-aos-duration="2000"
+              className="imgDiv"
+            >
               <img src={car1} alt="carImage" />
             </div>
             <h5 className="carTitle">Used 2019 Audi S4 Premium Plus</h5>
@@ -36,7 +40,7 @@ const Trending = (props: Props) => {
           </div>
 
           <div className="singleCar grid">
-            <div className="imgDiv">
+            <div className="imgDiv" data-aos="fade-up" data-aos-duration="2500">
               <img src={car3} alt="carImage" />
             </div>
             <h5 className="carTitle">Used 2019 Audi S4 Premium Plus</h5>
@@ -50,7 +54,11 @@ const Trending = (props: Props) => {
           </div>
 
           <div className="singleCar grid">
-            <div className="imgDiv">
+            <div
+              data-aos="fade-left"
+              data-aos-duration="3000"
+              className="imgDiv"
+            >
               <img src={car2} alt="carImage" />
             </div>
             <h5 className="carTitle">Used 2019 Audi S4 Premium Plus</h5>

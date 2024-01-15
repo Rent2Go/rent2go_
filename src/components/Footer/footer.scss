@@ -41,6 +41,7 @@
       .footerMenuDiv {
         grid-template-columns: repeat(2, 1fr);
         .singleGrid {
+          margin: auto;
           .footerTitle {
             font-size: 17px;
           }
@@ -81,6 +82,13 @@
       .footerMenuDiv {
         grid-template-columns: repeat(4, 1fr);
       }
+      
+    }
+    .lowerSection {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap:0.5rem;
     }
   }
 }

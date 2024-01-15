@@ -13,9 +13,9 @@ const Sellers = (props: Props) => {
   return (
     <div className="sellers section">
         <div className="secHeading grid">
-          <h3 className="secTitle">Explore top sellers in town</h3>
+          <h3 className="secTitle" data-aos="fade-up" data-aos-duration="1000">Explore top sellers in town</h3>
 
-          <p>
+          <p data-aos="fade-up" data-aos-duration="1000">
             Joseph Samuel Girard holds the Guiness World Record for being the
             greatest salesman int the world
           </p>
@@ -23,7 +23,7 @@ const Sellers = (props: Props) => {
       <div className="secContainer container">
       
         <div className="sellersContainer  grid">
-          <div className="singleSeller flex">
+          <div className="singleSeller flex" data-aos="fade-up" data-aos-duration="2000">
             <div className="imgDiv flex">
               <img src={sellerToyota} alt="sellerImg" className="img" />
             </div>
@@ -34,7 +34,7 @@ const Sellers = (props: Props) => {
           </div>
         </div>
         <div className="sellersContainer grid ">
-          <div className="singleSeller flex">
+          <div className="singleSeller flex" data-aos="fade-up" data-aos-duration="2000">
             <div className="imgDiv flex">
               <img src={sellerAudi} alt="sellerImg" className="img" />
             </div>
@@ -45,7 +45,7 @@ const Sellers = (props: Props) => {
           </div>
         </div>
         <div className="sellersContainer  grid">
-          <div className="singleSeller flex">
+          <div className="singleSeller flex" data-aos="fade-up" data-aos-duration="2000">
             <div className="imgDiv flex">
               <img src={sellerRenault} alt="sellerImg" className="img" />
             </div>
@@ -56,7 +56,7 @@ const Sellers = (props: Props) => {
           </div>
         </div>
         <div className="sellersContainer  grid">
-          <div className="singleSeller flex">
+          <div className="singleSeller flex" data-aos="fade-up" data-aos-duration="2000">
             <div className="imgDiv flex">
               <img src={sellerMercedes} alt="sellerImg" className="img" />
             </div>

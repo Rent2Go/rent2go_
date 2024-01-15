@@ -84,7 +84,7 @@
 }
 .auction .secContainer .carContainer .singleCarActive {
   padding: 1rem;
-  background: var(--secondaryColor);
+  background: var(--pureWhiteColor);
 }
 .auction .secContainer .carContainer .singleCarActive .price_buyBtn span {
   border: 2px solid var(--primaryColor);

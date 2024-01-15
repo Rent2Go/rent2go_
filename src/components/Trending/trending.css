@@ -114,4 +114,19 @@
   .trending .secContainer .carContainer {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+@media screen and (min-width: 1024px) {
+  .trending .secContainer .carContainer {
+    gap: 1rem;
+  }
+  .trending .secContainer .carContainer .singleCar .imgDiv img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .trending .secContainer .carContainer .singleCar .carTitle {
+    font-size: 14px;
+  }
+  .trending .secContainer .carContainer .singleCar .miles, .trending .secContainer .carContainer .singleCar .AWD {
+    font-size: 13px;
+  }
 }/*# sourceMappingURL=trending.css.map */

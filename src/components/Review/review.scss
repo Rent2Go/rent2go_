@@ -89,7 +89,7 @@
         &:hover {
           transform: translateY(-7px);
           .imgDiv {
-            border: 5px solid var(--primaryColor);
+            box-shadow: -3px 7px 16px -4px rgba(140,131,114,0.3);
           }
         }
       }

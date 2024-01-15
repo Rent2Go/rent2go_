@@ -1,13 +1,17 @@
 .sellers {
   background: var(--greyColor);
+  .secHeading {
+    padding: 0 1rem 1rem 1rem;
+  }
   .secContainer {
-    margin: 2rem inherit;
+    margin: 2rem;
+    grid-template-columns: repeat(4, 1fr);
     .sellersContainer {
       .singleSeller {
         border-radius: 3px;
         gap: 1rem;
         transition: 0.3s ease-in-out;
-        align-items: self-start;
+        align-items: end;
         .imgDiv {
           img {
             width: 50px;
@@ -76,6 +80,47 @@
       }
       p {
         font-size: 20px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1024px) {
+  .sellers {
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+
+    .secHeading {
+      margin: 0 5rem 2rem 8rem;
+      .secTitle {
+        font-size: 30px;
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+    .secContainer {
+      grid-template-columns: repeat(4, 1fr);
+      .sellersContainer {
+        .singleSeller {
+          align-items: end;
+          .imgDiv {
+            img {
+              width: 80px;
+              height: 80px;
+            }
+          }
+          .info {
+            .name {
+              color: var(--blackColor);
+              font-size: 15px;
+            }
+            p {
+              font-size: 14px;
+            }
+          }
+        }
       }
     }
   }

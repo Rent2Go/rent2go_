@@ -36,6 +36,9 @@
   .footer .footerContainer .footerMenuDiv {
     grid-template-columns: repeat(2, 1fr);
   }
+  .footer .footerContainer .footerMenuDiv .singleGrid {
+    margin: auto;
+  }
   .footer .footerContainer .footerMenuDiv .singleGrid .footerTitle {
     font-size: 17px;
   }
@@ -67,5 +70,11 @@
   }
   .footer .footerContainer .footerMenuDiv {
     grid-template-columns: repeat(4, 1fr);
+  }
+  .footer .lowerSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
   }
 }/*# sourceMappingURL=footer.css.map */

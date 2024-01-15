@@ -131,3 +131,26 @@
 		}
 	  }
 }
+
+@media screen and (min-width:1024px) {
+  .trending{
+    .secContainer{
+      .carContainer{
+        gap:1rem;
+        .singleCar{
+          .imgDiv{
+            img{
+              object-fit: contain;
+            }
+          }
+          .carTitle{
+            font-size: 14px;
+          }
+          .miles, .AWD{font-size:13px}
+        }
+      }
+    }
+
+  }
+  
+}

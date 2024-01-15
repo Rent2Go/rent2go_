@@ -1,14 +1,18 @@
 .sellers {
   background: var(--greyColor);
 }
+.sellers .secHeading {
+  padding: 0 1rem 1rem 1rem;
+}
 .sellers .secContainer {
-  margin: 2rem inherit;
+  margin: 2rem;
+  grid-template-columns: repeat(4, 1fr);
 }
 .sellers .secContainer .sellersContainer .singleSeller {
   border-radius: 3px;
   gap: 1rem;
   transition: 0.3s ease-in-out;
-  align-items: self-start;
+  align-items: end;
 }
 .sellers .secContainer .sellersContainer .singleSeller .imgDiv img {
   width: 50px;
@@ -70,5 +74,39 @@
   }
   .sellers .secHeading p {
     font-size: 20px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .sellers {
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .sellers .secHeading {
+    margin: 0 5rem 2rem 8rem;
+  }
+  .sellers .secHeading .secTitle {
+    font-size: 30px;
+  }
+  .sellers .secHeading p {
+    font-size: 20px;
+  }
+  .sellers .secContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .sellers .secContainer .sellersContainer .singleSeller {
+    align-items: end;
+  }
+  .sellers .secContainer .sellersContainer .singleSeller .imgDiv img {
+    width: 80px;
+    height: 80px;
+  }
+  .sellers .secContainer .sellersContainer .singleSeller .info .name {
+    color: var(--blackColor);
+    font-size: 15px;
+  }
+  .sellers .secContainer .sellersContainer .singleSeller .info p {
+    font-size: 14px;
   }
 }/*# sourceMappingURL=seller.css.map */

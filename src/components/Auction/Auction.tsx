@@ -16,15 +16,15 @@ const Action = (props: Props) => {
   return (
     <div className="auction section">
       <div className="secContainer container">
-        <div className="secHeading flex">
-          <h3 className="secTitle">Active Auctions</h3>
+        <div className="secHeading flex" data-aos="fade-up" data-aos-duration="2000">
+          <h3 className="secTitle" >Active Auctions</h3>
           <div className="navBtns flex">
             <BsArrowLeftShort className="icon leftIcon" />
             <BsArrowRightShort className="icon rightIcon" />
           </div>
         </div>
         <div className="carContainer grid">
-          <div className="singleCar grid">
+          <div className="singleCar grid" data-aos="fade-up" data-aos-duration="5000">
             <div className="imgDiv">
               <img src={car1} alt="carImage" />
             </div>
@@ -37,7 +37,7 @@ const Action = (props: Props) => {
               <span className="buyBtn">Buy Now</span>
             </div>
           </div>
-          <div className="singleCar grid singleCarActive">
+          <div className="singleCar grid singleCarActive" data-aos="fade-up" data-aos-duration="5000">
             <div className="imgDiv">
               <img src={car2} alt="carImage" />
             </div>
@@ -50,7 +50,7 @@ const Action = (props: Props) => {
               <span className="buyBtn">Buy Now</span>
             </div>
           </div>
-          <div className="singleCar grid">
+          <div className="singleCar grid" data-aos="fade-up" data-aos-duration="5000">
             <div className="imgDiv">
               <img src={car3} alt="carImage" />
             </div>
@@ -63,7 +63,7 @@ const Action = (props: Props) => {
               <span className="buyBtn">Buy Now</span>
             </div>
           </div>
-          <div className="singleCar grid singleCarActive">
+          <div className="singleCar grid singleCarActive" data-aos="fade-up" data-aos-duration="5000">
             <div className="imgDiv">
               <img src={car4} alt="carImage" />
             </div>
@@ -76,7 +76,7 @@ const Action = (props: Props) => {
               <span className="buyBtn">Buy Now</span>
             </div>
           </div>
-          <div className="singleCar grid">
+          <div className="singleCar grid" data-aos="fade-up" data-aos-duration="5000">
             <div className="imgDiv">
               <img src={car5} alt="carImage" />
             </div>
@@ -89,7 +89,7 @@ const Action = (props: Props) => {
               <span className="buyBtn">Buy Now</span>
             </div>
           </div>
-          <div className="singleCar grid singleCarActive">
+          <div className="singleCar grid singleCarActive" data-aos="fade-up" data-aos-duration="5000">
             <div className="imgDiv">
               <img src={car6} alt="carImage" />
             </div>

@@ -87,7 +87,7 @@
   transform: translateY(-7px);
 }
 .review .secContainer .reviewContainer .singleReview:hover .imgDiv {
-  border: 5px solid var(--primaryColor);
+  box-shadow: -3px 7px 16px -4px rgba(140, 131, 114, 0.3);
 }
 
 @media screen and (min-width: 520px) {
