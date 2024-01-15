@@ -8,7 +8,7 @@ import car4 from "../../assets/img/carModels/renault-clio-beyaz.png";
 import car5 from "../../assets/img/carModels/renault-megane-gri.png";
 import car6 from "../../assets/img/carModels/renault-clio-kırmızı.png";
 
-import "./auction.css";
+import './auctions.css';
 
 type Props = {};
 
