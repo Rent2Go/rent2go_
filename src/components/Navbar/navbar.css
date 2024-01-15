@@ -82,6 +82,18 @@
   background: var(--secondaryColor);
   color: var(--blackColor);
 }
+.signUp .text-login {
+  padding: 3px 10px;
+  background: var(--whiteColor);
+  border-radius: 3px;
+  color: var(--primaryColor);
+  cursor: pointer;
+  font-size: 14px;
+}
+.signUp .text-login:hover {
+  background: var(--secondaryColor);
+  color: var(--whiteColor);
+}
 .signUp .toggleNavbarIcon {
   background: none;
   color: var(--primaryColor);

@@ -3,6 +3,7 @@ import logo from "../../assets/img/logo.png";
 import { IoIosCloseCircle, IoIosMenu } from "react-icons/io";
 
 import "./navbar.css";
+import { Link } from "react-router-dom";
 
 type Props = {};
 
@@ -35,24 +36,24 @@ const Navbar = (props: Props) => {
         <div className={navbar}>
           <ul className="menu">
             <li onClick={removeNavbar} className="listItem">
-              <a href="/" className="link">
+              <Link to="/" className="link">
                 Used Cars
-              </a>
+              </Link>
             </li>
             <li onClick={removeNavbar} className="listItem">
-              <a href="/" className="link">
+              <Link to="/" className="link">
                 New Cars
-              </a>
+              </Link>
             </li>
             <li onClick={removeNavbar} className="listItem">
-              <a href="/" className="link">
+              <Link to="/" className="link">
                 Auctions
-              </a>
+              </Link>
             </li>
             <li onClick={removeNavbar} className="listItem">
-              <a href="/" className="link">
+              <Link to="/" className="link">
                 Sell
-              </a>
+              </Link>
             </li>
           </ul>
 
@@ -60,7 +61,8 @@ const Navbar = (props: Props) => {
         </div>
 
         <div className="signUp flex">
-          <div className="text">Sign Up</div>
+          <Link className=" text text-login btn" to="/sign-in" >Login</Link>
+          <Link className="text btn" to="/sign-up" >Sign Up</Link>
           <IoIosMenu className="icon toggleNavbarIcon" onClick={showNavbar} />
         </div>
       </div>
