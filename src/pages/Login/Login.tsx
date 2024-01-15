@@ -16,31 +16,54 @@ const Login = (props: Props) => {
     password: "",
   };
   return (
-    <div className="login container">
-      
-      <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-        <div className="flex items-center justify-between">
-          <div className="row text-center mt-5">
-            <div className="col-12">
-              <Form>
-                <Field type="email" name="email" placeholder="Email" />
-                <Field name="password" placeholder="Password" />
-                <button
-                  type="button"
-                  className="btn btn-dark mt-5"
-                  onClick={() => {
-                    authContext.setIsAuthenticated(true);
-                    navigate("/");
-                    localStorage.setItem("token", "abc");
-                  }}
-                >
-                  Submit
-                </button>
-              </Form>
-            </div>
-          </div>
+    <div className="login ">
+      <div className="secContainer ">
+        <div className="headDiv">
+          <h1>LOGIN</h1>
         </div>
-      </Formik>
+        <div className="fieldDiv">
+          <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+            <Form>
+              <div className="inputDiv">
+                <div className="row">
+                  <div className="col-12">
+                    <Field
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      className="form-control"
+                    />
+                  </div>
+                  <div className="col-12">
+                    <Field
+                      name="password"
+                      placeholder="Password"
+                      className="form-control"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="submitContainer">
+                <div className="row">
+                  <div className="col-12">
+                    <button
+                      type="button"
+                      className="btn submitBtn mt-5"
+                      onClick={() => {
+                        authContext.setIsAuthenticated(true);
+                        navigate("/");
+                        localStorage.setItem("token", "abc");
+                      }}
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </Form>
+          </Formik>
+        </div>
+      </div>
     </div>
   );
 };
