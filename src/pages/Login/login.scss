@@ -1,3 +1,89 @@
-.login{
-    
+.login {
+  margin: 0rem 10rem 0rem 10rem;
+  padding: 6rem 16rem 16rem 16rem;
+  color: var(--secondaryColor);
+  background: var(--greyColor);
+  border-radius: 0.5rem;
+
+  .secContainer {
+    .headDiv {
+      letter-spacing: 0.2rem;
+      transition: transform 5s;
+      &:hover {
+        letter-spacing: 0.5rem;
+      }
+    }
+    .contentDiv {
+      transition: width 2s, height 2s, transform 2s;
+      &:hover {
+        color: var(--thirdColor);
+        transform: scale(1.07, 1.07);
+      }
+      grid-template-columns: repeat(2, 1fr);
+      .imgDiv {
+        background: var(--color-1);
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+        .imgCurtain {
+          border-top-left-radius: 0.5rem;
+          border-bottom-left-radius: 0.5rem;
+          width: 514px;
+          height: 642.5px;
+          background: var(--blackColor);
+          opacity: 10%;
+          position: absolute;
+          z-index: 99;
+          display: block;
+          &:hover {
+            opacity: 0;
+          }
+        }
+
+        img {
+          width: 100%;
+          object-fit: contain;
+          border-top-left-radius: 0.5rem;
+          border-bottom-left-radius: 0.5rem;
+        }
+      }
+      .fieldDiv {
+        grid-template-columns: repeat(1, 1fr);
+        border-top-right-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        padding: 7.55rem 2rem;
+        background: var(--gradient-bar);
+        .inputDiv {
+          color: var(--pureWhiteColor);
+          label {
+            font-size: 20px;
+            letter-spacing: 0.2rem;
+            line-height: 40px;
+          }
+          text-align: left;
+          padding: 2rem 4rem;
+          .form-control {
+            padding: 0.75rem 2rem;
+            &::placeholder {
+              color: var(--primaryColor);
+              font-size: 18px;
+            }
+          }
+        }
+        .submitContainer {
+          .submitBtn {
+            padding: 0.75rem 4rem;
+            background: var(--greyColor);
+            font-size: 18px;
+
+            &:hover {
+              background: var(--pureWhiteColor);
+            }
+          }
+        }
+        &:hover {
+          background: var(--gradient-hover);
+        }
+      }
+    }
+  }
 }
