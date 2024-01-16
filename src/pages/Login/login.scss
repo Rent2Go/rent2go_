@@ -21,6 +21,7 @@
       }
       grid-template-columns: repeat(2, 1fr);
       .imgDiv {
+        box-shadow: 0 4px 5px var(--blackColor);
         background: var(--color-1);
         border-top-left-radius: 0.5rem;
         border-bottom-left-radius: 0.5rem;
@@ -34,6 +35,7 @@
           position: absolute;
           z-index: 99;
           display: block;
+
           &:hover {
             opacity: 0;
           }
@@ -47,10 +49,11 @@
         }
       }
       .fieldDiv {
+        box-shadow: 0 4px 5px var(--blackColor);
         grid-template-columns: repeat(1, 1fr);
         border-top-right-radius: 0.5rem;
         border-bottom-right-radius: 0.5rem;
-        padding: 7.55rem 2rem;
+        padding: 6.3rem 2rem;
         background: var(--gradient-bar);
         .inputDiv {
           color: var(--pureWhiteColor);
@@ -60,7 +63,7 @@
             line-height: 40px;
           }
           text-align: left;
-          padding: 2rem 4rem;
+          padding: 1rem 4rem 3rem 4rem;
           .form-control {
             padding: 0.75rem 2rem;
             &::placeholder {
@@ -77,6 +80,14 @@
 
             &:hover {
               background: var(--pureWhiteColor);
+            }
+          }
+          small {
+            a {
+              color: var(--thirdColor);
+              &:hover {
+                color: var(--greyColor);
+              }
             }
           }
         }

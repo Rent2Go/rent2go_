@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import "./login.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../../contexts/AuthContext";
 import { Field, Form, Formik, FormikProps } from "formik";
-import login from "../../assets/img/login.jpg"
+import login from "../../assets/img/login.jpg";
 
 type Props = {};
 
@@ -25,6 +25,7 @@ const Login = (props: Props) => {
         <div className="contentDiv grid">
           <div className="imgDiv">
             <div className="imgCurtain"></div>
+
             <img src={login} alt="loginImage" />
           </div>
           <div className="fieldDiv">
@@ -38,7 +39,7 @@ const Login = (props: Props) => {
                   </div>
                   <div className="row">
                     <div className="col-12">
-                    <label htmlFor="email">Email</label>
+                      <label htmlFor="email">Email</label>
                       <Field
                         type="email"
                         name="email"
@@ -47,7 +48,7 @@ const Login = (props: Props) => {
                       />
                     </div>
                     <div className="col-12 mt-2">
-                    <label htmlFor="password">Password</label>
+                      <label htmlFor="password">Password</label>
                       <Field
                         name="password"
                         placeholder="Please Enter Your Password"
@@ -70,6 +71,13 @@ const Login = (props: Props) => {
                       >
                         Submit
                       </button>
+                    </div>
+                  </div>
+                  <div className="row mt-3">
+                    <div className="col-12">
+                      <small>
+                        <Link to="/">Reset Your Password </Link>
+                      </small>
                     </div>
                   </div>
                 </div>

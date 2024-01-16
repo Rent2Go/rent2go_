@@ -21,6 +21,7 @@
   transform: scale(1.07, 1.07);
 }
 .login .secContainer .contentDiv .imgDiv {
+  box-shadow: 0 4px 5px var(--blackColor);
   background: var(--color-1);
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
@@ -47,16 +48,17 @@
   border-bottom-left-radius: 0.5rem;
 }
 .login .secContainer .contentDiv .fieldDiv {
+  box-shadow: 0 4px 5px var(--blackColor);
   grid-template-columns: repeat(1, 1fr);
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
-  padding: 7.55rem 2rem;
+  padding: 6.3rem 2rem;
   background: var(--gradient-bar);
 }
 .login .secContainer .contentDiv .fieldDiv .inputDiv {
   color: var(--pureWhiteColor);
   text-align: left;
-  padding: 2rem 4rem;
+  padding: 1rem 4rem 3rem 4rem;
 }
 .login .secContainer .contentDiv .fieldDiv .inputDiv label {
   font-size: 20px;
@@ -81,6 +83,12 @@
 }
 .login .secContainer .contentDiv .fieldDiv .submitContainer .submitBtn:hover {
   background: var(--pureWhiteColor);
+}
+.login .secContainer .contentDiv .fieldDiv .submitContainer small a {
+  color: var(--thirdColor);
+}
+.login .secContainer .contentDiv .fieldDiv .submitContainer small a:hover {
+  color: var(--greyColor);
 }
 .login .secContainer .contentDiv .fieldDiv:hover {
   background: var(--gradient-hover);
