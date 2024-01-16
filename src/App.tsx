@@ -1,8 +1,4 @@
 import React from "react";
-import {
-  Footer,
-
-} from "./components";
 import { Route, Routes } from "react-router-dom";
 import { CarPage, HomePage, Login, Register, BrandPage } from "./pages";
 
@@ -21,7 +17,7 @@ function App() {
           <Route path="/brands" element={<BrandPage />} />
         </Routes>
 
-        <Footer />
+  
       </main>
     </>
   );

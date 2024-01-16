@@ -6,6 +6,7 @@ import {
   Search,
   Sellers,
   Trending,
+  Footer
 } from "../../components";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -49,6 +50,7 @@ const Homepage = (props: Props) => {
       <Sellers />
       <Auction />
       <Review />
+      <Footer />
     </>
   );
 };
