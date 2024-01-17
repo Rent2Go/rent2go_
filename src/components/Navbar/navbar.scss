@@ -8,9 +8,24 @@
   box-shadow: 0 4px 6px rgb(237 237 237);
   z-index: 1000;
 }
+
 .logoDiv {
   .logo {
     width: 25px;
+  }
+}
+.dropdown-menu {
+  background: var(--greyColor);
+  border: none;
+  padding: 1rem 2rem;
+  margin: 3rem -1.5rem;
+  width: 190px;
+
+  .text {
+    margin: 0.5rem 0.25rem;
+    .icon {
+      margin-right: 0.5rem;
+    }
   }
 }
 
@@ -70,6 +85,20 @@
 }
 .signUp {
   gap: 0.5rem;
+  .textAction {
+    padding: 3px 10px;
+    background: var(--primaryColor);
+    border-radius: 3px;
+    color: var(--whiteColor);
+    cursor: pointer;
+    font-size: 14px;
+    width: 120px;
+    text-align: left;
+    &:hover {
+      background: var(--secondaryColor);
+      color: var(--blackColor);
+    }
+  }
   .text {
     padding: 3px 10px;
     background: var(--primaryColor);
@@ -77,21 +106,27 @@
     color: var(--whiteColor);
     cursor: pointer;
     font-size: 14px;
+    text-align: left;
     &:hover {
       background: var(--secondaryColor);
       color: var(--blackColor);
     }
   }
+  .dropdown {
+    width: 150px;
+    padding: 6px 4px;
+    text-align: center;
+  }
+
   .text-login {
     padding: 3px 10px;
-    background: var(--whiteColor);
+    background: red;
     border-radius: 3px;
     color: var(--primaryColor);
     cursor: pointer;
     font-size: 14px;
     &:hover {
-      background: var(--secondaryColor);
-      color: var(--whiteColor);
+      color: var(--secondaryColor);
     }
   }
   .toggleNavbarIcon {
@@ -111,7 +146,6 @@
   background: var(--pureWhiteColor);
   box-shadow: none;
   opacity: 95%;
-
 }
 
 @media screen and (min-width: 520px) {
@@ -132,7 +166,7 @@
       }
     }
   }
-  .addBg{
+  .addBg {
     justify-content: space-between;
   }
 }
@@ -173,20 +207,24 @@
       }
     }
   }
+  .navbarProfileImg {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 @media screen and (min-width: 1064px) {
   .header {
     padding: 1rem 7rem;
-    .logoDiv{
-      img{
-        width: 64px;
+    .logoDiv {
+      img {
+        width: 86px;
       }
     }
     .navbar {
       .menu {
         .listItem {
-          a{
+          a {
             font-size: 20px;
           }
         }
@@ -198,7 +236,7 @@
       }
     }
   }
-  .addBg{
+  .addBg {
     padding: 0rem 7rem 0;
   }
 }
@@ -208,7 +246,7 @@
       .menu {
         .listItem {
           margin: 0 1.8rem;
-          a{
+          a {
             font-size: 20px;
           }
         }
@@ -216,4 +254,3 @@
     }
   }
 }
-

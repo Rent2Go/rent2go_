@@ -13,6 +13,20 @@
   width: 25px;
 }
 
+.dropdown-menu {
+  background: var(--greyColor);
+  border: none;
+  padding: 1rem 2rem;
+  margin: 3rem -1.5rem;
+  width: 190px;
+}
+.dropdown-menu .text {
+  margin: 0.5rem 0.25rem;
+}
+.dropdown-menu .text .icon {
+  margin-right: 0.5rem;
+}
+
 @media screen and (max-width: 769px) {
   .navbar {
     position: absolute;
@@ -70,6 +84,20 @@
 .signUp {
   gap: 0.5rem;
 }
+.signUp .textAction {
+  padding: 3px 10px;
+  background: var(--primaryColor);
+  border-radius: 3px;
+  color: var(--whiteColor);
+  cursor: pointer;
+  font-size: 14px;
+  width: 120px;
+  text-align: left;
+}
+.signUp .textAction:hover {
+  background: var(--secondaryColor);
+  color: var(--blackColor);
+}
 .signUp .text {
   padding: 3px 10px;
   background: var(--primaryColor);
@@ -77,22 +105,27 @@
   color: var(--whiteColor);
   cursor: pointer;
   font-size: 14px;
+  text-align: left;
 }
 .signUp .text:hover {
   background: var(--secondaryColor);
   color: var(--blackColor);
 }
+.signUp .dropdown {
+  width: 150px;
+  padding: 6px 4px;
+  text-align: center;
+}
 .signUp .text-login {
   padding: 3px 10px;
-  background: var(--whiteColor);
+  background: red;
   border-radius: 3px;
   color: var(--primaryColor);
   cursor: pointer;
   font-size: 14px;
 }
 .signUp .text-login:hover {
-  background: var(--secondaryColor);
-  color: var(--whiteColor);
+  color: var(--secondaryColor);
 }
 .signUp .toggleNavbarIcon {
   background: none;
@@ -159,13 +192,17 @@
   .header .signUp .toggleNavbarIcon {
     display: none;
   }
+  .navbarProfileImg {
+    width: 30px;
+    height: 30px;
+  }
 }
 @media screen and (min-width: 1064px) {
   .header {
     padding: 1rem 7rem;
   }
   .header .logoDiv img {
-    width: 64px;
+    width: 86px;
   }
   .header .navbar .menu .listItem a {
     font-size: 20px;

@@ -1,18 +1,19 @@
 import React from 'react'
-import { CarList } from '../../components'
+import { CarList,Navbar,Footer } from '../../components'
 
 type Props = {}
 
 const CarPage = (props: Props) => {
   return (
     <div>
-      <h2>CarPage</h2>
+      <Navbar/>
+      
 
       <CarList />
 
 
 
-
+      <Footer/>
     </div>
   )
 }
