@@ -11,6 +11,9 @@
   scrollbar-width: thin;
   scrollbar-color: var(--primaryColor) #e8e8e8;
 }
+body{
+  background-color: var(--backGroundColor);
+}
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 12px;
@@ -51,7 +54,7 @@ p {
   cursor: pointer;
 }
 .primaryBtn {
-  background: var(--primaryColor);
+  background: var(--fourthColor);
   padding: 10px 15px;
   border-radius: 10px;
   font-weight: 600;
