@@ -198,4 +198,62 @@
 .toggle-panel.toggle-right {
   right: 0;
   transform: translateX(0);
+}
+
+@media screen and (min-width: 320px) {
+  .containers {
+    max-width: 90%;
+    min-height: 800px;
+  }
+  .containers .form {
+    padding: 0 10px;
+  }
+  .containers .form .input {
+    padding: 10px 15px;
+    margin: 10px 0;
+  }
+  .containers h1 {
+    font-size: 30px;
+  }
+  .containers p {
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 10px 0;
+    color: var(--whiteColor);
+  }
+  .containers span {
+    font-size: 11px;
+    color: var(--primaryColor);
+  }
+  .containers a {
+    color: var(--textColor);
+    font-size: 12px;
+    text-decoration: none;
+    margin: 15px 0 10px;
+  }
+  .containers button {
+    background-color: var(--fourthColor);
+    color: var(--pureWhiteColor);
+    font-size: 11px;
+    padding: 10px 25px;
+    border: 1px solid transparent;
+  }
+  .social-icons {
+    display: none;
+  }
+}
+@media screen and (min-width: 720px) {
+  .containers {
+    width: 700px;
+    max-width: 100%;
+    min-height: 480px;
+  }
+  .containers .form {
+    padding: 0 10px;
+  }
+  .containers .form .input {
+    padding: 10px 15px;
+    margin: 8px 0;
+  }
 }/*# sourceMappingURL=register.css.map */

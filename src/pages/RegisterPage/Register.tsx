@@ -69,7 +69,7 @@ const Register: React.FC<Props> = (props: Props) => {
               </div>
               <span>or use your email for registration</span>
               <div className="row">
-                <div className="col-6">
+                <div className="col-md-6 col-sm-12">
                   <Field
                     name="name"
                     className="input"
@@ -77,7 +77,7 @@ const Register: React.FC<Props> = (props: Props) => {
                     placeholder="Name"
                   />
                 </div>
-                <div className="col-6">
+                <div className="col-md-6 col-sm-12">
                   <Field
                     name="surName"
                     className="input"
@@ -87,7 +87,7 @@ const Register: React.FC<Props> = (props: Props) => {
                 </div>
               </div>
               <div className="row">
-                <div className="col-6">
+                <div className="col-md-6 col-sm-12">
                   <Field
                     name="email"
                     className="input"
@@ -95,7 +95,7 @@ const Register: React.FC<Props> = (props: Props) => {
                     placeholder="Email"
                   />
                 </div>
-                <div className="col-6">
+                <div className="col-md-6 col-sm-12">
                   <Field
                     name="phone"
                     className="input"
