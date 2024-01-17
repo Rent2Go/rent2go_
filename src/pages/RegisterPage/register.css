@@ -1,14 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
-}
-
 .register {
-  background-color: #c9d6ff;
-  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  background-color: var(--fourthColor);
+  background: linear-gradient(to right, var(--pureWhiteColor), var(--whiteColor));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +9,7 @@
 }
 
 .containers {
-  background-color: #fff;
+  background-color: var(--pureWhiteColor);
   border-radius: 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   position: relative;
@@ -31,19 +23,21 @@
   line-height: 20px;
   letter-spacing: 0.3px;
   margin: 20px 0;
+  color: var(--whiteColor);
 }
 .containers span {
   font-size: 12px;
+  color: var(--primaryColor);
 }
 .containers a {
-  color: #333;
+  color: var(--textColor);
   font-size: 13px;
   text-decoration: none;
   margin: 15px 0 10px;
 }
 .containers button {
-  background-color: var(--primaryColor);
-  color: #fff;
+  background-color: var(--fourthColor);
+  color: var(--pureWhiteColor);
   font-size: 12px;
   padding: 10px 45px;
   border: 1px solid transparent;
@@ -56,16 +50,19 @@
 }
 .containers button.hidden {
   background-color: transparent;
-  border-color: #fff;
+  border-color: var(--pureWhiteColor);
 }
 .containers .form {
-  background-color: #fff;
+  background-color: var(--pureWhiteColor);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   padding: 0 40px;
   height: 100%;
+}
+.containers .form h1 {
+  color: var(--primaryColor);
 }
 .containers .input {
   background-color: #eee;
@@ -132,14 +129,22 @@
   margin: 20px 0;
 }
 .social-icons .icon {
-  border: 1px solid #ccc;
-  border-radius: 20%;
+  border: 2px solid var(--secondaryColor);
+  border-radius: 50%;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   margin: 0 3px;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
+}
+.social-icons .icon img {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 
 .toggle-containers {
@@ -162,7 +167,7 @@
   background-color: var(--primaryColor);
   height: 100%;
   background: linear-gradient(to right, var(--secondaryColor), var(--primaryColor));
-  color: #fff;
+  color: var(--pureWhiteColor);
   position: relative;
   left: -100%;
   width: 200%;

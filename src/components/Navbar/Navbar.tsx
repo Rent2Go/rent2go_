@@ -61,7 +61,7 @@ const Navbar = (props: Props) => {
         </div>
 
         <div className="signUp flex">
-          <Link className=" text text-login btn" to="/sign-in" >Login</Link>
+          
           <Link className="text btn" to="/sign-up" >Sign Up</Link>
           <IoIosMenu className="icon toggleNavbarIcon" onClick={showNavbar} />
         </div>

@@ -3,7 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../../contexts/AuthContext";
 import { Field, Form, Formik } from "formik";
 import { FaGithub, FaLinkedin, FaYoutube, FaInstagram } from "react-icons/fa";
-
+import user1 from "../../assets/img/userImages/soner.jpg";
+import user2 from "../../assets/img/userImages/yagmur.jpg";
+import user3 from "../../assets/img/userImages/seyhmus.jpeg";
+import user4 from "../../assets/img/userImages/feyza.jpeg";
 import "./register.css";
 
 type Props = {
@@ -34,8 +37,10 @@ const Register: React.FC<Props> = (props: Props) => {
   };
 
   const initialValues = {
-    email: "",
     name: "",
+    surName: "",
+    email: "",
+    phone: "",
     password: "",
   };
 
@@ -49,26 +54,56 @@ const Register: React.FC<Props> = (props: Props) => {
             <Form className="form">
               <h1>Create Account</h1>
               <div className="social-icons">
-                <Link to="#" className="icon">
-                  <FaGithub />
+                <Link to="https://github.com/sonersyln" className="icon">
+                  <img src={user1} alt="user" />
                 </Link>
-                <Link to="#" className="icon">
-                  <FaLinkedin />
+                <Link to="https://github.com/yagmurcurku" className="icon">
+                  <img src={user2} alt="user" />
                 </Link>
-                <Link to="#" className="icon">
-                  <FaYoutube />
+                <Link to="https://github.com/shmserl" className="icon">
+                  <img src={user3} alt="user" />
                 </Link>
-                <Link to="#" className="icon">
-                  <FaInstagram />
+                <Link to="https://github.com/feyzaerat" className="icon">
+                  <img src={user4} alt="user" />
                 </Link>
               </div>
               <span>or use your email for registration</span>
-              <Field
-                name="name"
-                className="input"
-                type="text"
-                placeholder="Name"
-              />
+              <div className="row">
+                <div className="col-6">
+                  <Field
+                    name="name"
+                    className="input"
+                    type="text"
+                    placeholder="Name"
+                  />
+                </div>
+                <div className="col-6">
+                  <Field
+                    name="surName"
+                    className="input"
+                    type="text"
+                    placeholder="Surname"
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-6">
+                  <Field
+                    name="email"
+                    className="input"
+                    type="email"
+                    placeholder="Email"
+                  />
+                </div>
+                <div className="col-6">
+                  <Field
+                    name="phone"
+                    className="input"
+                    type="text"
+                    placeholder="Phone"
+                  />
+                </div>
+              </div>
               <Field
                 name="email"
                 className="input"
@@ -92,17 +127,17 @@ const Register: React.FC<Props> = (props: Props) => {
             <Form className="form" action="">
               <h1>Sign In</h1>
               <div className="social-icons">
-                <Link to="#" className="icon">
-                  <FaGithub />
+                <Link to="https://github.com/sonersyln" className="icon">
+                  <img src={user1} alt="user" />
                 </Link>
-                <Link to="#" className="icon">
-                  <FaLinkedin />
+                <Link to="https://github.com/yagmurcurku" className="icon">
+                  <img src={user2} alt="user" />
                 </Link>
-                <Link to="#" className="icon">
-                  <FaYoutube />
+                <Link to="https://github.com/shmserl" className="icon">
+                  <img src={user3} alt="user" />
                 </Link>
-                <Link to="#" className="icon">
-                  <FaInstagram />
+                <Link to="https://github.com/feyzaerat" className="icon">
+                  <img src={user4} alt="user" />
                 </Link>
               </div>
               <span>or use your email password</span>
@@ -119,7 +154,14 @@ const Register: React.FC<Props> = (props: Props) => {
                 placeholder="Password"
               />
               <Link to="#">Forget Your Password?</Link>
-              <button className="btn" type="submit">
+              <button className="btn" type="submit"
+              
+              onClick={() => {
+                authContext.setIsAuthenticated(true);
+                navigate("/");
+                localStorage.setItem("token", "abc");
+              }}
+              >
                 Sign In
               </button>
             </Form>
