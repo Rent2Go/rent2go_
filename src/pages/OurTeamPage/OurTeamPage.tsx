@@ -15,6 +15,7 @@ const OurTeamPage = (props: Props) => {
         <>
             <Navbar />
 
+            <div className="ourteam">
             <div className="team">
                 <div className="container">
 
@@ -115,7 +116,7 @@ const OurTeamPage = (props: Props) => {
 
                 </div>
             </div>
-
+            </div>
             <Footer />
         </>
     );
