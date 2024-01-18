@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { CarPage, HomePage, Login, Register, BrandPage, AboutUsPage, ContactPage, PrivacyPolicy } from "./pages";
+import { CarPage, HomePage, Login, Register, BrandPage, OurTeamPage, ContactPage, PrivacyPolicy } from "./pages";
 
 import "./App.css";
 
@@ -15,7 +15,7 @@ function App() {
           <Route path="/sign-up" element={<Register />} />
           <Route path="/cars" element={<CarPage />} />
           <Route path="/brands" element={<BrandPage />} />
-          <Route path="/about-us" element={<AboutUsPage />} />
+          <Route path="/our-team" element={<OurTeamPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
