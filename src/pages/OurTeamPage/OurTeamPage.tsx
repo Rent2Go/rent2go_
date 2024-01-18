@@ -6,6 +6,7 @@ import yagmurImg from "../../assets/img/userImages/yagmur.jpg";
 import seyhmusImg from "../../assets/img/userImages/seyhmus.jpeg";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import "./ourTeamPage.css"
 
 type Props = {};
 
@@ -36,10 +37,10 @@ const OurTeamPage = (props: Props) => {
                                 </div>
                                 <div className="social">
                                 <Link to="https://github.com/sonersyln" className="github">
-                                    <FaGithub/>
+                                    <i><FaGithub/></i>
                                 </Link>
                                 <Link to="https://www.linkedin.com/in/sonerseylan/" className="linkedin">
-                                    <FaLinkedin/>
+                                    <i><FaLinkedin/></i>
                                 </Link>
                                 </div>
                             </div>
@@ -57,10 +58,10 @@ const OurTeamPage = (props: Props) => {
                                 </div>
                                 <div className="social">
                                 <Link to="https://github.com/feyzaerat" className="github">
-                                    <FaGithub/>
+                                    <i><FaGithub/></i>
                                 </Link>
                                 <Link to="https://www.linkedin.com/in/feyzakaranfilerat/" className="linkedin">
-                                    <FaLinkedin/>
+                                    <i><FaLinkedin/></i>
                                 </Link>
                                 </div>
                             </div>
@@ -78,10 +79,10 @@ const OurTeamPage = (props: Props) => {
                                 </div>
                                 <div className="social">
                                 <Link to="https://github.com/ShmsErl" className="github">
-                                    <FaGithub/>
+                                    <i><FaGithub/></i>
                                 </Link>
                                 <Link to="https://www.linkedin.com/in/seyhmus-erol/" className="linkedin">
-                                    <FaLinkedin/>
+                                    <i><FaLinkedin/></i>
                                 </Link>
                                 </div>
                             </div>
@@ -99,10 +100,10 @@ const OurTeamPage = (props: Props) => {
                                 </div>
                                 <div className="social">
                                 <Link to="https://github.com/yagmurcurku" className="github">
-                                    <FaGithub/>
+                                    <i><FaGithub/></i>
                                 </Link>
                                 <Link to="https://www.linkedin.com/in/yagmurcurku/" className="linkedin">
-                                    <FaLinkedin/>
+                                    <i><FaLinkedin/></i>
                                 </Link>
                                 </div>
                             </div>
