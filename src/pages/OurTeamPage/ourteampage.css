@@ -1,8 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 .ourteam{
     padding-top: 130px;
 }
@@ -12,7 +8,7 @@
     padding: 30px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.10), 0 3px 6px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    background: #fff;
+    background: var(--whiteColor);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 .team .member:hover{
@@ -101,7 +97,7 @@ section{
 .underline{
     width: 150px;
     height: 1px;
-    background-color: black;
+    background-color: var(--blackColor);
     margin: auto;
     margin-top: -30px;
 }
