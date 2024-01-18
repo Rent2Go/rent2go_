@@ -72,15 +72,15 @@ const OurTeamPage = (props: Props) => {
                                     <img src={feyzaImg}className="img-fluid" alt ="team1"/>
                                 </div>
                                 <div className="member-info">
-                                    <h4>Feyza Karanfil Erat</h4>
+                                    <h4>Yağmur Çurku</h4>
                                     <span>Full Stack Developer</span>
                                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, asperiores!</p>
                                 </div>
                                 <div className="social">
-                                <Link to="https://github.com/feyzaerat" className="github">
+                                <Link to="https://github.com/yagmurcurku" className="github">
                                     <FaGithub/>
                                 </Link>
-                                <Link to="https://www.linkedin.com/in/feyzakaranfilerat/" className="linkedin">
+                                <Link to="https://www.linkedin.com/in/yagmurcurku/" className="linkedin">
                                     <FaLinkedin/>
                                 </Link>
                                 </div>
