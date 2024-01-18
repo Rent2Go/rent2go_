@@ -1,0 +1,38 @@
+.carPage {
+  padding: 4rem 8rem;
+  .secContainer {
+    .secHeading {
+        justify-content: center;
+        padding: 2rem 0;
+    }
+    .secContent{
+        grid-template-columns: repeat(4, 1fr);
+    .filterContent{
+        grid-column-start: 1;
+        grid-column-end: 1;
+    }
+    .carContainer {
+        grid-column-start: 2;
+        grid-column-end: 5;
+      .singleCar {
+        border: 2px solid var(--primaryColor);
+        padding: 1rem 2rem;
+        margin:1rem 2rem;
+        text-align: left;
+        div {
+          grid-template-columns: repeat(2, 1fr);
+          gap:0.1rem 5rem;
+          .descriptionDiv{
+                text-align: left;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;         
+          }
+       
+        }
+      }
+    }
+}
+  }
+}

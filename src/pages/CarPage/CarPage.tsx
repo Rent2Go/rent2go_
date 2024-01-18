@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import CarService from "../../services/CarService";
 import { CarModel } from "../../models/responses/cars/GetCar";
 
-import "../../components/Trending/trending.css"
+import "./carPage.css";
 type Props = {};
 
 const CarPage = (props: Props) => {
@@ -23,31 +23,33 @@ const CarPage = (props: Props) => {
   };
 
   return (
-    <div>
+    <>
       <Navbar />
 
-      <div className="trending container">
-        <div className="secContainer">
+      <div className="carPage container">
+        <div className="secContainer ">
           <div className="secHeading flex">
-            <h3 className="secTitle">Trending Near You</h3>
-            <div className="navBtns flex">
-              
-            </div>
+            <h3 className="secTitle">Cars</h3>
+            <div className="navBtns flex"></div>
+          </div>
+          <div className="secContent grid">
+          <div className="filterContainer">
+            fdflkdldkg
           </div>
           <div className="carContainer grid">
-            <div className="row">
-              {cars.map((car: CarModel) => (
-                <div className="col-6" key={car.id}>
-                  <CarList car={car} /> {""}
-                </div>
-              ))}
-            </div>
+            {cars.map((car: CarModel) => (
+              <div className="singleCar grid" key={car.id}>
+                <CarList car={car} /> {""}
+              </div>
+            ))}
           </div>
+          </div>
+         
         </div>
       </div>
 
       <Footer />
-    </div>
+    </>
   );
 };
 
