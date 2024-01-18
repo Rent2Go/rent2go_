@@ -20,7 +20,7 @@ const OurTeamPage = (props: Props) => {
                 <div className="container">
 
                     <div className="section-title">
-                        <h2>Team</h2>
+                        <h2>Our Team</h2>
                         <div className="underline"></div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, provident?</p>
                     </div>
