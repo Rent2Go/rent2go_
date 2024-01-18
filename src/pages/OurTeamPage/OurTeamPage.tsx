@@ -72,6 +72,27 @@ const OurTeamPage = (props: Props) => {
                                     <img src={feyzaImg}className="img-fluid" alt ="team1"/>
                                 </div>
                                 <div className="member-info">
+                                    <h4>Şeyhmus Erol</h4>
+                                    <span>Full Stack Developer</span>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, asperiores!</p>
+                                </div>
+                                <div className="social">
+                                <Link to="https://github.com/ShmsErl" className="github">
+                                    <FaGithub/>
+                                </Link>
+                                <Link to="https://www.linkedin.com/in/seyhmus-erol/" className="linkedin">
+                                    <FaLinkedin/>
+                                </Link>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-6 mt-4">
+                            <div className="member d-flex align-items-start">
+                                <div className="teampic">
+                                    <img src={feyzaImg}className="img-fluid" alt ="team1"/>
+                                </div>
+                                <div className="member-info">
                                     <h4>Yağmur Çurku</h4>
                                     <span>Full Stack Developer</span>
                                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, asperiores!</p>
@@ -86,8 +107,7 @@ const OurTeamPage = (props: Props) => {
                                 </div>
                             </div>
                         </div>
-
-                        
+ 
 
                     </div>
 
