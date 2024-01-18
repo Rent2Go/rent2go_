@@ -55,8 +55,8 @@ const Navbar = (props: Props) => {
               </Link>
             </li>
             <li onClick={removeNavbar} className="listItem">
-              <Link to="/cars" className="link">
-                About Us
+              <Link to="/our-team" className="link">
+                Our Team
               </Link>
             </li>
             <li onClick={removeNavbar} className="listItem">
