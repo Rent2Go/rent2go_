@@ -69,7 +69,7 @@ const OurTeamPage = (props: Props) => {
                         <div className="col-lg-6 mt-4">
                             <div className="member d-flex align-items-start">
                                 <div className="teampic">
-                                    <img src={feyzaImg}className="img-fluid" alt ="team1"/>
+                                    <img src={seyhmusImg}className="img-fluid" alt ="team1"/>
                                 </div>
                                 <div className="member-info">
                                     <h4>Şeyhmus Erol</h4>
@@ -90,7 +90,7 @@ const OurTeamPage = (props: Props) => {
                         <div className="col-lg-6 mt-4">
                             <div className="member d-flex align-items-start">
                                 <div className="teampic">
-                                    <img src={feyzaImg}className="img-fluid" alt ="team1"/>
+                                    <img src={yagmurImg}className="img-fluid" alt ="team1"/>
                                 </div>
                                 <div className="member-info">
                                     <h4>Yağmur Çurku</h4>
