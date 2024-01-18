@@ -6,7 +6,7 @@ import yagmurImg from "../../assets/img/userImages/yagmur.jpg";
 import seyhmusImg from "../../assets/img/userImages/seyhmus.jpeg";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import "./ourTeamPage.css"
+import "./ourteampage.css"
 
 type Props = {};
 
