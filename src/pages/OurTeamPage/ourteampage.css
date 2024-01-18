@@ -10,13 +10,14 @@
 .team .member {
     position: relative;
     padding: 30px;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.10), 0 3px 6px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     background: #fff;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 .team .member:hover{
     transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 .team .member:hover .teampic img{
     transform: scale(1.2);
