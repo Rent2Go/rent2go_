@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .ourteam{
-    padding-top: 170px;
+    padding-top: 130px;
 }
 
 .team .member {
@@ -26,7 +26,7 @@
     font-weight: 700;
     margin-bottom: 5px;
     font-size: 20px;
-    color: tomato;
+    color: var(--primaryColor);
 }
 .team .member span{
     display: block;
@@ -34,6 +34,7 @@
     padding-bottom: 10px;
     position: relative;
     font-weight: 500;
+    color: var(--secondaryColor);
 }
 .team .member span::after{
     content: "";
@@ -41,7 +42,7 @@
     display: block;
     width: 50px;
     height: 2px;
-    background: black;
+    background: var(--primaryColor);
     bottom: 0;
     left: 0;
 }
@@ -61,18 +62,18 @@
     justify-content: center;
     width: 32px;
     height: 32px;
-    background: #eff2f8;
+    background: var(--primaryColor);
 }
 .team .member .social a i{
-    color: tomato;
+    color: var(--whiteColor);
     font-size: 16px;
     margin: 0 2px;
 }
 .team .member .social a:hover{
-    background: tomato;
+    background: var(--whiteColor);
 }
 .team .member .social a:hover i{
-    color: white;
+    color: var(--primaryColor);
 }
 .team .member .social a+a{
     margin-left: 8px;
@@ -98,7 +99,7 @@ section{
     margin-bottom: 20px;
     padding-bottom: 20px;
     position: relative;
-    color: tomato;
+    color: var(--primaryColor);
 }
 .section-title p{
     margin-top: 20px;
