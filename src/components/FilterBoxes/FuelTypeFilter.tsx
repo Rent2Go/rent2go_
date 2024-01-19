@@ -7,13 +7,11 @@ const FuelTypeFilter = (props: Props) => {
   return (
     <div className="filterRow">
     <div className="rowHead">
-      <h6>Body Type</h6>
+      <h6>Fuel Type</h6>
     </div>
     <div className="checkBoxRow">
-      <CFormCheck id="flexCheckDefault" label="Hatchback" />
-      <CFormCheck id="flexCheckDefault" label="Sedan" />
-      <CFormCheck id="flexCheckDefault" label="Suv" />
-      <CFormCheck id="flexCheckDefault" label="Coupe" />
+      <CFormCheck id="flexCheckDefault" label="Gasoline" />
+      <CFormCheck id="flexCheckDefault" label="Diesel" />
     </div>
   </div>
   )

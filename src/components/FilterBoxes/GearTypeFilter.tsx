@@ -7,13 +7,12 @@ const GearTypeFilter = (props: Props) => {
   return (
     <div className="filterRow">
     <div className="rowHead">
-      <h6>Body Type</h6>
+      <h6>Gear Type</h6>
     </div>
     <div className="checkBoxRow">
-      <CFormCheck id="flexCheckDefault" label="Hatchback" />
-      <CFormCheck id="flexCheckDefault" label="Sedan" />
-      <CFormCheck id="flexCheckDefault" label="Suv" />
-      <CFormCheck id="flexCheckDefault" label="Coupe" />
+      <CFormCheck id="flexCheckDefault" label="Manuel" />
+      <CFormCheck id="flexCheckDefault" label="Automatic" />
+      <CFormCheck id="flexCheckDefault" label="Semi Automatic" />
     </div>
   </div>
   )

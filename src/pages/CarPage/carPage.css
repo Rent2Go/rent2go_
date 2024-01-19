@@ -41,9 +41,11 @@
 }
 .carPage .secContainer .secContent .filterContainer .filter {
   flex-direction: column;
+  align-items: flex-start;
   text-align: left;
 }
 .carPage .secContainer .secContent .filterContainer .filter .filterRow {
+  min-width: 250px;
   background: var(--pureWhiteColor);
   border-radius: 0.5rem;
   padding: 2rem 2rem;
