@@ -4,8 +4,55 @@
 
 .contact-form {
     padding: 0 1.5rem;
-    text-align: center;
-    display: grid;
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-text);
 }
+
+
+#contact-container {
+    width: 1200px;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+    background-color: var(--color-blog);
+    .contact-info{
+        background-color: var(--color-subtext);
+        border-radius: 15px;
+        flex: 0 1 40%;
+        padding: 40px;
+        color: var(--pureWhiteColor);
+        display: flex;
+        flex-direction: column;
+        h4{
+            font-size: 2rem;
+            font-weight: 500;
+            margin: 0;
+        }
+        p{
+            font-size: 1.5rem;
+            color: var(--pureWhiteColor);
+            font-weight: 300;
+        }
+        .icon-text{
+            display: flex;
+            justify-content: flex-start;
+            align-items: baseline;
+            .icon{
+                flex: 0 0 20px;
+                font-size: 1.8rem;
+                margin-right: 1rem;
+            }
+            span{
+                font-size: 1.3rem;
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+
 
