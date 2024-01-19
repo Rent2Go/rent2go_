@@ -22,10 +22,18 @@
 }
 /**select box**/
 
+.shadow-rounded-box {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border-radius: 0.5rem;
+  background-color: var(--pureWhiteColor);
+}
 .carPage {
   padding: 4rem 8rem;
   .secContainer {
+    justify-content: center;
     .secHeading {
+      margin: 2rem 0;
       justify-content: center;
       padding: 2rem 0;
     }
@@ -39,14 +47,10 @@
           flex-direction: column;
           align-items: flex-start;
           text-align: left;
-         .filterRow {
-            min-width:250px;
-          background: var(--pureWhiteColor);
-          border-radius: 0.5rem;
-          padding: 2rem 2rem;
-          margin: 1rem 1rem;
-          box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-            rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+          .filterRow {
+            min-width: 250px;
+            padding: 2rem 2rem;
+            margin: 1rem 1rem;
             .rowHead {
               margin-bottom: 1rem;
               h6 {
@@ -60,21 +64,94 @@
         grid-column-start: 2;
         grid-column-end: 5;
         .singleCar {
-          border: 2px solid var(--primaryColor);
+          background: var(--pureWhiteColor);
+          border-radius: 0.5rem;
           padding: 1rem 2rem;
           margin: 1rem 2rem;
           text-align: left;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+            rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
           div {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.1rem 5rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.1rem 3.5rem;
+            align-items: flex-end;
+            justify-content: flex-end;
+            .imgDiv {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 0;
+              border-radius: 0.5rem;
+              border: 1px dashed grey;
+              width: 350px;
+              height: 170px;
+              img {
+                object-fit: contain;
+                width: 100%;
+                max-width: 350px;
+              }
+            }
+            .carLabel {
+              font-weight: 600;
+              color: var(--primaryColor);
+            }
             .descriptionDiv {
               text-align: left;
               display: flex;
               flex-direction: column;
               justify-content: center;
-              align-items: flex-start;
+              align-items: last baseline;
+              font-size: 16px;
+              .carTitle {
+                color: var(--blackColor);
+                font-size: 24px;
+                margin-bottom:4rem;
+              }
+              .carLabel {
+                font-weight: 600;
+                color: var(--primaryColor);
+              }
+              span {
+                color: var(--textColor);
+              }
+
+              .price_seller {
+                flex-direction: column;
+              }
+            }
+            .actionDiv {
+              display: flex;
+              flex-direction: column;
+              align-items: end;
+              justify-content: center;
+              .actionRow {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap:0;
+                span{
+                    padding-bottom: 4.5rem;
+                }
+              }
+              button {
+                background: var(--pureWhiteColor);
+                color: var(--primaryColor);
+                border:1.5px solid var(--primaryColor);
+                padding: 0.5rem 0.75rem;
+                font-weight: 500;
+                transition: 0.3s ease-in-out;
+                &:hover{
+                    background: var(--secondaryColor);
+                    color: var(--blackColor);
+                    border:1.5px solid var(--secondaryColor);
+                  }
+              }
             }
           }
+        }
+        .paginationContainer {
+          justify-content: center;
         }
       }
     }

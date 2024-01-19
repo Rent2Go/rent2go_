@@ -5,7 +5,7 @@ type Props = {}
 
 const FuelTypeFilter = (props: Props) => {
   return (
-    <div className="filterRow">
+    <div className="filterRow shadow-rounded-box">
     <div className="rowHead">
       <h6>Fuel Type</h6>
     </div>

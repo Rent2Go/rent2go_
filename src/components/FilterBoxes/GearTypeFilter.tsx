@@ -1,21 +1,21 @@
-import { CFormCheck } from '@coreui/react'
-import React from 'react'
+import { CFormCheck } from "@coreui/react";
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 const GearTypeFilter = (props: Props) => {
   return (
-    <div className="filterRow">
-    <div className="rowHead">
-      <h6>Gear Type</h6>
+    <div className="filterRow shadow-rounded-box">
+      <div className="rowHead">
+        <h6>Gear Type</h6>
+      </div>
+      <div className="checkBoxRow">
+        <CFormCheck id="flexCheckDefault" label="Manuel" />
+        <CFormCheck id="flexCheckDefault" label="Automatic" />
+        <CFormCheck id="flexCheckDefault" label="Semi Automatic" />
+      </div>
     </div>
-    <div className="checkBoxRow">
-      <CFormCheck id="flexCheckDefault" label="Manuel" />
-      <CFormCheck id="flexCheckDefault" label="Automatic" />
-      <CFormCheck id="flexCheckDefault" label="Semi Automatic" />
-    </div>
-  </div>
-  )
-}
+  );
+};
 
-export default GearTypeFilter
+export default GearTypeFilter;

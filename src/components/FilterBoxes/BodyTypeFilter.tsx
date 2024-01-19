@@ -5,7 +5,7 @@ type Props = {};
 
 const BodyTypeFilter = (props: Props) => {
   return (
-    <div className="filterRow">
+    <div className="filterRow shadow-rounded-box">
       <div className="rowHead">
         <h6>Body Type</h6>
       </div>
