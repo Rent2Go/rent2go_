@@ -1,0 +1,11 @@
+.contact {
+    padding-top: 8rem;
+}
+
+.contact-form {
+    padding: 0 1.5rem;
+    text-align: center;
+    display: grid;
+    gap: 2rem;
+}
+
