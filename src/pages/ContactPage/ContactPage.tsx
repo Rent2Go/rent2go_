@@ -3,6 +3,7 @@ import "./contactPage.css"
 import { Footer, Navbar } from "../../components";
 import { Link } from 'react-router-dom';
 import { CiMail, CiPhone, CiMapPin } from "react-icons/ci";
+import { FaLinkedin, FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
 
 
 type Props = {}
@@ -18,7 +19,7 @@ const ContactPage = (props: Props) => {
           <div id='contact-container'>
             <div className='contact-info'>
             <h4>Contact Information</h4>
-              <p>text</p>
+              <p>Fill up the form and then click send.</p>
               <div className='icon-text'>
                 <i className='icon' aria-hidden="true"><CiPhone /></i>
                 <span>(0216) 331 48 00</span>
@@ -32,8 +33,17 @@ const ContactPage = (props: Props) => {
                 <span>Kavacık, Rüzgarlıbahçe Mah. Çampınarı Sok. No:4 Smart Plaza B Blok Kat:3 34805, Beykoz,İstanbul</span>
               </div>
               <div className='social-media'>
-                <Link to="" className='icon-circle'>
-                  <i className='icon'></i>
+                <Link to="https://www.linkedin.com/company/tobeto/" target='_blank' className='icon-circle'>
+                  <i className='fa fa-linkedin'><FaLinkedin /></i>
+                </Link>
+                <Link to="https://www.instagram.com/tobeto_official/" target='_blank' className='icon-circle'>
+                  <i className='fa fa-instagram'><FaInstagram /></i>
+                </Link>
+                <Link to="https://m.facebook.com/tobetoplatform?refid=13&__tn__=%2Cg" target='_blank' className='icon-circle'>
+                  <i className='fa fa-facebook'><FaFacebook /></i>
+                </Link>
+                <Link to="https://www.youtube.com/@tobeto-platform" target='_blank' className='icon-circle'>
+                  <i className='fa fa-youtube'><FaYoutube /></i>
                 </Link>
               </div>
             </div>
