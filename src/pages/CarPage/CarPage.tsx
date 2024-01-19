@@ -15,6 +15,7 @@ import { CarModel } from "../../models/responses/cars/GetCar";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import "./carPage.css";
+import { Label } from "@syncfusion/ej2/circulargauge";
 
 type Props = {};
 
@@ -88,8 +89,10 @@ const CarPage: React.FC<Props> = (props) => {
               <FilterCard />
             </div>
             <div className="carContainer grid">
-              <div className="shadow-rounded-box">
+              <div className="shadow-rounded-box searchDiv">
+                <label htmlFor="search">Search:</label>
                 <input
+                  name="search"
                   className="searchInput"
                   type="text"
                   placeholder="Search by Color, Year, Fuel Type, BodyType, Gear Type and Engine Power. "

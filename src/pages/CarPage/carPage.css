@@ -89,12 +89,44 @@
   grid-column-start: 2;
   grid-column-end: 5;
 }
-.carPage .secContainer .secContent .carContainer .searchInput {
+.carPage .secContainer .secContent .carContainer .searchDiv {
+  margin: 1rem 2rem;
+  text-align: left;
+  padding: 0 2rem;
+  gap: 1rem;
+}
+.carPage .secContainer .secContent .carContainer .searchDiv label {
+  font-weight: 500;
+  color: var(--textColor);
+  margin-right: 0.55rem;
+}
+.carPage .secContainer .secContent .carContainer .searchDiv .searchInput {
   text-align: center;
-  width: 80%;
+  width: 90%;
   border: none;
+  border-radius: 0.2rem;
+  outline: none;
+  background: var(--whiteColor);
   margin: 1rem 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.75rem;
+}
+.carPage .secContainer .secContent .carContainer .searchDiv .searchInput:focus {
+  border: none;
+  outline: none;
+  color: var(--primaryColor);
+  background: var(--whiteColor);
+}
+.carPage .secContainer .secContent .carContainer .searchDiv .searchInput::-moz-placeholder {
+  letter-spacing: 0.05rem;
+  text-align: left;
+  font-size: 12px;
+  color: var(--placeHolderColor);
+}
+.carPage .secContainer .secContent .carContainer .searchDiv .searchInput::placeholder {
+  letter-spacing: 0.05rem;
+  text-align: left;
+  font-size: 12px;
+  color: var(--placeHolderColor);
 }
 .carPage .secContainer .secContent .carContainer .singleCar {
   background: var(--pureWhiteColor);

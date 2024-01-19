@@ -84,13 +84,44 @@
       .carContainer {
         grid-column-start: 2;
         grid-column-end: 5;
-        .searchInput {
-          text-align: center;
-          width: 80%;
-          border: none;
-          margin: 1rem 0.5rem;
-          padding: 0.5rem 1rem;
-      }
+        .searchDiv{
+          margin:1rem 2rem;
+          text-align: left;
+          padding: 0 2rem;
+          gap:1rem;
+          label{
+            font-weight: 500;
+            color: var(--textColor);
+            margin-right: 0.55rem;
+          }
+          .searchInput {
+            text-align: center;
+            width: 90%;
+            border: none;
+            border-radius: 0.2rem;
+            outline: none;
+            background: var(--whiteColor);
+            margin: 1rem 0.5rem;
+            padding: 0.5rem 0.75rem; 
+            
+            &:focus{
+              border:none;
+              outline:none;
+              color: var(--primaryColor);
+              background: var(--whiteColor);
+            }
+            &::placeholder{
+              letter-spacing: 0.05rem;
+              text-align: left;
+              font-size:12px;
+              color: var(--placeHolderColor);
+              
+            }
+           
+            
+        }
+        }
+    
         .singleCar {
           background: var(--pureWhiteColor);
           border-radius: 0.5rem;
