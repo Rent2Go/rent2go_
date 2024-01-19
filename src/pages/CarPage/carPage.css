@@ -46,6 +46,20 @@
   margin: 2rem 0;
   justify-content: center;
   padding: 2rem 0;
+  gap: 2rem;
+}
+.carPage .secContainer .secHeading .btnPrimary {
+  background: var(--primaryColor);
+  color: var(--pureWhiteColor);
+  border: none;
+  padding: 0.5rem 0.75rem;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+}
+.carPage .secContainer .secHeading .btnPrimary:hover {
+  background: var(--secondaryColor);
+  color: var(--blackColor);
+  border: 1.5px solid var(--secondaryColor);
 }
 .carPage .secContainer .secContent {
   grid-template-columns: repeat(4, 1fr);
@@ -74,6 +88,13 @@
 .carPage .secContainer .secContent .carContainer {
   grid-column-start: 2;
   grid-column-end: 5;
+}
+.carPage .secContainer .secContent .carContainer .searchInput {
+  text-align: center;
+  width: 80%;
+  border: none;
+  margin: 1rem 0.5rem;
+  padding: 0.5rem 1rem;
 }
 .carPage .secContainer .secContent .carContainer .singleCar {
   background: var(--pureWhiteColor);

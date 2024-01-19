@@ -7,6 +7,7 @@
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.15.5",
+    "@mui/x-data-grid": "^6.19.1",
     "@mui/x-date-pickers": "^6.19.0",
     "@reduxjs/toolkit": "^2.0.1",
     "@syncfusion/ej2": "^24.1.46",
