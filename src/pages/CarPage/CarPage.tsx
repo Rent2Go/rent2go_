@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { CarList, Navbar, Footer, FilterCard } from "../../components";
+import {
+  CarList,
+  Navbar,
+  Footer,
+  FilterCard,
+  GetDateFilter,
+} from "../../components";
 import { useSelector } from "react-redux";
 import CarService from "../../services/CarService";
 import { CarModel } from "../../models/responses/cars/GetCar";
@@ -30,7 +36,7 @@ const CarPage = (props: Props) => {
       <div className="carPage container">
         <div className="secContainer ">
           <div className="secHeading flex shadow-rounded-box">
-            <h3 className="secTitle">Cars (date filter & orderBy will be replace) </h3>
+            <GetDateFilter />
             <div className="navBtns flex"></div>
           </div>
           <div className="secContent grid">
