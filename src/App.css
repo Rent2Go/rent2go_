@@ -14,18 +14,18 @@ body {
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-  width: 12px;
+  width: 5px;
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--whiteColor);
+  background: transparent;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--pureWhiteColor);
+  background-color: var(--primaryColor);
   border-radius: 2px;
-  border: 0px solid var(--secondaryColor);
-  box-shadow: -3px 7px 16px -4px rgba(140, 131, 114, 0.83);
+  border:transparent;
+  box-shadow: -3px 7px 16px -4px rgba(67, 87, 100, 0.83);
 }
 
 li {
