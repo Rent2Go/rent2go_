@@ -20,9 +20,9 @@ const CarCards = (props: Props) => {
             <img src={props.car.imageUrl} alt="carImage" />
           </div>
           <div className="descriptionDiv">
-            <h5 className="carTitle">
-              {props.car.modelName} {props.car.year}{" "}
-            </h5>
+            <p className="carTitle">
+            {props.car.model.brandName} {props.car.model.name} {props.car.year}
+            </p>
             <div>
               <span className="carLabel">
                 <BiTachometer />{" "}

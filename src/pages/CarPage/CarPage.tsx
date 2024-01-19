@@ -1,4 +1,3 @@
-// CarPage.tsx
 import React, { useEffect, useState } from "react";
 import {
   CarList,
@@ -15,7 +14,6 @@ import { CarModel } from "../../models/responses/cars/GetCar";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import "./carPage.css";
-import { Label } from "@syncfusion/ej2/circulargauge";
 
 type Props = {};
 
@@ -24,6 +22,8 @@ const CarPage: React.FC<Props> = (props) => {
   const [filteredCars, setFilteredCars] = useState<CarModel[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [isInitialLoad, setIsInitialLoad] = useState<boolean>(true);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const itemsPerPage = 5;
 
   const carsState = useSelector((state: any) => state.car);
 
@@ -50,7 +50,7 @@ const CarPage: React.FC<Props> = (props) => {
     if (!isInitialLoad) {
       filterCars();
     }
-  }, [searchTerm, isInitialLoad]);
+  }, [searchTerm, isInitialLoad, currentPage]);
 
   const filterCars = () => {
     let filtered = cars;
@@ -59,6 +59,10 @@ const CarPage: React.FC<Props> = (props) => {
       filtered = filtered.filter(
         (car) =>
           car.colorName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          car.model.brandName
+            .toLowerCase()
+            .includes(searchTerm.toLowerCase()) ||
+          car.model.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
           car.fuelType.toLowerCase().includes(searchTerm.toLowerCase()) ||
           car.gearType.toLowerCase().includes(searchTerm.toLowerCase()) ||
           car.enginePower.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -67,10 +71,17 @@ const CarPage: React.FC<Props> = (props) => {
       );
     }
 
-    setFilteredCars(filtered.length > 0 ? filtered : cars);
-    console.log("Filtered Cars:", filtered);
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = filtered.slice(indexOfFirstItem, indexOfLastItem);
+
+    setFilteredCars(currentItems);
+    console.log("Filtered Cars:", currentItems);
   };
 
+  const paginate = (event: React.ChangeEvent<unknown>, value: number) => {
+    setCurrentPage(value);
+  };
   return (
     <>
       <Navbar />
@@ -79,7 +90,10 @@ const CarPage: React.FC<Props> = (props) => {
         <div className="secContainer ">
           <div className="mt-5 secHeading flex shadow-rounded-box">
             <GetDateFilter />
-            <button className="btn text btnPrimary" onClick={filterCars}>
+            <button
+              className="btn text btnPrimary"
+              onClick={() => filterCars()}
+            >
               <FaSearch /> Search
             </button>
             <div className="navBtns flex"></div>
@@ -95,7 +109,7 @@ const CarPage: React.FC<Props> = (props) => {
                   name="search"
                   className="searchInput"
                   type="text"
-                  placeholder="Search by Color, Year, Fuel Type, BodyType, Gear Type and Engine Power. "
+                  placeholder="Search by Model, Brand, Color, Year, Fuel Type, Body Type and Gear Type...."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
@@ -108,7 +122,11 @@ const CarPage: React.FC<Props> = (props) => {
               ))}
               <div className="paginationContainer flex justify-flex-end">
                 <Stack spacing={5}>
-                  <Pagination count={10} color="standard" />
+                  <Pagination
+                    count={Math.ceil(cars.length / itemsPerPage)}
+                    color="standard"
+                    onChange={paginate}
+                  />
                 </Stack>
               </div>
             </div>

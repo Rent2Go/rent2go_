@@ -5,11 +5,15 @@ export interface CarModel{
 	dailyPrice: number;
 	plate: string;
 	imageUrl: string;
-	modelName: string;
 	colorName: string;
 	bodyType: string;
 	fuelType: string;
 	gearType: string;
 	cylinderCount: string;
 	enginePower: string;
+	model:{
+		brandName:string,
+		name:string
+	}
+	
 }
