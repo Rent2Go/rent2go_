@@ -21,7 +21,8 @@ const CarCards = (props: Props) => {
           </div>
           <div className="descriptionDiv">
             <p className="carTitle">
-            {props.car.model.brandName} {props.car.model.name} {props.car.year}
+              {props.car.model.brandName} {props.car.model.name}{" "}
+              {props.car.year}
             </p>
             <div>
               <span className="carLabel">
@@ -32,7 +33,7 @@ const CarCards = (props: Props) => {
 
             <div>
               <span className="carLabel">
-                <PiEngine /> {" "}
+                <PiEngine />{" "}
               </span>
               <span className="AWD">
                 {props.car.enginePower} / {props.car.cylinderCount}

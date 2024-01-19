@@ -100,7 +100,7 @@ const CarPage: React.FC<Props> = (props) => {
           </div>
           <div className="secContent grid">
             <div className="filterContainer">
-              <FilterCard />
+              <FilterCard cars={cars} />
             </div>
             <div className="carContainer grid">
               <div className="shadow-rounded-box searchDiv">

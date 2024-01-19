@@ -1,19 +1,27 @@
 import React from "react";
 import { CFormCheck } from "@coreui/react";
+import { CarModel } from "../../models/responses/cars/GetCar";
 
-type Props = {};
+type Props = {
+  cars: CarModel[];
+};
 
 const BodyTypeFilter = (props: Props) => {
+  const allBodyTypes = props.cars.map((car) => car.bodyType);
+  const uniqueBodyTypes = Array.from(new Set(allBodyTypes));
   return (
     <div className="filterRow shadow-rounded-box">
       <div className="rowHead">
         <h6>Body Type</h6>
       </div>
       <div className="checkBoxRow">
-        <CFormCheck id="flexCheckDefault" label="Hatchback" />
-        <CFormCheck id="flexCheckDefault" label="Sedan" />
-        <CFormCheck id="flexCheckDefault" label="Suv" />
-        <CFormCheck id="flexCheckDefault" label="Coupe" />
+        {uniqueBodyTypes.map((bodyType) => (
+          <CFormCheck
+            key={bodyType}
+            id={`flexCheckDefault-${bodyType}`}
+            label={bodyType}
+          />
+        ))}
       </div>
     </div>
   );
