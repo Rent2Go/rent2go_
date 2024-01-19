@@ -102,7 +102,7 @@
 }
 .carPage .secContainer .secContent .carContainer .searchDiv .searchInput {
   text-align: center;
-  width: 90%;
+  width: 85%;
   border: none;
   border-radius: 0.2rem;
   outline: none;
@@ -201,15 +201,16 @@
 .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv .actionRow span {
   padding-bottom: 4.5rem;
 }
-.carPage .secContainer .secContent .carContainer .singleCar div .actionDiv button {
+.carPage .secContainer .secContent .carContainer .singleCar div .actionDiv a, .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv button {
   background: var(--pureWhiteColor);
   color: var(--primaryColor);
   border: 1.5px solid var(--primaryColor);
   padding: 0.5rem 0.75rem;
   font-weight: 500;
+  font-size: 11.5px;
   transition: 0.3s ease-in-out;
 }
-.carPage .secContainer .secContent .carContainer .singleCar div .actionDiv button:hover {
+.carPage .secContainer .secContent .carContainer .singleCar div .actionDiv a:hover, .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv button:hover {
   background: var(--secondaryColor);
   color: var(--blackColor);
   border: 1.5px solid var(--secondaryColor);

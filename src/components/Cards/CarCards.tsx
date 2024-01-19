@@ -6,6 +6,7 @@ import { IoIosColorPalette } from "react-icons/io";
 import { PiEngine } from "react-icons/pi";
 
 import "../../pages/CarPage/carPage.css";
+import { Link } from "react-router-dom";
 
 type Props = {
   car: CarModel;
@@ -56,7 +57,9 @@ const CarCards = (props: Props) => {
               <span className="price">{props.car.dailyPrice}</span>
             </div>
             <div className="actionRow">
-              <button className="btn text btnPrimary">Make Reservation</button>
+              <Link to="/reservation" className="btn text btnPrimary">
+                Make Reservation
+              </Link>
             </div>
           </div>
         </div>
