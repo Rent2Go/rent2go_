@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@coreui/react": "^4.11.1",
     "@reduxjs/toolkit": "^2.0.1",
+    "@syncfusion/ej2": "^24.1.46",
+    "@syncfusion/ej2-react-buttons": "^24.1.46",
+    "@syncfusion/ej2-react-lists": "^24.1.46",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",

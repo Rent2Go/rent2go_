@@ -1,38 +1,81 @@
+/**select box**/
+.form-check-input {
+  width: 1.25em;
+  height: 1.25em;
+  margin-right: 0.5em;
+  margin-top: 0.1em;
+  background-color: var(--bs-form-check-bg);
+  border: 2px solid var(--textColor);
+}
+.form-check-input:checked {
+  background-color: var(--primaryColor);
+  border-color: var(--blackColor);
+}
+.form-check-input:focus {
+  border-color: var(--secondaryColor);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(36, 1, 27, 0.25);
+}
+
+.form-check-label {
+  color: var(--blackColor);
+}
+/**select box**/
+
 .carPage {
   padding: 4rem 8rem;
   .secContainer {
     .secHeading {
-        justify-content: center;
-        padding: 2rem 0;
+      justify-content: center;
+      padding: 2rem 0;
     }
-    .secContent{
-        grid-template-columns: repeat(4, 1fr);
-    .filterContent{
+    .secContent {
+      grid-template-columns: repeat(4, 1fr);
+      align-items: flex-start;
+      .filterContainer {
         grid-column-start: 1;
         grid-column-end: 1;
-    }
-    .carContainer {
+        .filter {
+          flex-direction: column;
+          text-align: left;
+          
+          .filterRow {
+            background: var(--pureWhiteColor);
+          border-radius: 0.5rem;
+          padding: 2rem 2rem;
+          margin: 1rem 1rem;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+            rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            .rowHead {
+              margin-bottom: 1rem;
+              h6 {
+                color: var(--blackColor);
+              }
+            }
+          }
+        }
+      }
+      .carContainer {
         grid-column-start: 2;
         grid-column-end: 5;
-      .singleCar {
-        border: 2px solid var(--primaryColor);
-        padding: 1rem 2rem;
-        margin:1rem 2rem;
-        text-align: left;
-        div {
-          grid-template-columns: repeat(2, 1fr);
-          gap:0.1rem 5rem;
-          .descriptionDiv{
-                text-align: left;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: flex-start;         
+        .singleCar {
+          border: 2px solid var(--primaryColor);
+          padding: 1rem 2rem;
+          margin: 1rem 2rem;
+          text-align: left;
+          div {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.1rem 5rem;
+            .descriptionDiv {
+              text-align: left;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: flex-start;
+            }
           }
-       
         }
       }
     }
-}
   }
 }

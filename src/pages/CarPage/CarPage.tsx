@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { CarList, Navbar, Footer } from "../../components";
+import { CarList, Navbar, Footer, FilterCard } from "../../components";
 import { useSelector } from "react-redux";
 import CarService from "../../services/CarService";
 import { CarModel } from "../../models/responses/cars/GetCar";
@@ -34,7 +34,7 @@ const CarPage = (props: Props) => {
           </div>
           <div className="secContent grid">
           <div className="filterContainer">
-            fdflkdldkg
+            <FilterCard/>
           </div>
           <div className="carContainer grid">
             {cars.map((car: CarModel) => (
