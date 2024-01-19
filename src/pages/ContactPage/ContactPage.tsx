@@ -15,7 +15,7 @@ const ContactPage = (props: Props) => {
       <div className='contact'>
         <div className='contact-form'>
           <h1>Contact Us</h1>
-          <p>Lorem ipsum dolor sit amet.</p>
+          <p className='sub-title'>Lorem ipsum dolor sit amet.</p>
           <div id='contact-container'>
             <div className='contact-info'>
             <h4>Contact Information</h4>

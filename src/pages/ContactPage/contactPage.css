@@ -11,6 +11,16 @@
     background-color: var(--color-text);
 }
 
+h1{
+    text-align: center;
+    color: var(--pureWhiteColor);
+    font-size: 3rem;
+}
+p.sub-title{
+    text-align: center;
+    color: var(--pureWhiteColor);
+    font-size: 1.5rem;
+}
 
 #contact-container {
     width: 1200px;
@@ -66,6 +76,7 @@
                 height: 40px;
                 border-radius: 50%;
                 transition: .2s all ease-in-out;
+                margin-top: 2rem;
                 &:hover{
                     background-color: var(--pureWhiteColor);
                 }
