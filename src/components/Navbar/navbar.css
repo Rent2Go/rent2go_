@@ -5,7 +5,7 @@
   justify-content: space-between;
   width: 100%;
   padding: 1.5rem 2rem;
-  box-shadow: 0 4px 6px rgb(237, 237, 237);
+  box-shadow: 0 2px 5px rgb(119, 113, 113);
   z-index: 1000;
 }
 
@@ -143,7 +143,6 @@
 .addBg {
   justify-content: space-around;
   background: var(--pureWhiteColor);
-  box-shadow: none;
   opacity: 95%;
 }
 
@@ -211,7 +210,7 @@
     font-size: 18px;
   }
   .addBg {
-    padding: 0rem 7rem 0;
+    padding: 0.5rem 7rem 0;
   }
 }
 @media screen and (min-width: 1400px) {
