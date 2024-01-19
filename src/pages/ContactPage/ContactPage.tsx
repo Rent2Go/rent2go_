@@ -1,10 +1,14 @@
 import React from 'react'
 import "./contactPage.css"
+import { Footer, Navbar } from "../../components";
 type Props = {}
 
 const ContactPage = (props: Props) => {
   return (
-    <div>ContactPage</div>
+    <>
+      <Navbar />
+      <Footer />
+    </>
   )
 }
 
