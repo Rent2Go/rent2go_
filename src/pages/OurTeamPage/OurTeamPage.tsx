@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Footer } from "../../components";
 import sonerImg from "../../assets/img/userImages/sonerteampic.png";
-import feyzaImg from "../../assets/img/userImages/feyza.jpeg";
+import feyzaImg from "../../assets/img/userImages/feyza.jpg";
 import yagmurImg from "../../assets/img/userImages/yagmur.jpg";
 import seyhmusImg from "../../assets/img/userImages/seyhmus.jpeg";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
