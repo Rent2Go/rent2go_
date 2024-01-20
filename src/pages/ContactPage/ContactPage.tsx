@@ -4,6 +4,7 @@ import { Footer, Navbar } from "../../components";
 import { Link } from 'react-router-dom';
 import { CiMail, CiPhone, CiMapPin } from "react-icons/ci";
 import { FaLinkedin, FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
+import { Button } from 'react-bootstrap';
 
 
 type Props = {}
@@ -72,6 +73,11 @@ const ContactPage = (props: Props) => {
                 <div className='form-group'>
                   <label>Message</label>
                   <textarea></textarea>
+                </div>
+              </div>
+              <div className='col-2'>
+                <div className='form-group right'>
+                  <Button className='primary'>Send Message</Button>
                 </div>
               </div>
             </form>
