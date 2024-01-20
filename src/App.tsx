@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { CarPage, HomePage, Login, Register, BrandPage, OurTeamPage, ContactPage, PrivacyPolicy, ReservationPage } from "./pages";
 
 import "./App.css";
-
+import { RentalModel } from "./models/responses/rentals/GetRental";
 function App() {
   return (
     <>
@@ -17,11 +17,9 @@ function App() {
           <Route path="/brands" element={<BrandPage />} />
           <Route path="/our-team" element={<OurTeamPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/reservation" element={<ReservationPage />} />
+          <Route path="/reservation" element={<ReservationPage rental={{} as RentalModel} rentals={[]} />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
-
-  
       </main>
     </>
   );

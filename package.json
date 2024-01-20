@@ -2,6 +2,7 @@
   "name": "rent2go",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://api.rentogo.com.tr",
   "dependencies": {
     "@coreui/react": "^4.11.1",
     "@emotion/react": "^11.11.3",
