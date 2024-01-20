@@ -57,7 +57,7 @@ const CarCards = (props: Props) => {
               <span className="price">{props.car.dailyPrice}</span>
             </div>
             <div className="actionRow">
-              <Link to="/reservation" className="btn text btnPrimary">
+              <Link to={`/reservation/${props.car.id}`} className="btn text btnPrimary">
                 Make Reservation
               </Link>
             </div>

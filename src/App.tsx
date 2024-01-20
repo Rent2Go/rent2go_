@@ -17,7 +17,7 @@ function App() {
           <Route path="/brands" element={<BrandPage />} />
           <Route path="/our-team" element={<OurTeamPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/reservation" element={<ReservationPage rental={{} as RentalModel} rentals={[]} />} />
+          <Route path="/reservation/:id" element={<ReservationPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
       </main>

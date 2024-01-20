@@ -12,6 +12,7 @@ export interface CarModel{
 	cylinderCount: string;
 	enginePower: string;
 	model:{
+		id:number,
 		brandName:string,
 		name:string
 	}

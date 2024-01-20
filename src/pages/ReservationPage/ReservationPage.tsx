@@ -1,44 +1,57 @@
 import React, { useEffect, useState } from "react";
-import { RentalModel } from "../../models/responses/rentals/GetRental";
 import RentalService from "../../services/RentalService";
-import { useSelector } from "react-redux";
+import { Navbar, Footer } from "../../components";
 
-type Props = { rental: RentalModel; rentals: RentalModel[]; };
+import "./reservationPage.css";
+import { useParams } from "react-router-dom";
+import { CarModel } from "../../models/responses/cars/GetCar";
+import CarService from "../../services/CarService";
+
+type Props = {};
 
 const ReservationPage: React.FC<Props> = (props) => {
-  const [rentals, setRentals] = useState<RentalModel[]>([]);
-  const rentalState = useSelector((state: any) => state.rentals);
+  const params = useParams<{ id: string }>();
+  const [rentals, setRentals] = useState<CarModel | undefined>();
 
-  const getRentals = async () => {
+  useEffect(() => {
+    if (params.id) {
+      getRentals(params.id);
+    }
+  }, [params.id]);
+
+  const getRentals = async (id: string) => {
     try {
-      const rentalService = new RentalService();
-      const response = await rentalService.getAll();
+      const rentalService = new CarService();
+      const response = await rentalService.getById(parseInt(id));
       setRentals(response.data.data);
-      console.log("setRentals", response.data.data);
+      console.log("setRentals : ",response);
     } catch (error) {
       console.error("Error fetching rentals:", error);
     }
   };
 
-  useEffect(() => {
-    async function fetchData() {
-      await getRentals();
-    }
-    fetchData();
-    console.log(fetchData);
-  }, []);
-
   return (
-    <div>
-      <h2>Rentals:</h2>
-      <ul>
-        {rentals.map((rental) => (
-          <li key={rental.id} >
-            Car ID: {rental.carId}, Rental ID: {rental.id}, Rental Name: {rental.customerId}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <Navbar />
+      <div className="reservation ">
+        <div className="secContainer">
+          <div className="secHeading">
+            <h5>Reservation</h5>
+          </div>
+          <div className="secContent">
+            <img src={rentals?.imageUrl} alt="carImage"/>
+            <ul>
+              
+                <li key={rentals?.id}>Brand: {rentals?.model?.brandName}, Car ID: {rentals?.id}</li>
+                <li>Model: {rentals?.model?.name}   </li>
+               
+           
+            </ul>
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </>
   );
 };
 
