@@ -16,18 +16,17 @@ const ContactPage = (props: Props) => {
       <div className='contact'>
         <div className='contact-form'>
           <h1>Contact Us</h1>
-          <p className='sub-title'>Lorem ipsum dolor sit amet.</p>
           <div id='contact-container'>
             <div className='contact-info'>
             <h4>Contact Information</h4>
-              <p>Fill up the form and then click send.</p>
+              <p>Call us, send us an e-mail or fill out the form and send a message.</p>
               <div className='icon-text'>
                 <i className='icon' aria-hidden="true"><CiPhone /></i>
-                <span>(0216) 331 48 00</span>
+                <Link to="tel:+902163314800" className='link2'>(0216) 331 48 00</Link>
               </div>
               <div className='icon-text'>
                 <i className='icon' aria-hidden="true"><CiMail /></i>
-                <span>info@tobeto.com</span>
+                <Link to="mailto:support@rentogo.com" className='link2'>info@tobeto.com</Link>
               </div>
               <div className='icon-text'>
                 <i className='icon' aria-hidden="true"><CiMapPin /></i>

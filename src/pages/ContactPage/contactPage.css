@@ -11,7 +11,7 @@
     background-color: var(--color-text);
     height: 100vh;
     width: 100%;
-    background-image: url(https://images.pexels.com/photos/4166677/pexels-photo-4166677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-image: url(https://images.pexels.com/photos/4166677/pexels-photo-4166677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
     background-size: cover;
 }
 
@@ -19,7 +19,8 @@ h1{
     text-align: center;
     color: var(--pureWhiteColor);
     font-size: 3rem;
-    text-shadow: 5px 2px 10px var(--pureWhiteColor);
+    text-shadow: 5px 2px 6px var(--primaryColor);
+    margin-bottom: 1.5rem;
 }
 p.sub-title{
     text-align: center;
@@ -56,7 +57,7 @@ p.sub-title{
             font-size: 1.1rem;
             color: var(--pureWhiteColor);
             font-weight: 300;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
         .icon-text{
             display: flex;
@@ -72,10 +73,18 @@ p.sub-title{
                 font-size: 1.2rem;
                 font-weight: 300;
             }
+            .link2{
+                font-size: 1.2rem;
+                font-weight: 300;
+                color: aliceblue;
+                &:hover{
+                    transform: scale(1.2);
+                }
+            }
         }
         .social-media{
             display: flex;
-            width: 70%;
+            width: 100%;
             justify-content: space-between;
             .icon-circle{
                 flex: 0 1 40px;
@@ -85,7 +94,7 @@ p.sub-title{
                 height: 40px;
                 border-radius: 50%;
                 transition: .1s all ease-in-out;
-                margin-top: 2rem;
+                margin-top: 1.5rem;
                 color: var(--pureWhiteColor);
                 &:hover{
                     color: var(--primaryColor);
