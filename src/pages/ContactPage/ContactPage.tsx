@@ -26,7 +26,7 @@ const ContactPage = (props: Props) => {
               </div>
               <div className='icon-text'>
                 <i className='icon' aria-hidden="true"><CiMail /></i>
-                <Link to="mailto:support@rentogo.com" className='link2'>info@tobeto.com</Link>
+                <Link to="mailto:support@rentogo.com" className='link2'>support@rentogo.com</Link>
               </div>
               <div className='icon-text'>
                 <i className='icon' aria-hidden="true"><CiMapPin /></i>
