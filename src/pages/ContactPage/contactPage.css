@@ -198,6 +198,10 @@ p.sub-title{
             }
         }
         .contact-form{
+            h1{
+                font-size: 2.2rem;
+                margin-bottom: 3.2rem;
+            }
             #contact-container{
                 width: 470px;
                 padding: 5px;
@@ -259,6 +263,10 @@ p.sub-title{
             }
         }
         .contact-form{
+            h1{
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
+            }
             #contact-container{
                 width: 600px;
                 padding: 6px;
@@ -320,6 +328,10 @@ p.sub-title{
             }
         }
         .contact-form{
+            h1{
+                font-size: 2.6rem;
+                margin-bottom: 3rem;
+            }
             #contact-container{
                 width: 800px;
                 padding: 7px;
@@ -379,6 +391,10 @@ p.sub-title{
             }
         }
         .contact-form{
+            h1{
+                font-size: 2.8rem;
+                margin-bottom: 3rem;
+            }
             #contact-container{
                 width: 1000px;
                 padding: 8px;
