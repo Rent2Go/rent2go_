@@ -223,7 +223,54 @@ p.sub-title{
                 margin-right: 4rem;
             }
         }
-        
+        .contact-form{
+            #contact-container{
+                width: 800px;
+                padding: 7px;
+                .contact-info{
+                    h4{
+                        font-size: 1.8rem;
+                    }
+                    p{
+                        font-size: 1rem;
+                        margin-bottom: 1.8rem;
+                    }
+                    .icon-text{
+                        .icon{
+                            font-size: 1.4rem;
+                        }
+                        span{
+                            font-size: 1rem;
+                        }
+                        .link2{
+                            font-size: 1rem;
+                        }
+                    }
+                }
+                form{
+                    padding: 30px;
+                    width: 100%;
+                    .col-2{
+                        width: 100%;
+                    }
+                    .form-group{
+                        padding-right: 20px;
+                        label{
+                            font-size: 1.1rem;
+                        }
+                        input[type="text"], input[type="email"], input[type="tel"], textarea{
+                            padding: 3px;
+                            font-size: 1.1rem;
+                            margin-bottom: 4rem;
+                        }
+                    }
+                    Button{
+                        width: 180px;
+                        height: 50px;
+                    }
+                }
+            }
+        }
     }
 }
 
