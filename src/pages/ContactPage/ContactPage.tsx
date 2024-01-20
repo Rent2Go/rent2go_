@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { CiMail, CiPhone, CiMapPin } from "react-icons/ci";
 import { FaLinkedin, FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
 import { Button } from 'react-bootstrap';
+import entry from '../ContactPage/entry.jpg'
 
 
 type Props = {}
@@ -14,6 +15,12 @@ const ContactPage = (props: Props) => {
     <>
       <Navbar />
       <div className='contact'>
+        <div className='contact-entry'>
+          <div className='entry-text'>
+            <h2>We are working with all our strength to provide you with trouble-free car rental service.</h2>
+            <p>If you have a situation you would like to convey to us, please contact us using our communication channels or by filling out the form below.</p>
+          </div>
+        </div>
         <div className='contact-form'>
           <h1>Contact Us</h1>
           <div id='contact-container'>

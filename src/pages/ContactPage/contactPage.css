@@ -1,5 +1,5 @@
 .contact {
-    padding-top: 8rem;
+    padding-top: 4rem;
 }
 
 .contact-form {
@@ -13,6 +13,27 @@
     width: 100%;
     background-image: url(https://images.pexels.com/photos/4166677/pexels-photo-4166677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
     background-size: cover;
+}
+
+.contact-entry{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-image: url('../ContactPage/entry.jpg');
+    background-size: cover;
+    .entry-text{
+        margin-left: 21rem;
+        margin-right: 21rem;
+        text-align: justify;
+        h2{
+            margin-bottom: 1rem;
+        }
+        p{
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+    }
 }
 
 h1{
