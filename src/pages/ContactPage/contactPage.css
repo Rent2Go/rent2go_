@@ -210,7 +210,55 @@ p.sub-title{
                 margin-right: 3rem;
             }
         }
-        
+        .contact-form{
+            #contact-container{
+                width: 600px;
+                padding: 6px;
+                .contact-info{
+                    h4{
+                        font-size: 1.6rem;
+                    }
+                    p{
+                        font-size: 0.9rem;
+                        margin-bottom: 1.6rem;
+                    }
+                    .icon-text{
+                        .icon{
+                            font-size: 1.3rem;
+                        }
+                        span{
+                            font-size: 0.9rem;
+                        }
+                        .link2{
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+                form{
+                    padding: 25px;
+                    width: 60%;
+                    .col-2{
+                        width: 100%;
+                    }
+                    .form-group{
+                        padding-right: 10px;
+                        label{
+                            font-size: 1.1rem;
+                        }
+                        input[type="text"], input[type="email"], input[type="tel"], textarea{
+                            padding: 3px;
+                            font-size: 1.1rem;
+                            margin-bottom: 3rem;
+                            width: 100%;
+                        }
+                    }
+                    Button{
+                        width: 160px;
+                        height: 45px;
+                    }
+                }
+            }
+        }
     }
 }
 
