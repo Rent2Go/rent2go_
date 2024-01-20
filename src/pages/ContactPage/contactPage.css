@@ -116,7 +116,7 @@ p.sub-title{
                 color: var(--pureWhiteColor);
                 margin-bottom: 1rem;
             }
-            input[type="text"]{
+            input[type="text"], input[type="email"], input[type="tel"]{
                 border: none;
                 cursor: pointer;
                 padding: 3px;
@@ -124,12 +124,13 @@ p.sub-title{
                 font-weight: 300;
                 color: var(--pureWhiteColor);
                 background: transparent;
-                border-bottom: 1.5px solid var(--pureWhiteColor);
-                
+                border-bottom: 1.5px solid var(--secondaryColor);
+                transition: all .3s case-in-out;
+                margin-bottom: 2rem;
                 &:focus{
                     border: none;
                     outline: none;
-                    border-bottom: 3.4px solid var(--primaryColor);
+                    border-bottom: 3.4px solid var(--pureWhiteColor);
                 }
             }
             &:nth-child(2){
