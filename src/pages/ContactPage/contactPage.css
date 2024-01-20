@@ -75,7 +75,7 @@ p.sub-title{
         }
         .social-media{
             display: flex;
-            width: 50%;
+            width: 70%;
             justify-content: space-between;
             .icon-circle{
                 flex: 0 1 40px;
@@ -97,7 +97,46 @@ p.sub-title{
             }
         }
     }
-
+    form{
+        padding: 40px;
+        width: 100%;
+        .col{
+            display: flex;
+            width: 100%;
+            flex: 0 0 100%;
+        }
+        .form-group{
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            flex: 0 0 50%;
+            padding-right: 40px;
+            label{
+                font-size: 1.2rem;
+                color: var(--pureWhiteColor);
+                margin-bottom: 1rem;
+            }
+            input[type="text"]{
+                border: none;
+                cursor: pointer;
+                padding: 3px;
+                font-size: 1.2rem;
+                font-weight: 300;
+                color: var(--pureWhiteColor);
+                background: transparent;
+                border-bottom: 1.5px solid var(--pureWhiteColor);
+                
+                &:focus{
+                    border: none;
+                    outline: none;
+                    border-bottom: 3.4px solid var(--primaryColor);
+                }
+            }
+            &:nth-child(2){
+                padding-right: 0;
+            }
+        }
+    }
 }
 
 
