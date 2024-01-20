@@ -105,6 +105,9 @@ p.sub-title{
             width: 100%;
             flex: 0 0 100%;
         }
+        .col-2{
+            width: 105%;
+        }
         .form-group{
             display: flex;
             justify-content: flex-start;
@@ -114,9 +117,9 @@ p.sub-title{
             label{
                 font-size: 1.2rem;
                 color: var(--pureWhiteColor);
-                margin-bottom: 1rem;
+                margin-bottom: 0.2rem;
             }
-            input[type="text"], input[type="email"], input[type="tel"]{
+            input[type="text"], input[type="email"], input[type="tel"], textarea{
                 border: none;
                 cursor: pointer;
                 padding: 3px;
@@ -126,7 +129,7 @@ p.sub-title{
                 background: transparent;
                 border-bottom: 1.5px solid var(--secondaryColor);
                 transition: all .3s case-in-out;
-                margin-bottom: 2rem;
+                margin-bottom: 3rem;
                 &:focus{
                     border: none;
                     outline: none;

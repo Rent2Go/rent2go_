@@ -68,6 +68,12 @@ const ContactPage = (props: Props) => {
                   <input type='tel' pattern="0[2-9][0-9]{8}"></input>
                 </div>
               </div>
+              <div className='col-2'>
+                <div className='form-group'>
+                  <label>Message</label>
+                  <textarea></textarea>
+                </div>
+              </div>
             </form>
           </div>
         </div>
