@@ -14,7 +14,7 @@ type Props = {}
 const ContactPage = (props: Props) => {
 
   useEffect(() => {
-    Aos.init({ duration: 3000, offset: 20 });
+    Aos.init({ duration: 2000, offset: 20 });
   }, []);
 
   return (

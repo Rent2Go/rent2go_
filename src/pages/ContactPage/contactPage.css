@@ -97,7 +97,7 @@ p.sub-title{
             .link2{
                 font-size: 1.2rem;
                 font-weight: 300;
-                color: aliceblue;
+                color: var(--pureWhiteColor);
                 &:hover{
                     transform: scale(1.2);
                 }
@@ -189,4 +189,53 @@ p.sub-title{
 }
 
 
+@media screen and (max-width: 520px){
+    .contact{
+        .contact-entry{
+            .entry-text{
+                margin-left: 2rem;
+                margin-right: 2rem;
+            }
+        }
+ 
+    }
+}
+
+
+@media screen and (min-width: 520px) and (max-width: 770px){
+    .contact{
+        .contact-entry{
+            .entry-text{
+                margin-left: 3rem;
+                margin-right: 3rem;
+            }
+        }
+        
+    }
+}
+
+
+@media screen and (min-width: 770px) and (max-width: 996px){
+    .contact{
+        .contact-entry{
+            .entry-text{
+                margin-left: 4rem;
+                margin-right: 4rem;
+            }
+        }
+        
+    }
+}
+
+@media screen and (min-width: 996px) and (max-width: 1200px){
+    .contact{
+        .contact-entry{
+            .entry-text{
+                margin-left: 10rem;
+                margin-right: 10rem;
+            }
+        }
+        
+    }
+}
 
