@@ -1,11 +1,11 @@
-export {default as Login} from "./Auth/Login/Login"
-export {default as Register} from "./Auth//Register/Register"
-export {default as Dashboard} from "./Dashboard/Dashboard"
-export {default as CarList} from "./Cars/List/CarListPage"
-export {default as AddCar} from "./Cars/Add/AddCarPage"
-export {default as UpdateCar} from "./Cars/Update/UpdateCarPage"
-export {default as CarDetail} from "./Cars/Detail/CarDetailPage"
-export {default as UserList} from "./Users/List/UserListPage"
-export {default as AddUser} from "./Users/Add/AddUserPage"
-export {default as UpdateUser} from "./Users/Update/UpdateUserPage"
-export {default as UserDetail} from "./Users/Detail/UserDetailPage"
+export { default as Login } from './Auth/Login/Login'
+export { default as Register } from './Auth//Register/Register'
+export { default as Dashboard } from './Dashboard/Dashboard'
+export { default as CarList } from './Cars/List/CarListPage'
+export { default as AddCar } from './Cars/Add/AddCarPage'
+export { default as UpdateCar } from './Cars/Update/UpdateCarPage'
+export { default as CarDetail } from './Cars/Detail/CarDetailPage'
+export { default as UserList } from './Users/List/UserListPage'
+export { default as AddUser } from './Users/Add/AddUserPage'
+export { default as UpdateUser } from './Users/Update/UpdateUserPage'
+export { default as UserDetail } from './Users/Detail/UserDetailPage'
