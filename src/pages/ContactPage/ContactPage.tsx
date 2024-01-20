@@ -1,24 +1,30 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./contactPage.css"
 import { Footer, Navbar } from "../../components";
 import { Link } from 'react-router-dom';
 import { CiMail, CiPhone, CiMapPin } from "react-icons/ci";
 import { FaLinkedin, FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
 import { Button } from 'react-bootstrap';
-import entry from '../ContactPage/entry.jpg'
+import entry from '../ContactPage/entry.jpg';
+import Aos from "aos";
 
 
 type Props = {}
 
 const ContactPage = (props: Props) => {
+
+  useEffect(() => {
+    Aos.init({ duration: 3000, offset: 20 });
+  }, []);
+
   return (
     <>
       <Navbar />
       <div className='contact'>
         <div className='contact-entry'>
           <div className='entry-text'>
-            <h2>We are working with all our strength to provide you with trouble-free car rental service.</h2>
-            <p>If you have a situation you would like to convey to us, please contact us using our communication channels or by filling out the form below.</p>
+            <h2 data-aos="fade-right">We are working with all our strength to provide you with trouble-free car rental service.</h2>
+            <p data-aos="fade-left">If you have a situation you would like to convey to us, please contact us using our communication channels or by filling out the form below.</p>
           </div>
         </div>
         <div className='contact-form'>
@@ -83,7 +89,7 @@ const ContactPage = (props: Props) => {
               </div>
               <div className='col-2'>
                 <div className='form-group right'>
-                  <Button className='primary'>Send Message</Button>
+                  <Button className='primary' data-aos="zoom-in">Send Message</Button>
                 </div>
               </div>
             </form>

@@ -41,7 +41,7 @@ h1{
     color: var(--pureWhiteColor);
     font-size: 3rem;
     text-shadow: 5px 2px 6px var(--primaryColor);
-    margin-bottom: 1.5rem;
+    margin-bottom: 3.5rem;
 }
 p.sub-title{
     text-align: center;
