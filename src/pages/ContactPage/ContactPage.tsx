@@ -48,7 +48,16 @@ const ContactPage = (props: Props) => {
               </div>
             </div>
             <form>
-              
+              <div className='col'>
+                <div className='form-group'>
+                  <label>First Name</label>
+                  <input type='text'></input>
+                </div>
+                <div className='form-group'>
+                  <label>Last Name</label>
+                  <input type='text'></input>
+                </div>
+              </div>
             </form>
           </div>
         </div>
