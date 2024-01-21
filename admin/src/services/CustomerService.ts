@@ -1,5 +1,5 @@
 import { GetAllCustomersModel } from "../models/responses/customers/GetAllCustomers";
-import { customerModel } from "../models/responses/customers/GetCustomer";
+import { CustomerModel } from "../models/responses/customers/GetCustomer";
 import axiosInstance from "../utils/axiosInsterceptors";
 
 class CustomerService{
@@ -8,7 +8,7 @@ class CustomerService{
     }
 
     getById(id:number){
-        return axiosInstance.get<customerModel>(`employee/${id}`);
+        return axiosInstance.get<CustomerModel>(`employee/${id}`);
     }
 }
 
