@@ -9,6 +9,7 @@ import { AuthProvider } from "./contexts/AuthContext"
 import { store } from "./store/store";
 import { Provider } from "react-redux";
 
+import "remixicon/fonts/remixicon.css"
 import "./index.css";
 
 
