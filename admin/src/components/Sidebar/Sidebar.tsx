@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import navLinks from "../../assets/dummy-data/NavLinks";
-
+import logo from '../../assets/images/logo-dark.png';
 import "./sidebar.css"
 
 type Props = {};
@@ -10,15 +10,16 @@ const Sidebar = (props: Props) => {
   return (
     <div className="sidebar">
       <div className="sidebar__top">
+      <span><img src={logo} alt="logo" /></span>
         <h2>
-          <i className="ri-taxi-line"></i>Rent2go
+          Rent2go
         </h2>
       </div>
       <div className="sidebar__content">
         <div className="menu">
           <ul className="nav__list">
             {navLinks.map((item, index) => (
-              <li className="nav__item">
+              <li className="nav__item" key={index}>
                 <NavLink to={item.path}>
                   <span>
                     <i className={item.icon}>{item.display}</i>
@@ -28,6 +29,9 @@ const Sidebar = (props: Props) => {
             ))}
           </ul>
         </div>
+      </div>
+      <div className="sidebar__bottom">
+        <span><i className="ri-logout-circle-r-line"></i>Logout</span>
       </div>
     </div>
   );

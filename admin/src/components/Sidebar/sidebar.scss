@@ -1,3 +1,34 @@
-.sidebar{
-    
+.sidebar {
+  width: 260px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: var(--primary-color);
+  .sidebar__top {
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    h2 {
+      display: flex;
+      align-items: center;
+      column-gap: 0.5rem;
+      color: var(--heading-color);
+      span {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--secondary-color);
+        border-radius: 50%;
+        i {
+          font-weight: 400;
+          padding: 5px;
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
 }
