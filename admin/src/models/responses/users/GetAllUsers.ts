@@ -1,7 +1,7 @@
-import { UserModel } from "./GetUser";
+import { GetUserModel } from "./GetUser";
 
 export interface GetAllUsersModel{
     message : string;
     result  : string;
-    data    : UserModel[];
+    data    : GetUserModel[];
 }
