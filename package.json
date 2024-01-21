@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "https://api.rentogo.com.tr",
   "dependencies": {
+
     "@coreui/react": "^4.11.1",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
