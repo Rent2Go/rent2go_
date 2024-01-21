@@ -1,9 +1,12 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Dashboard, Login, Register, CarList } from "./pages";
+import { Footer, Navbar, Sidebar } from "./components";
+import { FiSettings } from "react-icons/fi";
 
 import "./App.css";
-function App() {
+
+const App = () => {
   return (
     <>
       <main>
@@ -16,6 +19,6 @@ function App() {
       </main>
     </>
   );
-}
+};
 
 export default App;
