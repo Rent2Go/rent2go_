@@ -1,10 +1,19 @@
 import React from 'react'
+import { Footer, Navbar } from '../../components'
 
 type Props = {}
 
 const Dashboard = (props: Props) => {
   return (
-    <div>Dashboard</div>
+    <>
+    <Navbar />
+    <div className="dashboard">
+     Dashboard
+    </div>
+    <Footer />
+    
+    
+    </>
   )
 }
 
