@@ -1,5 +1,5 @@
 import React from 'react'
-import "./login.css"
+import "./auth.css"
 type Props = {}
 
 const Login = (props: Props) => {

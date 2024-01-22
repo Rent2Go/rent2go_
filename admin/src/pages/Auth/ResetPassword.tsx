@@ -1,5 +1,5 @@
 import React from 'react'
-import "./resetPassword.css"
+import "./auth.css"
 type Props = {}
 
 const ResetPassword = (props: Props) => {

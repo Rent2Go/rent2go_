@@ -1,5 +1,5 @@
 import React from 'react'
-import "./register.css"
+import "./auth.css"
 type Props = {}
 
 const Register = (props: Props) => {
