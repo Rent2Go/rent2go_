@@ -1,7 +1,14 @@
-export {default as AddUer} from "./Users/AddUser/AddUser"
-export {default as UpdateUser} from "./Users/UpdateUser/UpdateUser"
-export {default as ListUser} from "./Users/ListUser/ListUser"
-export {default as DetailUser} from "./Users/DetailUser/DetailUser"
+export {default as AddCar} from "./Cars/AddCar"
+export {default as UpdateCar} from "./Cars/UpdateCar"
+export {default as ListCar} from "./Cars/ListCar"
+export {default as DetailCar} from "./Cars/DetailCar"
+
+
+
+export {default as AddUser} from "./Users/AddUser"
+export {default as UpdateUser} from "./Users/UpdateUser"
+export {default as ListUser} from "./Users/ListUser"
+export {default as DetailUser} from "./Users/DetailUser"
 
 
 
