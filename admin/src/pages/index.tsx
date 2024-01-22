@@ -1,1 +1,1 @@
-export{}
+export {default as Permissions} from "./Permissions/Permissions"
