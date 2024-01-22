@@ -1,7 +1,9 @@
 import React from "react";
+
 import { NavLink } from "react-router-dom";
 import navLinks from "../../assets/dummy-data/NavLinks";
-import logo from '../../assets/images/logo-dark.png';
+
+
 import "./sidebar.css"
 
 type Props = {};
@@ -10,7 +12,7 @@ const Sidebar = (props: Props) => {
   return (
     <div className="sidebar">
       <div className="sidebar__top">
-      <span><img src={logo} alt="logo" /></span>
+      <span><img src="{logo}" alt="logo" /></span>
         <h2>
           Rent2go
         </h2>
