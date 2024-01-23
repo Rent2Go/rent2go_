@@ -1,16 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./sidebar.css";
+import logo from "../../assets/images/logo-dark.png";
 import sidebarLinks from "../../assets/data/sidebarLinks";
-import { IoIosHome } from "react-icons/io";
-
+import "./sidebar.css";
 type Props = {};
 
 const Sidebar = (props: Props) => {
   return (
     <div className="sidebar">
       <div className="sidebar__top">
-        <img src="" alt="logo" />
+        <h2><img src={logo} alt="logo" /> Rent2go</h2>
       </div>
       <div className="sidebar__content">
         <div className="menu">
@@ -31,7 +30,7 @@ const Sidebar = (props: Props) => {
                   {item.display}
                   <ul>
                     <li>
-                    <i className={item.subIcon}></i> {item.subDisplay}
+                      <i className={item.subIcon}></i> {item.subDisplay}
                     </li>
                   </ul>
                 </NavLink>
