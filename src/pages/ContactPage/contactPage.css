@@ -1,1 +1,425 @@
-/*# sourceMappingURL=contactPage.css.map */
+.contact {
+    padding-top: 4rem;
+}
+
+.contact-form {
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-text);
+    height: 100vh;
+    width: 100%;
+    background-image: url(https://images.pexels.com/photos/4166677/pexels-photo-4166677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-size: cover;
+}
+
+.contact-entry{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-image: url('../ContactPage/entry.jpg');
+    background-size: cover;
+    .entry-text{
+        margin-left: 21rem;
+        margin-right: 21rem;
+        text-align: justify;
+        h2{
+            margin-bottom: 1rem;
+        }
+        p{
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+    }
+}
+
+h1{
+    text-align: center;
+    color: var(--pureWhiteColor);
+    font-size: 3rem;
+    text-shadow: 5px 2px 6px var(--primaryColor);
+    margin-bottom: 3.5rem;
+}
+p.sub-title{
+    text-align: center;
+    color: var(--pureWhiteColor);
+    font-size: 1.5rem;
+}
+
+#contact-container {
+    width: 1200px;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+    backdrop-filter: blur(7px);
+    -webkit-box-shadow: 0px 0px 46px 26px var(--color-black);
+    -moz-box-shadow: 0px 0px 46px 26px var(--color-black);
+    box-shadow: 0px 0px 46px 26px var(--color-black);
+    border: 1px solid var(--pureWhiteColor);
+    .contact-info{ 
+        background-color: var(--primaryColor);
+        border-radius: 15px;
+        flex: 0 1 40%;
+        padding: 40px;
+        color: var(--pureWhiteColor);
+        display: flex;
+        flex-direction: column;
+        h4{
+            font-size: 2rem;
+            font-weight: 500;
+            margin: 0;
+            margin-bottom: 0.7rem;
+        }
+        p{
+            font-size: 1.1rem;
+            color: var(--pureWhiteColor);
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+        }
+        .icon-text{
+            display: flex;
+            justify-content: flex-start;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+            .icon{
+                flex: 0 0 20px;
+                font-size: 1.8rem;
+                margin-right: 1rem;
+            }
+            span{
+                font-size: 1.2rem;
+                font-weight: 300;
+            }
+            .link2{
+                font-size: 1.2rem;
+                font-weight: 300;
+                color: var(--pureWhiteColor);
+                &:hover{
+                    transform: scale(1.2);
+                }
+            }
+        }
+        .social-media{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            .icon-circle{
+                flex: 0 1 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 40px;
+                border-radius: 50%;
+                transition: .1s all ease-in-out;
+                margin-top: 1.5rem;
+                color: var(--pureWhiteColor);
+                &:hover{
+                    color: var(--primaryColor);
+                    background-color: var(--pureWhiteColor);
+                }
+                .fa{
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+    form{
+        padding: 40px;
+        width: 100%;
+        .col{
+            display: flex;
+            width: 100%;
+            flex: 0 0 100%;
+        }
+        .col-2{
+            width: 105%;
+        }
+        .form-group{
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            flex: 0 0 50%;
+            padding-right: 40px;
+            label{
+                font-size: 1.2rem;
+                color: var(--pureWhiteColor);
+                margin-bottom: 0.2rem;
+            }
+            input[type="text"], input[type="email"], input[type="tel"], textarea{
+                border: none;
+                cursor: pointer;
+                padding: 3px;
+                font-size: 1.2rem;
+                font-weight: 300;
+                color: var(--pureWhiteColor);
+                background: transparent;
+                border-bottom: 1.5px solid var(--secondaryColor);
+                transition: all .3s case-in-out;
+                margin-bottom: 4rem;
+                &:focus{
+                    border: none;
+                    outline: none;
+                    border-bottom: 3.4px solid var(--pureWhiteColor);
+                }
+            }
+            &:nth-child(2){
+                padding-right: 0;
+            }
+            &.right{
+                align-items: flex-end;
+            }
+            Button{
+                width: 200px;
+                height: 60px;
+                cursor: pointer;
+                background-color: var(--primaryColor);
+                text-transform: uppercase;
+                border-radius: 6px;
+                &:hover{
+                    background-color: var(--pureWhiteColor);
+                    color: var(--primaryColor);
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 520px){
+    .contact{
+        .contact-entry{
+            .entry-text{
+                margin-left: 2rem;
+                margin-right: 2rem;
+            }
+        }
+        .contact-form{
+            h1{
+                font-size: 2.2rem;
+                margin-bottom: 3.2rem;
+            }
+            #contact-container{
+                width: 470px;
+                padding: 5px;
+                .contact-info{
+                    h4{
+                        font-size: 1.4rem;
+                    }
+                    p{
+                        font-size: 0.9rem;
+                        margin-bottom: 1rem;
+                    }
+                    .icon-text{
+                        .icon{
+                            font-size: 1.2rem;
+                        }
+                        span{
+                            font-size: 0.8rem;
+                        }
+                        .link2{
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+                form{
+                    padding: 20px;
+                    width: 50%;
+                    .col-2{
+                        width: 100%;
+                    }
+                    .form-group{
+                        padding-right: 7px;
+                        label{
+                            font-size: 1rem;
+                        }
+                        input[type="text"], input[type="email"], input[type="tel"], textarea{
+                            padding: 6px;
+                            font-size: 1rem;
+                            margin-bottom: 3rem;
+                            width: 100%;
+                        }
+                    }
+                    Button{
+                        width: 150px;
+                        height: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 520px) and (max-width: 770px){
+    .contact{
+        .contact-entry{
+            .entry-text{
+                margin-left: 7rem;
+                margin-right: 7rem;
+            }
+        }
+        .contact-form{
+            h1{
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
+            }
+            #contact-container{
+                width: 600px;
+                padding: 6px;
+                .contact-info{
+                    h4{
+                        font-size: 1.6rem;
+                    }
+                    p{
+                        font-size: 0.9rem;
+                        margin-bottom: 1.6rem;
+                    }
+                    .icon-text{
+                        .icon{
+                            font-size: 1.3rem;
+                        }
+                        span{
+                            font-size: 0.9rem;
+                        }
+                        .link2{
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+                form{
+                    padding: 25px;
+                    width: 60%;
+                    .col-2{
+                        width: 100%;
+                    }
+                    .form-group{
+                        padding-right: 10px;
+                        label{
+                            font-size: 1.1rem;
+                        }
+                        input[type="text"], input[type="email"], input[type="tel"], textarea{
+                            padding: 3px;
+                            font-size: 1.1rem;
+                            margin-bottom: 3rem;
+                            width: 100%;
+                        }
+                    }
+                    Button{
+                        width: 160px;
+                        height: 45px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 770px) and (max-width: 996px){
+    .contact{
+        .contact-entry{
+            .entry-text{
+                margin-left: 10rem;
+                margin-right: 10rem;
+            }
+        }
+        .contact-form{
+            h1{
+                font-size: 2.6rem;
+                margin-bottom: 3rem;
+            }
+            #contact-container{
+                width: 800px;
+                padding: 7px;
+                .contact-info{
+                    h4{
+                        font-size: 1.8rem;
+                    }
+                    p{
+                        font-size: 1rem;
+                        margin-bottom: 1.8rem;
+                    }
+                    .icon-text{
+                        .icon{
+                            font-size: 1.4rem;
+                        }
+                        span{
+                            font-size: 1rem;
+                        }
+                        .link2{
+                            font-size: 1rem;
+                        }
+                    }
+                }
+                form{
+                    padding: 30px;
+                    width: 100%;
+                    .col-2{
+                        width: 100%;
+                    }
+                    .form-group{
+                        padding-right: 20px;
+                        label{
+                            font-size: 1.1rem;
+                        }
+                        input[type="text"], input[type="email"], input[type="tel"], textarea{
+                            padding: 3px;
+                            font-size: 1.1rem;
+                            margin-bottom: 4rem;
+                        }
+                    }
+                    Button{
+                        width: 180px;
+                        height: 50px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 996px) and (max-width: 1200px){
+    .contact{
+        .contact-entry{
+            .entry-text{
+                margin-left: 15rem;
+                margin-right: 15rem;
+            }
+        }
+        .contact-form{
+            h1{
+                font-size: 2.8rem;
+                margin-bottom: 3rem;
+            }
+            #contact-container{
+                width: 1000px;
+                padding: 8px;
+                .contact-info{
+                    h4{
+                        font-size: 1.9rem;
+                    }
+                    p{
+                        font-size: 1rem;
+                        margin-bottom: 2rem;
+                    }
+                    .icon-text{
+                        margin-bottom: 0.2rem;
+                        .icon{
+                            font-size: 1.5rem;
+                        }
+                        span{
+                            font-size: 1.1rem;
+                        }
+                        .link2{
+                            font-size: 1.1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

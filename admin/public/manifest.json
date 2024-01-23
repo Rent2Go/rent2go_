@@ -1,0 +1,25 @@
+{
+  "short_name": "Rent2Go Admin",
+  "name": "Rent2Go Admin Dashboard",
+  "icons": [
+    {
+      "src": "logo-dark.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-png"
+    },
+    {
+      "src": "logo-dark.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo-dark.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
