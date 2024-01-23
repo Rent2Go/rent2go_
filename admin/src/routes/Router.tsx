@@ -12,7 +12,7 @@ import {
 
 const Router = () => {
   return(
-  <BrowserRouter>
+  
     <Routes>
       <Route path="/" element={<Navigate to="/dashboard"/>} />
       <Route path="/dashboard" element={<Dashboard />} />
@@ -46,7 +46,6 @@ const Router = () => {
       <Route path="/detail-user/:id" element={<DetailUser />} />
 
     </Routes>
-  </BrowserRouter>
   );
 };
 
