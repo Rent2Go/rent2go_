@@ -12,8 +12,9 @@ import { FaSearch } from "react-icons/fa";
 import CarService from "../../services/CarService";
 import { CarModel } from "../../models/responses/cars/GetCar";
 import Pagination from "@mui/material/Pagination";
-import Stack from "@mui/material/Stack";
+
 import "./carPage.css";
+import { Stack } from "@mui/material";
 
 type Props = {};
 
