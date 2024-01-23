@@ -1,6 +1,6 @@
 import React, { useContext, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Field, Form, Formik } from "formik";
+import { ErrorMessage, Form, Formik } from "formik";
 import user1 from "../../assets/img/userImages/soner.jpg";
 import user2 from "../../assets/img/userImages/yagmur.jpg";
 import user3 from "../../assets/img/userImages/seyhmus.jpeg";
@@ -9,6 +9,10 @@ import "./register.css";
 import { useAuth } from "../../contexts/AuthContext";
 import AuthService from "../../services/authService/AuthService";
 import { number, object, string } from "yup";
+import Field from '../../components/FormikInput/FormikInput';
+import { TokenResponse } from "../../models/responses/auth/LoginResponse";
+import { toast } from 'react-toastify';
+
 
 
 type Props = {
@@ -16,12 +20,14 @@ type Props = {
   type?: string;
   placeHolder?: string;
 };
-const authContext: any = useAuth()
-const Register: React.FC<Props> = (props: Props) => {
-  const [isActive, setIsActive] = useState(false);
 
-  const authContext: any = useAuth()
+const Register: React.FC<Props> = (props: Props) => {
+  const authContext: any = useAuth();
+  const [isActive, setIsActive] = useState(false);
   const containerRef = useRef(null);
+  const navigate = useNavigate();
+
+
 
   const handleClick = () => {
     setIsActive((prevIsActive) => !prevIsActive);
@@ -48,37 +54,70 @@ const Register: React.FC<Props> = (props: Props) => {
       .required("Email field is required.")
       .email("Invalid email format."),
     password: string().required("Password field is required.")
-      .matches(
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,}$/,
-        "Password must be at least 8 characters, include at least one uppercase letter, one lowercase letter, one number, and one punctuation mark."
-      ),
+      .min(8, "Password must be at least 8 characters.")
+      .matches(/[a-z]/, "Password must include at least one lowercase letter.")
+      .matches(/[A-Z]/, "Password must include at least one uppercase letter.")
+      .matches(/\d/, "Password must include at least one number.")
+      .matches(/[!@#$%^&*()_+{}|:;<>,.?/~`]/, "Password must include at least one punctuation mark."),
   });
 
 
-  const navigate = useNavigate();
+  const signInValidationSchema = object({
+    email: string()
+      .required("Email field is required.")
+      .email("Invalid email format."),
+    password: string()
+      .required("Password field is required.")
+  });
 
+
+
+
+  const signInhandleSubmit = async (values: any) => {
+
+    const authService = new AuthService();
+    const response = await authService.signIn(values)
+      .then((res) => {
+        localStorage.setItem("token", res?.data?.token);
+        authContext.refreshUser();
+        navigate("/");
+        console.log("Success", res)
+      }
+      )
+      .catch(error => {
+        if (error.response) {
+          // The request was made and the server responded with a status code
+          // that falls out of the range of 2xx
+          toast.error(`Hatalı Giris : ${error.response.data.message}`);
+        } else if (error.request) {
+          // The request was made but no response was received
+          toast.error("No response from server. Please try again later.");
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          toast.error("An error occurred while making the request: " + error.message);
+        }
+      });
+
+    
+  };
+
+    /// Sign Up api istek fonksiyonu
   const handleSubmit = async (values: any) => {
 
     const authService = new AuthService();
     const response = await authService.signUp(values)
       .then(res => {
         console.log("Success", res)
+        navigate('/')
       }
       )
       .catch((err) => { console.log(err) }
       )
 
-
-
-
-    if (isActive) {
-      // Sign Up işlemleri
-
-    } else {
-      // Sign In işlemleri
-      console.log("Sign In", values);
-    }
+    
   };
+
+
 
   const initialValues = {
     firstName: "",
@@ -94,7 +133,11 @@ const Register: React.FC<Props> = (props: Props) => {
       <div className={`containers ${isActive ? "active" : ""}`}>
         <div
           className={`form-containers sign-up ${isActive ? "active" : ""}`}
-        > <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={signupValidationSchema}>
+        > <Formik initialValues={initialValues}
+          onSubmit={handleSubmit}
+          validationSchema={signupValidationSchema}
+          validateOnBlur={true}
+          validateOnChange={true}>
             <Form className="form">
               <h1>Create Account</h1>
               <div className="social-icons">
@@ -156,6 +199,7 @@ const Register: React.FC<Props> = (props: Props) => {
                 placeholder="Password"
 
               />
+
               <button className="btn" type="submit">
                 Sign Up
               </button>
@@ -168,7 +212,11 @@ const Register: React.FC<Props> = (props: Props) => {
         <div
           className={`form-containers sign-in ${isActive ? "active" : ""}`}
         >
-          <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+          <Formik initialValues={initialValues}
+            onSubmit={signInhandleSubmit}
+            validationSchema={signInValidationSchema}
+            validateOnBlur={true}
+            validateOnChange={false}>
             <Form className="form" action="">
               <h1>Sign In</h1>
               <div className="social-icons">
@@ -201,9 +249,9 @@ const Register: React.FC<Props> = (props: Props) => {
               <Link to="#">Forget Your Password?</Link>
               <button className="btn" type="submit"
 
-                onClick={() => {
+                
 
-                }}
+                
               >
                 Sign In
               </button>
