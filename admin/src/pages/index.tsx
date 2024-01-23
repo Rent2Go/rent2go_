@@ -26,14 +26,10 @@ export {default as UpdateRental} from "./Rentals/UpdateRental"
 export {default as ListRental} from "./Rentals/ListRental"
 export {default as DetailRental} from "./Rentals/DetailRental"
 
-
 export {default as AddUser} from "./Users/AddUser"
 export {default as UpdateUser} from "./Users/UpdateUser"
 export {default as ListUser} from "./Users/ListUser"
 export {default as DetailUser} from "./Users/DetailUser"
-
-
-
 
 export {default as AddUserRole} from "./UserRoles/AddUserRole"
 export {default as UpdateUserRole} from "./UserRoles/UpdateUserRole"
