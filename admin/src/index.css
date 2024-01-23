@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 
 :root {
+
+  --font-family: "DM SANS", sans-serif;
+
   --primary-color: #181b3a;
   --secondary-color: #01d293;
   --body-bg: #0b0c28;
@@ -13,4 +16,22 @@
   --recommend-car01-bg: #e1dfa4;
   --recommend-car02-bg: #e3ecf1;
   --recommend-car03-bg: #f4e3e5;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: var(--font-family);
+  background: var(--body-bg);
+}
+
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color:unset;
 }
