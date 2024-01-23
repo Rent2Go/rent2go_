@@ -60,7 +60,7 @@ const Navbar = (props: Props) => {
               </Link>
             </li>
             <li onClick={removeNavbar} className="listItem">
-              <Link to="/" className="link">
+              <Link to="/contact" className="link">
                 Contact
               </Link>
             </li>
