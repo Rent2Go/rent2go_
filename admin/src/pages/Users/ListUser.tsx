@@ -1,5 +1,5 @@
 import React from 'react'
-import "../user.css"
+import "./styles/user.css"
 
 type Props = {}
 

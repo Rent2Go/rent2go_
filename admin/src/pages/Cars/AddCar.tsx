@@ -1,5 +1,5 @@
 import React from 'react'
-import "../cars.css"
+import "./styles/cars.css"
 type Props = {}
 
 const AddCar = (props: Props) => {

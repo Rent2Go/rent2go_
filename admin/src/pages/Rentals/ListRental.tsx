@@ -1,5 +1,5 @@
 import React from 'react'
-import "../rentals.css"
+import "./styles/rentals.css"
 
 type Props = {}
 

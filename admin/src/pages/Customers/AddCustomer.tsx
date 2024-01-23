@@ -1,5 +1,5 @@
 import React from 'react'
-import "../customers.css"
+import "./styles/customers.css"
 type Props = {}
 
 const AddCustomer = (props: Props) => {

@@ -17,7 +17,7 @@ export {default as Dashboard} from "./Dashboard/Dashboard"
 export {default as AddEmployee} from "./Employees/AddEmployee"
 export {default as UpdateEmployee} from "./Employees/UpdateEmployee"
 export {default as ListEmployee} from "./Employees/ListEmployee"
-export {default as DEtailEmployee} from "./Employees/DetailEmployee"
+export {default as DetailEmployee} from "./Employees/DetailEmployee"
 
 export {default as Permissions} from "./Permissions/Permissions"
 

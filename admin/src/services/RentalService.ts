@@ -1,4 +1,3 @@
-import { CarModel } from "../models/responses/cars/GetCar";
 import { GetAllRentalsModel } from "../models/responses/rentals/GetAllRentals";
 import { RentalModel } from "../models/responses/rentals/GetRental";
 import axiosInstance from "../utils/axiosInsterceptors";

@@ -1,5 +1,5 @@
 import React from "react";
-import "../userRole.css";
+import "./styles/userRole.css"
 
 
 type Props = {};

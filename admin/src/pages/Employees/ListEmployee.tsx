@@ -1,5 +1,5 @@
 import React from 'react'
-import "./employee.css"
+import "./styles/employee.css"
 type Props = {}
 
 const ListEmployee = (props: Props) => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import "./UserCard.css"
+import "./userCard.css"
 type Props = {}
 
 const UserCard = (props: Props) => {
