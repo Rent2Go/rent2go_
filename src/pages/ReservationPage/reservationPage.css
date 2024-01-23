@@ -1,0 +1,9 @@
+.reservation {
+  padding: 8rem 8rem;
+}
+.reservation .secContainer {
+  background-color: var(--whiteColor);
+}
+.reservation .secContainer .secHeading {
+  margin: 4rem 6rem;
+}/*# sourceMappingURL=reservationPage.css.map */
