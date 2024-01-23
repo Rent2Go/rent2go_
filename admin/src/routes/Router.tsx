@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { 
   AddCar, AddCustomer, AddEmployee, AddRental, AddUser, AddUserRole, 
   Dashboard, DetailCar, DetailCustomer, DetailEmployee,DetailRental, DetailUser, DetailUserRole, 
@@ -14,6 +14,7 @@ const Router = () => {
   return(
   <BrowserRouter>
     <Routes>
+      <Route path="/" element={<Navigate to="/dashboard"/>} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
