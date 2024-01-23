@@ -18,7 +18,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <Provider store={store}>
-  <AuthProvider>
+  <AuthProvider >
     <BrowserRouter>
       <App />
     </BrowserRouter>

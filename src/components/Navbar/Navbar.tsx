@@ -8,10 +8,11 @@ import { FaUserCircle } from "react-icons/fa";
 import { IoMdLogIn, IoMdLogOut } from "react-icons/io";
 import profileImage from "../../assets/img/userImages/feyza.jpeg";
 import Nav from "react-bootstrap/Nav";
-import { AuthContext } from "../../contexts/AuthContext";
+
 
 import "./navbar.css";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
 
 type Props = {};
 
@@ -33,7 +34,7 @@ const Navbar = (props: Props) => {
   };
 
   window.addEventListener("scroll", addBg);
-  const authContext: any = useContext(AuthContext);
+  const authContext: any = useAuth()
   return (
     <>
       <div className={header}>

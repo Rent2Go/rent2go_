@@ -28,7 +28,7 @@ const Register: React.FC<Props> = (props: Props) => {
   };
 
 
-  const validationSchema = object({
+  const signupValidationSchema = object({
     firstName: string()
       .required("First Name field is required.")
       .min(2, "First Name field must be at least 2 characters.")
@@ -94,7 +94,7 @@ const Register: React.FC<Props> = (props: Props) => {
       <div className={`containers ${isActive ? "active" : ""}`}>
         <div
           className={`form-containers sign-up ${isActive ? "active" : ""}`}
-        > <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+        > <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={signupValidationSchema}>
             <Form className="form">
               <h1>Create Account</h1>
               <div className="social-icons">
