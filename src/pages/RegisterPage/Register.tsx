@@ -1,35 +1,79 @@
 import React, { useContext, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import AuthContext from "../../contexts/AuthContext";
 import { Field, Form, Formik } from "formik";
-import { FaGithub, FaLinkedin, FaYoutube, FaInstagram } from "react-icons/fa";
 import user1 from "../../assets/img/userImages/soner.jpg";
 import user2 from "../../assets/img/userImages/yagmur.jpg";
 import user3 from "../../assets/img/userImages/seyhmus.jpeg";
 import user4 from "../../assets/img/userImages/feyza.jpeg";
 import "./register.css";
+import { useAuth } from "../../contexts/AuthContext";
+import AuthService from "../../services/authService/AuthService";
+import { number, object, string } from "yup";
+
 
 type Props = {
   name?: string;
   type?: string;
   placeHolder?: string;
 };
-
+const authContext: any = useAuth()
 const Register: React.FC<Props> = (props: Props) => {
   const [isActive, setIsActive] = useState(false);
+
+  const authContext: any = useAuth()
   const containerRef = useRef(null);
 
   const handleClick = () => {
     setIsActive((prevIsActive) => !prevIsActive);
   };
 
-  const authContext: any = useContext(AuthContext);
+
+  const validationSchema = object({
+    firstName: string()
+      .required("First Name field is required.")
+      .min(2, "First Name field must be at least 2 characters.")
+      .max(20, 'The field cannot exceed 20 characters.'),
+    lastName: string()
+      .required("Last Name field is required.")
+      .min(2, "Last Name field must be at least 2 characters.")
+      .max(20, 'The field cannot exceed 20 characters.')
+    ,
+
+    phoneNumber: string().required("Phone number is required.")
+      .matches(
+        /^05\d{9}$/,
+        "Phone number must be in the format 05xxxxxxxxx."
+      ),
+    email: string()
+      .required("Email field is required.")
+      .email("Invalid email format."),
+    password: string().required("Password field is required.")
+      .matches(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,}$/,
+        "Password must be at least 8 characters, include at least one uppercase letter, one lowercase letter, one number, and one punctuation mark."
+      ),
+  });
+
+
   const navigate = useNavigate();
 
-  const handleSubmit = (values: any) => {
+  const handleSubmit = async (values: any) => {
+
+    const authService = new AuthService();
+    const response = await authService.signUp(values)
+      .then(res => {
+        console.log("Success", res)
+      }
+      )
+      .catch((err) => { console.log(err) }
+      )
+
+
+
+
     if (isActive) {
       // Sign Up işlemleri
-      console.log("Sign Up", values);
+
     } else {
       // Sign In işlemleri
       console.log("Sign In", values);
@@ -37,20 +81,20 @@ const Register: React.FC<Props> = (props: Props) => {
   };
 
   const initialValues = {
-    name: "",
-    surName: "",
+    firstName: "",
+    lastName: "",
     email: "",
-    phone: "",
+    phoneNumber: "",
     password: "",
   };
 
   return (
     <div className={`register ${isActive ? "active" : ""}`} ref={containerRef}>
-      <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-        <div className={`containers ${isActive ? "active" : ""}`}>
-          <div
-            className={`form-containers sign-up ${isActive ? "active" : ""}`}
-          >
+
+      <div className={`containers ${isActive ? "active" : ""}`}>
+        <div
+          className={`form-containers sign-up ${isActive ? "active" : ""}`}
+        > <Formik initialValues={initialValues} onSubmit={handleSubmit}>
             <Form className="form">
               <h1>Create Account</h1>
               <div className="social-icons">
@@ -71,7 +115,7 @@ const Register: React.FC<Props> = (props: Props) => {
               <div className="row">
                 <div className="col-md-6 col-sm-12">
                   <Field
-                    name="name"
+                    name="firstName"
                     className="input"
                     type="text"
                     placeholder="Name"
@@ -79,7 +123,7 @@ const Register: React.FC<Props> = (props: Props) => {
                 </div>
                 <div className="col-md-6 col-sm-12">
                   <Field
-                    name="surName"
+                    name="lastName"
                     className="input"
                     type="text"
                     placeholder="Surname"
@@ -93,11 +137,12 @@ const Register: React.FC<Props> = (props: Props) => {
                     className="input"
                     type="email"
                     placeholder="Email"
+
                   />
                 </div>
                 <div className="col-md-6 col-sm-12">
                   <Field
-                    name="phone"
+                    name="phoneNumber"
                     className="input"
                     type="text"
                     placeholder="Phone"
@@ -105,25 +150,25 @@ const Register: React.FC<Props> = (props: Props) => {
                 </div>
               </div>
               <Field
-                name="email"
-                className="input"
-                type="email"
-                placeholder="Email"
-              />
-              <Field
                 name="password"
                 className="input"
                 type="password"
                 placeholder="Password"
+
               />
               <button className="btn" type="submit">
                 Sign Up
               </button>
             </Form>
-          </div>
-          <div
-            className={`form-containers sign-in ${isActive ? "active" : ""}`}
-          >
+          </Formik>
+        </div>
+
+
+
+        <div
+          className={`form-containers sign-in ${isActive ? "active" : ""}`}
+        >
+          <Formik initialValues={initialValues} onSubmit={handleSubmit}>
             <Form className="form" action="">
               <h1>Sign In</h1>
               <div className="social-icons">
@@ -155,51 +200,49 @@ const Register: React.FC<Props> = (props: Props) => {
               />
               <Link to="#">Forget Your Password?</Link>
               <button className="btn" type="submit"
-              
-              onClick={() => {
-                authContext.setIsAuthenticated(true);
-                navigate("/");
-                localStorage.setItem("token", "abc");
-              }}
+
+                onClick={() => {
+
+                }}
               >
                 Sign In
               </button>
             </Form>
-          </div>
-          <div className="toggle-containers">
-            <div className={`toggle ${isActive ? "active" : ""}`}>
-              <div className="toggle-panel toggle-left">
-                <h1>Welcome Back!</h1>
-                <p>Enter your personal details to use all site features</p>
-                <button
-                  id="login"
-                  className={isActive ? "toggle-btn active" : "toggle-btn"}
-                  onClick={handleClick}
-                >
-                  Sign In
-                </button>
-              </div>
-              <div
-                className={`toggle-panel toggle-right ${
-                  isActive ? "active" : ""
-                }`}
+          </Formik>
+        </div>
+        <div className="toggle-containers">
+          <div className={`toggle ${isActive ? "active" : ""}`}>
+            <div className="toggle-panel toggle-left">
+              <h1>Welcome Back!</h1>
+              <p>Enter your personal details to use all site features</p>
+              <button
+                id="login"
+                className={isActive ? "toggle-btn active" : "toggle-btn"}
+                onClick={handleClick}
               >
-                <h1>Hello, Friend!</h1>
-                <p>
-                  Register with your personal details to use all site features
-                </p>
-                <button
-                  id="register"
-                  className={!isActive ? "toggle-btn active" : "toggle-btn"}
-                  onClick={handleClick}
-                >
-                  Sign Up
-                </button>
-              </div>
+                Sign In
+              </button>
+            </div>
+            <div
+              className={`toggle-panel toggle-right ${isActive ? "active" : ""
+                }`}
+            >
+              <h1>Hello, Friend!</h1>
+              <p>
+                Register with your personal details to use all site features
+              </p>
+              <button
+                id="register"
+                className={!isActive ? "toggle-btn active" : "toggle-btn"}
+                onClick={handleClick}
+              >
+                Sign Up
+              </button>
             </div>
           </div>
         </div>
-      </Formik>
+      </div>
+
     </div>
   );
 };
