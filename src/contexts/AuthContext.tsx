@@ -24,7 +24,7 @@ export const AuthProvider = (props: Props) => {
           role: decoded.role,
         };
       } catch (error) {
-        console.error('Invalid token', error);
+      
       }
     }
     return {
@@ -85,17 +85,3 @@ export const useAuth = () => {
 
 
 
-// import { createContext, useState } from "react";
-
-// export const AuthContext = createContext({});
-
-// export const AuthProvider = (props: any) => {
-//   const [isAuthenticated, setIsAuthenticated] = useState(false);
-//   return (
-//     <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
-//       {props.children}
-//     </AuthContext.Provider>
-//   );
-// };
-
-// export default AuthContext;
