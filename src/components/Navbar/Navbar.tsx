@@ -33,6 +33,10 @@ const Navbar = (props: Props) => {
     }
   };
 
+  const logout = () => {
+    localStorage.removeItem("token");
+  }
+
   window.addEventListener("scroll", addBg);
   const authContext: any = useAuth()
   return (
@@ -71,7 +75,7 @@ const Navbar = (props: Props) => {
         </div>
 
         <div className="signUp flex">
-          {authContext.isAuthenticated ? (
+          {authContext.authInformation.isAuthenticated ? (
             <>
               <NavDropdown
                 className="textAction text"
@@ -91,7 +95,7 @@ const Navbar = (props: Props) => {
                 <Link className="  btn text textAction" to="/cart">
                   Reservation
                 </Link>
-                <Link className="text textAction btn" to="/sign-up">
+                <Link className="text textAction btn" to="/sign-up" onClick={logout}>
                   Log Out
                 </Link>
               </NavDropdown>
