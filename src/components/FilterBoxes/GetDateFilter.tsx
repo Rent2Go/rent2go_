@@ -39,8 +39,11 @@ const GetDateFilter = (props: Props) => {
 
   const getCars = async () => {
     const carService = new CarService();
-    const response = await carService.getAll();
-    setCars(response.data.data);
+    const response = await carService.getAll()
+    .then(response => { 
+      setCars(response.data.data)
+    })
+  
   };
 
   useEffect(() => {

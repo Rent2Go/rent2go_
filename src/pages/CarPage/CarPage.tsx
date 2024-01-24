@@ -30,8 +30,8 @@ const CarPage: React.FC<Props> = (props) => {
 
   const getCars = async () => {
     try {
-      const carService = new CarService();
-      const response = await carService.getAll();
+     
+      const response = await CarService.getAll();
       setCars(response.data.data);
       setIsInitialLoad(false);
     } catch (error) {
