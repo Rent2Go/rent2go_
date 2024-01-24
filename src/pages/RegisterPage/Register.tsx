@@ -25,6 +25,7 @@ type Props = {
 };
 
 const Register: React.FC<Props> = (props: Props) => {
+  
   const authContext: any = useAuth();
   const [isActive, setIsActive] = useState(false);
   const containerRef = useRef(null);
@@ -37,7 +38,7 @@ const Register: React.FC<Props> = (props: Props) => {
     const response = await AuthService.signIn(values)
       .then((resolve) => {
 
-        console.log("Sign-in successful:", resolve.data);
+        console.log("Sign-in successful:", resolve);
         localStorage.setItem("token", resolve?.data?.token);
         authContext.refreshUser();
         navigate("/");
@@ -60,6 +61,7 @@ const Register: React.FC<Props> = (props: Props) => {
 
   return (
     <div className={`register ${isActive ? "active" : ""}`} ref={containerRef}>
+      
 
       <div className={`containers ${isActive ? "active" : ""}`}>
         <div
@@ -187,6 +189,7 @@ const Register: React.FC<Props> = (props: Props) => {
               >
                 Sign In
               </button>
+              <ToastContainer />
             </Form>
           </Formik>
         </div>
@@ -222,19 +225,7 @@ const Register: React.FC<Props> = (props: Props) => {
           </div>
         </div>
       </div>
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-
-      />
+      
     </div>
   );
 };
