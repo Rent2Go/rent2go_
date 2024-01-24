@@ -34,8 +34,7 @@ const Register: React.FC<Props> = (props: Props) => {
   };
 
   const signInhandleSubmit = async (values: SignInRequest) => {
-    const authService = new AuthService();
-    const response = await authService.signIn(values)
+    const response = await AuthService.signIn(values)
       .then((resolve) => {
 
         console.log("Sign-in successful:", resolve.data);
@@ -50,8 +49,7 @@ const Register: React.FC<Props> = (props: Props) => {
 
 
   const handleSubmit = async (values: signUpRequest) => {
-    const authService = new AuthService();
-    const response = await authService.signUp(values)
+    const response = await AuthService.signUp(values)
       .then((resolve) => {
         navigate("/");
 
