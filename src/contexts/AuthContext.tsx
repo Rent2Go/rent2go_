@@ -24,7 +24,7 @@ export const AuthProvider = (props: Props) => {
           role: decoded.role,
         };
       } catch (error) {
-      
+        console.log('Invalid token', error);
       }
     }
     return {

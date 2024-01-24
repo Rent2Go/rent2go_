@@ -1,27 +1,35 @@
 import axios from "axios";
+import { request } from "http";
 
 const axiosInstance = axios.create({
 	baseURL: "http://localhost:8080/api/",
 });
 
-axiosInstance.interceptors.request.use(config => {
+axiosInstance.interceptors.request.use(request => {
 	console.log("sending request..");
 
-	config.headers.Authorization = "MyToken";
-	config.headers["Accept-Language"] = "tr";
+	//request.headers.Authorization = "Bearer "+localStorage.getItem("token");
+	
 
-	return config;
-});
+	return Promise.resolve(request)
+},
+
+error => {
+	return Promise.reject(error);
+},
+
+
+);
 
 axiosInstance.interceptors.response.use(
 	response => {
 		//...
-		console.log("Here is response");
+		console.log(response.status);
 
 		return response;
 	},
 	error => {
-		console.log(error);
+		return Promise.reject(error);
 	},
 );
 

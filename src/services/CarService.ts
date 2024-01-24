@@ -1,5 +1,5 @@
 import { GetAllCarsModel } from "../models/responses/cars/GetAllCars";
-import { CarModel } from "../models/responses/cars/GetCar";
+
 import { GetByCarIdModel } from "../models/responses/cars/getByCarId";
 import axiosInstance from "../utils/axiosInsterceptors";
 
