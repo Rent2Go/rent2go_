@@ -1,15 +1,22 @@
-
 import { jwtDecode } from 'jwt-decode';
-import React, {  useState, useEffect, createContext } from 'react';
+import React, { useState, useEffect, createContext, ReactNode } from 'react';
 import { TokenUser } from '../models/token/TokenUser';
+import { UserAuthModel } from '../models/user/UserAuth';
 
-const AuthContext = createContext({})
-
-type Props = {
-  children:any
+interface AuthContextProps {
+  authInformation: UserAuthModel;
+  hasPermission: (role: string) => boolean;
+  refreshUser: () => void;
 }
-export const AuthProvider = (props: Props) => {
-  const getInitialUser = () => {
+
+const AuthContext = createContext<AuthContextProps | undefined>(undefined);
+
+type AuthProviderProps = {
+  children: ReactNode;
+};
+
+export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
+  const getInitialUser = (): UserAuthModel => {
     const token = localStorage.getItem('token');
     if (token) {
       try {
@@ -29,18 +36,22 @@ export const AuthProvider = (props: Props) => {
     }
     return {
       isAuthenticated: false,
-      user: null,
+      user: {
+        firstname:'',
+        phoneNumber: '',
+        lastname: '',
+
+      },
       role: '',
     };
   };
-  const [authInformation, setAuthInformation] = useState(getInitialUser());
+  const [authInformation, setAuthInformation] = useState<UserAuthModel>(getInitialUser());
 
-
-  /*const hasPermission = (role: string) => {
+  const hasPermission = (role: string): boolean => {
     return authInformation.role === role;
-  };*/
+  };
 
-  const refreshUser = () => {
+  const refreshUser = (): void => {
     const user = getInitialUser();
     setAuthInformation(user);
   };
@@ -49,39 +60,19 @@ export const AuthProvider = (props: Props) => {
     refreshUser();
   }, []);
 
-  return (
-    <AuthContext.Provider value={{ authInformation,refreshUser }}>
-      {props.children}
-    </AuthContext.Provider>
-  );
+  const contextValue: AuthContextProps = {
+    authInformation,
+    hasPermission,
+    refreshUser,
+  };
+
+  return <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>;
 };
 
-export const useAuth = () => {
+export const useAuth = (): AuthContextProps => {
   const context = React.useContext(AuthContext);
   if (!context) {
     throw new Error('useAuth must be used within an AuthProvider');
   }
   return context;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
