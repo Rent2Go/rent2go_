@@ -4,13 +4,14 @@ import { CarPage, HomePage, Login, Register, BrandPage, OurTeamPage, ContactPage
 
 import "./App.css";
 import { RentalModel } from "./models/responses/rentals/GetRental";
+import PrivateRoute from "./utils/PrivateRoute";
 function App() {
   return (
     <>
       <main>
        
         <Routes>
-          <Route path="/" element={<HomePage />} />
+        
           <Route path="/sign-in" element={<Login />} />
           <Route path="/sign-up" element={<Register />} />
           <Route path="/cars" element={<CarPage />} />
@@ -19,6 +20,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/reservation/:id" element={<ReservationPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/" element={<PrivateRoute  element={<HomePage/>}  role={'USER'} />} />
         </Routes>
       </main>
     </>
