@@ -1,15 +1,16 @@
 import { SignInRequest } from './../../models/requests/auth/SignInRequest';
 import { TokenResponse } from "../../models/responses/auth/LoginResponse";
 import axiosInstance from "../../utils/axiosInsterceptors";
+import { signUpRequest } from '../../models/requests/auth/SignupRequest';
 
 
 class AuthService{
-   signUp(signUpRequest:SignInRequest){
-        return axiosInstance.post<String>("/signup", signUpRequest);
+   signUp(signUpRequest:signUpRequest){
+        return axiosInstance.post("/signup", signUpRequest);
     }
 
     signIn(signInRequest:SignInRequest){
-         return axiosInstance.post<TokenResponse>("/signin", signInRequest);
+         return axiosInstance.post("/signin", signInRequest);
     }
        
  
