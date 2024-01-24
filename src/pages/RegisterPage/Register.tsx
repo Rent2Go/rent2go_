@@ -11,8 +11,11 @@ import AuthService from "../../services/authService/AuthService";
 import { number, object, string } from "yup";
 import Field from '../../components/FormikInput/FormikInput';
 import { TokenResponse } from "../../models/responses/auth/LoginResponse";
-import { toast } from 'react-toastify';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { SignInRequest } from "../../models/requests/auth/SignInRequest";
+import { signUpRequest } from "../../models/requests/auth/SignupRequest";
+import { signInValidationSchema, signIninitialValues, signUpinitialValues, signupValidationSchema } from "./FormikAndYupSchema";
 
 
 type Props = {
@@ -26,105 +29,35 @@ const Register: React.FC<Props> = (props: Props) => {
   const [isActive, setIsActive] = useState(false);
   const containerRef = useRef(null);
   const navigate = useNavigate();
-
-
-
   const handleClick = () => {
     setIsActive((prevIsActive) => !prevIsActive);
   };
 
-
-  const signupValidationSchema = object({
-    firstName: string()
-      .required("First Name field is required.")
-      .min(2, "First Name field must be at least 2 characters.")
-      .max(20, 'The field cannot exceed 20 characters.'),
-    lastName: string()
-      .required("Last Name field is required.")
-      .min(2, "Last Name field must be at least 2 characters.")
-      .max(20, 'The field cannot exceed 20 characters.')
-    ,
-
-    phoneNumber: string().required("Phone number is required.")
-      .matches(
-        /^05\d{9}$/,
-        "Phone number must be in the format 05xxxxxxxxx."
-      ),
-    email: string()
-      .required("Email field is required.")
-      .email("Invalid email format."),
-    password: string().required("Password field is required.")
-      .min(8, "Password must be at least 8 characters.")
-      .matches(/[a-z]/, "Password must include at least one lowercase letter.")
-      .matches(/[A-Z]/, "Password must include at least one uppercase letter.")
-      .matches(/\d/, "Password must include at least one number.")
-      .matches(/[!@#$%^&*()_+{}|:;<>,.?/~`]/, "Password must include at least one punctuation mark."),
-  });
-
-
-  const signInValidationSchema = object({
-    email: string()
-      .required("Email field is required.")
-      .email("Invalid email format."),
-    password: string()
-      .required("Password field is required.")
-  });
-
-
-
-
-  const signInhandleSubmit = async (values: any) => {
-
+  const signInhandleSubmit = async (values: SignInRequest) => {
     const authService = new AuthService();
     const response = await authService.signIn(values)
-      .then((res) => {
-        localStorage.setItem("token", res?.data?.token);
+      .then((resolve) => {
+
+        console.log("Sign-in successful:", resolve.data);
+        localStorage.setItem("token", resolve?.data?.token);
         authContext.refreshUser();
         navigate("/");
-        console.log("Success", res)
-      }
-      )
-      .catch(error => {
-        if (error.response) {
-          // The request was made and the server responded with a status code
-          // that falls out of the range of 2xx
-          toast.error(`Hatalı Giris : ${error.response.data.message}`);
-        } else if (error.request) {
-          // The request was made but no response was received
-          toast.error("No response from server. Please try again later.");
-        } else {
-          // Something happened in setting up the request that triggered an Error
-          toast.error("An error occurred while making the request: " + error.message);
-        }
-      });
+      })
 
-    
-  };
+      .catch((error) =>
+        toast.error(error.response.data.message))
+  }
 
-    /// Sign Up api istek fonksiyonu
-  const handleSubmit = async (values: any) => {
 
+  const handleSubmit = async (values: signUpRequest) => {
     const authService = new AuthService();
     const response = await authService.signUp(values)
-      .then(res => {
-        console.log("Success", res)
-        navigate('/')
-      }
-      )
-      .catch((err) => { console.log(err) }
-      )
+      .then((resolve) => {
+        navigate("/");
 
-    
-  };
-
-
-
-  const initialValues = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    phoneNumber: "",
-    password: "",
+      })
+      .catch((error) =>
+        toast.error(error.response.data.message))
   };
 
   return (
@@ -133,7 +66,7 @@ const Register: React.FC<Props> = (props: Props) => {
       <div className={`containers ${isActive ? "active" : ""}`}>
         <div
           className={`form-containers sign-up ${isActive ? "active" : ""}`}
-        > <Formik initialValues={initialValues}
+        > <Formik initialValues={signUpinitialValues}
           onSubmit={handleSubmit}
           validationSchema={signupValidationSchema}
           validateOnBlur={true}
@@ -203,6 +136,7 @@ const Register: React.FC<Props> = (props: Props) => {
               <button className="btn" type="submit">
                 Sign Up
               </button>
+
             </Form>
           </Formik>
         </div>
@@ -212,7 +146,7 @@ const Register: React.FC<Props> = (props: Props) => {
         <div
           className={`form-containers sign-in ${isActive ? "active" : ""}`}
         >
-          <Formik initialValues={initialValues}
+          <Formik initialValues={signIninitialValues}
             onSubmit={signInhandleSubmit}
             validationSchema={signInValidationSchema}
             validateOnBlur={true}
@@ -249,9 +183,9 @@ const Register: React.FC<Props> = (props: Props) => {
               <Link to="#">Forget Your Password?</Link>
               <button className="btn" type="submit"
 
-                
 
-                
+
+
               >
                 Sign In
               </button>
@@ -290,7 +224,19 @@ const Register: React.FC<Props> = (props: Props) => {
           </div>
         </div>
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
 
+      />
     </div>
   );
 };
