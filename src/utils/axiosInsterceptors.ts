@@ -1,6 +1,4 @@
 import axios from "axios";
-import { request } from "http";
-
 const axiosInstance = axios.create({
 	baseURL: "http://localhost:8080/api/",
 });
@@ -26,10 +24,10 @@ axiosInstance.interceptors.response.use(
 		//...
 		console.log(response.status);
 
-		return response;
+		return Promise.resolve(response);
 	},
 	error => {
-		return error;
+		return Promise.reject(error);
 	},
 );
 
