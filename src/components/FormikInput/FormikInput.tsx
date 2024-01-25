@@ -20,6 +20,7 @@ const FormikInput: React.FC<any> = ({
         placeholder={placeholder}
         className="form-control"
         {...rest}
+        autoComplete="current-password"
       />
       <ErrorMessage name={name} component="div" className="text-danger" >{message => <span  className="text-danger " >{message}</span>}</ErrorMessage>
     </Form.Group>
