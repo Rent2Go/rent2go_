@@ -25,11 +25,14 @@ type Props = {
 };
 
 const Register: React.FC<Props> = (props: Props) => {
-  
+
   const authContext: any = useAuth();
   const [isActive, setIsActive] = useState(false);
   const containerRef = useRef(null);
   const navigate = useNavigate();
+
+
+
   const handleClick = () => {
     setIsActive((prevIsActive) => !prevIsActive);
   };
@@ -38,14 +41,16 @@ const Register: React.FC<Props> = (props: Props) => {
     const response = await AuthService.signIn(values)
       .then((resolve) => {
 
-        console.log("Sign-in successful:", resolve);
         localStorage.setItem("token", resolve?.data?.token);
+        toast.success("Giriş Başarılı")
         authContext.refreshUser();
-        navigate("/");
+        setTimeout(() => { navigate("/") }, 1500);
+
+
       })
 
       .catch((error) =>
-        toast.error(error.response.data.message))
+        toast.warn(error.response.data.message))
   }
 
 
@@ -61,7 +66,7 @@ const Register: React.FC<Props> = (props: Props) => {
 
   return (
     <div className={`register ${isActive ? "active" : ""}`} ref={containerRef}>
-      
+
 
       <div className={`containers ${isActive ? "active" : ""}`}>
         <div
@@ -182,14 +187,9 @@ const Register: React.FC<Props> = (props: Props) => {
               />
               <Link to="#">Forget Your Password?</Link>
               <button className="btn" type="submit"
-
-
-
-
               >
                 Sign In
               </button>
-              <ToastContainer />
             </Form>
           </Formik>
         </div>
@@ -225,7 +225,11 @@ const Register: React.FC<Props> = (props: Props) => {
           </div>
         </div>
       </div>
-      
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        closeOnClick
+      />
     </div>
   );
 };
