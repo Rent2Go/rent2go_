@@ -1,5 +1,4 @@
 import { SignInRequest } from './../../models/requests/auth/SignInRequest';
-import { TokenResponse } from "../../models/responses/auth/LoginResponse";
 import axiosInstance from "../../utils/axiosInsterceptors";
 import { signUpRequest } from '../../models/requests/auth/SignupRequest';
 
