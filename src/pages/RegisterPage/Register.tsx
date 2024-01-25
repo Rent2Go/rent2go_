@@ -9,14 +9,19 @@ import "./register.css";
 import { useAuth } from "../../contexts/AuthContext";
 import AuthService from "../../services/authService/AuthService";
 import { number, object, string } from "yup";
-import Field from '../../components/FormikInput/FormikInput';
+import Field from "../../components/FormikInput/FormikInput";
 import { TokenResponse } from "../../models/responses/auth/LoginResponse";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { SignInRequest } from "../../models/requests/auth/SignInRequest";
 import { signUpRequest } from "../../models/requests/auth/SignupRequest";
-import { signInValidationSchema, signIninitialValues, signUpinitialValues, signupValidationSchema } from "./FormikAndYupSchema";
-
+import {
+  signInValidationSchema,
+  signIninitialValues,
+  signUpinitialValues,
+  signupValidationSchema,
+} from "./FormikAndYupSchema";
+import { error } from "console";
 
 type Props = {
   name?: string;
@@ -25,7 +30,6 @@ type Props = {
 };
 
 const Register: React.FC<Props> = (props: Props) => {
-  
   const authContext: any = useAuth();
   const [isActive, setIsActive] = useState(false);
   const containerRef = useRef(null);
@@ -37,40 +41,35 @@ const Register: React.FC<Props> = (props: Props) => {
   const signInhandleSubmit = async (values: SignInRequest) => {
     const response = await AuthService.signIn(values)
       .then((resolve) => {
-
         console.log("Sign-in successful:", resolve);
         localStorage.setItem("token", resolve?.data?.token);
         authContext.refreshUser();
         navigate("/");
       })
 
-      .catch((error) =>
-        toast.error(error.response.data.message))
-  }
-
+      .catch((error) => toast.error(error.response.data.message));
+  };
 
   const handleSubmit = async (values: signUpRequest) => {
     const response = await AuthService.signUp(values)
       .then((resolve) => {
         navigate("/");
-
       })
-      .catch((error) =>
-        toast.error(error.response.data.message))
+      .catch((error) => toast.error(error.response.data.message));
   };
 
   return (
     <div className={`register ${isActive ? "active" : ""}`} ref={containerRef}>
-      
-
       <div className={`containers ${isActive ? "active" : ""}`}>
-        <div
-          className={`form-containers sign-up ${isActive ? "active" : ""}`}
-        > <Formik initialValues={signUpinitialValues}
-          onSubmit={handleSubmit}
-          validationSchema={signupValidationSchema}
-          validateOnBlur={true}
-          validateOnChange={true}>
+        <div className={`form-containers sign-up ${isActive ? "active" : ""}`}>
+          {" "}
+          <Formik
+            initialValues={signUpinitialValues}
+            onSubmit={handleSubmit}
+            validationSchema={signupValidationSchema}
+            validateOnBlur={true}
+            validateOnChange={true}
+          >
             <Form className="form">
               <h1>Create Account</h1>
               <div className="social-icons">
@@ -113,7 +112,6 @@ const Register: React.FC<Props> = (props: Props) => {
                     className="input"
                     type="email"
                     placeholder="Email"
-
                   />
                 </div>
                 <div className="col-md-6 col-sm-12">
@@ -130,27 +128,23 @@ const Register: React.FC<Props> = (props: Props) => {
                 className="input"
                 type="password"
                 placeholder="Password"
-
               />
 
               <button className="btn" type="submit">
                 Sign Up
               </button>
-
             </Form>
           </Formik>
         </div>
 
-
-
-        <div
-          className={`form-containers sign-in ${isActive ? "active" : ""}`}
-        >
-          <Formik initialValues={signIninitialValues}
+        <div className={`form-containers sign-in ${isActive ? "active" : ""}`}>
+          <Formik
+            initialValues={signIninitialValues}
             onSubmit={signInhandleSubmit}
             validationSchema={signInValidationSchema}
             validateOnBlur={true}
-            validateOnChange={false}>
+            validateOnChange={false}
+          >
             <Form className="form" action="">
               <h1>Sign In</h1>
               <div className="social-icons">
@@ -181,12 +175,7 @@ const Register: React.FC<Props> = (props: Props) => {
                 placeholder="Password"
               />
               <Link to="#">Forget Your Password?</Link>
-              <button className="btn" type="submit"
-
-
-
-
-              >
+              <button className="btn" type="submit">
                 Sign In
               </button>
               <ToastContainer />
@@ -207,8 +196,9 @@ const Register: React.FC<Props> = (props: Props) => {
               </button>
             </div>
             <div
-              className={`toggle-panel toggle-right ${isActive ? "active" : ""
-                }`}
+              className={`toggle-panel toggle-right ${
+                isActive ? "active" : ""
+              }`}
             >
               <h1>Hello, Friend!</h1>
               <p>
@@ -225,7 +215,6 @@ const Register: React.FC<Props> = (props: Props) => {
           </div>
         </div>
       </div>
-      
     </div>
   );
 };

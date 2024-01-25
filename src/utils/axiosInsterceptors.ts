@@ -1,4 +1,5 @@
 import axios from "axios";
+import { response } from "express";
 import { request } from "http";
 
 const axiosInstance = axios.create({
@@ -6,7 +7,7 @@ const axiosInstance = axios.create({
 });
 
 axiosInstance.interceptors.request.use(request => {
-	console.log("sending request..");
+	
 
 	//request.headers.Authorization = "Bearer "+localStorage.getItem("token");
 	
@@ -24,12 +25,11 @@ error => {
 axiosInstance.interceptors.response.use(
 	response => {
 		//...
-		console.log(response.status);
-
-		return response;
+		
+		return Promise.resolve(response);
 	},
 	error => {
-		return error;
+		return Promise.reject(error);
 	},
 );
 
