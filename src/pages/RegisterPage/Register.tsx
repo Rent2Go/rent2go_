@@ -231,7 +231,7 @@ const Register: React.FC<Props> = (props: Props) => {
           </div>
         </div>
       </div>
-      
+      <ToastContainer position="top-center"/>
     </div>
   );
 };
