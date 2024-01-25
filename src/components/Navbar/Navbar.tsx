@@ -13,6 +13,7 @@ import Nav from "react-bootstrap/Nav";
 import "./navbar.css";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
+import { toast } from "react-toastify";
 
 type Props = {};
 
@@ -35,6 +36,7 @@ const Navbar = (props: Props) => {
 
   const logout = () => {
     localStorage.removeItem("token");
+    toast.success("Çıkış Başarıyla Gerçekleşti")
   }
 
   window.addEventListener("scroll", addBg);
