@@ -7,6 +7,7 @@ import {
   Permissions, Register, ResetPassword, 
   UpdateCar, UpdateCustomer, UpdateEmployee, UpdateRental, UpdateUser, UpdateUserRole 
 } from "../pages";
+import PrivateRoute from "../utils/PrivateRoute";
 
 
 
@@ -15,7 +16,6 @@ const Router = () => {
   
     <Routes>
       <Route path="/" element={<Navigate to="/dashboard"/>} />
-      <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/reset-password" element={<ResetPassword />} />
@@ -44,7 +44,7 @@ const Router = () => {
       <Route path="/add-user" element={<AddUser />} />
       <Route path="/update-user/:id" element={<UpdateUser />} />
       <Route path="/detail-user/:id" element={<DetailUser />} />
-
+      <Route path="/dashboard" element={<PrivateRoute element={<Dashboard/>} role="ADMIN" />} />
     </Routes>
   );
 };
