@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
 import { Layout } from './components';
-import { Login } from './pages';
 
 function App() {
   return (
-    <>
+    <React.Fragment>
       <Layout />
-    </>
+    </React.Fragment>
   );
 }
 
