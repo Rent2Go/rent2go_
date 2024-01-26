@@ -16,6 +16,7 @@ const Router = () => {
   
     <Routes>
       <Route path="/" element={<Navigate to="/dashboard"/>} />
+      <Route path="/login" element={<Login/>} />
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/cars" element={<ListCar />} />
       <Route path="/add-car" element={<AddCar />} />

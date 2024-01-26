@@ -5,10 +5,9 @@ import { Login } from './pages';
 
 function App() {
   return (
-    <div className="App">
-      <Login/>
+    <>
       <Layout />
-    </div>
+    </>
   );
 }
 
