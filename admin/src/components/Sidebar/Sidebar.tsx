@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AiOutlineLogout } from "react-icons/ai";
 
 import sidebarLinks from "./sidebarLinks";
@@ -31,20 +31,20 @@ const Sidebar = (props: Props) => {
                   </span>
 
                   {item.display}
-                  
                 </NavLink>
               </li>
             ))}
           </ul>
         </div>
         <div className="sidebar__bottom">
-        <span>
-          <AiOutlineLogout />
-          Logout
-        </span>
+          <span>
+            <Link to="/login">
+              <AiOutlineLogout />
+              Logout
+            </Link>
+          </span>
+        </div>
       </div>
-      </div>
-     
     </div>
   );
 };
