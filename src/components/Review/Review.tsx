@@ -1,13 +1,6 @@
 import React from "react";
 
-import car1 from "../../assets/img/carModels/1967-Chevrolet-Impalasiyah.png";
-import car2 from "../../assets/img/carModels/porche-911gt3-beyaz.png";
-import car3 from "../../assets/img/carModels/bmw320-kırmızı.png";
-import car4 from "../../assets/img/carModels/chevrolet-cruze-beyaz.png";
-import user1 from "../../assets/img/userImages/soner.png";
-import user2 from "../../assets/img/userImages/yagmur.jpg";
-import user3 from "../../assets/img/userImages/seyhmus.jpeg";
-import user4 from "../../assets/img/userImages/feyza.jpeg";
+
 import "./review.css";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";
@@ -28,7 +21,7 @@ const Review = (props: Props) => {
         <div className="reviewContainer grid">
           <div className="singleReview grid">
             <div className="imgDiv">
-              <img src={car1} alt="reviewImg" />
+              <img src="assets/img/carModels/1967-Chevrolet-Impalasiyah.png" alt="reviewImg" />
             </div>
             <h5 className="reviewTitle">1967 Impala</h5>
             <span className="desc">
@@ -38,7 +31,7 @@ const Review = (props: Props) => {
             <div className="reviewerDiv flex">
               <div className="leftDiv flex">
                 <div className="reviewerImage">
-                  <img src={user1} alt="reviewerImage" />
+                  <img src="assets/img/userImages/soner.png" alt="reviewerImage" />
                 </div>
                 <div className="aboutReviewer">
                   <span className="name">Soner Şeylan</span>
@@ -53,7 +46,7 @@ const Review = (props: Props) => {
           </div>
           <div className="singleReview grid">
             <div className="imgDiv">
-              <img src={car2} alt="reviewImg" />
+              <img src="assets/img/carModels/porche-911gt3-beyaz.png" alt="reviewImg" />
             </div>
             <h5 className="reviewTitle">2023 Porsche</h5>
             <span className="desc">
@@ -63,7 +56,7 @@ const Review = (props: Props) => {
             <div className="reviewerDiv flex">
               <div className="leftDiv flex">
                 <div className="reviewerImage">
-                  <img src={user2} alt="reviewerImage" />
+                  <img src="assets/img/userImages/yagmur.jpg" alt="reviewerImage" />
                 </div>
                 <div className="aboutReviewer">
                   <span className="name">Yağmur Çurku</span>
@@ -78,7 +71,7 @@ const Review = (props: Props) => {
           </div>
           <div className="singleReview grid">
             <div className="imgDiv">
-              <img src={car3} alt="reviewImg" />
+              <img src="assets/img/carModels/bmw320-kırmızı.png" alt="reviewImg" />
             </div>
             <h5 className="reviewTitle">2023 BMW</h5>
             <span className="desc">
@@ -88,7 +81,7 @@ const Review = (props: Props) => {
             <div className="reviewerDiv flex">
               <div className="leftDiv flex">
                 <div className="reviewerImage">
-                  <img src={user3} alt="reviewerImage" />
+                  <img src="assets/img/userImages/seyhmus.jpeg" alt="reviewerImage" />
                 </div>
                 <div className="aboutReviewer">
                   <span className="name">Şeyhmus Erol</span>
@@ -104,7 +97,7 @@ const Review = (props: Props) => {
 
           <div className="singleReview grid">
             <div className="imgDiv">
-              <img src={car4} alt="reviewImg" />
+              <img src="assets/img/carModels/chevrolet-cruze-beyaz.png" alt="reviewImg" />
             </div>
             <h5 className="reviewTitle">2018 Cruze</h5>
             <span className="desc">
@@ -114,7 +107,7 @@ const Review = (props: Props) => {
             <div className="reviewerDiv flex">
               <div className="leftDiv flex">
                 <div className="reviewerImage">
-                  <img src={user4} alt="reviewerImage" />
+                  <img src="assets/img/userImages/feyza.jpeg" alt="reviewerImage" />
                 </div>
                 <div className="aboutReviewer">
                   <span className="name">Feyza Karanfil Erat</span>

@@ -21,7 +21,7 @@ const ReservationPage: React.FC<Props> = (props) => {
 
   const getRentals = async (id: string) => {
     try {
-      const rentalService = new CarService();
+      const rentalService = CarService;
       const response = await rentalService.getById(parseInt(id));
       setRentals(response.data.data);
       console.log("setRentals : ",response);

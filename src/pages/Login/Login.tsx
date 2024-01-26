@@ -1,16 +1,22 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
-import AuthContext from "../../contexts/AuthContext";
+
 import { Field, Form, Formik, FormikProps } from "formik";
-import login from "../../assets/img/login.jpg";
+import { useAuth } from "../../contexts/AuthContext";
 
 type Props = {};
 
 const Login = (props: Props) => {
-  const authContext: any = useContext(AuthContext);
-  const navigate = useNavigate();
+  const authContext = useAuth();
 
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState<string>('')
+  const [phoneNumber, setPhoneNumber] = useState<string>('')
+  const [email, setEmail] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
+
+  const navigate = useNavigate();
   const handleSubmit = () => {};
   const initialValues = {
     email: "",
@@ -26,7 +32,7 @@ const Login = (props: Props) => {
           <div className="imgDiv">
             <div className="imgCurtain"></div>
 
-            <img src={login} alt="loginImage" />
+            <img src="assets/img/login.jpg" alt="loginImage" />
           </div>
           <div className="fieldDiv">
             <Formik initialValues={initialValues} onSubmit={handleSubmit}>
@@ -45,6 +51,7 @@ const Login = (props: Props) => {
                         name="email"
                         placeholder="Please Enter Your Mail Address"
                         className="form-control"
+              
                       />
                     </div>
                     <div className="col-12 mt-2">
@@ -64,9 +71,7 @@ const Login = (props: Props) => {
                         type="button"
                         className="btn submitBtn mt-5"
                         onClick={() => {
-                          authContext.setIsAuthenticated(true);
-                          navigate("/");
-                          localStorage.setItem("token", "abc");
+
                         }}
                       >
                         Submit

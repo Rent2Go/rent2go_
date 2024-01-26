@@ -1,10 +1,6 @@
 import React from "react";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 
-import car1 from "../../assets/img/carModels/maserati-quattroporte-mavi.png";
-import car2 from "../../assets/img/carModels/bmw320-kırmızı.png";
-import car3 from "../../assets/img/carModels/mercedesc200-beyaz.png";
-
 import "./trending.css";
 
 type Props = {};
@@ -27,7 +23,7 @@ const Trending = (props: Props) => {
               data-aos-duration="2000"
               className="imgDiv"
             >
-              <img src={car1} alt="carImage" />
+              <img src="assets/img/carModels/maserati-quattroporte-mavi.png" alt="carImage" />
             </div>
             <h5 className="carTitle">Used 2019 Audi S4 Premium Plus</h5>
             <span className="miles">11457 Miles</span>
@@ -41,7 +37,7 @@ const Trending = (props: Props) => {
 
           <div className="singleCar grid">
             <div className="imgDiv" data-aos="fade-up" data-aos-duration="2500">
-              <img src={car3} alt="carImage" />
+              <img src="assets/img/carModels/mercedesc200-beyaz.png" alt="carImage" />
             </div>
             <h5 className="carTitle">Used 2019 Audi S4 Premium Plus</h5>
             <span className="miles">11457 Miles</span>
@@ -59,7 +55,7 @@ const Trending = (props: Props) => {
               data-aos-duration="3000"
               className="imgDiv"
             >
-              <img src={car2} alt="carImage" />
+              <img src="assets/img/carModels/bmw320-kırmızı.png" alt="carImage" />
             </div>
             <h5 className="carTitle">Used 2019 Audi S4 Premium Plus</h5>
             <span className="miles">11457 Miles</span>

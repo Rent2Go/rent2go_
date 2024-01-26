@@ -1,10 +1,30 @@
 import React from 'react'
+import { Navbar,Footer } from '../../components'
 
 type Props = {}
 
 const PrivacyPolicy = (props: Props) => {
   return (
-    <div>PrivacyPolicy</div>
+    <>
+    <Navbar />
+    <div className="legalPages container">
+      <div className="secContainer">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
+    </div>
+    <Footer />
+  </>
   )
 }
 

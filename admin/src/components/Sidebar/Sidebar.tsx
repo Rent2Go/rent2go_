@@ -1,7 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../../assets/images/logo-dark.png";
-import sidebarLinks from "../../assets/data/sidebarLinks";
+import { AiOutlineLogout } from "react-icons/ai";
+
+import sidebarLinks from "./sidebarLinks";
 import "./sidebar.css";
 type Props = {};
 
@@ -9,7 +10,9 @@ const Sidebar = (props: Props) => {
   return (
     <div className="sidebar">
       <div className="sidebar__top">
-        <h2><img src={logo} alt="logo" /> Rent2go</h2>
+        <h2>
+          <img src="assets/images/logo-dark.png" alt="logo" /> Rent2go
+        </h2>
       </div>
       <div className="sidebar__content">
         <div className="menu">
@@ -28,17 +31,20 @@ const Sidebar = (props: Props) => {
                   </span>
 
                   {item.display}
-                  <ul>
-                    <li>
-                      <i className={item.subIcon}></i> {item.subDisplay}
-                    </li>
-                  </ul>
+                  
                 </NavLink>
               </li>
             ))}
           </ul>
         </div>
+        <div className="sidebar__bottom">
+        <span>
+          <AiOutlineLogout />
+          Logout
+        </span>
       </div>
+      </div>
+     
     </div>
   );
 };

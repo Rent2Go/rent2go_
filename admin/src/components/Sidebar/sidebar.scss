@@ -1,32 +1,78 @@
-.sidebar{
-    width: 260px;
-    height: 100%;
-    position: fixed;
-    top:0;
-    left:0;
-    z-index: 999;
-    background: var(--primary-color);
-    .sidebar__top{
-        width: 100%;
-        height: 70px;
-        line-height: 70px;
-        h2{
-            line-height: 70px;
+.sidebar {
+  width: 260px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding:0 30px;
+  z-index: 999;
+  background: var(--primary-color);
+  .sidebar__top {
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    h2 {
+      line-height: 70px;
+      display: flex;
+      align-items: center;
+      column-gap: 0.5rem;
+      color: var(--heading-color);
+      font-size: 1.2em;
+      img {
+        width: 64px;
+        height: auto;
+        background: var(--secondary-color);
+        border-radius: 50%;
+        padding: 1rem 0.2rem;
+      }
+    }
+  }
+  .sidebar__content {
+    color: var(--heading-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 5%);
+    margin-top: 50px;
+    .menu {
+      height: 80%;
+      .nav__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+
+        .nav__item {
+          .nav__link {
             display: flex;
             align-items: center;
-            column-gap: 0.5rem;
-            color: var(--heading-color);
-            img{
-                width: 48px;
-                height: 48px;
-                background: var(--card-01-bg);
-                border-radius: 50%;
-                padding: 0.2rem;
+            column-gap: 5px;
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+            i {
+              color: var(--secondary-color);
             }
+          }
+          .nav__active{
+            color: var(--secondary-color);
+            background: var(--hoverColor);
+            margin-left:0.75rem;
+            transition: 0.2s ease-in-out;
+            
+          }
         }
-        
+      }
     }
-    .sidebar__content{
-        color: var(--heading-color);
+    .sidebar__bottom {
+      height: 20%;
+      span {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        svg {
+          color: var(--secondary-color);
+        }
+      }
     }
+  }
 }

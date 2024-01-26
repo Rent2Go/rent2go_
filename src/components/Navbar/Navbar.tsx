@@ -1,17 +1,17 @@
 import React, { useContext, useState } from "react";
-import logo from "../../assets/img/logo.png";
 import { IoIosCloseCircle, IoIosMenu } from "react-icons/io";
 import { IoMdCart } from "react-icons/io";
 import { NavDropdown } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import { FaUserCircle } from "react-icons/fa";
 import { IoMdLogIn, IoMdLogOut } from "react-icons/io";
-import profileImage from "../../assets/img/userImages/feyza.jpeg";
 import Nav from "react-bootstrap/Nav";
-import { AuthContext } from "../../contexts/AuthContext";
+
 
 import "./navbar.css";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
+import { toast } from "react-toastify";
 
 type Props = {};
 
@@ -32,14 +32,19 @@ const Navbar = (props: Props) => {
     }
   };
 
+  const logout = () => {
+    localStorage.removeItem("token");
+    toast.success("Çıkış Başarıyla Gerçekleşti")
+  }
+
   window.addEventListener("scroll", addBg);
-  const authContext: any = useContext(AuthContext);
+  const authContext: any = useAuth()
   return (
     <>
       <div className={header}>
         <div className="logoDiv">
           <Link to="/" className="link">
-            <img src={logo} alt="rent2go-logo" className="logo" />
+            <img src="assets/img/logo.png" alt="rent2go-logo" className="logo" />
           </Link>
         </div>
         <div className={navbar}>
@@ -70,7 +75,7 @@ const Navbar = (props: Props) => {
         </div>
 
         <div className="signUp flex">
-          {authContext.isAuthenticated ? (
+          {authContext.authInformation.isAuthenticated ? (
             <>
               <NavDropdown
                 className="textAction text"
@@ -90,7 +95,7 @@ const Navbar = (props: Props) => {
                 <Link className="  btn text textAction" to="/cart">
                   Reservation
                 </Link>
-                <Link className="text textAction btn" to="/sign-up">
+                <Link className="text textAction btn" to="/sign-up" onClick={logout}>
                   Log Out
                 </Link>
               </NavDropdown>

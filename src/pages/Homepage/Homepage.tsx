@@ -11,7 +11,6 @@ import {
 import Aos from "aos";
 import "aos/dist/aos.css";
 import "./homepage.css";
-import homeImage from "../../assets/img/carModels/toyota-corolla-beyaz.png";
 
 type Props = {};
 
@@ -41,7 +40,7 @@ const Homepage = (props: Props) => {
             </div>
           </div>
           <div className="homeImage" data-aos="fade-down-right">
-            <img src={homeImage} alt="homeImage" />
+            <img src="assets/img/carModels/toyota-corolla-beyaz.png" alt="homeImage" />
           </div>
         </div>
       </div>
