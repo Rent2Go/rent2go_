@@ -1,12 +1,10 @@
 import React, { useContext, useState } from "react";
-import logo from "../../assets/img/logo.png";
 import { IoIosCloseCircle, IoIosMenu } from "react-icons/io";
 import { IoMdCart } from "react-icons/io";
 import { NavDropdown } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import { FaUserCircle } from "react-icons/fa";
 import { IoMdLogIn, IoMdLogOut } from "react-icons/io";
-import profileImage from "../../assets/img/userImages/feyza.jpeg";
 import Nav from "react-bootstrap/Nav";
 
 
@@ -46,7 +44,7 @@ const Navbar = (props: Props) => {
       <div className={header}>
         <div className="logoDiv">
           <Link to="/" className="link">
-            <img src={logo} alt="rent2go-logo" className="logo" />
+            <img src="assets/img/logo.png" alt="rent2go-logo" className="logo" />
           </Link>
         </div>
         <div className={navbar}>

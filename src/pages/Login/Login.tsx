@@ -3,7 +3,6 @@ import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
 
 import { Field, Form, Formik, FormikProps } from "formik";
-import login from "../../assets/img/login.jpg";
 import { useAuth } from "../../contexts/AuthContext";
 
 type Props = {};
@@ -33,7 +32,7 @@ const Login = (props: Props) => {
           <div className="imgDiv">
             <div className="imgCurtain"></div>
 
-            <img src={login} alt="loginImage" />
+            <img src="assets/img/login.jpg" alt="loginImage" />
           </div>
           <div className="fieldDiv">
             <Formik initialValues={initialValues} onSubmit={handleSubmit}>

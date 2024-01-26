@@ -1,9 +1,6 @@
 import React from "react";
 import { Navbar, Footer } from "../../components";
-import sonerImg from "../../assets/img/userImages/sonerteampic.png";
-import feyzaImg from "../../assets/img/userImages/feyza.jpg";
-import yagmurImg from "../../assets/img/userImages/yagmur.jpg";
-import seyhmusImg from "../../assets/img/userImages/seyhmusımg.png";
+
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./ourteampage.css"
@@ -30,7 +27,7 @@ const OurTeamPage = (props: Props) => {
                         <div className="col-lg-6 mt-4">
                             <div className="member d-flex align-items-start">
                                 <div className="teampic">
-                                    <img src={sonerImg}className="img-fluid" alt ="team1"/>
+                                    <img src="assets/img/userImages/sonerteampic.png"className="img-fluid" alt ="team1"/>
                                 </div>
                                 <div className="member-info">
                                     <h4>Soner Şeylan</h4>
@@ -51,7 +48,7 @@ const OurTeamPage = (props: Props) => {
                         <div className="col-lg-6 mt-4">
                             <div className="member d-flex align-items-start">
                                 <div className="teampic">
-                                    <img src={feyzaImg}className="img-fluid" alt ="team1"/>
+                                    <img src="assets/img/userImages/feyza.jpg"className="img-fluid" alt ="team1"/>
                                 </div>
                                 <div className="member-info">
                                     <h4>Feyza Karanfil Erat</h4>
@@ -72,7 +69,7 @@ const OurTeamPage = (props: Props) => {
                         <div className="col-lg-6 mt-4">
                             <div className="member d-flex align-items-start">
                                 <div className="teampic">
-                                    <img src={seyhmusImg}className="img-fluid" alt ="team1"/>
+                                    <img src="assets/img/userImages/seyhmusımg.png"className="img-fluid" alt ="team1"/>
                                 </div>
                                 <div className="member-info">
                                     <h4>Şeyhmus Erol</h4>
@@ -93,7 +90,7 @@ const OurTeamPage = (props: Props) => {
                         <div className="col-lg-6 mt-4">
                             <div className="member d-flex align-items-start">
                                 <div className="teampic">
-                                    <img src={yagmurImg}className="img-fluid" alt ="team1"/>
+                                    <img src="assets/img/userImages/yagmur.jpg"className="img-fluid" alt ="team1"/>
                                 </div>
                                 <div className="member-info">
                                     <h4>Yağmur Çurku</h4>

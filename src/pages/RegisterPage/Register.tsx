@@ -1,10 +1,7 @@
 import React, { useContext, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ErrorMessage, Form, Formik } from "formik";
-import user1 from "../../assets/img/userImages/soner.jpg";
-import user2 from "../../assets/img/userImages/yagmur.jpg";
-import user3 from "../../assets/img/userImages/seyhmus.jpeg";
-import user4 from "../../assets/img/userImages/feyza.jpeg";
+
 import "./register.css";
 import { useAuth } from "../../contexts/AuthContext";
 import AuthService from "../../services/authService/AuthService";
@@ -86,16 +83,16 @@ const Register: React.FC<Props> = (props: Props) => {
               <h1>Create Account</h1>
               <div className="social-icons">
                 <Link to="https://github.com/sonersyln" className="icon">
-                  <img src={user1} alt="user" />
+                  <img src="assets/img/userImages/soner.jpg" alt="user" />
                 </Link>
                 <Link to="https://github.com/yagmurcurku" className="icon">
-                  <img src={user2} alt="user" />
+                  <img src="assets/img/userImages/yagmur.jpg" alt="user" />
                 </Link>
                 <Link to="https://github.com/shmserl" className="icon">
-                  <img src={user3} alt="user" />
+                  <img src="assets/img/userImages/seyhmus.jpeg" alt="user" />
                 </Link>
                 <Link to="https://github.com/feyzaerat" className="icon">
-                  <img src={user4} alt="user" />
+                  <img src="assets/img/userImages/feyza.jpeg" alt="user" />
                 </Link>
               </div>
               <span>or use your email for registration</span>
@@ -161,16 +158,16 @@ const Register: React.FC<Props> = (props: Props) => {
               <h1>Sign In</h1>
               <div className="social-icons">
                 <Link to="https://github.com/sonersyln" className="icon">
-                  <img src={user1} alt="user" />
+                  <img src="assets/img/userImages/soner.jpg" alt="user" />
                 </Link>
                 <Link to="https://github.com/yagmurcurku" className="icon">
-                  <img src={user2} alt="user" />
+                  <img src="assets/img/userImages/yagmur.jpg" alt="user" />
                 </Link>
                 <Link to="https://github.com/shmserl" className="icon">
-                  <img src={user3} alt="user" />
+                  <img src="assets/img/userImages/seyhmus.jpeg" alt="user" />
                 </Link>
                 <Link to="https://github.com/feyzaerat" className="icon">
-                  <img src={user4} alt="user" />
+                  <img src="assets/img/userImages/feyza.jpeg" alt="user" />
                 </Link>
               </div>
               <span>or use your email password</span>

@@ -1,12 +1,6 @@
 import React from "react";
 
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
-import car1 from "../../assets/img/carModels/mercedesc200-beyaz.png";
-import car2 from "../../assets/img/carModels/peugeot-2008-siyah.png";
-import car3 from "../../assets/img/carModels/minicooper-s-mavi.png";
-import car4 from "../../assets/img/carModels/renault-clio-beyaz.png";
-import car5 from "../../assets/img/carModels/renault-megane-gri.png";
-import car6 from "../../assets/img/carModels/renault-clio-kırmızı.png";
 
 import './auctions.css';
 
@@ -26,7 +20,7 @@ const Action = (props: Props) => {
         <div className="carContainer grid">
           <div className="singleCar grid" data-aos="fade-up" data-aos-duration="5000">
             <div className="imgDiv">
-              <img src={car1} alt="carImage" />
+              <img src="assets/img/carModels/mercedesc200-beyaz.png" alt="carImage" />
             </div>
             <h5 className="carTitle">Used 2019 Audi S4 Premium Plus</h5>
             <span className="miles">11457 Miles</span>
@@ -39,7 +33,7 @@ const Action = (props: Props) => {
           </div>
           <div className="singleCar grid singleCarActive" data-aos="fade-up" data-aos-duration="5000">
             <div className="imgDiv">
-              <img src={car2} alt="carImage" />
+              <img src="assets/img/carModels/peugeot-2008-siyah.png" alt="carImage" />
             </div>
             <h5 className="carTitle">Used 2019 Audi S4 Premium Plus</h5>
             <span className="miles">11457 Miles</span>
@@ -52,7 +46,7 @@ const Action = (props: Props) => {
           </div>
           <div className="singleCar grid" data-aos="fade-up" data-aos-duration="5000">
             <div className="imgDiv">
-              <img src={car3} alt="carImage" />
+              <img src="assets/img/carModels/minicooper-s-mavi.png" alt="carImage" />
             </div>
             <h5 className="carTitle">Used 2019 Audi S4 Premium Plus</h5>
             <span className="miles">11457 Miles</span>
@@ -65,7 +59,7 @@ const Action = (props: Props) => {
           </div>
           <div className="singleCar grid singleCarActive" data-aos="fade-up" data-aos-duration="5000">
             <div className="imgDiv">
-              <img src={car4} alt="carImage" />
+              <img src="assets/img/carModels/renault-clio-beyaz.png" alt="carImage" />
             </div>
             <h5 className="carTitle">Used 2019 Audi S4 Premium Plus</h5>
             <span className="miles">11457 Miles</span>
@@ -78,7 +72,7 @@ const Action = (props: Props) => {
           </div>
           <div className="singleCar grid" data-aos="fade-up" data-aos-duration="5000">
             <div className="imgDiv">
-              <img src={car5} alt="carImage" />
+              <img src="assets/img/carModels/renault-megane-gri.png" alt="carImage" />
             </div>
             <h5 className="carTitle">Used 2019 Audi S4 Premium Plus</h5>
             <span className="miles">11457 Miles</span>
@@ -91,7 +85,7 @@ const Action = (props: Props) => {
           </div>
           <div className="singleCar grid singleCarActive" data-aos="fade-up" data-aos-duration="5000">
             <div className="imgDiv">
-              <img src={car6} alt="carImage" />
+              <img src="assets/img/carModels/renault-clio-kırmızı.png" alt="carImage" />
             </div>
             <h5 className="carTitle">Used 2019 Audi S4 Premium Plus</h5>
             <span className="miles">11457 Miles</span>
