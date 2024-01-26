@@ -1,3 +1,65 @@
 .legalPages{
-    
+    padding-top: 5.5rem;
+
+    .secContainer{
+        max-width: 100%;
+        height: 100%;
+        display: flex;
+        overflow: hidden;
+        .tabs_list{
+            width: 200px;
+            background: var(--secondaryColor);
+            max-height: 100%;
+            ul{
+                padding: 100px 10px;
+                text-align: right;
+            }
+            li{
+                padding: 20px 0;
+                margin-bottom: 3px;
+                font-weight: bold;
+            }
+        }
+        .tabs_content{
+            width: calc(100% - 200px);
+            padding: 0 10px 0 20px;
+            height: 100%;
+            text-align: left;
+            .tab_head{
+                padding: 25px 0;
+                height: 80px;
+                margin-bottom: 3rem;
+            }
+            .tab_body{
+                height: calc(100% - 140px);
+                p{
+                    margin-bottom: 25px;
+                    color: var(--color-black);
+                }
+            }
+            li{
+                list-style: disc;
+            }
+        }
+    }
 }
+
+
+h1{
+    color: var(--color-blog);
+}
+
+h2{
+    color: var(--color-blog);
+    margin-top: 4rem;
+}
+
+h3{
+    color: var(--color-blog);
+    margin-top: 2rem;
+}
+
+h4{
+    color: var(--color-blog);
+}
+
