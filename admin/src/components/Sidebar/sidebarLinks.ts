@@ -4,7 +4,6 @@ const sidebarLinks = [
     {
       path: "/dashboard",
       icon: "ri-dashboard-2-line",
-      sub:"",
       display: "Dashboard",
     },
     {
@@ -67,13 +66,7 @@ const sidebarLinks = [
       icon: "ri-palette-fill",
       display: "Colors",
     },
-    {
-      path: "/dropdown-test",
-      icon: "ri-palette-fill",
-      subIcon: "ri-palette-fill",
-      subDisplay: "sub Color Menu",
-      display: "Colors",
-    },
+ 
     
   ];
   
