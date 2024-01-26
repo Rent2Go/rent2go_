@@ -22,12 +22,12 @@ const Footer = (props: Props) => {
 
 
           <div className="singleGrid" data-aos="fade-up" data-aos-duration="1600">
-            <span className="footerTitle">Community</span>
+            <span className="footerTitle">Relational Pages</span>
             <ul className="footerUl grid">
-              <li className="footerLi">Recommendations</li>
-              <li className="footerLi">Gift Cards</li>
-              <li className="footerLi">Top Ups</li>
-              <li className="footerLi">Selling</li>
+              <li className="footerLi">İstanbul Kodluyor</li>
+              <li className="footerLi">Tobeto</li>
+              <li className="footerLi">Kodlama.io</li>
+              <li className="footerLi">Enocta</li>
             </ul>
           </div>
 

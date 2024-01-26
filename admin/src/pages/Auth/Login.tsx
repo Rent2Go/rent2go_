@@ -1,7 +1,7 @@
 import React from "react";
 import "./auth.css";
 import { Field, Formik, Form } from "formik";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
 
 import {
   signInValidationSchema,
@@ -11,6 +11,7 @@ import {
 } from "./FormikAndYupSchema";
 import FormikInput from "../../components/formikInput/FormikInput";
 import { Button } from "react-bootstrap";
+import { Login } from "..";
 type Props = {};
 const handleSubmit = async (values: any) => {};
 const Register = (props: Props) => {
@@ -22,6 +23,7 @@ const Register = (props: Props) => {
         </div>
         <div className="contentDiv">
           <div className="formContainer">
+           
             <Formik
               initialValues={signUpinitialValues}
               onSubmit={handleSubmit}
