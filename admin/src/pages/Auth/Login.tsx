@@ -17,7 +17,7 @@ const Register = (props: Props) => {
   return (
     <div className="auth">
       <div className="secContainer">
-        <div className="headingDiv">
+        <div className="headingDiv text-center">
           <h2>Login</h2>
         </div>
         <div className="contentDiv">
@@ -31,7 +31,7 @@ const Register = (props: Props) => {
             >
               <Form className="form">
                 <div className="row">
-                  <div className="col-md-6 col-sm-12">
+                  <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
                     <FormikInput
                       name="email"
                       type="mail"
@@ -39,7 +39,7 @@ const Register = (props: Props) => {
                       placeHolder="Enter Your Mail Address"
                     />
                   </div>
-                  <div className="col-md-6 col-sm-12">
+                  <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
                     <FormikInput
                       name="password"
                       type="password"
