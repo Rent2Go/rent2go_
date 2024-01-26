@@ -44,7 +44,7 @@ const Router = () => {
       <Route path="/add-user" element={<AddUser />} />
       <Route path="/update-user/:id" element={<UpdateUser />} />
       <Route path="/detail-user/:id" element={<DetailUser />} />
-      <Route path="/dashboard" element={<PrivateRoute element={<Dashboard/>} role="ADMIN" />} />
+      <Route path="/dashboard" element={<Dashboard/>}/>
     </Routes>
   );
 };

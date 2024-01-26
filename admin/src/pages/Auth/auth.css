@@ -1,7 +1,3 @@
-.main__layout {
-  margin-left: 0;
-}
-
 @media screen and (min-width: 320px) {
   .auth {
     padding: 2rem;
