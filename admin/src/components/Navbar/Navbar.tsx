@@ -18,6 +18,7 @@ const Navbar = (props: Props) => {
         <div className="navbar__right">
           <span className="notification">
             <IoIosNotifications />
+            <span className="badge">1</span>
           </span>
           <div className="profile">
             <Link to=""><img className="img-rounded" src="assets/images/profile.png" alt="profile"/></Link>
