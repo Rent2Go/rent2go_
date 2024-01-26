@@ -1,1 +1,39 @@
-/*# sourceMappingURL=navbar.css.map */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 270px;
+  z-index: 999;
+  background: var(--primary-color);
+  width: 100%;
+  height: 70px;
+}
+.navbar .navbar__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1rem;
+  gap: 1rem;
+  color: var(--heading-color);
+  width: 75%;
+}
+.navbar .navbar__wrapper .search__box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.navbar .navbar__wrapper .navbar__right {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.navbar .navbar__wrapper .navbar__right .notification {
+  cursor: pointer;
+}
+.navbar .navbar__wrapper .navbar__right .profile img {
+  width: 36px;
+  height: 36px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}/*# sourceMappingURL=navbar.css.map */
