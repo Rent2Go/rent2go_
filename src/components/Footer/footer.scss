@@ -25,6 +25,9 @@
             transform: translateX(5px);
             transition: 0.3s;
           }
+          a{
+            color:var(--textColor);;
+          }
         }
       }
     }
@@ -80,7 +83,7 @@
     .footerContainer {
       padding: 2rem 1rem;
       .footerMenuDiv {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
       }
       
     }

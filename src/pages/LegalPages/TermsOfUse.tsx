@@ -1,9 +1,9 @@
 import React from 'react'
-import { Navbar,Footer } from '../../components'
+import { Footer, Navbar } from '../../components'
 
 type Props = {}
 
-const PrivacyPolicy = (props: Props) => {
+const TermsOfUse = (props: Props) => {
   return (
     <>
     <Navbar />
@@ -28,4 +28,4 @@ const PrivacyPolicy = (props: Props) => {
   )
 }
 
-export default PrivacyPolicy
+export default TermsOfUse

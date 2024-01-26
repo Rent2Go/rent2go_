@@ -1,5 +1,6 @@
 import React from "react";
 import "./footer.css";
+import { Link } from "react-router-dom";
 const currentDate = new Date();
 const currentYear = currentDate.getFullYear();
 type Props = {};
@@ -19,15 +20,6 @@ const Footer = (props: Props) => {
             </ul>
           </div>
 
-          <div className="singleGrid" data-aos="fade-up" data-aos-duration="1200">
-            <span className="footerTitle">Become Seller</span>
-            <ul className="footerUl grid">
-              <li className="footerLi">Add Vehicles</li>
-              <li className="footerLi">Resource Center</li>
-              <li className="footerLi">Bonds</li>
-              <li className="footerLi">Release Dates</li>
-            </ul>
-          </div>
 
           <div className="singleGrid" data-aos="fade-up" data-aos-duration="1600">
             <span className="footerTitle">Community</span>
@@ -42,10 +34,10 @@ const Footer = (props: Props) => {
           <div className="singleGrid" data-aos="fade-up" data-aos-duration="1800">
             <span className="footerTitle">Booking Support</span>
             <ul className="footerUl grid">
-              <li className="footerLi">Updates for Covid-19</li>
-              <li className="footerLi">Help Center</li>
-              <li className="footerLi">Garages</li>
-              <li className="footerLi">Trust & Safety</li>
+              <li className="footerLi"><Link to="/contact">Contact Us</Link></li>
+              <li className="footerLi"><Link to="/cookie-policy">Cookies</Link></li>
+              <li className="footerLi"><Link to="/privacy-policy">Privacy Policy</Link></li>
+              <li className="footerLi"><Link to="/terms-of-use">Terms of Use</Link></li>
             </ul>
           </div>
         </div>

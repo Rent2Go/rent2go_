@@ -27,6 +27,9 @@
   transform: translateX(5px);
   transition: 0.3s;
 }
+.footer .footerContainer .singleGrid .footerUl .footerLi a {
+  color: var(--textColor);
+}
 .footer .lowerSection {
   padding: 1rem;
   text-align: center;
@@ -69,7 +72,7 @@
     padding: 2rem 1rem;
   }
   .footer .footerContainer .footerMenuDiv {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   .footer .lowerSection {
     display: flex;
