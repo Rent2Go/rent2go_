@@ -76,3 +76,15 @@
 }
 
 
+@media screen and (min-width: 996px) and (max-width: 1200px) {
+    .legalPages{
+        .secContainer{
+            margin-left: 8rem;
+            margin-right: 8rem;
+            .tabs_list{
+                width: 200px;
+            }
+        }
+    }
+}
+
