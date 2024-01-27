@@ -115,9 +115,11 @@
             margin-right: 0rem;
             .tabs_list{
                 width: 145px;
+                font-size: 0.9rem;
             }
             .tabs_content{
                 margin-left: 9rem;
+                font-size: 0.9rem;
             }
         }
     }
@@ -131,10 +133,14 @@
             margin-right: -1rem;
             .tabs_list{
                 width: 135px;
+                font-size: 0.9rem;
             }
             .tabs_content{
                 margin-left: 8.5rem;
+                font-size: 0.9rem;
             }
         }
     }
 }
+
+
