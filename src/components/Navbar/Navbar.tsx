@@ -34,6 +34,7 @@ const Navbar = (props: Props) => {
 
   const logout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("refreshToken");
     toast.success("Çıkış Başarıyla Gerçekleşti")
   }
 
