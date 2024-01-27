@@ -84,6 +84,9 @@
             .tabs_list{
                 width: 200px;
             }
+            .tabs_content{
+                margin-left: 13rem;
+            }
         }
     }
 }
@@ -97,7 +100,25 @@
             .tabs_list{
                 width: 180px;
             }
+            .tabs_content{
+                margin-left: 12rem;
+            }
         }
     }
 }
 
+@media screen and (min-width: 520px) and (max-width: 770px) {
+    .legalPages{
+        padding-top: 5rem;
+        .secContainer{
+            margin-left: 3rem;
+            margin-right: 3rem;
+            .tabs_list{
+                width: 160px;
+            }
+            .tabs_content{
+                margin-left: 10rem;
+            }
+        }
+    }
+}
