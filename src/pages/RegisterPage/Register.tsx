@@ -45,6 +45,7 @@ const Register: React.FC<Props> = (props: Props) => {
 
         console.log("Sign-in successful:", resolve);
         localStorage.setItem("token", resolve?.data?.token);
+        localStorage.setItem("refreshToken", resolve?.data?.refreshToken);
         toast.success("Giriş Başarılı")
         authContext.refreshUser();
         setTimeout(() => { navigate("/") }, 1500);
@@ -83,16 +84,16 @@ const Register: React.FC<Props> = (props: Props) => {
               <h1>Create Account</h1>
               <div className="social-icons">
                 <Link to="https://github.com/sonersyln" className="icon">
-                  <img src="assets/img/userImages/soner.jpg" alt="user" />
+                  <img src='../../assets/img/userImages/soner.jpg' alt="user" />
                 </Link>
                 <Link to="https://github.com/yagmurcurku" className="icon">
-                  <img src="assets/img/userImages/yagmur.jpg" alt="user" />
+                  <img src="../../assets/img/userImages/yagmur.jpg"  alt="user" />
                 </Link>
                 <Link to="https://github.com/shmserl" className="icon">
-                  <img src="assets/img/userImages/seyhmus.jpeg" alt="user" />
+                  <img src="../../assets/img/userImages/seyhmus.jpeg" alt="user" />
                 </Link>
                 <Link to="https://github.com/feyzaerat" className="icon">
-                  <img src="assets/img/userImages/feyza.jpeg" alt="user" />
+                  <img src="../../assets/img/userImages/feyza.jpeg" alt="user" />
                 </Link>
               </div>
               <span>or use your email for registration</span>
@@ -158,16 +159,16 @@ const Register: React.FC<Props> = (props: Props) => {
               <h1>Sign In</h1>
               <div className="social-icons">
                 <Link to="https://github.com/sonersyln" className="icon">
-                  <img src="assets/img/userImages/soner.jpg" alt="user" />
+                  <img src='../../assets/img/userImages/soner.jpg' alt="user" />
                 </Link>
                 <Link to="https://github.com/yagmurcurku" className="icon">
-                  <img src="assets/img/userImages/yagmur.jpg" alt="user" />
+                  <img src="../../assets/img/userImages/yagmur.jpg"  alt="user" />
                 </Link>
                 <Link to="https://github.com/shmserl" className="icon">
-                  <img src="assets/img/userImages/seyhmus.jpeg" alt="user" />
+                  <img src="../../assets/img/userImages/seyhmus.jpeg" alt="user" />
                 </Link>
                 <Link to="https://github.com/feyzaerat" className="icon">
-                  <img src="assets/img/userImages/feyza.jpeg" alt="user" />
+                  <img src="../../assets/img/userImages/feyza.jpeg" alt="user" />
                 </Link>
               </div>
               <span>or use your email password</span>
