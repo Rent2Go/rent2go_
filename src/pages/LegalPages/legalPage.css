@@ -24,7 +24,7 @@
         margin-right: 13rem;
         .tabs_list{
             position: fixed;
-            width: 200px;
+            width: 215px;
             height: 80%;
             background: var(--secondaryColor);
             border-radius: 10px;
