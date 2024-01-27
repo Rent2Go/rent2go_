@@ -78,6 +78,18 @@
 
 @media screen and (min-width: 1064px) and (max-width: 1200px) {
     .legalPages{
+        h1{
+            font-size: 2.6rem;
+        }
+        h2{
+            font-size: 1.7rem;
+        }
+        h3{
+            font-size: 1.5rem;
+        }
+        h4{
+            font-size: 1.3rem;
+        }
         .secContainer{
             margin-left: 8rem;
             margin-right: 8rem;
@@ -95,7 +107,16 @@
     .legalPages{
         padding-top: 6.5rem;
         h1{
-            font-size: 2.7rem;
+            font-size: 2.4rem;
+        }
+        h2{
+            font-size: 1.6rem;
+        }
+        h3{
+            font-size: 1.4rem;
+        }
+        h4{
+            font-size: 1.2rem;
         }
         .secContainer{
             margin-left: 6rem;
@@ -115,6 +136,15 @@
         padding-top: 5rem;
         h1{
             font-size: 2rem;
+        }
+        h2{
+            font-size: 1.5rem;
+        }
+        h3{
+            font-size: 1.3rem;
+        }
+        h4{
+            font-size: 1.1rem;
         }
         .secContainer{
             margin-left: 3rem;
@@ -136,6 +166,15 @@
         padding-top: 4.5rem;
         h1{
             font-size: 1.9rem;
+        }
+        h2{
+            font-size: 1.4rem;
+        }
+        h3{
+            font-size: 1.2rem;
+        }
+        h4{
+            font-size: 1rem;
         }
         .secContainer{
             margin-left: 1rem;
