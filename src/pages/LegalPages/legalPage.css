@@ -112,13 +112,14 @@
         padding-top: 5rem;
         .secContainer{
             margin-left: 3rem;
-            margin-right: 3rem;
+            margin-right: 0rem;
             .tabs_list{
-                width: 160px;
+                width: 145px;
             }
             .tabs_content{
-                margin-left: 10rem;
+                margin-left: 9rem;
             }
         }
     }
 }
+
