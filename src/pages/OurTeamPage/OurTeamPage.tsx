@@ -35,10 +35,10 @@ const OurTeamPage = (props: Props) => {
                                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, asperiores!</p>
                                 </div>
                                 <div className="social">
-                                <Link to="https://github.com/sonersyln" className="github">
+                                <Link to="https://github.com/sonersyln" className="github" target="_blank">
                                     <i><FaGithub/></i>
                                 </Link>
-                                <Link to="https://www.linkedin.com/in/sonerseylan/" className="linkedin">
+                                <Link to="https://www.linkedin.com/in/sonerseylan/" className="linkedin" target="_blank">
                                     <i><FaLinkedin/></i>
                                 </Link>
                                 </div>
@@ -56,10 +56,10 @@ const OurTeamPage = (props: Props) => {
                                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, asperiores!</p>
                                 </div>
                                 <div className="social">
-                                <Link to="https://github.com/feyzaerat" className="github">
+                                <Link to="https://github.com/feyzaerat" className="github" target="_blank">
                                     <i><FaGithub/></i>
                                 </Link>
-                                <Link to="https://www.linkedin.com/in/feyzakaranfilerat/" className="linkedin">
+                                <Link to="https://www.linkedin.com/in/feyzakaranfilerat/" className="linkedin" target="_blank">
                                     <i><FaLinkedin/></i>
                                 </Link>
                                 </div>
@@ -77,10 +77,10 @@ const OurTeamPage = (props: Props) => {
                                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, asperiores!</p>
                                 </div>
                                 <div className="social">
-                                <Link to="https://github.com/ShmsErl" className="github">
+                                <Link to="https://github.com/ShmsErl" className="github" target="_blank">
                                     <i><FaGithub/></i>
                                 </Link>
-                                <Link to="https://www.linkedin.com/in/seyhmus-erol/" className="linkedin">
+                                <Link to="https://www.linkedin.com/in/seyhmus-erol/" className="linkedin" target="_blank">
                                     <i><FaLinkedin/></i>
                                 </Link>
                                 </div>
@@ -98,10 +98,10 @@ const OurTeamPage = (props: Props) => {
                                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, asperiores!</p>
                                 </div>
                                 <div className="social">
-                                <Link to="https://github.com/yagmurcurku" className="github">
+                                <Link to="https://github.com/yagmurcurku" className="github" target="_blank">
                                     <i><FaGithub/></i>
                                 </Link>
-                                <Link to="https://www.linkedin.com/in/yagmurcurku/" className="linkedin">
+                                <Link to="https://www.linkedin.com/in/yagmurcurku/" className="linkedin" target="_blank">
                                     <i><FaLinkedin/></i>
                                 </Link>
                                 </div>
