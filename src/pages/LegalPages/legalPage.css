@@ -6,10 +6,15 @@
         height: 100%;
         display: flex;
         overflow: hidden;
+        margin-left: 10rem;
+        margin-right: 10rem;
         .tabs_list{
+            position: fixed;
             width: 200px;
             background: var(--secondaryColor);
-            max-height: 100%;
+            border-radius: 15px;
+            top: 53%;
+            transform: translateY(-50%);
             ul{
                 padding: 100px 10px;
                 text-align: right;
@@ -25,6 +30,7 @@
             padding: 0 10px 0 20px;
             height: 100%;
             text-align: left;
+            margin-left: 15rem;
             .tab_head{
                 padding: 25px 0;
                 height: 80px;
