@@ -1,0 +1,25 @@
+.mailSettings {
+  margin-top: 100px;
+}
+.mailSettings .secContainer .formContainer {
+  margin: 4rem 2rem;
+}
+.mailSettings .secContainer .formContainer .formHeader h4 {
+  color: var(--text-color);
+}
+.mailSettings .secContainer .formContainer .formContent {
+  padding: 2rem 4rem;
+  margin: 2rem 0;
+  border-radius: 0.5rem;
+  background: var(--primary-color);
+}
+.mailSettings .secContainer .formContainer .formContent .btnRow {
+  display: flex;
+  gap: 1rem;
+}
+.mailSettings .secContainer .formContainer .formContent .btnRow button {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0.5rem 2rem;
+  margin: 1rem 0;
+}/*# sourceMappingURL=mailSettings.css.map */

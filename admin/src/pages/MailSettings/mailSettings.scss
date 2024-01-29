@@ -1,0 +1,29 @@
+.mailSettings {
+  margin-top: 100px;
+  .secContainer {
+    .formContainer {
+      margin: 4rem 2rem;
+      .formHeader {
+        h4 {
+          color: var(--text-color);
+        }
+      }
+      .formContent {
+        padding: 2rem 4rem;
+        margin: 2rem 0;
+        border-radius: 0.5rem;
+        background: var(--primary-color);
+        .btnRow{
+         display: flex;
+         gap:1rem;
+         button{
+            font-size:14px;
+            font-weight: 500;
+            padding:0.5rem 2rem;
+            margin:1rem 0;
+         }
+        }
+      }
+    }
+  }
+}
