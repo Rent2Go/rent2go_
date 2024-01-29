@@ -4,7 +4,7 @@ import { loadingReducer } from "./slices/loadingSlice";
 
 
 const rootReducer = combineReducers({
-    cars:carReducer,
+    car:carReducer,
     loading:loadingReducer
 
 });
