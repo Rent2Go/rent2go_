@@ -21,10 +21,10 @@ const ReservationPage: React.FC<Props> = (props) => {
 
   const getRentals = async (id: string) => {
     try {
-      const rentalService = CarService;
-      const response = await rentalService.getById(parseInt(id));
+
+      const response = await CarService.getById(parseInt(id));
       setRentals(response.data.data);
-      console.log("setRentals : ",response);
+
     } catch (error) {
       console.error("Error fetching rentals:", error);
     }
@@ -39,13 +39,13 @@ const ReservationPage: React.FC<Props> = (props) => {
             <h5>Reservation</h5>
           </div>
           <div className="secContent">
-            <img src={rentals?.imageUrl} alt="carImage"/>
+            <img src={rentals?.imageUrl} alt="carImage" />
             <ul>
-              
-                <li key={rentals?.id}>Brand: {rentals?.model?.brandName}, Car ID: {rentals?.id}</li>
-                <li>Model: {rentals?.model?.name}   </li>
-               
-           
+
+              <li key={rentals?.id}>Brand: {rentals?.model?.brandName}, Car ID: {rentals?.id}</li>
+              <li>Model: {rentals?.model?.name}   </li>
+
+
             </ul>
           </div>
         </div>

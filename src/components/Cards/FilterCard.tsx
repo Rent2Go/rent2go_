@@ -1,24 +1,29 @@
 import React, { useEffect, useState } from "react";
-import { CFormCheck } from "@coreui/react";
 import BodyTypeFilter from "../FilterBoxes/BodyTypeFilter";
 import FuelTypeFilter from "../FilterBoxes/FuelTypeFilter";
 import GearTypeFilter from "../FilterBoxes/GearTypeFilter";
 import { CarModel } from "../../models/responses/cars/GetCar";
+import { useDispatch, useSelector } from "react-redux";
 type Props = {
-  cars: CarModel[];
-  
-
 };
 
 const FilterCard = (props: Props) => {
-  return (
-    <div className="filter flex">
-      <BodyTypeFilter cars={props.cars} />
 
-      <FuelTypeFilter cars={props.cars} />
-      <GearTypeFilter cars={props.cars} />
+  
+  const dispatch = useDispatch()
+  const { cars } = useSelector((state: any) => state.car);
+
+  return (
+
+
+
+    <div className="filter flex">
+      <BodyTypeFilter cars={cars} />
+
+      <FuelTypeFilter cars={cars} />
+      <GearTypeFilter cars={cars} />
     </div>
   );
-};
+}
 
 export default FilterCard;

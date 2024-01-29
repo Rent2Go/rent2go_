@@ -17,7 +17,7 @@ axiosInstance.interceptors.request.use(
 	async (config) => {
 		store.dispatch(increaseRequestCount())
 
-		const token = localStorage.getItem("token")
+		const token = TokenService.getToken()
 
 		if (token) {
 			const decode = jwtDecode<TokenUser>(token);
@@ -36,7 +36,7 @@ axiosInstance.interceptors.request.use(
 						token: localRefreshToken
 					}
 					const response = await axios.post('http://localhost:8080/api/refreshtoken', RefreshTokenRequest);
-					const { token: string, refreshToken } = response.data;
+					const { token, refreshToken } = response.data;
 				
 
 					TokenService.setToken(token);
