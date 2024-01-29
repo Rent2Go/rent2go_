@@ -109,13 +109,7 @@ const CarPage: React.FC<Props> = (props) => {
                 </div>
               ))}
               <div className="paginationContainer flex justify-flex-end">
-                <Stack spacing={5}>
-                  <Pagination
-                    count={Math.ceil(cars.length / itemsPerPage)}
-                    color="standard"
-                    onChange={paginate}
-                  />
-                </Stack>
+          
               </div>
             </div>
           </div>

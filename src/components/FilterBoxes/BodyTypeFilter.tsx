@@ -24,9 +24,7 @@ const BodyTypeFilter = (props: Props) => {
           <CFormCheck
             key={index}
             id={`flexCheckDefault-${bodyType}`}
-            label={bodyType}
-        
-            
+            label={bodyType} 
           />
         ))}
       </div>

@@ -81,7 +81,7 @@ const Login = (props: Props) => {
                   <div className="row mt-3">
                     <div className="col-12">
                       <small>
-                        <Link to="/">Reset Your Password </Link>
+                        <Link to="/sign-in/reset-password">Reset Your Password </Link>
                       </small>
                     </div>
                   </div>

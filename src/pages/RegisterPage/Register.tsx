@@ -185,7 +185,7 @@ const Register: React.FC<Props> = (props: Props) => {
                 type="password"
                 placeholder="Password"
               />
-              <Link to="#">Forget Your Password?</Link>
+              <Link to="/sign-in/reset-password">Forget Your Password?</Link>
               <button className="btn" type="submit"
 
 
