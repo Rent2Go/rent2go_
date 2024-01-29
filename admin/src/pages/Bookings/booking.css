@@ -1,1 +1,96 @@
-/*# sourceMappingURL=booking.css.map */
+.booking {
+  margin-top: 100px;
+  padding: 0px 30px;
+  padding-bottom: 50px;
+}
+.booking .secContainer .booking__wrapper .booking__title {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+.booking .secContainer .booking__wrapper .filter__widget-wrapper {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+.booking .secContainer .booking__wrapper .filter__widget-wrapper .filter__widget-01 select,
+.booking .secContainer .booking__wrapper .filter__widget-wrapper .filter__widget-02 select {
+  border: none;
+  padding: 7px 20px;
+  border-radius: 50px;
+  background: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+.booking .secContainer .booking__wrapper .booking__car-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  row-gap: 2rem;
+}
+.booking .secContainer .booking__wrapper .booking__car-list .car__item {
+  padding: 20px;
+  border-radius: 5px;
+  background: var(--primary-color);
+  cursor: pointer;
+}
+.booking .secContainer .booking__wrapper .booking__car-list .car__item .car__item-top {
+  margin-bottom: 15px;
+}
+.booking .secContainer .booking__wrapper .booking__car-list .car__item .car__item-top .car__item-tile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.booking .secContainer .booking__wrapper .booking__car-list .car__item .car__item-top .car__item-tile h3 {
+  font-size: 1rem;
+  color: var(--heading-color);
+  font-weight: 400;
+}
+.booking .secContainer .booking__wrapper .booking__car-list .car__item .car__item-top .car__item-tile span i {
+  font-size: 1.3rem;
+  color: var(--small-text-color);
+  cursor: pointer;
+}
+.booking .secContainer .booking__wrapper .booking__car-list .car__item .car__item-top p {
+  color: var(--small-text-color);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.booking .secContainer .booking__wrapper .booking__car-list .car__item .car__img {
+  margin-bottom: 20px;
+}
+.booking .secContainer .booking__wrapper .booking__car-list .car__item .car__img img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+}
+.booking .secContainer .booking__wrapper .booking__car-list .car__item .car__item-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.booking .secContainer .booking__wrapper .booking__car-list .car__item .car__item-bottom .car__bottom-left {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+.booking .secContainer .booking__wrapper .booking__car-list .car__item .car__item-bottom .car__bottom-left p {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  color: rgba(255, 255, 255, 0.829);
+  font-weight: 300 !important;
+}
+.booking .secContainer .booking__wrapper .booking__car-list .car__item .car__item-bottom .car__bottom-left p i {
+  color: var(--secondary-color);
+}
+.booking .secContainer .booking__wrapper .booking__car-list .car__item .car__item-bottom .car__rent {
+  color: rgba(255, 255, 255, 0.829);
+  font-size: 1.1rem;
+}/*# sourceMappingURL=booking.css.map */
