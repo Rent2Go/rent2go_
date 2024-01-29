@@ -1,60 +1,53 @@
+import { string } from 'yup';
 import { jwtDecode } from 'jwt-decode';
 import axios from "axios";
 import { TokenUser } from '../models/token/TokenUser';
 import { number } from 'yup';
+
+import { decreaseRequestCount, increaseRequestCount } from '../store/slices/loadingSlice';
+import store from '../store/store';
+import TokenService from '../services/TokenService';
 
 const axiosInstance = axios.create({
 	baseURL: "http://localhost:8080/api/",
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 axiosInstance.interceptors.request.use(
 	async (config) => {
+		store.dispatch(increaseRequestCount())
 
 		const token = localStorage.getItem("token")
-		
-		if (token ) {
-		const decode = jwtDecode<TokenUser>(token);
-		const x:number = 1000;
-			const expirationDate = new Date(decode.exp).getTime()*1000;
+
+		if (token) {
+			const decode = jwtDecode<TokenUser>(token);
+			const x: number = 1000;
+			const expirationDate = new Date(decode.exp).getTime() * x;
 			const nowDate = new Date().getTime();
-			console.log(nowDate)
-			console.log(expirationDate);
-			
-			
+		
+
+
 
 			if (expirationDate <= nowDate) {
-				console.log(new Date())
+				
 				try {
-					const localRefreshToken = localStorage.getItem('refreshToken');
+					const localRefreshToken = TokenService.getRefreshToken("refreshToken")
 					const RefreshTokenRequest = {
-						token:localRefreshToken
+						token: localRefreshToken
 					}
 					const response = await axios.post('http://localhost:8080/api/refreshtoken', RefreshTokenRequest);
-					const { token, refreshToken } = response.data;
-					console.log(token)
-					// Yeni tokenları sakla
-					localStorage.setItem('token', token);
-					localStorage.setItem('refreshToken', refreshToken);
+					const { token: string, refreshToken } = response.data;
+				
 
-					// Yenilenmiş token ile isteği gönder
+					TokenService.setToken(token);
+					TokenService.setrefreshToken(refreshToken);
+
+
 					config.headers.Authorization = `Bearer ${token}`;
 				} catch (error) {
-					// Refresh token isteği başarısız olursa, kullanıcıyı çıkış yapmaya yönlendir
+
 					console.error('Error refreshing token:', error);
-					// Kullanıcıyı çıkışa yönlendirme veya başka bir işlem
+
 				}
 			}
 			else {
@@ -68,29 +61,31 @@ axiosInstance.interceptors.request.use(
 
 		}
 
-		
+
 
 		return Promise.resolve(config)
 
 	},
 
 	(error) => {
+
 		return Promise.reject(error);
 	}
 );
 
 axiosInstance.interceptors.response.use(
 	(response) => {
+		store.dispatch(decreaseRequestCount())
 
-	return Promise.resolve(response)
- },
- (error) => {
+		return Promise.resolve(response)
+	},
+	(error) => {
+		store.dispatch(decreaseRequestCount())
+		return Promise.reject(error);
+	}
 
-	return Promise.reject(error);
- }
 
 
-	
 );
 
 export default axiosInstance;
