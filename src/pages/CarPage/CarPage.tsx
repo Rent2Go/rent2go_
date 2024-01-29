@@ -29,14 +29,21 @@ const CarPage: React.FC<Props> = (props) => {
   const carsState = useSelector((state: any) => state.car);
 
   const getCars = async () => {
-    try {
-     
-      const response = await CarService.getAll();
-      setCars(response.data.data);
-      setIsInitialLoad(false);
-    } catch (error) {
-      console.error("Error fetching cars:", error);
-    }
+
+
+    const response = await CarService.getAll()
+      .then((res) => {
+        setCars(res.data.data);
+        setIsInitialLoad(false);
+
+      }
+      )
+      .catch((err) => {
+        console.log(err);
+      })
+
+
+
   };
 
   useEffect(() => {
@@ -77,7 +84,7 @@ const CarPage: React.FC<Props> = (props) => {
     const currentItems = filtered.slice(indexOfFirstItem, indexOfLastItem);
 
     setFilteredCars(currentItems);
-    console.log("Filtered Cars:", currentItems);
+    
   };
 
   const paginate = (event: React.ChangeEvent<unknown>, value: number) => {

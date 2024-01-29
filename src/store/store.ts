@@ -1,9 +1,11 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { carReducer } from "./slices/carSlice";
+import { loadingReducer } from "./slices/loadingSlice";
 
 
 const rootReducer = combineReducers({
     car:carReducer,
+    loading:loadingReducer
 
 });
 

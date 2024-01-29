@@ -5,11 +5,12 @@ import { CarPage, HomePage, Login, Register, BrandPage, OurTeamPage, ContactPage
 import "./App.css";
 import { RentalModel } from "./models/responses/rentals/GetRental";
 import PrivateRoute from "./utils/PrivateRoute";
+import OverlayLoader from "./components/OverlayLoader/OverlayLoader";
 function App() {
   return (
     <>
       <main>
-       
+      <OverlayLoader/>
         <Routes>
           <Route path="/"  element={<HomePage/>}  />
           <Route path="/sign-in" element={<Login />} />
