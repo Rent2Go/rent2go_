@@ -1,0 +1,101 @@
+.settings {
+  margin-top: 100px;
+  padding: 0px 50px;
+  padding-bottom: 50px;
+}
+.settings .secContainer .settings__wrapper {
+  padding: 2rem 6rem;
+  border-radius: 5px;
+  background: var(--primary-color);
+}
+.settings .secContainer .settings__wrapper .settings__title {
+  color: var(--heading-color);
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+.settings .secContainer .settings__wrapper .imgDiv {
+  margin: 2rem 0 0rem 0;
+}
+.settings .secContainer .settings__wrapper .imgDiv img {
+  width: 250px;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.5rem;
+}
+.settings .secContainer .settings__wrapper .settings__top {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 2.7rem;
+       column-gap: 2.7rem;
+  margin-bottom: 1.5rem;
+}
+.settings .secContainer .settings__wrapper .settings__top .setting__btn {
+  border: none;
+  border: none;
+  padding: 7px 25px;
+  background: transparent;
+  border-radius: 5px;
+  color: var(--heading-color);
+  font-size: 1rem;
+  cursor: pointer;
+}
+.settings .secContainer .settings__wrapper .details__form .profile__title {
+  color: var(--heading-color);
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.settings .secContainer .settings__wrapper .details__form .profile__desc {
+  color: var(--small-text-color);
+  margin-bottom: 2rem;
+}
+.settings .secContainer .settings__wrapper .details__form .form__group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  margin-bottom: 2rem;
+}
+.settings .secContainer .settings__wrapper .details__form .form__group div {
+  display: flex;
+  flex-direction: column;
+  width: 47%;
+}
+.settings .secContainer .settings__wrapper .details__form .form__group div label {
+  color: var(--heading-color);
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+.settings .secContainer .settings__wrapper .details__form .form__group div input {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 5px;
+  background: transparent;
+  border: 1px solid rgba(183, 255, 233, 0.0745098039);
+  color: var(--heading-color);
+  font-size: 1rem;
+}
+.settings .secContainer .settings__wrapper .details__form .form__group div:placeholder {
+  color: var(--small-text-color);
+  font-size: 0.9rem;
+}
+.settings .secContainer .settings__wrapper .details__form .form__group div:focus {
+  outline: none;
+}
+.settings .secContainer .settings__wrapper .details__form .form__group div .profile-img__desc {
+  color: var(--small-text-color);
+  margin-bottom: 10px;
+}
+.settings .secContainer .settings__wrapper .details__form .btn-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 6rem 0 0rem 0;
+}
+.settings .secContainer .settings__wrapper .details__form .btn-row button {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0.5rem 2.2rem;
+}/*# sourceMappingURL=settings.css.map */

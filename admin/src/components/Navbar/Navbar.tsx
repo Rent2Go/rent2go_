@@ -21,7 +21,7 @@ const Navbar = (props: Props) => {
             <span className="badge">1</span>
           </span>
           <div className="profile">
-            <Link to=""><img className="img-rounded" src="assets/images/profile.png" alt="profile"/></Link>
+            <Link to="/profile"><img className="img-rounded" src="assets/images/profile.png" alt="profile"/></Link>
           </div>
         </div>
       </div>

@@ -20,6 +20,8 @@ export {default as ListEmployee} from "./Employees/ListEmployee"
 export {default as DetailEmployee} from "./Employees/DetailEmployee"
 
 export {default as Permissions} from "./Permissions/Permissions"
+export {default as Profile} from "./Profile/Profile"
+export {default as Settings} from "./Settings/Settings"
 
 export {default as AddRental} from "./Rentals/AddRental"
 export {default as UpdateRental} from "./Rentals/UpdateRental"
