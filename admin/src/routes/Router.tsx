@@ -8,7 +8,6 @@ import {
   UpdateCar, UpdateCustomer, UpdateEmployee, UpdateRental, UpdateUser, UpdateUserRole 
 } from "../pages";
 import PrivateRoute from "../utils/PrivateRoute";
-import Bookings from "../pages/Bookings/Bookings";
 
 
 
@@ -40,7 +39,6 @@ const Router = () => {
       <Route path="/add-user-roles" element={<AddUserRole />} />
       <Route path="/update-user-role/:id" element={<UpdateUserRole />} />
       <Route path="/detail-user-role/:id" element={<DetailUserRole />} />
-      <Route path="/booking" element={<Bookings />} />
       <Route path="/users" element={<ListUser />} />
       <Route path="/add-user" element={<AddUser />} />
       <Route path="/update-user/:id" element={<UpdateUser />} />
