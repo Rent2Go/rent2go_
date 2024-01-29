@@ -18,7 +18,7 @@ import { Stack } from "@mui/material";
 import { fetchCarData } from "../../store/slices/carSlice";
 import { AppDispatch } from "../../store/store";
 
-type Props = {};
+type Props = { };
 
 const CarPage: React.FC<Props> = (props) => {
 

@@ -20,7 +20,15 @@ const BodyTypeFilter = (props: Props) => {
         <h6>Body Type</h6>
       </div>
       <div className="checkBoxRow">
+        {uniqueBodyTypes.map((bodyType ,index:number) => (
+          <CFormCheck
+            key={index}
+            id={`flexCheckDefault-${bodyType}`}
+            label={bodyType}
         
+            
+          />
+        ))}
       </div>
     </div>
   );

@@ -14,12 +14,8 @@ const FilterCard = (props: Props) => {
   const { cars } = useSelector((state: any) => state.car);
 
   return (
-
-
-
     <div className="filter flex">
       <BodyTypeFilter cars={cars} />
-
       <FuelTypeFilter cars={cars} />
       <GearTypeFilter cars={cars} />
     </div>
