@@ -1,3 +1,9 @@
 .cars {
-  display: block;
+  margin-top: 100px;
+}
+.cars .secContainer .cardContainer {
+  background-color: var(--heading-color);
+}
+.cars .secContainer .cardContainer .vehicleCard {
+  background: var(--primary-color);
 }/*# sourceMappingURL=cars.css.map */

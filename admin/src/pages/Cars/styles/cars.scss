@@ -1,3 +1,21 @@
 .cars{
-   display: block; 
+   margin-top:100px;
+   .secContainer{
+      .pageTitle{
+         h2{
+
+         }
+      }
+      .filterContainer{
+         .searchDiv{
+
+         }
+      }
+      .cardContainer{
+         background-color: var(--heading-color);
+         .vehicleCard{
+            background: var(--primary-color);
+         }
+      }
+   }
 }

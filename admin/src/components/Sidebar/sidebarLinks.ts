@@ -32,11 +32,6 @@ const sidebarLinks = [
       display: "Cars",
     },
     {
-      path: "/booking",
-      icon: "ri-git-repository-fill",
-      display: "Booking",
-    },
-    {
       path: "/rentals",
       icon: "ri-contract-fill",
       display: "Rentals",

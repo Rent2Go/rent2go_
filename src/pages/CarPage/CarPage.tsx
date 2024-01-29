@@ -105,7 +105,7 @@ const CarPage: React.FC<Props> = (props) => {
 
               {filteredCars.map((car: CarModel) => (
                 <div className="singleCar grid" key={car.id}>
-                  <CarList car={car} />
+                  <CarList  car={car} />
                 </div>
               ))}
               <div className="paginationContainer flex justify-flex-end">
