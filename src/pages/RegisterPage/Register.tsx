@@ -19,6 +19,7 @@ import {
   signupValidationSchema,
 } from "./FormikAndYupSchema";
 import { error } from "console";
+import TokenService from "../../services/TokenService";
 
 type Props = {
   name?: string;
@@ -44,8 +45,8 @@ const Register: React.FC<Props> = (props: Props) => {
       .then((resolve) => {
 
         console.log("Sign-in successful:", resolve);
-        localStorage.setItem("token", resolve?.data?.token);
-        localStorage.setItem("refreshToken", resolve?.data?.refreshToken);
+       TokenService.setToken( resolve?.data?.token);
+        TokenService.setrefreshToken(resolve?.data?.refreshToken);
         toast.success("Giriş Başarılı")
         authContext.refreshUser();
         setTimeout(() => { navigate("/") }, 1500);

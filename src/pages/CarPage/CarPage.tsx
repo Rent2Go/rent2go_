@@ -84,7 +84,7 @@ const CarPage: React.FC<Props> = (props) => {
     const currentItems = filtered.slice(indexOfFirstItem, indexOfLastItem);
 
     setFilteredCars(currentItems);
-    console.log("Filtered Cars:", currentItems);
+    
   };
 
   const paginate = (event: React.ChangeEvent<unknown>, value: number) => {
