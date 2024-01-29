@@ -1,12 +1,18 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AiOutlineLogout } from "react-icons/ai";
-
+import "react-toastify/dist/ReactToastify.css";
 import sidebarLinks from "./sidebarLinks";
 import "./sidebar.css";
+import { ToastContainer, toast } from "react-toastify";
 type Props = {};
 
 const Sidebar = (props: Props) => {
+
+  const logout = () => {
+    localStorage.removeItem("token");
+
+  }
   return (
     <div className="sidebar">
       <div className="sidebar__top">
@@ -38,10 +44,11 @@ const Sidebar = (props: Props) => {
         </div>
         <div className="sidebar__bottom">
           <span>
-            <Link to="/login">
+            <Link to="/login" onClick={logout}>
               <AiOutlineLogout />
               Logout
             </Link>
+            <ToastContainer position="top-center" closeButton />
           </span>
         </div>
       </div>

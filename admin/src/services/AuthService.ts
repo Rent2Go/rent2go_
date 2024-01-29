@@ -6,12 +6,8 @@ import axiosInstance from '../utils/axiosInsterceptors';
 
 
 class AuthService{
-   signUp(signUpRequest:signUpRequest){
-        return axiosInstance.post("/signup", signUpRequest);
-    }
-
     signIn(signInRequest:SignInRequest){
-         return axiosInstance.post("/signin", signInRequest);
+         return axiosInstance.post("/admins/signin", signInRequest);
     }
 }
 export default new AuthService();
