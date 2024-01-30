@@ -7,7 +7,7 @@ import {
   signInValidationSchema,
   signIninitialValues,
 } from "./FormikAndYupSchema";
-import FormikInput from "../../components/formikInput/FormikInput";
+import FormikInput from "../../components/Formik/FormikInput";
 import { SignInRequest } from "../../../../src/models/requests/auth/SignInRequest";
 import "react-toastify/dist/ReactToastify.css";
 import { useAuth } from "../../contexts/AuthContext";

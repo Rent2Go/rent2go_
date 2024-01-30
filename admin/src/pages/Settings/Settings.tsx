@@ -1,7 +1,7 @@
 import React from "react";
 import "./settings.css";
 import { Formik } from "formik";
-import FormikInput from "../../components/formikInput/FormikInput";
+import { FormikInput } from "../../components";
 type Props = {};
 
 const Settings = (props: Props) => {

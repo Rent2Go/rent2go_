@@ -1,7 +1,8 @@
 import React from "react";
 import "./mailSettings.css";
 import { Form, Formik } from "formik";
-import FormikInput from "../../components/formikInput/FormikInput";
+import { FormikInput } from "../../components";
+
 type Props = {};
 
 const MailSettings = (props: Props) => {
