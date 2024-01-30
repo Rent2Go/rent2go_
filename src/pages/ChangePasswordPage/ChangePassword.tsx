@@ -10,19 +10,27 @@ import { object, string } from "yup";
 import FormikInput from "../../components/FormikInput/FormikInput";
 import UserService from "../../services/UserService";
 import { ChangePasswordRequest } from "../../models/requests/user/ChangePasswordRequest";
+import { jwtDecode } from "jwt-decode";
+import { TokenUser } from "../../models/token/TokenUser";
 
 type Props = {};
 const ChangePassword = (props: Props) => {
 
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  const token:any = searchParams.get('token');
+  const token = searchParams.get('token');
+ 
+    const user:TokenUser = jwtDecode(token ||'')
+    
+  
+
+  
 
   const authContext = useAuth()
   const navigate = useNavigate()
 
   const changePasswordInitialValues: ChangePasswordRequest = {
-    email: '',
+    email: user.sub,
     password: '',
 
   }
@@ -66,15 +74,7 @@ const ChangePassword = (props: Props) => {
               validateOnChange={true}
             >
               <Form className="form">
-                <div className="row">
-                  <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                    <FormikInput
-                      name="email"
-                      type="mail"
-                      label="Email Address"
-                      placeHolder="Enter Your Mail Address"
-                    />
-                  </div>
+                <div className="row justify-content-center">
                   <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
                     <FormikInput
                       name="password"
