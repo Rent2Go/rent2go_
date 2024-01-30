@@ -43,7 +43,9 @@ const ContactPage = (props: Props) => {
               </div>
               <div className='icon-text'>
                 <i className='icon' aria-hidden="true"><CiMapPin /></i>
-                <span>Kavacık, Rüzgarlıbahçe Mah. Çampınarı Sok. No:4 Smart Plaza B Blok Kat:3 34805, Beykoz,İstanbul</span>
+                <Link to="https://www.google.com/maps/place/Smart+Plaza/@41.0901293,29.0908427,17z/data=!3m1!4b1!4m6!3m5!1s0x14cacbca50da40b7:0x1d0efe9cea6f6572!8m2!3d41.0901254!4d29.0957136!16s%2Fg%2F11bycl90bm?entry=ttu" target='_blank' rel="noopener noreferrer" className='link2'>
+                  Kavacık, Rüzgarlıbahçe Mah. Çampınarı Sok. No:4 Smart Plaza B Blok Kat:3 34805, Beykoz,İstanbul
+                </Link>
               </div>
               <div className='social-media'>
                 <Link to="https://www.linkedin.com/company/tobeto/" target='_blank' className='icon-circle'>

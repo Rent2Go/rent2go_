@@ -1,5 +1,7 @@
+
+
 import { jwtDecode } from 'jwt-decode';
-import React, { useState, useEffect, createContext, ReactNode } from 'react';
+import React, { useState, useEffect, createContext, ReactNode, useContext } from 'react';
 import { TokenUser } from '../../../src/models/token/TokenUser';
 import { UserAuthModel } from '../../../src/models/user/UserAuth';
 
@@ -70,7 +72,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 };
 
 export const useAuth = (): AuthContextProps => {
-  const context = React.useContext(AuthContext);
+  const context = useContext(AuthContext);
   if (!context) {
     throw new Error('useAuth must be used within an AuthProvider');
   }

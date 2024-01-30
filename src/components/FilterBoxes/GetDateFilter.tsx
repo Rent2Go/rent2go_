@@ -3,20 +3,22 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs, { Dayjs } from "dayjs";
-
-import CarService from "../../services/CarService";
-import { CarModel } from "../../models/responses/cars/GetCar";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCarData } from "../../store/slices/carSlice";
 
 type Props = {};
 
 const GetDateFilter = (props: Props) => {
+
+  const { cars } = useSelector((state: any) => state.car);
+
   const [selectedStartDate, setSelectedStartDate] = useState<Dayjs | null>(
     dayjs()
   );
   const [selectedEndDate, setSelectedEndDate] = useState<Dayjs | null>(
     dayjs().add(1, "day")
   );
-  const [cars, setCars] = useState<CarModel[]>([]);
+
 
   const handleStartDateChange = (newStartDate: Dayjs | null) => {
     if (newStartDate && newStartDate.isBefore(dayjs())) {
@@ -37,17 +39,9 @@ const GetDateFilter = (props: Props) => {
     }
   };
 
-  const getCars = async () => {
-    const carService = CarService;
-    const response = await carService.getAll()
-    .then(response => { 
-      setCars(response.data.data)
-    })
-  
-  };
+
 
   useEffect(() => {
-    getCars();
   }, [selectedStartDate, selectedEndDate]);
 
   const columns = [

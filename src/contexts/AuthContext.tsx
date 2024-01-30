@@ -2,6 +2,7 @@ import { jwtDecode } from 'jwt-decode';
 import React, { useState, useEffect, createContext, ReactNode } from 'react';
 import { TokenUser } from '../models/token/TokenUser';
 import { UserAuthModel } from '../models/user/UserAuth';
+import TokenService from '../services/TokenService';
 
 interface AuthContextProps {
   authInformation: UserAuthModel;
@@ -17,7 +18,7 @@ type AuthProviderProps = {
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const getInitialUser = (): UserAuthModel => {
-    const token = localStorage.getItem('token');
+    const token = TokenService.getToken()
     if (token) {
       try {
         const decoded = jwtDecode<TokenUser>(token);

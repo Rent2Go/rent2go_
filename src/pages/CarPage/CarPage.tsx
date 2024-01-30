@@ -6,7 +6,7 @@ import {
   FilterCard,
   GetDateFilter,
 } from "../../components";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { FaSearch } from "react-icons/fa";
 
 import CarService from "../../services/CarService";
@@ -15,39 +15,26 @@ import Pagination from "@mui/material/Pagination";
 
 import "./carPage.css";
 import { Stack } from "@mui/material";
+import { fetchCarData } from "../../store/slices/carSlice";
+import { AppDispatch } from "../../store/store";
 
-type Props = {};
+type Props = { };
 
 const CarPage: React.FC<Props> = (props) => {
-  const [cars, setCars] = useState<CarModel[]>([]);
+
   const [filteredCars, setFilteredCars] = useState<CarModel[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [isInitialLoad, setIsInitialLoad] = useState<boolean>(true);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const itemsPerPage = 5;
+  const dispatch = useDispatch<AppDispatch>()
+  const { cars } = useSelector((state: any) => state.car);
 
-  const carsState = useSelector((state: any) => state.car);
-
-  const getCars = async () => {
-    try {
-     
-      const response = await CarService.getAll();
-      setCars(response.data.data);
-      setIsInitialLoad(false);
-    } catch (error) {
-      console.error("Error fetching cars:", error);
-    }
-  };
-
+  
   useEffect(() => {
-    async function fetchData() {
-      await getCars();
-      filterCars();
-    }
-    fetchData();
-  }, [searchTerm]);
-
-  useEffect(() => {
+    dispatch(fetchCarData())
+    filterCars();
+    setIsInitialLoad(false);
     if (!isInitialLoad) {
       filterCars();
     }
@@ -58,7 +45,7 @@ const CarPage: React.FC<Props> = (props) => {
 
     if (searchTerm) {
       filtered = filtered.filter(
-        (car) =>
+        (car: CarModel) =>
           car.colorName.toLowerCase().includes(searchTerm.toLowerCase()) ||
           car.model.brandName
             .toLowerCase()
@@ -77,7 +64,7 @@ const CarPage: React.FC<Props> = (props) => {
     const currentItems = filtered.slice(indexOfFirstItem, indexOfLastItem);
 
     setFilteredCars(currentItems);
-    console.log("Filtered Cars:", currentItems);
+
   };
 
   const paginate = (event: React.ChangeEvent<unknown>, value: number) => {
@@ -101,7 +88,7 @@ const CarPage: React.FC<Props> = (props) => {
           </div>
           <div className="secContent grid">
             <div className="filterContainer">
-              <FilterCard cars={cars} />
+              <FilterCard />
             </div>
             <div className="carContainer grid">
               <div className="shadow-rounded-box searchDiv">
@@ -122,13 +109,7 @@ const CarPage: React.FC<Props> = (props) => {
                 </div>
               ))}
               <div className="paginationContainer flex justify-flex-end">
-                <Stack spacing={5}>
-                  <Pagination
-                    count={Math.ceil(cars.length / itemsPerPage)}
-                    color="standard"
-                    onChange={paginate}
-                  />
-                </Stack>
+          
               </div>
             </div>
           </div>
