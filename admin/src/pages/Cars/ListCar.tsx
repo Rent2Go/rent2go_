@@ -8,6 +8,8 @@ import { CarModel } from "../../models/responses/cars/GetCar";
 
 import "./styles/cars.css";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { IoMdAdd } from "react-icons/io";
 
 type Props = {};
 
@@ -69,23 +71,31 @@ const ListCar: React.FC<Props> = (props) => {
     setCurrentPage(value);
   };
   return (
-    <div className="cars container">
+    <div className="cars ">
       <div className="secContainer">
-        <div className="pageTitle">
-          <h2>Car List</h2>
-        </div>
-        <div className="filterContainer">
-          <div className="shadow-rounded-box searchDiv">
-            <input
-              name="search"
-              className="searchInput form-control"
-              type="text"
-              placeholder="Search ..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
+        <div className="headerContainer">
+          <div className="pageTitle">
+            <h2>Car List</h2>
+          </div>
+          <div className="rightContainer">
+            <div className="filterContainer">
+              <div className="shadow-rounded-box searchDiv">
+                <input
+                  name="search"
+                  className="searchInput form-control"
+                  type="text"
+                  placeholder="Search ..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="addBtnContainer">
+              <Link title="Add New Car" to="/add-car"><IoMdAdd /></Link>
+            </div>
           </div>
         </div>
+
         <div className="cardContainer grid shadow-rounded-box">
           {filteredCars.map((car: CarModel) => (
             <VehicleCard car={car} key={car.id} />
