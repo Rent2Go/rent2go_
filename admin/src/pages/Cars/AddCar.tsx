@@ -25,10 +25,7 @@ const AddCar = (props: Props) => {
                 ></FormikInput>
               </div>
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-              <FormikSelect
-                  name="plate"
-                  label="Plate No"
-                ></FormikSelect>
+                <FormikSelect id="1" name="color" label="Color"></FormikSelect>
               </div>
             </div>
           </Form>
