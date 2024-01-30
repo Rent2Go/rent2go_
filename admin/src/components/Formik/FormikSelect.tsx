@@ -17,6 +17,7 @@ const FormikSelect = (props: Props) => {
         className="form-control"
       >
       <option value={props.id}>{props.name}</option>
+      <option value="1">option 2</option>
       </Field>
       <ErrorMessage name={props.name}>
         {(message) => <span className="alert-text">{message}</span>}
