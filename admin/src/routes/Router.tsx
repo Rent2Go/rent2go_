@@ -21,7 +21,7 @@ const Router = () => {
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/cars" element={<ListCar />} />
       <Route path="/add-car" element={<AddCar />} />
-      <Route path="/update-car/:id" element={<UpdateCar />} />
+      <Route path={`/car-update/:id`} element={<UpdateCar />} />
       <Route path="/detail-car/:id" element={<DetailCar />} />
       <Route path="/customers" element={<ListCustomer />} />
       <Route path="/add-customer" element={<AddCustomer />} />

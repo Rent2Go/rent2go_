@@ -148,7 +148,7 @@
   border-radius: 0.5rem;
   margin-bottom: 50px;
 }
-.cars .secContainer .headerContainer {
+.cars .secContainer .titleContainer {
   display: flex;
   justify-content: center;
   color: var(--primary-color);

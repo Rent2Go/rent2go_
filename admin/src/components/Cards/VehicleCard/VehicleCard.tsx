@@ -86,7 +86,7 @@ const VehicleCard = (props: Props) => {
         </div>
         <div className="actionContainer">
           <Link
-            to="/car-detail/:id"
+            to={`/car-update/${props.car.id}`}
             className="btn btn-sm btn-detail"
             title="Detail"
           >

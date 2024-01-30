@@ -29,7 +29,7 @@ const AddCar = (props: Props) => {
   return (
     <div className="cars container">
       <div className="secContainer">
-      <div className="headerContainer">
+      <div className="titleContainer">
         <h2>Add New Car</h2>
       </div>
       <div className="formContainer">
