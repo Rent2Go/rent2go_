@@ -16,7 +16,7 @@ const ListCar: React.FC<Props> = (props) => {
   const [cars, setCars] = useState<CarModel[]>([]);
   const [filteredCars, setFilteredCars] = useState<CarModel[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const itemsPerPage = 5;
+  const itemsPerPage = 500;
   const [isInitialLoad, setIsInitialLoad] = useState<boolean>(true);
 
   const carsState = useSelector((state: any) => state.car);
@@ -76,31 +76,22 @@ const ListCar: React.FC<Props> = (props) => {
         </div>
         <div className="filterContainer">
           <div className="shadow-rounded-box searchDiv">
-            <label htmlFor="search">Search:</label>
             <input
               name="search"
               className="searchInput form-control"
               type="text"
-              placeholder="Search by Model, Brand, Color, Year, Fuel Type, Body Type and Gear Type...."
+              placeholder="Search ..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
         </div>
-        {filteredCars.map((car: CarModel) => (
-          <div className="cardContainer" key={car.id}>
-            <VehicleCard car={car} />
-          </div>
-        ))}
-        <div className="paginationContainer flex justify-flex-end">
-          <Stack spacing={5}>
-            <Pagination
-              count={Math.ceil(cars.length / itemsPerPage)}
-              color="standard"
-              onChange={paginate}
-            />
-          </Stack>
+        <div className="cardContainer grid shadow-rounded-box">
+          {filteredCars.map((car: CarModel) => (
+            <VehicleCard car={car} key={car.id} />
+          ))}
         </div>
+        <div className="paginationContainer flex justify-flex-end"></div>
       </div>
     </div>
   );

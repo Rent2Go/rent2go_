@@ -1,9 +1,28 @@
 .cars {
   margin-top: 100px;
 }
+.cars .secContainer .filterContainer {
+  display: flex;
+  justify-content: end;
+}
 .cars .secContainer .cardContainer {
-  background-color: var(--heading-color);
+  background-color: #fff;
+  padding: 2rem 4rem;
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 .cars .secContainer .cardContainer .vehicleCard {
-  background: var(--primary-color);
+  background: var(--body-bg);
+  border: 2px solid var(--primary-color);
+  margin: 0.5rem 1rem;
+  padding: 0.5rem 1rem;
+}
+.cars .secContainer .cardContainer .vehicleCard .imgContainer {
+  width: 100%;
+}
+.cars .secContainer .cardContainer .vehicleCard .imgContainer img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }/*# sourceMappingURL=cars.css.map */

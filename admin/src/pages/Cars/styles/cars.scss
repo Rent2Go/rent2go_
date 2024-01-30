@@ -1,21 +1,36 @@
-.cars{
-   margin-top:100px;
-   .secContainer{
-      .pageTitle{
-         h2{
+.cars {
+  margin-top: 100px;
+  .secContainer {
+    .pageTitle {
+      h2 {
+      }
+    }
+    .filterContainer {
+      display: flex;
+      justify-content: end;
 
-         }
+      .searchDiv {
       }
-      .filterContainer{
-         .searchDiv{
-
-         }
+    }
+    .cardContainer {
+      background-color: #fff;
+      padding: 2rem 4rem;
+      margin: 2rem 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      .vehicleCard {
+        background: var(--body-bg);
+        border: 2px solid var(--primary-color);
+        margin: 0.5rem 1rem;
+        padding: 0.5rem 1rem;
+        .imgContainer {
+          width: 100%;
+          img {
+            width: 100%;
+            object-fit: contain;
+          }
+        }
       }
-      .cardContainer{
-         background-color: var(--heading-color);
-         .vehicleCard{
-            background: var(--primary-color);
-         }
-      }
-   }
+    }
+  }
 }
