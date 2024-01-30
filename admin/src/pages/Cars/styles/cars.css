@@ -142,4 +142,74 @@
 
 /**Car List Page*/
 /**Add Car Page*/
+.cars .secContainer {
+  padding: 2rem 4rem;
+  background: var(--pureWhiteColor);
+  border-radius: 0.5rem;
+  margin-bottom: 50px;
+}
+.cars .secContainer .headerContainer {
+  display: flex;
+  justify-content: center;
+  color: var(--primary-color);
+  margin: 0 0 3rem 0;
+}
+.cars .secContainer .formContainer {
+  margin: 0 2rem;
+}
+.cars .secContainer .formContainer input, .cars .secContainer .formContainer select, .cars .secContainer .formContainer label {
+  color: var(--primary-color);
+  font-size: 14px;
+  font-weight: 500;
+}
+.cars .secContainer .formContainer input::-moz-placeholder, .cars .secContainer .formContainer select::-moz-placeholder, .cars .secContainer .formContainer label::-moz-placeholder {
+  color: var(--primary-color);
+  font-size: 14px;
+  font-weight: 500;
+}
+.cars .secContainer .formContainer input::placeholder, .cars .secContainer .formContainer select::placeholder, .cars .secContainer .formContainer label::placeholder {
+  color: var(--primary-color);
+  font-size: 14px;
+  font-weight: 500;
+}
+.cars .secContainer .formContainer .btnContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding-bottom: 2rem;
+}
+.cars .secContainer .formContainer .btnContainer button, .cars .secContainer .formContainer .btnContainer a {
+  border: none;
+  color: var(--pureWhiteColor);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+}
+.cars .secContainer .formContainer .btnContainer .btn-submit {
+  background: var(--secondary-color);
+}
+.cars .secContainer .formContainer .btnContainer .btn-cancel {
+  background: var(--text-alert);
+}
+
+/**Dropzone*/
+.dzu-dropzone {
+  min-height: 120px;
+  overflow: hidden !important;
+  transition: all 0.15s linear;
+  border: 4px dashed var(--primary-color) !important;
+  background: var(--heading-color) !important;
+  border-radius: 0.5rem !important;
+}
+.dzu-dropzone label {
+  color: var(--hoverColor) !important;
+}
+.dzu-dropzone:hover {
+  background: var(--pureWhiteColor) !important;
+}
+
+/**Dropzone*/
 /**Add Car Page*//*# sourceMappingURL=cars.css.map */
