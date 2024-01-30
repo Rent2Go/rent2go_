@@ -1,32 +1,33 @@
+/**Car List Page*/
 .cars {
   margin-top: 100px;
-  padding:1rem 2rem;
+  padding: 1rem 2rem;
   .secContainer {
     .headerContainer {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: end;
-      .rightContainer{
+      .rightContainer {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         column-gap: 0.5rem;
-        a{
-          border:2px solid var(--secondary-color);
+        a {
+          border: 2px solid var(--secondary-color);
           border-radius: 5px;
           background: var(--secondary-color);
-          color:var(--heading-color);
-          padding:(0.25rem 1rem);
-          font-size:18px;
+          color: var(--heading-color);
+          padding: (0.25rem 1rem);
+          font-size: 18px;
           font-weight: 600;
         }
       }
 
       .pageTitle {
         h2 {
-        color:var(--small-text-color)
+          color: var(--small-text-color);
         }
       }
       .filterContainer {
@@ -59,7 +60,6 @@
           text-align: left;
           font-weight: 600;
           color: var(--primary-color);
-         
         }
         .plateContainer {
           display: flex;
@@ -69,12 +69,12 @@
           text-align: right;
           font-weight: 600;
           color: var(--primary-color);
-          .form-check-input{
+          .form-check-input {
             &:checked {
               background-color: #134361;
               border-color: #134361;
-              outline: none!important;
-          }
+              outline: none !important;
+            }
           }
         }
         .leftContainer {
@@ -148,3 +148,12 @@
     }
   }
 }
+/**Car List Page*/
+
+/**Add Car Page*/
+
+
+
+
+
+/**Add Car Page*/
