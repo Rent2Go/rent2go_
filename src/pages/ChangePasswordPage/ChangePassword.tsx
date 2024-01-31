@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./auth.css";
 import { Formik, Form } from "formik";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import "react-toastify/dist/ReactToastify.css";
 import { useAuth } from "../../contexts/AuthContext";
-import { ToastContainer, toast } from "react-toastify";
-import { object, string } from "yup";
+import { Bounce, ToastContainer, toast } from "react-toastify";
+import { object, ref, string } from "yup";
 import FormikInput from "../../components/FormikInput/FormikInput";
 import UserService from "../../services/UserService";
 import { ChangePasswordRequest } from "../../models/requests/user/ChangePasswordRequest";
@@ -19,27 +19,35 @@ const ChangePassword = (props: Props) => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const token = searchParams.get('token');
- 
-    const user:TokenUser = jwtDecode(token ||'')
-    
-  
-
-  
-
+  const user:TokenUser = jwtDecode(token ||'')
   const authContext = useAuth()
   const navigate = useNavigate()
+
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [passwordsMatch, setPasswordsMatch] = useState(true);
+
+  
 
   const changePasswordInitialValues: ChangePasswordRequest = {
     email: user.sub,
     password: '',
+    confirmpassword:'' 
 
   }
   const changePasswordValidationSchema = object({
     email: string()
       .required("Email field is required.")
       .email("Invalid email format."),
-    password: string()
-      .required("first Name field is required.")
+      password: string().required("Password field is required.")
+      .min(8, "Password must be at least 8 characters.")
+      .matches(/[a-z]/, "Password must include at least one lowercase letter.")
+      .matches(/[A-Z]/, "Password must include at least one uppercase letter.")
+      .matches(/\d/, "Password must include at least one number.")
+      .matches(/[!@#$%^&*()_+{}|:;<>,.?/~`]/, "Password must include at least one punctuation mark."),
+      confirmpassword: string().required("Password field is required.")
+      .oneOf([ref('password')], 'Şifreler eşleşmiyor')
+        
   });
 
   const changePasswordHandleSubmit = async (values: ChangePasswordRequest) => {
@@ -48,13 +56,12 @@ const ChangePassword = (props: Props) => {
       .then((resolve) => {
         navigate("/success");
       })
-      .catch((error) => toast.error(error.response.data.message));
+      .catch((error) => {
+        if(error.response.status === 403){
+          toast.error("Your transaction has expired! Please request a password reset again.!! ")
+        }
+      });
   };
-
-
-
-
-
 
   return (
     <div className="auth">
@@ -81,6 +88,16 @@ const ChangePassword = (props: Props) => {
                       type="password"
                       label="Password"
                       placeHolder="Enter Your Password"
+                   
+                    />
+                  </div>
+                  <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
+                    <FormikInput
+                      name="confirmpassword"
+                      type="password"
+                      label="Confirm Password"
+                      placeHolder="Enter Your Confirm Password"
+                     
                     />
                   </div>
                 </div>
@@ -94,16 +111,18 @@ const ChangePassword = (props: Props) => {
 
                   </div>
                   <ToastContainer
-                    position="top-center"
-                    autoClose={5000}
-                    hideProgressBar={false}
-                    newestOnTop={false}
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                    theme="light"
+                  position="top-center"
+                  autoClose={5000}
+                  hideProgressBar={false}
+                  newestOnTop={false}
+                  closeOnClick
+                  rtl={false}
+                  pauseOnFocusLoss
+                  draggable
+                  pauseOnHover
+                  theme="light"
+                  transition={Bounce}
+                   
                   />
 
                   <div className="col-md-12 col-sm-12">
