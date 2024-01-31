@@ -33,7 +33,7 @@ const CarPage: React.FC<Props> = (props) => {
 
   useEffect(() => {
     dispatch(fetchCarData())
-    filterCars();
+    filterCars() ;
     setIsInitialLoad(false);
     if (!isInitialLoad) {
       filterCars();
