@@ -7,7 +7,7 @@ import { RentalModel } from "./models/responses/rentals/GetRental";
 import PrivateRoute from "./utils/PrivateRoute";
 import OverlayLoader from "./components/OverlayLoader/OverlayLoader";
 import ResetPassword from "./pages/ResetPasswordPage/ResetPassword";
-import SuccessPage from "./pages/Messagepage/SuccessPage";
+import SuccessPage from "./pages/messagepage/SuccessPage";
 import ChangePassword from "./pages/ChangePasswordPage/ChangePassword";
 function App() {
   return (
