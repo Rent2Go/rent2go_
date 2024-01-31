@@ -46,7 +46,7 @@ const ChangePassword = (props: Props) => {
       .matches(/\d/, "Password must include at least one number.")
       .matches(/[!@#$%^&*()_+{}|:;<>,.?/~`]/, "Password must include at least one punctuation mark."),
       confirmpassword: string().required("Password field is required.")
-      .oneOf([ref('password')], 'Şifreler eşleşmiyor')
+      .oneOf([ref('password')], 'Passwords do not match')
         
   });
 

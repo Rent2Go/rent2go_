@@ -9,7 +9,6 @@ import OverlayLoader from "./components/OverlayLoader/OverlayLoader";
 import ResetPassword from "./pages/ResetPasswordPage/ResetPassword";
 import SuccessPage from "./pages/Messagepage/SuccessPage";
 import ChangePassword from "./pages/ChangePasswordPage/ChangePassword";
-import PasswordInputCheck from "./pages/ChangePasswordPage/deneme";
 function App() {
   return (
     <>
@@ -29,7 +28,7 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/terms-of-use" element={<TermsOfUse />} />
-          <Route path="/success" element={<PasswordInputCheck />} />
+          <Route path="/success" element={<SuccessPage />} />
         
         </Routes>
       </main>

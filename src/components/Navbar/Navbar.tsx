@@ -36,7 +36,7 @@ const Navbar = (props: Props) => {
   const logout = () => {
     TokenService.removeToken("token");
     TokenService.removerefreshToken("refreshToken");
-    toast.success("Çıkış Başarıyla Gerçekleşti")
+    toast.success("Successful Exit")
   }
 
   window.addEventListener("scroll", addBg);

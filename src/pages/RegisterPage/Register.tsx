@@ -28,7 +28,7 @@ type Props = {
 };
 
 const Register: React.FC<Props> = (props: Props) => {
-  
+
   const authContext: any = useAuth();
   const [isActive, setIsActive] = useState(false);
   const containerRef = useRef(null);
@@ -45,9 +45,9 @@ const Register: React.FC<Props> = (props: Props) => {
       .then((resolve) => {
 
         console.log("Sign-in successful:", resolve);
-       TokenService.setToken( resolve?.data?.token);
+        TokenService.setToken(resolve?.data?.token);
         TokenService.setrefreshToken(resolve?.data?.refreshToken);
-        toast.success("Giriş Başarılı")
+        toast.success("Login successful")
         authContext.refreshUser();
         setTimeout(() => { navigate("/") }, 1500);
 
@@ -59,24 +59,26 @@ const Register: React.FC<Props> = (props: Props) => {
   }
 
 
-  const handleSubmit = async (values: signUpRequest) => {
+  const signUpHandleSubmit = async (values: signUpRequest) => {
     const response = await AuthService.signUp(values)
       .then((resolve) => {
-        navigate("/");
+        toast.success("Success! Please, check your email to confirm your account.")
+        setTimeout(() => { navigate("/sign-up") }, 2000);
+       
       })
       .catch((error) => toast.error(error.response.data.message));
   };
 
   return (
     <div className={`register ${isActive ? "active" : ""}`} ref={containerRef}>
-      
+
 
       <div className={`containers ${isActive ? "active" : ""}`}>
         <div className={`form-containers sign-up ${isActive ? "active" : ""}`}>
           {" "}
           <Formik
             initialValues={signUpinitialValues}
-            onSubmit={handleSubmit}
+            onSubmit={signUpHandleSubmit}
             validationSchema={signupValidationSchema}
             validateOnBlur={true}
             validateOnChange={true}
@@ -88,7 +90,7 @@ const Register: React.FC<Props> = (props: Props) => {
                   <img src='../../assets/img/userImages/soner.jpg' alt="user" />
                 </Link>
                 <Link to="https://github.com/yagmurcurku" className="icon">
-                  <img src="../../assets/img/userImages/yagmur.jpg"  alt="user" />
+                  <img src="../../assets/img/userImages/yagmur.jpg" alt="user" />
                 </Link>
                 <Link to="https://github.com/shmserl" className="icon">
                   <img src="../../assets/img/userImages/seyhmus.jpeg" alt="user" />
@@ -134,12 +136,25 @@ const Register: React.FC<Props> = (props: Props) => {
                   />
                 </div>
               </div>
-              <Field
-                name="password"
-                className="input"
-                type="password"
-                placeholder="Password"
-              />
+              <div className="col-md-12 col-sm-12">
+                <Field
+                  name="password"
+                  className="input"
+                  type="password"
+                  placeholder="Password"
+                />
+
+              </div>
+              <div className="col-md-12 col-sm-12">
+                <Field
+                  name="confirmpassword"
+                  className="input"
+                  type="password"
+                  placeholder="Confirm Password"
+                />
+
+              </div>
+
 
               <button className="btn" type="submit">
                 Sign Up
@@ -163,7 +178,7 @@ const Register: React.FC<Props> = (props: Props) => {
                   <img src='../../assets/img/userImages/soner.jpg' alt="user" />
                 </Link>
                 <Link to="https://github.com/yagmurcurku" className="icon">
-                  <img src="../../assets/img/userImages/yagmur.jpg"  alt="user" />
+                  <img src="../../assets/img/userImages/yagmur.jpg" alt="user" />
                 </Link>
                 <Link to="https://github.com/shmserl" className="icon">
                   <img src="../../assets/img/userImages/seyhmus.jpeg" alt="user" />
@@ -211,9 +226,8 @@ const Register: React.FC<Props> = (props: Props) => {
               </button>
             </div>
             <div
-              className={`toggle-panel toggle-right ${
-                isActive ? "active" : ""
-              }`}
+              className={`toggle-panel toggle-right ${isActive ? "active" : ""
+                }`}
             >
               <h1>Hello, Friend!</h1>
               <p>
@@ -230,7 +244,7 @@ const Register: React.FC<Props> = (props: Props) => {
           </div>
         </div>
       </div>
-      <ToastContainer position="top-center"/>
+      <ToastContainer position="top-center" />
     </div>
   );
 };
