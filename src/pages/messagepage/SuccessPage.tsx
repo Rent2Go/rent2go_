@@ -18,7 +18,7 @@ const SuccessPage = (props: Props) => {
             <i className="checkmark">✓</i>
           </div>
           <h1>Success</h1>
-          <p>We have received your password change request;
+          <p>We have received your password change request;<br/>
             Please check your e-mail box. !</p>
             <Link to={'/sign-up'} className='button' type='button'>Login Page </Link>
         </div>
