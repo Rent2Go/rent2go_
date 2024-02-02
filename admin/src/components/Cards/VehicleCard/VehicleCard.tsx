@@ -86,21 +86,21 @@ const VehicleCard = (props: Props) => {
         </div>
         <div className="actionContainer">
           <Link
-            to={`/car-update/${props.car.id}`}
+            to={`/car-detail/${props.car.id}`}
             className="btn btn-sm btn-detail"
             title="Detail"
           >
             <IoIosMore /> Detail
           </Link>
           <Link
-            to="/car-update/:id"
+            to={`/car-update/${props.car.id}`}
             className="btn btn-sm btn-update"
             title="Update"
           >
             <CiEdit /> Update
           </Link>
           <Link
-            to="/car-delete/:id"
+            to={`/car-delete/${props.car.id}`}
             className="btn btn-sm btn-delete"
             title="Delete"
           >
