@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./styles/cars.css";
 import { Field, Form, Formik } from "formik";
 import { FormikInput, FormikSelect } from "../../components";
-import { useDropzone } from "react-dropzone";
 import { CarModel } from "../../models/responses/cars/GetCar";
 import CarService from "../../services/CarService";
 import "react-dropzone-uploader/dist/styles.css";
