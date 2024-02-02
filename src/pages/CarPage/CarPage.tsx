@@ -18,7 +18,7 @@ import { Stack } from "@mui/material";
 import { fetchCarData } from "../../store/slices/carSlice";
 import { AppDispatch } from "../../store/store";
 
-type Props = { };
+type Props = {};
 
 const CarPage: React.FC<Props> = (props) => {
 
@@ -30,7 +30,7 @@ const CarPage: React.FC<Props> = (props) => {
   const dispatch = useDispatch<AppDispatch>()
   const { cars } = useSelector((state: any) => state.car);
 
-  
+
   useEffect(() => {
     dispatch(fetchCarData())
     filterCars();
@@ -105,11 +105,18 @@ const CarPage: React.FC<Props> = (props) => {
 
               {filteredCars.map((car: CarModel) => (
                 <div className="singleCar grid" key={car.id}>
-                  <CarList  car={car} />
+                  <CarList car={car} />
                 </div>
               ))}
               <div className="paginationContainer flex justify-flex-end">
-          
+                <Stack spacing={5}>
+                  <Pagination
+                    count={Math.ceil(cars.length / itemsPerPage)}
+                    color="standard"
+                    onChange={paginate}
+                  />
+                </Stack>
+
               </div>
             </div>
           </div>

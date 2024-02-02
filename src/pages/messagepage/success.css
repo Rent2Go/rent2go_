@@ -1,7 +1,10 @@
-body {
+.container-body {
     text-align: center;
-    padding: 40px 0;
+    height: 100vh;
     background: #EBF0F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
@@ -44,3 +47,19 @@ i {
         #F8FAF5;
     margin: 0 auto;
 }
+.button {
+    background-color: #80ba29;
+    margin-top: 2em;
+    border: .5px solid #9ABC66;
+    border-radius: 10px;
+    color: #fff;
+    padding: 8px;
+    box-shadow: 0 0 20px 0 #9ABC66,
+                0 0 20px 0 #9ABC66,
+                0 0 10px 0 #9ABC66 inset;
+  }
+  .button:hover {
+    background-color: white;
+    color:#9ABC66;    
+  }
+
