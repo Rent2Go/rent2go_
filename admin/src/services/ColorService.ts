@@ -4,11 +4,11 @@ import axiosInstance from "../utils/axiosInsterceptors";
 
 class CarService{
     getAll(){
-        return axiosInstance.get<GetAllColorsModel>("cars/getall")
+        return axiosInstance.get<GetAllColorsModel>("colors");
     }
 
     getById(id:number){
-        return axiosInstance.get<ColorModel>(`cars/${id}`);
+        return axiosInstance.get<ColorModel>(`colors/${id}`);
     }
 }
 
