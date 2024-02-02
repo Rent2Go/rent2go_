@@ -1,13 +1,17 @@
 import React from "react";
 import { ErrorMessage, Field } from "formik";
+import { ColorModel } from "../../models/responses/colors/ColorModel";
+import { colors } from "@mui/material";
 
 type Props = {
   label: string;
   name: string;
   id:string;
+  colors: any[];
 };
 
 const FormikSelect = (props: Props) => {
+  console.log(props.colors)
   return (
     <div className="mb-3">
       <label className="form-label">{props.label}</label>
@@ -16,8 +20,7 @@ const FormikSelect = (props: Props) => {
         as="select"
         className="form-control"
       >
-      <option value={props.id}>{props.name}</option>
-      <option value="1">option 2</option>
+      {props.colors.map( (color) => (<option value={color.id}>{color.name.toUpperCase()}</option>) )}
       </Field>
       <ErrorMessage name={props.name}>
         {(message) => <span className="alert-text">{message}</span>}
