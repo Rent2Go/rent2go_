@@ -1,31 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 import { CFormCheck } from "@coreui/react";
 import { CarModel } from "../../models/responses/cars/GetCar";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { removeBodyFilter, setBodyFilter } from "../../store/slices/filterSlice";
 
 type Props = {
-cars: CarModel[]
+  cars: CarModel[];
 };
 
 const BodyTypeFilter = (props: Props) => {
+  const [checkedStates, setCheckedStates] = useState<{ [key: string]: boolean }>({});
 
+  const { cars: allCars } = useSelector((state: any) => state.car);
+  const bodyFilter = useSelector((state: any) => state.filters.body);
+  console.log(bodyFilter)
+  const dispatch = useDispatch();
 
-  const { cars:cars } = useSelector((state: any) => state.car);
+  const handleBodyChange = (event: any, bodyType: string) => {
+    const newValue = event.target.checked;
 
-  const allBodyTypes = cars.map((car:CarModel) => car.bodyType);
+    setCheckedStates((prevState) => ({
+      ...prevState,
+      [bodyType]: newValue,
+    }));
+
+    if (newValue) {
+      dispatch(setBodyFilter(bodyType));
+    } else {
+      dispatch(removeBodyFilter(bodyType));
+    }
+  };
+
+  const allBodyTypes = allCars.map((car: CarModel) => car.bodyType);
   const uniqueBodyTypes = Array.from<string>(new Set(allBodyTypes));
+
   return (
     <div className="filterRow shadow-rounded-box">
       <div className="rowHead">
         <h6>Body Type</h6>
       </div>
       <div className="checkBoxRow">
-        {uniqueBodyTypes.map((bodyType ,index:number) => (
-          <CFormCheck
+        {uniqueBodyTypes.map((bodyType: any, index: number) => (
+         
+           
+
+            <CFormCheck
             key={index}
             id={`flexCheckDefault-${bodyType}`}
-            label={bodyType} 
+            checked={checkedStates[bodyType] || false}
+            onChange={(event) => handleBodyChange(event, bodyType)}
+            label={bodyType}
           />
+      
         ))}
       </div>
     </div>
