@@ -53,7 +53,7 @@ const UserTable = (props: Props) => {
               <td>{user.phoneNumber}</td>
               <td>
                 <Form>
-                  <Form.Check // prettier-ignore
+                  <Form.Check 
                     type="switch"
                     id="custom-switch"
                     label=""
