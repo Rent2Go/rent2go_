@@ -23,6 +23,9 @@ const EmployeeTable = (props: Props) => {
       console.error("Error fetching employees:", error);
     }
   };
+  useEffect(() => {
+    getEmployees();
+  },[]);
 
   return (
     <div className="employeeTableCard shadow-rounded-box">
