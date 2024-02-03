@@ -6,6 +6,7 @@ export {default as Layout} from "./Layout/Layout";
 
 
 export {default as UserCard} from "./Cards/UserCard/UserCard";
+export {default as UserTable} from "./Tables/Users/UserTable";
 export {default as SingleCard} from "./Reusable/SingleCard";
 export {default as RecommendedCarCard} from "./UI/RecommendedCarCard";
 export {default as CarItem} from "./UI/CarItem";
