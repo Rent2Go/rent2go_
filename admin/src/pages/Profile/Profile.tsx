@@ -2,6 +2,7 @@ import React from "react";
 import "./settings.css";
 import { Formik } from "formik";
 import { FormikInput } from "../../components";
+import Input from "antd/es/input/Input";
 type Props = {};
 
 const Settings = (props: Props) => {
@@ -57,11 +58,11 @@ const Settings = (props: Props) => {
                   <div className="col-xl-8 col-l-8 col-md-12 col-sm-12">
                     <div className="row">
                       <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
-                        <FormikInput
+                      <p>Profile Photo</p>
+                        <Input
                           name="imgUrl"
+                          className="form-control"
                           type="file"
-                          label="Profile Photo"
-                          placeHolder="Choose Your Profile Photo"
                         />
                       </div>
                     </div>

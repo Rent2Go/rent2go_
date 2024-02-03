@@ -1,0 +1,105 @@
+.colors {
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.colors .secContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 2rem auto;
+  padding: 2rem 4rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.colors .secContainer .leftContainer {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.colors .secContainer .leftContainer .colorPaletteContainer .rcp {
+  background-color: var(--primary-color) !important;
+  width: 450px !important;
+}
+.colors .secContainer .leftContainer .colorPaletteContainer .rcp .rcp-field-label {
+  color: var(--heading-color);
+  font-weight: 500;
+}
+.colors .secContainer .leftContainer .colorFormContainer {
+  width: 100%;
+}
+.colors .secContainer .leftContainer .colorFormContainer .form {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.colors .secContainer .leftContainer .colorFormContainer .form .form-label {
+  display: none;
+}
+.colors .secContainer .leftContainer .colorFormContainer .form input {
+  width: 145px;
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 16px;
+}
+.colors .secContainer .leftContainer .colorFormContainer .form input:placeholder {
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 16px;
+}
+.colors .secContainer .leftContainer .colorFormContainer .form button {
+  width: 145px;
+  padding: 0.5rem 2rem;
+  background-color: var(--primary-color);
+  color: var(--heading-color);
+  font-size: 16px;
+  font-weight: 500;
+}
+.colors .secContainer .colorListContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.colors .secContainer .colorListContainer .titleContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.colors .secContainer .colorListContainer .titleContainer h6 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--small-text-color);
+}
+.colors .secContainer .colorListContainer .colorsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 450px;
+  border-bottom: 2px solid var(--primary-color);
+  padding: 1rem 0;
+}
+.colors .secContainer .colorListContainer .colorsContainer .colorPreview {
+  width: 64px;
+  height: 32px;
+  border: 2px solid var(--primary-color);
+  border-radius: 0.5rem;
+}
+.colors .secContainer .colorListContainer .colorsContainer p {
+  font-size: 14px;
+  font-weight: 500;
+  height: 25px;
+  color: var(--text-color);
+}
+.colors .secContainer .colorListContainer .colorsContainer p:nth-child(1) {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--small-text-color);
+}/*# sourceMappingURL=colors.css.map */
