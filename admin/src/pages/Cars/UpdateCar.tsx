@@ -45,7 +45,7 @@ const UpdateCar = (props: Props) => {
           <div className="row">
             <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
               <FormikInput
-                value={cars?.plate || ""}
+               
                 name="plate"
                 type="text"
                 label="Plate No"

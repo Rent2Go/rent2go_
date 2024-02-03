@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/cars.css";
 import { Field, Form, Formik } from "formik";
 import { FormikInput, FormikSelect } from "../../components";
@@ -6,25 +6,57 @@ import { useDropzone } from "react-dropzone";
 import { CarModel } from "../../models/responses/cars/GetCar";
 import CarService from "../../services/CarService";
 import "react-dropzone-uploader/dist/styles.css";
-import Dropzone from "react-dropzone-uploader";
+import Dropzone, { IFileWithMeta, StatusValue } from "react-dropzone-uploader";
 import { Link } from "react-router-dom";
+import { AddCarRequest } from "../../models/requests/cars/AddCarRequest";
 type Props = {};
 
 const AddCar = (props: Props) => {
-  const initialValues = () => {};
-  const onSubmit = () => {};
 
-  const getUploadParams = ({}) => {
-    return { url: "https://httpbin.org/post" };
-  };
+  const getUploadParams = () => {
+    return { url: 'https://httpbin.org/post' }
+  }
 
-  // called every time a file's `status` changes
-  const handleChangeStatus = ({}) => {
-    console.log();
-  };
 
-  // receives array of files that are done uploading when submit button is clicked
-  const handleSubmit = () => {};
+
+ 
+  
+ 
+  const addCarInitialValues:AddCarRequest = {
+    kilometer:0 ,
+    year: 0 ,
+    dailyPrice:0 ,
+    plate: "",
+    modelId: 0,
+    colorId: 0,
+    bodyType: "" ,
+    fuelType: "",
+    gearType: "",
+    cylinderCount: "",
+    enginePower: "",
+    
+  }
+
+
+   const formData = new FormData();
+  const handleChangeStatus = (fileWithMeta: IFileWithMeta, status: StatusValue) => {
+    formData.append('file', fileWithMeta.file);
+  }
+
+    
+  const handleSubmit = async ( addCarInitialValues:AddCarRequest) => {
+   
+    formData.append('addCarRequest', JSON.stringify(addCarInitialValues));
+  
+
+    try {
+      const response = await CarService.addCar(formData);
+      console.log('Response:', response.data);
+    } catch (error) {
+      console.error('An error occurred while adding the car:', error);
+    }
+  }
+
 
   return (
     <div className="cars container">
@@ -33,7 +65,7 @@ const AddCar = (props: Props) => {
         <h2>Add New Car</h2>
       </div>
       <div className="formContainer">
-        <Formik initialValues={initialValues} onSubmit={onSubmit}>
+        <Formik initialValues={addCarInitialValues} onSubmit={handleSubmit}>
           <Form>
             <div className="row">
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
@@ -126,15 +158,12 @@ const AddCar = (props: Props) => {
               </div>
             </div>
             <div className="row">
-              <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
+            <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
+
                 <label className="mb-3 mt-5">Images</label>
-                <Dropzone
-                  getUploadParams={getUploadParams}
-                  onChangeStatus={handleChangeStatus}
-                  onSubmit={handleSubmit}
-                  accept="image/*"
-                />
+               
               </div>
+            
             </div>
             <div className="btnContainer">
               <button title="Save" type="submit" className="btn btn-sm btn-submit">Save</button>
