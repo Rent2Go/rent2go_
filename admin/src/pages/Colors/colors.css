@@ -60,5 +60,46 @@
   font-weight: 500;
 }
 .colors .secContainer .colorListContainer {
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.colors .secContainer .colorListContainer .titleContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.colors .secContainer .colorListContainer .titleContainer h6 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--small-text-color);
+}
+.colors .secContainer .colorListContainer .colorsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 450px;
+  border-bottom: 2px solid var(--primary-color);
+  padding: 1rem 0;
+}
+.colors .secContainer .colorListContainer .colorsContainer .colorPreview {
+  width: 64px;
+  height: 32px;
+  border: 2px solid var(--primary-color);
+  border-radius: 0.5rem;
+}
+.colors .secContainer .colorListContainer .colorsContainer p {
+  font-size: 14px;
+  font-weight: 500;
+  height: 25px;
+  color: var(--text-color);
+}
+.colors .secContainer .colorListContainer .colorsContainer p:nth-child(1) {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--small-text-color);
 }/*# sourceMappingURL=colors.css.map */

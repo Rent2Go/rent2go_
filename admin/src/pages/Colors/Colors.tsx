@@ -57,11 +57,25 @@ const Colors = (props: Props) => {
         </div>
         <div className="rightContainer">
           <div className="colorListContainer">
+            <div className="titleContainer">
+              <h6> ID </h6>
+              <h6> Preview </h6>
+              <h6> Hex Code </h6>
+              <h6> Title </h6>
+            </div>
+         
             {colorLists.map((colorList: ColorModel) => (
-              <div key={colorList.id}>
-                <p>{colorList.name}</p>
+              <div className="colorsContainer" key={colorList.id}>
+                <p>{colorList.id}</p>
+
+                <p
+                  className="colorPreview"
+                  style={{ backgroundColor: colorList.hexCode }}
+                ></p>
+
                 <p>{colorList.hexCode}</p>
-                
+
+                <p>{colorList.name}</p>
               </div>
             ))}
           </div>
