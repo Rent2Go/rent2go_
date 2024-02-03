@@ -7,15 +7,13 @@ import CarService from "../../services/CarService";
 import "react-dropzone-uploader/dist/styles.css";
 import Dropzone, { IFileWithMeta, StatusValue } from "react-dropzone-uploader";
 import { Link } from "react-router-dom";
-
-import { AddCarRequest } from "../../models/requests/cars/AddCarRequest";
-
 import ColorService from "../../services/ColorService";
 import { ColorModel } from "../../models/responses/colors/ColorModel";
 import { BrandModel } from "../../models/responses/brands/GetBrand";
 import BrandService from "../../services/BrandService";
+import { AddCarRequest } from "../../models/requests/cars/AddCarRequest";
 type Props = {
-  
+
 }
 
 const AddCar = (props: Props) => {
@@ -26,16 +24,14 @@ const AddCar = (props: Props) => {
   }
 
   const [colors, setColors] = useState<ColorModel[]>([]);
-  console.log(colors);
-  const [brands, setBrands] = useState<BrandModel[]>([]);
-  console.log(brands);
 
-  useEffect(() => {
-    getColors()
-  },[])
+  const [brands, setBrands] = useState<BrandModel[]>([]);
+ 
+
 
   useEffect(()=>{
     getBrands()
+    getColors()
   },[])
 
 
