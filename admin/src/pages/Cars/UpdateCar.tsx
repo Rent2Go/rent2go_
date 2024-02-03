@@ -53,15 +53,15 @@ const UpdateCar = (props: Props) => {
               ></FormikInput>
             </div>
             <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-              <FormikSelect id="1" name="color" label="Color"></FormikSelect>
+              <FormikSelect id="1" name="color" label="Color" colors={[]}></FormikSelect>
             </div>
           </div>
           <div className="row">
             <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-              <FormikSelect id="2" name="Brand" label="Brand"></FormikSelect>
+              <FormikSelect id="2" name="Brand" label="Brand" colors={[]}></FormikSelect>
             </div>
             <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-              <FormikSelect id="3" name="Model" label="Model"></FormikSelect>
+              <FormikSelect id="3" name="Model" label="Model" colors={[]}></FormikSelect>
             </div>
           </div>
           <div className="row">
@@ -77,7 +77,7 @@ const UpdateCar = (props: Props) => {
               <FormikSelect
                 id="4"
                 name="bodyType"
-                label="Body Type"
+                label="Body Type" colors={[]}
               ></FormikSelect>
             </div>
           </div>
@@ -86,14 +86,14 @@ const UpdateCar = (props: Props) => {
               <FormikSelect
                 id="2"
                 name="fuelType"
-                label="Fuel Type"
+                label="Fuel Type" colors={[]}
               ></FormikSelect>
             </div>
             <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
               <FormikSelect
                 id="3"
                 name="gearType"
-                label="Gear Type"
+                label="Gear Type" colors={[]}
               ></FormikSelect>
             </div>
           </div>

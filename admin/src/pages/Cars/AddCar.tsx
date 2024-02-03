@@ -2,20 +2,44 @@ import React, { useEffect, useState } from "react";
 import "./styles/cars.css";
 import { Field, Form, Formik } from "formik";
 import { FormikInput, FormikSelect } from "../../components";
-import { useDropzone } from "react-dropzone";
 import { CarModel } from "../../models/responses/cars/GetCar";
 import CarService from "../../services/CarService";
 import "react-dropzone-uploader/dist/styles.css";
 import Dropzone, { IFileWithMeta, StatusValue } from "react-dropzone-uploader";
 import { Link } from "react-router-dom";
+
 import { AddCarRequest } from "../../models/requests/cars/AddCarRequest";
-type Props = {};
+
+import ColorService from "../../services/ColorService";
+import { ColorModel } from "../../models/responses/colors/ColorModel";
+import { BrandModel } from "../../models/responses/brands/GetBrand";
+import BrandService from "../../services/BrandService";
+type Props = {
+  
+}
 
 const AddCar = (props: Props) => {
+
 
   const getUploadParams = () => {
     return { url: 'https://httpbin.org/post' }
   }
+
+  const [colors, setColors] = useState<ColorModel[]>([]);
+  console.log(colors);
+  const [brands, setBrands] = useState<BrandModel[]>([]);
+  console.log(brands);
+
+  useEffect(() => {
+    getColors()
+  },[])
+
+  useEffect(()=>{
+    getBrands()
+  },[])
+
+
+
 
 
 
@@ -58,6 +82,22 @@ const AddCar = (props: Props) => {
   }
 
 
+  const getColors = () => {
+    const response = ColorService.getAll()
+    .then((res) => {setColors(res.data.data)
+       console.log("deneme")})
+    .catch((err) => console.log(err))
+  };
+
+  const getBrands = () => {
+    const response = BrandService.getAll()
+    .then( (res) => {setBrands(res.data.data)} )
+    .catch( (err) => {console.log(err)} )
+  }
+
+  // receives array of files that are done uploading when submit button is clicked
+
+
   return (
     <div className="cars container">
       <div className="secContainer">
@@ -77,15 +117,15 @@ const AddCar = (props: Props) => {
                 ></FormikInput>
               </div>
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                <FormikSelect id="1" name="color" label="Color"></FormikSelect>
+                <FormikSelect id="1" name="color" label="Color" colors={colors}></FormikSelect>
               </div>
             </div>
             <div className="row">
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                <FormikSelect id="2" name="Brand" label="Brand"></FormikSelect>
+                <FormikSelect id="2" name="Brand" label="Brand" colors={brands}></FormikSelect>
               </div>
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                <FormikSelect id="3" name="Model" label="Model"></FormikSelect>
+                <FormikSelect id="3" name="Model" label="Model" colors={colors}></FormikSelect>
               </div>
             </div>
             <div className="row">
@@ -101,7 +141,7 @@ const AddCar = (props: Props) => {
                 <FormikSelect
                   id="4"
                   name="bodyType"
-                  label="Body Type"
+                  label="Body Type" colors={colors}
                 ></FormikSelect>
               </div>
             </div>
@@ -110,14 +150,14 @@ const AddCar = (props: Props) => {
                 <FormikSelect
                   id="2"
                   name="fuelType"
-                  label="Fuel Type"
+                  label="Fuel Type" colors={colors}
                 ></FormikSelect>
               </div>
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
                 <FormikSelect
                   id="3"
                   name="gearType"
-                  label="Gear Type"
+                  label="Gear Type" colors={colors}
                 ></FormikSelect>
               </div>
             </div>
