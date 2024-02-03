@@ -1,5 +1,5 @@
 import { ColorModel } from "../models/responses/colors/ColorModel";
-import { GetAllColorModel } from "../models/responses/colors/GetAllColors";
+import { GetAllColorModel } from "../models/responses/colors/getAllColors";
 import axiosInstance from "../utils/axiosInsterceptors";
 
 class ColorService{
