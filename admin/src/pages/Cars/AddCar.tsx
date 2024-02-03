@@ -12,6 +12,8 @@ import { ColorModel } from "../../models/responses/colors/ColorModel";
 import { BrandModel } from "../../models/responses/brands/GetBrand";
 import BrandService from "../../services/BrandService";
 import { AddCarRequest } from "../../models/requests/cars/AddCarRequest";
+import { ModelModel } from "../../models/responses/models/GetModel";
+import ModelService from "../../services/ModelService";
 type Props = {
 
 }
@@ -26,12 +28,15 @@ const AddCar = (props: Props) => {
   const [colors, setColors] = useState<ColorModel[]>([]);
 
   const [brands, setBrands] = useState<BrandModel[]>([]);
+
+  const [models, setModels] = useState<ModelModel[]>([]);
  
 
 
   useEffect(()=>{
     getBrands()
     getColors()
+    getModels()
   },[])
 
 
@@ -91,6 +96,12 @@ const AddCar = (props: Props) => {
     .catch( (err) => {console.log(err)} )
   }
 
+  const getModels = () => {
+    const response = ModelService.getAll()
+    .then( (res) => {setModels(res.data.data)} )
+    .catch( (err) => {console.log(err)} )
+  }
+
   // receives array of files that are done uploading when submit button is clicked
 
 
@@ -121,7 +132,7 @@ const AddCar = (props: Props) => {
                 <FormikSelect id="2" name="Brand" label="Brand" colors={brands}></FormikSelect>
               </div>
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                <FormikSelect id="3" name="Model" label="Model" colors={colors}></FormikSelect>
+                <FormikSelect id="3" name="Model" label="Model" colors={models}></FormikSelect>
               </div>
             </div>
             <div className="row">
