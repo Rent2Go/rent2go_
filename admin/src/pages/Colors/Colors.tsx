@@ -32,7 +32,7 @@ const Colors = (props: Props) => {
     <div className="colors">
       <div className="secContainer shadow-rounded-box">
         <div className="leftContainer">
-        <div className="colorFormContainer">
+          <div className="colorFormContainer">
             <Formik initialValues={initialValues} onSubmit={onSubmit}>
               <Form className="form">
                 <FormikInput
@@ -45,20 +45,24 @@ const Colors = (props: Props) => {
                   type="text"
                   placeHolder="Enter Hex code"
                 ></FormikInput>
-                 <button type="submit" className="btn btn-sm ">Add Color</button>
+                <button type="submit" className="btn btn-sm ">
+                  Add Color
+                </button>
               </Form>
-             
             </Formik>
           </div>
           <div className="colorPaletteContainer ">
             <ColorPicker color={color} onChange={setColor} />
           </div>
-          
         </div>
         <div className="rightContainer">
           <div className="colorListContainer">
             {colorLists.map((colorList: ColorModel) => (
-              <div key={colorList.id}>{colorList.name}</div>
+              <div key={colorList.id}>
+                <p>{colorList.name}</p>
+                <p>{colorList.hexCode}</p>
+                
+              </div>
             ))}
           </div>
         </div>
