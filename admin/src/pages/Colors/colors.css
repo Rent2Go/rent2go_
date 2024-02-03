@@ -1,1 +1,64 @@
-/*# sourceMappingURL=colors.css.map */
+.colors {
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.colors .secContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 2rem auto;
+  padding: 2rem 4rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.colors .secContainer .leftContainer {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.colors .secContainer .leftContainer .colorPaletteContainer .rcp {
+  background-color: var(--primary-color) !important;
+  width: 450px !important;
+}
+.colors .secContainer .leftContainer .colorPaletteContainer .rcp .rcp-field-label {
+  color: var(--heading-color);
+  font-weight: 500;
+}
+.colors .secContainer .leftContainer .colorFormContainer {
+  width: 100%;
+}
+.colors .secContainer .leftContainer .colorFormContainer .form {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.colors .secContainer .leftContainer .colorFormContainer .form .form-label {
+  display: none;
+}
+.colors .secContainer .leftContainer .colorFormContainer .form input {
+  width: 145px;
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 16px;
+}
+.colors .secContainer .leftContainer .colorFormContainer .form input:placeholder {
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 16px;
+}
+.colors .secContainer .leftContainer .colorFormContainer .form button {
+  width: 145px;
+  padding: 0.5rem 2rem;
+  background-color: var(--primary-color);
+  color: var(--heading-color);
+  font-size: 16px;
+  font-weight: 500;
+}
+.colors .secContainer .colorListContainer {
+  padding: 1rem;
+}/*# sourceMappingURL=colors.css.map */

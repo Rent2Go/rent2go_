@@ -1,3 +1,66 @@
-.colors{
-    
+.colors {
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  .secContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 2rem auto;
+    padding: 2rem 4rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .leftContainer {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 1rem;
+      .colorPaletteContainer {
+        .rcp {
+          background-color: var(--primary-color) !important;
+          width: 450px !important;
+          .rcp-field-label {
+            color: var(--heading-color);
+            font-weight: 500;
+        }
+        }
+      }
+      .colorFormContainer {
+        width: 100%;
+        .form {
+          display: flex;
+          flex-direction: row;
+          justify-content: stretch;
+          align-items: baseline;
+          gap:0.5rem;
+          .form-label{
+            display: none;
+          }
+          input {
+            width: 145px;
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 16px;
+            &:placeholder {
+              color: var(--primary-color);
+              font-weight: 500;
+              font-size: 16px;
+            }
+          }
+          button {
+            width: 145px;
+            padding: 0.5rem 2rem;
+            background-color: var(--primary-color);
+            color: var(--heading-color);
+            font-size: 16px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+    .colorListContainer {
+      padding: 1rem;
+    }
+  }
 }
