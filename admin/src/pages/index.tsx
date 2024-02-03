@@ -38,3 +38,6 @@ export {default as AddUserRole} from "./UserRoles/AddUserRole"
 export {default as UpdateUserRole} from "./UserRoles/UpdateUserRole"
 export {default as ListUserRole} from "./UserRoles/ListUserRole"
 export {default as DetailUserRole} from "./UserRoles/DetailUserRole"
+
+
+export {default as Colors} from "./Colors/Colors"

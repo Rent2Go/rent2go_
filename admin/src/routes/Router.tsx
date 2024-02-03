@@ -6,7 +6,7 @@ import {
   ListCar, ListCustomer, ListEmployee, ListRental, ListUser, ListUserRole, Login, 
   Permissions, Profile, ResetPassword, 
   Settings, MailSettings,
-  UpdateCar, UpdateCustomer, UpdateEmployee, UpdateRental, UpdateUser, UpdateUserRole 
+  UpdateCar, UpdateCustomer, UpdateEmployee, UpdateRental, UpdateUser, UpdateUserRole, Colors 
 } from "../pages";
 import PrivateRoute from "../utils/PrivateRoute";
 
@@ -22,7 +22,7 @@ const Router = () => {
       <Route path="/cars" element={<ListCar />} />
       <Route path="/add-car" element={<AddCar />} />
       <Route path="/car-update/:id" element={<UpdateCar />} />
-      <Route path="/detail-car/:id" element={<DetailCar />} />
+      <Route path="/car-detail/:id" element={<DetailCar />} />
       <Route path="/customers" element={<ListCustomer />} />
       <Route path="/add-customer" element={<AddCustomer />} />
       <Route path="/update-customer/:id" element={<UpdateCustomer />} />
@@ -47,6 +47,7 @@ const Router = () => {
       <Route path="/profile" element={<Profile/>}/>
       <Route path="/settings" element={<Settings/>}/>
       <Route path="/mail-settings" element={<MailSettings/>}/>
+      <Route path="/colors" element={<Colors/>}/>
       <Route path="/dashboard" element={<Dashboard/>}/>
     </Routes>
   );

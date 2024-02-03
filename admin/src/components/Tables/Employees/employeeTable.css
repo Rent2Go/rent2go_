@@ -1,0 +1,40 @@
+.employeeTableCard {
+  margin-top: 100px;
+}
+.employeeTableCard table {
+  align-items: center;
+  border-radius: 0.5rem !important;
+  vertical-align: middle;
+}
+.employeeTableCard table a {
+  margin: 0 0.5rem;
+}
+.employeeTableCard table th {
+  text-align: left;
+  padding: 2rem;
+  border-bottom: 2px solid var(--recommend-car02-bg);
+}
+.employeeTableCard table td {
+  padding: 1rem 2rem;
+}
+.employeeTableCard table tr:nth-child(even) {
+  background-color: var(--recommend-car02-bg);
+}
+.employeeTableCard table tbody {
+  padding: 1rem;
+}
+.employeeTableCard table img {
+  width: 64px;
+  height: 64px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.5rem;
+}
+.employeeTableCard table .form-check-input:checked {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  outline: none !important;
+}
+.employeeTableCard .table > :not(caption) > * > * {
+  background-color: transparent !important;
+}/*# sourceMappingURL=employeeTable.css.map */

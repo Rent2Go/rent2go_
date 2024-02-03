@@ -4,7 +4,7 @@ import axiosInstance from "../utils/axiosInsterceptors";
 
 class CarService{
     getAll(){
-        return axiosInstance.get<GetAllCarsModel>("cars/getall")
+        return axiosInstance.get<GetAllCarsModel>("cars")
     }
 
     getById(id:number){
