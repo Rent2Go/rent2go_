@@ -4,7 +4,7 @@ import axiosInstance from "../utils/axiosInsterceptors";
 
 class UserService{
     getAll(){
-        return axiosInstance.get<GetAllUsersModel>("users/getall")
+        return axiosInstance.get<GetAllUsersModel>("users")
     }
 
     getById(id:number){

@@ -5,7 +5,7 @@ import axiosInstance from "../utils/axiosInsterceptors";
 
 class EmployeeService{
     getAll(){
-        return axiosInstance.get<GetAllEmployeeModel>("employees/getall")
+        return axiosInstance.get<GetAllEmployeeModel>("employees")
     }
 
     getById(id:number){

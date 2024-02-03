@@ -5,7 +5,7 @@ import { ColorModel } from '../models/responses/colors/GetColor';
 
 class ColorService{
     getAll(){
-        return axiosInstance.get<GetAllColorModel>("colors/getall")
+        return axiosInstance.get<GetAllColorModel>("colors")
     }
 
     getById(id:number){
