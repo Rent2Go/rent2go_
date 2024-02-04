@@ -27,4 +27,28 @@ a {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   border-radius: 0.5rem;
   background-color: var(--pureWhiteColor);
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding-bottom: 2rem;
+}
+.btnContainer button,
+.btnContainer a {
+  border: none;
+  color: var(--pureWhiteColor);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+}
+.btnContainer .btn-submit {
+  background: var(--secondary-color);
+}
+.btnContainer .btn-cancel {
+  background: var(--text-alert);
 }/*# sourceMappingURL=App.css.map */
