@@ -15,12 +15,8 @@ class CarService{
     addCar(formData:FormData){
         return axiosInstance.post<AddResponse>(`cars`,formData,{
             headers: {
-                'Content-Type': 'multipart/form-data',
-            },
-
-
-
-        });
+            "Content-Type": "applications/json",
+          },});
     }
 }
     
