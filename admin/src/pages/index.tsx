@@ -40,5 +40,6 @@ export {default as ListUserRole} from "./UserRoles/ListUserRole"
 export {default as DetailUserRole} from "./UserRoles/DetailUserRole"
 
 
+export {default as Brands} from "./Brands/Brands"
 export {default as Colors} from "./Colors/Colors"
 export {default as Discounts} from "./Discounts/Discounts"
