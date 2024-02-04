@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import "./contactPage.css"
+import axios from 'axios';
 import { Footer, Navbar } from "../../components";
 import { Link } from 'react-router-dom';
 import { CiMail, CiPhone, CiMapPin } from "react-icons/ci";
@@ -9,13 +10,37 @@ import entry from '../ContactPage/entry.jpg';
 import Aos from "aos";
 
 
-type Props = {}
-
-const ContactPage = (props: Props) => {
+const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
 
   useEffect(() => {
     Aos.init({ duration: 2000, offset: 20 });
   }, []);
+
+  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+
+    try {
+      await axios.post('http://localhost:8080/api/send-contact-email', formData);
+      alert('Your message has been sent successfully!');
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('There was an error while sending your message. Please try again later.');
+    }
+  };
 
   return (
     <>
@@ -60,36 +85,36 @@ const ContactPage = (props: Props) => {
                 </Link>
               </div>
             </div>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className='col'>
                 <div className='form-group'>
                   <label>First Name</label>
-                  <input type='text'></input>
+                  <input type='text' name='firstName' value={formData.firstName} onChange={handleChange}></input>
                 </div>
                 <div className='form-group'>
                   <label>Last Name</label>
-                  <input type='text'></input>
+                  <input type='text' name='lastName' value={formData.lastName} onChange={handleChange}></input>
                 </div>
               </div>
               <div className='col'>
                 <div className='form-group'>
                   <label>Email</label>
-                  <input type='email'></input>
+                  <input type='email' name='email' value={formData.email} onChange={handleChange}></input>
                 </div>
                 <div className='form-group'>
                   <label>Phone</label>
-                  <input type='tel' pattern="0[2-9][0-9]{8}"></input>
+                  <input type='tel' name='phone' value={formData.phone} onChange={handleChange}></input>
                 </div>
               </div>
               <div className='col-2'>
                 <div className='form-group'>
                   <label>Message</label>
-                  <textarea></textarea>
+                  <textarea name='message' value={formData.message} onChange={handleChange}></textarea>
                 </div>
               </div>
               <div className='col-2'>
                 <div className='form-group right'>
-                  <Button className='primary' data-aos="zoom-in">Send Message</Button>
+                <Button type='submit' className='primary' data-aos="zoom-in">Send Message</Button>
                 </div>
               </div>
             </form>
