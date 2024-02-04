@@ -36,7 +36,7 @@ const Discounts = (props: Props) => {
   return (
     <div className="discounts">
       <div className="titleContainer">
-        <h1>Discounts</h1>
+        <h2>Discounts</h2>
       </div>
       <div className="secContainer shadow-rounded-box">
         <div className="row">

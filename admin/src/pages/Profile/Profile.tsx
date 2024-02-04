@@ -12,7 +12,9 @@ const Settings = (props: Props) => {
   return (
     <div className="settings container">
       <div className="secContainer">
-        <h2 className="settings__title">Profile</h2>
+        <div className="titleContainer">
+          <h2>Settings</h2>
+        </div>
         <p className="profile__desc">
           Update your photo and personal details here
         </p>
@@ -58,7 +60,7 @@ const Settings = (props: Props) => {
                   <div className="col-xl-8 col-l-8 col-md-12 col-sm-12">
                     <div className="row">
                       <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
-                      <p>Profile Photo</p>
+                        <p>Profile Photo</p>
                         <Input
                           name="imgUrl"
                           className="form-control"

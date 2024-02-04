@@ -10,7 +10,9 @@ const ListCustomer = (props: Props) => {
   return (
     <div className='customers'>
       <div className="headingContainer">
+      <div className="titleContainer">
         <h2>Customers</h2>
+      </div>
         <div className="addBtnContainer">
           <Link title="Add New User" to="/add-customer" className="btn btn-sm">
             <IoMdAdd /> Add Customer

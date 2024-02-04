@@ -9,7 +9,9 @@ const ListRental = (props: Props) => {
     <div className="booking container">
       <div className="secContainer">
         <div className="booking__wrapper">
-          <h2 className="booking__title">Booking</h2>
+          <div className="titleContainer">
+            <h2>Rentals</h2>
+          </div>
 
           <div className="filter__widget-wrapper">
             <div className="filter__widget-01">
