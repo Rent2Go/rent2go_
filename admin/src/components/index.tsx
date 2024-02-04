@@ -8,7 +8,7 @@ export {default as Layout} from "./Layout/Layout";
 export {default as UserCard} from "./Cards/UserCard/UserCard";
 export {default as UserTable} from "./Tables/Users/UserTable";
 export {default as EmployeeTable} from "./Tables/Employees/EmployeeTable";
-export {default as CustomerTable} from "./Tables/Customers/customerTable";
+export {default as CustomerTable} from "./Tables/Customers/CustomerTable";
 export {default as SingleCard} from "./Reusable/SingleCard";
 export {default as RecommendedCarCard} from "./UI/RecommendedCarCard";
 export {default as CarItem} from "./UI/CarItem";
