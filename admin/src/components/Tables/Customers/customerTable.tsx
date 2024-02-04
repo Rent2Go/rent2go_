@@ -24,7 +24,7 @@ const CustomerTable = (props: Props) => {
     getCustomers();
   }, []);
   return (
-    <div className="customerTableCard">
+    <div className="customerTableCard shadow-rounded-box">
       <Table className="table table-rounded table-hover table-borderless">
         <thead>
           <tr>
