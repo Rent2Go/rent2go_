@@ -4,36 +4,85 @@
   left: 270px;
   z-index: 999;
   background: var(--primary-color);
-  width: 100%;
+  width: calc(100% - 260px);
   height: 70px;
 }
 .navbar .navbar__wrapper {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 1rem;
+  padding: 0 30px;
   gap: 1rem;
   color: var(--heading-color);
-  width: 75%;
 }
 .navbar .navbar__wrapper .search__box {
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 1rem;
+  background: var(--body-bg);
+  justify-content: space-between;
+  padding: 0 30px;
+  border-radius: 5px;
+  height: 40px;
+  background: var(--body-bg);
+}
+.navbar .navbar__wrapper .search__box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--heading-color);
+}
+.navbar .navbar__wrapper .search__box input::-moz-placeholder {
+  color: var(--hoverColor);
+}
+.navbar .navbar__wrapper .search__box input::placeholder {
+  color: var(--hoverColor);
+}
+.navbar .navbar__wrapper .search__box span svg {
+  color: var(--primary-color);
 }
 .navbar .navbar__wrapper .navbar__right {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  justify-content: flex-end;
 }
 .navbar .navbar__wrapper .navbar__right .notification {
+  position: relative;
+}
+.navbar .navbar__wrapper .navbar__right .notification .svg {
   cursor: pointer;
+  font-size: 1.2rem;
+}
+.navbar .navbar__wrapper .navbar__right .notification .badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--secondary-color);
+  border-radius: 50%;
+  font-size: 0.8rem;
+}
+.navbar .navbar__wrapper .navbar__right .profile {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: row;
 }
 .navbar .navbar__wrapper .navbar__right .profile img {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }/*# sourceMappingURL=navbar.css.map */

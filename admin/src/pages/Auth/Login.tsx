@@ -1,33 +1,57 @@
 import React from "react";
 import "./auth.css";
-import { Field, Formik, Form } from "formik";
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import { Formik, Form } from "formik";
+import { Link, useNavigate } from "react-router-dom";
 
 import {
   signInValidationSchema,
   signIninitialValues,
-  signUpinitialValues,
-  signupValidationSchema,
 } from "./FormikAndYupSchema";
-import FormikInput from "../../components/formikInput/FormikInput";
-import { Button } from "react-bootstrap";
-import { Login } from "..";
+import FormikInput from "../../components/Formik/FormikInput";
+import { SignInRequest } from "../../../../src/models/requests/auth/SignInRequest";
+import "react-toastify/dist/ReactToastify.css";
+import { useAuth } from "../../contexts/AuthContext";
+import { ToastContainer, toast } from "react-toastify";
+import AuthService from "../../services/AuthService";
 type Props = {};
-const handleSubmit = async (values: any) => {};
 const Register = (props: Props) => {
+
+  const authContext = useAuth()
+  const navigate = useNavigate()
+
+
+  const signInhandleSubmit = async (values: SignInRequest) => {
+    console.log("asdsad");
+
+    const response = await AuthService.signIn(values)
+      .then((resolve) => {
+
+        console.log("Sign-in successful:", resolve);
+        localStorage.setItem("token", resolve?.data?.token);
+        toast.success("Giriş Başarılı")
+        authContext.refreshUser();
+        setTimeout(() => { navigate("/dashboard") }, 1500);
+
+
+      })
+
+      .catch((error) =>
+        toast.error(error.response.data.message))
+  }
   return (
     <div className="auth">
+
       <div className="secContainer">
         <div className="headingDiv text-center">
           <h2>Login</h2>
         </div>
         <div className="contentDiv">
           <div className="formContainer">
-           
+
             <Formik
-              initialValues={signUpinitialValues}
-              onSubmit={handleSubmit}
-              validationSchema={signupValidationSchema}
+              initialValues={signIninitialValues}
+              onSubmit={signInhandleSubmit}
+              validationSchema={signInValidationSchema}
               validateOnBlur={true}
               validateOnChange={true}
             >
@@ -52,10 +76,25 @@ const Register = (props: Props) => {
                 </div>
                 <div className="row text-center">
                   <div className="col-md-12 col-sm-12">
-                    <Button variant="btn-login btn-sm" type="submit">
+                    <button className="btn-login btn-sm" type="submit">
                       Submit
-                    </Button>
+                    </button>
+                   
+                    {/* Same as */}
+
                   </div>
+                  <ToastContainer
+                      position="top-center"
+                      autoClose={5000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="light"
+                    />
 
                   <div className="col-md-12 col-sm-12">
                     <Link to="reset-password">Forget Your Password ? </Link>
@@ -66,6 +105,7 @@ const Register = (props: Props) => {
           </div>
         </div>
       </div>
+
     </div>
   );
 };

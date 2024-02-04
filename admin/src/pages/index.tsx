@@ -20,6 +20,9 @@ export {default as ListEmployee} from "./Employees/ListEmployee"
 export {default as DetailEmployee} from "./Employees/DetailEmployee"
 
 export {default as Permissions} from "./Permissions/Permissions"
+export {default as Profile} from "./Profile/Profile"
+export {default as Settings} from "./Settings/Settings"
+export {default as MailSettings} from "./MailSettings/MailSettings"
 
 export {default as AddRental} from "./Rentals/AddRental"
 export {default as UpdateRental} from "./Rentals/UpdateRental"
@@ -35,3 +38,6 @@ export {default as AddUserRole} from "./UserRoles/AddUserRole"
 export {default as UpdateUserRole} from "./UserRoles/UpdateUserRole"
 export {default as ListUserRole} from "./UserRoles/ListUserRole"
 export {default as DetailUserRole} from "./UserRoles/DetailUserRole"
+
+
+export {default as Colors} from "./Colors/Colors"

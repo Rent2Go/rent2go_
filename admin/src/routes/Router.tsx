@@ -4,8 +4,9 @@ import {
   AddCar, AddCustomer, AddEmployee, AddRental, AddUser, AddUserRole, 
   Dashboard, DetailCar, DetailCustomer, DetailEmployee,DetailRental, DetailUser, DetailUserRole, 
   ListCar, ListCustomer, ListEmployee, ListRental, ListUser, ListUserRole, Login, 
-  Permissions, ResetPassword, 
-  UpdateCar, UpdateCustomer, UpdateEmployee, UpdateRental, UpdateUser, UpdateUserRole 
+  Permissions, Profile, ResetPassword, 
+  Settings, MailSettings,
+  UpdateCar, UpdateCustomer, UpdateEmployee, UpdateRental, UpdateUser, UpdateUserRole, Colors 
 } from "../pages";
 import PrivateRoute from "../utils/PrivateRoute";
 
@@ -16,11 +17,12 @@ const Router = () => {
   
     <Routes>
       <Route path="/" element={<Navigate to="/dashboard"/>} />
+      <Route path="/login" element={<Login/>} />
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/cars" element={<ListCar />} />
       <Route path="/add-car" element={<AddCar />} />
-      <Route path="/update-car/:id" element={<UpdateCar />} />
-      <Route path="/detail-car/:id" element={<DetailCar />} />
+      <Route path="/car-update/:id" element={<UpdateCar />} />
+      <Route path="/car-detail/:id" element={<DetailCar />} />
       <Route path="/customers" element={<ListCustomer />} />
       <Route path="/add-customer" element={<AddCustomer />} />
       <Route path="/update-customer/:id" element={<UpdateCustomer />} />
@@ -42,6 +44,10 @@ const Router = () => {
       <Route path="/add-user" element={<AddUser />} />
       <Route path="/update-user/:id" element={<UpdateUser />} />
       <Route path="/detail-user/:id" element={<DetailUser />} />
+      <Route path="/profile" element={<Profile/>}/>
+      <Route path="/settings" element={<Settings/>}/>
+      <Route path="/mail-settings" element={<MailSettings/>}/>
+      <Route path="/colors" element={<Colors/>}/>
       <Route path="/dashboard" element={<Dashboard/>}/>
     </Routes>
   );

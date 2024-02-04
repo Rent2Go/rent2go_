@@ -1,3 +1,99 @@
-.rentals{
-    
+.booking {
+  margin-top: 100px;
+  padding: 0px 30px;
+  padding-bottom: 50px;
+  .secContainer {
+    .booking__wrapper {
+      .booking__title {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        margin-bottom: 2rem;
+      }
+      .filter__widget-wrapper {
+        display: flex;
+        align-items: center;
+        column-gap: 1.5rem;
+        .filter__widget-01 select,
+        .filter__widget-02 select {
+          border: none;
+          padding: 7px 20px;
+          border-radius: 50px;
+          background: var(--primary-color);
+          color: #fff;
+          cursor: pointer;
+          margin-bottom: 2rem;
+        }
+      }
+      .booking__car-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 2rem;
+        row-gap: 2rem;
+        .car__item {
+          padding: 20px;
+          border-radius: 5px;
+          background: var(--primary-color);
+          cursor: pointer;
+
+          .car__item-top {
+            margin-bottom: 15px;
+            .car__item-tile {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              h3 {
+                font-size: 1rem;
+                color: var(--heading-color);
+                font-weight: 400;
+              }
+
+              span {
+                i {
+                  font-size: 1.3rem;
+                  color: var(--small-text-color);
+                  cursor: pointer;
+                }
+              }
+            }
+            p {
+              color: var(--small-text-color);
+              font-size: 0.9rem;
+              font-weight: 400;
+            }
+          }
+          .car__img {
+            margin-bottom: 20px;
+            img {
+              object-fit: contain;
+              width: 100%;
+            }
+          }
+          .car__item-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .car__bottom-left {
+              display: flex;
+              align-items: center;
+              column-gap: 1.5rem;
+              p {
+                display: flex;
+                align-items: center;
+                column-gap: 8px;
+                color: rgba(255, 255, 255, 0.829);
+                font-weight: 300 !important;
+                i {
+                  color: var(--secondary-color);
+                }
+              }
+            }
+            .car__rent {
+              color: rgba(255, 255, 255, 0.829);
+              font-size: 1.1rem;
+            }
+          }
+        }
+      }
+    }
+  }
 }

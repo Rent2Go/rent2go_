@@ -1,0 +1,103 @@
+.settings {
+  margin-top: 100px;
+  padding: 0px 50px;
+  padding-bottom: 50px;
+  .secContainer {
+    .settings__wrapper {
+      padding: 2rem 6rem;
+      border-radius: 5px;
+      background: var(--primary-color);
+      .settings__title {
+        color: var(--heading-color);
+        font-weight: 500;
+        margin-bottom: 2rem;
+      }
+      .imgDiv {
+        margin: 2rem 0 0rem 0;
+        img {
+          width: 250px;
+          height: 250px;
+          object-fit: contain;
+          border-radius: 0.5rem;
+        }
+      }
+      .settings__top {
+        display: flex;
+        align-items: center;
+        column-gap: 2.7rem;
+        margin-bottom: 1.5rem;
+        .setting__btn {
+          border: none;
+          border: none;
+          padding: 7px 25px;
+          background: transparent;
+          border-radius: 5px;
+          color: var(--heading-color);
+          font-size: 1rem;
+          cursor: pointer;
+        }
+      }
+      .details__form {
+        .profile__title {
+          color: var(--heading-color);
+          font-weight: 500;
+          margin-bottom: 5px;
+        }
+        .profile__desc {
+          color: var(--small-text-color);
+          margin-bottom: 2rem;
+        }
+        .form__group {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          column-gap: 2rem;
+          margin-bottom: 2rem;
+          div {
+            display: flex;
+            flex-direction: column;
+            width: 47%;
+            label {
+              color: var(--heading-color);
+              margin-bottom: 5px;
+              font-size: 0.9rem;
+            }
+            input {
+              width: 100%;
+              padding: 12px 20px;
+              border-radius: 5px;
+              background: transparent;
+              border: 1px solid #b7ffe913;
+              color: var(--heading-color);
+              font-size: 1rem;
+            }
+            &:placeholder {
+              color: var(--small-text-color);
+              font-size: 0.9rem;
+            }
+            &:focus {
+              outline: none;
+            }
+
+            .profile-img__desc {
+              color: var(--small-text-color);
+              margin-bottom: 10px;
+            }
+          }
+        }
+        .btn-row {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 0.75rem;
+          margin: 6rem 0 0rem 0;
+          button {
+            font-size: 14px;
+            font-weight: 500;
+            padding: 0.5rem 2.2rem;
+          }
+        }
+      }
+    }
+  }
+}

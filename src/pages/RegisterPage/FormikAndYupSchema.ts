@@ -1,19 +1,22 @@
-import { object, string } from "yup";
+import { object, ref, string } from "yup";
+import { signUpRequest } from "../../models/requests/auth/SignupRequest";
+import { SignInRequest } from "../../models/requests/auth/SignInRequest";
 
-export const signUpinitialValues = {
+export const signUpinitialValues : signUpRequest = {
   firstName: "",
   lastName: "",
   email: "",
   phoneNumber: "",
   password: "",
+  confirmpassword:"",
 };
 
-export const signIninitialValues = {
+export const signIninitialValues:SignInRequest = {
   email: "",
   password: "",
 };
 
-export const signupValidationSchema = object({
+export const signupValidationSchema  = object({
   firstName: string()
     .required("First Name field is required.")
     .min(2, "First Name field must be at least 2 characters.")
@@ -38,6 +41,8 @@ export const signupValidationSchema = object({
     .matches(/[A-Z]/, "Password must include at least one uppercase letter.")
     .matches(/\d/, "Password must include at least one number.")
     .matches(/[!@#$%^&*()_+{}|:;<>,.?/~`]/, "Password must include at least one punctuation mark."),
+    confirmpassword: string().required("Password field is required.")
+    .oneOf([ref('password')], 'Passwords do not match')
 });
 
 

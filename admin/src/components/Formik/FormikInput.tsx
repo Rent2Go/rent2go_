@@ -2,10 +2,11 @@ import React from "react";
 import { ErrorMessage, Field } from "formik";
 
 type Props = {
-  label: string;
+  label?: string;
   name: string;
-  type?: string;
+  type?: string | File;
   placeHolder?: string;
+
 };
 
 const FormikInput = (props: Props) => {
@@ -15,6 +16,7 @@ const FormikInput = (props: Props) => {
         <label className="form-label">{props.label}</label>
         <Field
           name={props.name}
+          
           type={props.type || "text"}
           className="form-control"
           placeholder={props.placeHolder}

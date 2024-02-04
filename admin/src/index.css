@@ -11,6 +11,8 @@
   --hoverColor: #6e8999;
   --body-bg: #eeeeee;
   --color-blog: #042c54;
+  --pureWhiteColor:#FFFFFF;
+  --textColor:#555555;
   
   --gradient-text: linear-gradient(120.97deg, #c7bcad 0.84%, #A59E8C 102.67%);
   --gradient-bar: linear-gradient(103.22deg,#cf8862  -13.86%, #8C8372 99.55%);
@@ -21,6 +23,7 @@
   --card-03-bg: #725cff;
   --card-04-bg: #2884ff;
   --heading-color: #eeeeee;
+  --bg-color-2: #f2f3f7;
   --heading-color2: rgb(177, 174, 174);
   --small-text-color: #808191;
   --recommend-car01-bg: #e1dfa4;
