@@ -46,7 +46,7 @@ const Sidebar = (props: Props) => {
           <span>
             <Link to="/login" onClick={logout}>
               <AiOutlineLogout />
-              Logout
+               {" "}Logout
             </Link>
             <ToastContainer position="top-center" closeButton />
           </span>
