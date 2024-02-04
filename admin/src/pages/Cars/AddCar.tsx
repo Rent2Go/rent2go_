@@ -1,30 +1,109 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/cars.css";
 import { Field, Form, Formik } from "formik";
 import { FormikInput, FormikSelect } from "../../components";
-import { useDropzone } from "react-dropzone";
 import { CarModel } from "../../models/responses/cars/GetCar";
 import CarService from "../../services/CarService";
 import "react-dropzone-uploader/dist/styles.css";
-import Dropzone from "react-dropzone-uploader";
+import Dropzone, { IFileWithMeta, StatusValue } from "react-dropzone-uploader";
 import { Link } from "react-router-dom";
-type Props = {};
+import ColorService from "../../services/ColorService";
+import { ColorModel } from "../../models/responses/colors/ColorModel";
+import { BrandModel } from "../../models/responses/brands/GetBrand";
+import BrandService from "../../services/BrandService";
+import { AddCarRequest } from "../../models/requests/cars/AddCarRequest";
+import { ModelModel } from "../../models/responses/models/GetModel";
+import ModelService from "../../services/ModelService";
+type Props = {
+
+}
 
 const AddCar = (props: Props) => {
-  const initialValues = () => {};
-  const onSubmit = () => {};
 
-  const getUploadParams = ({}) => {
-    return { url: "https://httpbin.org/post" };
+
+  const getUploadParams = () => {
+    return { url: 'https://httpbin.org/post' }
+  }
+
+  const [colors, setColors] = useState<ColorModel[]>([]);
+
+  const [brands, setBrands] = useState<BrandModel[]>([]);
+
+  const [models, setModels] = useState<ModelModel[]>([]);
+ 
+
+
+  useEffect(()=>{
+    getBrands()
+    getColors()
+    getModels()
+  },[])
+
+
+
+
+
+
+ 
+  
+ 
+  const addCarInitialValues:AddCarRequest = {
+    kilometer:0 ,
+    year: 0 ,
+    dailyPrice:0 ,
+    plate: "",
+    modelId: 0,
+    colorId: 0,
+    bodyType: "" ,
+    fuelType: "",
+    gearType: "",
+    cylinderCount: "",
+    enginePower: "",
+    
+  }
+
+
+   const formData = new FormData();
+  const handleChangeStatus = (fileWithMeta: IFileWithMeta, status: StatusValue) => {
+    formData.append('file', fileWithMeta.file);
+  }
+
+    
+  const handleSubmit = async ( addCarInitialValues:AddCarRequest) => {
+   
+    formData.append('addCarRequest', JSON.stringify(addCarInitialValues));
+  
+
+    try {
+      const response = await CarService.addCar(formData);
+      console.log('Response:', response.data);
+    } catch (error) {
+      console.error('An error occurred while adding the car:', error);
+    }
+  }
+
+
+  const getColors = () => {
+    const response = ColorService.getAll()
+    .then((res) => {setColors(res.data.data)
+       console.log("deneme")})
+    .catch((err) => console.log(err))
   };
 
-  // called every time a file's `status` changes
-  const handleChangeStatus = ({}) => {
-    console.log();
-  };
+  const getBrands = () => {
+    const response = BrandService.getAll()
+    .then( (res) => {setBrands(res.data.data)} )
+    .catch( (err) => {console.log(err)} )
+  }
+
+  const getModels = () => {
+    const response = ModelService.getAll()
+    .then( (res) => {setModels(res.data.data)} )
+    .catch( (err) => {console.log(err)} )
+  }
 
   // receives array of files that are done uploading when submit button is clicked
-  const handleSubmit = () => {};
+
 
   return (
     <div className="cars container">
@@ -33,7 +112,7 @@ const AddCar = (props: Props) => {
         <h2>Add New Car</h2>
       </div>
       <div className="formContainer">
-        <Formik initialValues={initialValues} onSubmit={onSubmit}>
+        <Formik initialValues={addCarInitialValues} onSubmit={handleSubmit}>
           <Form>
             <div className="row">
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
@@ -45,15 +124,15 @@ const AddCar = (props: Props) => {
                 ></FormikInput>
               </div>
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                <FormikSelect id="1" name="color" label="Color"></FormikSelect>
+                <FormikSelect id="1" name="color" label="Color" colors={colors}></FormikSelect>
               </div>
             </div>
             <div className="row">
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                <FormikSelect id="2" name="Brand" label="Brand"></FormikSelect>
+                <FormikSelect id="2" name="Brand" label="Brand" colors={brands}></FormikSelect>
               </div>
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                <FormikSelect id="3" name="Model" label="Model"></FormikSelect>
+                <FormikSelect id="3" name="Model" label="Model" colors={models}></FormikSelect>
               </div>
             </div>
             <div className="row">
@@ -69,7 +148,7 @@ const AddCar = (props: Props) => {
                 <FormikSelect
                   id="4"
                   name="bodyType"
-                  label="Body Type"
+                  label="Body Type" colors={colors}
                 ></FormikSelect>
               </div>
             </div>
@@ -78,14 +157,14 @@ const AddCar = (props: Props) => {
                 <FormikSelect
                   id="2"
                   name="fuelType"
-                  label="Fuel Type"
+                  label="Fuel Type" colors={colors}
                 ></FormikSelect>
               </div>
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
                 <FormikSelect
                   id="3"
                   name="gearType"
-                  label="Gear Type"
+                  label="Gear Type" colors={colors}
                 ></FormikSelect>
               </div>
             </div>
@@ -126,15 +205,12 @@ const AddCar = (props: Props) => {
               </div>
             </div>
             <div className="row">
-              <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
+            <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
+
                 <label className="mb-3 mt-5">Images</label>
-                <Dropzone
-                  getUploadParams={getUploadParams}
-                  onChangeStatus={handleChangeStatus}
-                  onSubmit={handleSubmit}
-                  accept="image/*"
-                />
+               
               </div>
+            
             </div>
             <div className="btnContainer">
               <button title="Save" type="submit" className="btn btn-sm btn-submit">Save</button>

@@ -6,6 +6,12 @@ import Dropzone from 'react-dropzone-uploader';
 import { Link, useParams } from 'react-router-dom';
 import { CarModel } from '../../models/responses/cars/GetCar';
 import CarService from '../../services/CarService';
+import { ColorModel } from '../../models/responses/colors/ColorModel';
+import ColorService from '../../services/ColorService';
+import { BrandModel } from '../../models/responses/brands/GetBrand';
+import BrandService from '../../services/BrandService';
+import ModelService from '../../services/ModelService';
+import { ModelModel } from '../../models/responses/models/GetModel';
 
 type Props = {}
 
@@ -13,6 +19,17 @@ const UpdateCar = (props: Props) => {
   const initialValues = () => {};
   const onSubmit = () => {};
   const [cars, setCars] = useState<CarModel> ();
+
+  const [colors, setColors] = useState<ColorModel[]>([]);
+  const [brands, setBrands] = useState<BrandModel[]>([]);
+  const [models, setModels] = useState<ModelModel[]>([]);
+
+
+  useEffect( () => {
+    getColors()
+    getBrands()
+    getModels()
+  },[])
 
   const getCarDetails = async (id: string) => {
     
@@ -33,6 +50,25 @@ const UpdateCar = (props: Props) => {
   // receives array of files that are done uploading when submit button is clicked
   const handleSubmit = () => {};
 
+
+  const getColors = () => {
+    const response = ColorService.getAll()
+    .then( (res) => {setColors(res.data.data)} )
+    .catch( (err) => {console.log(err)} )
+  }
+
+  const getBrands = () => {
+    const response = BrandService.getAll()
+    .then( (res) => {setBrands(res.data.data)} )
+    .catch( (err) => {console.log(err)} )
+  }
+
+  const getModels = () => {
+    const response = ModelService.getAll()
+    .then( (res) => {setModels(res.data.data)} )
+    .catch( (err) => {console.log(err)} )
+  }
+
   return (
     <div className="cars container">
     <div className="secContainer">
@@ -45,7 +81,7 @@ const UpdateCar = (props: Props) => {
           <div className="row">
             <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
               <FormikInput
-                value={cars?.plate || ""}
+               
                 name="plate"
                 type="text"
                 label="Plate No"
@@ -53,15 +89,15 @@ const UpdateCar = (props: Props) => {
               ></FormikInput>
             </div>
             <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-              <FormikSelect id="1" name="color" label="Color"></FormikSelect>
+              <FormikSelect id="1" name="color" label="Color" colors={colors}></FormikSelect>
             </div>
           </div>
           <div className="row">
             <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-              <FormikSelect id="2" name="Brand" label="Brand"></FormikSelect>
+              <FormikSelect id="2" name="Brand" label="Brand" colors={brands}></FormikSelect>
             </div>
             <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-              <FormikSelect id="3" name="Model" label="Model"></FormikSelect>
+              <FormikSelect id="3" name="Model" label="Model" colors={models}></FormikSelect>
             </div>
           </div>
           <div className="row">
@@ -77,7 +113,7 @@ const UpdateCar = (props: Props) => {
               <FormikSelect
                 id="4"
                 name="bodyType"
-                label="Body Type"
+                label="Body Type" colors={[]}
               ></FormikSelect>
             </div>
           </div>
@@ -86,14 +122,14 @@ const UpdateCar = (props: Props) => {
               <FormikSelect
                 id="2"
                 name="fuelType"
-                label="Fuel Type"
+                label="Fuel Type" colors={[]}
               ></FormikSelect>
             </div>
             <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
               <FormikSelect
                 id="3"
                 name="gearType"
-                label="Gear Type"
+                label="Gear Type" colors={[]}
               ></FormikSelect>
             </div>
           </div>

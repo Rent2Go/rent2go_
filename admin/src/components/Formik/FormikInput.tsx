@@ -6,7 +6,7 @@ type Props = {
   name: string;
   type?: string | File;
   placeHolder?: string;
-  value?: string;
+
 };
 
 const FormikInput = (props: Props) => {
@@ -16,7 +16,7 @@ const FormikInput = (props: Props) => {
         <label className="form-label">{props.label}</label>
         <Field
           name={props.name}
-          value={props.name}
+          
           type={props.type || "text"}
           className="form-control"
           placeholder={props.placeHolder}
