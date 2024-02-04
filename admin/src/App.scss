@@ -28,6 +28,13 @@
     border-radius: 0.5rem;
     background-color: var(--pureWhiteColor);
   }
+  .titleContainer {
+    h2{
+      color: var(--primary-color);
+      font-size: 28px;
+      font-weight: 500;
+    }
+  }
   .btnContainer {
     display: flex;
     flex-direction: row;
