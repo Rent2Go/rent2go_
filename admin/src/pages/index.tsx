@@ -41,3 +41,4 @@ export {default as DetailUserRole} from "./UserRoles/DetailUserRole"
 
 
 export {default as Colors} from "./Colors/Colors"
+export {default as Discounts} from "./Discounts/Discounts"
