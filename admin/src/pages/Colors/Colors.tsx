@@ -30,11 +30,15 @@ const Colors = (props: Props) => {
   const onSubmit = () => {};
   return (
     <div className="colors">
+      <div className="titleContainer">
+        <h2>Colors</h2>
+      </div>
       <div className="secContainer shadow-rounded-box">
-        <div className="leftContainer">
+        <div className="topContainer">
           <div className="colorFormContainer">
             <Formik initialValues={initialValues} onSubmit={onSubmit}>
               <Form className="form">
+                <p>Add New color :</p>
                 <FormikInput
                   name="title"
                   type="text"
@@ -51,33 +55,38 @@ const Colors = (props: Props) => {
               </Form>
             </Formik>
           </div>
+        </div>
+
+        <div className="bottomContainer">
           <div className="colorPaletteContainer ">
             <ColorPicker color={color} onChange={setColor} />
           </div>
-        </div>
-        <div className="rightContainer">
           <div className="colorListContainer">
-            <div className="titleContainer">
-              <h6> ID </h6>
-              <h6> Preview </h6>
-              <h6> Hex Code </h6>
-              <h6> Title </h6>
-            </div>
-         
-            {colorLists.map((colorList: ColorModel) => (
-              <div className="colorsContainer" key={colorList.id}>
-                <p>{colorList.id}</p>
-
-                <p
-                  className="colorPreview"
-                  style={{ backgroundColor: colorList.hexCode }}
-                ></p>
-
-                <p>{colorList.hexCode}</p>
-
-                <p>{colorList.name}</p>
-              </div>
-            ))}
+            <table className="table table-borderless">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Preview</th>
+                  <th>Hex Code</th>
+                  <th>Title</th>
+                </tr>
+              </thead>
+              <tbody>
+                {colorLists.map((colorList: ColorModel) => (
+                  <tr key={colorList.id}>
+                    <th>{colorList.id}</th>
+                    <td>
+                      <div
+                        className="colorPreview"
+                        style={{ backgroundColor: colorList.hexCode }}
+                      ></div>
+                    </td>
+                    <td>{colorList.hexCode}</td>
+                    <td>{colorList.name}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

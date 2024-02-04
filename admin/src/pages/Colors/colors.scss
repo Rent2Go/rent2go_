@@ -2,30 +2,23 @@
   margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
+  .titleContainer{
+    padding:0 2rem;
+    h2{
+        font-size: 24px;
+        font-weight: 400;
+        color: var(--small-text-color);
+    }
+  }
   .secContainer {
+    gap: 2rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin: 1rem 2rem auto;
     padding: 2rem 4rem;
-    justify-content: flex-start;
-    align-items: flex-start;
-    .leftContainer {
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      gap: 1rem;
-      .colorPaletteContainer {
-        .rcp {
-          background-color: var(--primary-color) !important;
-          width: 450px !important;
-          .rcp-field-label {
-            color: var(--heading-color);
-            font-weight: 500;
-          }
-        }
-      }
+    justify-content: center;
+    align-items: center;
+    .topContainer {
       .colorFormContainer {
         width: 100%;
         .form {
@@ -33,12 +26,12 @@
           flex-direction: row;
           justify-content: stretch;
           align-items: baseline;
-          gap: 0.5rem;
+          gap: 0.75rem;
           .form-label {
             display: none;
           }
           input {
-            width: 145px;
+            width: 220px;
             color: var(--primary-color);
             font-weight: 500;
             font-size: 16px;
@@ -49,59 +42,79 @@
             }
           }
           button {
-            width: 145px;
+            width: 225px;
             padding: 0.5rem 2rem;
             background-color: var(--primary-color);
             color: var(--heading-color);
             font-size: 16px;
             font-weight: 500;
           }
+          p{
+           width: 220px;
+           font-weight: 500;
+           font-size: 20px;
+           line-height: 35px;
+           color: var(--small-text-color);
+           border-bottom: 2px solid var(--primary-color);
+          }
         }
       }
     }
-    .colorListContainer {
+    .bottomContainer {
       display: flex;
-      flex-direction: column;
-      padding: 1rem;
+      flex-direction: row;
       justify-content: flex-start;
       align-items: flex-start;
-      gap:1rem;
-      .titleContainer {
-        display: flex;
-        flex-direction: row;
-        gap:1rem;
-        h6 {
-          font-size: 20px;
-          font-weight: 600;
-          color:var(--small-text-color);
+      gap: 1rem;
+      .colorPaletteContainer {
+        .rcp {
+          background-color: var(--primary-color) !important;
+          width: 450px !important;
+          height: 450px !important;
+          .rcp-field-label {
+            color: var(--heading-color);
+            font-weight: 500;
+          }
         }
       }
-      .colorsContainer {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 1rem;
-        width: 450px;
-        border-bottom: 2px solid var(--primary-color);
-        padding: 1rem 0;
-    
-        .colorPreview {
-          width: 64px;
-          height: 32px;
-          border: 2px solid var(--primary-color);
-          border-radius: 0.5rem;
-        }
 
-        p {
-          font-size: 14px;
-          font-weight: 500;
-          height: 25px;
-          color:var(--text-color);
-          &:nth-child(1){
+      .colorListContainer {
+        width: 450px;
+        min-height: 450px;
+        background: var(--primary-color);
+        border-radius: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        justify-content: flex-start;
+        align-items: flex-end;
+        gap: 1rem 2rem;
+        table {
+          tr {
+            border-bottom: 1px solid var(--heading-color);
+            &:nth-child(even) {
+            }
+          }
+          th {
             font-size: 20px;
             font-weight: 600;
-          color:var(--small-text-color);
+            color: var(--heading-color);
           }
+          td {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--heading-color);
+          }
+          .colorPreview {
+            width: 64px;
+            height: 32px;
+
+            border-radius: 0.5rem;
+          }
+        }
+
+        .table > :not(caption) > * > * {
+          background-color: transparent !important;
         }
       }
     }
