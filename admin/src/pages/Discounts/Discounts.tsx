@@ -1,16 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import "./discounts.css";
 import { Form, Formik } from "formik";
 import { FormikInput } from "../../components";
 import { Link } from "react-router-dom";
 import { Table } from "react-bootstrap";
+import { DiscountModel } from "../../models/responses/discounts/GetDiscount";
+import DiscountService from "../../services/DiscountService";
 type Props = {};
-
+{
+  /*Add discount Form*/
+}
 const initialValues = () => {};
 const onSubmit = () => {};
 
 const Discounts = (props: Props) => {
+  {
+    /*List Discount*/
+  }
+  const [discountList, setDiscountList] = useState<DiscountModel[]>([]);
+
+  const getDiscountList = async () => {
+    try {
+      const response = await DiscountService.getAll();
+      setDiscountList(response.data.data);
+    } catch (error) {
+      console.log("Error fetching discounts", error);
+    }
+  };
+
+  useEffect(() => {
+    getDiscountList();
+  }, []);
+
   return (
     <div className="discounts">
       <div className="titleContainer">
@@ -69,11 +91,13 @@ const Discounts = (props: Props) => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
+                  {discountList.map((discount: DiscountModel) => (
+                    <tr key={discount.id}>
+                      <td>{discount.id}</td>
+                      <td>{discount.discountCode}</td>
+                      <td>{discount.percentage}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </Table>
             </div>
