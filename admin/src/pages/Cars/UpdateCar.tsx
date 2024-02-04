@@ -6,6 +6,8 @@ import Dropzone from 'react-dropzone-uploader';
 import { Link, useParams } from 'react-router-dom';
 import { CarModel } from '../../models/responses/cars/GetCar';
 import CarService from '../../services/CarService';
+import { ColorModel } from '../../models/responses/colors/ColorModel';
+import ColorService from '../../services/ColorService';
 
 type Props = {}
 
@@ -13,6 +15,13 @@ const UpdateCar = (props: Props) => {
   const initialValues = () => {};
   const onSubmit = () => {};
   const [cars, setCars] = useState<CarModel> ();
+
+  const [colors, setColors] = useState<ColorModel[]>([]);
+
+
+  useEffect( () => {
+    getColors()
+  },[])
 
   const getCarDetails = async (id: string) => {
     
@@ -32,6 +41,13 @@ const UpdateCar = (props: Props) => {
 
   // receives array of files that are done uploading when submit button is clicked
   const handleSubmit = () => {};
+
+
+  const getColors = () => {
+    const response = ColorService.getAll()
+    .then( (res) => {setColors(res.data.data)} )
+    .catch( (err) => {console.log(err)} )
+  }
 
   return (
     <div className="cars container">
@@ -53,7 +69,7 @@ const UpdateCar = (props: Props) => {
               ></FormikInput>
             </div>
             <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-              <FormikSelect id="1" name="color" label="Color" colors={[]}></FormikSelect>
+              <FormikSelect id="1" name="color" label="Color" colors={colors}></FormikSelect>
             </div>
           </div>
           <div className="row">
