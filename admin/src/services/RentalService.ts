@@ -14,4 +14,4 @@ class RentalService{
 }
     
 
-export default RentalService;
+export default new RentalService();

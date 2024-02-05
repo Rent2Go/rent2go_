@@ -1,47 +1,41 @@
 import React from "react";
+import { RentalModel } from "../../models/responses/rentals/GetRental";
 
-type CarItemProps = {
-  item: {
-    category: string;
-    type: string;
-    rentPrice: number;
-    imgUrl: string;
-    carName: string;
-    groupSize: number;
-  };
+type Props = {
+  rental: RentalModel;
 };
 
-const CarItem: React.FC<CarItemProps> = ({ item }) => {
-  const { category, type, rentPrice, imgUrl, carName, groupSize } = item;
+const CarItem = (props: Props) => {
+
 
   return (
     <div className="car__item">
       <div className="car__item-top">
         <div className="car__item-tile">
-          <h3>{carName}</h3>
+          <h3>{props.rental.car.plate}</h3>
           <span>
             <i className="ri-heart-line"></i>
           </span>
         </div>
-        <p>{category}</p>
+        <p>{}</p>
       </div>
 
       <div className="car__img">
-        <img src={imgUrl} alt="" />
+        <img src={props.rental.car.imageUrl} alt={props.rental.car.colorName} />
       </div>
 
       <div className="car__item-bottom">
         <div className="car__bottom-left">
           <p>
-            <i className="ri-user-line"></i> {groupSize}
+            <i className="ri-user-line"></i>  startDate {props.rental.startDate}
           </p>
           <p>
             <i className="ri-repeat-line"></i>
-            {type}
+            endDate {props.rental.endDate}
           </p>
         </div>
 
-        <p className="car__rent">${rentPrice}/d</p>
+        <p className="car__rent">${props.rental.car.dailyPrice}/d</p>
       </div>
     </div>
   );

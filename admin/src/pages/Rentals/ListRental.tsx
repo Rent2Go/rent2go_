@@ -1,10 +1,23 @@
-import React from "react";
-import carData from "./bookingCarsData";
+import React, { useEffect, useState } from "react";
 import "./styles/rentals.css";
 import { CarItem } from "../../components";
+import { RentalModel } from "../../models/responses/rentals/GetRental";
+import RentalService from "../../services/RentalService";
 type Props = {};
 
 const ListRental = (props: Props) => {
+  const [rentals, setRentals] = useState<RentalModel[]>([]);
+
+  const getRentals = async () => {
+    try {
+      const response = await RentalService.getAll();
+      setRentals(response.data.data);
+    } catch (error) {
+      console.log("Error fetching rentals", error);
+    }
+  };
+
+  useEffect(() => {getRentals();})
   return (
     <div className="booking container">
       <div className="secContainer">
@@ -32,8 +45,8 @@ const ListRental = (props: Props) => {
           </div>
 
           <div className="booking__car-list">
-            {carData?.map((item) => (
-              <CarItem item={item} key={item.id} />
+            {rentals.map((rental: RentalModel) => (
+              <CarItem rental={rental} key={rental.id} />
             ))}
           </div>
         </div>
