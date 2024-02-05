@@ -13,10 +13,10 @@ const Footer = (props: Props) => {
           <div className="singleGrid" data-aos="fade-up" data-aos-duration="1000">
             <span className="footerTitle">About</span>
             <ul className="footerUl grid">
-              <li className="footerLi">How it works</li>
-              <li className="footerLi">Careers</li>
-              <li className="footerLi">Affiliates</li>
-              <li className="footerLi">Media</li>
+              <li className="footerLi"><Link to="/our-team">Who we are</Link></li>
+              <li className="footerLi"><Link to="https://tobeto.com/istanbul-kodluyor">Careers</Link></li>
+              <li className="footerLi"><Link to="https://www.istka.org.tr/">Affiliates</Link></li>
+              <li className="footerLi"><Link to="coming-soon">Media</Link></li>
             </ul>
           </div>
 
@@ -24,10 +24,10 @@ const Footer = (props: Props) => {
           <div className="singleGrid" data-aos="fade-up" data-aos-duration="1600">
             <span className="footerTitle">Relational Pages</span>
             <ul className="footerUl grid">
-              <li className="footerLi">İstanbul Kodluyor</li>
-              <li className="footerLi">Tobeto</li>
-              <li className="footerLi">Kodlama.io</li>
-              <li className="footerLi">Enocta</li>
+              <li className="footerLi"><Link to="https://tobeto.com/istanbul-kodluyor">İstanbul Kodluyor</Link></li>
+              <li className="footerLi"><Link to="https://tobeto.com/">Tobeto</Link></li>
+              <li className="footerLi"><Link to="https://kodlama.io/">Kodlama.io</Link></li>
+              <li className="footerLi"><Link to="https://www.enocta.com/">Enocta</Link></li>
             </ul>
           </div>
 
