@@ -25,7 +25,7 @@ const Homepage = (props: Props) => {
         <div className="secContainer">
           <div data-aos="fade-up" className="homeText">
             <span className="homeSpan">Meet your new Car</span>
-            <h1 className="homeTitle">Honda Civic Type R</h1>
+            <h1 className="homeTitle">Safe & Comfortable Driving</h1>
             <div className="btns flex">
               <button type="button" data-aos="fade-right" className="btn">
                 More Details
