@@ -1,0 +1,22 @@
+.scroll-to-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 45px;
+  right: 45px;
+  font-size: 35px;
+  font-weight: 900;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: var(--primaryColor);
+  transition: 0.3s;
+}
+.scroll-to-top-btn:hover {
+  color: var(--secondaryColor);
+  transition: 0.3s;
+}
+
+.visible {
+  display: inline-block;
+}/*# sourceMappingURL=scrollToTop.css.map */

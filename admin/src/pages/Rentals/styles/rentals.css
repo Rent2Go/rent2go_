@@ -25,7 +25,7 @@
 }
 .booking .secContainer .booking__wrapper .booking__car-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   -moz-column-gap: 2rem;
        column-gap: 2rem;
   row-gap: 2rem;

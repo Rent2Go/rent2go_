@@ -6,6 +6,7 @@ import {
   Search,
   Sellers,
   Trending,
+  ScrollToTop ,
   Footer
 } from "../../components";
 import Aos from "aos";
@@ -21,6 +22,7 @@ const Homepage = (props: Props) => {
   return (
     <>
       <Navbar />
+      <ScrollToTop />
       <div className="home">
         <div className="secContainer">
           <div data-aos="fade-up" className="homeText">
