@@ -49,7 +49,7 @@ const CustomerTable = (props: Props) => {
               <td>
                 <img src="/assets/images/profile.png" alt="employee-img" />
               </td>
-              <td>{customer.name}</td>
+              <td>{customer.user.name}</td>
               <td>{customer.surname}</td>
               <td>{customer.email}</td>
               <td>{customer.phoneNumber}</td>
