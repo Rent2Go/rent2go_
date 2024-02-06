@@ -57,15 +57,15 @@ const DetailRental = (props: Props) => {
           <div className="customerContainer">
             <p>ID : {rentalDetail?.customer.nationalityId}</p>
             <p>
-              Customer : {rentalDetail?.customer.name}{" "}
-              {rentalDetail?.customer.surname}
+              Customer : {rentalDetail?.customer.user.name}{" "}
+              {rentalDetail?.customer.user.surname}
             </p>
 
-            <p>Email : {rentalDetail?.customer.email}</p>
-            <p>Phone : {rentalDetail?.customer.phoneNumber}</p>
+            <p>Email : {rentalDetail?.customer.user.email}</p>
+            <p>Phone : {rentalDetail?.customer.user.phoneNumber}</p>
           </div>
           <div className="rentalDateContainer">
-            <p>Start Date : {rentalDetail?.startDate.toDateString()}</p>
+            <p>Start Date : {rentalDetail?.startDate.toString()}</p>
             <p>End Date : {rentalDetail?.endDate.toString()}</p>
             <p>Day : {calculateDayCount()} Days</p>
             <p>Daily Price : {formatPrice(rentalDetail?.car.dailyPrice)} </p>
