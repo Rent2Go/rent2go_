@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import "./discounts.css";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { FormikInput } from "../../components";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Table } from "react-bootstrap";
 import { DiscountModel } from "../../models/responses/discounts/GetDiscount";
 import { AddDiscountRequest } from "../../models/requests/discounts/AddDiscountRequest";
@@ -18,6 +18,8 @@ const Discounts = (props: Props) => {
     discountCode: "",
     percentage: 0,
   };
+
+  
 
   const validationSchema = Yup.object({
     discountCode: Yup.string().required("Required"),
@@ -51,6 +53,20 @@ const Discounts = (props: Props) => {
       setDiscountList(response.data.data);
     } catch (error) {
       console.log("Error fetching discounts", error);
+    }
+  };
+  const deleteDiscount = async (id: number) => {
+    try {
+      await DiscountService.delete(id)
+        .then((response) => {
+          setIsSubmitting(true);
+          navigation("/discounts");
+        })
+        .catch((error) => {
+          console.log("Error fetching discounts", error);
+        });
+    } catch (error) {
+      console.log("Error deleting discount", error);
     }
   };
 
@@ -133,7 +149,9 @@ const Discounts = (props: Props) => {
                       <td>{discount.percentage}</td>
                       <td>
                         <Link
-                          to={`/discount-delete/${discount.id}`}
+                          to={`/discounts`} onClick={
+                            () => deleteDiscount(discount.id)
+                          }
                           className="btn btn-sm btn-cancel"
                           title="Delete"
                         >
