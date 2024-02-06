@@ -3,6 +3,7 @@ import { DiscountModel } from "../models/responses/discounts/GetDiscount";
 import { AddDiscountRequest } from "../models/requests/discounts/AddDiscountRequest";
 import axiosInstance from "../utils/axiosInsterceptors";
 import { AddResponse } from "../../../src/models/responses/AddResponse";
+import { DeleteExpression } from "typescript";
 
 class DiscountService{
     getAll(){
@@ -13,6 +14,9 @@ class DiscountService{
     }
     create(data:AddDiscountRequest){
         return axiosInstance.post<AddResponse>("discounts",data)
+    }
+    delete(id:number){
+        return axiosInstance.delete<AddResponse>(`discounts/${id}`)
     }
 }
 
