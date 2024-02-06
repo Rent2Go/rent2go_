@@ -25,7 +25,7 @@
       }
       .booking__car-list {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         column-gap: 2rem;
         row-gap: 2rem;
         .car__item {

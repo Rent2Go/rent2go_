@@ -60,7 +60,7 @@ const Router = () => {
       <Route path="/rentals" element={<ListRental />} />
       <Route path="/add-rental" element={<AddRental />} />
       <Route path="/update-rental/:id" element={<UpdateRental />} />
-      <Route path="/detail-rental/:id" element={<DetailRental />} />
+      <Route path="/rental-detail/:id" element={<DetailRental />} />
       <Route path="/user-roles" element={<ListUserRole />} />
       <Route path="/add-user-roles" element={<AddUserRole />} />
       <Route path="/update-user-role/:id" element={<UpdateUserRole />} />

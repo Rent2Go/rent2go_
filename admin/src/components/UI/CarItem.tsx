@@ -1,5 +1,7 @@
 import React from "react";
 import { RentalModel } from "../../models/responses/rentals/GetRental";
+import { Link } from "react-router-dom";
+import { IoIosMore } from "react-icons/io";
 
 type Props = {
   rental: RentalModel;
@@ -14,7 +16,13 @@ const CarItem = (props: Props) => {
         <div className="car__item-tile">
           <h3>{props.rental.car.plate}</h3>
           <span>
-            <i className="ri-heart-line"></i>
+          <Link
+            to={`/rental-detail/${props.rental.id}`}
+            className="btn btn-sm btn-detail"
+            title="Detail"
+          >
+            <IoIosMore /> Detail
+          </Link>
           </span>
         </div>
         <p>{}</p>

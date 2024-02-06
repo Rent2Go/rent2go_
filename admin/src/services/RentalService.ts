@@ -1,4 +1,5 @@
 import { GetAllRentalsModel } from "../models/responses/rentals/GetAllRentals";
+import { GetByRentalIDModel } from "../models/responses/rentals/GetByIdRental";
 import { RentalModel } from "../models/responses/rentals/GetRental";
 import axiosInstance from "../utils/axiosInsterceptors";
 
@@ -8,7 +9,7 @@ class RentalService{
     }
 
     getById(id:number){
-        return axiosInstance.get<RentalModel>(`rentals/${id}`);
+        return axiosInstance.get<GetByRentalIDModel>(`rentals/${id}`);
     }
 
 }
