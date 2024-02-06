@@ -61,4 +61,7 @@ a {
 }
 .btnContainer .btn-cancel {
   background: var(--text-alert);
+}
+.btnContainer .btn-delete {
+  background: var(--text-alert);
 }/*# sourceMappingURL=App.css.map */
