@@ -1,23 +1,50 @@
 import React, { useEffect, useState } from "react";
 
 import "./discounts.css";
-import { Form, Formik } from "formik";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import { FormikInput } from "../../components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Table } from "react-bootstrap";
 import { DiscountModel } from "../../models/responses/discounts/GetDiscount";
+import { AddDiscountRequest } from "../../models/requests/discounts/AddDiscountRequest";
 import DiscountService from "../../services/DiscountService";
+import * as Yup from "yup";
+import { MdOutlineDeleteForever } from "react-icons/md";
+
 type Props = {};
-{
-  /*Add discount Form*/
-}
-const initialValues = () => {};
-const onSubmit = () => {};
 
 const Discounts = (props: Props) => {
-  {
-    /*List Discount*/
-  }
+  const initialValues: AddDiscountRequest = {
+    discountCode: "",
+    percentage: 0,
+  };
+
+  
+
+  const validationSchema = Yup.object({
+    discountCode: Yup.string().required("Required"),
+
+    percentage: Yup.number().required("Required").positive(),
+  });
+
+  const navigation = useNavigate();
+  const onSubmit = async (values: AddDiscountRequest) => {
+    try {
+      await DiscountService.create(values)
+        .then((response) => {
+          setIsSubmitting(true);
+          navigation("/discounts");
+        })
+        .catch((error) => {
+          console.log("Error fetching discounts", error);
+        });
+    } catch (error) {
+      console.log("Error adding discount", error);
+    }
+  };
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const [discountList, setDiscountList] = useState<DiscountModel[]>([]);
 
   const getDiscountList = async () => {
@@ -28,10 +55,29 @@ const Discounts = (props: Props) => {
       console.log("Error fetching discounts", error);
     }
   };
+  const deleteDiscount = async (id: number) => {
+    try {
+      await DiscountService.delete(id)
+        .then((response) => {
+          setIsSubmitting(true);
+          navigation("/discounts");
+        })
+        .catch((error) => {
+          console.log("Error fetching discounts", error);
+        });
+    } catch (error) {
+      console.log("Error deleting discount", error);
+    }
+  };
 
   useEffect(() => {
-    getDiscountList();
-  }, []);
+    if (isSubmitting) {
+      getDiscountList();
+      setIsSubmitting(false);
+    } else {
+      getDiscountList();
+    }
+  }, [isSubmitting]);
 
   return (
     <div className="discounts">
@@ -42,24 +88,28 @@ const Discounts = (props: Props) => {
         <div className="row">
           <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
             <div className="formContainer">
-              <Formik initialValues={initialValues} onSubmit={onSubmit}>
+              <Formik
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                onSubmit={onSubmit}
+              >
                 <Form className="form">
                   <div className="row">
                     <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
                       <FormikInput
-                        name="title"
+                        name="discountCode"
                         type="text"
                         label="Title of discount"
-                        placeHolder="Enter title of discount"
-                      ></FormikInput>
+                        placeHolder="Discount Code"
+                      />
                     </div>
                     <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
                       <FormikInput
                         name="percentage"
-                        type="number"
-                        label="Percentage of discount"
-                        placeHolder="Enter percentage of discount"
-                      ></FormikInput>
+                        type="text"
+                        label="Title of percentage"
+                        placeHolder="Percentage"
+                      />
                     </div>
                   </div>
                   <div className="row">
@@ -88,6 +138,7 @@ const Discounts = (props: Props) => {
                     <th> ID</th>
                     <th>Discount Code</th>
                     <th>Percentage</th>
+                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -96,6 +147,17 @@ const Discounts = (props: Props) => {
                       <td>{discount.id}</td>
                       <td>{discount.discountCode}</td>
                       <td>{discount.percentage}</td>
+                      <td>
+                        <Link
+                          to={`/discounts`} onClick={
+                            () => deleteDiscount(discount.id)
+                          }
+                          className="btn btn-sm btn-cancel"
+                          title="Delete"
+                        >
+                          <MdOutlineDeleteForever /> Delete
+                        </Link>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
