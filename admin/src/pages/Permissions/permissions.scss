@@ -1,3 +1,82 @@
-.permissions{
-    
+.permissions {
+    padding: 1rem 2rem;
+  .secContainer {
+   margin-left: auto;
+   margin-right: auto;
+    padding: 1rem 4rem;
+
+    .contentContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 2rem;
+      .headerContainer {
+        display: flex;
+        flex-direction: row;
+        width: 900px;
+       
+        h2,p {
+            
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 50px;
+            color: var(--primary-color);
+          }
+          h2{width: 303px;}
+          p{
+            width: 145px;
+            margin-left:125px;
+          }
+     
+      }
+      .singlePermission {
+        margin-top:0.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 900px;
+        border-bottom: 0.25px solid var(--bs-border-color);
+        .pageComponentData {
+          width: 100px;
+
+          p {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 50px;
+            color: var(--primary-color);
+          }
+        }
+        .permissionDetailContainer {
+          .form {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            .form-check {
+              display: flex;
+              flex-direction: row-reverse;
+              width: 200px;
+              gap: 0.5rem;
+              label {
+                width: 75px;
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 50px;
+                color: var(--primary-color);
+              }
+              input {
+                margin: 6px 0;
+                height: 25px;
+                width: 50px;
+              }
+              .form-check-input:checked {
+                background-color: var(--secondary-color);
+                border-color: var(--secondary-color);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

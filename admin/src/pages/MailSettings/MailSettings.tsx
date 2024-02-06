@@ -13,7 +13,9 @@ const MailSettings = (props: Props) => {
       <div className="secContainer">
         <div className="formContainer">
           <div className="formHeader">
-            <h2>Mail Settings</h2>
+            <div className="titleContainer">
+              <h2>Mail Settings</h2>
+            </div>
           </div>
           <div className="formContent">
             <Formik onSubmit={onSubmit} initialValues={initialValues}>
@@ -55,12 +57,24 @@ const MailSettings = (props: Props) => {
                   </div>
                 </div>
                 <div className="row">
-                    <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
-                        <div className="btnRow">
-                            <button title="Submit" type="submit" className="btn btn-light btn-md">Submit</button>
-                            <button title="Cancel" type="button" className="btn btn-danger btn-md">Cancel</button>
-                        </div>
+                  <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
+                    <div className="btnRow">
+                      <button
+                        title="Submit"
+                        type="submit"
+                        className="btn btn-light btn-md"
+                      >
+                        Submit
+                      </button>
+                      <button
+                        title="Cancel"
+                        type="button"
+                        className="btn btn-danger btn-md"
+                      >
+                        Cancel
+                      </button>
                     </div>
+                  </div>
                 </div>
               </Form>
             </Formik>

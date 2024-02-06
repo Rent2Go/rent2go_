@@ -12,8 +12,9 @@ const Settings = (props: Props) => {
   return (
     <div className="settings container">
       <div className="secContainer">
-        <h2 className="settings__title">Settings</h2>
-
+      <div className="titleContainer">
+        <h2>Settings</h2>
+      </div>
         <div className="settings__wrapper">
           <div className="details__form">
             <Formik initialValues={initialValues} onSubmit={onSubmit}>
