@@ -252,7 +252,7 @@ const AddCar = (props: Props) => {
                 <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
 
                   <label className="mb-3 mt-5">Images</label>
-                  <input type="file" className="form-control" name='image' onChange={handleSelected}/>
+                  <input type="file" className="form-control" name='image' placeholder="choose" onChange={handleSelected}/>
 
                 </div>
 
