@@ -29,7 +29,7 @@ const DetailRental = (props: Props) => {
 
   const calculateDayCount = () => {
     if (rentalDetail?.startDate && rentalDetail?.endDate) {
-      const startDate = new Date(rentalDetail.startDate);
+      const startDate = new Date(rentalDetail.startDate.toString());
       const endDate = new Date(rentalDetail.endDate);
       const oneDay = 24 * 60 * 60 * 1000;
       const dayCount = Math.round(
@@ -65,8 +65,8 @@ const DetailRental = (props: Props) => {
             <p>Phone : {rentalDetail?.customer.phoneNumber}</p>
           </div>
           <div className="rentalDateContainer">
-            <p>Start Date : {rentalDetail?.startDate}</p>
-            <p>End Date : {rentalDetail?.endDate}</p>
+            <p>Start Date : {rentalDetail?.startDate.toDateString()}</p>
+            <p>End Date : {rentalDetail?.endDate.toString()}</p>
             <p>Day : {calculateDayCount()} Days</p>
             <p>Daily Price : {formatPrice(rentalDetail?.car.dailyPrice)} </p>
             <p>Total Price : {formatPrice(rentalDetail?.totalPrice)}   </p>

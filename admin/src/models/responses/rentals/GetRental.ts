@@ -1,8 +1,8 @@
 export interface RentalModel {
   id: number;
-  startDate: string;
-  endDate: string;
-  returnDate: string;
+  startDate: Date;
+  endDate: Date;
+  returnDate: Date;
   startKilometer: number;
   endKilometer: number;
   totalPrice: number;
