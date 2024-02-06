@@ -15,23 +15,65 @@ const DetailRental = (props: Props) => {
       const response = await RentalService.getById(parseInt(id));
       setRentalDetail(response.data.data);
       console.log(response.data.message);
+      console.log(response.data.data.car);
     } catch (error) {
       console.log("There is an error : ", error);
     }
   };
-
 
   useEffect(() => {
     if (params.id) {
       getRentalDetail(params.id);
     }
   }, [params.id]);
+
+  const calculateDayCount = () => {
+    if (rentalDetail?.startDate && rentalDetail?.endDate) {
+      const startDate = new Date(rentalDetail.startDate);
+      const endDate = new Date(rentalDetail.endDate);
+      const oneDay = 24 * 60 * 60 * 1000;
+      const dayCount = Math.round(
+        Math.abs((endDate.getTime() - startDate.getTime()) / oneDay)
+      );
+      return dayCount;
+    }
+    return null;
+  };
+
+  const formatPrice = (price?: number) => {
+    if (price) {
+      return price.toLocaleString('tr-TR', { style: 'currency', currency: 'TRY' });
+    }
+    return null;
+  };
+
   return (
     <div className="booking container">
-      <div className="titleContainer">
-        <h2>Rental Details of : {rentalDetail?.id}</h2>
+      <div className="secContainer shadow-rounded-box">
+        <div className="titleContainer">
+          <h2>Rental Details of : {rentalDetail?.car.plate}</h2>
+        </div>
+        <div className="contentContainer">
+          <div className="customerContainer">
+            <p>ID : {rentalDetail?.customer.nationalityId}</p>
+            <p>
+              Customer : {rentalDetail?.customer.name}{" "}
+              {rentalDetail?.customer.surname}
+            </p>
+
+            <p>Email : {rentalDetail?.customer.email}</p>
+            <p>Phone : {rentalDetail?.customer.phoneNumber}</p>
+          </div>
+          <div className="rentalDateContainer">
+            <p>Start Date : {rentalDetail?.startDate}</p>
+            <p>End Date : {rentalDetail?.endDate}</p>
+            <p>Day : {calculateDayCount()} Days</p>
+            <p>Daily Price : {formatPrice(rentalDetail?.car.dailyPrice)} </p>
+            <p>Total Price : {formatPrice(rentalDetail?.totalPrice)}   </p>
+           
+          </div>
+        </div>
       </div>
-      <div className="secContainer"></div>
     </div>
   );
 };

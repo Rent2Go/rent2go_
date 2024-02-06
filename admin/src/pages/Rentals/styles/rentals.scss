@@ -94,5 +94,19 @@
         }
       }
     }
+
+    /*Detail Page*/
+    .titleContainer{
+      padding: 0.5rem;
+    }
+.contentContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding:0.5rem;
+}
+    /*Detail Page*/
   }
 }
+
+
