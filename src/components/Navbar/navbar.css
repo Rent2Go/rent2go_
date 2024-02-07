@@ -8,6 +8,29 @@
   box-shadow: 0 2px 5px rgb(119, 113, 113);
   z-index: 1000;
 }
+.header .signUp {
+  align-items: flex-start;
+}
+.header .signUp .languageBtnContainer {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.header .signUp .languageBtnContainer .langButton {
+  background: transparent;
+  width: 24px;
+  height: 16px;
+  border: none;
+  border-radius: 0.15rem;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+.header .signUp .languageBtnContainer .langButton svg {
+  width: 24px;
+  border-radius: 0.15rem;
+}
 
 .logoDiv .logo {
   width: 25px;

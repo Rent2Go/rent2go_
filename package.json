@@ -20,6 +20,7 @@
     "aos": "^2.3.4",
     "axios": "^1.6.5",
     "bootstrap": "^5.3.2",
+    "country-flag-icons": "^1.5.9",
     "dayjs": "^1.11.10",
     "formik": "^2.4.5",
     "i": "^0.3.7",
