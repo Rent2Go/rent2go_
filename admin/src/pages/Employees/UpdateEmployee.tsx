@@ -19,7 +19,7 @@ const UpdateEmployee = (props: Props) => {
   const handleSubmit = () => {};
 
   return (
-    <div className="users container">
+    <div className="employees container">
       <div className="secContainer shadow-rounded-box">
         <div className="titleContainer">
           <h2>Update Employee (Update employee.name yazılacak )</h2>
@@ -150,7 +150,7 @@ const UpdateEmployee = (props: Props) => {
                 >
                   Save
                 </button>
-                <Link to="/users" className="btn btn-sm btn-cancel">
+                <Link to="/employees" className="btn btn-sm btn-cancel">
                   Cancel
                 </Link>
               </div>
