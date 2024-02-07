@@ -35,8 +35,8 @@ const Homepage = (props: Props) => {
       <div className="home">
         <div className="secContainer">
           <div data-aos="fade-up" className="homeText">
-            <span className="homeSpan">Meet your new Car</span>
-            <h1 className="homeTitle">Safe & Comfortable Driving</h1>
+            <span className="homeSpan"> {t('meetYourNewCar')}</span>
+            <h1 className="homeTitle"> {t('safecomfortableDriving')}</h1>
             <div className="btns flex">
               <button type="button" data-aos="fade-right" className="btn">
                 {t('moreDetails')}
@@ -46,7 +46,7 @@ const Homepage = (props: Props) => {
                 data-aos="fade-left"
                 className="btn primaryBtn"
               >
-                Test Drive
+                 {t('testDrive')}
               </button>
             </div>
           </div>
