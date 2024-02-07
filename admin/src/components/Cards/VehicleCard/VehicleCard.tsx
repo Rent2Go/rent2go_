@@ -31,7 +31,7 @@ const VehicleCard = (props: Props) => {
       <div className="vehicleCard shadow-rounded-box">
         <div className="headerContainer ">
           <p>
-            {props.car.model.brandName} {props.car.model.name} {props.car.year}
+            {props.car.model.brand.name} {props.car.model.name} {props.car.year}
           </p>
         </div>
         <div className="plateContainer">
@@ -59,7 +59,7 @@ const VehicleCard = (props: Props) => {
         <div className="rightContainer">
           <div className="descriptionContainer">
             <p title="Color">
-              <IoColorPalette /> {props.car.colorName}
+              <IoColorPalette /> {props.car.color.name}
             </p>
             <p title="Body Type">
               <LuBaggageClaim /> {props.car.bodyType}
