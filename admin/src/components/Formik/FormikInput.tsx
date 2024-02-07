@@ -4,10 +4,11 @@ import { ErrorMessage, Field } from "formik";
 type Props = {
   label?: string;
   name: string;
-  value?: any;
   type?: string | File;
   placeHolder?: string;
-  onChange?: (value: any) => void
+  disabled?:any
+  style?:any
+
 
 };
 
@@ -20,9 +21,10 @@ const FormikInput = (props: Props) => {
           name={props.name}
           type={props.type || "text"}
           className="form-control"
-          value={props.value}
+          disabled={props.disabled}
           placeholder={props.placeHolder}
-          onChange={props.onChange}
+          style={props.style}
+        
         />
         <ErrorMessage name={props.name}>
           {(message) => <span className="alert-text">{message}</span>}

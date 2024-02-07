@@ -11,6 +11,7 @@ export interface UpdateCarRequest{
     gearType: string;
     cylinderCount: string;
     enginePower: string;
+    imageUrl: string;
 }
 
 
