@@ -23,7 +23,7 @@ const UpdateUser = (props: Props) => {
     <div className="users container">
       <div className="secContainer shadow-rounded-box">
         <div className="titleContainer">
-          <h2>Add New User</h2>
+          <h2>Update User (Update user.name yazılacak )</h2>
         </div>
 
         <div className="formContainer">
