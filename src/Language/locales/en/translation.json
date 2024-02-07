@@ -1,5 +1,17 @@
 {
-    "save": "Save",
-    "moreDetails": "More Details"
-  }
-  
+  "home": "Home",
+  "cars": "Cars",
+  "ourTeam": "Our Team",
+  "contact": "Contact",
+  "signUp": "Sign Up",
+  "signIn": "Sign In",
+  "action": "Action",
+  "profile": "Profile",
+  "logout": "Log Out",
+
+
+  "meetYourNewCar": "Meet Your New Car",
+  "safecomfortableDriving": "Safe & Comfortable Driving",
+  "moreDetails": "More Details",
+  "testDrive": "Test Drive"
+}
