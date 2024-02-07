@@ -2,6 +2,7 @@ import { AddResponse } from './../../../src/models/responses/AddResponse';
 import { GetAllCarsModel } from "../models/responses/cars/GetAllCars";
 import { GetByCarIdModel } from "../models/responses/cars/getByCarId";
 import axiosInstance from "../utils/axiosInsterceptors";
+import { UpdateCarRequest } from '../models/requests/cars/UpdateCarRequest';
 
 class CarService{
     getAll(){
@@ -17,6 +18,10 @@ class CarService{
             headers: {
             "Content-Type": "applications/json",
           },});
+    }
+
+    updateCar(updateCarRequest:UpdateCarRequest){
+        return axiosInstance.put<AddResponse>(`cars`,updateCarRequest);
     }
 }
     

@@ -47,16 +47,12 @@ const AddCar = (props: Props) => {
   const getUploadParams = () => {
     return { url: 'https://httpbin.org/post' }
   }
+
   const navigate = useNavigate();
   const [colors, setColors] = useState<ColorModel[]>([]);
 
   const [brands, setBrands] = useState<BrandModel[]>([]);
-
   const [models, setModels] = useState<ModelModel[]>([]);
-  console.log("dasd,",models)
-  console.log("dasd,",brands)
-  console.log("dasd,",colors)
-
 
 
   useEffect(() => {
@@ -64,14 +60,6 @@ const AddCar = (props: Props) => {
     getColors()
     getModels()
   }, [])
-
-
-
-
-
-
-
-
 
   const addCarInitialValues: AddCarRequest = {
     kilometer: 0,
@@ -99,6 +87,7 @@ const AddCar = (props: Props) => {
     formData.append('addCarRequest', new Blob([JSON.stringify(addCarInitialValues)], {type: "application/json"}))
       const response = await CarService.addCar(formData)
       .then((res) => {
+        toast.success("Car added successfully")
         navigate("/cars")
       
       })
@@ -125,8 +114,9 @@ const AddCar = (props: Props) => {
   const getModels = () => {
     const response = ModelService.getAll()
       .then((res) => {
+        
         setModels(res.data.data)
-        console.log(res.data.data);
+       
       })
       .catch((err) => { console.log(err) })
   }
