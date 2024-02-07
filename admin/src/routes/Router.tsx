@@ -1,23 +1,48 @@
 import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { 
-  AddCar, AddCustomer, AddEmployee, AddRental, AddUser, AddUserRole, 
-  Dashboard, DetailCar, DetailCustomer, DetailEmployee,DetailRental, DetailUser, DetailUserRole, 
-  ListCar, ListCustomer, ListEmployee, ListRental, ListUser, ListUserRole, Login, 
-  Permissions, Profile, ResetPassword, 
-  Settings, MailSettings,
-  UpdateCar, UpdateCustomer, UpdateEmployee, UpdateRental, UpdateUser, UpdateUserRole, Colors 
+import {
+  AddCar,
+  AddCustomer,
+  AddEmployee,
+  AddRental,
+  AddUser,
+  AddUserRole,
+  Dashboard,
+  DetailCar,
+  DetailCustomer,
+  DetailEmployee,
+  DetailRental,
+  DetailUser,
+  DetailUserRole,
+  ListCar,
+  ListCustomer,
+  ListEmployee,
+  ListRental,
+  ListUser,
+  ListUserRole,
+  Login,
+  Permissions,
+  Profile,
+  ResetPassword,
+  Settings,
+  MailSettings,
+  UpdateCar,
+  UpdateCustomer,
+  UpdateEmployee,
+  UpdateRental,
+  UpdateUser,
+  UpdateUserRole,
+  Colors,
+  Discounts,
+  Brands,
 } from "../pages";
 import PrivateRoute from "../utils/PrivateRoute";
 
-
-
 const Router = () => {
-  return(
-  
+  return (
     <Routes>
-      <Route path="/" element={<Navigate to="/dashboard"/>} />
-      <Route path="/login" element={<Login/>} />
+      <Route path="/" element={<Navigate to="/dashboard" />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/cars" element={<ListCar />} />
       <Route path="/add-car" element={<AddCar />} />
@@ -35,7 +60,7 @@ const Router = () => {
       <Route path="/rentals" element={<ListRental />} />
       <Route path="/add-rental" element={<AddRental />} />
       <Route path="/update-rental/:id" element={<UpdateRental />} />
-      <Route path="/detail-rental/:id" element={<DetailRental />} />
+      <Route path="/rental-detail/:id" element={<DetailRental />} />
       <Route path="/user-roles" element={<ListUserRole />} />
       <Route path="/add-user-roles" element={<AddUserRole />} />
       <Route path="/update-user-role/:id" element={<UpdateUserRole />} />
@@ -44,11 +69,13 @@ const Router = () => {
       <Route path="/add-user" element={<AddUser />} />
       <Route path="/update-user/:id" element={<UpdateUser />} />
       <Route path="/detail-user/:id" element={<DetailUser />} />
-      <Route path="/profile" element={<Profile/>}/>
-      <Route path="/settings" element={<Settings/>}/>
-      <Route path="/mail-settings" element={<MailSettings/>}/>
-      <Route path="/colors" element={<Colors/>}/>
-      <Route path="/dashboard" element={<Dashboard/>}/>
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/settings" element={<Settings />} />
+      <Route path="/mail-settings" element={<MailSettings />} />
+      <Route path="/brands" element={<Brands />} />
+      <Route path="/colors" element={<Colors />} />
+      <Route path="/discounts" element={<Discounts />} />
+      <Route path="/dashboard" element={<Dashboard />} />
     </Routes>
   );
 };

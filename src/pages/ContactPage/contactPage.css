@@ -167,6 +167,7 @@ p.sub-title {
           border: none;
           outline: none;
           border-bottom: 3.4px solid var(--pureWhiteColor);
+          background: transparent;
         }
       }
       &:nth-child(2) {

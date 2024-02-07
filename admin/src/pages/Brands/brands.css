@@ -1,0 +1,29 @@
+.brands {
+  margin: 1rem 2rem;
+}
+.brands .secContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 2rem 2rem;
+}
+.brands .secContainer .tableContainer table tbody,
+.brands .secContainer .tableContainer table thead {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-self: left;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.brands .secContainer .tableContainer table tbody th,
+.brands .secContainer .tableContainer table thead th {
+  width: 50px;
+  color: var(--primary-color);
+}
+.brands .secContainer .tableContainer table tbody td,
+.brands .secContainer .tableContainer table thead td {
+  width: 150px;
+  text-align: left;
+}/*# sourceMappingURL=brands.css.map */

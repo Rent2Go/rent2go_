@@ -1,1 +1,25 @@
-/*# sourceMappingURL=customers.css.map */
+.customers {
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.customers .headingContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.customers .headingContainer .addBtnContainer {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin: 0.25rem 2.5rem;
+}
+.customers .headingContainer .addBtnContainer a {
+  background: var(--primary-color);
+  color: var(--heading-color);
+  padding: 0.25rem 0.5rem;
+  font-weight: 500;
+  font-size: 14px;
+}/*# sourceMappingURL=customers.css.map */

@@ -1,1 +1,77 @@
-/*# sourceMappingURL=permissions.css.map */
+.permissions {
+  padding: 1rem 2rem;
+}
+.permissions .secContainer {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem 4rem;
+}
+.permissions .secContainer .contentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.permissions .secContainer .contentContainer .headerContainer {
+  display: flex;
+  flex-direction: row;
+  width: 900px;
+}
+.permissions .secContainer .contentContainer .headerContainer h2, .permissions .secContainer .contentContainer .headerContainer p {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 50px;
+  color: var(--primary-color);
+}
+.permissions .secContainer .contentContainer .headerContainer h2 {
+  width: 303px;
+}
+.permissions .secContainer .contentContainer .headerContainer p {
+  width: 145px;
+  margin-left: 125px;
+}
+.permissions .secContainer .contentContainer .singlePermission {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 900px;
+  border-bottom: 0.25px solid var(--bs-border-color);
+}
+.permissions .secContainer .contentContainer .singlePermission .pageComponentData {
+  width: 100px;
+}
+.permissions .secContainer .contentContainer .singlePermission .pageComponentData p {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 50px;
+  color: var(--primary-color);
+}
+.permissions .secContainer .contentContainer .singlePermission .permissionDetailContainer .form {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.permissions .secContainer .contentContainer .singlePermission .permissionDetailContainer .form .form-check {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 200px;
+  gap: 0.5rem;
+}
+.permissions .secContainer .contentContainer .singlePermission .permissionDetailContainer .form .form-check label {
+  width: 75px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 50px;
+  color: var(--primary-color);
+}
+.permissions .secContainer .contentContainer .singlePermission .permissionDetailContainer .form .form-check input {
+  margin: 6px 0;
+  height: 25px;
+  width: 50px;
+}
+.permissions .secContainer .contentContainer .singlePermission .permissionDetailContainer .form .form-check .form-check-input:checked {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}/*# sourceMappingURL=permissions.css.map */

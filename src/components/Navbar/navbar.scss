@@ -7,6 +7,29 @@
   padding: 1.5rem 2rem;
   box-shadow: 0 2px 5px rgb(119 113 113);
   z-index: 1000;
+  .signUp {
+    align-items: flex-start;
+    .languageBtnContainer {
+      justify-content: center;
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+      .langButton {
+        background: transparent;
+        width: 24px;
+        height: 16px;
+        border: none;
+        border-radius: 0.15rem;
+        outline: none;
+        margin: 0;
+        padding: 0;
+        svg {
+          width: 24px;
+          border-radius: 0.15rem;
+        }
+      }
+    }
+  }
 }
 
 .logoDiv {
@@ -84,6 +107,7 @@
   }
 }
 .signUp {
+ 
   gap: 0.5rem;
   .textAction {
     padding: 3px 10px;
@@ -137,14 +161,14 @@
   }
 }
 .showNavbar {
-  top: 7rem;
+  top: 0;
   transition: 0.5s ease;
   width: 250px;
 }
 .addBg {
   justify-content: space-around;
   background: var(--pureWhiteColor);
- 
+
   opacity: 95%;
 }
 
@@ -156,6 +180,9 @@
       }
     }
     .signUp {
+      .languageBtnContainer{
+        padding: 0;
+      }
       .text {
         padding: 6px;
         font-size: 16px;
@@ -173,6 +200,9 @@
 @media screen and (min-width: 770px) {
   .header {
     .navbar {
+      .languageBtnContainer{
+        padding: 0.25rem;
+      }
       .closeIcon {
         display: none;
       }

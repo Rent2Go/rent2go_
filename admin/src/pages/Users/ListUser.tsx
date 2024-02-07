@@ -12,7 +12,9 @@ const ListUser = (props: Props) => {
   return (
     <div className="users">
       <div className="headingContainer">
+      <div className="titleContainer">
         <h2>Users</h2>
+      </div>
         <div className="addBtnContainer">
           <Link title="Add New User" to="/add-user" className="btn btn-sm">
             <IoMdAdd /> Add User

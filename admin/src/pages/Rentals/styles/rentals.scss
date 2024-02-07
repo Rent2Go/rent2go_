@@ -1,5 +1,4 @@
 .booking {
-  margin-top: 100px;
   padding: 0px 30px;
   padding-bottom: 50px;
   .secContainer {
@@ -26,7 +25,7 @@
       }
       .booking__car-list {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         column-gap: 2rem;
         row-gap: 2rem;
         .car__item {
@@ -95,5 +94,19 @@
         }
       }
     }
+
+    /*Detail Page*/
+    .titleContainer{
+      padding: 0.5rem;
+    }
+.contentContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding:0.5rem;
+}
+    /*Detail Page*/
   }
 }
+
+

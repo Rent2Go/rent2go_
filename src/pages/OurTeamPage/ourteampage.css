@@ -10,6 +10,7 @@
     border-radius: 5px;
     background: var(--whiteColor);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    min-height: 190px;
 }
 .team .member:hover{
     transform: scale(1.05);

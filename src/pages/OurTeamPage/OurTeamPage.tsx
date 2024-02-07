@@ -19,7 +19,7 @@ const OurTeamPage = (props: Props) => {
                     <div className="section-title">
                         <h2>Our Team</h2>
                         <div className="underline"></div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, provident?</p>
+                        <p>Here are the luckiest team and members of Tobeto :)</p>
                     </div>
 
                     <div className="row">
@@ -32,7 +32,7 @@ const OurTeamPage = (props: Props) => {
                                 <div className="member-info">
                                     <h4>Soner Şeylan</h4>
                                     <span>Full Stack Developer</span>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, asperiores!</p>
+                                    <p>He graduated from İstanbul Gelişim University,  Electrical-Electronics Engineering. He lives in İstanbul...</p>
                                 </div>
                                 <div className="social">
                                 <Link to="https://github.com/sonersyln" className="github" target="_blank">
@@ -53,7 +53,7 @@ const OurTeamPage = (props: Props) => {
                                 <div className="member-info">
                                     <h4>Feyza Karanfil Erat</h4>
                                     <span>Full Stack Developer</span>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, asperiores!</p>
+                                    <p>She graduated from Marmara University, Econometrics. She lives in Kocaeli...</p>
                                 </div>
                                 <div className="social">
                                 <Link to="https://github.com/feyzaerat" className="github" target="_blank">
@@ -74,7 +74,7 @@ const OurTeamPage = (props: Props) => {
                                 <div className="member-info">
                                     <h4>Şeyhmus Erol</h4>
                                     <span>Full Stack Developer</span>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, asperiores!</p>
+                                    <p>He graduated from Aksaray University, department of M.I.S.. He lives in İstanbul...</p>
                                 </div>
                                 <div className="social">
                                 <Link to="https://github.com/ShmsErl" className="github" target="_blank">
@@ -95,7 +95,7 @@ const OurTeamPage = (props: Props) => {
                                 <div className="member-info">
                                     <h4>Yağmur Çurku</h4>
                                     <span>Full Stack Developer</span>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, asperiores!</p>
+                                    <p>She graduated from Düzce University,  Industrial Engineer... She lives in İzmir...</p>
                                 </div>
                                 <div className="social">
                                 <Link to="https://github.com/yagmurcurku" className="github" target="_blank">

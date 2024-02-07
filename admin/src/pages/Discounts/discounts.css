@@ -1,0 +1,43 @@
+.discounts {
+  margin-top: 100px;
+}
+.discounts .secContainer {
+  margin: 1rem 2rem;
+  padding: 2rem 2rem;
+  gap: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.discounts .secContainer .formContainer {
+  border: 5px double var(--primary-color);
+  border-radius: 0.5rem;
+  min-height: 450px;
+  min-width: 750px;
+  padding: 2rem;
+  background: var(--recommend-car02-bg);
+}
+.discounts .secContainer .tableContainer {
+  border: 5px double var(--primary-color);
+  border-radius: 0.5rem;
+  min-height: 450px;
+  min-width: 750px;
+  padding: 2rem;
+  background: var(--recommend-car02-bg);
+}
+.discounts .secContainer .btn-cancel {
+  background-color: var(--text-alert);
+  color: var(--bg-color-2);
+  border: none;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+.discounts .secContainer .btn-cancel:hover {
+  background-color: var(--bg-color-2);
+  color: var(--text-alert);
+}/*# sourceMappingURL=discounts.css.map */
