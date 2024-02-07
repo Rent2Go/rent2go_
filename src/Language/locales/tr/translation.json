@@ -1,4 +1,18 @@
 {
-  "save": "Kaydet",
-  "moreDetails": "Detay"
+
+  "home": "Anasayfa",
+  "cars": "Arabalar",
+  "ourTeam": "Ekibimiz",
+  "contact": "İletişim",
+  "signUp": "Kayıt Ol",
+  "signIn": "Giriş Yap",
+  "action": "İşlemler",
+  "profile": "Profil",
+  "logout": "Çıkış Yap",
+
+  
+  "meetYourNewCar": "Yeni Arabanla Tanış",
+  "safecomfortableDriving": "Güvenli & Konforlu Sürüş",
+  "testDrive": "Test Sürüşü",
+  "moreDetails": "Detaylar..."
 }
