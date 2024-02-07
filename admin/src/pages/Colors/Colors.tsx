@@ -6,6 +6,8 @@ import { Form, Formik } from "formik";
 import { FormikInput } from "../../components";
 import { ColorModel } from "../../models/responses/colors/GetColor";
 import ColorService from "../../services/ColorService";
+import { AddColorRequest } from "../../models/requests/colors/AddColorRequest";
+import { useNavigate } from "react-router-dom";
 
 type Props = {};
 
@@ -21,13 +23,37 @@ const Colors = (props: Props) => {
     }
   };
 
-  useEffect(() => {
-    getColorList();
-  });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigation = useNavigate();
   const [color, setColor] = useColor("rgb(86 30 203)");
-  const initialValues = () => {};
-  const onSubmit = () => {};
+  const initialValues: AddColorRequest = {
+    name: "",
+    hexCode: ""
+  };
+  const onSubmit = async (values: AddColorRequest) => {
+    try{
+      await ColorService.addColor(values)
+      .then(() => {
+        setIsSubmitting(true);
+      })
+      .catch((err) => {
+        console.log("Error fetching colors", err);
+      });
+    }catch (err){
+      console.log("Error adding colors", err)
+    }
+  };
+
+  useEffect(() => {
+    if (isSubmitting){
+      getColorList();
+      setIsSubmitting(false);
+    } else{
+      getColorList();
+    }
+  }, [isSubmitting]);
+  
   return (
     <div className="colors">
       <div className="titleContainer">
@@ -36,20 +62,22 @@ const Colors = (props: Props) => {
       <div className="secContainer shadow-rounded-box">
         <div className="topContainer">
           <div className="colorFormContainer">
-            <Formik initialValues={initialValues} onSubmit={onSubmit}>
+            <Formik 
+              initialValues={initialValues} 
+              onSubmit={onSubmit}>
               <Form className="form">
                 <p>Add New color :</p>
                 <FormikInput
-                  name="title"
+                  name="name"
                   type="text"
                   placeHolder="Enter Color Title"
                 ></FormikInput>
                 <FormikInput
-                  name="Hex"
+                  name="hexCode"
                   type="text"
                   placeHolder="Enter Hex code"
                 ></FormikInput>
-                <button type="submit" className="btn btn-sm ">
+                <button type="submit" className="btn btn-sm btn-submit">
                   Add Color
                 </button>
               </Form>
