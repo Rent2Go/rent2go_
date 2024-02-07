@@ -60,4 +60,41 @@
     .btn-delete {
       background: var(--text-alert);
     }
+    .btn-detail {
+      background: var(--focusColor);
+    }
+    .btn-update {
+      background: var(--card-02-bg);
+    }
+  }
+  .actionRow{
+    display: flex;
+    flex-direction: row;
+    gap:0.25rem;
+    button,
+    a {
+      border: none;
+      color: var(--pureWhiteColor);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.5rem;
+     
+    }
+    .btn-submit {
+      background: var(--secondary-color);
+    }
+    .btn-cancel {
+      background: var(--text-alert);
+    }
+    .btn-delete {
+      background: var(--text-alert);
+    }
+    .btn-detail {
+      background: var(--focusColor);
+    }
+    .btn-update {
+      background: var(--primary-color);
+      
+    }
   }

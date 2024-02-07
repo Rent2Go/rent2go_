@@ -64,4 +64,40 @@ a {
 }
 .btnContainer .btn-delete {
   background: var(--text-alert);
+}
+.btnContainer .btn-detail {
+  background: var(--focusColor);
+}
+.btnContainer .btn-update {
+  background: var(--card-02-bg);
+}
+
+.actionRow {
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+}
+.actionRow button,
+.actionRow a {
+  border: none;
+  color: var(--pureWhiteColor);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+}
+.actionRow .btn-submit {
+  background: var(--secondary-color);
+}
+.actionRow .btn-cancel {
+  background: var(--text-alert);
+}
+.actionRow .btn-delete {
+  background: var(--text-alert);
+}
+.actionRow .btn-detail {
+  background: var(--focusColor);
+}
+.actionRow .btn-update {
+  background: var(--primary-color);
 }/*# sourceMappingURL=App.css.map */

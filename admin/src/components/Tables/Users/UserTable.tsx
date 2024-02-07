@@ -8,6 +8,8 @@ import { FaUserEdit } from "react-icons/fa";
 import { RiDeleteBin3Line } from "react-icons/ri";
 import { FormCheck } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
+import { CiEdit } from "react-icons/ci";
+import { MdOutlineDeleteForever } from "react-icons/md";
 
 type Props = {};
 
@@ -53,7 +55,7 @@ const UserTable = (props: Props) => {
               <td>{user.phoneNumber}</td>
               <td>
                 <Form>
-                  <Form.Check 
+                  <Form.Check
                     type="switch"
                     id="custom-switch"
                     label=""
@@ -63,13 +65,23 @@ const UserTable = (props: Props) => {
                   />
                 </Form>
               </td>
-              <td className="actionRow">
-                <Link to="/" className="btn btn-sm btn-warning">
-                  <FaUserEdit />
-                </Link>
-                <Link to="/" className="btn btn-sm btn-danger">
-                  <RiDeleteBin3Line />
-                </Link>
+              <td>
+                <div className="actionRow">
+                  <Link
+                    to={`/user-update/${user.id}`}
+                    className="btn btn-sm btn-update"
+                    title="Update"
+                  >
+                    <CiEdit />
+                  </Link>
+                  <Link
+                    to={`/user-delete/${user.id}`}
+                    className="btn btn-sm btn-delete"
+                    title="Delete"
+                  >
+                    <MdOutlineDeleteForever />
+                  </Link>
+                </div>
               </td>
             </tr>
           ))}

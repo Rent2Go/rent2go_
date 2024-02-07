@@ -6,9 +6,6 @@
   border-radius: 0.5rem !important;
   vertical-align: middle;
 }
-.userTableCard table a {
-  margin: 0 0.5rem;
-}
 .userTableCard table th {
   text-align: left;
   padding: 2rem;
