@@ -68,14 +68,14 @@ const UserTable = (props: Props) => {
               <td>
                 <div className="actionRow">
                   <Link
-                    to={`/user-update/${user.id}`}
+                    to={`/update-user/${user.id}`}
                     className="btn btn-sm btn-update"
                     title="Update"
                   >
                     <CiEdit />
                   </Link>
                   <Link
-                    to={`/user-delete/${user.id}`}
+                    to={`/delete-user/${user.id}`}
                     className="btn btn-sm btn-delete"
                     title="Delete"
                   >
