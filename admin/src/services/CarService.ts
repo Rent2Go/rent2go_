@@ -4,6 +4,7 @@ import { GetByCarIdModel } from "../models/responses/cars/getByCarId";
 import axiosInstance from "../utils/axiosInsterceptors";
 import { UpdateCarRequest } from '../models/requests/cars/UpdateCarRequest';
 
+
 class CarService{
     getAll(){
         return axiosInstance.get<GetAllCarsModel>("cars")
@@ -22,6 +23,11 @@ class CarService{
 
     updateCar(updateCarRequest:UpdateCarRequest){
         return axiosInstance.put<AddResponse>(`cars`,updateCarRequest);
+    }
+    
+    updateImage(FormData:FormData){
+
+        return axiosInstance.post<AddResponse>('cars/imageupdate',FormData)
     }
 }
     
