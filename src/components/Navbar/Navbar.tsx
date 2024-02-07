@@ -63,22 +63,22 @@ const Navbar = (props: Props) => {
           <ul className="menu">
             <li onClick={removeNavbar} className="listItem">
               <Link to="/" className="link">
-                Home
+                {t("home")}
               </Link>
             </li>
             <li onClick={removeNavbar} className="listItem">
               <Link to="/cars" className="link">
-                Cars
+                {t("cars")}
               </Link>
             </li>
             <li onClick={removeNavbar} className="listItem">
               <Link to="/our-team" className="link">
-                Our Team
+                {t("ourTeam")}
               </Link>
             </li>
             <li onClick={removeNavbar} className="listItem">
               <Link to="/contact" className="link">
-                Contact
+                {t("contact")}
               </Link>
             </li>
           </ul>
@@ -87,22 +87,20 @@ const Navbar = (props: Props) => {
         </div>
 
         <div className="signUp flex">
-       
-
           {authContext.authInformation.isAuthenticated ? (
             <>
               <NavDropdown
                 className="textAction text"
                 title={
                   <Link className="text btn" to="/profile">
-                    Actions
+                    {t("actions")}
                   </Link>
                 }
                 id="basic-nav-dropdown"
               >
                 <Link className=" text textAction btn" to="/profile">
                   {" "}
-                  Profile
+                  {t("profile")}
                 </Link>
 
                 <Link className="  btn text textAction" to="/cart">
@@ -113,18 +111,18 @@ const Navbar = (props: Props) => {
                   to="/sign-up"
                   onClick={logout}
                 >
-                  Log Out
+                  {t("logout")}
                 </Link>
               </NavDropdown>
             </>
           ) : (
             <>
               <Link className="text btn" to={"/sign-up"}>
-                Sign Up
+                {t("signUp")}
               </Link>
             </>
           )}
-             <div className="languageBtnContainer">
+          <div className="languageBtnContainer">
             <button
               name="en"
               type="button"
