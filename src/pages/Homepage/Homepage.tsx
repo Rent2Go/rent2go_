@@ -36,7 +36,7 @@ const Homepage = (props: Props) => {
         <div className="secContainer">
           <div data-aos="fade-up" className="homeText">
             <span className="homeSpan"> {t('meetYourNewCar')}</span>
-            <h1 className="homeTitle"> {t('safecomfortableDriving')}</h1>
+            <h1 className="homeTitle"> {t('safeComfortableDriving')}</h1>
             <div className="btns flex">
               <button type="button" data-aos="fade-right" className="btn">
                 {t('moreDetails')}
