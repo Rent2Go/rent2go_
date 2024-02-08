@@ -39,21 +39,23 @@ const CarPage: React.FC<Props> = (props) => {
     setCurrentPage(1);
   };
 
+  // Filtrelenmiş araçları al
   const filteredCars = cars.filter((car: CarModel) => {
     // Filtreleme koşullarını başlangıçta true olarak ayarla
     let passesFilters = true;
   
-    // Marka adı filtresi
-    if (filters.brand && filters.brand.length > 0) {
-      passesFilters = passesFilters && filters.brand.includes(car.model.brand.name);
+    // Filtreleme koşulları
+    if (filters.body && filters.body.length > 0) {
+      passesFilters = passesFilters && filters.body.some((filter: string) => car.bodyType.includes(filter));
     }
   
-    // Model adı filtresi
-    if (filters.model && filters.model.length > 0) {
-      passesFilters = passesFilters && filters.model.includes(car.model.name);
+    if (filters.gear && filters.gear.length > 0) {
+      passesFilters = passesFilters && filters.gear.some((filter: string) => car.gearType.includes(filter));
     }
   
-    // Arama terimiyle filtreleme
+    if (filters.fuel && filters.fuel.length > 0) {
+      passesFilters = passesFilters && filters.fuel.some((filter: string) => car.fuelType.includes(filter));
+    }
     if (searchTerm) {
       const searchTermLower = searchTerm.toLowerCase();
       passesFilters = passesFilters && (
@@ -70,7 +72,6 @@ const CarPage: React.FC<Props> = (props) => {
   
     return passesFilters;
   });
-  
   
   const totalFilteredCars = filteredCars.length;
   const totalPages = Math.ceil(totalFilteredCars / itemsPerPage);
