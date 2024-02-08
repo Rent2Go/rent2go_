@@ -297,4 +297,67 @@
   margin: auto;
 }
 
-/**Car Update Page*//*# sourceMappingURL=cars.css.map */
+/**Car Update Page*/
+/*Responsive*/
+@media screen and (max-width: 1024px) {
+  .cars .secContainer .cardContainer {
+    padding: 0.5rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cars .secContainer .cardContainer .vehicleCard {
+    padding: 0.5rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cars .secContainer .cardContainer .vehicleCard .leftContainer .contentContainer .imgContainer {
+    width: 200px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .cars .secContainer {
+    padding: 1rem 0.25rem;
+  }
+  .cars .secContainer .cardContainer {
+    padding: 0;
+    box-shadow: none;
+    background: none;
+  }
+  .cars .secContainer .cardContainer .vehicleCard {
+    margin: 0.5rem 1rem;
+    justify-content: space-around;
+  }
+  .cars .secContainer .cardContainer .vehicleCard .headerContainer {
+    padding: 0 1rem;
+  }
+  .cars .secContainer .cardContainer .vehicleCard .plateContainer {
+    padding: 0 1rem;
+  }
+  .cars .secContainer .cardContainer .vehicleCard .leftContainer .contentContainer .imgContainer {
+    width: 200px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cars .secContainer {
+    padding: 1rem 0.25rem;
+  }
+  .cars .secContainer .cardContainer {
+    padding: 0;
+    box-shadow: none;
+    background: none;
+  }
+  .cars .secContainer .cardContainer .vehicleCard {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 1rem;
+    justify-content: space-around;
+  }
+  .cars .secContainer .cardContainer .vehicleCard .headerContainer {
+    padding: 0 1rem;
+  }
+  .cars .secContainer .cardContainer .vehicleCard .plateContainer {
+    padding: 0 1rem;
+  }
+  .cars .secContainer .cardContainer .vehicleCard .leftContainer .contentContainer .imgContainer {
+    width: 200px;
+  }
+}
+/*Responsive*//*# sourceMappingURL=cars.css.map */

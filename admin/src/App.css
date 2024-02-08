@@ -19,6 +19,7 @@ a {
   color: unset;
 }
 
+/*containers & layouts*/
 .main__layout {
   margin-left: 270px;
 }
@@ -40,6 +41,8 @@ a {
   font-weight: 500;
 }
 
+/*containers & layouts*/
+/*buttons*/
 .btnContainer {
   display: flex;
   flex-direction: row;
@@ -124,6 +127,8 @@ a {
   align-items: center;
 }
 
+/*buttons*/
+/*tables*/
 table th,
 table td {
   align-items: center;
@@ -143,4 +148,8 @@ label {
   color: var(--small-text-color);
   font-size: 14px;
   font-weight: 500;
-}/*# sourceMappingURL=App.css.map */
+}
+
+/*tables*/
+/*Responsive*/
+/*Responsive*//*# sourceMappingURL=App.css.map */

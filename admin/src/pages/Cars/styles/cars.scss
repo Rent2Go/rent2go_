@@ -307,3 +307,92 @@
   margin: auto
 }
 /**Car Update Page*/
+
+/*Responsive*/
+
+@media screen and (max-width: 1024px){
+  .cars{
+    .secContainer{
+      .cardContainer{
+        padding: 0.5rem;
+        grid-template-columns: repeat(1,1fr);
+        .vehicleCard{
+          padding: 0.5rem;
+          grid-template-columns: repeat(1,1fr);
+          .leftContainer{
+            .contentContainer{
+              .imgContainer{
+                width: 200px;
+              }
+            }
+          }
+        }
+       
+      }
+    }
+  }
+  
+}
+@media screen and (max-width: 1024px){
+  .cars{
+    .secContainer{
+      padding: 1rem 0.25rem;
+      .cardContainer{
+        padding:0;
+        box-shadow: none;
+        background: none;
+        .vehicleCard{
+          margin:0.5rem 1rem;
+          justify-content: space-around;
+          .headerContainer{
+            padding: 0 1rem;
+          }
+          .plateContainer{
+            padding: 0 1rem;
+          }
+          .leftContainer{
+            .contentContainer{
+              .imgContainer{
+                width: 200px;
+              }
+            }
+          }
+        }
+       
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px){
+  .cars{
+    .secContainer{
+      padding: 1rem 0.25rem;
+      .cardContainer{
+        padding:0;
+        box-shadow: none;
+        background: none;
+        .vehicleCard{
+          display: flex;
+          flex-direction: column;
+          margin:0.5rem 1rem;
+          justify-content: space-around;
+          .headerContainer{
+            padding: 0 1rem;
+          }
+          .plateContainer{
+            padding: 0 1rem;
+          }
+          .leftContainer{
+            .contentContainer{
+              .imgContainer{
+                width: 200px;
+              }
+            }
+          }
+        }
+       
+      }
+    }
+  }
+}
+/*Responsive*/
