@@ -5,31 +5,40 @@ import axiosInstance from "../utils/axiosInsterceptors";
 import { UpdateCarRequest } from '../models/requests/cars/UpdateCarRequest';
 
 
-class CarService{
-    getAll(){
+class CarService {
+    getAll() {
         return axiosInstance.get<GetAllCarsModel>("cars")
     }
 
-    getById(id:number){
+    getById(id: number) {
         return axiosInstance.get<GetByCarIdModel>(`cars/${id}`);
     }
 
-    addCar(formData:FormData){
-        return axiosInstance.post<AddResponse>(`cars`,formData,{
+    addCar(formData: FormData) {
+        return axiosInstance.post<AddResponse>(`cars`, formData, {
             headers: {
-            "Content-Type": "applications/json",
-          },});
+                "Content-Type": "applications/json",
+            },
+        });
     }
 
-    updateCar(updateCarRequest:UpdateCarRequest){
-        return axiosInstance.put<AddResponse>(`cars`,updateCarRequest);
+    updateCar(updateCarRequest: UpdateCarRequest) {
+        return axiosInstance.put<AddResponse>(`cars`, updateCarRequest);
     }
-    
-    updateImage(FormData:FormData){
 
-        return axiosInstance.post<AddResponse>('cars/imageupdate',FormData)
+    updateImage(FormData: FormData) {
+
+        return axiosInstance.post<AddResponse>('cars/imageupdate', FormData)
+    }
+    updateIsActive(id: number, isActive: boolean) {
+        return axiosInstance.patch<AddResponse>('cars/isactive/' + id + "?isActive=" + isActive)
+    }
+
+    deleteCar(id: any) {
+
+        return axiosInstance.delete<AddResponse>('cars/' + id)
     }
 }
-    
+
 
 export default new CarService();
