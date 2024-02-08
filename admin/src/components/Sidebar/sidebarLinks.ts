@@ -22,11 +22,6 @@ const sidebarLinks = [
       display: "Permissions",
     },
     {
-      path: "/user-roles",
-      icon: "ri-spy-fill",
-      display: "User Role",
-    },
-    {
       path: "/cars",
       icon: "ri-car-fill",
       display: "Cars",
