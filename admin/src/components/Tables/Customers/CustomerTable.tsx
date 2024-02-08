@@ -70,10 +70,10 @@ const CustomerTable = (props: Props) => {
                 </Form>
               </td>
               <td className="actionRow">
-                <Link to="/" className="btn btn-sm btn-warning">
+                <Link to={`/update-customer/${customer.id}`} className="btn btn-sm btn-update">
                   <FaUserEdit />
                 </Link>
-                <Link to="/" className="btn btn-sm btn-danger">
+                <Link to="/" className="btn btn-sm btn-delete">
                   <RiDeleteBin3Line />
                 </Link>
               </td>
