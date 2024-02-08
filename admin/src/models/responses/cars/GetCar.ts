@@ -23,6 +23,7 @@ export interface CarModel {
 			name: string,
 		}
 
-	}
+	};
+	active: boolean;
 
 }
