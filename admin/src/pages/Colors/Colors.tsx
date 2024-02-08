@@ -8,6 +8,7 @@ import { ColorModel } from "../../models/responses/colors/GetColor";
 import ColorService from "../../services/ColorService";
 import { AddColorRequest } from "../../models/requests/colors/AddColorRequest";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 type Props = {};
 
@@ -32,17 +33,16 @@ const Colors = (props: Props) => {
     hexCode: ""
   };
   const onSubmit = async (values: AddColorRequest) => {
-    try{
+  
       await ColorService.addColor(values)
-      .then(() => {
+      .then((res) => {
         setIsSubmitting(true);
+        toast.success(res.data.message)
       })
       .catch((err) => {
-        console.log("Error fetching colors", err);
+        toast.error(err.response.data.message.name);        
       });
-    }catch (err){
-      console.log("Error adding colors", err)
-    }
+  
   };
 
   useEffect(() => {
@@ -118,6 +118,7 @@ const Colors = (props: Props) => {
           </div>
         </div>
       </div>
+      <ToastContainer  />
     </div>
   );
 };

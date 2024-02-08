@@ -34,14 +34,24 @@ const ListCar: React.FC<Props> = (props) => {
     }
   };
 
+  const handleDelete = () => {
+    // Kullanıcıya bir onay kutusu göster
+    var isConfirmed = window.confirm('Are you sure you want to delete?');
+    // Eğer kullanıcı OK düğmesine bastıysa
+    if (isConfirmed) {
+      // Silme işlemini gerçekleştir
+      // Örneğin: this.props.deleteItem();
+    }
+  };
+
   const filterCars = () => {
     let filtered = cars;
 
     if (searchTerm) {
       filtered = filtered.filter(
         (car) =>
-          car.colorName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          car.model.brandName
+          car.color.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          car.model.brand.name
             .toLowerCase()
             .includes(searchTerm.toLowerCase()) ||
           car.model.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
