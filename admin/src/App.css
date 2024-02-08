@@ -87,18 +87,43 @@ a {
   padding: 0.25rem 0.5rem;
   border-radius: 0.5rem;
 }
-.actionRow .btn-submit {
+
+.btn-submit {
   background: var(--secondary-color);
 }
-.actionRow .btn-cancel {
+
+.btn-cancel {
   background: var(--text-alert);
 }
-.actionRow .btn-delete {
+
+.btn-delete {
   background: var(--text-alert);
+  color: var(--pureWhiteColor);
 }
-.actionRow .btn-detail {
+
+.btn-detail {
   background: var(--focusColor);
 }
-.actionRow .btn-update {
+
+.btn-update {
   background: var(--primary-color);
+}
+
+.btn-delete-outline {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-alert);
+  font-size: 25px;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table th, table td {
+  align-items: center;
 }/*# sourceMappingURL=App.css.map */

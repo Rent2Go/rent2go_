@@ -7,8 +7,10 @@ import { FormikInput } from "../../components";
 import { ColorModel } from "../../models/responses/colors/GetColor";
 import ColorService from "../../services/ColorService";
 import { AddColorRequest } from "../../models/requests/colors/AddColorRequest";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { MdOutlineDeleteForever } from "react-icons/md";
+import { AiFillCloseCircle } from "react-icons/ai";
 
 type Props = {};
 
@@ -24,36 +26,44 @@ const Colors = (props: Props) => {
     }
   };
 
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigation = useNavigate();
   const [color, setColor] = useColor("rgb(86 30 203)");
   const initialValues: AddColorRequest = {
     name: "",
-    hexCode: ""
+    hexCode: "",
   };
   const onSubmit = async (values: AddColorRequest) => {
-  
-      await ColorService.addColor(values)
-      .then((res) => {
+    await ColorService.addColor(values)
+      .then((response) => {
         setIsSubmitting(true);
-        toast.success(res.data.message)
+        toast.success(response.data.message);
       })
       .catch((err) => {
-        toast.error(err.response.data.message.name);        
+        toast.error(err.response.data.message.name);
       });
-  
+  };
+
+  const deleteColor = async (id: number) => {
+    await ColorService.delete(id)
+      .then((response) => {
+        setIsSubmitting(true);
+        toast.success(response.data.message);
+      })
+      .catch((error) => {
+        toast.error(error.response.data.message.name);
+      });
   };
 
   useEffect(() => {
-    if (isSubmitting){
+    if (isSubmitting) {
       getColorList();
       setIsSubmitting(false);
-    } else{
+    } else {
       getColorList();
     }
   }, [isSubmitting]);
-  
+
   return (
     <div className="colors">
       <div className="titleContainer">
@@ -62,9 +72,7 @@ const Colors = (props: Props) => {
       <div className="secContainer shadow-rounded-box">
         <div className="topContainer">
           <div className="colorFormContainer">
-            <Formik 
-              initialValues={initialValues} 
-              onSubmit={onSubmit}>
+            <Formik initialValues={initialValues} onSubmit={onSubmit}>
               <Form className="form">
                 <p>Add New color :</p>
                 <FormikInput
@@ -97,6 +105,9 @@ const Colors = (props: Props) => {
                   <th>Preview</th>
                   <th>Hex Code</th>
                   <th>Title</th>
+                  <th>
+                    <AiFillCloseCircle />
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -111,6 +122,15 @@ const Colors = (props: Props) => {
                     </td>
                     <td>{colorList.hexCode}</td>
                     <td>{colorList.name}</td>
+                    <td>
+                      <Link
+                        className="btn btn-delete-outline"
+                        to={`/colors`}
+                        onClick={() => deleteColor(colorList.id)}
+                      >
+                        <MdOutlineDeleteForever />
+                      </Link>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -118,7 +138,7 @@ const Colors = (props: Props) => {
           </div>
         </div>
       </div>
-      <ToastContainer  />
+      <ToastContainer />
     </div>
   );
 };

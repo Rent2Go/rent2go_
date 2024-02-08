@@ -16,6 +16,9 @@ class ColorService{
     addColor(data:AddColorRequest){
         return axiosInstance.post<AddResponse>("colors",data);
     }
+    delete(id:number){
+        return axiosInstance.delete<AddResponse>(`colors/${id}`)
+    }
 
 }
 
