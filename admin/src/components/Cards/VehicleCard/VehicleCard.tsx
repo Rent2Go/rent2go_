@@ -24,18 +24,17 @@ type Props = {
 const VehicleCard = (props: Props) => {
 
   const [checked, setChecked] = useState<boolean>(props.car.active);
-  const handleChange = (e:any,id:number) => {
+  const handleChange = (e: any, id: number) => {
     const isActive = e.target.checked; // Doğru checked değerini almak için e.target.checked'i kullanın
     setChecked(isActive);
-    console.log(isActive);
-    
-    handleActive(id,isActive);
-   
+    handleActive(id, isActive);
+    window.location.reload();
+
   };
 
-useEffect(() => {
+  useEffect(() => {
 
-},[checked])
+  }, [checked])
 
 
 
@@ -51,19 +50,19 @@ useEffect(() => {
     }
   };
 
-  const handleActive = async (id: number,checked:boolean) => {
+  const handleActive = async (id: number, checked: boolean) => {
 
-    
+
     await CarService.updateIsActive(id, checked)
-    .then((res) => {
-      toast.success(res.data.message)
-    })
-    .catch((err) => {
-      toast.error(err)
-    })
+      .then((res) => {
+        toast.success(res.data.message)
+      })
+      .catch((err) => {
+        toast.error(err)
+      })
   }
 
- 
+
   return (
     <>
       <div className="vehicleCard shadow-rounded-box">
@@ -83,7 +82,7 @@ useEffect(() => {
               title="Active"
               className="warning"
               checked={checked}
-              onChange={(e) => handleChange(e,props.car.id)}
+              onChange={(e) => handleChange(e, props.car.id)}
             />
           </Form>
         </div>
@@ -138,14 +137,22 @@ useEffect(() => {
           >
             <CiEdit /> Update
           </Link>
-          <Link
-            to={"/cars"}
-            onClick={() => handleDelete(props.car.id)}
-            className="btn btn-sm btn-delete"
-            title="Delete"
-          >
-            <MdOutlineDeleteForever /> Delete
-          </Link>
+          {props.car.active &&
+
+            <Link
+              to={"/cars"}
+              onClick={() => handleDelete(props.car.id)}
+              className="btn btn-sm btn-delete"
+              title="Delete"
+            >
+
+              <MdOutlineDeleteForever /> Delete
+            </Link>
+
+
+
+          }
+
         </div>
         <ToastContainer />
       </div>
