@@ -6,20 +6,17 @@ import {
   AddEmployee,
   AddRental,
   AddUser,
-  AddUserRole,
   Dashboard,
   DetailCar,
   DetailCustomer,
   DetailEmployee,
   DetailRental,
   DetailUser,
-  DetailUserRole,
   ListCar,
   ListCustomer,
   ListEmployee,
   ListRental,
   ListUser,
-  ListUserRole,
   Login,
   Permissions,
   Profile,
@@ -31,7 +28,6 @@ import {
   UpdateEmployee,
   UpdateRental,
   UpdateUser,
-  UpdateUserRole,
   Colors,
   Discounts,
   Brands,
@@ -61,10 +57,6 @@ const Router = () => {
       <Route path="/add-rental" element={<AddRental />} />
       <Route path="/update-rental/:id" element={<UpdateRental />} />
       <Route path="/rental-detail/:id" element={<DetailRental />} />
-      <Route path="/user-roles" element={<ListUserRole />} />
-      <Route path="/add-user-roles" element={<AddUserRole />} />
-      <Route path="/update-user-role/:id" element={<UpdateUserRole />} />
-      <Route path="/detail-user-role/:id" element={<DetailUserRole />} />
       <Route path="/users" element={<ListUser />} />
       <Route path="/add-user" element={<AddUser />} />
       <Route path="/update-user/:id" element={<UpdateUser />} />
