@@ -42,7 +42,7 @@ const ReservationPage: React.FC<Props> = (props) => {
             <img src={rentals?.imageUrl} alt="carImage" />
             <ul>
 
-              <li key={rentals?.id}>Brand: {rentals?.model?.brandName}, Car ID: {rentals?.id}</li>
+              <li key={rentals?.id}>Brand: {rentals?.model?.brand.name}, Car ID: {rentals?.id}</li>
               <li>Model: {rentals?.model?.name}   </li>
 
 

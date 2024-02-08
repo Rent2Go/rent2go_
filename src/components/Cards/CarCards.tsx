@@ -22,7 +22,7 @@ const CarCards = (props: Props) => {
           </div>
           <div className="descriptionDiv">
             <p className="carTitle">
-              {props.car.model.brandName} {props.car.model.name}{" "}
+              {props.car.model.brand.name} {props.car.model.name}{" "}
               {props.car.year}
             </p>
             <div>
@@ -45,7 +45,7 @@ const CarCards = (props: Props) => {
               <span className="carLabel">
                 <IoIosColorPalette />{" "}
               </span>
-              <span className="miles">{props.car.colorName}</span>
+              <span className="miles">{props.car.color.name}</span>
             </div>
           </div>
           <div className="actionDiv">

@@ -13,7 +13,7 @@ const BodyTypeFilter = (props: Props) => {
 
   const { cars: allCars } = useSelector((state: any) => state.car);
   const bodyFilter = useSelector((state: any) => state.filters.body);
-  console.log(bodyFilter)
+ 
   const dispatch = useDispatch();
 
   const handleBodyChange = (event: any, bodyType: string) => {
