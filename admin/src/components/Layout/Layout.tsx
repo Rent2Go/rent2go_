@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Router from "../../routes/Router";
+import Footer from "../Footer/Footer";
 
 type Props = {};
 
@@ -28,6 +29,7 @@ const Layout = (props: Props) => {
         <div className="content">
           <Router />
         </div>
+        <Footer/>
       </div>
     </div>
   );
