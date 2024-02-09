@@ -25,6 +25,7 @@ const UpdateCar = () => {
   const [colors, setColors] = useState<ColorModel[]>([]);
   const [brands, setBrands] = useState<BrandModel[]>([]);
   const [models, setModels] = useState<ModelModel[]>([]);
+  const [filterModels, setFilterModels] = useState<ModelModel[]>([]);
   const [isSubmited, setIsSubmited] = useState<Boolean>(false);
 
   useEffect(() => {
@@ -134,6 +135,21 @@ const UpdateCar = () => {
 
   }
 
+  const handleBrandChange = async (selectedBrand: number) => {
+
+    const brand = brands.find((brand) => brand.id == selectedBrand);
+    console.log(brand?.name);
+
+
+
+    const selectedBrandModels = models.filter((model: ModelModel) => model.brandName == brand?.name) // Bu fonksiyonun gerçek uygulamada nasıl yapıldığına bağlı olarak değişir
+    console.log(selectedBrandModels);
+
+    // Alınan alt modelleri FormikSelect bileşenine aktar
+    setFilterModels(selectedBrandModels); // Örneğin, useState hook ile models state'ini güncelleyin
+  }
+
+
 
   const gearType = [
     { id: 1, name: "Manual" },
@@ -207,9 +223,9 @@ const UpdateCar = () => {
               <div className="row">
                 <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
                   <label htmlFor="brandId" className="form-label">Brand</label>
-                  <Field as="select" name="brandId" className="form-control">
+                  <Field as="select" name="brandId" className="form-control"  onChange={(e: any) => handleBrandChange(e.target.value)}>
                     {brands.map((brand: any) => (
-                      <option key={brand.id} value={brand.id}>{brand.name}</option>
+                      <option key={brand.id} value={brand.id}>{brand.name}  </option>
                     ))}
                   </Field>
                   <ErrorMessage name="brandId" component="div" className="alert-text" />

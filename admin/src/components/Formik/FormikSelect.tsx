@@ -2,11 +2,13 @@ import React from "react";
 import { ErrorMessage, Field } from "formik";
 
 
+
 type Props = {
   label: string;
   name: string;
   values: any[];
-  value?:any
+  value?:any;
+  onChange?: (value: any) => void;
 };
 
 const FormikSelect = (props: Props) => {
@@ -17,10 +19,12 @@ const FormikSelect = (props: Props) => {
         name={props.name}
         as="select"
         className="form-control"
+        onChange={props.onChange}
+        value={props.value}
       >
      
       {props.values.map( (value:any) => (
-      <option value={value.id}>{value.name.toUpperCase()}</option>) 
+      <option key={value.id} value={value.id}>{value.name.toUpperCase()}</option>) 
       )}
       </Field>
       <ErrorMessage name={props.name}>

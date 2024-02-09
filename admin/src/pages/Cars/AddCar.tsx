@@ -52,7 +52,7 @@ const AddCar = (props: Props) => {
 
   const navigate = useNavigate();
   const [colors, setColors] = useState<ColorModel[]>([]);
-
+  const [filterModels, setFilterModels] = useState<ModelModel[]>([]);
   const [brands, setBrands] = useState<BrandModel[]>([]);
   const [models, setModels] = useState<ModelModel[]>([]);
 
@@ -127,8 +127,16 @@ const AddCar = (props: Props) => {
 
 
   const formData = new FormData();
-  const handleSelected = (event: any) => {
-    formData.append("file", event.target.files[0]);
+  const handleChangeStatus = ({ meta, file }: { meta: any, file: any }) => {
+    if (meta.status === 'done') {
+      console.log('Dosya yüklendi:', file);
+      formData.append("file", file)
+
+
+    } else if (meta.status === 'error') {
+      console.error('Dosya yüklenirken bir hata oluştu:', meta);
+
+    }
   };
 
 
@@ -146,22 +154,35 @@ const AddCar = (props: Props) => {
       })
 
   }
+  const handleBrandChange = async (selectedBrand: number) => {
+
+    const brand = brands.find((brand) => brand.id == selectedBrand);
+    console.log(brand?.name);
+
+
+
+    const selectedBrandModels = models.filter((model: ModelModel) => model.brandName == brand?.name) // Bu fonksiyonun gerçek uygulamada nasıl yapıldığına bağlı olarak değişir
+    console.log(selectedBrandModels);
+
+    // Alınan alt modelleri FormikSelect bileşenine aktar
+    setFilterModels(selectedBrandModels); // Örneğin, useState hook ile models state'ini güncelleyin
+  }
 
 
   const getColors = () => {
-     ColorService.getAll()
+    ColorService.getAll()
       .then((res) => { setColors(res.data.data) })
       .catch((err) => console.log(err))
   };
 
   const getBrands = () => {
-     BrandService.getAll()
+    BrandService.getAll()
       .then((res) => { setBrands(res.data.data) })
       .catch((err) => { console.log(err) })
   }
 
   const getModels = () => {
-     ModelService.getAll()
+    ModelService.getAll()
       .then((res) => {
 
         setModels(res.data.data)
@@ -169,6 +190,8 @@ const AddCar = (props: Props) => {
       })
       .catch((err) => { console.log(err) })
   }
+
+  const [selectedModel, setSelectedModel] = useState('');
 
   // receives array of files that are done uploading when submit button is clicked
 
@@ -192,15 +215,25 @@ const AddCar = (props: Props) => {
                   ></FormikInput>
                 </div>
                 <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                  <FormikSelect name="colorId" label="Color" values={colors}></FormikSelect>
+                  <label className="form-label">Model</label>
+                  <Field name="colorId" as="select" className="form-control" >
+                    {colors.map((value: any) => (
+                      <option key={value.id} value={value.id}>{value.name.toUpperCase()}</option>)
+                    )}
+                  </Field>
                 </div>
               </div>
               <div className="row">
                 <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                  <FormikSelect name="brandId" label="Brand" values={brands}></FormikSelect>
+                  <FormikSelect name="brandId" label="Brand" values={brands} onChange={(e: any) => handleBrandChange(e.target.value)} ></FormikSelect>
                 </div>
                 <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                  <FormikSelect name="modelId" label="Model" values={models}></FormikSelect>
+                  <label className="form-label">Model</label>
+                  <Field name="modelId" as="select" className="form-control" >
+                    {filterModels.map((value: any) => (
+                      <option key={value.id} value={value.id}>{value.name.toUpperCase()}</option>)
+                    )}
+                  </Field>
                 </div>
               </div>
               <div className="row">
@@ -292,10 +325,10 @@ const AddCar = (props: Props) => {
 
                   <label className="mb-3 mt-5">Images</label>
                   <Dropzone
-                      getUploadParams={getUploadParams}
-                      onChangeStatus={handleSelected}
-                      accept='image/*'
-                    />
+                    getUploadParams={getUploadParams}
+                    onChangeStatus={handleChangeStatus}
+                    accept='image/*'
+                  />
 
                 </div>
 
