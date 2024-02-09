@@ -1,8 +1,8 @@
 export interface RentalModel {
   id: number;
-  startDate: string;
-  endDate: string;
-  returnDate: string;
+  startDate: Date;
+  endDate: Date;
+  returnDate: Date;
   startKilometer: number;
   endKilometer: number;
   totalPrice: number;
@@ -34,13 +34,15 @@ export interface RentalModel {
   };
   customer: {
     id: number;
-    name: string;
-    surname: string;
-    phoneNumber: string;
-    email: string;
     nationalityId: string;
     city: string;
     district: string;
     address: string;
+    user:{
+      name: string;
+      surname: string;
+      phoneNumber: string;
+      email: string;
+    }
   };
 }

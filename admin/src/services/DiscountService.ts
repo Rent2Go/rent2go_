@@ -7,7 +7,7 @@ import { DeleteExpression } from "typescript";
 
 class DiscountService{
     getAll(){
-        return axiosInstance.get<GetAllDiscountModel>("discounts")
+        return axiosInstance.get<GetAllDiscountModel>("discounts/getallisactive?isActive=true")
     }
     getById(id:number){
         return axiosInstance.get<DiscountModel>(`discounts/${id}`)

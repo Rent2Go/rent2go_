@@ -16,6 +16,9 @@ const ListRental = (props: Props) => {
       console.log("Error fetching rentals", error);
     }
   };
+  const formatDate = (date: Date) => {
+    return new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  };
 
   useEffect(() => {getRentals();})
   return (
@@ -29,18 +32,20 @@ const ListRental = (props: Props) => {
           <div className="filter__widget-wrapper">
             <div className="filter__widget-01">
               <select name="." title=".">
-                <option value="New">New</option>
-                <option value="Popular">Popular</option>
-                <option value="Upcoming">Upcoming</option>
+                <option value="NotApproved">Not Approved</option>
+                <option value="Active">Active</option>
+                <option value="Passive">Passive</option>
               </select>
             </div>
 
             <div className="filter__widget-01">
-              <select name="." title=".">
-                <option value="toyota">Toyota</option>
-                <option value="bmw">Bmw</option>
-                <option value="audi">Audi</option>
+            
+              <select name="." title="." >
+              {rentals.map((rental: RentalModel) => (
+                <option key={rental.id} value={rental.startDate.toString()}>{formatDate(rental.startDate)}</option>
+                ))}
               </select>
+          
             </div>
           </div>
 

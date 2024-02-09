@@ -35,11 +35,11 @@ const CarItem = (props: Props) => {
       <div className="car__item-bottom">
         <div className="car__bottom-left">
           <p>
-            <i className="ri-user-line"></i>  startDate {props.rental.startDate}
+            <i className="ri-user-line"></i>  startDate {props.rental.startDate.toString()}
           </p>
           <p>
             <i className="ri-repeat-line"></i>
-            endDate {props.rental.endDate}
+            endDate {props.rental.endDate.toString()}
           </p>
         </div>
 
