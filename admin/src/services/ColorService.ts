@@ -1,3 +1,4 @@
+import { AddResponse } from "../../../src/models/responses/AddResponse";
 import { AddColorRequest } from "../models/requests/colors/AddColorRequest";
 import { ColorModel } from "../models/responses/colors/ColorModel";
 import { GetAllColorModel } from "../models/responses/colors/getAllColors";
@@ -13,7 +14,10 @@ class ColorService{
     }
 
     addColor(data:AddColorRequest){
-        return axiosInstance.post<AddColorRequest>("colors",data);
+        return axiosInstance.post<AddResponse>("colors",data);
+    }
+    delete(id:number){
+        return axiosInstance.delete<AddResponse>(`colors/${id}`)
     }
 
 }

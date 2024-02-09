@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./styles/cars.css";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { FormikInput, FormikSelect } from "../../components";
-import { CarModel } from "../../models/responses/cars/GetCar";
+
 import CarService from "../../services/CarService";
 import "react-dropzone-uploader/dist/styles.css";
-import Dropzone, { IFileWithMeta, StatusValue } from "react-dropzone-uploader";
+import Dropzone from "react-dropzone-uploader";
 import { Link, useNavigate } from "react-router-dom";
 import ColorService from "../../services/ColorService";
 import { ColorModel } from "../../models/responses/colors/ColorModel";
@@ -15,6 +15,8 @@ import { AddCarRequest } from "../../models/requests/cars/AddCarRequest";
 import { ModelModel } from "../../models/responses/models/GetModel";
 import ModelService from "../../services/ModelService";
 import { ToastContainer, toast } from "react-toastify";
+import * as Yup from "yup"
+
 type Props = {
 
 }
@@ -47,16 +49,12 @@ const AddCar = (props: Props) => {
   const getUploadParams = () => {
     return { url: 'https://httpbin.org/post' }
   }
+
   const navigate = useNavigate();
   const [colors, setColors] = useState<ColorModel[]>([]);
 
   const [brands, setBrands] = useState<BrandModel[]>([]);
-
   const [models, setModels] = useState<ModelModel[]>([]);
-  console.log("dasd,",models)
-  console.log("dasd,",brands)
-  console.log("dasd,",colors)
-
 
 
   useEffect(() => {
@@ -64,14 +62,6 @@ const AddCar = (props: Props) => {
     getColors()
     getModels()
   }, [])
-
-
-
-
-
-
-
-
 
   const addCarInitialValues: AddCarRequest = {
     kilometer: 0,
@@ -88,45 +78,94 @@ const AddCar = (props: Props) => {
 
   }
 
+  const AddCarRequestSchema = Yup.object().shape({
+    kilometer: Yup.number()
+      .required('Kilometer field cannot be empty.')
+      .min(0, 'Kilometer must be greater than or equal to 0.'),
+    year: Yup.number()
+      .required('Year field cannot be empty.')
+      .min(2005, 'Year must be greater than or equal to 2005.')
+      .max(2024, 'Year must be less than or equal to the current year.'),
+    dailyPrice: Yup.number()
+      .required('Daily price field cannot be empty.')
+      .min(0, 'Daily price must be greater than 0.'),
+    plate: Yup.string()
+      .matches(
+        /^(0[1-9]|[1-7][0-9]|8[01])/,
+        'Invalid licence plate: Plate must start with a number between 01 and 81.'
+      )
+      .matches(
+        /[A-Z]{1,3}/,
+        'Invalid licence plate: Plate must consist of 1-3 uppercase letters after the first part.'
+      )
+      .matches(
+        /[0-9]{4}$/,
+        'Invalid licence plate: Plate must end with 4 numbers.'
+      )
+
+      .required('Plate field cannot be empty.')
+      .min(5, 'Licence plate must be at least 5 characters long.')
+      .max(11, 'Licence plate must be at most 11 characters long.'),
+    modelId: Yup.number()
+      .required('Model ID field cannot be empty.')
+      .positive('ID must be a positive number.'),
+    colorId: Yup.number()
+      .required('Color ID field cannot be empty.')
+      .positive('ID must be a positive number.'),
+    bodyType: Yup.string()
+      .required('Body type field cannot be empty.'),
+    fuelType: Yup.string()
+      .required('Fuel type field cannot be empty.'),
+    gearType: Yup.string()
+      .required('Gear type field cannot be empty.'),
+    cylinderCount: Yup.string()
+      .required('Cylinder count field cannot be empty.'),
+    enginePower: Yup.string()
+      .required('Engine power field cannot be empty.')
+  });
+
+
 
   const formData = new FormData();
-  const handleSelected = (event:any) => {
+  const handleSelected = (event: any) => {
     formData.append("file", event.target.files[0]);
   };
 
 
   const handleSubmit = async (addCarInitialValues: AddCarRequest) => {
-    formData.append('addCarRequest', new Blob([JSON.stringify(addCarInitialValues)], {type: "application/json"}))
-      const response = await CarService.addCar(formData)
+    formData.append('addCarRequest', new Blob([JSON.stringify(addCarInitialValues)], { type: "application/json" }))
+    await CarService.addCar(formData)
       .then((res) => {
+        toast.success("Car added successfully")
         navigate("/cars")
-      
+
       })
       .catch((err) => {
         toast.error(err.response.data.message)
         formData.delete('addCarRequest')
       })
-  
+
   }
 
 
   const getColors = () => {
-    const response = ColorService.getAll()
+     ColorService.getAll()
       .then((res) => { setColors(res.data.data) })
       .catch((err) => console.log(err))
   };
 
   const getBrands = () => {
-    const response = BrandService.getAll()
+     BrandService.getAll()
       .then((res) => { setBrands(res.data.data) })
       .catch((err) => { console.log(err) })
   }
 
   const getModels = () => {
-    const response = ModelService.getAll()
+     ModelService.getAll()
       .then((res) => {
+
         setModels(res.data.data)
-        console.log(res.data.data);
+
       })
       .catch((err) => { console.log(err) })
   }
@@ -141,7 +180,7 @@ const AddCar = (props: Props) => {
           <h2>Add New Car</h2>
         </div>
         <div className="formContainer">
-          <Formik initialValues={addCarInitialValues} onSubmit={handleSubmit}>
+          <Formik initialValues={addCarInitialValues} validateOnBlur={true} validationSchema={AddCarRequestSchema} onSubmit={handleSubmit}>
             <Form>
               <div className="row">
                 <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
@@ -153,15 +192,15 @@ const AddCar = (props: Props) => {
                   ></FormikInput>
                 </div>
                 <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                  <FormikSelect  name="colorId" label="Color" values={colors}></FormikSelect>
+                  <FormikSelect name="colorId" label="Color" values={colors}></FormikSelect>
                 </div>
               </div>
               <div className="row">
                 <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                  <FormikSelect  name="brandId" label="Brand" values={brands}></FormikSelect>
+                  <FormikSelect name="brandId" label="Brand" values={brands}></FormikSelect>
                 </div>
                 <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                  <FormikSelect  name="modelId" label="Model" values={models}></FormikSelect>
+                  <FormikSelect name="modelId" label="Model" values={models}></FormikSelect>
                 </div>
               </div>
               <div className="row">
@@ -177,7 +216,7 @@ const AddCar = (props: Props) => {
                   <label htmlFor="bodyType" className="form-label">
                     Body Type
                   </label>
-                  <Field as="select"  name="bodyType" className="form-control"  >
+                  <Field as="select" name="bodyType" className="form-control"  >
                     <option value="" >  Seçiniz </option>
                     {bodyType.map((bodyType) => (
                       <option key={bodyType.id} value={bodyType.name.toUpperCase()}>{bodyType.name}</option>
@@ -191,7 +230,7 @@ const AddCar = (props: Props) => {
                   <label htmlFor="fuelType" className="form-label">
                     Fuel Type
                   </label>
-                  <Field as="select"  name="fuelType" className="form-control"  >
+                  <Field as="select" name="fuelType" className="form-control"  >
                     <option value="" >  Seçiniz </option>
                     {fuelType.map((fuelType) => (
                       <option key={fuelType.id} value={fuelType.name.toUpperCase()}>{fuelType.name}</option>
@@ -203,7 +242,7 @@ const AddCar = (props: Props) => {
                   <label htmlFor="gearType" className="form-label">
                     Gear Type
                   </label>
-                  <Field as="select"  name="gearType" className="form-control"  >
+                  <Field as="select" name="gearType" className="form-control"  >
                     <option value="" >  Seçiniz </option>
                     {gearType.map((gearType) => (
                       <option key={gearType.id} value={gearType.name.toUpperCase()}>{gearType.name}</option>
@@ -252,7 +291,11 @@ const AddCar = (props: Props) => {
                 <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
 
                   <label className="mb-3 mt-5">Images</label>
-                  <input type="file" className="form-control" name='image' onChange={handleSelected}/>
+                  <Dropzone
+                      getUploadParams={getUploadParams}
+                      onChangeStatus={handleSelected}
+                      accept='image/*'
+                    />
 
                 </div>
 
@@ -262,7 +305,7 @@ const AddCar = (props: Props) => {
                 <Link to="/cars" className="btn btn-sm btn-cancel">Cancel</Link>
               </div>
             </Form>
-           
+
           </Formik>
           <ToastContainer position="top-center" />
         </div>

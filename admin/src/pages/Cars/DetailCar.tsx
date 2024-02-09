@@ -20,7 +20,7 @@ const DetailCar = (props: Props) => {
     try {
       const response = await CarService.getById(parseInt(id));
       setCarDetail(response.data.data);
-      console.log(response.data.data.colorName);
+      console.log(response.data.data.color.name);
     } catch (error) {
       console.error("There is an error : ", error);
     }
@@ -30,21 +30,21 @@ const DetailCar = (props: Props) => {
     <div className="cars">
       <div className="headingContainer mb-5">
         <h2>
-          Details of {carDetail?.model?.brandName} {carDetail?.model?.name}{" "}
+          Details of {carDetail?.model?.brand.name} {carDetail?.model?.name}{" "}
           {carDetail?.year}
         </h2>
       </div>
       <div className="secContainer">
         <div className="contentContainer">
           <div className="imgContainerDetail">
-            <img src={carDetail?.imageUrl} alt={carDetail?.model.brandName} />
+            <img src={carDetail?.imageUrl} alt={carDetail?.model.brand.name} />
             <Link to="cars" className="btn"> Back</Link>
           </div>
           <div className="detailContainer">
             <div className="infoContainer shadow-rounded-box">
               <div className="detailLine">
                 <label>Color : </label>
-                <p> {carDetail?.colorName}</p>
+                <p> {carDetail?.color.name}</p>
               </div>
               <div className="detailLine">
                 <label>Plate : </label>

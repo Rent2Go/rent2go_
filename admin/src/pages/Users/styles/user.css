@@ -22,4 +22,12 @@
   padding: 0.25rem 0.5rem;
   font-weight: 500;
   font-size: 14px;
+}
+.users .titleContainer {
+  margin: 0.5rem;
+  padding: 1rem 2rem;
+}
+.users .formContainer {
+  margin: 0.5rem;
+  padding: 1rem 2rem;
 }/*# sourceMappingURL=user.css.map */

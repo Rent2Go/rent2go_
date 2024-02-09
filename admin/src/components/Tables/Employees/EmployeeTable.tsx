@@ -8,6 +8,8 @@ import { FormCheck } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaUserEdit } from "react-icons/fa";
 import { RiDeleteBin3Line } from "react-icons/ri";
+import { CiEdit } from "react-icons/ci";
+import { MdOutlineDeleteForever } from "react-icons/md";
 
 type Props = {};
 
@@ -65,13 +67,23 @@ const EmployeeTable = (props: Props) => {
                   />
                 </Form>
               </td>
-              <td className="actionRow">
-                <Link to="/" className="btn btn-sm btn-warning">
-                  <FaUserEdit />
-                </Link>
-                <Link to="/" className="btn btn-sm btn-danger">
-                  <RiDeleteBin3Line />
-                </Link>
+              <td>
+                <div className="actionRow">
+                  <Link
+                    to={`/update-employee/${employee.id}`}
+                    className="btn btn-sm btn-update"
+                    title="Update"
+                  >
+                    <CiEdit />
+                  </Link>
+                  <Link
+                    to={`/delete-employee/${employee.id}`}
+                    className="btn btn-sm btn-delete"
+                    title="Delete"
+                  >
+                    <MdOutlineDeleteForever />
+                  </Link>
+                </div>
               </td>
             </tr>
           ))}

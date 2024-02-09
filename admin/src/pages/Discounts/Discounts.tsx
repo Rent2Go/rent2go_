@@ -10,6 +10,8 @@ import { AddDiscountRequest } from "../../models/requests/discounts/AddDiscountR
 import DiscountService from "../../services/DiscountService";
 import * as Yup from "yup";
 import { MdOutlineDeleteForever } from "react-icons/md";
+import { ToastContainer, toast } from "react-toastify";
+
 
 type Props = {};
 
@@ -29,18 +31,19 @@ const Discounts = (props: Props) => {
 
   const navigation = useNavigate();
   const onSubmit = async (values: AddDiscountRequest) => {
-    try {
+  
       await DiscountService.create(values)
         .then((response) => {
           setIsSubmitting(true);
-          navigation("/discounts");
+          toast.success(response.data.message)
         })
         .catch((error) => {
-          console.log("Error fetching discounts", error);
+          toast.error(error.response.data.message.percentage)
+          console.log(error.response.data.message.percentage);
+          
+
         });
-    } catch (error) {
-      console.log("Error adding discount", error);
-    }
+     
   };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -56,18 +59,16 @@ const Discounts = (props: Props) => {
     }
   };
   const deleteDiscount = async (id: number) => {
-    try {
+
       await DiscountService.delete(id)
         .then((response) => {
           setIsSubmitting(true);
-          navigation("/discounts");
+          toast.success(response.data.message)
         })
         .catch((error) => {
-          console.log("Error fetching discounts", error);
+         toast.error(error.response.data.message.name)
         });
-    } catch (error) {
-      console.log("Error deleting discount", error);
-    }
+     
   };
 
   useEffect(() => {
@@ -128,6 +129,7 @@ const Discounts = (props: Props) => {
                   </div>
                 </Form>
               </Formik>
+              <ToastContainer position="bottom-center" />
             </div>
           </div>
           <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
@@ -166,6 +168,7 @@ const Discounts = (props: Props) => {
           </div>
         </div>
       </div>
+  
     </div>
   );
 };

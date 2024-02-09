@@ -34,14 +34,15 @@ const ListCar: React.FC<Props> = (props) => {
     }
   };
 
+ 
   const filterCars = () => {
     let filtered = cars;
 
     if (searchTerm) {
       filtered = filtered.filter(
         (car) =>
-          car.colorName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          car.model.brandName
+          car.color.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          car.model.brand.name
             .toLowerCase()
             .includes(searchTerm.toLowerCase()) ||
           car.model.name.toLowerCase().includes(searchTerm.toLowerCase()) ||

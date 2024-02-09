@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from "../../Language/language";
 import {
   Auction,
   Navbar,
@@ -16,8 +18,15 @@ import "./homepage.css";
 type Props = {};
 
 const Homepage = (props: Props) => {
+  const {t} = useTranslation();
   useEffect(() => {
-    Aos.init({ duration: 3000, offset: 20 });
+    if (i18n.isInitialized) {
+      Aos.init({ duration: 3000, offset: 20 });
+    } else {
+      i18n.on('initialized', () => {
+        Aos.init({ duration: 3000, offset: 20 });
+      });
+    }
   }, []);
   return (
     <>
@@ -26,18 +35,18 @@ const Homepage = (props: Props) => {
       <div className="home">
         <div className="secContainer">
           <div data-aos="fade-up" className="homeText">
-            <span className="homeSpan">Meet your new Car</span>
-            <h1 className="homeTitle">Safe & Comfortable Driving</h1>
+            <span className="homeSpan"> {t('meetYourNewCar')}</span>
+            <h1 className="homeTitle"> {t('safeComfortableDriving')}</h1>
             <div className="btns flex">
               <button type="button" data-aos="fade-right" className="btn">
-                More Details
+                {t('moreDetails')}
               </button>
               <button
                 type="button"
                 data-aos="fade-left"
                 className="btn primaryBtn"
               >
-                Test Drive
+                 {t('testDrive')}
               </button>
             </div>
           </div>

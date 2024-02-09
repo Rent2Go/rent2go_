@@ -1,15 +1,17 @@
 import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-
+import { useTranslation } from "react-i18next";
+import i18n from "../../Language/language";
 import "./search.css";
 
 type Props = {};
 
 const Search = (props: Props) => {
+  const {t} = useTranslation();
   return (
     <div className="search">
       <div className="secContainer container">
-        <h3 className="title"  data-aos="fade-up-right" >Which vehicle you are looking for ? </h3>
+        <h3 className="title"  data-aos="fade-up-right" >{t("whichVehicleYouAreLookingFor")} </h3>
 
         <div className="searchDiv grid">
           <input type="text" placeholder="Type"  data-aos="fade-right" />

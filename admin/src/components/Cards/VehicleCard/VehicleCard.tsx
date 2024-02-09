@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./vehicleCard.css";
 import { CarModel } from "../../../models/responses/cars/GetCar";
 import { IoColorPalette } from "react-icons/io5";
@@ -15,23 +15,60 @@ import { MdOutlineDeleteForever } from "react-icons/md";
 import Form from "react-bootstrap/Form";
 
 import { Link } from "react-router-dom";
-import { FormCheck } from "react-bootstrap";
-import { Formik } from "formik";
+import CarService from "../../../services/CarService";
+import { ToastContainer, toast } from "react-toastify";
+
 type Props = {
   car: CarModel;
 };
 const VehicleCard = (props: Props) => {
-  const [checked, setChecked] = React.useState(true);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked(event.target.checked);
+  const [checked, setChecked] = useState<boolean>(props.car.active);
+  const handleChange = (e: any, id: number) => {
+    const isActive = e.target.checked; // Doğru checked değerini almak için e.target.checked'i kullanın
+    setChecked(isActive);
+    handleActive(id, isActive);
+    window.location.reload();
+
   };
+
+  useEffect(() => {
+
+  }, [checked])
+
+
+
+
+  const handleDelete = async (id: number) => {
+    var isConfirmed = window.confirm('Are you sure you want to delete?');
+    if (isConfirmed) {
+      await CarService.deleteCar(id)
+        .then(() => {
+          toast.success("Vehicle was successfully deleted")
+          window.location.reload();
+        })
+    }
+  };
+
+  const handleActive = async (id: number, checked: boolean) => {
+
+
+    await CarService.updateIsActive(id, checked)
+      .then((res) => {
+        toast.success(res.data.message)
+      })
+      .catch((err) => {
+        toast.error(err)
+      })
+  }
+
+
   return (
     <>
       <div className="vehicleCard shadow-rounded-box">
         <div className="headerContainer ">
           <p>
-            {props.car.model.brandName} {props.car.model.name} {props.car.year}
+            {props.car.model.brand.name} {props.car.model.name} {props.car.year}
           </p>
         </div>
         <div className="plateContainer">
@@ -40,11 +77,12 @@ const VehicleCard = (props: Props) => {
           <Form>
             <Form.Check // prettier-ignore
               type="switch"
-              id="custom-switch"
+              id={`custom-switch-${props.car.id}`}
               label=""
               title="Active"
               className="warning"
-              checked={true}
+              checked={checked}
+              onChange={(e) => handleChange(e, props.car.id)}
             />
           </Form>
         </div>
@@ -59,7 +97,7 @@ const VehicleCard = (props: Props) => {
         <div className="rightContainer">
           <div className="descriptionContainer">
             <p title="Color">
-              <IoColorPalette /> {props.car.colorName}
+              <IoColorPalette /> {props.car.color.name}
             </p>
             <p title="Body Type">
               <LuBaggageClaim /> {props.car.bodyType}
@@ -99,14 +137,24 @@ const VehicleCard = (props: Props) => {
           >
             <CiEdit /> Update
           </Link>
-          <Link
-            to={`/car-delete/${props.car.id}`}
-            className="btn btn-sm btn-delete"
-            title="Delete"
-          >
-            <MdOutlineDeleteForever /> Delete
-          </Link>
+          {props.car.active &&
+
+            <Link
+              to={"/cars"}
+              onClick={() => handleDelete(props.car.id)}
+              className="btn btn-sm btn-delete"
+              title="Delete"
+            >
+
+              <MdOutlineDeleteForever /> Delete
+            </Link>
+
+
+
+          }
+
         </div>
+        <ToastContainer />
       </div>
     </>
   );

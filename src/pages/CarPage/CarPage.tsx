@@ -20,7 +20,7 @@ const CarPage: React.FC<Props> = (props) => {
   const dispatch = useDispatch<AppDispatch>();
   const { cars } = useSelector((state: any) => state.car);
   const filters = useSelector((state: any) => state.filters);
-
+  const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage =5;
 
@@ -41,28 +41,38 @@ const CarPage: React.FC<Props> = (props) => {
 
   // Filtrelenmiş araçları al
   const filteredCars = cars.filter((car: CarModel) => {
+    // Filtreleme koşullarını başlangıçta true olarak ayarla
+    let passesFilters = true;
+  
+    // Filtreleme koşulları
     if (filters.body && filters.body.length > 0) {
-      if (!filters.body.some((filter: string) => car.bodyType.includes(filter))) {
-        return false;
-      }
+      passesFilters = passesFilters && filters.body.some((filter: string) => car.bodyType.includes(filter));
     }
-
+  
     if (filters.gear && filters.gear.length > 0) {
-      if (!filters.gear.some((filter: string) => car.gearType.includes(filter))) {
-        return false;
-      }
+      passesFilters = passesFilters && filters.gear.some((filter: string) => car.gearType.includes(filter));
     }
-
+  
     if (filters.fuel && filters.fuel.length > 0) {
-      if (!filters.fuel.some((filter: string) => car.fuelType.includes(filter))) {
-        return false;
-      }
+      passesFilters = passesFilters && filters.fuel.some((filter: string) => car.fuelType.includes(filter));
     }
-
-    return true;
+    if (searchTerm) {
+      const searchTermLower = searchTerm.toLowerCase();
+      passesFilters = passesFilters && (
+        car.color.name.toLowerCase().includes(searchTermLower) ||
+        car.model.brand.name.toLowerCase().includes(searchTermLower) ||
+        car.model.name.toLowerCase().includes(searchTermLower) ||
+        car.fuelType.toLowerCase().includes(searchTermLower) ||
+        car.gearType.toLowerCase().includes(searchTermLower) ||
+        car.enginePower.toLowerCase().includes(searchTermLower) ||
+        car.year.toString().includes(searchTerm) ||
+        car.bodyType.toLowerCase().includes(searchTermLower)
+      );
+    }
+  
+    return passesFilters;
   });
-
-
+  
   const totalFilteredCars = filteredCars.length;
   const totalPages = Math.ceil(totalFilteredCars / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -95,6 +105,7 @@ const CarPage: React.FC<Props> = (props) => {
                   name="search"
                   className="searchInput"
                   type="text"
+                  onChange={(e)=> setSearchTerm(e.target.value)}
                   placeholder="Search by Model, Brand, Color, Year, Fuel Type, Body Type and Gear Type...."
                 />
               </div>

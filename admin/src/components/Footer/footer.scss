@@ -1,3 +1,18 @@
 .footer{
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 2rem;
+    font-size: 14px;
+    color:var(--small-text-color);
+    justify-content: center;
+    margin-bottom: 0;
+    background-color: var(--pureWhiteColor);
+    position: fixed;
+    bottom: 0;
+    left: 150px;
+    width: 100%;
+    p{
+        margin-bottom: 0;
+    }
     
 }
