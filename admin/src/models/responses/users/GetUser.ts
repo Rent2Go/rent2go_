@@ -4,5 +4,7 @@ export interface UserModel {
     surname: string;
     phoneNumber: string;
     email: string;
+    password: string;
+    role: string;
     imageUrl?: any;
   }
