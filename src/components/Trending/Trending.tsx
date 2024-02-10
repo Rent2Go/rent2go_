@@ -1,16 +1,19 @@
 import React from "react";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
+import { useTranslation } from "react-i18next";
 
 import "./trending.css";
 
 type Props = {};
 
 const Trending = (props: Props) => {
+  const {t} = useTranslation();
+
   return (
     <div className="trending section">
       <div className="secContainer container">
         <div className="secHeading flex">
-          <h3 className="secTitle">Trending Near You</h3>
+          <h3 className="secTitle">{t("trendingNearYou")}</h3>
           <div className="navBtns flex">
             <BsArrowLeftShort className="icon leftIcon" />
             <BsArrowRightShort className="icon rightIcon" />
@@ -26,12 +29,12 @@ const Trending = (props: Props) => {
               <img src="assets/img/carModels/maserati-quattroporte-mavi.png" alt="carImage" />
             </div>
             <h5 className="carTitle">Used 2019 Audi S4 Premium Plus</h5>
-            <span className="miles">11457 Miles</span>
+            <span className="miles">{`11457 ${t("miles")}`}</span>
             <span className="AWD">AWD 4-Cylinder Turbo</span>
 
             <div className="price_seller flex">
               <span className="price">$41,200</span>
-              <span className="seller">Best Seller</span>
+              <span className="seller">{t("bestSeller")}</span>
             </div>
           </div>
 
@@ -40,12 +43,12 @@ const Trending = (props: Props) => {
               <img src="assets/img/carModels/mercedesc200-beyaz.png" alt="carImage" />
             </div>
             <h5 className="carTitle">Used 2019 Audi S4 Premium Plus</h5>
-            <span className="miles">11457 Miles</span>
+            <span className="miles">{`11457 ${t("miles")}`}</span>
             <span className="AWD">AWD 4-Cylinder Turbo</span>
 
             <div className="price_seller flex">
               <span className="price">$41,200</span>
-              <span className="seller">Best Seller</span>
+              <span className="seller">{t("bestSeller")}</span>
             </div>
           </div>
 
@@ -58,12 +61,12 @@ const Trending = (props: Props) => {
               <img src="assets/img/carModels/bmw320-kırmızı.png" alt="carImage" />
             </div>
             <h5 className="carTitle">Used 2019 Audi S4 Premium Plus</h5>
-            <span className="miles">11457 Miles</span>
+            <span className="miles">{`11457 ${t("miles")}`}</span>
             <span className="AWD">AWD 4-Cylinder Turbo</span>
 
             <div className="price_seller flex">
               <span className="price">$41,200</span>
-              <span className="seller">Best Seller</span>
+              <span className="seller">{t("bestSeller")}</span>
             </div>
           </div>
         </div>
