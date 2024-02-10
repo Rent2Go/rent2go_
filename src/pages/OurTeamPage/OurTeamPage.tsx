@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Footer } from "../../components";
-
+import { useTranslation } from "react-i18next";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./ourteampage.css"
@@ -8,6 +8,7 @@ import "./ourteampage.css"
 type Props = {};
 
 const OurTeamPage = (props: Props) => {
+    const {t} = useTranslation();
     return (
         <>
             <Navbar />
@@ -17,9 +18,9 @@ const OurTeamPage = (props: Props) => {
                 <div className="container">
 
                     <div className="section-title">
-                        <h2>Our Team</h2>
+                        <h2>{t("ourTeam")}</h2>
                         <div className="underline"></div>
-                        <p>Here are the luckiest team and members of Tobeto :)</p>
+                        <p>{t("hereAreTheLuckiestTeam")}</p>
                     </div>
 
                     <div className="row">
@@ -32,7 +33,7 @@ const OurTeamPage = (props: Props) => {
                                 <div className="member-info">
                                     <h4>Soner Şeylan</h4>
                                     <span>Full Stack Developer</span>
-                                    <p>He graduated from İstanbul Gelişim University,  Electrical-Electronics Engineering. He lives in İstanbul...</p>
+                                    <p>{t("aboutSoner")}</p>
                                 </div>
                                 <div className="social">
                                 <Link to="https://github.com/sonersyln" className="github" target="_blank">
@@ -53,7 +54,7 @@ const OurTeamPage = (props: Props) => {
                                 <div className="member-info">
                                     <h4>Feyza Karanfil Erat</h4>
                                     <span>Full Stack Developer</span>
-                                    <p>She graduated from Marmara University, Econometrics. She lives in Kocaeli...</p>
+                                    <p>{t("aboutFeyza")}</p>
                                 </div>
                                 <div className="social">
                                 <Link to="https://github.com/feyzaerat" className="github" target="_blank">
@@ -74,7 +75,7 @@ const OurTeamPage = (props: Props) => {
                                 <div className="member-info">
                                     <h4>Şeyhmus Erol</h4>
                                     <span>Full Stack Developer</span>
-                                    <p>He graduated from Aksaray University, department of M.I.S.. He lives in İstanbul...</p>
+                                    <p>{t("aboutSeyhmus")}</p>
                                 </div>
                                 <div className="social">
                                 <Link to="https://github.com/ShmsErl" className="github" target="_blank">
@@ -95,7 +96,7 @@ const OurTeamPage = (props: Props) => {
                                 <div className="member-info">
                                     <h4>Yağmur Çurku</h4>
                                     <span>Full Stack Developer</span>
-                                    <p>She graduated from Düzce University,  Industrial Engineer... She lives in İzmir...</p>
+                                    <p>{t("aboutYagmur")}</p>
                                 </div>
                                 <div className="social">
                                 <Link to="https://github.com/yagmurcurku" className="github" target="_blank">
