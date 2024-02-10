@@ -4,6 +4,7 @@ export interface UserAuthModel {
         firstname: string,
         phoneNumber: string,
         lastname: string,
+        email?:string,
     }
     role: string
 
