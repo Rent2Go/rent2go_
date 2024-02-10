@@ -3,12 +3,15 @@ import React, { useState } from "react";
 import { CarModel } from "../../models/responses/cars/GetCar";
 import { useDispatch } from "react-redux";
 import { removeFuelFilter, removeGearFilter, setFuelFilter, setGearFilter } from "../../store/slices/filterSlice";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   cars: CarModel[];
 };
 
 const GearTypeFilter = (props: Props) => {
+  const {t} = useTranslation();
+
   const [checkedStates, setCheckedStates] = useState<{ [key: string]: boolean }>({});
 
   const dispatch = useDispatch();
@@ -35,7 +38,7 @@ const GearTypeFilter = (props: Props) => {
   return (
     <div className="filterRow shadow-rounded-box">
       <div className="rowHead">
-        <h6>Fuel Type</h6>
+        <h6>{t("gearType")}</h6>
       </div>
       <div className="checkBoxRow">
         {uniqueGearTypes.map((gearType, index) => (
