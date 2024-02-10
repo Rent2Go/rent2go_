@@ -5,10 +5,12 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs, { Dayjs } from "dayjs";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCarData } from "../../store/slices/carSlice";
+import { useTranslation } from "react-i18next";
 
 type Props = {};
 
 const GetDateFilter = (props: Props) => {
+  const {t} = useTranslation();
 
   const { cars } = useSelector((state: any) => state.car);
 
@@ -22,7 +24,7 @@ const GetDateFilter = (props: Props) => {
 
   const handleStartDateChange = (newStartDate: Dayjs | null) => {
     if (newStartDate && newStartDate.isBefore(dayjs())) {
-      alert("The start date cannot be smaller than the current date!");
+      alert(t("theStartDateCannotBe"));
     }
     setSelectedStartDate(newStartDate);
   };
@@ -33,7 +35,7 @@ const GetDateFilter = (props: Props) => {
       selectedStartDate &&
       newEndDate.isBefore(selectedStartDate)
     ) {
-      alert("End date cannot be earlier than start date!");
+      alert(t("theEndDateCannotBe"));
     } else {
       setSelectedEndDate(newEndDate);
     }
@@ -56,14 +58,14 @@ const GetDateFilter = (props: Props) => {
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <div>
           <DatePicker
-            label="Start Date"
+            label={t("startDate")}
             value={selectedStartDate}
             onChange={handleStartDateChange}
           />
         </div>
         <div>
           <DatePicker
-            label="End Date"
+            label={t("endDate")}
             value={selectedEndDate}
             onChange={handleEndDateChange}
           />
