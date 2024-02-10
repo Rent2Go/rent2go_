@@ -71,7 +71,7 @@ const CarPage: React.FC<Props> = (props) => {
     }
   
     return passesFilters;
-  });
+  }); 
   
   const totalFilteredCars = filteredCars.length;
   const totalPages = Math.ceil(totalFilteredCars / itemsPerPage);

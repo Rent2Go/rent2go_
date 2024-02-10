@@ -20,7 +20,7 @@ const ListRental = (props: Props) => {
     return new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
   };
 
-  useEffect(() => {getRentals();})
+  useEffect(() => {getRentals()},[])
   return (
     <div className="booking container">
       <div className="secContainer">
