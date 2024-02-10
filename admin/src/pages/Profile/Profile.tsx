@@ -1,11 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./settings.css";
 import { Formik } from "formik";
 import { FormikInput } from "../../components";
 import Input from "antd/es/input/Input";
+import { useAuth } from "../../contexts/AuthContext";
+import UserService from "../../services/UserService";
+import { useSSR } from "react-i18next";
+import { UserModel } from "../../models/responses/users/GetUser";
 type Props = {};
 
 const Settings = (props: Props) => {
+ const auth =  useAuth()
+ const email = auth.authInformation.user.email|| '';
+ const [user,setUser] = useState<UserModel>();
+ console.log(user?.imageUrl);
+ 
+
+ const getUserByEmail = async(email:string)=>{
+
+  await UserService.getByEmail(email)
+  .then((res:any)=>{
+      setUser(res.data.data)
+  })
+ }
+
+ useEffect(() => {
+  getUserByEmail(email)
+ }, [email])
+ 
   const initialValues = () => {};
   const onSubmit = () => {};
   const validationSchema = () => {};
@@ -28,7 +50,7 @@ const Settings = (props: Props) => {
                       <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
                         <div className="imgDiv">
                           <img
-                            src="assets/images/profile.png"
+                            src={user?.imageUrl}
                             alt="profile-photo"
                           />
                         </div>

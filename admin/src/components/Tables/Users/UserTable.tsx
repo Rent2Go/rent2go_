@@ -10,11 +10,47 @@ import { FormCheck } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import { CiEdit } from "react-icons/ci";
 import { MdOutlineDeleteForever } from "react-icons/md";
+import { toast } from "react-toastify";
 
 type Props = {};
 
 const UserTable = (props: Props) => {
   const [users, setUsers] = useState<UserModel[]>([]);
+
+  const [checked, setChecked] = useState<boolean>();
+  const handleChange = (e: any, id: number) => {
+    const isActive = e.target.checked; // Doğru checked değerini almak için e.target.checked'i kullanın
+    setChecked(isActive);
+    handleActive(id, isActive);
+    window.location.reload();
+
+  };
+
+  const handleDelete = async (id: number) => {
+    var isConfirmed = window.confirm('Are you sure you want to delete?');
+    if (isConfirmed) {
+      await UserService.deleteUser(id)
+        .then(() => {
+          toast.success("Vehicle was successfully deleted")
+          window.location.reload();
+        })
+    }
+  };
+
+  const handleActive = async (id: number, checked: boolean) => {
+
+
+    await UserService.updateIsActive(id, checked)
+      .then((res) => {
+        toast.success(res.data.message)
+      })
+      .catch((err) => {
+        toast.error(err)
+      })
+  }
+
+
+
   const getUsers = async () => {
     try {
       const response = await UserService.getAll();
@@ -26,7 +62,7 @@ const UserTable = (props: Props) => {
 
   useEffect(() => {
     getUsers();
-  });
+  },[]);
   return (
     <div className="userTableCard shadow-rounded-box">
       <Table className="table table-rounded table-hover table-borderless">
@@ -47,7 +83,7 @@ const UserTable = (props: Props) => {
             <tr key={user.id}>
               <td>{user.id}</td>
               <td>
-                <img src="/assets/images/profile.png" alt="user-img" />
+                <img src={user.imageUrl} alt="user-img" />
               </td>
               <td>{user.name}</td>
               <td>{user.surname}</td>
