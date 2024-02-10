@@ -12,17 +12,20 @@ import { CiEdit } from "react-icons/ci";
 import { MdOutlineDeleteForever } from "react-icons/md";
 import { toast } from "react-toastify";
 
-type Props = {};
+type Props = {
+  user: UserModel
+};
 
 const UserTable = (props: Props) => {
-  const [users, setUsers] = useState<UserModel[]>([]);
 
-  const [checked, setChecked] = useState<boolean>();
+
+  const [checked, setChecked] = useState<boolean>(props.user.active);
+
   const handleChange = (e: any, id: number) => {
-    const isActive = e.target.checked; // Doğru checked değerini almak için e.target.checked'i kullanın
+    const isActive = e.target.checked;
     setChecked(isActive);
     handleActive(id, isActive);
-    window.location.reload();
+
 
   };
 
@@ -34,96 +37,77 @@ const UserTable = (props: Props) => {
           toast.success("Vehicle was successfully deleted")
           window.location.reload();
         })
+        .catch((err: any) => toast.error(err.data.response.message))
     }
   };
 
+
+  useEffect(() => {
+
+  }, [checked])
+
+
   const handleActive = async (id: number, checked: boolean) => {
-
-
     await UserService.updateIsActive(id, checked)
       .then((res) => {
         toast.success(res.data.message)
+       //window.location.reload();
       })
       .catch((err) => {
         toast.error(err)
       })
   }
-
-
-
-  const getUsers = async () => {
-    try {
-      const response = await UserService.getAll();
-      setUsers(response.data.data);
-    } catch (error) {
-      console.error("Error fetching users:", error);
-    }
-  };
-
-  useEffect(() => {
-    getUsers();
-  },[]);
   return (
-    <div className="userTableCard shadow-rounded-box">
-      <Table className="table table-rounded table-hover table-borderless">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Photo</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Mail Address</th>
-            <th>Phone Number</th>
-            <th>Status</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user: UserModel) => (
-            <tr key={user.id}>
-              <td>{user.id}</td>
-              <td>
-                <img src={user.imageUrl} alt="user-img" />
-              </td>
-              <td>{user.name}</td>
-              <td>{user.surname}</td>
-              <td>{user.email}</td>
-              <td>{user.phoneNumber}</td>
-              <td>
-                <Form>
-                  <Form.Check
-                    type="switch"
-                    id="custom-switch"
-                    label=""
-                    title="Active"
-                    className="warning"
-                    checked={true}
-                  />
-                </Form>
-              </td>
-              <td>
-                <div className="actionRow">
-                  <Link
-                    to={`/update-user/${user.id}`}
-                    className="btn btn-sm btn-update"
-                    title="Update"
-                  >
-                    <CiEdit />
-                  </Link>
-                  <Link
-                    to={`/delete-user/${user.id}`}
-                    className="btn btn-sm btn-delete"
-                    title="Delete"
-                  >
-                    <MdOutlineDeleteForever />
-                  </Link>
-                </div>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-    </div>
+    <React.Fragment>
+      <tbody>
+        <tr key={props.user.id}>
+          <td>{props.user.id}</td>
+          <td>
+            <img src={props.user.imageUrl} alt="user-img" />
+          </td>
+          <td>{props.user.name}</td>
+          <td>{props.user.surname}</td>
+          <td>{props.user.email}</td>
+          <td>{props.user.phoneNumber}</td>
+          <td>
+            <Form>
+              <Form.Check // prettier-ignore
+                type="switch"
+                id={`custom-switch-${props.user.id}`}
+                label=""
+                title="Active"
+                className="warning"
+                checked={checked}
+                onChange={(e) => handleChange(e, props.user.id)}
+              />
+
+
+            </Form>
+          </td>
+          <td>
+            <div className="actionRow">
+              <Link
+                to={`/update-user/${props.user.id}`}
+                className="btn btn-sm btn-update"
+                title="Update"
+              >
+                <CiEdit />
+              </Link>
+              <Link
+                to={`/users`}
+                className="btn btn-sm btn-delete"
+                title="Delete"
+                onClick={() => handleDelete(props.user.id)}
+              >
+                <MdOutlineDeleteForever />
+              </Link>
+            </div>
+          </td>
+        </tr>
+
+      </tbody>
+    </React.Fragment>
+
   );
 };
 

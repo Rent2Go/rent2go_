@@ -6,19 +6,43 @@ import { Link } from "react-router-dom";
 import { Table } from "react-bootstrap";
 import { BrandModel } from "../../models/responses/brands/GetBrand";
 import BrandService from "../../services/BrandService";
+import { object, string } from "yup";
+import { AddBrandRequest } from "../../models/requests/brands/AddBrandRequest";
+import { ToastContainer, toast } from "react-toastify";
 type Props = {};
 {
   /* Add Form */
 }
-const initialValues = () => {};
-const onSubmit = () => {};
 
-const Brands = (props: Props) => {
-  {
-    /* Brand List */
-  }
 
+
+const Brands = (props: Props) => {  
+  
   const [brandList, setBrandList] = useState<BrandModel[]>([]);
+  const [isSubmit, setIsSubmit] = useState<boolean>(false);
+
+  const addBrandValidationSchema  = object({
+    name: string()
+      .required("Brand Name field is required.")
+      .min(2, "Brand Name field must be at least 2 characters.")
+      .max(20, 'The field cannot exceed 20 characters.'),
+ 
+  })
+
+  const createBrand = async(addBrand:AddBrandRequest) => {
+    await BrandService.createBrand(addBrand)
+    .then((res) => {
+      toast.success(res.data.message)
+      setIsSubmit(true);
+    })
+    .catch((err) => {
+      toast.error(err.response.data.message)
+    })
+
+  }
+  const onSubmit = (values:AddBrandRequest) => {
+    createBrand(values);
+  };
 
   const getBrandList = async () => {
     try{
@@ -32,7 +56,7 @@ const Brands = (props: Props) => {
 
   useEffect(() => {
     getBrandList();
-  })
+  },[isSubmit])
   return (
     <div className="brands">
       <div className="titleContainer">
@@ -40,7 +64,7 @@ const Brands = (props: Props) => {
       </div>
       <div className="secContainer shadow-rounded-box ">
         <div className="formContainer">
-          <Formik initialValues={initialValues} onSubmit={onSubmit}>
+          <Formik initialValues={{name:''}} validationSchema={addBrandValidationSchema} validateOnBlur={true} onSubmit={onSubmit}>
             <Form className="form">
               <div className="row">
                 <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
@@ -84,7 +108,7 @@ const Brands = (props: Props) => {
               {brandList.map((brand: BrandModel) => (
                 <tr key={brand.id}>
                   <th>{brand.id}</th>
-                  <td>{brand.name}</td>
+                  <td>{brand.name.toUpperCase()}</td>
                 </tr>
               ))}
               
@@ -92,6 +116,7 @@ const Brands = (props: Props) => {
           </Table>
         </div>
       </div>
+      <ToastContainer position="bottom-center" />
     </div>
   );
 };

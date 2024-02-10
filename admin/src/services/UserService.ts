@@ -37,7 +37,7 @@ class UserService{
     }
 
     updateIsActive(id: number, isActive: boolean) {
-        return axiosInstance.patch<AddResponse>('users/isactive/' + id + "?isActive=" + isActive)
+        return axiosInstance.patch<AddResponse>('users/isactive/' + id + "?active=" + isActive)
     }
 
     deleteUser(id: any) {

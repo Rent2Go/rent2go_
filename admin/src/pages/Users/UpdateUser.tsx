@@ -7,6 +7,7 @@ import Dropzone from 'react-dropzone-uploader';
 import UserService from '../../services/UserService';
 import { UserModel } from '../../models/responses/users/GetUser';
 import { toast } from 'react-toastify';
+import   { object, ref, string } from "yup";
 import { UpdateUserRequest } from '../../models/requests/users/UpdateUserRequest';
 
 type Props = {}
@@ -54,6 +55,36 @@ const UpdateUser = (props: Props) => {
       })
 
   }
+
+  const updateUserValidationSchema  = object({
+    name: string()
+      .required("First Name field is required.")
+      .min(2, "First Name field must be at least 2 characters.")
+      .max(20, 'The field cannot exceed 20 characters.'),
+    surname: string()
+      .required("Last Name field is required.")
+      .min(2, "Last Name field must be at least 2 characters.")
+      .max(20, 'The field cannot exceed 20 characters.')
+    ,
+  
+    phoneNumber: string().required("Phone number is required.")
+      .matches(
+        /^05\d{9}$/,
+        "Phone number must be in the format 05xxxxxxxxx."
+      ),
+    email: string()
+      .required("Email field is required.")
+      .email("Invalid email format."),
+    password: string().required("Password field is required.")
+      .min(8, "Password must be at least 8 characters.")
+      .matches(/[a-z]/, "Password must include at least one lowercase letter.")
+      .matches(/[A-Z]/, "Password must include at least one uppercase letter.")
+      .matches(/\d/, "Password must include at least one number.")
+      .matches(/[!@#$%^&*()_+{}|:;<>,.?/~`]/, "Password must include at least one punctuation mark."),
+      confirmPassword: string().required("Password field is required.")
+      .oneOf([ref('password')], 'Passwords do not match')
+  });
+
 
 
 
@@ -116,7 +147,9 @@ const UpdateUser = (props: Props) => {
             password: user.password,
             confirmPassword: user.password,
             role: user.role,
-          }} onSubmit={onSubmit}>
+          }} onSubmit={onSubmit}
+          validationSchema={updateUserValidationSchema}
+          validateOnBlur={true}>
             <Form className="Form">
               <div className="row">
                 <div className="col-xl-6 col-l-6 col-md-12 col-sm-12 col-xs-12">

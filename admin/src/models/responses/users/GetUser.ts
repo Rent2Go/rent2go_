@@ -6,5 +6,6 @@ export interface UserModel {
     email: string;
     password: string;
     role: string;
+    active: boolean;
     imageUrl?: any;
   }
