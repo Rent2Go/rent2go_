@@ -8,9 +8,12 @@ import { FaLinkedin, FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
 import { Button } from 'react-bootstrap';
 import entry from '../ContactPage/entry.jpg';
 import Aos from "aos";
+import { useTranslation } from "react-i18next";
 
 
 const ContactPage = () => {
+  const {t} = useTranslation();
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -48,16 +51,16 @@ const ContactPage = () => {
       <div className='contact'>
         <div className='contact-entry'>
           <div className='entry-text'>
-            <h2 data-aos="fade-right">We are working with all our strength to provide you with trouble-free car rental service.</h2>
-            <p data-aos="fade-left">If you have a situation you would like to convey to us, please contact us using our communication channels or by filling out the form below.</p>
+            <h2 data-aos="fade-right">{t("weAreWorking")}</h2>
+            <p data-aos="fade-left">{t("ifYouHaveASituation")}</p>
           </div>
         </div>
         <div className='contact-form'>
-          <h1>Contact Us</h1>
+          <h1>{t("contactUs")}</h1>
           <div id='contact-container'>
             <div className='contact-info'>
-            <h4>Contact Information</h4>
-              <p>Call us, send us an e-mail or fill out the form and send a message.</p>
+            <h4>{t("contactInformation")}</h4>
+              <p>{t("callUsSendUsAnEmail")}</p>
               <div className='icon-text'>
                 <i className='icon' aria-hidden="true"><CiPhone /></i>
                 <Link to="tel:+902163314800" className='link2'>(0216) 331 48 00</Link>
@@ -90,33 +93,33 @@ const ContactPage = () => {
             <form onSubmit={handleSubmit}>
               <div className='col'>
                 <div className='form-group'>
-                  <label>First Name</label>
+                  <label>{t("firstName")}</label>
                   <input type='text' name='firstName' value={formData.firstName} onChange={handleChange}></input>
                 </div>
                 <div className='form-group'>
-                  <label>Last Name</label>
+                  <label>{t("lastName")}</label>
                   <input type='text' name='lastName' value={formData.lastName} onChange={handleChange}></input>
                 </div>
               </div>
               <div className='col'>
                 <div className='form-group'>
-                  <label>Email</label>
+                  <label>{t("email")}</label>
                   <input type='email' name='email' value={formData.email} onChange={handleChange}></input>
                 </div>
                 <div className='form-group'>
-                  <label>Phone</label>
+                  <label>{t("phone")}</label>
                   <input type='tel' name='phone' value={formData.phone} onChange={handleChange}></input>
                 </div>
               </div>
               <div className='col-2'>
                 <div className='form-group'>
-                  <label>Message</label>
+                  <label>{t("message")}</label>
                   <textarea name='message' value={formData.message} onChange={handleChange}></textarea>
                 </div>
               </div>
               <div className='col-2'>
                 <div className='form-group right'>
-                <Button type='submit' className='primary' data-aos="zoom-in">Send Message</Button>
+                <Button type='submit' className='primary' data-aos="zoom-in">{t("sendMessage")}</Button>
                 </div>
               </div>
             </form>

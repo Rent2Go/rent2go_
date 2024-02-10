@@ -2,6 +2,7 @@ import React from "react";
 import { CarModel } from "../../models/responses/cars/GetCar";
 import { BiTachometer, BiCylinder, BiSolidDollarCircle } from "react-icons/bi";
 import { IoIosColorPalette } from "react-icons/io";
+import { useTranslation } from "react-i18next";
 
 import { PiEngine } from "react-icons/pi";
 
@@ -13,6 +14,7 @@ type Props = {
 };
 
 const CarCards = (props: Props) => {
+  const {t} = useTranslation();
   return (
     <>
       {
@@ -58,7 +60,7 @@ const CarCards = (props: Props) => {
             </div>
             <div className="actionRow">
               <Link to={`/reservation/${props.car.id}`} className="btn text btnPrimary">
-                Make Reservation
+                {t("makeReservation")}
               </Link>
             </div>
           </div>

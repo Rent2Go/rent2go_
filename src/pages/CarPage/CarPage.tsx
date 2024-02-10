@@ -13,10 +13,12 @@ import Pagination from "@mui/material/Pagination";
 import { Stack } from "@mui/material";
 import { fetchCarData } from "../../store/slices/carSlice";
 import { AppDispatch } from "../../store/store";
+import { useTranslation } from "react-i18next";
 
 type Props = {};
 
 const CarPage: React.FC<Props> = (props) => {
+  const {t} = useTranslation();
   const dispatch = useDispatch<AppDispatch>();
   const { cars } = useSelector((state: any) => state.car);
   const filters = useSelector((state: any) => state.filters);
@@ -90,7 +92,7 @@ const CarPage: React.FC<Props> = (props) => {
               className="btn text btnPrimary"
               onClick={applyFilters}
             >
-              <FaSearch /> Search
+              <FaSearch /> {t("search")}
             </button>
             <div className="navBtns flex"></div>
           </div>
@@ -100,13 +102,13 @@ const CarPage: React.FC<Props> = (props) => {
             </div>
             <div className="carContainer grid">
               <div className="shadow-rounded-box searchDiv">
-                <label htmlFor="search">Search:</label>
+                <label htmlFor="search">{t("search")}:</label>
                 <input
                   name="search"
                   className="searchInput"
                   type="text"
                   onChange={(e)=> setSearchTerm(e.target.value)}
-                  placeholder="Search by Model, Brand, Color, Year, Fuel Type, Body Type and Gear Type...."
+                  placeholder={t("searchByModelBrand..")}
                 />
               </div>
 

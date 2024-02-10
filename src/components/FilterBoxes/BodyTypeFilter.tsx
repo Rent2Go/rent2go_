@@ -3,12 +3,15 @@ import { CFormCheck } from "@coreui/react";
 import { CarModel } from "../../models/responses/cars/GetCar";
 import { useDispatch, useSelector } from "react-redux";
 import { removeBodyFilter, setBodyFilter } from "../../store/slices/filterSlice";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   cars: CarModel[];
 };
 
 const BodyTypeFilter = (props: Props) => {
+  const {t} = useTranslation();
+
   const [checkedStates, setCheckedStates] = useState<{ [key: string]: boolean }>({});
 
   const { cars: allCars } = useSelector((state: any) => state.car);
@@ -37,7 +40,7 @@ const BodyTypeFilter = (props: Props) => {
   return (
     <div className="filterRow shadow-rounded-box">
       <div className="rowHead">
-        <h6>Body Type</h6>
+        <h6>{t("bodyType")}</h6>
       </div>
       <div className="checkBoxRow">
         {uniqueBodyTypes.map((bodyType: any, index: number) => (

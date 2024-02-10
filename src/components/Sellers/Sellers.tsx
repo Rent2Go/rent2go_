@@ -1,19 +1,19 @@
 import React from "react";
 import "./seller.css";
+import { useTranslation } from "react-i18next";
 
 
 type Props = {};
 
 const Sellers = (props: Props) => {
+  const {t} = useTranslation();
+
   return (
     <div className="sellers section">
         <div className="secHeading grid">
-          <h3 className="secTitle" data-aos="fade-up" data-aos-duration="1000">Explore top sellers in town</h3>
+          <h3 className="secTitle" data-aos="fade-up" data-aos-duration="1000">{t("exploreTopSellersInTown")}</h3>
 
-          <p data-aos="fade-up" data-aos-duration="1000">
-            Joseph Samuel Girard holds the Guiness World Record for being the
-            greatest salesman int the world
-          </p>
+          <p data-aos="fade-up" data-aos-duration="1000">{t("josephSamuelGirard")}</p>
         </div>
       <div className="secContainer container">
       
