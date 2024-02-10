@@ -14,13 +14,13 @@ const Search = (props: Props) => {
         <h3 className="title"  data-aos="fade-up-right" >{t("whichVehicleYouAreLookingFor")} </h3>
 
         <div className="searchDiv grid">
-          <input type="text" placeholder="Type"  data-aos="fade-right" />
-          <input type="number" placeholder="Year"  data-aos="fade-left" />
-          <input type="text" placeholder="Model"  data-aos="fade-right" />
-          <input type="number" placeholder="Price"  data-aos="fade-left" />
+          <input type="text" placeholder={t("type")}  data-aos="fade-right" />
+          <input type="number" placeholder={t("year")}  data-aos="fade-left" />
+          <input type="text" placeholder={t("model")}  data-aos="fade-right" />
+          <input type="number" placeholder={t("price")}  data-aos="fade-left" />
           <button className="btn primaryBtn flex"  data-aos="fade-up">
             <AiOutlineSearch className="icon" />
-            <span>Search</span>
+            <span>{t("search")}</span>
           </button>
         </div>
       </div>
