@@ -33,6 +33,7 @@ import {
   Brands,
 } from "../pages";
 import PrivateRoute from "../utils/PrivateRoute";
+import Models from "../pages/Models/Models";
 
 const Router = () => {
   return (
@@ -65,6 +66,7 @@ const Router = () => {
       <Route path="/settings" element={<Settings />} />
       <Route path="/mail-settings" element={<MailSettings />} />
       <Route path="/brands" element={<Brands />} />
+      <Route path="/models" element={<Models />} />
       <Route path="/colors" element={<Colors />} />
       <Route path="/discounts" element={<Discounts />} />
       <Route path="/dashboard" element={<Dashboard />} />
