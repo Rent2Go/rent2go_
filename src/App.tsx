@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { CarPage, HomePage, Login, Register, BrandPage, OurTeamPage, ContactPage, PrivacyPolicy, ReservationPage, CookiePolicy, TermsOfUse } from "./pages";
+import { CarPage, HomePage, Login, Register, BrandPage, OurTeamPage, ContactPage, PrivacyPolicy, ReservationPage, CookiePolicy, TermsOfUse, ProfilePage } from "./pages";
 
 import "./App.css";
 import { RentalModel } from "./models/responses/rentals/GetRental";
@@ -20,11 +20,12 @@ function App() {
           <Route path="/sign-in/reset-password" element={<ResetPassword />} />
           <Route path="/sign-in/change-password" element={<ChangePassword />} />
           <Route path="/sign-up" element={<Register />} />
+          <Route path="/profile" element={<Register />} />
           <Route path="/cars" element={<CarPage />} />
           <Route path="/brands" element={<BrandPage />} />
           <Route path="/our-team" element={<OurTeamPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/reservation/:id" element={<ReservationPage />} />
+          <Route path="/reservation/:id" element={<ProfilePage/>} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/terms-of-use" element={<TermsOfUse />} />
