@@ -1,7 +1,5 @@
-export interface SettingsModel {
+export interface AddSettingsRequest {
 
-
-	id: number;
 	title: string;
 	url: string;
 	logo: string;
@@ -12,4 +10,3 @@ export interface SettingsModel {
 	instagram: string;
 	github: string;
 }
-

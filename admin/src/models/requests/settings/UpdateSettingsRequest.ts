@@ -1,6 +1,5 @@
-export interface SettingsModel {
-
-
+export interface UpdateSettingsRequest {
+   
 	id: number;
 	title: string;
 	url: string;

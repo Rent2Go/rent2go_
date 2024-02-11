@@ -37,6 +37,11 @@ const sidebarLinks = [
       display: "Brands",
     },
     {
+      path: "/models",
+      icon: "ri-car-fill",
+      display: "Models",
+    },
+    {
       path: "/users",
       icon: "ri-user-fill",
       display: "Users",
@@ -61,6 +66,7 @@ const sidebarLinks = [
       icon: "ri-palette-fill",
       display: "Colors",
     },
+    
  
     
   ];
