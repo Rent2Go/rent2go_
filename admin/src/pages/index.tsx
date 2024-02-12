@@ -38,3 +38,6 @@ export {default as DetailUser} from "./Users/DetailUser"
 export {default as Brands} from "./Brands/Brands"
 export {default as Colors} from "./Colors/Colors"
 export {default as Discounts} from "./Discounts/Discounts"
+
+export {default as AddOurTeam} from "./OurTeam/AddOurTeam"
+export {default as ListOurTeam} from "./OurTeam/ListOurTeam"
