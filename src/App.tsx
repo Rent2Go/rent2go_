@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { CarPage, HomePage, Login, Register, BrandPage, OurTeamPage, ContactPage, PrivacyPolicy, ReservationPage, CookiePolicy, TermsOfUse } from "./pages";
 
@@ -9,9 +9,34 @@ import OverlayLoader from "./components/OverlayLoader/OverlayLoader";
 import ResetPassword from "./pages/ResetPasswordPage/ResetPassword";
 import SuccessPage from "./pages/messagepage/SuccessPage";
 import ChangePassword from "./pages/ChangePasswordPage/ChangePassword";
+import { useDispatch, useSelector } from "react-redux";
+import { setPageSettings } from "./store/slices/settingsSlice";
+import SettingsService from "./services/SettingsService";
+import {Helmet} from 'react-helmet'
 function App() {
+
+  const settings = useSelector((state:any) => state.settings.setting);
+  const dispatch = useDispatch();
+  const handleSetPageSettings = async() => {
+  const response =     await SettingsService.getById(1)
+    dispatch(setPageSettings(response.data.data));
+  };
+
+
+  useEffect(() => {
+    handleSetPageSettings()
+  }, [])
+  
+
+
+  if(!settings) return <div>asdasd</div>
+  
   return (
     <>
+    {/* <Helmet>
+      <title>{settings.title}</title>
+      <link rel="icon" href={ settings.logo}  />
+    </Helmet> */}
       <main>
       <OverlayLoader/>
         <Routes>

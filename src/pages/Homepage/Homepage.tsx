@@ -14,10 +14,13 @@ import {
 import Aos from "aos";
 import "aos/dist/aos.css";
 import "./homepage.css";
+import { Helmet } from "react-helmet";
+import { useSelector } from "react-redux";
 
 type Props = {};
 
 const Homepage = (props: Props) => {
+  const settings = useSelector((state:any)=> state.settings.setting);
   const {t} = useTranslation();
   useEffect(() => {
     if (i18n.isInitialized) {
@@ -30,6 +33,9 @@ const Homepage = (props: Props) => {
   }, []);
   return (
     <>
+    <Helmet>
+      <title>{settings.title} - HomePage </title>
+    </Helmet>
       <Navbar />
       <ScrollToTop />
       <div className="home">
