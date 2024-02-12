@@ -31,6 +31,8 @@ import {
   Colors,
   Discounts,
   Brands,
+  ListOurTeam,
+  AddOurTeam,
 } from "../pages";
 import PrivateRoute from "../utils/PrivateRoute";
 import Models from "../pages/Models/Models";
@@ -60,6 +62,8 @@ const Router = () => {
       <Route path="/rental-detail/:id" element={<DetailRental />} />
       <Route path="/users" element={<ListUser />} />
       <Route path="/add-user" element={<AddUser />} />
+      <Route path="/our-teams" element={<ListOurTeam />} />
+      <Route path="/add-our-teams" element={<AddOurTeam />} />
       <Route path="/update-user/:id" element={<UpdateUser />} />
       <Route path="/detail-user/:id" element={<DetailUser />} />
       <Route path="/profile" element={<Profile />} />
