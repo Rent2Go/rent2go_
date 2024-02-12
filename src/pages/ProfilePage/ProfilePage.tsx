@@ -3,6 +3,7 @@ import { Footer, Navbar } from '../../components'
 import { useParams } from 'react-router-dom'
 import AccountSettings from '../../components/UserProfile/AccountSettings/AccountSettings'
 import UserSidebar from '../../components/UserProfile/UserSidebar/UserSidebar'
+import './profilePage.css'
 
 
 
@@ -13,9 +14,8 @@ const ProfilePage = (props: Props) => {
   const {activepage} = useParams();
 
   return (
-    <>
+    <div className='userProfile'>
       <Navbar />
-      ProfilePage
       <div className='userProfileIn'>
         <div className='left'>
           <UserSidebar activepage={activepage} />
@@ -25,7 +25,7 @@ const ProfilePage = (props: Props) => {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   )
 }
 
