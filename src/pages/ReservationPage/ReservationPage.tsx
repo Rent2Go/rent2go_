@@ -6,11 +6,15 @@ import "./reservationPage.css";
 import { useParams } from "react-router-dom";
 import { CarModel } from "../../models/responses/cars/GetCar";
 import CarService from "../../services/CarService";
+import { useAuth } from "../../contexts/AuthContext";
 
 
 type Props = {};
 
 const ReservationPage: React.FC<Props> = (props) => {
+
+  const auth = useAuth()
+  console.log(auth.authInformation.user.email);
   const params = useParams<{ id: string }>();
   const [rentals, setRentals] = useState<CarModel | undefined>();
 
