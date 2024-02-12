@@ -1,0 +1,39 @@
+.ourTeams {
+    padding: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    .secContainer {
+        padding: 1rem 2rem;
+    }
+    .headingContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      
+      .addBtnContainer {
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        margin: 0.25rem 2.5rem;
+        a {
+          background: var(--primary-color);
+          color: var(--heading-color);
+          padding: 0.25rem 0.5rem;
+          font-weight: 500;
+          font-size: 14px;
+          
+        }
+      }
+    }
+    .titleContainer{
+      margin:0.5rem;
+      padding: 1rem 2rem;
+    }
+    .formContainer{
+      margin:0.5rem;
+      padding: 1rem 2rem;
+    }
+  }
+  

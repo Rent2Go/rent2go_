@@ -5,6 +5,7 @@ import {
   Footer,
   FilterCard,
   GetDateFilter,
+  Search,
 } from "../../components";
 import { useDispatch, useSelector } from "react-redux";
 import { FaSearch } from "react-icons/fa";
@@ -16,6 +17,7 @@ import { AppDispatch } from "../../store/store";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 
+
 type Props = {};
 
 const CarPage: React.FC<Props> = (props) => {
@@ -26,9 +28,7 @@ const CarPage: React.FC<Props> = (props) => {
   const filters = useSelector((state: any) => state.filters);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage =5;
-
-
+  const itemsPerPage = 5;
 
   useEffect(() => {
     dispatch(fetchCarData());
@@ -39,7 +39,6 @@ const CarPage: React.FC<Props> = (props) => {
   };
 
   const applyFilters = () => {
-
     setCurrentPage(1);
   };
 
@@ -47,36 +46,42 @@ const CarPage: React.FC<Props> = (props) => {
   const filteredCars = cars.filter((car: CarModel) => {
     // Filtreleme koşullarını başlangıçta true olarak ayarla
     let passesFilters = true;
-  
+
     // Filtreleme koşulları
     if (filters.body && filters.body.length > 0) {
-      passesFilters = passesFilters && filters.body.some((filter: string) => car.bodyType.includes(filter));
+      passesFilters =
+        passesFilters &&
+        filters.body.some((filter: string) => car.bodyType.includes(filter));
     }
-  
+
     if (filters.gear && filters.gear.length > 0) {
-      passesFilters = passesFilters && filters.gear.some((filter: string) => car.gearType.includes(filter));
+      passesFilters =
+        passesFilters &&
+        filters.gear.some((filter: string) => car.gearType.includes(filter));
     }
-  
+
     if (filters.fuel && filters.fuel.length > 0) {
-      passesFilters = passesFilters && filters.fuel.some((filter: string) => car.fuelType.includes(filter));
+      passesFilters =
+        passesFilters &&
+        filters.fuel.some((filter: string) => car.fuelType.includes(filter));
     }
     if (searchTerm) {
       const searchTermLower = searchTerm.toLowerCase();
-      passesFilters = passesFilters && (
-        car.color.name.toLowerCase().includes(searchTermLower) ||
-        car.model.brand.name.toLowerCase().includes(searchTermLower) ||
-        car.model.name.toLowerCase().includes(searchTermLower) ||
-        car.fuelType.toLowerCase().includes(searchTermLower) ||
-        car.gearType.toLowerCase().includes(searchTermLower) ||
-        car.enginePower.toLowerCase().includes(searchTermLower) ||
-        car.year.toString().includes(searchTerm) ||
-        car.bodyType.toLowerCase().includes(searchTermLower)
-      );
+      passesFilters =
+        passesFilters &&
+        (car.color.name.toLowerCase().includes(searchTermLower) ||
+          car.model.brand.name.toLowerCase().includes(searchTermLower) ||
+          car.model.name.toLowerCase().includes(searchTermLower) ||
+          car.fuelType.toLowerCase().includes(searchTermLower) ||
+          car.gearType.toLowerCase().includes(searchTermLower) ||
+          car.enginePower.toLowerCase().includes(searchTermLower) ||
+          car.year.toString().includes(searchTerm) ||
+          car.bodyType.toLowerCase().includes(searchTermLower));
     }
-  
+
     return passesFilters;
-  }); 
-  
+  });
+
   const totalFilteredCars = filteredCars.length;
   const totalPages = Math.ceil(totalFilteredCars / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -94,15 +99,8 @@ const CarPage: React.FC<Props> = (props) => {
       <Navbar />
       <div className="carPage container">
         <div className="secContainer ">
-          <div className="mt-5 secHeading flex shadow-rounded-box">
-            <GetDateFilter />
-            <button
-              className="btn text btnPrimary"
-              onClick={applyFilters}
-            >
-              <FaSearch /> {t("search")}
-            </button>
-            <div className="navBtns flex"></div>
+          <div className="secHeading shadow-rounded-box">
+            <Search />
           </div>
           <div className="secContent grid">
             <div className="filterContainer">
@@ -115,7 +113,7 @@ const CarPage: React.FC<Props> = (props) => {
                   name="search"
                   className="searchInput"
                   type="text"
-                  onChange={(e)=> setSearchTerm(e.target.value)}
+                  onChange={(e) => setSearchTerm(e.target.value)}
                   placeholder={t("searchByModelBrand..")}
                 />
               </div>

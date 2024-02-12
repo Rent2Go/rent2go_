@@ -20,6 +20,17 @@ export interface RentalModel {
     gearType: string;
     cylinderCount: string;
     enginePower: string;
+    model :{
+      id:number;
+      name:string;
+      brand:{
+        name:string
+      }
+    };color:{
+      name:string;
+      hexCode:string;
+    }
+
   };
   employee: {
     id: number;

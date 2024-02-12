@@ -37,6 +37,11 @@ const sidebarLinks = [
       display: "Brands",
     },
     {
+      path: "/models",
+      icon: "ri-caravan-line",
+      display: "Models",
+    },
+    {
       path: "/users",
       icon: "ri-user-fill",
       display: "Users",
@@ -52,6 +57,11 @@ const sidebarLinks = [
       display: "Employees",
     },
     {
+      path: "/our-teams",
+      icon: "ri-team-line",
+      display: "Our Teams",
+    },
+    {
       path: "/discounts",
       icon: "ri-discount-percent-fill",
       display: "Discounts",
@@ -61,6 +71,7 @@ const sidebarLinks = [
       icon: "ri-palette-fill",
       display: "Colors",
     },
+    
  
     
   ];
