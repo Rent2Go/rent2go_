@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-	baseURL: "https://api.rentogo.com.tr//api/",
+	baseURL: "https://api.rentogo.com.tr/api/",
 });
 
 axiosInstance.interceptors.request.use(request => {
