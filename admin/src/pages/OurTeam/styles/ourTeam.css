@@ -1,0 +1,36 @@
+.ourTeams {
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.ourTeams .secContainer {
+  padding: 1rem 2rem;
+}
+.ourTeams .headingContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.ourTeams .headingContainer .addBtnContainer {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin: 0.25rem 2.5rem;
+}
+.ourTeams .headingContainer .addBtnContainer a {
+  background: var(--primary-color);
+  color: var(--heading-color);
+  padding: 0.25rem 0.5rem;
+  font-weight: 500;
+  font-size: 14px;
+}
+.ourTeams .titleContainer {
+  margin: 0.5rem;
+  padding: 1rem 2rem;
+}
+.ourTeams .formContainer {
+  margin: 0.5rem;
+  padding: 1rem 2rem;
+}/*# sourceMappingURL=ourTeam.css.map */
