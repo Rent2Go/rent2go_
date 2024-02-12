@@ -7,7 +7,11 @@ interface UserSidebarProps {
 
 const UserSidebar: React.FC<UserSidebarProps> = ({activepage}) => {
   return (
-    <div>UserSidebar - active page: {activepage}</div>
+    <div className='userSidebar'>
+      {
+        activepage === 'account-settings' ? <div className='s1'></div> : <div className='s2'></div>
+      }
+    </div>
   )
 }
 

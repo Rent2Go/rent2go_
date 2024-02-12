@@ -21,7 +21,7 @@ const ProfilePage = (props: Props) => {
           <UserSidebar activepage={activepage} />
         </div>
         <div className='right'>
-          {activepage === 'accountsettings' && <AccountSettings />}
+          {activepage === 'account-settings' && <AccountSettings />}
         </div>
       </div>
       <Footer />
