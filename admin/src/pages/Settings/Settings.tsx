@@ -42,6 +42,7 @@ const Settings = (props: Props) => {
       await SettingsService.updateSettingsAndImage(formData)
       .then((res:any)=> {
         toast.success(res.data.message)
+        window.location.reload()
       })
       .catch((err)=> {
         toast.error(err.response.data.message)
@@ -52,6 +53,7 @@ const Settings = (props: Props) => {
     await SettingsService.updateSettings(values)
     .then((res:any)=> {
       toast.success(res.data.message)
+      window.location.reload()
     })
     .catch((err)=> {
       toast.error(err.response.data.message)
