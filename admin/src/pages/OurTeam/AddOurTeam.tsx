@@ -38,7 +38,7 @@ const AddOurTeam = (props: Props) => {
       .max(30, 'The field cannot exceed 30 characters.'),
     description: string()
       .required("Description field is required.")
-      .max(100, 'The field cannot exceed 20 characters.'),
+      .max(200, 'The field cannot exceed 200 characters.')
   });
 
   const getUploadParams = ({}) => {
@@ -46,14 +46,16 @@ const AddOurTeam = (props: Props) => {
   };
   const handleChangeStatus = ({ meta, file }: { meta: any, file: any }) => {
     if (meta.status === 'done') {
-      console.log('File Uploaded:', file);
+      if (formData.has("file")) {
+        formData.delete("file")
+      }  
       formData.append("file", file)
-
 
     } else if (meta.status === 'error') {
       console.error('An error occurred while uploading the file:', meta);
 
     }
+    
   };
 
   const handleSubmit = async (values:AddOurTeamRequest) => {
