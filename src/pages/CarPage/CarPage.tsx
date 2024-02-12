@@ -14,10 +14,12 @@ import { Stack } from "@mui/material";
 import { fetchCarData } from "../../store/slices/carSlice";
 import { AppDispatch } from "../../store/store";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 
 type Props = {};
 
 const CarPage: React.FC<Props> = (props) => {
+  const settings = useSelector((state:any)=> state.settings.setting);
   const {t} = useTranslation();
   const dispatch = useDispatch<AppDispatch>();
   const { cars } = useSelector((state: any) => state.car);
@@ -83,6 +85,12 @@ const CarPage: React.FC<Props> = (props) => {
 
   return (
     <>
+
+
+      <Helmet>
+      <title>{settings.title} - Car Page </title>
+      <meta name="description" content="car page description" />
+    </Helmet>
       <Navbar />
       <div className="carPage container">
         <div className="secContainer ">

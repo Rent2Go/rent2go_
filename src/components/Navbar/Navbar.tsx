@@ -15,10 +15,13 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import { toast } from "react-toastify";
 import TokenService from "../../services/TokenService";
+import { useSelector } from "react-redux";
+
 
 type Props = {};
 
 const Navbar = (props: Props) => {
+  const settings = useSelector((state:any)=> state.settings.setting)
   const { t, i18n } = useTranslation();
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -49,11 +52,12 @@ const Navbar = (props: Props) => {
   const authContext: any = useAuth();
   return (
     <>
+   
       <div className={header}>
         <div className="logoDiv">
           <Link to="/" className="link">
             <img
-              src="assets/img/logo.png"
+              src={settings.logo}
               alt="rent2go-logo"
               className="logo"
             />
@@ -92,9 +96,9 @@ const Navbar = (props: Props) => {
               <NavDropdown
                 className="textAction text"
                 title={
-                  <Link className="text btn" to="/profile">
+                  <>
                     {t("actions")}
-                  </Link>
+                 </>
                 }
                 id="basic-nav-dropdown"
               >
