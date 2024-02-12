@@ -1,6 +1,7 @@
 import React from 'react'
 import { Navbar,Footer } from '../../components'
 import "./legalPage.css"
+import { Link } from 'react-router-dom'
 
 
 
@@ -14,12 +15,12 @@ const PrivacyPolicy = (props: Props) => {
       <div className="secContainer">
         <div className="tabs_list">
           <ul>
-            <li><a href='#item-1'>Interpretation and Definitions</a></li>
-            <li><a href="#item-2">Collecting and Using Your Personal Data</a></li>
-            <li><a href="#item-3">Children's Privacy</a></li>
-            <li><a href="#item-4">Links to Other Websites</a></li>
-            <li><a href="#item-5">Changes to this Privacy Policy</a></li>
-            <li><a href="#item-6">Contact Us</a></li>
+            <li><Link to='#item-1'>Interpretation and Definitions</Link></li>
+            <li><Link to="#item-2">Collecting and Using Your Personal Data</Link></li>
+            <li><Link to="#item-3">Children's Privacy</Link></li>
+            <li><Link to="#item-4">Links to Other Websites</Link></li>
+            <li><Link to="#item-5">Changes to this Privacy Policy</Link></li>
+            <li><Link to="#item-6">Contact Us</Link></li>
           </ul>
         </div>
         <div className='tabs_content'>
