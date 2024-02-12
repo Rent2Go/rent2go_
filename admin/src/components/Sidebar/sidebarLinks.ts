@@ -38,7 +38,7 @@ const sidebarLinks = [
     },
     {
       path: "/models",
-      icon: "ri-car-fill",
+      icon: "ri-caravan-line",
       display: "Models",
     },
     {
@@ -55,6 +55,11 @@ const sidebarLinks = [
       path: "/employees",
       icon: "ri-team-fill",
       display: "Employees",
+    },
+    {
+      path: "/our-teams",
+      icon: "ri-team-line",
+      display: "Our Teams",
     },
     {
       path: "/discounts",
