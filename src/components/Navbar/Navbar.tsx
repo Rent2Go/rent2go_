@@ -92,27 +92,30 @@ const Navbar = (props: Props) => {
               <NavDropdown
                 className="textAction text"
                 title={
-                  <Link className="text btn" to="/profile">
+                  <>
                     {t("actions")}
-                  </Link>
+                  </>
                 }
                 id="basic-nav-dropdown"
               >
-                <Link className=" text textAction btn" to="/profile">
+                <div>
+                <> <Link className=" text textAction btn" to="/profile">
                   {" "}
                   {t("profile")}
-                </Link>
+                </Link></>
 
-                <Link className="  btn text textAction" to="/cart">
+                <><Link className="  btn text textAction" to="/cart">
                   Reservation
-                </Link>
-                <Link
+                </Link></>
+                <><Link
                   className="text textAction btn"
                   to="/sign-up"
                   onClick={logout}
                 >
                   {t("logout")}
-                </Link>
+                </Link></>
+                </div>
+                
               </NavDropdown>
             </>
           ) : (

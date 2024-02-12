@@ -25,7 +25,7 @@ function App() {
           <Route path="/brands" element={<BrandPage />} />
           <Route path="/our-team" element={<OurTeamPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/reservation/:id" element={<ProfilePage/>} />
+          <Route path="/reservation/:id" element={<ReservationPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/terms-of-use" element={<TermsOfUse />} />

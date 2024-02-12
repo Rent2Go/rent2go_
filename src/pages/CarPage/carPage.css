@@ -40,13 +40,28 @@
   padding: 4rem 8rem;
 }
 .carPage .secContainer {
+  padding: 0;
   justify-content: center;
 }
 .carPage .secContainer .secHeading {
   margin: 2rem 0;
   justify-content: center;
-  padding: 2rem 0;
-  gap: 2rem;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+.carPage .secContainer .secHeading .search {
+  width: 100%;
+}
+.carPage .secContainer .secHeading .search .searchDiv {
+  grid-template-columns: repeat(3, 1fr);
+}
+.carPage .secContainer .secHeading .search .searchDiv .primaryBtn {
+  transform: none !important;
+  opacity: 1 !important;
+}
+.carPage .secContainer .secHeading .search .title {
+  display: none;
 }
 .carPage .secContainer .secHeading .btnPrimary {
   background: var(--primaryColor);
