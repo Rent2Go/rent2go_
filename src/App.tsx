@@ -33,10 +33,10 @@ function App() {
   
   return (
     <>
-    {/* <Helmet>
+     <Helmet>
       <title>{settings.title}</title>
       <link rel="icon" href={ settings.logo}  />
-    </Helmet> */}
+    </Helmet> 
       <main>
       <OverlayLoader/>
         <Routes>
