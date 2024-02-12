@@ -84,13 +84,13 @@ const CookiePolicy = (props: Props) => {
                 </li>
                 <li>
                   <strong>Website</strong> refers to Rent2Go, accessible from{" "}
-                  <a
-                    href="https://rentogo.com.tr/"
+                  <Link
+                    to="https://rentogo.com.tr/"
                     rel="external nofollow noopener"
                     target="_blank"
                   >
                     https://rentogo.com.tr/
-                  </a>
+                  </Link>
                 </li>
                 <li id="item-2">
                   <strong>You</strong> means the individual accessing or using
