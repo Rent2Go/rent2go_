@@ -1,9 +1,13 @@
 import React from 'react'
-import './userSidebar.css'
+import './UserSidebar.css'
 
-const UserSidebar = () => {
+interface UserSidebarProps {
+  activepage: any
+}
+
+const UserSidebar: React.FC<UserSidebarProps> = ({activepage}) => {
   return (
-    <div>UserSidebar</div>
+    <div>UserSidebar - active page: {activepage}</div>
   )
 }
 

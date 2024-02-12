@@ -98,7 +98,7 @@ const Navbar = (props: Props) => {
                 }
                 id="basic-nav-dropdown"
               >
-                <Link className=" text textAction btn" to="/profile">
+                <Link className=" text textAction btn" to="/profile/accountsettings">
                   {" "}
                   {t("profile")}
                 </Link>
