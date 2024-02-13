@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom'
 import AccountSettings from '../../components/UserProfile/AccountSettings/AccountSettings'
 import UserSidebar from '../../components/UserProfile/UserSidebar/UserSidebar'
 import './profilePage.css'
+import YourReservations from '../../components/UserProfile/YourReservations/YourReservations'
+import ChangePassword from '../../components/UserProfile/ChangePassword/ChangePassword'
 
 
 
@@ -22,6 +24,8 @@ const ProfilePage = (props: Props) => {
         </div>
         <div className='right'>
           {activepage === 'account-settings' && <AccountSettings />}
+          {activepage === 'your-reservations' && <YourReservations />}
+          {activepage === 'change-password' && <ChangePassword />}
         </div>
       </div>
       <Footer />
