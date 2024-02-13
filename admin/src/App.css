@@ -1,155 +1,179 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: var(--font-family);
-  background: var(--body-bg);
-}
-
-ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-a {
-  text-decoration: none;
-  color: unset;
-}
-
-/*containers & layouts*/
-.main__layout {
-  margin-left: 270px;
-}
-
-.content {
-  margin-top: 100px;
-}
-
-.shadow-rounded-box {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  border-radius: 0.5rem;
-  background-color: var(--pureWhiteColor);
-  overflow-x: auto;
-}
-
-.titleContainer h2 {
-  color: var(--primary-color);
-  font-size: 28px;
-  font-weight: 500;
-}
-
-/*containers & layouts*/
-/*buttons*/
-.btnContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 1rem;
-  margin: 2rem 0;
-  padding-bottom: 2rem;
-}
-.btnContainer button,
-.btnContainer a {
-  border: none;
-  color: var(--pureWhiteColor);
-  font-size: 14px;
-  font-weight: 500;
-  padding: 0.5rem 2rem;
-  border-radius: 0.5rem;
-}
-.btnContainer .btn-submit {
-  background: var(--secondary-color);
-}
-.btnContainer .btn-cancel {
-  background: var(--text-alert);
-}
-.btnContainer .btn-delete {
-  background: var(--text-alert);
-}
-.btnContainer .btn-detail {
-  background: var(--focusColor);
-}
-.btnContainer .btn-update {
-  background: var(--card-02-bg);
-}
-
-.actionRow {
-  display: flex;
-  flex-direction: row;
-  gap: 0.25rem;
-}
-.actionRow button,
-.actionRow a {
-  border: none;
-  color: var(--pureWhiteColor);
-  font-size: 14px;
-  font-weight: 500;
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.5rem;
-}
-
-.btn-submit {
-  background: var(--secondary-color);
-}
-
-.btn-cancel {
-  background: var(--text-alert);
-}
-
-.btn-delete {
-  background: var(--text-alert);
-  color: var(--pureWhiteColor);
-}
-
-.btn-detail {
-  background: var(--focusColor);
-}
-
-.btn-update {
-  background: var(--primary-color);
-}
-
-.btn-delete-outline {
-  background: transparent;
-  border: none;
-  outline: none;
-  color: var(--text-alert);
-  font-size: 25px;
-  font-weight: 600;
-  padding: 0;
-  margin: 0;
-  height: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/*buttons*/
-/*tables*/
-table th,
-table td {
-  align-items: center;
-}
-table th {
-  color: var(--small-text-color) !important;
-  font-size: 14px;
-  font-weight: 600;
-}
-table td {
-  color: var(--small-text-color) !important;
-  font-size: 14px;
-  font-weight: 400;
-}
-
-label {
-  color: var(--small-text-color);
-  font-size: 14px;
-  font-weight: 500;
-}
-
-/*tables*/
-/*Responsive*/
-/*Responsive*//*# sourceMappingURL=App.css.map */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -ms-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-color) #e8e8e8;
+  }
+  
+  body {
+    font-family: var(--font-family);
+    background: var(--body-bg);
+  }
+  
+  
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: var(--whiteColor);
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--pureWhiteColor);
+    border-radius: 2px;
+    border: 0px solid var(--secondaryColor);
+    box-shadow: -3px 7px 16px -4px rgba(140, 131, 114, 0.83);
+  }
+  
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  a {
+    text-decoration: none;
+    color: unset;
+  }
+  
+  /*containers & layouts*/
+  .main__layout {
+    margin-left: 270px;
+  }
+  .content {
+    margin-top: 100px;
+  }
+  .shadow-rounded-box {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 0.5rem;
+    background-color: var(--pureWhiteColor);
+    overflow-x: auto;
+  }
+  .titleContainer {
+    h2 {
+      color: var(--primary-color);
+      font-size: 28px;
+      font-weight: 500;
+    }
+  }
+  /*containers & layouts*/
+  
+  /*buttons*/
+  .btnContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    padding-bottom: 2rem;
+    button,
+    a {
+      border: none;
+      color: var(--pureWhiteColor);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 0.5rem 2rem;
+      border-radius: 0.5rem;
+    }
+    .btn-submit {
+      background: var(--secondary-color);
+    }
+    .btn-cancel {
+      background: var(--text-alert);
+    }
+    .btn-delete {
+      background: var(--text-alert);
+    }
+    .btn-detail {
+      background: var(--focusColor);
+    }
+    .btn-update {
+      background: var(--card-02-bg);
+    }
+  }
+  .actionRow {
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+    button,
+    a {
+      border: none;
+      color: var(--pureWhiteColor);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.5rem;
+    }
+  }
+  .btn-submit {
+    background: var(--secondary-color);
+  }
+  .btn-cancel {
+    background: var(--text-alert);
+  }
+  .btn-delete {
+    background: var(--text-alert);
+    color: var(--pureWhiteColor);
+  }
+  .btn-detail {
+    background: var(--focusColor);
+  }
+  .btn-update {
+    background: var(--primary-color);
+  }
+  .btn-delete-outline {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-alert);
+    font-size: 25px;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /*buttons*/
+  
+  /*tables*/
+  table {
+    th,
+    td {
+      align-items: center;
+    }
+    th {
+      color: var(--small-text-color) !important;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    td {
+      color: var(--small-text-color) !important;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+  
+  label {
+    color: var(--small-text-color);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  /*tables*/
+  
+  
+  /*Responsive*/
+  
+  @media screen and(max-width:1440px) {
+    
+    
+  }
+  /*Responsive*/
+  
