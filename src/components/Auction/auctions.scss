@@ -1,157 +1,162 @@
 .auction {
-	.secContainer {
-		.secHeading {
-			justify-content: space-between;
-			padding: 1rem 0;
-			.navBtns {
-				gap: 0.5rem;
-				.icon {
-					padding: 3px 5px;
-					background: var(--secondaryColor);
-					border-radius: 3px;
-					font-size: 30px;
-					cursor: pointer;
-					&:hover {
-						background: var(--primaryColor);
-						color: var(--whiteColor);
-					}
-				}
-			}
-		}
-		.carContainer {
-			gap: 1.5rem;
-			.singleCar {
-				transition: 0.3s ease-in-out;
-				text-align: left;
-				padding: 1rem;
-				border-radius: 10px;
-				.imgDiv {
-					height: 200px;
-					width: 100%;
-					overflow: hidden;
-					border-radius: 10px;
-					border: 5px solid transparent;
-					img {
-						height: 100%;
-						width: 100%;
-						object-fit: contain;
-					}
-				}
-				.carTitle {
-					color: var(--blackColor);
-					font-size: 15px;
-					padding-top: 10px;
-				}
-				.miles {
-					color: var(--blackColor);
-					opacity: 0.7;
-					font-size: 14px;
-				}
-				.AWD {
-					padding: 1rem 0;
-					color: var(--blackColor);
-					font-weight: 600;
-					font-size: 15px;
-				}
-				.price_buyBtn {
-					gap: 1rem;
-					span {
-						padding: 0.5rem 1rem;
-						border-radius: 3px;
-						font-weight: 600;
-						border: 1px solid var(--primaryColor);
-						&.price {
-							background: var(--secondaryColor);
-							color: var(--primaryColor);
-						}
-						&.buyBtn {
-							background: var(--primaryColor);
-							color: var(--whiteColor);
-							cursor: pointer;
-							&:hover {
-								background: var(--secondaryColor);
-								color: var(--primaryColor);
-								cursor: pointer;
-							}
-						}
-					}
-				}
-				&:hover {
-					transform: translateY(-7px);
-					padding: 1rem;
-					background-color: var(--secondaryColor);
-				}
-			}
-			.singleCarActive {
-				padding: 1rem;
-				background: var(--pureWhiteColor);
-				.price_buyBtn {
-					span {
-						border: 2px solid var(--primaryColor);
-					}
-				}
-			}
-		}
-	}
+  .secContainer {
+    .secHeading {
+      justify-content: space-between;
+      padding: 1rem 0;
+      .navBtns {
+        gap: 0.5rem;
+        .icon {
+          padding: 3px 5px;
+          background: var(--secondaryColor);
+          border-radius: 3px;
+          font-size: 30px;
+          cursor: pointer;
+          &:hover {
+            background: var(--primaryColor);
+            color: var(--whiteColor);
+          }
+        }
+      }
+    }
+    .carContainer {
+      gap: 1.5rem;
+      .singleCar {
+        transition: 0.3s ease-in-out;
+        text-align: left;
+        padding: 1rem;
+        border-radius: 10px;
+		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+		background: var(--bs-dark-bg-subtle);
+	
+        .imgDiv {
+          padding: 0.5rem;
+          text-align: left;
+          height: 240px;
+          width: 100%;
+          overflow: hidden;
+          border-radius: 10px;
+          border: none;
+          margin: 0 auto;
+		  display: flex;
+		justify-content: center;
+
+          img {
+            height: 100%;
+            width: min-content;
+            object-fit: cover;
+          }
+        }
+        .carTitle {
+          color: var(--blackColor);
+          font-size: 15px;
+          padding-top: 10px;
+        }
+        .miles {
+          color: var(--blackColor);
+          opacity: 0.7;
+          font-size: 14px;
+        }
+        .AWD {
+          padding: 1rem 0;
+          color: var(--blackColor);
+          font-weight: 600;
+          font-size: 15px;
+        }
+        .price_buyBtn {
+          gap: 1rem;
+          span,button {
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            font-weight: 600;
+            border: 1px solid var(--primaryColor);
+            &.price {
+              background: var(--secondaryColor);
+              color: var(--primaryColor);
+            }
+            &.buyBtn {
+              background: var(--primaryColor);
+              color: var(--whiteColor);
+              cursor: pointer;
+              &:hover {
+                background: var(--secondaryColor);
+                color: var(--primaryColor);
+                cursor: pointer;
+              }
+            }
+          }
+        }
+        &:hover {
+          transform: translateY(-7px);
+          padding: 1rem;
+          background-color: var(--secondaryColor);
+        }
+      }
+      .singleCarActive {
+        padding: 1rem;
+        background: var(--pureWhiteColor);
+        .price_buyBtn {
+          span {
+            border: 2px solid var(--primaryColor);
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 520px) {
-	.auction{
-		.secContainer{
-			.secHeading{
-				margin-top:1rem;
-				.secTitle{
-					font-size: 23px;
-				}
-				.navBtns{
-					gap:.5rem;
-					.icon{
-                      font-size: 40px;
-					}
-				}
-			}
-			.carContainer{
-				grid-template-columns: repeat(2,1fr);
-				.singleCar{
-					.carTitle{
-						font-size: 18px;
-					}
-					.miles,.AWD{
-						font-size: 16px;
-					}
-					.price_buyBtn{
-						font-weight:600 ;
-						font-size: 13px;
-					}
-				}
-			}
-		}
-	}
-	
-	
+  .auction {
+    .secContainer {
+      .secHeading {
+        margin-top: 1rem;
+        .secTitle {
+          font-size: 23px;
+        }
+        .navBtns {
+          gap: 0.5rem;
+          .icon {
+            font-size: 40px;
+          }
+        }
+      }
+      .carContainer {
+        grid-template-columns: repeat(2, 1fr);
+        .singleCar {
+          .carTitle {
+            font-size: 18px;
+          }
+          .miles,
+          .AWD {
+            font-size: 16px;
+          }
+          .price_buyBtn {
+            font-weight: 600;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
 }
 @media screen and (min-width: 940px) {
-	.auction{
-		.secContainer{
-			.secHeading{
-				.secTitle{
-				  font-size: 28px;
-				}
-				.navBtns{
-					gap: 1rem;
-				}
-			}
-			.carContainer{
-				grid-template-columns: repeat(3,1fr);
-				.singleCar{
-					.price_buyBtn{
-						font-size: 11px;
-					}
-				}
-				
-			}
-		}
-	}
-	
+  .auction {
+    .secContainer {
+      .secHeading {
+        .secTitle {
+          font-size: 28px;
+        }
+        .navBtns {
+          gap: 1rem;
+        }
+      }
+      .carContainer {
+        grid-template-columns: repeat(3, 1fr);
+        .singleCar {
+          .price_buyBtn {
+            font-size: 11px;
+          }
+        }
+      }
+    }
+  }
 }
-

@@ -85,7 +85,7 @@ const Homepage = (props: Props) => {
       </div>
       <Trending />
       <Sellers />
-      <Auction />
+      <Auction handleScrollToSearch={handleScrollToSearch} />
       <Review />
       <Footer />
     </>
