@@ -35,7 +35,7 @@ const Settings = (props: Props) => {
     <div className="settings container">
       <div className="secContainer">
         <div className="titleContainer">
-          <h2>Settings</h2>
+          <h2>Profile</h2>
         </div>
         <p className="profile__desc">
           Update your photo and personal details here
@@ -49,10 +49,17 @@ const Settings = (props: Props) => {
                     <div className="row">
                       <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
                         <div className="imgDiv">
-                          <img
-                            src={user?.imageUrl}
-                            alt="profile-photo"
-                          />
+                        {user?.imageUrl ? (
+                <img
+                  src={`/assets/images/userImages/${user.imageUrl}`}
+                  alt="profile"
+                />
+              ) : (
+                <img
+                  src="/assets/images/userImages/user-default.jpg"
+                  alt="default-img"
+                />
+              )}
                         </div>
                       </div>
                     </div>
