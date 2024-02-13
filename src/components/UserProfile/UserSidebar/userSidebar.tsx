@@ -1,7 +1,7 @@
 import React from 'react'
 import './UserSidebar.css'
 import { VscAccount } from "react-icons/vsc";
-import { IoBagCheckOutline } from "react-icons/io5";
+import { IoBagCheckOutline, IoEyeOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 
 interface UserSidebarProps {
@@ -39,6 +39,22 @@ const UserSidebar: React.FC<UserSidebarProps> = ({activepage}) => {
           <div className='s1'>
             <IoBagCheckOutline className='img'/>
             <span>Your Reservations</span>
+          </div>
+        </Link>
+      }
+
+      {
+        activepage === 'change-password' 
+        ? 
+        <div className='s2'>
+          <IoEyeOutline className='img'/>
+          <span>Change Password</span>
+        </div> 
+        : 
+        <Link to="/profile/change-password">
+          <div className='s1'>
+            <IoEyeOutline className='img'/>
+            <span>Change Password</span>
           </div>
         </Link>
       }
