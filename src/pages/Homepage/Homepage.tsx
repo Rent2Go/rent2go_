@@ -13,6 +13,7 @@ import {
   Trending,
   ScrollToTop,
   Footer,
+  Specials,
 } from "../../components";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -74,7 +75,7 @@ const Homepage = (props: Props) => {
           </div>
           <div className="homeImage" data-aos="fade-down-right">
             <img
-              src="assets/img/carModels/toyota-corolla-beyaz.png"
+              src="assets/img/carModels/homeCar.png"
               alt="homeImage"
             />
           </div>
@@ -85,6 +86,7 @@ const Homepage = (props: Props) => {
       </div>
       <Trending />
       <Sellers />
+      <Specials/>
       <Auction handleScrollToSearch={handleScrollToSearch} />
       <Review />
       <Footer />
