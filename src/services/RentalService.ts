@@ -5,7 +5,7 @@ import axiosInstance from "../utils/axiosInsterceptors";
 
 class RentalService{
     getAll(){
-        return axiosInstance.get<GetAllRentalsModel>("rentals/getall")
+        return axiosInstance.get<GetAllRentalsModel>("rentals")
     }
 
     getById(id:number){
