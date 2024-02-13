@@ -7,6 +7,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import UserService from "../../services/UserService";
 import { useSSR } from "react-i18next";
 import { UserModel } from "../../models/responses/users/GetUser";
+import { Link } from "react-router-dom";
 type Props = {};
 
 const Settings = (props: Props) => {
@@ -68,19 +69,19 @@ const Settings = (props: Props) => {
                         <div className="btn-row">
                           <div className="">
                             <button
-                              className="btn-light btn btn-login btn-sm"
+                              className="btn-submit btn  btn-sm"
                               type="submit"
                             >
                               Submit
                             </button>
                           </div>
                           <div className="">
-                            <button
-                              className="btn-danger btn btn-login btn-sm"
-                              type="submit"
+                            <Link to="/"
+                              className="btn-cancel btn"
+                              type="button"
                             >
                               Cancel
-                            </button>
+                            </Link>
                           </div>
                         </div>
                       </div>
