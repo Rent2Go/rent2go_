@@ -24,6 +24,7 @@
                 img{
                     width: 120px;
                     object-fit: contain;
+                    filter: drop-shadow(2px 4px 6px black);
                 }
             }
             .titleContent{
@@ -31,12 +32,14 @@
                 p{
                     font-size: 20px;
                     font-weight: 500;
+                    
                 }
             }
             .descriptionContent{
                 p{
                     text-align: center;
                     font-size: 14px;
+                    filter: drop-shadow(2px 4px 6px black);
                     
                 }
             }

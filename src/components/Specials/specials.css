@@ -26,6 +26,7 @@
   width: 120px;
   -o-object-fit: contain;
      object-fit: contain;
+  filter: drop-shadow(2px 4px 6px black);
 }
 .specials .secContainer .secContent .singleContent .titleContent {
   padding: 1rem 0;
@@ -37,4 +38,5 @@
 .specials .secContainer .secContent .singleContent .descriptionContent p {
   text-align: center;
   font-size: 14px;
+  filter: drop-shadow(2px 4px 6px black);
 }/*# sourceMappingURL=specials.css.map */
