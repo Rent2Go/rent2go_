@@ -7,80 +7,98 @@ import SettingsService from "../../services/SettingsService";
 import { SettingsModel } from "../../models/responses/settings/SettingsModel";
 import { ToastContainer, toast } from "react-toastify";
 import { UpdateSettingsRequest } from "../../models/requests/settings/UpdateSettingsRequest";
+import Dropzone from "react-dropzone-uploader";
 
-import * as Yup from 'yup';
+
+import * as Yup from "yup";
 type Props = {};
 
+
+
 const Settings = (props: Props) => {
-
-
   const validationSchema = Yup.object().shape({
-    id: Yup.number().required('The settings id cannot be empty.').positive('Id must be a positive number.'),
-    title: Yup.string().required('Title cannot be empty.'),
-    url: Yup.string().required('URL cannot be empty.'),
+    id: Yup.number()
+      .required("The settings id cannot be empty.")
+      .positive("Id must be a positive number."),
+    title: Yup.string().required("Title cannot be empty."),
+    url: Yup.string().required("URL cannot be empty."),
     logo: Yup.string(),
-    phoneNumber: Yup.string().matches(/^\d{11}$/, 'Phone number must be a 11-digit number.'),
-    email: Yup.string().email('Invalid email format.'),
-    address: Yup.string().required('Address cannot be empty.'),
+    phoneNumber: Yup.string().matches(
+      /^\d{11}$/,
+      "Phone number must be a 11-digit number."
+    ),
+    email: Yup.string().email("Invalid email format."),
+    address: Yup.string().required("Address cannot be empty."),
     linkedin: Yup.string(),
     instagram: Yup.string(),
-    github: Yup.string().required('Github cannot be empty.'),
+    github: Yup.string().required("Github cannot be empty."),
   });
 
-    const [settings, setSettigs] = useState<SettingsModel>();
-    const formData = new FormData()
-    const handleImage = (e:any)=>{
-      formData.append("file",e.target.files[0])
-      console.log(formData.get("file"));
-      
-    }
-    
-  const onSubmit = async (values:UpdateSettingsRequest) => { 
+  const [settings, setSettigs] = useState<SettingsModel>();
+  const formData = new FormData();
+  const handleImage = (e: any) => {
+    formData.append("file", e.target.files[0]);
+    console.log(formData.get("file"));
+  };
 
-    if(formData.get("file") !==null){
-      formData.append('settings', new Blob([JSON.stringify(values)], { type: "application/json" }))
+  const onSubmit = async (values: UpdateSettingsRequest) => {
+    if (formData.get("file") !== null) {
+      formData.append(
+        "settings",
+        new Blob([JSON.stringify(values)], { type: "application/json" })
+      );
       await SettingsService.updateSettingsAndImage(formData)
-      .then((res:any)=> {
-        toast.success(res.data.message)
-        window.location.reload()
-      })
-      .catch((err)=> {
-        toast.error(err.response.data.message)
-        formData.delete("settings")
-      })
-  }
-   else {
-    await SettingsService.updateSettings(values)
-    .then((res:any)=> {
-      toast.success(res.data.message)
-      window.location.reload()
-    })
-    .catch((err)=> {
-      toast.error(err.response.data.message)
-      formData.delete("settings")
-    })
-  
-  }
-  
-  }
-  const getSetttings = async(id:number)=>{
+        .then((res: any) => {
+          toast.success(res.data.message);
+          window.location.reload();
+        })
+        .catch((err) => {
+          toast.error(err.response.data.message);
+          formData.delete("settings");
+        });
+    } else {
+      await SettingsService.updateSettings(values)
+        .then((res: any) => {
+          toast.success(res.data.message);
+          window.location.reload();
+        })
+        .catch((err) => {
+          toast.error(err.response.data.message);
+          formData.delete("settings");
+        });
+    }
+  };
 
+  
+const getUploadParams = ({}) => {
+  return { url: "https://httpbin.org/post" };
+};
+const handleChangeStatus = ({ meta, file }: { meta: any, file: any }) => {
+  if (meta.status === 'done') {
+    console.log('Dosya yüklendi:', file);
+    formData.append("file", file)
+
+
+  } else if (meta.status === 'error') {
+    console.error('Dosya yüklenirken bir hata oluştu:', meta);
+
+  }
+};
+
+  const getSetttings = async (id: number) => {
     await SettingsService.getById(id)
-    .then((res)=>{
+      .then((res) => {
         setSettigs(res.data.data);
-    })
-    .catch((err)=>{
-      toast.error(err.response.data.message)
+      })
+      .catch((err) => {
+        toast.error(err.response.data.message);
+      });
+  };
+  useEffect(() => {
+    getSetttings(1);
+  }, []);
 
-    })
-
-  }
-  useEffect(() =>{
-    getSetttings(1)
-  },[])
-
-
-  if(!settings) return <div>..loaidng</div>
+  if (!settings) return <div>..loaidng</div>;
   return (
     <div className="settings container">
       <div className="secContainer">
@@ -89,20 +107,23 @@ const Settings = (props: Props) => {
         </div>
         <div className="settings__wrapper">
           <div className="details__form">
-            <Formik initialValues={{
-              id: settings.id,
-              title: settings.title,
-              url: settings.url,
-              logo: settings.logo,
-              phoneNumber: settings.phoneNumber,
-              email: settings.email,
-              address: settings.address,
-              linkedin: settings.linkedin,
-              instagram: settings.instagram,
-              github:settings.github,
-         
-
-            }} validationSchema={validationSchema} validateOnBlur={true} onSubmit={onSubmit}>
+            <Formik
+              initialValues={{
+                id: settings.id,
+                title: settings.title,
+                url: settings.url,
+                logo: settings.logo,
+                phoneNumber: settings.phoneNumber,
+                email: settings.email,
+                address: settings.address,
+                linkedin: settings.linkedin,
+                instagram: settings.instagram,
+                github: settings.github,
+              }}
+              validationSchema={validationSchema}
+              validateOnBlur={true}
+              onSubmit={onSubmit}
+            >
               <Form className="form">
                 <div className="row">
                   <div className="col-xl-4 col-l-4 col-md-12 col-sm-12">
@@ -110,12 +131,13 @@ const Settings = (props: Props) => {
                       <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
                         <div className="imgDiv">
                           <img src={settings?.logo} alt="logo" />
+                          <img src={settings?.logo} alt="logo" />
                         </div>
                       </div>
                     </div>
                     <div className="row">
                       <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
-                      <div className="btn-row">
+                        <div className="btn-row">
                           <div className="">
                             <button
                               className="btn-light btn btn-login btn-sm"
@@ -133,7 +155,6 @@ const Settings = (props: Props) => {
                             </button>
                           </div>
                         </div>
-                        
                       </div>
                     </div>
                   </div>
@@ -141,11 +162,10 @@ const Settings = (props: Props) => {
                     <div className="row">
                       <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
                         <p>Logo</p>
-                        <Input
-                          name="imgUrl"
-                          className="form-control"
-                          type="file"
-                          onChange={(e)=>handleImage(e)}
+                        <Dropzone
+                          getUploadParams={getUploadParams}
+                          onChangeStatus={handleChangeStatus}
+                          accept="image/*"
                         />
                       </div>
                     </div>
@@ -223,7 +243,6 @@ const Settings = (props: Props) => {
                         />
                       </div>
                     </div>
-                   
                   </div>
                 </div>
               </Form>
