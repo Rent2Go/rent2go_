@@ -4,6 +4,197 @@
 .reservation .secContainer {
   background-color: var(--whiteColor);
 }
+.reservation .secContainer .imgContainer {
+  width: 1000px;
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 25%;
+  bottom: 25%;
+  text-align: center;
+  z-index: 0;
+  opacity: 15%;
+  padding: 1rem 2rem;
+}
+.reservation .secContainer .imgContainer img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 .reservation .secContainer .secHeading {
-  margin: 4rem 6rem;
+  margin: 2rem 0 0 6rem;
+  text-align: left;
+  color: var(--primaryColor);
+}
+.reservation .secContainer .secContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: space-around;
+  row-gap: 2rem;
+  z-index: 1;
+  padding: 4rem 6rem;
+}
+.reservation .secContainer .secContent .topContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid var(--textColor);
+}
+.reservation .secContainer .secContent .topContent .customerCard {
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0.5 1rem;
+}
+.reservation .secContainer .secContent .topContent .customerCard p {
+  display: grid;
+  grid-template-columns: 75px auto;
+  align-items: flex-start;
+  text-align: left;
+}
+.reservation .secContainer .secContent .topContent .dateContentContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 0.5 1rem;
+}
+.reservation .secContainer .secContent .middleContent {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.reservation .secContainer .secContent .middleContent .rentalCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.5 1rem;
+}
+.reservation .secContainer .secContent .middleContent .rentalCard p {
+  display: grid;
+  grid-template-columns: 75px auto;
+  align-items: flex-start;
+  text-align: left;
+}
+.reservation .secContainer .secContent .middleContent .priceCardContainer {
+  padding: 0.5 1rem;
+}
+.reservation .secContainer .secContent .middleContent .priceCardContainer .priceCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.reservation .secContainer .secContent .middleContent .priceCardContainer .priceCard p {
+  display: grid;
+  grid-template-columns: auto 125px;
+  align-items: flex-end;
+  text-align: right;
+}
+.reservation .secContainer .secContent .bottomContainer {
+  border-top: 1px solid var(--textColor);
+  margin: 0.5rem 0;
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.reservation .secContainer .secContent .bottomContainer .packageContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+.reservation .secContainer .secContent .bottomContainer .packageContainer p {
+  margin-bottom: 0;
+}
+.reservation .secContainer .secContent .bottomContainer .packageContainer div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+.reservation .secContainer .secContent .bottomContainer .packageContainer div span {
+  color: var(--textColor);
+  font-size: 14px;
+  line-height: 20px;
+}
+.reservation .secContainer .secContent .bottomContainer .packageContainer div span button {
+  border: none;
+  background: none;
+  outline: none;
+}
+.reservation .secContainer .secContent .bottomContainer .packageContainer div span button:hover {
+  color: var(--primaryColor);
+}
+.reservation .secContainer .secContent .bottomContainer .actionContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  color: var(--textColor);
+  font-size: 14px !important;
+}
+.reservation .secContainer .secContent .bottomContainer .actionContainer .radioContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+}
+.reservation .secContainer .secContent .bottomContainer .actionContainer .radioContainer p {
+  margin-bottom: 0;
+}
+.reservation .secContainer .secContent .bottomContainer .actionContainer .btnContainer {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+
+.css-dmmspl-MuiFormGroup-root {
+  flex-direction: row !important;
+}
+
+.css-ahj2mt-MuiTypography-root {
+  font-size: 14px !important;
+}
+
+.css-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-checked {
+  color: var(--primaryColor) !important;
+}
+
+#simple-popper-insurance,
+#simple-popper-assistance {
+  position: absolute;
+  top: 80% !important;
+  background: var(--pureWhiteColor);
+  width: 250px;
+  padding: 0.5rem;
+  height: auto;
+  border-radius: 0.5rem;
+  font-size: 13px;
+  color: var(--primaryColor);
+}
+
+#simple-popper-insurance {
+  left: 25% !important;
+}
+
+#simple-popper-assistance {
+  left: 30% !important;
 }/*# sourceMappingURL=reservationPage.css.map */
