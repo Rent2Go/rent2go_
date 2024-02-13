@@ -14,19 +14,31 @@ const CustomerCard = (props: Props) => {
   return (
     <div className="customerCard">
       <div className="rowInfo">
-        <label>Name : </label>
         <p>
-          {customer.authInformation.user.firstname}{" "}
-          {customer.authInformation.user.lastname}
+          <span>
+            <b>Name : </b>{" "}
+          </span>
+          <span>
+            {customer.authInformation.user.firstname}{" "}
+            {customer.authInformation.user.lastname}
+          </span>
         </p>
       </div>
       <div className="rowInfo">
-        <label>Mail : </label>
-        <p>{customer.authInformation.user.email}</p>
+        <p>
+          <span>
+            <b>Email : </b>{" "}
+          </span>
+          <span>{customer.authInformation.user.email}</span>
+        </p>
       </div>
       <div className="rowInfo">
-        <label>Phone : </label>
-        <p>{customer.authInformation.user.phoneNumber}</p>
+        <p>
+          <span>
+            <b>Phone : </b>{" "}
+          </span>
+          <span>{customer.authInformation.user.phoneNumber}</span>
+        </p>
       </div>
     </div>
   );

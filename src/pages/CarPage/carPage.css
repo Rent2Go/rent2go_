@@ -42,6 +42,7 @@
 .carPage .secContainer {
   padding: 0;
   justify-content: center;
+  margin: 2rem 1rem;
 }
 .carPage .secContainer .secHeading {
   margin: 2rem 0;
