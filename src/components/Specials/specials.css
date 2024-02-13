@@ -1,1 +1,40 @@
-/*# sourceMappingURL=specials.css.map */
+.specials .secContainer .secHeading {
+  justify-content: center;
+  padding: 1rem 0;
+}
+.specials .secContainer .secHeading h1 {
+  font-size: 35px;
+  letter-spacing: 0.05em;
+}
+.specials .secContainer .secContent {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+  align-items: end;
+}
+.specials .secContainer .secContent .singleContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.specials .secContainer .secContent .singleContent .imgContent {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+}
+.specials .secContainer .secContent .singleContent .imgContent img {
+  width: 120px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.specials .secContainer .secContent .singleContent .titleContent {
+  padding: 1rem 0;
+}
+.specials .secContainer .secContent .singleContent .titleContent p {
+  font-size: 20px;
+  font-weight: 500;
+}
+.specials .secContainer .secContent .singleContent .descriptionContent p {
+  text-align: center;
+  font-size: 14px;
+}/*# sourceMappingURL=specials.css.map */
