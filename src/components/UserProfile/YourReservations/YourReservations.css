@@ -1,1 +1,68 @@
-/*# sourceMappingURL=YourReservations.css.map */
+.yourReservations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px 10px;
+  position: relative;
+}
+.yourReservations .mainHead1 {
+  color: var(--primaryColor);
+  font-size: 30px;
+  font-weight: 350;
+  padding: 5px 20px;
+  margin-bottom: 35px;
+}
+.yourReservations .p1 {
+  color: var(--primaryColor);
+  line-height: initial;
+  margin-bottom: 0px;
+}
+.yourReservations table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--secondaryColor);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.yourReservations table tr {
+  border: 1px solid var(--secondaryColor);
+  border-radius: 5px;
+}
+.yourReservations table tr th {
+  padding: 10px 20px;
+  border: 1px solid var(--secondaryColor);
+  border-radius: 5px;
+  background-color: var(--backGroundColor2);
+  color: var(--primaryColor);
+}
+.yourReservations table tr td {
+  padding: 20px 20px;
+  border: 1px solid var(--secondaryColor);
+  border-radius: 5px;
+  color: var(--primaryColor);
+}
+.yourReservations table tr td p {
+  display: flex;
+  padding: 0px 0px;
+  align-items: center;
+  gap: 10px;
+}
+.yourReservations table tr td p span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-left: 1rem;
+}
+.yourReservations table tr td p .greendot {
+  width: 10px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: greenyellow;
+}
+.yourReservations table tr td p .reddot {
+  width: 10px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: red;
+}/*# sourceMappingURL=YourReservations.css.map */

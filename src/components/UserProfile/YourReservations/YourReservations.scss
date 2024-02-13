@@ -1,0 +1,69 @@
+.yourReservations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px 10px;
+    position: relative;
+    .mainHead1 {
+        color: var(--primaryColor);
+        font-size: 30px;
+        font-weight: 350;
+        padding: 5px 20px;
+        margin-bottom: 35px;
+    }
+    .p1{
+        color: var(--primaryColor);
+        line-height: initial;
+        margin-bottom: 0px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid var(--secondaryColor);
+        border-radius: 5px;
+        overflow: hidden;
+        tr {
+            border: 1px solid var(--secondaryColor);
+            border-radius: 5px;
+            th {
+                padding: 10px 20px;
+                border: 1px solid var(--secondaryColor);
+                border-radius: 5px;
+                background-color: var(--backGroundColor2);
+                color: var(--primaryColor);
+            }
+            td {
+                padding: 20px 20px;
+                border: 1px solid var(--secondaryColor);
+                border-radius: 5px;
+                color: var(--primaryColor);
+                p {
+                    display: flex;
+                    padding: 0px 0px;
+                    align-items: center;
+                    gap: 10px;
+                    span{
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        padding-left: 1rem;
+                    }
+                    .greendot {
+                        width: 10px;
+                        height: 15px;
+                        border-radius: 50%;
+                        background-color: greenyellow;
+                    }
+                    .reddot {
+                        width: 10px;
+                        height: 15px;
+                        border-radius: 50%;
+                        background-color: red;
+                    }
+                }
+            }
+        }
+    }
+
+}
