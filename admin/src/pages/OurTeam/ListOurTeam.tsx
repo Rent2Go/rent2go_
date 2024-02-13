@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { IoMdAdd } from "react-icons/io";
+import { IoMdAdd, IoMdTrash } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { OurTeamModel } from "../../models/responses/ourTeams/GetOurTeams";
 import OurTeamService from "../../services/OurTeamService";
@@ -43,7 +43,7 @@ const ListOurTeam = (props: Props) => {
           </div>
           <div className="addBtnContainer">
             <Link title="Add New OurTeam" to="/add-our-teams" className="btn btn-sm">
-              <IoMdAdd /> Add OurTeam
+              <IoMdAdd /> Add New
             </Link>
           </div>
         </div>
@@ -76,8 +76,8 @@ const ListOurTeam = (props: Props) => {
                       <td>{ourTeam.linkedin}</td>
                       <td>{ourTeam.description}</td>
                       <td>
-                        <button onClick={() => handleDelete(ourTeam.id)} title="Delete OurTeam" className="btn btn-sm">
-                          <IoMdAdd /> Delete
+                        <button onClick={() => handleDelete(ourTeam.id)} title="Delete OurTeam" className="btn btn-sm btn-delete">
+                          <IoMdTrash />
                         </button>
                       </td>
                     </tr>

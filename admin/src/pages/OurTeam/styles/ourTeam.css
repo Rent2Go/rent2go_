@@ -9,6 +9,12 @@
 .ourTeams .secContainer {
   padding: 1rem 2rem;
 }
+.ourTeams .secContainer .ourTeamContainer .ourTeamTableCard {
+  padding: 1rem;
+}
+.ourTeams .secContainer .ourTeamContainer .ourTeamTableCard table img {
+  border-radius: 0.5rem;
+}
 .ourTeams .headingContainer {
   display: flex;
   flex-direction: row;

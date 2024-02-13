@@ -7,6 +7,16 @@
     row-gap: 1rem;
     .secContainer {
         padding: 1rem 2rem;
+        .ourTeamContainer{
+          .ourTeamTableCard{
+            padding:1rem;
+            table{
+              img{
+                border-radius: 0.5rem;
+              }
+            }
+          }
+        }
     }
     .headingContainer {
       display: flex;
