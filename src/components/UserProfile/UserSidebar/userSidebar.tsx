@@ -2,6 +2,7 @@ import React from 'react'
 import './UserSidebar.css'
 import { VscAccount } from "react-icons/vsc";
 import { IoBagCheckOutline, IoEyeOutline } from "react-icons/io5";
+import { BsPersonVcard } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 
 interface UserSidebarProps {
@@ -55,6 +56,22 @@ const UserSidebar: React.FC<UserSidebarProps> = ({activepage}) => {
           <div className='s1'>
             <IoEyeOutline className='img'/>
             <span>Change Password</span>
+          </div>
+        </Link>
+      }
+
+      {
+        activepage === 'drivers-license' 
+        ? 
+        <div className='s2'>
+          <BsPersonVcard  className='img'/>
+          <span>Driver's License</span>
+        </div> 
+        : 
+        <Link to="/profile/drivers-license">
+          <div className='s1'>
+            <BsPersonVcard  className='img'/>
+            <span>Driver's License</span>
           </div>
         </Link>
       }
