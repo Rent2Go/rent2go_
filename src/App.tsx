@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setPageSettings } from "./store/slices/settingsSlice";
 import SettingsService from "./services/SettingsService";
 import {Helmet} from 'react-helmet'
+import PageNotFound from "./pages/NotFoundPage/PageNotFound";
 function App() {
 
   const settings = useSelector((state:any) => state.settings.setting);
@@ -55,6 +56,7 @@ function App() {
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/terms-of-use" element={<TermsOfUse />} />
           <Route path="/success" element={<SuccessPage />} />
+          <Route path="*" element={<PageNotFound />} />
         
         </Routes>
       </main>

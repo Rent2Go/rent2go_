@@ -1,0 +1,19 @@
+.notFound {
+  padding: 6rem;
+}
+.notFound .secContent {
+  padding: 1rem 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.notFound .secContent .descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.notFound .secContent .btnContainer a {
+  background: var(--secondaryColor);
+  color: var(--pureWhiteColor);
+}/*# sourceMappingURL=notFound.css.map */
