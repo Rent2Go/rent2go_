@@ -6,6 +6,7 @@ import UserSidebar from '../../components/UserProfile/UserSidebar/UserSidebar'
 import './profilePage.css'
 import YourReservations from '../../components/UserProfile/YourReservations/YourReservations'
 import ChangePassword from '../../components/UserProfile/ChangePassword/ChangePassword'
+import DriversLicense from '../../components/UserProfile/DriversLicense/DriversLicense'
 
 
 
@@ -26,6 +27,7 @@ const ProfilePage = (props: Props) => {
           {activepage === 'account-settings' && <AccountSettings />}
           {activepage === 'your-reservations' && <YourReservations />}
           {activepage === 'change-password' && <ChangePassword />}
+          {activepage === 'drivers-license' && <DriversLicense />}
         </div>
       </div>
       <Footer />
