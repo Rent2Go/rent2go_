@@ -24,9 +24,9 @@ const Review = (props: Props) => {
         <div className="reviewContainer grid">
           <div className="singleReview grid">
             <div className="imgDiv">
-              <img src="assets/img/carModels/1967-Chevrolet-Impalasiyah.png" alt="reviewImg" />
+              <img src="assets/img/carModels/minicooper-s-mavi.png" alt="reviewImg" />
             </div>
-            <h5 className="reviewTitle">1967 Impala</h5>
+            <h5 className="reviewTitle">MINI Cooper S 2012</h5>
             <span className="desc">{t("goodCarsAre")}</span>
             <div className="reviewerDiv flex">
               <div className="leftDiv flex">
@@ -48,7 +48,7 @@ const Review = (props: Props) => {
             <div className="imgDiv">
               <img src="assets/img/carModels/porche-911gt3-beyaz.png" alt="reviewImg" />
             </div>
-            <h5 className="reviewTitle">2023 Porsche</h5>
+            <h5 className="reviewTitle">Porcshe 911 GT3 2022</h5>
             <span className="desc">{t("goodCarsAre")}</span>
             <div className="reviewerDiv flex">
               <div className="leftDiv flex">
@@ -70,7 +70,7 @@ const Review = (props: Props) => {
             <div className="imgDiv">
               <img src="assets/img/carModels/bmw320-kırmızı.png" alt="reviewImg" />
             </div>
-            <h5 className="reviewTitle">2023 BMW</h5>
+            <h5 className="reviewTitle">BMW 320i 2020</h5>
             <span className="desc">{t("goodCarsAre")}</span>
             <div className="reviewerDiv flex">
               <div className="leftDiv flex">
@@ -91,14 +91,14 @@ const Review = (props: Props) => {
 
           <div className="singleReview grid">
             <div className="imgDiv">
-              <img src="assets/img/carModels/chevrolet-cruze-beyaz.png" alt="reviewImg" />
+              <img src="assets/img/carModels/volkswagen-beetle-beyaz.png" alt="reviewImg" />
             </div>
-            <h5 className="reviewTitle">2018 Cruze</h5>
+            <h5 className="reviewTitle">Volkswagen Beetle 2014</h5>
             <span className="desc">{t("goodCarsAre")}</span>
             <div className="reviewerDiv flex">
               <div className="leftDiv flex">
                 <div className="reviewerImage">
-                  <img src="assets/img/userImages/feyza.jpeg" alt="reviewerImage" />
+                  <img src="assets/img/userImages/feyza.jpg" alt="reviewerImage" />
                 </div>
                 <div className="aboutReviewer">
                   <span className="name">Feyza Karanfil Erat</span>
