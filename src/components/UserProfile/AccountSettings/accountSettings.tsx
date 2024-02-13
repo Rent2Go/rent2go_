@@ -11,6 +11,10 @@ const AccountSettings = () => {
           <input type='text' name='name' id='name' />
         </div>
         <div className='form-group'>
+          <label htmlFor='name'>Surname <span>*</span></label>
+          <input type='text' name='surname' id='surname' />
+        </div>
+        <div className='form-group'>
           <label htmlFor='name'>Phone <span>*</span></label>
           <input type='text' name='phone' id='phone' />
         </div>
