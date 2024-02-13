@@ -17,6 +17,7 @@ const ListUser = (props: Props) => {
     try {
       const response = await UserService.getAll();
       setUsers(response.data.data);
+      console.log(response.data.data);
     } catch (error) {
       console.error("Error fetching users:", error);
     }
