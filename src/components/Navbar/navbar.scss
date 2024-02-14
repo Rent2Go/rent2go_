@@ -8,24 +8,40 @@
   box-shadow: 0 2px 5px rgb(119 113 113);
   z-index: 1000;
   .signUp {
-    align-items: flex-start;
-    .languageBtnContainer {
+    align-items: center;
+    .languageDropdown {
       justify-content: center;
       display: flex;
       flex-direction: row;
-      gap: 5px;
-      .langButton {
-        background: transparent;
-        width: 24px;
-        height: 16px;
-        border: none;
-        border-radius: 0.15rem;
-        outline: none;
-        margin: 0;
-        padding: 0;
+      gap: 2px;
+      width: 60px;
+      border-radius: 0.15rem;
+      &:hover {
+        background: var(--secondaryColor);
+        color: var(--whiteColor);
+        transition: 0.3s ease;
         svg {
-          width: 24px;
-          border-radius: 0.15rem;
+          color: var(--whiteColor);
+        }
+      }
+      svg {
+        width: 24px;
+        height: auto;
+        color: var(--primaryColor);
+      }
+      .dropdown-menu {
+        width: 50px !important;
+        transform: translate(88px, -5px) !important;
+        padding: 0 0;
+        margin: 3rem -1.5rem;
+        width: 10px;
+        a {
+          background-color: var(--secondaryColor);
+          color: var(--pureWhiteColor);
+          &:hover {
+            background-color: var(--pureWhiteColor);
+            color: var(--primaryColor);
+          }
         }
       }
     }
@@ -46,6 +62,7 @@
 
   .text {
     margin: 0.5rem 0.25rem;
+    width: 190px;
     .icon {
       margin-right: 0.5rem;
     }
@@ -107,27 +124,28 @@
   }
 }
 .signUp {
- 
   gap: 0.5rem;
   .textAction {
-    padding: 3px 10px;
-    background: var(--primaryColor);
-    border-radius: 3px;
-    color: var(--whiteColor);
+    background: transparent;
+    color: var(--primaryColor);
     cursor: pointer;
     font-size: 14px;
     width: 120px;
     text-align: left;
     &:hover {
       background: var(--secondaryColor);
-      color: var(--blackColor);
+      color: var(--whiteColor);
+    }
+    svg {
+      width: 24px;
+      height: auto;
     }
   }
   .text {
     padding: 3px 10px;
-    background: var(--primaryColor);
+
     border-radius: 3px;
-    color: var(--whiteColor);
+
     cursor: pointer;
     font-size: 14px;
     text-align: left;
@@ -137,7 +155,7 @@
     }
   }
   .dropdown {
-    width: 150px;
+    width: 60px;
     padding: 6px 4px;
     text-align: center;
   }
@@ -180,12 +198,16 @@
       }
     }
     .signUp {
-      .languageBtnContainer{
+      .languageBtnContainer {
         padding: 0;
       }
       .text {
         padding: 6px;
         font-size: 16px;
+        color: var(--primaryColor);
+        &:hover {
+          color: var(--pureWhiteColor);
+        }
       }
 
       .toggleNavbarIcon {
@@ -200,7 +222,7 @@
 @media screen and (min-width: 770px) {
   .header {
     .navbar {
-      .languageBtnContainer{
+      .languageBtnContainer {
         padding: 0.25rem;
       }
       .closeIcon {

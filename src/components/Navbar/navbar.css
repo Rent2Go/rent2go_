@@ -9,27 +9,43 @@
   z-index: 1000;
 }
 .header .signUp {
-  align-items: flex-start;
+  align-items: center;
 }
-.header .signUp .languageBtnContainer {
+.header .signUp .languageDropdown {
   justify-content: center;
   display: flex;
   flex-direction: row;
-  gap: 5px;
-}
-.header .signUp .languageBtnContainer .langButton {
-  background: transparent;
-  width: 24px;
-  height: 16px;
-  border: none;
+  gap: 2px;
+  width: 60px;
   border-radius: 0.15rem;
-  outline: none;
-  margin: 0;
-  padding: 0;
 }
-.header .signUp .languageBtnContainer .langButton svg {
+.header .signUp .languageDropdown:hover {
+  background: var(--secondaryColor);
+  color: var(--whiteColor);
+  transition: 0.3s ease;
+}
+.header .signUp .languageDropdown:hover svg {
+  color: var(--whiteColor);
+}
+.header .signUp .languageDropdown svg {
   width: 24px;
-  border-radius: 0.15rem;
+  height: auto;
+  color: var(--primaryColor);
+}
+.header .signUp .languageDropdown .dropdown-menu {
+  width: 50px !important;
+  transform: translate(88px, -5px) !important;
+  padding: 0 0;
+  margin: 3rem -1.5rem;
+  width: 10px;
+}
+.header .signUp .languageDropdown .dropdown-menu a {
+  background-color: var(--secondaryColor);
+  color: var(--pureWhiteColor);
+}
+.header .signUp .languageDropdown .dropdown-menu a:hover {
+  background-color: var(--pureWhiteColor);
+  color: var(--primaryColor);
 }
 
 .logoDiv .logo {
@@ -45,6 +61,7 @@
 }
 .dropdown-menu .text {
   margin: 0.5rem 0.25rem;
+  width: 190px;
 }
 .dropdown-menu .text .icon {
   margin-right: 0.5rem;
@@ -108,10 +125,8 @@
   gap: 0.5rem;
 }
 .signUp .textAction {
-  padding: 3px 10px;
-  background: var(--primaryColor);
-  border-radius: 3px;
-  color: var(--whiteColor);
+  background: transparent;
+  color: var(--primaryColor);
   cursor: pointer;
   font-size: 14px;
   width: 120px;
@@ -119,13 +134,15 @@
 }
 .signUp .textAction:hover {
   background: var(--secondaryColor);
-  color: var(--blackColor);
+  color: var(--whiteColor);
+}
+.signUp .textAction svg {
+  width: 24px;
+  height: auto;
 }
 .signUp .text {
   padding: 3px 10px;
-  background: var(--primaryColor);
   border-radius: 3px;
-  color: var(--whiteColor);
   cursor: pointer;
   font-size: 14px;
   text-align: left;
@@ -135,7 +152,7 @@
   color: var(--blackColor);
 }
 .signUp .dropdown {
-  width: 150px;
+  width: 60px;
   padding: 6px 4px;
   text-align: center;
 }
@@ -179,6 +196,10 @@
   .header .signUp .text {
     padding: 6px;
     font-size: 16px;
+    color: var(--primaryColor);
+  }
+  .header .signUp .text:hover {
+    color: var(--pureWhiteColor);
   }
   .header .signUp .toggleNavbarIcon {
     font-size: 30px;

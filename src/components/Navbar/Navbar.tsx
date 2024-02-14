@@ -9,6 +9,8 @@ import Image from "react-bootstrap/Image";
 import { FaUserCircle } from "react-icons/fa";
 import { IoMdLogIn, IoMdLogOut } from "react-icons/io";
 import Nav from "react-bootstrap/Nav";
+import { MdLanguage } from "react-icons/md";
+import { GiCarKey } from "react-icons/gi";
 
 import "./navbar.css";
 import { Link } from "react-router-dom";
@@ -17,11 +19,10 @@ import { toast } from "react-toastify";
 import TokenService from "../../services/TokenService";
 import { useSelector } from "react-redux";
 
-
 type Props = {};
 
 const Navbar = (props: Props) => {
-  const settings = useSelector((state:any)=> state.settings.setting)
+  const settings = useSelector((state: any) => state.settings.setting);
   const { t, i18n } = useTranslation();
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -52,15 +53,10 @@ const Navbar = (props: Props) => {
   const authContext: any = useAuth();
   return (
     <>
-   
       <div className={header}>
         <div className="logoDiv">
           <Link to="/" className="link">
-            <img
-              src={settings.logo}
-              alt="rent2go-logo"
-              className="logo"
-            />
+            <img src={settings.logo} alt="rent2go-logo" className="logo" />
           </Link>
         </div>
         <div className={navbar}>
@@ -95,11 +91,7 @@ const Navbar = (props: Props) => {
             <>
               <NavDropdown
                 className="textAction text"
-                title={
-                  <>
-                    {t("actions")}
-                 </>
-                }
+                title={<GiCarKey />}
                 id="basic-nav-dropdown"
               >
                 <Link className=" text textAction btn" to="/profile">
@@ -126,26 +118,27 @@ const Navbar = (props: Props) => {
               </Link>
             </>
           )}
-          <div className="languageBtnContainer">
-            <button
-              name="en"
-              type="button"
-              className="langButton"
+          <NavDropdown
+            className="languageDropdown"
+            title={<MdLanguage />}
+            id="basic-nav-dropdown"
+          >
+            <NavDropdown.Item
+              className="lang-item"
+              eventKey="en"
               onClick={() => changeLanguage("en")}
             >
-              {" "}
-              <US title="English" />
-            </button>
-            <button
-              name="tr"
-              type="button"
-              className="langButton"
+              EN
+            </NavDropdown.Item>
+            <NavDropdown.Item
+              className="lang-item"
+              eventKey="tr"
               onClick={() => changeLanguage("tr")}
             >
-              {" "}
-              <TR title="Turkish" />
-            </button>
-          </div>
+              TR
+            </NavDropdown.Item>
+          </NavDropdown>
+
           <IoIosMenu className="icon toggleNavbarIcon" onClick={showNavbar} />
         </div>
       </div>
