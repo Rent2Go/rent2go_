@@ -97,5 +97,9 @@
   "carModel": "Car Model",
   "status": "Status",
   "inUse": "In Use",
-  "delivered": "Delivered"
+  "delivered": "Delivered",
+  "oldPassword": "Old Password",
+  "newPassword": "New Password",
+  "passwordConfirm": "Password Confirm",
+  "saveNewPassword": "Save New Password"
 }

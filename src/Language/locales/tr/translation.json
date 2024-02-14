@@ -98,5 +98,9 @@
   "carModel": "Araç Modeli",
   "status": "Durum",
   "inUse": "Kullanımda",
-  "delivered": "Teslim Edilmiş"
+  "delivered": "Teslim Edilmiş",
+  "oldPassword": "Eski Şifre",
+  "newPassword": "Yeni Şifre",
+  "passwordConfirm": "Şifreyi Onayla",
+  "saveNewPassword": "Yeni Şifreyi Kaydet"
 }
