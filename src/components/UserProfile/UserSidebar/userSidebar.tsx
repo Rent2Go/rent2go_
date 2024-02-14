@@ -3,6 +3,7 @@ import './UserSidebar.css'
 import { VscAccount } from "react-icons/vsc";
 import { IoBagCheckOutline, IoEyeOutline } from "react-icons/io5";
 import { BsPersonVcard } from "react-icons/bs";
+import { BsPinMap } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 
 interface UserSidebarProps {
@@ -24,6 +25,22 @@ const UserSidebar: React.FC<UserSidebarProps> = ({activepage}) => {
           <div className='s1'>
             <VscAccount className='img'/>
             <span>Account Settings</span>
+          </div>
+        </Link>
+      }
+
+      {
+        activepage === 'location-settings' 
+        ? 
+        <div className='s2'>
+          <BsPinMap  className='img'/>
+          <span>Location Settings</span>
+        </div> 
+        : 
+        <Link to="/profile/location-settings">
+          <div className='s1'>
+            <BsPinMap  className='img'/>
+            <span>Location Settings</span>
           </div>
         </Link>
       }
@@ -75,6 +92,8 @@ const UserSidebar: React.FC<UserSidebarProps> = ({activepage}) => {
           </div>
         </Link>
       }
+
+      
 
     </div>
   )
