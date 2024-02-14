@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 import './YourReservations.css'
 import { RentalModel } from '../../../models/responses/rentals/GetRental';
 import RentalService from '../../../services/RentalService';
+import { useTranslation } from "react-i18next";
 
 
 const YourReservations = () => {
+  const { t } = useTranslation();
 
 
   const [rentals, setRentals] = useState<RentalModel[]>([]);
@@ -22,16 +24,16 @@ const YourReservations = () => {
 
   return (
     <div className='yourReservations'>
-      <h2 className='mainHead1'>Your Reservations</h2>
+      <h2 className='mainHead1'>{t("yourReservations")}</h2>
       <table>
         <thead>
           <tr>
-            <th>Start Date</th>
-            <th>Return Date</th>
-            <th>Total Price</th>
-            <th>Car Brand</th>
-            <th>Car Model</th>
-            <th>Status</th>
+            <th>{t("startDate")}</th>
+            <th>{t("returnDate")}</th>
+            <th>{t("totalPrice")}</th>
+            <th>{t("carBrand")}</th>
+            <th>{t("carModel")}</th>
+            <th>{t("status")}</th>
           </tr>
         </thead>
         <tbody>
@@ -45,8 +47,8 @@ const YourReservations = () => {
                 <td>{item.car.model.name}</td>
                 <td>
                   <p className='p1'>
-                    {item.returnDate == null && <span className='reddot'>In Use</span>}
-                    {item.returnDate != null && <span className='greendot'>Delivered</span>}
+                    {item.returnDate == null && <span className='reddot'>{t("inUse")}</span>}
+                    {item.returnDate != null && <span className='greendot'>{t("delivered")}</span>}
                   </p>
                 </td>
               </tr>

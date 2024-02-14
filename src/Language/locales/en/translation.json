@@ -90,5 +90,12 @@
   "city": "City",
   "district": "District",
   "address": "Address",
-  "saveLocationChanges": "Save Location Changes"
+  "saveLocationChanges": "Save Location Changes",
+  "returnDate": "Return Date",
+  "totalPrice": "Total Price",
+  "carBrand": "Car Brand",
+  "carModel": "Car Model",
+  "status": "Status",
+  "inUse": "In Use",
+  "delivered": "Delivered"
 }

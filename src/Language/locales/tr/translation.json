@@ -91,5 +91,12 @@
   "city": "İl",
   "district": "İlçe",
   "address": "Adres",
-  "saveLocationChanges": "Konum Değişikliklerini Kaydet"
+  "saveLocationChanges": "Konum Değişikliklerini Kaydet",
+  "returnDate": "Dönüş Tarihi",
+  "totalPrice": "Toplam Fiyat",
+  "carBrand": "Araç Markası",
+  "carModel": "Araç Modeli",
+  "status": "Durum",
+  "inUse": "Kullanımda",
+  "delivered": "Teslim Edilmiş"
 }
