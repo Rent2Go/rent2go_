@@ -94,7 +94,7 @@ const Navbar = (props: Props) => {
                 title={<GiCarKey />}
                 id="basic-nav-dropdown"
               >
-                <Link className=" text textAction btn" to="/profile">
+                <Link className=" text textAction btn" to="/profile/account-settings">
                   {" "}
                   {t("profile")}
                 </Link>

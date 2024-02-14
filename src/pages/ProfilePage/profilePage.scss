@@ -1,0 +1,27 @@
+.userProfile{
+    display: flex;
+    flex-direction: column;
+
+    .userProfileIn{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: 10rem;
+        gap: 20px;
+        
+        .left{
+            width: 20%;
+            background-color: var(--backGroundColor);
+            border: 1px solid var(--secondaryColor);
+            border-radius: 5px;
+            min-height: 10rem;
+        }
+        .right{
+            width: 60%;
+            border-radius: 5px;
+            border: 1px solid var(--secondaryColor);
+            background-color: var(--backGroundColor);
+            min-height: 10rem;
+        }
+    }
+}

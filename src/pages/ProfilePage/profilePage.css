@@ -1,0 +1,25 @@
+.userProfile {
+  display: flex;
+  flex-direction: column;
+}
+.userProfile .userProfileIn {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 10rem;
+  gap: 20px;
+}
+.userProfile .userProfileIn .left {
+  width: 20%;
+  background-color: var(--backGroundColor);
+  border: 1px solid var(--secondaryColor);
+  border-radius: 5px;
+  min-height: 10rem;
+}
+.userProfile .userProfileIn .right {
+  width: 60%;
+  border-radius: 5px;
+  border: 1px solid var(--secondaryColor);
+  background-color: var(--backGroundColor);
+  min-height: 10rem;
+}/*# sourceMappingURL=profilePage.css.map */

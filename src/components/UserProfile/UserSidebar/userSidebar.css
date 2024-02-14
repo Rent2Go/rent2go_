@@ -1,0 +1,28 @@
+.userSidebar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.userSidebar .s1, .userSidebar .s2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  color: var(--primaryColor);
+}
+.userSidebar .s1:hover, .userSidebar .s2:hover {
+  background-color: var(--backGroundColor2);
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--blackColor);
+}
+.userSidebar .img {
+  width: 30px;
+  height: 30px;
+  color: var(--primaryColor);
+}
+.userSidebar .s2 {
+  background-color: var(--backGroundColor2);
+  cursor: pointer;
+}/*# sourceMappingURL=UserSidebar.css.map */

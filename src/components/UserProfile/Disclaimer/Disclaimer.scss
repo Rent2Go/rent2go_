@@ -1,0 +1,37 @@
+.disclaimer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .mainHead1 {
+        color: var(--primaryColor);
+        font-size: 30px;
+        font-weight: 350;
+        padding: 10px 20px;
+        margin-top: 10px;
+    }
+    .disclaimerPage {
+        margin: 20px;
+        h2{
+            font-size: 17px;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        #par1 {
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: var(--primaryColor);
+        }
+        h3, h5 {
+            font-weight: 399;
+        }
+        li {
+            font-weight: 350;
+            strong {
+                font-weight: 430;
+                color: var(--primaryColor);
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+.disclaimer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.disclaimer .mainHead1 {
+  color: var(--primaryColor);
+  font-size: 30px;
+  font-weight: 350;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+.disclaimer .disclaimerPage {
+  margin: 20px;
+}
+.disclaimer .disclaimerPage h2 {
+  font-size: 17px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.disclaimer .disclaimerPage #par1 {
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  color: var(--primaryColor);
+}
+.disclaimer .disclaimerPage h3, .disclaimer .disclaimerPage h5 {
+  font-weight: 399;
+}
+.disclaimer .disclaimerPage li {
+  font-weight: 350;
+}
+.disclaimer .disclaimerPage li strong {
+  font-weight: 430;
+  color: var(--primaryColor);
+}/*# sourceMappingURL=Disclaimer.css.map */
