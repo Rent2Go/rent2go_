@@ -7,6 +7,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import UserService from "../../services/UserService";
 import { useSSR } from "react-i18next";
 import { UserModel } from "../../models/responses/users/GetUser";
+import { Link } from "react-router-dom";
 type Props = {};
 
 const Settings = (props: Props) => {
@@ -35,7 +36,7 @@ const Settings = (props: Props) => {
     <div className="settings container">
       <div className="secContainer">
         <div className="titleContainer">
-          <h2>Settings</h2>
+          <h2>Profile</h2>
         </div>
         <p className="profile__desc">
           Update your photo and personal details here
@@ -49,10 +50,17 @@ const Settings = (props: Props) => {
                     <div className="row">
                       <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
                         <div className="imgDiv">
-                          <img
-                            src={user?.imageUrl}
-                            alt="profile-photo"
-                          />
+                        {user?.imageUrl ? (
+                <img
+                  src={`/assets/images/userImages/${user.imageUrl}`}
+                  alt="profile"
+                />
+              ) : (
+                <img
+                  src="/assets/images/userImages/user-default.jpg"
+                  alt="default-img"
+                />
+              )}
                         </div>
                       </div>
                     </div>
@@ -61,19 +69,19 @@ const Settings = (props: Props) => {
                         <div className="btn-row">
                           <div className="">
                             <button
-                              className="btn-light btn btn-login btn-sm"
+                              className="btn-submit btn  btn-sm"
                               type="submit"
                             >
                               Submit
                             </button>
                           </div>
                           <div className="">
-                            <button
-                              className="btn-danger btn btn-login btn-sm"
-                              type="submit"
+                            <Link to="/"
+                              className="btn-cancel btn"
+                              type="button"
                             >
                               Cancel
-                            </button>
+                            </Link>
                           </div>
                         </div>
                       </div>

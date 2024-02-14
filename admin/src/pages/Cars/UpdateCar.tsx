@@ -253,7 +253,7 @@ const UpdateCar = () => {
 
                   <Field as="select" name="bodyType" className="form-control">
                     <option value={car?.bodyType.toUpperCase()} >{car?.bodyType.toUpperCase()}</option>
-                    {bodyType.map((bodyType) => <option value={bodyType.id}>{bodyType.name.toUpperCase()}</option>)}
+                    {bodyType.map((bodyType) => (<option value={bodyType.name.toUpperCase()}>{bodyType.name.toUpperCase()}</option>))}
 
 
 

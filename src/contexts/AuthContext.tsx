@@ -28,6 +28,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             firstname: decoded.firstname,
             phoneNumber: decoded.phoneNumber,
             lastname: decoded.lastname,
+            email: decoded.sub,
           },
           role: decoded.role,
         };
@@ -41,6 +42,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         firstname:'',
         phoneNumber: '',
         lastname: '',
+        email:''
 
       },
       role: '',

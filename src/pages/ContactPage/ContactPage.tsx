@@ -6,13 +6,21 @@ import { Link } from 'react-router-dom';
 import { CiMail, CiPhone, CiMapPin } from "react-icons/ci";
 import { FaLinkedin, FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
 import { Button } from 'react-bootstrap';
-import entry from '../ContactPage/entry.jpg';
 import Aos from "aos";
 import { useTranslation } from "react-i18next";
+import { useSelector } from 'react-redux';
 
 
 const ContactPage = () => {
+  const settings = useSelector((state:any) => state.settings.setting )
   const {t} = useTranslation();
+
+  function formatPhoneNumber(phoneNumber:string) {
+    const regex = /(\d{4})(\d{3})(\d{2})(\d{2})/;
+    const formattedPhoneNumber = phoneNumber.replace(regex, '$1 $2 $3 $4');
+    return formattedPhoneNumber;
+  }
+
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -63,11 +71,11 @@ const ContactPage = () => {
               <p>{t("callUsSendUsAnEmail")}</p>
               <div className='icon-text'>
                 <i className='icon' aria-hidden="true"><CiPhone /></i>
-                <Link to="tel:+902163314800" className='link2'>(0216) 331 48 00</Link>
+                <Link to={`tel:${settings.phoneNumber} `} className='link2'>{formatPhoneNumber(settings.phoneNumber)}</Link>
               </div>
               <div className='icon-text'>
                 <i className='icon' aria-hidden="true"><CiMail /></i>
-                <Link to="mailto:support@rentogo.com" className='link2'>support@rentogo.com</Link>
+                <Link to={`mailto:${settings.email}`} className='link2'>{settings.email}</Link>
               </div>
               <div className='icon-text'>
                 <i className='icon' aria-hidden="true"><CiMapPin /></i>
@@ -76,10 +84,10 @@ const ContactPage = () => {
                 </Link>
               </div>
               <div className='social-media'>
-                <Link to="https://www.linkedin.com/company/tobeto/" target='_blank' className='icon-circle'>
+                <Link to={settings.linkedin} target='_blank' className='icon-circle'>
                   <i className='fa fa-linkedin'><FaLinkedin /></i>
                 </Link>
-                <Link to="https://www.instagram.com/tobeto_official/" target='_blank' className='icon-circle'>
+                <Link to={settings.instagram} target='_blank' className='icon-circle'>
                   <i className='fa fa-instagram'><FaInstagram /></i>
                 </Link>
                 <Link to="https://m.facebook.com/tobetoplatform?refid=13&__tn__=%2Cg" target='_blank' className='icon-circle'>

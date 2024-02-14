@@ -54,7 +54,6 @@
 .homeImage {
   margin: auto;
 }
-
 @media screen and (min-width: 520px) {
   .home .secContainer .homeText .homeSpan {
     font-size: 18px;

@@ -37,12 +37,27 @@
 .carPage {
   padding: 4rem 8rem;
   .secContainer {
+    padding: 0;
     justify-content: center;
+    margin:2rem 1rem;
     .secHeading {
       margin: 2rem 0;
       justify-content: center;
-      padding: 2rem 0;
-      gap:2rem;
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      .search {
+        width: 100%;
+        .searchDiv{
+          grid-template-columns: repeat(3,1fr);
+          .primaryBtn{
+            transform: none!important;
+            opacity: 1!important;
+          }
+        }
+        .title {
+          display:none ;
+        }}
 
       .btnPrimary {
         background: var(--primaryColor);

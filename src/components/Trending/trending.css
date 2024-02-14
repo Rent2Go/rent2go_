@@ -22,9 +22,13 @@
 .trending .secContainer .carContainer .singleCar {
   transition: 0.3s ease-in-out;
   text-align: left;
+  background: var(--whiteColor);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .trending .secContainer .carContainer .singleCar .imgDiv {
-  height: 200px;
+  height: 250px;
   width: 100%;
   overflow: hidden;
   border-radius: 10px;
@@ -33,6 +37,8 @@
 .trending .secContainer .carContainer .singleCar .imgDiv img {
   height: 100%;
   width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .trending .secContainer .carContainer .singleCar .carTitle {
   color: var(--blackColor);
@@ -64,8 +70,8 @@
   color: var(--primaryColor);
 }
 .trending .secContainer .carContainer .singleCar .price_seller span.seller {
-  background: var(--greyColor);
-  color: var(--textColor);
+  background: var(--fourthColor);
+  color: var(--pureWhiteColor);
 }
 .trending .secContainer .carContainer .singleCar .price_seller span:hover {
   transform: translateY(-7px);
@@ -92,8 +98,8 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .trending .secContainer .carContainer .singleCar .imgDiv img {
-    -o-object-fit: contain;
-       object-fit: contain;
+    -o-object-fit: contain !important;
+       object-fit: contain !important;
   }
   .trending .secContainer .carContainer .singleCar .carTitle {
     font-size: 18px;
@@ -122,13 +128,13 @@
 }
 @media screen and (min-width: 1024px) {
   .trending .secContainer .carContainer {
-    gap: 1rem;
+    gap: 3rem;
   }
   .trending .secContainer .carContainer .singleCar .carTitle {
-    font-size: 14px;
+    font-size: 18px;
   }
   .trending .secContainer .carContainer .singleCar .miles,
   .trending .secContainer .carContainer .singleCar .AWD {
-    font-size: 13px;
+    font-size: 15px;
   }
 }/*# sourceMappingURL=trending.css.map */

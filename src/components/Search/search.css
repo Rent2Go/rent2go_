@@ -1,6 +1,10 @@
 .search {
   padding: 2rem 0;
 }
+.search .secContainer {
+  width: 75%;
+  margin: 0 auto;
+}
 .search .title {
   color: var(--blackColor);
   font-size: 22px;
@@ -16,14 +20,13 @@
 }
 .search .searchDiv input {
   border-radius: 10px;
-  border: 1px solid var(--secondaryColor);
   padding: 5px 10px;
   outline: none;
   width: 100%;
 }
 .search .searchDiv input:focus {
   border: none;
-  border: 1px solid var(--focusColor);
+  border: none !important;
 }
 .search .searchDiv .btn {
   justify-content: center;
@@ -33,6 +36,35 @@
 }
 .search .searchDiv .btn .icon {
   font-size: 15px;
+}
+
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
+  color: var(--placeHolderColor);
+  font-weight: 500 !important;
+  font-size: 1.1rem !important;
+  line-height: 2.51em;
+  max-width: calc(133% - 3px) !important;
+  left: -3px !important;
+  top: -5px !important;
+}
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root:hover {
+  outline: none !important;
+  border: none !important;
+}
+
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+  font-family: var(--font-family) !important;
+}
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root:hover {
+  outline: none !important;
+  border: none !important;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+  color: var(--primaryColor) !important;
+}
+.css-i4bv87-MuiSvgIcon-root:hover {
+  color: var(--placeHolderColor) !important;
 }
 
 @media screen and (min-width: 520px) {
@@ -73,6 +105,6 @@
     margin: auto;
   }
   .search .searchDiv {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }/*# sourceMappingURL=search.css.map */

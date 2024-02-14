@@ -1,6 +1,9 @@
-import React, { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "../../Language/language";
+import { Helmet } from "react-helmet";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import {
   Auction,
   Navbar,
@@ -8,57 +11,83 @@ import {
   Search,
   Sellers,
   Trending,
-  ScrollToTop ,
-  Footer
+  ScrollToTop,
+  Footer,
+  Specials,
 } from "../../components";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import "./homepage.css";
 
+
 type Props = {};
 
 const Homepage = (props: Props) => {
-  const {t} = useTranslation();
+  const settings = useSelector((state: any) => state.settings.setting);
+  const { t } = useTranslation();
+  const searchRef = useRef<HTMLDivElement>(null);
+
+  const handleScrollToSearch = () => {
+    if (searchRef.current) {
+      searchRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   useEffect(() => {
     if (i18n.isInitialized) {
       Aos.init({ duration: 3000, offset: 20 });
     } else {
-      i18n.on('initialized', () => {
+      i18n.on("initialized", () => {
         Aos.init({ duration: 3000, offset: 20 });
       });
     }
   }, []);
+
   return (
     <>
+      <Helmet>
+        <title>{settings.title} - HomePage </title>
+      </Helmet>
       <Navbar />
       <ScrollToTop />
       <div className="home">
         <div className="secContainer">
           <div data-aos="fade-up" className="homeText">
-            <span className="homeSpan"> {t('meetYourNewCar')}</span>
-            <h1 className="homeTitle"> {t('safeComfortableDriving')}</h1>
+            <span className="homeSpan"> {t("meetYourNewCar")}</span>
+            <h1 className="homeTitle"> {t("safeComfortableDriving")}</h1>
             <div className="btns flex">
-              <button type="button" data-aos="fade-right" className="btn">
-                {t('moreDetails')}
-              </button>
               <button
+                type="button"
+                onClick={handleScrollToSearch}
+                data-aos="fade-right"
+                className="btn"
+              >
+                {t("moreDetails")}
+              </button>
+              <Link
+                to="/contact"
                 type="button"
                 data-aos="fade-left"
                 className="btn primaryBtn"
               >
-                 {t('testDrive')}
-              </button>
+                {t("contact")}
+              </Link>
             </div>
           </div>
           <div className="homeImage" data-aos="fade-down-right">
-            <img src="assets/img/carModels/toyota-corolla-beyaz.png" alt="homeImage" />
+            <img
+              src="assets/img/carModels/homeCar.png"
+              alt="homeImage"
+            />
           </div>
         </div>
       </div>
-      <Search />
+      <div ref={searchRef}>
+        <Search />
+      </div>
       <Trending />
       <Sellers />
-      <Auction />
+      <Specials/>
+      <Auction handleScrollToSearch={handleScrollToSearch} />
       <Review />
       <Footer />
     </>

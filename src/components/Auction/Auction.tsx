@@ -1,13 +1,46 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
+import { HiOutlineRefresh } from "react-icons/hi";
 
 import './auctions.css';
+import { CarModel } from "../../models/responses/cars/GetCar";
+import CarService from "../../services/CarService";
 
 type Props = {};
 
-const Action = (props: Props) => {
+const Auction: React.FC<{ handleScrollToSearch: () => void }> = ({ handleScrollToSearch }) => {
+  const [carList, setCarList] = useState<CarModel[]>([]);
+
+  const getCarList = async () => {
+    try {
+      const response = await CarService.getAll();
+      setCarList(response.data.data);
+    } catch (error) {
+      console.error("Error fetching cars:", error);
+    }
+  } 
+  const shuffleCarList = () => {
+    setCarList((prevCarList) => {
+      const shuffledList = [...prevCarList].sort(() => Math.random() - 0.5);
+      return shuffledList;
+    });
+  };
+  useEffect(() => {
+    getCarList();
+    const intervalId = setInterval(() => {
+      shuffleCarList();
+    }, 10000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  
   const {t} = useTranslation();
+
+  const searchRef = useRef<HTMLDivElement>(null);
+
+ 
 
   return (
     <div className="auction section">
@@ -15,93 +48,30 @@ const Action = (props: Props) => {
         <div className="secHeading flex" data-aos="fade-up" data-aos-duration="2000">
           <h3 className="secTitle">{t("activeAuctions")}</h3>
           <div className="navBtns flex">
-            <BsArrowLeftShort className="icon leftIcon" />
-            <BsArrowRightShort className="icon rightIcon" />
+            <HiOutlineRefresh className="icon leftIcon" onClick={shuffleCarList} />
           </div>
         </div>
         <div className="carContainer grid">
-          <div className="singleCar grid" data-aos="fade-up" data-aos-duration="5000">
+        {carList.slice(0, 3).map((car) => (
+          <div className="singleCar grid" key={car.id} >
             <div className="imgDiv">
-              <img src="assets/img/carModels/mercedesc200-beyaz.png" alt="carImage" />
+              <img src={car.imageUrl || "/assets/img/defaultCar.png"} alt="carImage" />
             </div>
-            <h5 className="carTitle">Used 2019 Audi S4 Premium Plus</h5>
-            <span className="miles">{`11457 ${t("miles")}`}</span>
-            <span className="AWD">AWD 4-Cylinder Turbo</span>
+            <h5 className="carTitle">{`${car.model?.brand.name} ${car.model.name} ${car.year}`}</h5>
+            <span className="miles">{`${car.kilometer} ${t("kilometer")}`}</span>
+            <span className="AWD">AWD {car.enginePower}</span>
 
             <div className="price_buyBtn flex">
-              <span className="price">$41,200</span>
-              <span className="buyBtn">{t("rentNow")}</span>
+              <span className="price">{car.dailyPrice} ₺</span>
+              <button className="buyBtn" onClick={handleScrollToSearch}>{t("rentNow")}</button>
             </div>
           </div>
-          <div className="singleCar grid singleCarActive" data-aos="fade-up" data-aos-duration="5000">
-            <div className="imgDiv">
-              <img src="assets/img/carModels/peugeot-2008-siyah.png" alt="carImage" />
-            </div>
-            <h5 className="carTitle">Used 2019 Audi S4 Premium Plus</h5>
-            <span className="miles">{`11457 ${t("miles")}`}</span>
-            <span className="AWD">AWD 4-Cylinder Turbo</span>
-
-            <div className="price_buyBtn flex">
-              <span className="price">$41,200</span>
-              <span className="buyBtn">{t("rentNow")}</span>
-            </div>
-          </div>
-          <div className="singleCar grid" data-aos="fade-up" data-aos-duration="5000">
-            <div className="imgDiv">
-              <img src="assets/img/carModels/minicooper-s-mavi.png" alt="carImage" />
-            </div>
-            <h5 className="carTitle">Used 2019 Audi S4 Premium Plus</h5>
-            <span className="miles">{`11457 ${t("miles")}`}</span>
-            <span className="AWD">AWD 4-Cylinder Turbo</span>
-
-            <div className="price_buyBtn flex">
-              <span className="price">$41,200</span>
-              <span className="buyBtn">{t("rentNow")}</span>
-            </div>
-          </div>
-          <div className="singleCar grid singleCarActive" data-aos="fade-up" data-aos-duration="5000">
-            <div className="imgDiv">
-              <img src="assets/img/carModels/renault-clio-beyaz.png" alt="carImage" />
-            </div>
-            <h5 className="carTitle">Used 2019 Audi S4 Premium Plus</h5>
-            <span className="miles">{`11457 ${t("miles")}`}</span>
-            <span className="AWD">AWD 4-Cylinder Turbo</span>
-
-            <div className="price_buyBtn flex">
-              <span className="price">$41,200</span>
-              <span className="buyBtn">{t("rentNow")}</span>
-            </div>
-          </div>
-          <div className="singleCar grid" data-aos="fade-up" data-aos-duration="5000">
-            <div className="imgDiv">
-              <img src="assets/img/carModels/renault-megane-gri.png" alt="carImage" />
-            </div>
-            <h5 className="carTitle">Used 2019 Audi S4 Premium Plus</h5>
-            <span className="miles">{`11457 ${t("miles")}`}</span>
-            <span className="AWD">AWD 4-Cylinder Turbo</span>
-
-            <div className="price_buyBtn flex">
-              <span className="price">$41,200</span>
-              <span className="buyBtn">{t("rentNow")}</span>
-            </div>
-          </div>
-          <div className="singleCar grid singleCarActive" data-aos="fade-up" data-aos-duration="5000">
-            <div className="imgDiv">
-              <img src="assets/img/carModels/renault-clio-kırmızı.png" alt="carImage" />
-            </div>
-            <h5 className="carTitle">Used 2019 Audi S4 Premium Plus</h5>
-            <span className="miles">{`11457 ${t("miles")}`}</span>
-            <span className="AWD">AWD 4-Cylinder Turbo</span>
-
-            <div className="price_buyBtn flex">
-              <span className="price">$41,200</span>
-              <span className="buyBtn">{t("rentNow")}</span>
-            </div>
-          </div>
+        ))}
+          
         </div>
       </div>
     </div>
   );
 };
 
-export default Action;
+export default Auction;

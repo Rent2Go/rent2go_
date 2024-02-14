@@ -23,15 +23,21 @@
       .singleCar {
         transition: 0.3s ease-in-out;
         text-align: left;
+        background: var(--whiteColor);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         .imgDiv {
-          height: 200px;
+          height: 250px;
           width: 100%;
           overflow: hidden;
           border-radius: 10px;
           border: 5px solid transparent;
+         
           img {
             height: 100%;
             width: 100%;
+            object-fit: contain;
           }
         }
         .carTitle {
@@ -57,13 +63,16 @@
             padding: 0.5rem 1rem;
             border-radius: 3px;
             font-weight: 600;
+            
             &.price {
               background: var(--secondaryColor);
               color: var(--primaryColor);
+              
             }
             &.seller {
-              background: var(--greyColor);
-              color: var(--textColor);
+              background: var(--fourthColor);
+              color: var(--pureWhiteColor);
+              
             }
             &:hover {
               transform: translateY(-7px);
@@ -96,10 +105,13 @@
       }
       .carContainer {
         grid-template-columns: repeat(2, 1fr);
+        
         .singleCar {
+         
           .imgDiv {
             img {
-              object-fit: contain;
+              object-fit: contain!important;
+              
             }
           }
           .carTitle {
@@ -143,14 +155,14 @@
   .trending {
     .secContainer {
       .carContainer {
-        gap: 1rem;
+        gap: 3rem;
         .singleCar {
           .carTitle {
-            font-size: 14px;
+            font-size: 18px;
           }
           .miles,
           .AWD {
-            font-size: 13px;
+            font-size: 15px;
           }
         }
       }

@@ -13,57 +13,56 @@ import { MdOutlineDeleteForever } from "react-icons/md";
 import { toast } from "react-toastify";
 
 type Props = {
-  user: UserModel
+  user: UserModel;
 };
 
 const UserTable = (props: Props) => {
-
-
   const [checked, setChecked] = useState<boolean>(props.user.active);
 
   const handleChange = (e: any, id: number) => {
     const isActive = e.target.checked;
     setChecked(isActive);
     handleActive(id, isActive);
-
-
   };
 
   const handleDelete = async (id: number) => {
-    var isConfirmed = window.confirm('Are you sure you want to delete?');
+    var isConfirmed = window.confirm("Are you sure you want to delete?");
     if (isConfirmed) {
       await UserService.deleteUser(id)
         .then(() => {
-          toast.success("Vehicle was successfully deleted")
+          toast.success("Vehicle was successfully deleted");
           window.location.reload();
         })
-        .catch((err: any) => toast.error(err.data.response.message))
+        .catch((err: any) => toast.error(err.data.response.message));
     }
   };
 
-
-  useEffect(() => {
-
-  }, [checked])
-
+  useEffect(() => {}, [checked]);
 
   const handleActive = async (id: number, checked: boolean) => {
     await UserService.updateIsActive(id, checked)
       .then((res) => {
-        toast.success(res.data.message)
-       //window.location.reload();
+        toast.success(res.data.message);
+        //window.location.reload();
       })
       .catch((err) => {
-        toast.error(err)
-      })
-  }
+        toast.error(err);
+      });
+  };
   return (
     <React.Fragment>
       <tbody>
         <tr key={props.user.id}>
           <td>{props.user.id}</td>
           <td>
-            <img src={props.user.imageUrl} alt="user-img" />
+            {props.user.imageUrl ? (
+              <img
+                src={`/assets/images/userImages/${props.user.imageUrl}`}
+                alt="user-img"
+              />
+            ) : (
+              <img src="/assets/images/userImages/user-default.jpg" alt="default-img" />
+            )}
           </td>
           <td>{props.user.name}</td>
           <td>{props.user.surname}</td>
@@ -80,8 +79,6 @@ const UserTable = (props: Props) => {
                 checked={checked}
                 onChange={(e) => handleChange(e, props.user.id)}
               />
-
-
             </Form>
           </td>
           <td>
@@ -104,10 +101,8 @@ const UserTable = (props: Props) => {
             </div>
           </td>
         </tr>
-
       </tbody>
     </React.Fragment>
-
   );
 };
 
