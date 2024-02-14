@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import { CarPage, HomePage, Login, Register, BrandPage, OurTeamPage, ContactPage, PrivacyPolicy, ReservationPage, CookiePolicy, TermsOfUse, ProfilePage } from "./pages";
+import { CarPage, HomePage, Login, Register, BrandPage, OurTeamPage, ContactPage, PrivacyPolicy, ReservationPage, CookiePolicy, TermsOfUse, ProfilePage, PaymentPage, NotFoundPage } from "./pages";
 
 import "./App.css";
 import { RentalModel } from "./models/responses/rentals/GetRental";
@@ -13,7 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setPageSettings } from "./store/slices/settingsSlice";
 import SettingsService from "./services/SettingsService";
 import {Helmet} from 'react-helmet'
-import PageNotFound from "./pages/NotFoundPage/PageNotFound";
+
 function App() {
 
   const settings = useSelector((state:any) => state.settings.setting);
@@ -54,9 +54,10 @@ function App() {
           <Route path="/reservation/:id" element={<ReservationPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/payment" element={<PaymentPage />} />
           <Route path="/terms-of-use" element={<TermsOfUse />} />
           <Route path="/success" element={<SuccessPage />} />
-          <Route path="*" element={<PageNotFound />} />
+          <Route path="*" element={<NotFoundPage />} />
         
         </Routes>
       </main>
