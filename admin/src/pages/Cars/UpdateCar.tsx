@@ -16,6 +16,7 @@ import { ModelModel } from '../../models/responses/models/GetModel';
 import { FormikInput } from '../../components';
 import * as Yup from "yup"
 import Dropzone from 'react-dropzone-uploader';
+import OverlayLoaderTest from '../../components/OverlayLoader/OverlayLoaderTest';
 
 const UpdateCar = () => {
   const { id } = useParams();
@@ -172,7 +173,7 @@ const UpdateCar = () => {
     { id: 4, name: "Hybrıd" }
   ];
 
-  if (!car) return <div>Loading...</div>;
+  if(!car) return <OverlayLoaderTest/>
 
   return (
     <div className="cars container">

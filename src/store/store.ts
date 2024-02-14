@@ -3,13 +3,15 @@ import { carReducer } from "./slices/carSlice";
 import { loadingReducer } from "./slices/loadingSlice";
 import { filterReducer } from "./slices/filterSlice";
 import { settingsReducer } from "./slices/settingsSlice";
+import { dateReducer } from "./slices/dateSlice";
 
 
 const rootReducer = combineReducers({
     car:carReducer,
     loading:loadingReducer,
     filters:filterReducer,
-    settings:settingsReducer
+    settings:settingsReducer,
+    rentalDate:dateReducer
 
 });
 

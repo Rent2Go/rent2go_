@@ -12,7 +12,7 @@ type Props = {};
 
 const Settings = (props: Props) => {
  const auth =  useAuth()
- const email = auth.authInformation.user.email|| '';
+ const email = auth.authInformation.user.email;
  const [user,setUser] = useState<UserModel>();
  console.log(user?.imageUrl);
  
@@ -26,7 +26,9 @@ const Settings = (props: Props) => {
  }
 
  useEffect(() => {
-  getUserByEmail(email)
+  if(email ){
+    getUserByEmail(email)
+  }
  }, [email])
  
   const initialValues = () => {};

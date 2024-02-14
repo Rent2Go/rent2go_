@@ -1,34 +1,86 @@
 import axios from "axios";
+import store from "../store/store";
+import { decreaseRequestCount, increaseRequestCount } from "../store/slices/loadingSlice";
 
 const axiosInstance = axios.create({
-	baseURL: "https://api.rentogo.com.tr/api/",
+	baseURL: "http://localhost:8080/api/",
 });
 
-axiosInstance.interceptors.request.use(request => {
-	
+axiosInstance.interceptors.request.use(
+	async (config) => {
+		store.dispatch(increaseRequestCount())
 
-	//request.headers.Authorization = "Bearer "+localStorage.getItem("token");
-	
+		//const token = TokenService.getToken()
 
-	return Promise.resolve(request)
-},
+		// if (token) {
+		// 	const decode = jwtDecode<TokenUser>(token);
+		// 	const x: number = 1000;
+		// 	const expirationDate = new Date(decode.exp).getTime() * x;
+		// 	const nowDate = new Date().getTime();
+		
 
-error => {
-	return Promise.reject(error);
-},
 
 
+		// 	if (expirationDate <= nowDate) {
+				
+		// 		try {
+		// 			const localRefreshToken = TokenService.getRefreshToken("refreshToken")
+		// 			const RefreshTokenRequest = {
+		// 				token: localRefreshToken
+		// 			}
+		// 			const response = await axios.post('http://localhost:8080/api/refreshtoken', RefreshTokenRequest);
+		// 			const { token, refreshToken } = response.data;
+				
+
+		// 			TokenService.setToken(token);
+		// 			TokenService.setrefreshToken(refreshToken);
+
+
+		// 			config.headers.Authorization = `Bearer ${token}`;
+		// 		} catch (error) {
+
+		// 			console.error('Error refreshing token:', error);
+
+		// 		}
+		// 	}
+		// 	else {
+
+
+		// 		config.headers.Authorization = "Bearer " + token;
+
+		// 	}
+
+
+
+		// }
+
+
+
+		return Promise.resolve(config)
+
+	},
+
+	(error) => {
+
+		return Promise.reject(error);
+	}
 );
 
 axiosInstance.interceptors.response.use(
-	response => {
-		//...
+	(response) => {
+		store.dispatch(decreaseRequestCount())
 
-		return Promise.resolve(response);
+		return Promise.resolve(response)
 	},
-	error => {
+	(error) => {
+		store.dispatch(decreaseRequestCount())
 		return Promise.reject(error);
-	},
+	}
+
+
+
 );
+
+
 
 export default axiosInstance;

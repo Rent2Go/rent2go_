@@ -5,6 +5,7 @@ export interface SettingsModel {
 	title: string;
 	url: string;
 	logo: string;
+	tabLogo:string;
 	phoneNumber: string;
 	email: string;
 	address: string;
