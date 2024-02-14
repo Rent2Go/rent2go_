@@ -92,4 +92,30 @@
 .payment .secContainer .contentDiv .formContainer .form input::placeholder {
   font-size: 16px;
   color: var(--textColor);
+}
+.payment .secContainer .contentDiv .btnRow {
+  gap: 0.5rem;
+}
+.payment .secContainer .contentDiv .btnRow .btn {
+  padding: 0.5rem 2rem;
+  font-size: 16px;
+  font-weight: 500;
+}
+.payment .secContainer .contentDiv .btnRow .btn-submit {
+  background: var(--primaryColor);
+  color: var(--pureWhiteColor);
+}
+.payment .secContainer .contentDiv .btnRow .btn-submit:hover {
+  background: var(--secondaryColor);
+  color: var(--placeHolderColor);
+  transition: 0.3ms ease-in;
+}
+.payment .secContainer .contentDiv .btnRow .btn-cancel {
+  background: var(--focusColor);
+  color: var(--blackColor);
+}
+.payment .secContainer .contentDiv .btnRow .btn-cancel:hover {
+  background: var(--blackColor);
+  color: var(--pureWhiteColor);
+  transition: 0.3ms ease-in;
 }/*# sourceMappingURL=payment.css.map */

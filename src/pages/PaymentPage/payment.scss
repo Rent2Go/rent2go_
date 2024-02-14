@@ -89,6 +89,33 @@
           }
         }
       }
+
+      .btnRow {
+        gap: 0.5rem;
+        .btn {
+          padding: 0.5rem 2rem;
+          font-size: 16px;
+          font-weight: 500;
+        }
+        .btn-submit {
+          background: var(--primaryColor);
+          color: var(--pureWhiteColor);
+          &:hover {
+            background: var(--secondaryColor);
+            color: var(--placeHolderColor);
+            transition: 0.3ms ease-in;
+          }
+        }
+        .btn-cancel {
+          background: var(--focusColor);
+          color: var(--blackColor);
+          &:hover {
+            background: var(--blackColor);
+            color: var(--pureWhiteColor);
+            transition: 0.3ms ease-in;
+          }
+        }
+      }
     }
   }
 }
