@@ -37,6 +37,8 @@
 .trending .secContainer .carContainer .singleCar .imgDiv img {
   height: 100%;
   width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .trending .secContainer .carContainer .singleCar .carTitle {
   color: var(--blackColor);
@@ -96,8 +98,8 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .trending .secContainer .carContainer .singleCar .imgDiv img {
-    -o-object-fit: contain;
-       object-fit: contain;
+    -o-object-fit: contain !important;
+       object-fit: contain !important;
   }
   .trending .secContainer .carContainer .singleCar .carTitle {
     font-size: 18px;

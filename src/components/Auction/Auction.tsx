@@ -30,7 +30,7 @@ const Auction: React.FC<{ handleScrollToSearch: () => void }> = ({ handleScrollT
     getCarList();
     const intervalId = setInterval(() => {
       shuffleCarList();
-    }, 1000000);
+    }, 10000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -53,7 +53,7 @@ const Auction: React.FC<{ handleScrollToSearch: () => void }> = ({ handleScrollT
         </div>
         <div className="carContainer grid">
         {carList.slice(0, 3).map((car) => (
-          <div className="singleCar grid" key={car.id} data-aos="fade-up" data-aos-duration={5000}>
+          <div className="singleCar grid" key={car.id} >
             <div className="imgDiv">
               <img src={car.imageUrl || "/assets/img/defaultCar.png"} alt="carImage" />
             </div>

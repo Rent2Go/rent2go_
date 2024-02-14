@@ -38,4 +38,10 @@
 .specials .secContainer .secContent .singleContent .descriptionContent p {
   text-align: center;
   font-size: 14px;
+}
+
+@media screen and (max-width: 520px) {
+  .specials .secContainer .secContent {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }/*# sourceMappingURL=specials.css.map */

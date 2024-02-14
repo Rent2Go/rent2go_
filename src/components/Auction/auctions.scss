@@ -25,24 +25,24 @@
         text-align: left;
         padding: 1rem;
         border-radius: 10px;
-		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-		background: var(--bs-dark-bg-subtle);
-	
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        background: var(--bs-dark-bg-subtle);
+
         .imgDiv {
           padding: 0.5rem;
           text-align: left;
-          height: 240px;
+
           width: 100%;
           overflow: hidden;
           border-radius: 10px;
           border: none;
           margin: 0 auto;
-		  display: flex;
-		justify-content: center;
+          display: flex;
+          justify-content: center;
 
           img {
             height: 100%;
-            width: min-content;
+            width: 100%;
             object-fit: cover;
           }
         }
@@ -64,7 +64,8 @@
         }
         .price_buyBtn {
           gap: 1rem;
-          span,button {
+          span,
+          button {
             padding: 0.5rem 1rem;
             border-radius: 3px;
             font-weight: 600;

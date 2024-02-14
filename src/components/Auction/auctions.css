@@ -30,7 +30,6 @@
 .auction .secContainer .carContainer .singleCar .imgDiv {
   padding: 0.5rem;
   text-align: left;
-  height: 240px;
   width: 100%;
   overflow: hidden;
   border-radius: 10px;
@@ -41,8 +40,7 @@
 }
 .auction .secContainer .carContainer .singleCar .imgDiv img {
   height: 100%;
-  width: -moz-min-content;
-  width: min-content;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -65,22 +63,26 @@
 .auction .secContainer .carContainer .singleCar .price_buyBtn {
   gap: 1rem;
 }
-.auction .secContainer .carContainer .singleCar .price_buyBtn span, .auction .secContainer .carContainer .singleCar .price_buyBtn button {
+.auction .secContainer .carContainer .singleCar .price_buyBtn span,
+.auction .secContainer .carContainer .singleCar .price_buyBtn button {
   padding: 0.5rem 1rem;
   border-radius: 3px;
   font-weight: 600;
   border: 1px solid var(--primaryColor);
 }
-.auction .secContainer .carContainer .singleCar .price_buyBtn span.price, .auction .secContainer .carContainer .singleCar .price_buyBtn button.price {
+.auction .secContainer .carContainer .singleCar .price_buyBtn span.price,
+.auction .secContainer .carContainer .singleCar .price_buyBtn button.price {
   background: var(--secondaryColor);
   color: var(--primaryColor);
 }
-.auction .secContainer .carContainer .singleCar .price_buyBtn span.buyBtn, .auction .secContainer .carContainer .singleCar .price_buyBtn button.buyBtn {
+.auction .secContainer .carContainer .singleCar .price_buyBtn span.buyBtn,
+.auction .secContainer .carContainer .singleCar .price_buyBtn button.buyBtn {
   background: var(--primaryColor);
   color: var(--whiteColor);
   cursor: pointer;
 }
-.auction .secContainer .carContainer .singleCar .price_buyBtn span.buyBtn:hover, .auction .secContainer .carContainer .singleCar .price_buyBtn button.buyBtn:hover {
+.auction .secContainer .carContainer .singleCar .price_buyBtn span.buyBtn:hover,
+.auction .secContainer .carContainer .singleCar .price_buyBtn button.buyBtn:hover {
   background: var(--secondaryColor);
   color: var(--primaryColor);
   cursor: pointer;
