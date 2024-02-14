@@ -86,6 +86,8 @@
   "disclaimer": "Sorumluluk Reddi Beyanı",
 
   "personalInformations": "Kişisel Bilgiler",
+  "nationalityId": "Kimlik Numarası",
+  "dateOfBirth": "Doğum Tarihi",
   "saveChanges": "Değişiklikleri Kaydet",
   "locationInformation": "Konum Bilgisi",
   "city": "İl",

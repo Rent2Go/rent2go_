@@ -85,6 +85,8 @@
   "disclaimer": "Disclaimer",
 
   "personalInformations": "Personal Informations",
+  "nationalityId": "Nationality Id",
+  "dateOfBirth": "Date Of Birth",
   "saveChanges": "Save Changes",
   "locationInformation": "Location Information",
   "city": "City",
