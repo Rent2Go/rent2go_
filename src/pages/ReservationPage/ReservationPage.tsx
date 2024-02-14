@@ -179,6 +179,11 @@ const ReservationPage: React.FC<Props> = (props) => {
                         label="Cash"
                       />
                       <FormControlLabel
+                        value="online"
+                        control={<Radio />}
+                        label="Online"
+                      />
+                      <FormControlLabel
                         value="bankTransfer"
                         control={<Radio />}
                         label="Bank Transfer"
