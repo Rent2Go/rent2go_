@@ -85,5 +85,10 @@
   "disclaimer": "Disclaimer",
 
   "personalInformations": "Personal Informations",
-  "saveChanges": "Save Changes"
+  "saveChanges": "Save Changes",
+  "locationInformation": "Location Information",
+  "city": "City",
+  "district": "District",
+  "address": "Address",
+  "saveLocationChanges": "Save Location Changes"
 }
