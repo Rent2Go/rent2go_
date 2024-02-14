@@ -74,5 +74,13 @@
   "email": "Email",
   "phone": "Phone",
   "message": "Message",
-  "sendMessage": "Send Message"
+  "sendMessage": "Send Message",
+
+
+  "accountSettings": "Account Settings",
+  "locationSettings": "Location Settings",
+  "yourReservations": "Your Reservations",
+  "changePassword": "Change Password",
+  "driversLicence": "Driver's License",
+  "disclaimer": "Disclaimer"
 }

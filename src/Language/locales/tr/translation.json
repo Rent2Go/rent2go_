@@ -75,5 +75,13 @@
   "email": "E-posta",
   "phone": "Telefon",
   "message": "Mesaj",
-  "sendMessage": "Mesaj Gönder"
+  "sendMessage": "Mesaj Gönder",
+
+
+  "accountSettings": "Hesap Ayarları",
+  "locationSettings": "Konum Ayarları",
+  "yourReservations": "Rezervasyonlarınız",
+  "changePassword": "Şifre Değiştir",
+  "driversLicence": "Sürücü Belgesi",
+  "disclaimer": "Sorumluluk Reddi Beyanı"
 }
