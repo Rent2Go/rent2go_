@@ -5,18 +5,17 @@ import { Link, useParams } from "react-router-dom";
 import { CarModel } from "../../models/responses/cars/GetCar";
 import CarService from "../../services/CarService";
 import { useAuth } from "../../contexts/AuthContext";
-
+import { useNavigate } from "react-router-dom";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import { CiCircleInfo } from "react-icons/ci";
 import { Unstable_Popup as BasePopup } from "@mui/base/Unstable_Popup";
-type Props = {};
+import { usePaymentContext } from "../../contexts/PaymentContext";
 
-const ReservationPage: React.FC<Props> = (props) => {
-
-  const auth = useAuth()
+const ReservationPage = () => {
+  const auth = useAuth();
   console.log(auth.authInformation.user.email);
   const params = useParams<{ id: string }>();
   const [rentals, setRentals] = useState<CarModel>();
@@ -35,7 +34,9 @@ const ReservationPage: React.FC<Props> = (props) => {
       console.error("Error fetching rentals:", error);
     }
   };
-  {/*POPUP*/}
+  {
+    /*POPUP*/
+  }
   const [anchorInsurance, setAnchorInsurance] =
     React.useState<null | HTMLElement>(null);
   const [anchorAssistance, setAnchorAssistance] =
@@ -58,7 +59,28 @@ const ReservationPage: React.FC<Props> = (props) => {
   const openAssistance = Boolean(anchorAssistance);
   const popInsurance = openInsurance ? "simple-popper-insurance" : undefined;
   const popAssistance = openAssistance ? "simple-popper-assistance" : undefined;
-  {/*POPUP*/}
+  {
+    /*POPUP*/
+  }
+
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("cash");
+  const navigate = useNavigate();
+
+  const handlePaymentMethodChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setSelectedPaymentMethod(event.target.value);
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    console.log("Form submitted with payment method: ", selectedPaymentMethod);
+
+    // Örneğin, seçilen ödeme yöntemine göre farklı işlemler yapılabilir
+
+    // Yönlendirme yap
+    navigate(`/payment/${selectedPaymentMethod}`);
+  };
   return (
     <>
       <Navbar />
@@ -104,7 +126,7 @@ const ReservationPage: React.FC<Props> = (props) => {
                     {rentals?.model?.brand.name} {rentals?.model?.name}
                   </span>
                 </p>
-                
+
                 <p>
                   <span>
                     <b>Type :</b>{" "}
@@ -120,7 +142,6 @@ const ReservationPage: React.FC<Props> = (props) => {
                   </span>
                   <span>7 Days</span>
                 </p>
-
               </div>
               <div className="priceCardContainer">
                 <PriceCard cars={rentals} />
@@ -164,42 +185,53 @@ const ReservationPage: React.FC<Props> = (props) => {
                   </span>
                 </div>
               </div>
-              <div className="actionContainer">
-                <div className="radioContainer">
-                  <p>Choose Payment Method : </p>
-                  <FormControl>
-                    <RadioGroup
-                      aria-labelledby="demo-radio-buttons-group-label"
-                      defaultValue="cash"
-                      name="radio-buttons-group"
+              <form onSubmit={handleSubmit}>
+                <div className="actionContainer">
+                  <div className="radioContainer">
+                    <p>Choose Payment Method : </p>
+                    <FormControl>
+                      <RadioGroup
+                        aria-labelledby="demo-radio-buttons-group-label"
+                        value={selectedPaymentMethod}
+                        name="radio-buttons-group"
+                        onChange={handlePaymentMethodChange}
+                      >
+                        <FormControlLabel
+                          value="cash"
+                          control={<Radio />}
+                          label="Cash"
+                        />
+                        <FormControlLabel
+                          value="online"
+                          control={<Radio />}
+                          label="Online"
+                        />
+                        <FormControlLabel
+                          value="bankTransfer"
+                          control={<Radio />}
+                          label="Bank Transfer"
+                        />
+                      </RadioGroup>
+                    </FormControl>
+                  </div>
+                  <div className="btnContainer">
+                    <button
+                      className="btn btn-secondary btn-sm"
+                      type="submit"
+                      title="Send"
                     >
-                      <FormControlLabel
-                        value="cash"
-                        control={<Radio />}
-                        label="Cash"
-                      />
-                      <FormControlLabel
-                        value="online"
-                        control={<Radio />}
-                        label="Online"
-                      />
-                      <FormControlLabel
-                        value="bankTransfer"
-                        control={<Radio />}
-                        label="Bank Transfer"
-                      />
-                    </RadioGroup>
-                  </FormControl>
+                      Reservation
+                    </button>
+                    <Link
+                      to="/cars"
+                      className="btn btn-dark btn-sm"
+                      title="Send"
+                    >
+                      Cancel
+                    </Link>
+                  </div>
                 </div>
-                <div className="btnContainer">
-                  <button className="btn btn-secondary btn-sm" type="submit" title="Send">
-                    Reservation
-                  </button>
-                  <Link to="/cars" className="btn btn-dark btn-sm" title="Send">
-                    Cancel
-                  </Link>
-                </div>
-              </div>
+              </form>
             </div>
             <div className="noteContainer"></div>
           </div>
