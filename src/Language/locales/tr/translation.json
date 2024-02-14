@@ -83,5 +83,8 @@
   "yourReservations": "Rezervasyonlarınız",
   "changePassword": "Şifre Değiştir",
   "driversLicence": "Sürücü Belgesi",
-  "disclaimer": "Sorumluluk Reddi Beyanı"
+  "disclaimer": "Sorumluluk Reddi Beyanı",
+
+  "personalInformations": "Kişisel Bilgiler",
+  "saveChanges": "Değişiklikleri Kaydet"
 }

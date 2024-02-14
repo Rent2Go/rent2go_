@@ -82,5 +82,8 @@
   "yourReservations": "Your Reservations",
   "changePassword": "Change Password",
   "driversLicence": "Driver's License",
-  "disclaimer": "Disclaimer"
+  "disclaimer": "Disclaimer",
+
+  "personalInformations": "Personal Informations",
+  "saveChanges": "Save Changes"
 }
