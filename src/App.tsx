@@ -17,6 +17,15 @@ import {
   Online,
   BankTransfer,
   Cash,
+  CopyrightNotice,
+  CRandComplaintProcedures,
+  InsuranceInformation,
+  LegalNotices,
+  RentalAgreement,
+  RentalConditions,
+  SecurityNotices,
+  TermsAndConditions,
+  VehicleConditionReports,
 } from "./pages";
 
 import "./App.css";
@@ -60,25 +69,34 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/sign-in" element={<Login />} />
             <Route path="/sign-in/reset-password" element={<ResetPassword />} />
-            <Route
-              path="/sign-in/change-password"
-              element={<ChangePassword />}
-            />
+            <Route path="/sign-in/change-password" element={<ChangePassword />} />
             <Route path="/sign-up" element={<Register />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/cars" element={<CarPage />} />
             <Route path="/brands" element={<BrandPage />} />
             <Route path="/our-team" element={<OurTeamPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
             <Route path="/cookie-policy" element={<CookiePolicy />} />
+            <Route path="/copyright-notice" element={<CopyrightNotice />} />
+            <Route path="/cr-complaint-procedures" element={<CRandComplaintProcedures />} />
+            <Route path="/insurance" element={<InsuranceInformation />} />
+            <Route path="/legal-notices" element={<LegalNotices />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/rental-agreement" element={<RentalAgreement />} />
+            <Route path="/rental-conditions" element={<RentalConditions />} />
+            <Route path="/security-notices" element={<SecurityNotices />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+            <Route path="/terms-of-use" element={<TermsOfUse />} />
+            <Route path="/vehicle-condition-reports" element={<VehicleConditionReports />} />
+            
 
             <Route path="/reservation/:id" element={<ReservationPage />} />
             <Route path="/payment/cash" element={<Cash />} />
             <Route path="/payment/online" element={<Online />} />
             <Route path="/payment/bankTransfer" element={<BankTransfer />} />
 
-            <Route path="/terms-of-use" element={<TermsOfUse />} />
+          
             <Route path="/success" element={<SuccessPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
