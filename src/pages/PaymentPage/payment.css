@@ -1,1 +1,14 @@
-/*# sourceMappingURL=payment.css.map */
+.payment {
+  padding: 4rem 2rem;
+}
+.payment .secContainer {
+  margin: 4rem 0rem;
+}
+.payment .secContainer .headingDiv {
+  padding: 2rem;
+  text-align: center;
+}
+.payment .secContainer .contentDiv {
+  margin: 0.5rem;
+  padding: 1rem 2rem;
+}/*# sourceMappingURL=payment.css.map */
