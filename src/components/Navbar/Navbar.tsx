@@ -100,7 +100,7 @@ const Navbar = (props: Props) => {
                 </Link>
 
                 <Link className="  btn text textAction" to="/cart">
-                  Reservation
+                  {t("reservation")}
                 </Link>
                 <Link
                   className="text textAction btn"
