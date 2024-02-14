@@ -7,6 +7,7 @@ import './profilePage.css'
 import YourReservations from '../../components/UserProfile/YourReservations/YourReservations'
 import ChangePassword from '../../components/UserProfile/ChangePassword/ChangePassword'
 import DriversLicense from '../../components/UserProfile/DriversLicense/DriversLicense'
+import UserLocation from '../../components/UserProfile/UserLocation/UserLocation'
 
 
 
@@ -28,6 +29,7 @@ const ProfilePage = (props: Props) => {
           {activepage === 'your-reservations' && <YourReservations />}
           {activepage === 'change-password' && <ChangePassword />}
           {activepage === 'drivers-license' && <DriversLicense />}
+          {activepage === 'location-settings' && <UserLocation />}
         </div>
       </div>
       <Footer />
