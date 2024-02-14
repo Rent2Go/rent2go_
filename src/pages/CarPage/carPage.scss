@@ -232,3 +232,42 @@
     }
   }
 }
+@media screen and (max-width:520px) {
+  .carPage {
+    padding: 1rem 2rem;
+    .secContainer {
+      padding: 0;
+      justify-content: center;
+      margin:2rem 1rem;
+      .secHeading {
+
+        .search {
+          width: 100%;
+          .searchDiv{
+            grid-template-columns: repeat(1,1fr);
+          }
+        }
+      }
+      .secContent {
+        grid-template-columns: repeat(1, 1fr);
+        align-items: flex-start;
+        .filterContainer {
+          grid-column-start: 1;
+          grid-column-end: 2;}
+        }
+        .carContainer{
+          grid-column-start: 1!important;
+          grid-column-end: 1!important;
+          .singleCar{
+            div{
+              grid-template-columns: repeat(1,1fr)!important;
+              .imgDiv{
+                width: 100%!important;
+                height: auto!important;
+              }
+            }
+          }
+        }
+    }
+  }
+}
