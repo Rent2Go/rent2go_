@@ -76,9 +76,6 @@ const ReservationPage = () => {
     event.preventDefault();
     console.log("Form submitted with payment method: ", selectedPaymentMethod);
 
-    // Örneğin, seçilen ödeme yöntemine göre farklı işlemler yapılabilir
-
-    // Yönlendirme yap
     navigate(`/payment/${selectedPaymentMethod}`);
   };
   return (

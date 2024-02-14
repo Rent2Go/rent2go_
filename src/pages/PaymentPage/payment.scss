@@ -1,15 +1,94 @@
-.payment{
-    padding: 4rem 2rem;
-    .secContainer{
-        margin:4rem 0rem;
-        .headingDiv{
-            padding:2rem;
-            text-align: center;
-        }
-        .contentDiv{
-            margin:0.5rem;
-            padding: 1rem 2rem;
-        }
+.payment {
+  padding: 4rem 2rem;
+  .secContainer {
+    margin: 4rem 4rem;
+    .headingDiv {
+      padding-top: 2rem;
+      text-align: center;
+      h2 {
+        color: var(--primaryColor);
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+      }
     }
-    
+    .contentDiv {
+      margin: 0.5rem;
+      padding: 0 4rem 2rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      .formContainer {
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+          rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        padding: 2rem 8rem 4rem 8rem;
+        margin: 0 6rem 4rem 6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
+        text-align: left;
+        .form {
+          .infoRow,
+          .amountRow {
+            padding: 2rem 0;
+          }
+          .infoRow {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+          }
+          .amountRow {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+          }
+          .btnRow {
+            gap: 0.5rem;
+            .btn {
+              padding: 0.5rem 2rem;
+              font-size: 16px;
+              font-weight: 500;
+            }
+            .btn-submit {
+              background: var(--primaryColor);
+              color: var(--pureWhiteColor);
+              &:hover {
+                background: var(--secondaryColor);
+                color: var(--placeHolderColor);
+                transition: 0.3ms ease-in;
+              }
+            }
+            .btn-cancel {
+              background: var(--focusColor);
+              color: var(--blackColor);
+              &:hover {
+                background: var(--blackColor);
+                color: var(--pureWhiteColor);
+                transition: 0.3ms ease-in;
+              }
+            }
+          }
+          .form-label,
+          p {
+            font-size: 16px;
+            color: var(--textColor);
+            margin-top: 0.5rem;
+            margin-bottom: 0.25rem;
+          }
+          input {
+            font-size: 16px;
+            color: var(--textColor);
+            &::placeholder {
+              font-size: 16px;
+              color: var(--textColor);
+            }
+          }
+        }
+      }
+    }
+  }
 }
