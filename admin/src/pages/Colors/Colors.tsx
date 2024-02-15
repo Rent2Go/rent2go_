@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { ColorPicker, useColor } from "react-color-palette";
-import "react-color-palette/css";
-import "./colors.css";
 import { Form, Formik } from "formik";
-import { FormikInput } from "../../components";
-import { ColorModel } from "../../models/responses/colors/GetColor";
-import ColorService from "../../services/ColorService";
-import { AddColorRequest } from "../../models/requests/colors/AddColorRequest";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { MdOutlineDeleteForever } from "react-icons/md";
 import { AiFillCloseCircle } from "react-icons/ai";
+
+import { FormikInput } from "../../components";
+import ColorService from "../../services/ColorService";
+import { ColorModel } from "../../models/responses/colors/GetColor";
+import { AddColorRequest } from "../../models/requests/colors/AddColorRequest";
+
+import "react-color-palette/css";
+import "./colors.css";
 
 type Props = {};
 
