@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import "./customerTable.css";
-import { CustomerModel } from "../../../models/responses/customers/GetCustomer";
-import CustomerService from "../../../services/CustomerService";
 import { Form, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaUserEdit } from "react-icons/fa";
 import { RiDeleteBin3Line } from "react-icons/ri";
+
+import CustomerService from "../../../services/CustomerService";
+import { CustomerModel } from "../../../models/responses/customers/GetCustomer";
+
+import "./customerTable.css";
 type Props = {};
 
 const CustomerTable = (props: Props) => {

@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import "./employeeTable.css";
-import { Table } from "react-bootstrap";
-import { EmployeeModel } from "../../../models/responses/employees/GetEmployee";
-import EmployeeService from "../../../services/EmployeeService";
-import Form from "react-bootstrap/Form";
-import { FormCheck } from "react-bootstrap";
+import { Table, Form, FormCheck } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaUserEdit } from "react-icons/fa";
 import { RiDeleteBin3Line } from "react-icons/ri";
 import { CiEdit } from "react-icons/ci";
 import { MdOutlineDeleteForever } from "react-icons/md";
+
+import EmployeeService from "../../../services/EmployeeService";
+import { EmployeeModel } from "../../../models/responses/employees/GetEmployee";
+
+import "./employeeTable.css";
 
 type Props = {};
 

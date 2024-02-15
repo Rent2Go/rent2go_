@@ -2,21 +2,25 @@
 import React, { useEffect, useState } from 'react';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { CarModel } from '../../models/responses/cars/GetCar';
+import { ToastContainer, toast } from 'react-toastify';
+import * as Yup from "yup";
+import Dropzone from 'react-dropzone-uploader';
+
+import { FormikInput } from '../../components';
+import OverlayLoaderTest from '../../components/OverlayLoader/OverlayLoaderTest';
+
 import CarService from '../../services/CarService';
 import ColorService from '../../services/ColorService';
 import BrandService from '../../services/BrandService';
 import ModelService from '../../services/ModelService';
+
+import { CarModel } from '../../models/responses/cars/GetCar';
 import { UpdateCarRequest } from '../../models/requests/cars/UpdateCarRequest';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { ColorModel } from '../../models/responses/colors/ColorModel';
 import { BrandModel } from '../../models/responses/brands/GetBrand';
 import { ModelModel } from '../../models/responses/models/GetModel';
-import { FormikInput } from '../../components';
-import * as Yup from "yup"
-import Dropzone from 'react-dropzone-uploader';
-import OverlayLoaderTest from '../../components/OverlayLoader/OverlayLoaderTest';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const UpdateCar = () => {
   const { id } = useParams();

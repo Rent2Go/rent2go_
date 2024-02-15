@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
-import "./settings.css";
 import { Formik } from "formik";
-import { FormikInput } from "../../components";
 import Input from "antd/es/input/Input";
+import { Link } from "react-router-dom";
+import { useSSR } from "react-i18next";
+
+import { FormikInput } from "../../components";
 import { useAuth } from "../../contexts/AuthContext";
 import UserService from "../../services/UserService";
-import { useSSR } from "react-i18next";
 import { UserModel } from "../../models/responses/users/GetUser";
-import { Link } from "react-router-dom";
+
+import "./settings.css";
 type Props = {};
 
 const Settings = (props: Props) => {

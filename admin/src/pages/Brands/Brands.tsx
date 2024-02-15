@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./brands.css";
 import { Form, Formik } from "formik";
 import { FormikInput } from "../../components";
 import { Link } from "react-router-dom";
@@ -9,6 +8,7 @@ import BrandService from "../../services/BrandService";
 import { object, string } from "yup";
 import { AddBrandRequest } from "../../models/requests/brands/AddBrandRequest";
 import { ToastContainer, toast } from "react-toastify";
+import "./brands.css";
 type Props = {};
 {
   /* Add Form */

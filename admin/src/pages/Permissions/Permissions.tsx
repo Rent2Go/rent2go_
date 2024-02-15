@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./permissions.css";
+import { Form, Table } from "react-bootstrap";
 
 import DiscountService from "../../services/DiscountService";
 import ColorService from "../../services/ColorService";
@@ -8,7 +8,8 @@ import CarService from "../../services/CarService";
 import CustomerService from "../../services/CustomerService";
 import EmployeeService from "../../services/EmployeeService";
 import UserService from "../../services/UserService";
-import { Form, Table } from "react-bootstrap";
+
+import "./permissions.css";
 
 type Props = {};
 

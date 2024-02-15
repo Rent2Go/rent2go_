@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
-import "./settings.css";
 import { Form, Formik } from "formik";
-import { FormikInput } from "../../components";
 import Input from "antd/es/input/Input";
-import SettingsService from "../../services/SettingsService";
-import { SettingsModel } from "../../models/responses/settings/SettingsModel";
 import { ToastContainer, toast } from "react-toastify";
-import { UpdateSettingsRequest } from "../../models/requests/settings/UpdateSettingsRequest";
 import Dropzone from "react-dropzone-uploader";
-
-
 import * as Yup from "yup";
+
+import { FormikInput } from "../../components";
 import OverlayLoader from "../../components/OverlayLoader/OverlayLoader";
 import OverlayLoaderTest from "../../components/OverlayLoader/OverlayLoaderTest";
+import SettingsService from "../../services/SettingsService";
+import { SettingsModel } from "../../models/responses/settings/SettingsModel";
+import { UpdateSettingsRequest } from "../../models/requests/settings/UpdateSettingsRequest";
+
+import "./settings.css";
 type Props = {};
 
 
