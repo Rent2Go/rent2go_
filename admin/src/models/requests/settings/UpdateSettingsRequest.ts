@@ -1,14 +1,15 @@
 export interface UpdateSettingsRequest {
    
-	id: number;
-	title: string;
-	url: string;
-	logo: string;
-	phoneNumber: string;
-	email: string;
-	address: string;
-	linkedin: string;
-	instagram: string;
-	github: string;
+	id: number | undefined;
+	title: string | undefined;
+	url: string | undefined;
+	logo: string | undefined;
+	tabLogo:string | undefined;
+	phoneNumber: string | undefined;
+	email: string | undefined;
+	address: string | undefined;
+	linkedin: string | undefined;
+	instagram: string | undefined;
+	github: string | undefined;
 }
 

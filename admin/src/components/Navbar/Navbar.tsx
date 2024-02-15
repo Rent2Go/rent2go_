@@ -10,7 +10,7 @@ type Props = {};
 
 const Navbar = (props: Props) => {
   const auth = useAuth();
-  const email = auth.authInformation.user.email || "";
+  const email = auth.authInformation.user.email;
   const [user, setUser] = useState<UserModel>();
 
   const getUserByEmail = async (email: string) => {
@@ -20,8 +20,10 @@ const Navbar = (props: Props) => {
   };
 
   useEffect(() => {
-    getUserByEmail(email);
-  }, [email]);
+    if(email ){
+      getUserByEmail(email)
+    }
+  }, []);
 
   return (
     <div className="navbar">

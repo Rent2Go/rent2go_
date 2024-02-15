@@ -11,11 +11,21 @@ import Dropzone from "react-dropzone-uploader";
 
 
 import * as Yup from "yup";
+import OverlayLoader from "../../components/OverlayLoader/OverlayLoader";
+import OverlayLoaderTest from "../../components/OverlayLoader/OverlayLoaderTest";
 type Props = {};
 
 
 
 const Settings = (props: Props) => {
+
+
+  useEffect(() => {
+  
+    getSetttings(1);
+   
+  }, []);
+
   const validationSchema = Yup.object().shape({
     id: Yup.number()
       .required("The settings id cannot be empty.")
@@ -35,13 +45,15 @@ const Settings = (props: Props) => {
   });
 
   const [settings, setSettigs] = useState<SettingsModel>();
+
   const formData = new FormData();
-  const handleImage = (e: any) => {
-    formData.append("file", e.target.files[0]);
-    console.log(formData.get("file"));
-  };
+
+ 
+
 
   const onSubmit = async (values: UpdateSettingsRequest) => {
+    console.log("asdasd");
+    
     if (formData.get("file") !== null) {
       formData.append(
         "settings",
@@ -68,6 +80,10 @@ const Settings = (props: Props) => {
         });
     }
   };
+  const handleSubmitasd = async ()=>{
+    console.log("asdad");
+    
+  }
 
   
 const getUploadParams = ({}) => {
@@ -76,7 +92,7 @@ const getUploadParams = ({}) => {
 const handleChangeStatus = ({ meta, file }: { meta: any, file: any }) => {
   if (meta.status === 'done') {
     console.log('Dosya yüklendi:', file);
-    formData.append("file", file)
+    formData.append("files", file)
 
 
   } else if (meta.status === 'error') {
@@ -94,11 +110,11 @@ const handleChangeStatus = ({ meta, file }: { meta: any, file: any }) => {
         toast.error(err.response.data.message);
       });
   };
-  useEffect(() => {
-    getSetttings(1);
-  }, []);
 
-  if (!settings) return <div>..loaidng</div>;
+
+if(!settings) return <OverlayLoaderTest/>
+  
+
   return (
     <div className="settings container">
       <div className="secContainer">
@@ -108,11 +124,14 @@ const handleChangeStatus = ({ meta, file }: { meta: any, file: any }) => {
         <div className="settings__wrapper">
           <div className="details__form">
             <Formik
+            validationSchema={validationSchema}
+            validateOnBlur={true}
               initialValues={{
-                id: settings.id,
+                id: settings.id ,
                 title: settings.title,
                 url: settings.url,
                 logo: settings.logo,
+                tabLogo:settings.tabLogo,
                 phoneNumber: settings.phoneNumber,
                 email: settings.email,
                 address: settings.address,
@@ -120,8 +139,6 @@ const handleChangeStatus = ({ meta, file }: { meta: any, file: any }) => {
                 instagram: settings.instagram,
                 github: settings.github,
               }}
-              validationSchema={validationSchema}
-              validateOnBlur={true}
               onSubmit={onSubmit}
             >
               <Form className="form">
@@ -131,32 +148,11 @@ const handleChangeStatus = ({ meta, file }: { meta: any, file: any }) => {
                       <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
                         <div className="imgDiv">
                           <img src={settings?.logo} alt="logo" />
-                          <img src={settings?.logo} alt="logo" />
+                          <img src={settings?.tabLogo} alt="logo" />
                         </div>
                       </div>
                     </div>
-                    <div className="row">
-                      <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
-                        <div className="btn-row">
-                          <div className="">
-                            <button
-                              className="btn-light btn btn-login btn-sm"
-                              type="submit"
-                            >
-                              Submit
-                            </button>
-                          </div>
-                          <div className="">
-                            <button
-                              className="btn-danger btn btn-login btn-sm"
-                              type="submit"
-                            >
-                              Cancel
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                   
                   </div>
                   <div className="col-xl-8 col-l-8 col-md-12 col-sm-12">
                     <div className="row">
@@ -241,6 +237,28 @@ const handleChangeStatus = ({ meta, file }: { meta: any, file: any }) => {
                           label="Github"
                           placeHolder="Enter Your Github Address"
                         />
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
+                        <div className="btn-row">
+                          <div className="">
+                            <button
+                              className="btn-light btn btn-login btn-sm"
+                              type="submit"
+                            >
+                              Submit
+                            </button>
+                          </div>
+                          <div className="">
+                            <button
+                              className="btn-danger btn btn-login btn-sm"
+                              type="submit"
+                            >
+                              Cancel
+                            </button>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
