@@ -69,4 +69,10 @@
   color: var(--secondaryColor);
   font-size: 13px;
   font-weight: 500;
+}
+
+.nonNavbar {
+  grid-template-columns: repeat(1, 1fr) !important;
+  -moz-column-gap: 0 !important;
+       column-gap: 0 !important;
 }/*# sourceMappingURL=legal.css.map */
