@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-import { useTranslation } from "react-i18next";
-import "./search.css";
+import { useNavigate } from "react-router-dom";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { useDispatch, useSelector } from "react-redux";
-import { setEndDate, setStartDate } from "../../store/slices/dateSlice";
-import { useNavigate } from "react-router-dom";
 import { differenceInDays } from "date-fns";
+
+import { useTranslation } from "react-i18next";
+
+import { setEndDate, setStartDate } from "../../store/slices/dateSlice";
+
+import "./search.css";
 
 
 type Props = {};
