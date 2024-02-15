@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 import { HiOutlineRefresh } from "react-icons/hi";
+import { useTranslation } from "react-i18next";
+
+import { CarModel } from "../../models/responses/cars/GetCar";
+
+import CarService from "../../services/CarService";
 
 import './auctions.css';
-import { CarModel } from "../../models/responses/cars/GetCar";
-import CarService from "../../services/CarService";
 
 type Props = {};
 
