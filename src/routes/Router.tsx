@@ -42,7 +42,7 @@ const Router = () => {
         <Route path="/sign-in/reset-password" element={<ResetPassword />} />
         <Route path="/sign-in/change-password" element={<ChangePassword />} />
         <Route path="/sign-up" element={<Register />} />
-        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/profile/:activepage" element={<ProfilePage />} />
         <Route path="/cars" element={<CarPage />} />
         <Route path="/brands" element={<BrandPage />} />
         <Route path="/our-team" element={<OurTeamPage />} />
