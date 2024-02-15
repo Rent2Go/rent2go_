@@ -70,3 +70,8 @@
   font-size: 13px;
   font-weight: 500;
 }/*# sourceMappingURL=legal.css.map */
+
+.tabs_list{
+  position: sticky;
+  top: 200px;
+}
