@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import Pagination from "@mui/material/Pagination";
 import { Stack } from "@mui/material";
+import { IoMdAdd } from "react-icons/io";
 
 import VehicleCard from "../../components/Cards/VehicleCard/VehicleCard";
 import CarService from "../../services/CarService";
 import { CarModel } from "../../models/responses/cars/GetCar";
 
 import "./styles/cars.css";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { IoMdAdd } from "react-icons/io";
 
 type Props = {};
 
