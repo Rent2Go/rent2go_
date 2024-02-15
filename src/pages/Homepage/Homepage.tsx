@@ -11,14 +11,12 @@ import {
   Search,
   Sellers,
   Trending,
-  ScrollToTop,
   Footer,
   Specials,
 } from "../../components";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import "./homepage.css";
-
 
 type Props = {};
 
@@ -48,7 +46,7 @@ const Homepage = (props: Props) => {
         <title>{settings.title} - HomePage </title>
       </Helmet>
       <Navbar />
-      <ScrollToTop />
+
       <div className="home">
         <div className="secContainer">
           <div data-aos="fade-up" className="homeText">
@@ -74,10 +72,7 @@ const Homepage = (props: Props) => {
             </div>
           </div>
           <div className="homeImage" data-aos="fade-down-right">
-            <img
-              src="assets/img/carModels/homeCar.png"
-              alt="homeImage"
-            />
+            <img src="assets/img/carModels/homeCar.png" alt="homeImage" />
           </div>
         </div>
       </div>
@@ -86,7 +81,7 @@ const Homepage = (props: Props) => {
       </div>
       <Trending />
       <Sellers />
-      <Specials/>
+      <Specials />
       <Auction handleScrollToSearch={handleScrollToSearch} />
       <Review />
       <Footer />

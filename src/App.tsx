@@ -9,6 +9,7 @@ import { setPageSettings } from "./store/slices/settingsSlice";
 import SettingsService from "./services/SettingsService";
 import { Helmet } from "react-helmet";
 import Router from "./routes/Router";
+import { ScrollToTop } from "./components";
 
 function App() {
   const settings = useSelector((state: any) => state.settings.setting);
@@ -31,6 +32,7 @@ function App() {
         <link rel="icon" href={settings.logo} />
       </Helmet>
       <main>
+        <ScrollToTop />
         <OverlayLoader />
         <Router />
       </main>
