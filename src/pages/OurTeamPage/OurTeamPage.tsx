@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Navbar, Footer } from "../../components";
-import { useTranslation } from "react-i18next";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
+import { Navbar, Footer } from "../../components";
+
+import { useTranslation } from "react-i18next";
+
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+
 import "./ourteampage.css";
+
 import OurTeam from "../../models/responses/ourTeams/GetOurTeams";
+
 import OurTeamService from "../../services/OurTeamService";
 
 type Props = {}
