@@ -6,6 +6,11 @@ export {default as BrandPage} from "./BrandPage/BrandPage"
 export {default as OurTeamPage} from "./OurTeamPage/OurTeamPage"
 export {default as ContactPage} from "./ContactPage/ContactPage"
 export {default as ProfilePage} from "./ProfilePage/ProfilePage"
+export {default as ResetPassword} from "./ResetPasswordPage/ResetPassword"
+export {default as ChangePassword} from "./ChangePasswordPage/ChangePassword"
+export {default as SuccessPage} from "./messagepage/SuccessPage"
+
+
 export {default as ReservationPage} from "./ReservationPage/ReservationPage"
 
 export {default as NotFoundPage} from "./NotFoundPage/PageNotFound"
