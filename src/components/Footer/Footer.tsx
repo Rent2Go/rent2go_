@@ -29,7 +29,7 @@ const Footer = (props: Props) => {
                 </Link>
               </li>
               <li className="footerLi">
-                <Link to="https://www.istka.org.tr/">{t("affiliates")}</Link>
+                <Link to="https://tobeto.com/">{t("affiliates")}</Link>
               </li>
               <li className="footerLi">
                 <Link to="/contact">{t("contactUs")}</Link>

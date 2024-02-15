@@ -11,7 +11,7 @@
       .footerTitle {
         display: block;
         padding-top: 0.5rem;
-        font-size: 16px;
+        font-size: 14px;
         color: var(--blackColor);
         font-weight: 700;
       }
@@ -26,7 +26,8 @@
             transition: 0.3s;
           }
           a{
-            color:var(--textColor);;
+            color:var(--textColor);
+            font-size: 13px;
           }
         }
       }
@@ -52,7 +53,7 @@
         .singleGrid {
          
           .footerTitle {
-            font-size: 17px;
+            font-size: 16px;
           }
           .footerUl {
             gap: 5px;
