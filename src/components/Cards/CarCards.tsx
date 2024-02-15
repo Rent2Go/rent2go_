@@ -3,6 +3,7 @@ import { CarModel } from "../../models/responses/cars/GetCar";
 import { BiTachometer, BiCylinder, BiSolidDollarCircle } from "react-icons/bi";
 import { IoIosColorPalette } from "react-icons/io";
 import { useTranslation } from "react-i18next";
+import { GrMoney } from "react-icons/gr";
 
 import { PiEngine } from "react-icons/pi";
 
@@ -14,7 +15,7 @@ type Props = {
 };
 
 const CarCards = (props: Props) => {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   return (
     <>
       {
@@ -54,13 +55,16 @@ const CarCards = (props: Props) => {
             <div className="actionRow mb-4">
               {" "}
               <span className="carLabel">
-                <BiSolidDollarCircle />
+                <GrMoney />
               </span>
-              <span className="price">{props.car.dailyPrice}</span>
+              <span className="price">{props.car.dailyPrice} ₺</span>
             </div>
             <div className="actionRow">
-              <Link to={`/reservation/${props.car.id}`} className="btn text btnPrimary">
-                {t("makeReservation")}
+              <Link
+                to={`/reservation/${props.car.id}`}
+                className="btn text btnPrimary"
+              >
+                {t("reservation")}
               </Link>
             </div>
           </div>

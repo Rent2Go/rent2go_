@@ -154,7 +154,8 @@
 }
 .carPage .secContainer .secContent .carContainer .singleCar div {
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.1rem 3.5rem;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
   align-items: flex-end;
   justify-content: flex-end;
 }
@@ -166,7 +167,7 @@
   border-radius: 0.5rem;
   border: none;
   width: 350px;
-  height: 170px;
+  height: 120px;
 }
 .carPage .secContainer .secContent .carContainer .singleCar div .imgDiv img {
   -o-object-fit: contain;
@@ -184,12 +185,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: last baseline;
-  font-size: 16px;
+  font-size: 13px;
 }
 .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv .carTitle {
-  color: var(--blackColor);
-  font-size: 24px;
+  color: var(--primaryColor);
+  font-size: 16px;
   margin-bottom: 4rem;
+  width: -moz-max-content;
+  width: max-content;
+  font-weight: 600;
 }
 .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv .carLabel {
   font-weight: 600;
@@ -204,7 +208,7 @@
 .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv {
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: self-end;
   justify-content: center;
 }
 .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv .actionRow {
@@ -215,21 +219,26 @@
   gap: 0;
 }
 .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv .actionRow span {
-  padding-bottom: 4.5rem;
+  padding-bottom: 4rem;
+  margin-left: 0.25rem;
+  font-weight: 500;
+  font-size: 14px;
 }
-.carPage .secContainer .secContent .carContainer .singleCar div .actionDiv a, .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv button {
+.carPage .secContainer .secContent .carContainer .singleCar div .actionDiv a,
+.carPage .secContainer .secContent .carContainer .singleCar div .actionDiv button {
   background: var(--pureWhiteColor);
   color: var(--primaryColor);
-  border: 1.5px solid var(--primaryColor);
+  border: 2.5px solid var(--primaryColor);
   padding: 0.5rem 0.75rem;
-  font-weight: 500;
-  font-size: 11.5px;
+  font-weight: 600;
+  font-size: 10px;
   transition: 0.3s ease-in-out;
 }
-.carPage .secContainer .secContent .carContainer .singleCar div .actionDiv a:hover, .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv button:hover {
+.carPage .secContainer .secContent .carContainer .singleCar div .actionDiv a:hover,
+.carPage .secContainer .secContent .carContainer .singleCar div .actionDiv button:hover {
   background: var(--secondaryColor);
   color: var(--blackColor);
-  border: 1.5px solid var(--secondaryColor);
+  border: 2.5px dashed var(--pureWhiteColor);
 }
 .carPage .secContainer .secContent .carContainer .paginationContainer {
   justify-content: center;
