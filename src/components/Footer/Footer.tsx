@@ -72,7 +72,7 @@ const Footer = (props: Props) => {
                 <Link to="/copyright-notice">{t("copyrightNotice")}</Link>
               </li>
               <li className="footerLi">
-                <Link to="insurance-information">{t("insuranceInfo")}</Link>
+                <Link to="insurance">{t("insuranceInfo")}</Link>
               </li>
               <li className="footerLi">
                 <Link to="legal-notices">{t("legalNotices")}</Link>

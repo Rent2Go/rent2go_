@@ -57,7 +57,7 @@ const Router = () => {
         <Route path="/insurance" element={<InsuranceInformation />} />
         <Route path="/legal-notices" element={<LegalNotices />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/rental-agreement" element={<RentalAgreement />} />
+        <Route path="/rental-agreements" element={<RentalAgreement />} />
         <Route path="/rental-conditions" element={<RentalConditions />} />
         <Route path="/security-notices" element={<SecurityNotices />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
