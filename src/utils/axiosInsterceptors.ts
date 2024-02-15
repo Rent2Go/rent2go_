@@ -9,7 +9,7 @@ import store from '../store/store';
 import TokenService from '../services/TokenService';
 
 const axiosInstance = axios.create({
-	baseURL: "http//localhost:8080/api/",
+	baseURL: "https://api.rentogo.com.tr/api",
 });
 
 

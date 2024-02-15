@@ -9,6 +9,7 @@ import { setEndDate, setStartDate } from "../../store/slices/dateSlice";
 import { useNavigate } from "react-router-dom";
 import { differenceInDays } from "date-fns";
 
+
 type Props = {};
 
 const Search = (props: Props) => {
