@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import "./styles/user.css"
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import { FormikInput } from '../../components';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import Dropzone from 'react-dropzone-uploader';
+import { toast } from 'react-toastify';
+import { object, ref, string } from "yup";
+
+import { FormikInput } from '../../components';
 import UserService from '../../services/UserService';
 import { UserModel } from '../../models/responses/users/GetUser';
-import { toast } from 'react-toastify';
-import   { object, ref, string } from "yup";
 import { UpdateUserRequest } from '../../models/requests/users/UpdateUserRequest';
+
+import "./styles/user.css";
 
 type Props = {}
 
