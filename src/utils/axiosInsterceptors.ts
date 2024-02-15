@@ -1,12 +1,14 @@
-import { string } from 'yup';
-import { jwtDecode } from 'jwt-decode';
 import axios from "axios";
-import { TokenUser } from '../models/token/TokenUser';
-import { number } from 'yup';
+import { jwtDecode } from 'jwt-decode';
 
-import { decreaseRequestCount, increaseRequestCount } from '../store/slices/loadingSlice';
+import { TokenUser } from '../models/token/TokenUser';
+
 import store from '../store/store';
+import { decreaseRequestCount, increaseRequestCount } from '../store/slices/loadingSlice';
+
 import TokenService from '../services/TokenService';
+
+import { string, number } from 'yup';
 
 const axiosInstance = axios.create({
 	baseURL: "https://api.rentogo.com.tr/api",
