@@ -1,0 +1,72 @@
+.legal {
+  padding: 4rem 0;
+}
+.legal .secContainer {
+  margin: 4rem 0;
+  padding: 2rem 4rem;
+}
+.legal .secContainer .headingDiv h2 {
+  color: var(--primaryColor);
+}
+.legal .secContainer .contentContainer {
+  display: inline-grid;
+  grid-template-columns: 20% auto;
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.legal .secContainer .contentContainer .navContainer {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  bottom: 150px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  background: var(--secondaryColor);
+  opacity: 25%;
+  text-align: left;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: self-end;
+  justify-content: center;
+  row-gap: 2rem;
+}
+.legal .secContainer .contentContainer .navContainer:hover .nav-buttons {
+  color: #000000;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+  transition: 0.5s ease-in-out;
+}
+.legal .secContainer .contentContainer .navContainer .nav-buttons {
+  color: var(--blackColor);
+  font-size: 15px;
+  font-weight: 500;
+}
+.legal .secContainer .contentContainer .letterContainer {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  text-align: justify;
+}
+.legal .secContainer .contentContainer .letterContainer p {
+  font-size: 13px;
+}
+.legal .secContainer .contentContainer .letterContainer h2 {
+  color: var(--fourthColor);
+  font-size: 25px;
+}
+.legal .secContainer .contentContainer .letterContainer h3 {
+  color: var(--textColor);
+  font-size: 20px;
+}
+.legal .secContainer .contentContainer .letterContainer h4 {
+  color: var(--primaryColor);
+  font-size: 18px;
+}
+.legal .secContainer .contentContainer .letterContainer a {
+  color: var(--secondaryColor);
+  font-size: 13px;
+  font-weight: 500;
+}/*# sourceMappingURL=legal.css.map */
