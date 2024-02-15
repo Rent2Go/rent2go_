@@ -1,14 +1,15 @@
-
-import React from 'react'
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { object, string } from 'yup';
-import { AddOurTeamRequest } from '../../models/requests/ourTeams/AddOurTeamRequest';
-import OurTeamService from '../../services/OurTeamService';
-import { ToastContainer, toast } from 'react-toastify';
 import { Form, Formik } from 'formik';
-import { FormikInput } from '../../components';
+import { ToastContainer, toast } from 'react-toastify';
 import Dropzone from 'react-dropzone-uploader';
-import './styles/ourTeam.css'
+
+import { FormikInput } from '../../components';
+import OurTeamService from '../../services/OurTeamService';
+import { AddOurTeamRequest } from '../../models/requests/ourTeams/AddOurTeamRequest';
+
+import './styles/ourTeam.css';
 
 
 type Props = {}
