@@ -7,6 +7,7 @@
   "signIn": "Sign In",
   "action": "Action",
   "profile": "Profile",
+  "reservation": "Reservation",
   "logout": "Log Out",
 
 
@@ -74,5 +75,34 @@
   "email": "Email",
   "phone": "Phone",
   "message": "Message",
-  "sendMessage": "Send Message"
+  "sendMessage": "Send Message",
+
+
+  "accountSettings": "Account Settings",
+  "locationSettings": "Location Settings",
+  "yourReservations": "Your Reservations",
+  "changePassword": "Change Password",
+  "driversLicence": "Driver's License",
+  "disclaimer": "Disclaimer",
+
+  "personalInformations": "Personal Informations",
+  "nationalityId": "Nationality Id",
+  "dateOfBirth": "Date Of Birth",
+  "saveChanges": "Save Changes",
+  "locationInformation": "Location Information",
+  "city": "City",
+  "district": "District",
+  "address": "Address",
+  "saveLocationChanges": "Save Location Changes",
+  "returnDate": "Return Date",
+  "totalPrice": "Total Price",
+  "carBrand": "Car Brand",
+  "carModel": "Car Model",
+  "status": "Status",
+  "inUse": "In Use",
+  "delivered": "Delivered",
+  "oldPassword": "Old Password",
+  "newPassword": "New Password",
+  "passwordConfirm": "Password Confirm",
+  "saveNewPassword": "Save New Password"
 }

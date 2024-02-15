@@ -1,0 +1,65 @@
+.driversLicense {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    .mainHead1 {
+        color: var(--primaryColor);
+        font-size: 30px;
+        font-weight: 350;
+        padding: 10px 20px;
+        margin-top: 10px;
+    }
+    .mainButton1 {
+        background-color: none;
+        border: 1px solid var(--primaryColor);
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin: 4rem;
+        cursor: pointer;
+        color: var(--primaryColor);
+        &:hover {
+            background-color: var(--pureWhiteColor);
+            transform: scale(1.1);
+            transition: all 0.4s ease-in-out;
+        }
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 15px;
+            padding-top: 15px;
+        }
+    }
+    label {
+        font-size: 1.3rem;
+        font-weight: 300;
+        margin-bottom: 5px;
+    }
+    
+}
+
+
+.dzu-dropzone {
+    min-height: 120px;
+    overflow: hidden !important;
+    transition: all 0.15s linear;
+    border: 4px dashed var(--primaryColor) !important;
+    background: var(--backGroundColor2) !important;
+    border-radius: 0.5rem !important;
+    label {
+      color: var(--hoverColor) !important;
+    }
+    &:hover {
+      background: var(--pureWhiteColor) !important;
+    }
+  }

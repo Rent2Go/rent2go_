@@ -8,6 +8,7 @@
   "signIn": "Giriş Yap",
   "action": "İşlemler",
   "profile": "Profil",
+  "reservation": "Rezervasyon",
   "logout": "Çıkış Yap",
 
   
@@ -75,5 +76,34 @@
   "email": "E-posta",
   "phone": "Telefon",
   "message": "Mesaj",
-  "sendMessage": "Mesaj Gönder"
+  "sendMessage": "Mesaj Gönder",
+
+
+  "accountSettings": "Hesap Ayarları",
+  "locationSettings": "Konum Ayarları",
+  "yourReservations": "Rezervasyonlarınız",
+  "changePassword": "Şifre Değiştir",
+  "driversLicence": "Sürücü Belgesi",
+  "disclaimer": "Sorumluluk Reddi Beyanı",
+
+  "personalInformations": "Kişisel Bilgiler",
+  "nationalityId": "Kimlik Numarası",
+  "dateOfBirth": "Doğum Tarihi",
+  "saveChanges": "Değişiklikleri Kaydet",
+  "locationInformation": "Konum Bilgisi",
+  "city": "İl",
+  "district": "İlçe",
+  "address": "Adres",
+  "saveLocationChanges": "Konum Değişikliklerini Kaydet",
+  "returnDate": "Dönüş Tarihi",
+  "totalPrice": "Toplam Fiyat",
+  "carBrand": "Araç Markası",
+  "carModel": "Araç Modeli",
+  "status": "Durum",
+  "inUse": "Kullanımda",
+  "delivered": "Teslim Edilmiş",
+  "oldPassword": "Eski Şifre",
+  "newPassword": "Yeni Şifre",
+  "passwordConfirm": "Şifreyi Onayla",
+  "saveNewPassword": "Yeni Şifreyi Kaydet"
 }

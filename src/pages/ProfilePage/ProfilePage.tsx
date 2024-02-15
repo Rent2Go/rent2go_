@@ -1,8 +1,7 @@
 import React from 'react'
-import { Footer, Navbar } from '../../components'
+import { AccountSettings, Footer, Navbar, UserSidebar } from '../../components'
 import { useParams } from 'react-router-dom'
-import AccountSettings from '../../components/UserProfile/AccountSettings/AccountSettings'
-import UserSidebar from '../../components/UserProfile/UserSidebar/UserSidebar'
+
 import './profilePage.css'
 import YourReservations from '../../components/UserProfile/YourReservations/YourReservations'
 import ChangePassword from '../../components/UserProfile/ChangePassword/ChangePassword'
