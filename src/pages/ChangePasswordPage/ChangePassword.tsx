@@ -1,17 +1,33 @@
+// React imports
 import React, { useState } from "react";
-import "./auth.css";
-import { Formik, Form } from "formik";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-import "react-toastify/dist/ReactToastify.css";
-import { useAuth } from "../../contexts/AuthContext";
-import { Bounce, ToastContainer, toast } from "react-toastify";
+// Formik imports
+import { Formik, Form } from "formik";
 import { object, ref, string } from "yup";
+
+// Component imports
 import FormikInput from "../../components/FormikInput/FormikInput";
+
+// Context imports
+import { useAuth } from "../../contexts/AuthContext";
+
+// Toast imports
+import "react-toastify/dist/ReactToastify.css";
+import { Bounce, ToastContainer, toast } from "react-toastify";
+
+// Service imports
 import UserService from "../../services/UserService";
+
+// Model imports
 import { ChangePasswordRequest } from "../../models/requests/user/ChangePasswordRequest";
-import { jwtDecode } from "jwt-decode";
 import { TokenUser } from "../../models/token/TokenUser";
+
+// Utility imports
+import { jwtDecode } from "jwt-decode";
+
+// Style imports
+import "./auth.css";
 
 type Props = {};
 const ChangePassword = (props: Props) => {
