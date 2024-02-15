@@ -1,21 +1,23 @@
+// React imports
 import React, { useEffect, useState } from "react";
-import {
-  CarList,
-  Navbar,
-  Footer,
-  FilterCard,
-  GetDateFilter,
-  Search,
-} from "../../components";
+import { Helmet } from "react-helmet";
+
+// Redux imports
 import { useDispatch, useSelector } from "react-redux";
-import { FaSearch } from "react-icons/fa";
-import { CarModel } from "../../models/responses/cars/GetCar";
-import Pagination from "@mui/material/Pagination";
-import { Stack } from "@mui/material";
 import { fetchCarData } from "../../store/slices/carSlice";
 import { AppDispatch } from "../../store/store";
+
+// Component imports
+import { CarList, Navbar, Footer, FilterCard, GetDateFilter, Search } from "../../components";
+import { FaSearch } from "react-icons/fa";
+import Pagination from "@mui/material/Pagination";
+import { Stack } from "@mui/material";
+
+// Model imports
+import { CarModel } from "../../models/responses/cars/GetCar";
+
+// Translation imports
 import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet";
 
 
 type Props = {};
