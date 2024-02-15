@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import "./contactPage.css"
-import axios from 'axios';
-import { Footer, Navbar } from "../../components";
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
+import { Footer, Navbar } from "../../components";
+import { Button } from 'react-bootstrap';
+
 import { CiMail, CiPhone, CiMapPin } from "react-icons/ci";
 import { FaLinkedin, FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
-import { Button } from 'react-bootstrap';
+
+import axios from 'axios';
 import Aos from "aos";
+
 import { useTranslation } from "react-i18next";
-import { useSelector } from 'react-redux';
+
+import "./contactPage.css";
 
 
 const ContactPage = () => {

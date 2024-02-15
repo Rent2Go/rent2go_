@@ -1,13 +1,15 @@
-// BankTransfer.tsx
-
 import React, { useState } from "react";
-import { Footer, Navbar } from "../../components";
 import { Link, useParams } from "react-router-dom";
-import "./payment.css";
-import { Formik, Form } from "formik";
+
+import { Footer, Navbar } from "../../components";
 import FormikInput from "../../components/FormikInput/FormikInput";
+
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
+
 import { useAuth } from "../../contexts/AuthContext";
+
+import "./payment.css";
 
 type Props = {};
 

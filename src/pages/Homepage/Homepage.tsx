@@ -1,22 +1,18 @@
 import { useEffect, useRef } from "react";
-import { useTranslation } from "react-i18next";
-import i18n from "../../Language/language";
-import { Helmet } from "react-helmet";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import {
-  Auction,
-  Navbar,
-  Review,
-  Search,
-  Sellers,
-  Trending,
-  Footer,
-  Specials,
-} from "../../components";
+
+import { useTranslation } from "react-i18next";
+import i18n from "../../Language/language";
+
+import { Auction, Navbar, Review, Search, Sellers, Trending, Footer, Specials } from "../../components";
+
 import Aos from "aos";
+
 import "aos/dist/aos.css";
 import "./homepage.css";
+
+import { Helmet } from "react-helmet";
 
 type Props = {};
 

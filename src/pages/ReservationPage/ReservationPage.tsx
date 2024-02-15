@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { Navbar, Footer, CustomerCard, PriceCard } from "../../components";
-import "./reservationPage.css";
-import { Link, useParams } from "react-router-dom";
-import { CarModel } from "../../models/responses/cars/GetCar";
-import CarService from "../../services/CarService";
-import { useAuth } from "../../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
-import { CiCircleInfo } from "react-icons/ci";
 import { Unstable_Popup as BasePopup } from "@mui/base/Unstable_Popup";
+import { CiCircleInfo } from "react-icons/ci";
+
+import { Navbar, Footer, CustomerCard, PriceCard } from "../../components";
+
+import { CarModel } from "../../models/responses/cars/GetCar";
+
+import CarService from "../../services/CarService";
+
+import { useAuth } from "../../contexts/AuthContext";
 import { usePaymentContext } from "../../contexts/PaymentContext";
+
+import "./reservationPage.css";
 
 const ReservationPage = () => {
   const auth = useAuth();
