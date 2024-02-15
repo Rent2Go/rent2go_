@@ -136,7 +136,26 @@ const Register: React.FC<Props> = (props: Props) => {
                   />
                 </div>
               </div>
-              <div className="col-md-12 col-sm-12">
+              <div className="row">
+                <div className="col-md-6 col-sm-12">
+                  <Field
+                    name="birthDate"
+                    className="input"
+                    type="date"
+                    placeholder="Birthdate"
+                  />
+                </div>
+                <div className="col-md-6 col-sm-12">
+                  <Field
+                    name="idCardNumber"
+                    className="input"
+                    type="text"
+                    placeholder="Id Card Number"
+                  />
+                </div>
+              </div>
+              <div className="row">
+              <div className="col-md-6 col-sm-12">
                 <Field
                   name="password"
                   className="input"
@@ -145,7 +164,7 @@ const Register: React.FC<Props> = (props: Props) => {
                 />
 
               </div>
-              <div className="col-md-12 col-sm-12">
+              <div className="col-md-6 col-sm-12">
                 <Field
                   name="confirmpassword"
                   className="input"
@@ -153,6 +172,7 @@ const Register: React.FC<Props> = (props: Props) => {
                   placeholder="Confirm Password"
                 />
 
+              </div>
               </div>
 
 

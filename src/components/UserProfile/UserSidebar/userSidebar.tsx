@@ -1,5 +1,5 @@
 import React from 'react'
-import './UserSidebar.css'
+import './userSidebar.css'
 import { VscAccount } from "react-icons/vsc";
 import { IoBagCheckOutline, IoEyeOutline } from "react-icons/io5";
 import { BsPersonVcard } from "react-icons/bs";

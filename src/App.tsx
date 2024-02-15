@@ -14,29 +14,33 @@ import { setPageSettings } from "./store/slices/settingsSlice";
 import SettingsService from "./services/SettingsService";
 import {Helmet} from 'react-helmet'
 import PageNotFound from "./pages/NotFoundPage/PageNotFound";
+import OverlayLoaderLoad from "./components/OverlayLoader/OverlayLoaderLoad";
+import { toast } from "react-toastify";
 function App() {
 
   const settings = useSelector((state:any) => state.settings.setting);
   const dispatch = useDispatch();
   const handleSetPageSettings = async() => {
-  const response =     await SettingsService.getById(1)
-    dispatch(setPageSettings(response.data.data));
+  const response =     await SettingsService.getById(2)
+  .then((res)=> dispatch(setPageSettings(res.data.data)))
+  .catch((err) => toast.warn(err.response.data.message))
+   
   };
 
 
   useEffect(() => {
-    handleSetPageSettings()
+    handleSetPageSettings() 
+   
   }, [])
   
 
 
-  if(!settings) return <div>asdasd</div>
-  
+  if(!settings) return <OverlayLoaderLoad/>
   return (
     <>
      <Helmet>
       <title>{settings.title}</title>
-      <link rel="icon" href={ settings.logo}  />
+      <link rel="icon" href={ settings.tabLogo}  />
     </Helmet> 
       <main>
       <OverlayLoader/>
