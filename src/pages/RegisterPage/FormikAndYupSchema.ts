@@ -1,22 +1,24 @@
-import { object, ref, string } from "yup";
+import { date, object, ref, string } from "yup";
 import { signUpRequest } from "../../models/requests/auth/SignupRequest";
 import { SignInRequest } from "../../models/requests/auth/SignInRequest";
 
-export const signUpinitialValues : signUpRequest = {
+export const signUpinitialValues: signUpRequest = {
   firstName: "",
   lastName: "",
   email: "",
   phoneNumber: "",
+  birthDate: new Date(),
+  idCardNumber: "",
   password: "",
-  confirmpassword:"",
+  confirmpassword: "",
 };
 
-export const signIninitialValues:SignInRequest = {
+export const signIninitialValues: SignInRequest = {
   email: "",
   password: "",
 };
 
-export const signupValidationSchema  = object({
+export const signupValidationSchema = object({
   firstName: string()
     .required("First Name field is required.")
     .min(2, "First Name field must be at least 2 characters.")
@@ -35,13 +37,19 @@ export const signupValidationSchema  = object({
   email: string()
     .required("Email field is required.")
     .email("Invalid email format."),
+  birthDate: date()
+    .required("Birthdate field is required.")
+    .max(new Date(), "Birthdate cannot be in the future "),
+  idCardNumber: string()
+    .required("ID Card field is required.")
+    .matches(/^\d{11}$/, "ID Card number must be exactly 11 digits."),
   password: string().required("Password field is required.")
     .min(8, "Password must be at least 8 characters.")
     .matches(/[a-z]/, "Password must include at least one lowercase letter.")
     .matches(/[A-Z]/, "Password must include at least one uppercase letter.")
     .matches(/\d/, "Password must include at least one number.")
     .matches(/[!@#$%^&*()_+{}|:;<>,.?/~`]/, "Password must include at least one punctuation mark."),
-    confirmpassword: string().required("Password field is required.")
+  confirmpassword: string().required("Password field is required.")
     .oneOf([ref('password')], 'Passwords do not match')
 });
 
