@@ -1,10 +1,12 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AiOutlineLogout } from "react-icons/ai";
-import "react-toastify/dist/ReactToastify.css";
-import sidebarLinks from "./sidebarLinks";
-import "./sidebar.css";
 import { ToastContainer, toast } from "react-toastify";
+
+import sidebarLinks from "./sidebarLinks";
+
+import "react-toastify/dist/ReactToastify.css";
+import "./sidebar.css";
 type Props = {};
 
 const Sidebar = (props: Props) => {
