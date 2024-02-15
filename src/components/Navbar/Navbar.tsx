@@ -1,23 +1,23 @@
 import React, { useContext, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { hasFlag } from "country-flag-icons";
 import { TR, US } from "country-flag-icons/react/3x2";
-import { IoIosCloseCircle, IoIosMenu } from "react-icons/io";
-import { IoMdCart } from "react-icons/io";
-import { NavDropdown } from "react-bootstrap";
-import Image from "react-bootstrap/Image";
+import { IoIosCloseCircle, IoIosMenu, IoMdCart, IoMdLogIn, IoMdLogOut } from "react-icons/io";
 import { FaUserCircle } from "react-icons/fa";
-import { IoMdLogIn, IoMdLogOut } from "react-icons/io";
-import Nav from "react-bootstrap/Nav";
 import { MdLanguage } from "react-icons/md";
 import { GiCarKey } from "react-icons/gi";
+import { NavDropdown } from "react-bootstrap";
+import Nav from "react-bootstrap/Nav";
+import Image from "react-bootstrap/Image";
+import { useTranslation } from "react-i18next";
+import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
+
+import { useAuth } from "../../contexts/AuthContext";
+
+import TokenService from "../../services/TokenService";
 
 import "./navbar.css";
-import { Link } from "react-router-dom";
-import { useAuth } from "../../contexts/AuthContext";
-import { toast } from "react-toastify";
-import TokenService from "../../services/TokenService";
-import { useSelector } from "react-redux";
 
 type Props = {};
 
