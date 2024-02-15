@@ -3,8 +3,8 @@ export interface UpdateSettingsRequest {
 	id: number | undefined;
 	title: string | undefined;
 	url: string | undefined;
-	logo: string | undefined;
-	tabLogo:string | undefined;
+	logo: string ;
+	tabLogo:string ;
 	phoneNumber: string | undefined;
 	email: string | undefined;
 	address: string | undefined;
