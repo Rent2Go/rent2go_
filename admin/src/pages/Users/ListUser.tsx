@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { IoMdAdd } from "react-icons/io";
+import { Table } from "react-bootstrap";
 
 import UserService from "../../services/UserService";
 import { UserModel } from "../../models/responses/users/GetUser";
 import { UserTable } from "../../components";
+
 import "./styles/user.css";
-import { Link } from "react-router-dom";
-import { IoMdAdd } from "react-icons/io";
-import { Table } from "react-bootstrap";
 type Props = {};
 
 const ListUser = (props: Props) => {
