@@ -1,9 +1,6 @@
 import React from 'react'
 import './accountSettings.css'
-<<<<<<< HEAD
-import { useTranslation } from "react-i18next";
-=======
->>>>>>> sehmus
+import { useTranslation } from 'react-i18next';
 
 const AccountSettings = () => {
   const { t } = useTranslation();

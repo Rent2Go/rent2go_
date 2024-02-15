@@ -1,13 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-<<<<<<< HEAD
-
-import { AccountSettings, Footer, Navbar, UserSidebar } from '../../components'
-=======
 import AccountSettings from '../../components/UserProfile/AccountSettings/accountSettings'
 import UserSidebar from '../../components/UserProfile/UserSidebar/userSidebar'
 import './profilePage.css'
->>>>>>> sehmus
 import YourReservations from '../../components/UserProfile/YourReservations/YourReservations'
 import ChangePassword from '../../components/UserProfile/ChangePassword/ChangePassword'
 import DriversLicense from '../../components/UserProfile/DriversLicense/DriversLicense'
@@ -15,6 +10,7 @@ import UserLocation from '../../components/UserProfile/UserLocation/UserLocation
 import Disclaimer from '../../components/UserProfile/Disclaimer/Disclaimer'
 
 import './profilePage.css'
+import { Footer, Navbar } from '../../components'
 
 
 
