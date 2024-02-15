@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
-
-import "./App.css";
-import PrivateRoute from "./utils/PrivateRoute";
-import OverlayLoader from "./components/OverlayLoader/OverlayLoader";
+import { Helmet } from "react-helmet";
 
 import { useDispatch, useSelector } from "react-redux";
 import { setPageSettings } from "./store/slices/settingsSlice";
-import SettingsService from "./services/SettingsService";
-import { Helmet } from "react-helmet";
+
 import Router from "./routes/Router";
+import PrivateRoute from "./utils/PrivateRoute";
+
+import OverlayLoader from "./components/OverlayLoader/OverlayLoader";
 import { ScrollToTop } from "./components";
+
+import SettingsService from "./services/SettingsService";
+
+import "./App.css";
 
 function App() {
   const settings = useSelector((state: any) => state.settings.setting);
