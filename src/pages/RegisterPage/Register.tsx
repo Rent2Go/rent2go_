@@ -1,25 +1,30 @@
 import React, { useContext, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ErrorMessage, Form, Formik } from "formik";
-
-import "./register.css";
-import { useAuth } from "../../contexts/AuthContext";
-import AuthService from "../../services/authService/AuthService";
 import { number, object, string } from "yup";
-import Field from "../../components/FormikInput/FormikInput";
-import { TokenResponse } from "../../models/responses/auth/LoginResponse";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
+import { error } from "console";
+
+import { useAuth } from "../../contexts/AuthContext";
+
+import AuthService from "../../services/authService/AuthService";
+import TokenService from "../../services/TokenService";
+
+import Field from "../../components/FormikInput/FormikInput";
+
+import { TokenResponse } from "../../models/responses/auth/LoginResponse";
 import { SignInRequest } from "../../models/requests/auth/SignInRequest";
 import { signUpRequest } from "../../models/requests/auth/SignupRequest";
+
 import {
   signInValidationSchema,
   signIninitialValues,
   signUpinitialValues,
   signupValidationSchema,
 } from "./FormikAndYupSchema";
-import { error } from "console";
-import TokenService from "../../services/TokenService";
+
+import "./register.css";
 
 type Props = {
   name?: string;
