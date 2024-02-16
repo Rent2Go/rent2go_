@@ -30,7 +30,6 @@ function App() {
     handleSetPageSettings();
   }, []);
 
-  if (!settings) return <div>Şeyhmus will be modify here .. :)</div>;
 
   if (!settings) return <OverlayLoaderLoad />;
   return (
