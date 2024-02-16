@@ -48,8 +48,7 @@ console.log(date);
       const endDateTimestamp = selectedEndDate.getTime(); // Bitiş tarihinin zaman damgası
       dispatch(setStartDate(startDateTimestamp)); // Redux'a zaman damgasını gönder
       dispatch(setEndDate(endDateTimestamp)); // Redux'a zaman damgasını gönder
-      sessionStorage.setItem('selectedStartDate', startDate);
-      sessionStorage.setItem('selectedEndDate',endDate);
+    
       console.log(  differenceInDays(endDateTimestamp, startDateTimestamp)* 950 ); // Zaman damgalarını konsola yazdır
       navigate("/cars");
     } else {
