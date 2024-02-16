@@ -48,7 +48,7 @@ const Navbar = (props: Props) => {
             <Link to="/profile">
               {user?.imageUrl ? (
                 <img
-                  src={`/assets/images/userImages/${user.imageUrl}`}
+                  src={`${user.imageUrl}`}
                   alt="profile"
                 />
               ) : (

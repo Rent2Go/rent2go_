@@ -27,7 +27,7 @@ type Props = {
 const AddCar = (props: Props) => {
 
   const gearType = [
-    { id: 1, name: "Manuel" },
+    { id: 1, name: "Manual" },
     { id: 2, name: "Automatıc" }
   ];
 
@@ -49,16 +49,14 @@ const AddCar = (props: Props) => {
 
 
 
-  const getUploadParams = () => {
-    return { url: 'https://httpbin.org/post' }
-  }
+
 
   const navigate = useNavigate();
   const [colors, setColors] = useState<ColorModel[]>([]);
   const [filterModels, setFilterModels] = useState<ModelModel[]>([]);
   const [brands, setBrands] = useState<BrandModel[]>([]);
   const [models, setModels] = useState<ModelModel[]>([]);
-
+ 
 
   useEffect(() => {
     getBrands()
@@ -93,18 +91,18 @@ const AddCar = (props: Props) => {
       .required('Daily price field cannot be empty.')
       .min(0, 'Daily price must be greater than 0.'),
     plate: Yup.string()
-      .matches(
-        /^(0[1-9]|[1-7][0-9]|8[01])/,
-        'Invalid licence plate: Plate must start with a number between 01 and 81.'
-      )
-      .matches(
-        /[A-Z]{1,3}/,
-        'Invalid licence plate: Plate must consist of 1-3 uppercase letters after the first part.'
-      )
-      .matches(
-        /[0-9]{4}$/,
-        'Invalid licence plate: Plate must end with 4 numbers.'
-      )
+      // .matches(
+      //   /^(0[1-9]|[1-7][0-9]|8[01])/,
+      //   'Invalid licence plate: Plate must start with a number between 01 and 81.'
+      // )
+      // .matches(
+      //   /[A-Z]{1,3}/,
+      //   'Invalid licence plate: Plate must consist of 1-3 uppercase letters after the first part.'
+      // )
+      // .matches(
+      //   /[0-9]{4}$/,
+      //   'Invalid licence plate: Plate must end with 4 numbers.'
+      // )
 
       .required('Plate field cannot be empty.')
       .min(5, 'Licence plate must be at least 5 characters long.')
@@ -127,9 +125,11 @@ const AddCar = (props: Props) => {
       .required('Engine power field cannot be empty.')
   });
 
-
-
   const formData = new FormData();
+  const getUploadParams = ({}) => {
+    return { url: 'https://httpbin.org/post' }
+  }
+ 
   const handleChangeStatus = ({ meta, file }: { meta: any, file: any }) => {
     if (meta.status === 'done') {
       console.log('Dosya yüklendi:', file);
@@ -144,6 +144,8 @@ const AddCar = (props: Props) => {
 
 
   const handleSubmit = async (addCarInitialValues: AddCarRequest) => {
+    console.log(addCarInitialValues);
+    
     formData.append('addCarRequest', new Blob([JSON.stringify(addCarInitialValues)], { type: "application/json" }))
     await CarService.addCar(formData)
       .then((res) => {
@@ -157,18 +159,10 @@ const AddCar = (props: Props) => {
       })
 
   }
-  const handleBrandChange = async (selectedBrand: number) => {
-
+  const handleBrandChange =  (selectedBrand: number) => {
     const brand = brands.find((brand) => brand.id == selectedBrand);
-    console.log(brand?.name);
-
-
-
     const selectedBrandModels = models.filter((model: ModelModel) => model.brandName == brand?.name) // Bu fonksiyonun gerçek uygulamada nasıl yapıldığına bağlı olarak değişir
-    console.log(selectedBrandModels);
-
-    // Alınan alt modelleri FormikSelect bileşenine aktar
-    setFilterModels(selectedBrandModels); // Örneğin, useState hook ile models state'ini güncelleyin
+    setFilterModels(selectedBrandModels); 
   }
 
 
@@ -194,9 +188,10 @@ const AddCar = (props: Props) => {
       .catch((err) => { console.log(err) })
   }
 
-  const [selectedModel, setSelectedModel] = useState('');
 
-  // receives array of files that are done uploading when submit button is clicked
+
+  
+ 
 
 
   return (
@@ -206,7 +201,7 @@ const AddCar = (props: Props) => {
           <h2>Add New Car</h2>
         </div>
         <div className="formContainer">
-          <Formik initialValues={addCarInitialValues} validateOnBlur={true} validationSchema={AddCarRequestSchema} onSubmit={handleSubmit}>
+          <Formik initialValues={addCarInitialValues} validateOnBlur={true}  onSubmit={handleSubmit}>
             <Form>
               <div className="row">
                 <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
@@ -228,15 +223,16 @@ const AddCar = (props: Props) => {
               </div>
               <div className="row">
                 <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                  <FormikSelect name="brandId" label="Brand" values={brands} onChange={(e: any) => handleBrandChange(e.target.value)} ></FormikSelect>
+                  <FormikSelect name="brandId" label="Brand" values={brands} onChange={async(e: any) => await handleBrandChange(e.target.value)} ></FormikSelect>
                 </div>
                 <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                  <label className="form-label">Model</label>
-                  <Field name="modelId" as="select" className="form-control" >
-                    {filterModels.map((value: any) => (
-                      <option key={value.id} value={value.id}>{value.name.toUpperCase()}</option>)
+                  <label htmlFor="modelId" className="form-label">Model</label>
+                  <Field name="modelId" as="select"  className="form-control"  >
+                    {filterModels.map((value: ModelModel) => (
+                      <option key={value?.id} value={value?.id}>{value.name.toUpperCase()}</option>)
                     )}
                   </Field>
+                  <ErrorMessage name="modelId" component="div" className="alert-text" />
                 </div>
               </div>
               <div className="row">
@@ -266,7 +262,7 @@ const AddCar = (props: Props) => {
                   <label htmlFor="fuelType" className="form-label">
                     Fuel Type
                   </label>
-                  <Field as="select" name="fuelType" className="form-control"  >
+                  <Field as="select" name="fuelType" className="form-control"   >
                     <option value="" >  Seçiniz </option>
                     {fuelType.map((fuelType) => (
                       <option key={fuelType.id} value={fuelType.name.toUpperCase()}>{fuelType.name}</option>

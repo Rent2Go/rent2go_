@@ -57,7 +57,7 @@ const UserTable = (props: Props) => {
           <td>
             {props.user.imageUrl ? (
               <img
-                src={`/assets/images/userImages/${props.user.imageUrl}`}
+                src={`${props.user.imageUrl}`}
                 alt="user-img"
               />
             ) : (
