@@ -23,9 +23,11 @@
         margin-left: 13rem;
         margin-right: 13rem;
         .tabs_list{
-            position: fixed;
+            position: sticky;
+            bottom: 25rem;
+            top: 8rem;
             width: 215px;
-            height: 80%;
+            height: 40rem;
             background: var(--secondaryColor);
             border-radius: 10px;
             transform: translateY(5%);
@@ -50,10 +52,10 @@
         }
         .tabs_content{
             width: calc(100% - 200px);
-            padding: 0 10px 0 20px;
+            padding: 0 10px 0 15px;
             height: 100%;
             text-align: left;
-            margin-left: 15rem;
+            margin-left: 2rem;
             text-align: justify;
             .tab_head{
                 padding: 25px 0;

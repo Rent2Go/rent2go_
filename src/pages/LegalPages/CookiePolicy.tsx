@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Footer } from "../../components";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 
 type Props = {};
 
@@ -13,19 +13,29 @@ const CookiePolicy = (props: Props) => {
           <div className="tabs_list">
             <ul>
               <li>
-                <Link to="#item-1">Interpretation and Definitions</Link>
+                <Link to="item-1" smooth={true} duration={400}>
+                  Interpretation and Definitions
+                </Link>
               </li>
               <li>
-                <Link to="#item-2">Type of Cookies We Use</Link>
+                <Link to="item-2" smooth={true} duration={400}>
+                  Type of Cookies We Use
+                </Link>
               </li>
               <li>
-                <Link to="#item-3">Your Choices Regarding Cookies</Link>
+                <Link to="item-3" smooth={true} duration={400}>
+                  Your Choices Regarding Cookies
+                </Link>
               </li>
               <li>
-                <Link to="#item-4">More Information about Cookies</Link>
+                <Link to="item-4" smooth={true} duration={400}>
+                  More Information about Cookies
+                </Link>
               </li>
               <li>
-                <Link to="#item-5">Contact Us</Link>
+                <Link to="item-5" smooth={true} duration={400}>
+                  Contact Us
+                </Link>
               </li>
             </ul>
           </div>
@@ -41,12 +51,12 @@ const CookiePolicy = (props: Props) => {
                 type of cookies We use, or the information We collect using
                 Cookies and how that information is used. This Cookies Policy
                 has been created with the help of the{" "}
-                <Link
-                  to="https://www.freeprivacypolicy.com/free-cookies-policy-generator/"
+                <a
+                  href="https://www.freeprivacypolicy.com/free-cookies-policy-generator/"
                   target="_blank"
                 >
                   Free Cookies Policy Generator
-                </Link>
+                </a>
                 .
               </p>
               <p>
@@ -84,13 +94,13 @@ const CookiePolicy = (props: Props) => {
                 </li>
                 <li>
                   <strong>Website</strong> refers to Rent2Go, accessible from{" "}
-                  <Link
-                    to="https://rentogo.com.tr/"
+                  <a
+                    href="https://rentogo.com.tr/"
                     rel="external nofollow noopener"
                     target="_blank"
                   >
                     https://rentogo.com.tr/
-                  </Link>
+                  </a>
                 </li>
                 <li id="item-2">
                   <strong>You</strong> means the individual accessing or using

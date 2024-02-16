@@ -202,7 +202,7 @@ const BankTransfer = (props: Props) => {
                       <div className="col-xl-3 col-l-3 col-md-12 col-sm-12">
                         <Link
                           type="button"
-                          to="/reservation"
+                          to="/reservation/:id"
                           className="btn btn-cancel"
                         >
                           Cancel

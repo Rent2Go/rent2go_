@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  align-items: center;
+  align-items: stretch;
 }
 .userLocation .mainHead1 {
   color: var(--primaryColor);
@@ -18,7 +18,7 @@
   border-radius: 5px;
   font-size: 1.5rem;
   font-weight: 300;
-  margin: 1rem;
+  margin: 3rem;
   cursor: pointer;
   color: var(--primaryColor);
 }
@@ -28,35 +28,12 @@
   transition: all 0.4s ease-in-out;
 }
 .userLocation .form {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 100%;
-  padding: 10px 20px;
+  padding: 10px 30px;
 }
-.userLocation .form .form-group {
-  display: flex;
-  flex-direction: column;
-  width: 45%;
-  margin: 10px;
-}
-.userLocation label {
+.userLocation .form label {
   font-size: 1.2rem;
   font-weight: 300;
-  margin-bottom: 5px;
-}
-.userLocation input {
-  padding: 10px 20px;
-  border: 1px solid var(--secondaryColor);
-  border-radius: 5px;
-  outline: none;
-}
-.userLocation input:focus {
-  border: 1px solid var(--primaryColor);
-}
-.userLocation span {
-  color: var(--color-subtext);
+  margin-top: 20px;
 }
 .userLocation textarea {
   padding: 10px 20px;
