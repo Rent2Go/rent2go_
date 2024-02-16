@@ -8,6 +8,7 @@ import { setPageSettings } from "./store/slices/settingsSlice";
 >>>>>>> feyza
 import SettingsService from "./services/SettingsService";
 
+
 import PageNotFound from "./pages/NotFoundPage/PageNotFound";
 import OverlayLoaderLoad from "./components/OverlayLoader/OverlayLoaderLoad";
 import { toast } from "react-toastify";
