@@ -12,12 +12,7 @@ import { Helmet } from 'react-helmet'
 import { useSelector } from 'react-redux'
 
 import './profilePage.css'
-<<<<<<< HEAD
-import { Navbar } from 'react-bootstrap'
-import { Footer } from '../../components'
-=======
 import { Footer, Navbar } from '../../components'
->>>>>>> feyza
 
 
 
