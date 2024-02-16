@@ -1,8 +1,10 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import AccountSettings from '../../components/UserProfile/AccountSettings/accountSettings'
-import UserSidebar from '../../components/UserProfile/UserSidebar/userSidebar'
+
+import { AccountSettings, UserSidebar } from '../../components'
+
 import './profilePage.css'
+
 import YourReservations from '../../components/UserProfile/YourReservations/YourReservations'
 import ChangePassword from '../../components/UserProfile/ChangePassword/ChangePassword'
 import DriversLicense from '../../components/UserProfile/DriversLicense/DriversLicense'
@@ -10,9 +12,9 @@ import UserLocation from '../../components/UserProfile/UserLocation/UserLocation
 import Disclaimer from '../../components/UserProfile/Disclaimer/Disclaimer'
 import { Helmet } from 'react-helmet'
 import { useSelector } from 'react-redux'
-
 import './profilePage.css'
 import { Footer, Navbar } from '../../components'
+
 
 
 
