@@ -6,18 +6,13 @@ import { RiDeleteBin3Line } from "react-icons/ri";
 import { CiEdit } from "react-icons/ci";
 import { MdOutlineDeleteForever } from "react-icons/md";
 
-<<<<<<< Updated upstream
+
 import EmployeeService from "../../../services/EmployeeService";
 import { EmployeeModel } from "../../../models/responses/employees/GetEmployee";
 
 import "./employeeTable.css";
 
 type Props = {};
-=======
-type Props = {
-  
-};
->>>>>>> Stashed changes
 
 const EmployeeTable = (props: Props) => {
   const [employees, setEmployees] = useState<EmployeeModel[]>([]);

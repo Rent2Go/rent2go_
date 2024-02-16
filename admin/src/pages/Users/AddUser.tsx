@@ -1,29 +1,25 @@
-<<<<<<< Updated upstream
-import React from "react";
-=======
+
 import React, { useEffect, useState } from "react";
 import "./styles/user.css";
-import { FormikInput, FormikSelect } from "../../components";
->>>>>>> Stashed changes
+
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import { object, ref, string } from "yup";
 import Dropzone from "react-dropzone-uploader";
 import { ToastContainer, toast } from "react-toastify";
 
-import { FormikInput } from "../../components";
+import { FormikInput, FormikSelect } from "../../components";
 import UserService from "../../services/UserService";
 import { AddCarRequest } from "../../models/requests/cars/AddCarRequest";
 import { AddUserRequest } from "../../models/requests/users/AddUserRequest";
-<<<<<<< Updated upstream
 
 import "./styles/user.css";
-=======
+
 import CityService from "../../services/CityService";
 import { CityModel } from "../../models/responses/cities/GetCity";
 import { DistrictModel } from "../../models/responses/districts/GetDistrict";
 import DistrictService from "../../services/DistrictService";
->>>>>>> Stashed changes
+
 type Props = {};
 
 const AddUser = (props: Props) => {
