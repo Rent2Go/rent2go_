@@ -56,9 +56,6 @@ const ListUser = (props: Props) => {
                   <th>Actions</th>
                 </tr>
               </thead>
-          
-       
-
           {users.map((user) =>
             <UserTable key={user.id} user={user} />
           )}

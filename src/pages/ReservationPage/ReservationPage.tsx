@@ -17,6 +17,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import { usePaymentContext } from "../../contexts/PaymentContext";
 
 import "./reservationPage.css";
+import { Helmet } from "react-helmet";
 
 const ReservationPage = () => {
   const auth = useAuth();
@@ -84,6 +85,10 @@ const ReservationPage = () => {
   };
   return (
     <>
+      <Helmet >
+        <title>{settings.title} - Reservation </title>
+
+      </Helmet>
       <Navbar />
       <div className="reservation ">
         <div className="secContainer">
@@ -127,6 +132,7 @@ const ReservationPage = () => {
                     {rentals?.model?.brand.name} {rentals?.model?.name}
                   </span>
                 </p>
+
 
                 <p>
                   <span>
@@ -243,4 +249,5 @@ const ReservationPage = () => {
   );
 };
 
-export default ReservationPage;
+export default ReservationPage; 
+

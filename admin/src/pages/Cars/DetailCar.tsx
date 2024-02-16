@@ -29,7 +29,7 @@ const DetailCar = (props: Props) => {
   return (
     <div className="cars">
       <div className="headingContainer mb-5">
-        <h2>
+        <h2 className="text-center">
           Details of {carDetail?.model?.brand.name} {carDetail?.model?.name}{" "}
           {carDetail?.year}
         </h2>
@@ -38,7 +38,7 @@ const DetailCar = (props: Props) => {
         <div className="contentContainer">
           <div className="imgContainerDetail">
             <img src={carDetail?.imageUrl} alt={carDetail?.model.brand.name} />
-            <Link to="cars" className="btn"> Back</Link>
+            <Link to="/cars" className="btn"> Back</Link>
           </div>
           <div className="detailContainer">
             <div className="infoContainer shadow-rounded-box">
