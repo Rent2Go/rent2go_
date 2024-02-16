@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
+<<<<<<< Updated upstream
 import { Link, useNavigate, useParams } from 'react-router-dom';
+=======
+import { FormikInput, FormikSelect } from '../../components';
+>>>>>>> Stashed changes
 import Dropzone from 'react-dropzone-uploader';
 import { toast } from 'react-toastify';
 import { object, ref, string } from "yup";
@@ -8,7 +12,17 @@ import { object, ref, string } from "yup";
 import { FormikInput } from '../../components';
 import UserService from '../../services/UserService';
 import { UserModel } from '../../models/responses/users/GetUser';
+<<<<<<< Updated upstream
+=======
+import { ToastContainer, toast } from 'react-toastify';
+import { object, ref, string } from "yup";
+>>>>>>> Stashed changes
 import { UpdateUserRequest } from '../../models/requests/users/UpdateUserRequest';
+import DistrictService from '../../services/DistrictService';
+import CityService from '../../services/CityService';
+import { DistrictModel } from '../../models/responses/districts/GetDistrict';
+import { CityModel } from '../../models/responses/cities/GetCity';
+import OverlayLoaderTest from '../../components/OverlayLoader/OverlayLoaderTest';
 
 import "./styles/user.css";
 
@@ -20,13 +34,15 @@ const UpdateUser = (props: Props) => {
   const navigate = useNavigate()
   const { id } = useParams()
   const userId = parseInt(id || '');
-  const [user, setUser] = useState<UserModel>();
-
+  const [user, setUser] = useState<UserModel | undefined>();
+  const [cities, setCities] = useState<CityModel[]>([])
+  const [resultCity, setResultCity] = useState<CityModel>()
+  const [districts, setDistricts] = useState<DistrictModel[]>([])
+  const [selectedFilter, setSelectedFilter] = useState<DistrictModel[]>([])
 
   const role = [
-    { id: 1, value:"ADMIN", name: 'Admin' },
-    { id: 2, value:"USER", name: 'User' }
-
+    { id: 1, value: "ADMIN", name: 'Admin' },
+    { id: 2, value: "USER", name: 'User' }
   ]
 
   const getUploadParams = ({ }) => {
@@ -36,29 +52,24 @@ const UpdateUser = (props: Props) => {
   const handleChangeStatus = ({ meta, file }: { meta: any, file: any }) => {
     if (meta.status === 'done') {
       console.log('Dosya yüklendi:', file);
-      formData.append("file",file)
-   
-  
+      formData.append("file", file)
     } else if (meta.status === 'error') {
       console.error('Dosya yüklenirken bir hata oluştu:', meta);
-   
     }
   };
 
-  const onSubmit = async(updateUserRequest:UpdateUserRequest) => {
-
-      await UserService.updateUser(updateUserRequest)
-      .then((res:any) => {
+  const onSubmit = async (updateUserRequest: UpdateUserRequest) => {
+    console.log(updateUserRequest);
+    await UserService.updateUser(updateUserRequest)
+      .then((res: any) => {
         toast.success(res.data.message)
-        navigate("/users")
       })
-      .catch((err:any) => {
+      .catch((err: any) => {
         toast.error(err.response.data.message)
       })
-
   }
 
-  const updateUserValidationSchema  = object({
+  const updateUserValidationSchema = object({
     name: string()
       .required("First Name field is required.")
       .min(2, "First Name field must be at least 2 characters.")
@@ -66,9 +77,7 @@ const UpdateUser = (props: Props) => {
     surname: string()
       .required("Last Name field is required.")
       .min(2, "Last Name field must be at least 2 characters.")
-      .max(20, 'The field cannot exceed 20 characters.')
-    ,
-  
+      .max(20, 'The field cannot exceed 20 characters.'),
     phoneNumber: string().required("Phone number is required.")
       .matches(
         /^05\d{9}$/,
@@ -83,144 +92,204 @@ const UpdateUser = (props: Props) => {
       .matches(/[A-Z]/, "Password must include at least one uppercase letter.")
       .matches(/\d/, "Password must include at least one number.")
       .matches(/[!@#$%^&*()_+{}|:;<>,.?/~`]/, "Password must include at least one punctuation mark."),
-      confirmPassword: string().required("Password field is required.")
+    confirmPassword: string().required("Password field is required.")
       .oneOf([ref('password')], 'Passwords do not match')
   });
 
-
-
-
-
-
-
   useEffect(() => {
-
     getByIdUser(userId);
-
+    getCities();
+    getDistricts();
   }, [])
 
- 
   const imageHandleSubmit = async (values: any) => {
-     formData.append("email",values.email)
-     await UserService.updateImage(formData)
-     .then((res)=> {
-      toast.success(res.data.message);
-      window.location.reload();
+    formData.append("email", values.email)
+    await UserService.updateImage(formData)
+      .then((res) => {
+        toast.success(res.data.message);
+        window.location.reload();
+      })
+      .catch((err) => {
+        toast.error(err)
+        formData.delete("email")
+      })
+  }
 
-     })
-     .catch((err)=> {
-      toast.error(err)
-      formData.delete("email")
-     })
-   
+  const getCities = async () => {
+    await CityService.getAll()
+      .then((res) => {
+        setCities(res.data.data)
+      })
+      .catch((err) => { console.log(err) })
+  }
 
-}
+  const getDistricts = async () => {
+    await DistrictService.getAll()
+      .then((res) => {
+        setDistricts(res.data.data)
+      })
+      .catch((err) => { console.log(err) })
+  }
 
-
- 
+  const handleCityChange = (selectedCity: number) => {
+    const city = cities.find((city: CityModel) => city.id == selectedCity);
+    const selectedCityDistrict = districts.filter((district: DistrictModel) => district.city.name === city?.name);
+    setSelectedFilter(selectedCityDistrict);
+    setResultCity(city);
+  }
 
   const getByIdUser = async (id: number) => {
-
     await UserService.getById(id)
       .then((res) => {
         setUser(res.data.data)
+
       })
       .catch((err) => {
         toast.error(err.message)
       })
   }
-  const handleSubmit = () => { };
-  if (!user) return <div>Loading...</div>;
-  console.log(user)
+
+
+
+
+  if (!user) return <OverlayLoaderTest />;
+
   return (
     <div className="users container">
       <div className="secContainer shadow-rounded-box">
         <div className="titleContainer">
-          <h2 className='text-center'>Update User({user.name})</h2>
+          <h2>Update User ({user?.name} {user?.surname})</h2>
         </div>
 
         <div className="formContainer">
           <Formik initialValues={{
             id: user.id,
             name: user.name,
-            surname: user?.surname,
-            phoneNumber: user?.phoneNumber,
-            email: user?.email,
+            surname: user.surname,
+            phoneNumber: user.phoneNumber,
+            email: user.email,
             password: user.password,
-            confirmPassword: user.password,
+            idCardNumber: user.idCardNumber,
+            birthDate: user.birthDate,
             role: user.role,
-          }} onSubmit={onSubmit}
-          validationSchema={updateUserValidationSchema}
-          validateOnBlur={true}>
+            active: user.active,
+            imageUrl: user.imageUrl,
+            address: user.address,
+
+            districtId: user.district.id,
+          }} onSubmit={onSubmit} validateOnBlur={true} >
             <Form className="Form">
               <div className="row">
-                <div className="col-xl-6 col-l-6 col-md-12 col-sm-12 col-xs-12">
+                <div className="col-xl-4 col-l-4 col-md-12 col-sm-12 col-xs-12">
                   <FormikInput
                     name="name"
                     label="First Name"
                     placeHolder="Enter Your First Name"
-                  ></FormikInput>
+                  />
                 </div>
-                <div className="col-xl-6 col-l-6 col-md-12 col-sm-12 col-xs-12">
+                <div className="col-xl-4 col-l-4 col-md-12 col-sm-12 col-xs-12">
                   <FormikInput
                     name="surname"
                     label="Last Name"
                     placeHolder="Enter Your Last Name"
-                  ></FormikInput>
+                  />
+                </div>
+                <div className="col-xl-4 col-l-4 col-md-12 col-sm-12 col-xs-12">
+                  <FormikInput
+                    name="idCardNumber"
+                    label="Id Card Number"
+                    placeHolder="Enter Your Id Card Number"
+                  />
                 </div>
               </div>
               <div className="row">
-                <div className="col-xl-6 col-l-6 col-md-12 col-sm-12 col-xs-12">
+                <div className="col-xl-4 col-l-4 col-md-12 col-sm-12 col-xs-12">
                   <FormikInput
                     name="email"
                     label="Email Address"
-                    disabled={true}
                     placeHolder="Enter Your Email Address"
-                  ></FormikInput>
+                  />
                 </div>
-                <div className="col-xl-6 col-l-6 col-md-12 col-sm-12 col-xs-12">
+                <div className="col-xl-4 col-l-4 col-md-12 col-sm-12 col-xs-12">
                   <FormikInput
                     name="phoneNumber"
                     label="Phone Number"
                     placeHolder="Enter Your Phone Number"
-                  ></FormikInput>
+                  />
+                </div>
+                <div className="col-xl-4 col-l-4 col-md-12 col-sm-12 col-xs-12">
+                  <FormikInput
+                    name="birthDate"
+                    label="Birth Date"
+                    type='date'
+                    placeHolder="Enter Your Birth Date"
+                  />
                 </div>
               </div>
-              {/* <div className="row">
-                <div className="col-xl-6 col-l-6 col-md-12 col-sm-12 col-xs-12">
-                  <FormikInput
-                    name="password"
-                    label="Password"
-                    placeHolder="Enter Your Password"
-                  ></FormikInput>
-                </div>
-                <div className="col-xl-6 col-l-6 col-md-12 col-sm-12 col-xs-12">
-                  <FormikInput
-                    name="confirmPassword"
-                    label="Re-Password"
-                    placeHolder="Enter Your Password Again"
-                  ></FormikInput>
-                </div>
-              </div> */}
               <div className="row">
-                <div className="col-xl-6 col-l-6 col-md-12 col-sm-12 col-xs-12">
-                <label className="form-label">Role</label>
-                  <Field as="select" name="role" className="form-control"  >
-                    <option value={user.role} >  {user.role} </option>
+                <div className="col-xl-4 col-l-4 col-md-12 col-sm-12">
+                  <label className="form-label">City</label>
+                  <Field name="cityId" as="select" value={resultCity?.id} className="form-control" onChange={(e: any) => handleCityChange(e.target.value)}>
+                  <option key={user.city.id} value={user.city.id}>{user.city.name.toUpperCase()}</option>
+                    {cities.map((value: CityModel) => (
+                      <option key={value.id} value={value.id}>{value.name.toUpperCase()}</option>)
+                    )}
+                  </Field>
+                  <ErrorMessage name="cityId" component="div" className="alert-text" />
+                </div>
+                <div className="col-xl-4 col-l-4 col-md-12 col-sm-12">
+                  <label className="form-label">District</label>
+                  <Field name="districtId" as="select" className="form-control">
+
+                    <option key={user.district.id} value={user.district.id}>{user.district.districtName.toUpperCase()}</option>
+
+                    {selectedFilter.map((value: DistrictModel) => (
+                      <option key={value.id} value={value.id}>{value.districtName.toUpperCase()}</option>)
+                    )}
+                  </Field>
+                  <ErrorMessage name="districtId" component="div" className="alert-text" />
+                </div>
+                <div className="col-xl-4 col-l-4 col-md-12 col-sm-12 col-xs-12">
+                  <label htmlFor='role' className="form-label">Role</label>
+                  <Field as="select" name="role" className="form-control">
+                    <option key={user.role}
+
+
+                      value={user.role.toUpperCase()}
+
+
+
+
+                    >{user.role.toUpperCase()}</option>
                     {role.map((role) => (
-                      <option key={role.id} value={role.value}>{role.name}</option>
+                      <option key={role.id} value={role.name.toUpperCase()}>{role.name.toUpperCase()}</option>
                     ))}
                   </Field>
                   <ErrorMessage name="role" component="div" className="alert-text" />
                 </div>
               </div>
-
+              <div className="row">
+                <div className="col-xl-12 col-l-12 col-md-12 col-sm-12 col-xs-12">
+                  <label htmlFor="address">Address</label>
+                  <Field
+                    component="textarea"
+                    id="address"
+                    name="address"
+                    placeholder="Enter Your Address"
+                    className="form-control"
+                    rows={5}
+                    cols={30}
+                  />
+                  <ErrorMessage name="address" component="div" className="error" />
+                </div>
+              </div>
               <div className="btnContainer">
                 <button title="Save" type="submit" className="btn btn-sm btn-submit">Save</button>
                 <Link to="/users" className="btn btn-sm btn-cancel">Cancel</Link>
               </div>
             </Form>
           </Formik>
+          <ToastContainer position="bottom-center" />
         </div>
         <div className="secContainer">
           <div className="titleContainer">
@@ -236,7 +305,6 @@ const UpdateUser = (props: Props) => {
                   <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
                     <label className="mb-3 mt-5">Images</label>
                     <Dropzone
-
                       getUploadParams={getUploadParams}
                       onChangeStatus={handleChangeStatus}
                       accept='image/*'
@@ -245,7 +313,7 @@ const UpdateUser = (props: Props) => {
                 </div>
                 <div className="btnContainer">
                   <button title="Save" type="submit" className="btn btn-sm btn-submit">Save</button>
-                  <Link to="/cars" className="btn btn-sm btn-cancel">Cancel</Link>
+                  <Link to="/users" className="btn btn-sm btn-cancel">Cancel</Link>
                 </div>
               </Form>
             </Formik>
@@ -256,4 +324,4 @@ const UpdateUser = (props: Props) => {
   );
 }
 
-export default UpdateUser
+export default UpdateUser;

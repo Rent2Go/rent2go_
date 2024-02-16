@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/employee.css";
 import { EmployeeTable } from "../../components";
 import { Link } from "react-router-dom";
 import { IoMdAdd } from "react-icons/io";
+import EmployeeService from "../../services/EmployeeService";
+import { EmployeeModel } from "../../models/responses/employees/GetEmployee";
 type Props = {};
 
 const ListEmployee = (props: Props) => {
+
+    
+
+
+  
   return (
     <div className="employees">
       <div className="headingContainer">
@@ -19,7 +26,12 @@ const ListEmployee = (props: Props) => {
         </div>
       </div>
       <div className="secContainer">
-        <EmployeeTable />
+  
+
+        <EmployeeTable  />   
+
+      
+        
       </div>
     </div>
   );
