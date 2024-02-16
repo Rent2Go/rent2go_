@@ -115,7 +115,7 @@ const CarPage: React.FC<Props> = (props) => {
                   name="search"
                   className="searchInput"
                   type="text"
-                  value={"Mercedes"}
+                  value={searchTerm }
                   onChange={(e) => setSearchTerm(e.target.value)}
                   placeholder={t("searchByModelBrand..")}
                 />

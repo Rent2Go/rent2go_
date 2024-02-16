@@ -1,6 +1,6 @@
 import { CityModel } from "./GetCity";
 
-export interface GetAllCarsModel {
+export interface GetAllCitiesModel {
   message: string;
   result: boolean;
   data: CityModel[];

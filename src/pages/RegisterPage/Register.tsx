@@ -26,6 +26,10 @@ import {
 
 import "./register.css";
 
+import { useSelector } from "react-redux";
+import { Helmet } from "react-helmet";
+
+
 type Props = {
   name?: string;
   type?: string;
@@ -33,6 +37,7 @@ type Props = {
 };
 
 const Register: React.FC<Props> = (props: Props) => {
+  const settings = useSelector((state: any) => state.settings.setting);
 
   const authContext: any = useAuth();
   const [isActive, setIsActive] = useState(false);
@@ -75,6 +80,10 @@ const Register: React.FC<Props> = (props: Props) => {
   };
 
   return (
+    <>
+  <Helmet>
+  <title>{settings.title} - Register </title>
+  </Helmet>
     <div className={`register ${isActive ? "active" : ""}`} ref={containerRef}>
 
 
@@ -271,6 +280,7 @@ const Register: React.FC<Props> = (props: Props) => {
       </div>
       <ToastContainer position="top-center" />
     </div>
+    </>
   );
 };
 
