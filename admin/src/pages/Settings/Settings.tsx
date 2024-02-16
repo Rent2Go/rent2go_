@@ -24,14 +24,7 @@ const Settings = (props: Props) => {
     getSetttings(1);
    
   }, []);
-<<<<<<< Updated upstream
-  const formData = new FormData();
-  const getUploadParams = ({}) => {
-    return { url: "https://httpbin.org/post" };
-  };
-=======
   
->>>>>>> Stashed changes
   const handleChangeStatus = ({ meta, file }: { meta: any, file: any }) => {
     if (meta.status === 'done') {
       console.log('Dosya yüklendi:', file);
