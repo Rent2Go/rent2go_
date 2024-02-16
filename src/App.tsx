@@ -25,7 +25,7 @@ function App() {
   const dispatch = useDispatch();
 
   const handleSetPageSettings = async() => {
-  const response =     await SettingsService.getById(2)
+  const response =     await SettingsService.getById(1)
   .then((res)=> dispatch(setPageSettings(res.data.data)))
   .catch((err) => toast.warn(err.response.data.message))
    
