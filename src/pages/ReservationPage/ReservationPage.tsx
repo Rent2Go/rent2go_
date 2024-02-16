@@ -19,14 +19,17 @@ import { usePaymentContext } from "../../contexts/PaymentContext";
 import "./reservationPage.css";
 import { Helmet } from "react-helmet";
 import { useSelector } from "react-redux";
+import { differenceInDays } from "date-fns";
+import DiscountCode from "../../components/discount/Discount";
 
 const ReservationPage = () => {
   const settings = useSelector((state:any)=> state.settings.setting)
   const auth = useAuth();
+  const navigate = useNavigate()
   console.log(auth.authInformation.user.email);
   const params = useParams<{ id: string }>();
   const [rentals, setRentals] = useState<CarModel>();
-
+  const { startDate, endDate } = useSelector((state:any) => state.rentalDate);
   useEffect(() => {
     if (params.id) {
       getRentals(params.id);
@@ -71,13 +74,38 @@ const ReservationPage = () => {
   }
 
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("cash");
-  const navigate = useNavigate();
 
   const handlePaymentMethodChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     setSelectedPaymentMethod(event.target.value);
   };
+
+
+
+  const isAuthenticated = ()=> {
+
+    if  ((auth.authInformation.user.email === '' || null || undefined) ){
+        alert("You have to be authenticated before you can  make a reservation.");
+        navigate("/sign-up")
+
+    }
+
+
+
+  }
+
+
+
+
+
+
+ const rentStartDate= new Date(startDate);
+ const rentEndDate= new Date(endDate);
+ const rentDay = (differenceInDays(endDate, startDate)+1);
+
+
+
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -107,13 +135,13 @@ const ReservationPage = () => {
               </div>
               <div className="dateContentContainer">
                 <p>
-                  <span>
-                    <b>Start Date : </b> 19 February, 2024
-                  </span>
+                  
+                    <b>Start Date : </b> {rentStartDate.toDateString()}
+                  
                 </p>
                 <p>
                   <span>
-                    <b>End Date : </b> 24 February, 2024
+                    <b>End Date : </b> {rentEndDate.toDateString()}
                   </span>
                 </p>
               </div>
@@ -149,11 +177,11 @@ const ReservationPage = () => {
                   <span>
                     <b>Rental : </b>{" "}
                   </span>
-                  <span>7 Days</span>
+                  <span>{rentDay == 0 ? 1 : rentDay } - Days</span>
                 </p>
               </div>
               <div className="priceCardContainer">
-                <PriceCard cars={rentals} />
+                <PriceCard cars={rentals} day={rentDay == 0 ? 1 : rentDay} />
               </div>
             </div>
             <div className="bottomContainer">
@@ -228,6 +256,7 @@ const ReservationPage = () => {
                       className="btn btn-secondary btn-sm"
                       type="submit"
                       title="Send"
+                      onClick={isAuthenticated}
                     >
                       Reservation
                     </button>
@@ -241,6 +270,7 @@ const ReservationPage = () => {
                   </div>
                 </div>
               </form>
+              <DiscountCode/>
             </div>
             <div className="noteContainer"></div>
           </div>
