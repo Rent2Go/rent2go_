@@ -72,13 +72,13 @@ const Footer = (props: Props) => {
                 <Link to="/copyright-notice">{t("copyrightNotice")}</Link>
               </li>
               <li className="footerLi">
-                <Link to="insurance">{t("insuranceInfo")}</Link>
+                <Link to="/insurance">{t("insuranceInfo")}</Link>
               </li>
               <li className="footerLi">
-                <Link to="legal-notices">{t("legalNotices")}</Link>
+                <Link to="/legal-notices">{t("legalNotices")}</Link>
               </li>
               <li className="footerLi">
-                <Link to="security-notices">{t("securityNotices")}</Link>
+                <Link to="/security-notices">{t("securityNotices")}</Link>
               </li>
             </ul>
           </div>
@@ -93,15 +93,15 @@ const Footer = (props: Props) => {
                 <Link to="/rental-conditions">{t("rentalConditions")}</Link>
               </li>
               <li className="footerLi">
-                <Link to="rental-agreements">{t("rentalAgreements")}</Link>
+                <Link to="/rental-agreements">{t("rentalAgreements")}</Link>
               </li>
               <li className="footerLi">
-                <Link to="vehicle-condition-reports">
+                <Link to="/vehicle-condition-reports">
                   {t("vehicleReports")}
                 </Link>
               </li>
               <li className="footerLi">
-                <Link to="cr-complaint-procedures">
+                <Link to="/cr-complaint-procedures">
                   {t("crComplaintProcedure")}
                 </Link>
               </li>

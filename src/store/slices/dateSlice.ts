@@ -5,22 +5,25 @@ import { configureStore, createSlice } from '@reduxjs/toolkit';
 const dateSlice = createSlice({
   name: 'dates',
   initialState: {
-      startDate: null, // Bugünün tarihini zaman damgası olarak ayarla
-      endDate: null, 
+      startDate: new Date().getTime(), 
+      endDate: new Date().getTime(), 
    
     
   },
   reducers: {
     setStartDate: (state, action) => {
       state.startDate = action.payload;
+      sessionStorage.setItem('selectedStartDate', action.payload);
+   
     },
     setEndDate: (state, action) => {
       state.endDate = action.payload;
+      sessionStorage.setItem('selectedEndDate',action.payload)
      
     },
-    clearDates: (state) => {
-      state.startDate =null;
-      state.endDate =null;
+    clearDates: (state:any) => {
+     state.startDate = new Date().getTime();
+      state.endDate=  new Date().getTime();
     },
   },
 });

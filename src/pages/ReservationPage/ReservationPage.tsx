@@ -20,7 +20,6 @@ import "./reservationPage.css";
 import { Helmet } from "react-helmet";
 import { useSelector } from "react-redux";
 import { differenceInDays } from "date-fns";
-import DiscountCode from "../../components/discount/Discount";
 
 const ReservationPage = () => {
   const settings = useSelector((state:any)=> state.settings.setting)
@@ -87,8 +86,7 @@ const ReservationPage = () => {
 
     if  ((auth.authInformation.user.email === '' || null || undefined) ){
         alert("You have to be authenticated before you can  make a reservation.");
-        navigate("/sign-up")
-
+        navigate("/sign-up")        
     }
 
 

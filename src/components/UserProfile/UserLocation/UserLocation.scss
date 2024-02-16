@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    align-items: center;
+    align-items: stretch;
     .mainHead1 {
         color: var(--primaryColor);
         font-size: 30px;
@@ -17,7 +17,7 @@
         border-radius: 5px;
         font-size: 1.5rem;
         font-weight: 300;
-        margin: 1rem;
+        margin: 3rem;
         cursor: pointer;
         color: var(--primaryColor);
         &:hover {
@@ -27,35 +27,12 @@
         }
     }
     .form {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        width: 100%;
-        padding: 10px 20px;
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            width: 45%;
-            margin: 10px;
+        padding: 10px 30px;
+        label {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-top: 20px;
         }
-    }
-    label {
-        font-size: 1.2rem;
-        font-weight: 300;
-        margin-bottom: 5px;
-    }
-    input {
-        padding: 10px 20px;
-        border: 1px solid var(--secondaryColor);
-        border-radius: 5px;
-        outline: none;
-        &:focus {
-            border: 1px solid var(--primaryColor);
-        }
-    }
-    span{
-        color: var(--color-subtext);
     }
     textarea {
         padding: 10px 20px;
