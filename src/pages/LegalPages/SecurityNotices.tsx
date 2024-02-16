@@ -13,6 +13,7 @@ const SecurityNotices = (props: Props) => {
         <div className="secContainer shadow-rounded-box">
           <div className="headingDiv">
             <h2>Security Notice</h2>
+            <img src="/assets/img/example.png" alt="example-text"/>
           </div>
           <div className="contentContainer nonNavbar">
             <div className="letterContainer ">
