@@ -1,14 +1,16 @@
 import React from "react";
-import "./styles/user.css";
-import { FormikInput } from "../../components";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import Dropzone from "react-dropzone-uploader";
 import { Link, useNavigate } from "react-router-dom";
 import { object, ref, string } from "yup";
-import { AddCarRequest } from "../../models/requests/cars/AddCarRequest";
-import UserService from "../../services/UserService";
+import Dropzone from "react-dropzone-uploader";
 import { ToastContainer, toast } from "react-toastify";
+
+import { FormikInput } from "../../components";
+import UserService from "../../services/UserService";
+import { AddCarRequest } from "../../models/requests/cars/AddCarRequest";
 import { AddUserRequest } from "../../models/requests/users/AddUserRequest";
+
+import "./styles/user.css";
 type Props = {};
 
 const AddUser = (props: Props) => {

@@ -2,16 +2,12 @@ import React, { useEffect, useState } from "react";
 import "./settings.css";
 import { Form, Formik } from "formik";
 import { FormikInput } from "../../components";
-import Input from "antd/es/input/Input";
 import SettingsService from "../../services/SettingsService";
 import { SettingsModel } from "../../models/responses/settings/SettingsModel";
 import { ToastContainer, toast } from "react-toastify";
 import { UpdateSettingsRequest } from "../../models/requests/settings/UpdateSettingsRequest";
 import Dropzone from "react-dropzone-uploader";
-
-
 import * as Yup from "yup";
-import OverlayLoader from "../../components/OverlayLoader/OverlayLoader";
 import OverlayLoaderTest from "../../components/OverlayLoader/OverlayLoaderTest";
 type Props = {};
 
@@ -25,36 +21,30 @@ const Settings = (props: Props) => {
     getSetttings(1);
    
   }, []);
-
-  const validationSchema = Yup.object().shape({
-    id: Yup.number()
-      .required("The settings id cannot be empty.")
-      .positive("Id must be a positive number."),
-    title: Yup.string().required("Title cannot be empty."),
-    url: Yup.string().required("URL cannot be empty."),
-    logo: Yup.string(),
-    phoneNumber: Yup.string().matches(
-      /^\d{11}$/,
-      "Phone number must be a 11-digit number."
-    ),
-    email: Yup.string().email("Invalid email format."),
-    address: Yup.string().required("Address cannot be empty."),
-    linkedin: Yup.string(),
-    instagram: Yup.string(),
-    github: Yup.string().required("Github cannot be empty."),
-  });
-
-  const [settings, setSettigs] = useState<SettingsModel>();
-
   const formData = new FormData();
+  const getUploadParams = ({}) => {
+    return { url: "https://httpbin.org/post" };
+  };
+  const handleChangeStatus = ({ meta, file }: { meta: any, file: any }) => {
+    if (meta.status === 'done') {
+      console.log('Dosya yüklendi:', file);
+      formData.append("files[]", file)
+    
+  
+    } else if (meta.status === 'error') {
+      console.error('Dosya yüklenirken bir hata oluştu:', meta);
+  
+    }
+  };
 
  
-
+  const [settings, setSettigs] = useState<SettingsModel>();
 
   const onSubmit = async (values: UpdateSettingsRequest) => {
-    console.log("asdasd");
+   
     
-    if (formData.get("file") !== null) {
+    
+    if (formData.get("files[]")) {
       formData.append(
         "settings",
         new Blob([JSON.stringify(values)], { type: "application/json" })
@@ -62,7 +52,7 @@ const Settings = (props: Props) => {
       await SettingsService.updateSettingsAndImage(formData)
         .then((res: any) => {
           toast.success(res.data.message);
-          window.location.reload();
+         window.location.reload();
         })
         .catch((err) => {
           toast.error(err.response.data.message);
@@ -80,31 +70,33 @@ const Settings = (props: Props) => {
         });
     }
   };
-  const handleSubmitasd = async ()=>{
-    console.log("asdad");
+  const updateSettingsvalidationSchema = Yup.object().shape({
+    id: Yup.number()
+      .required("The settings id cannot be empty.")
+      .positive("Id must be a positive number."),
+    title: Yup.string().required("Title cannot be empty."),
+    url: Yup.string().required("URL cannot be empty."),
+    phoneNumber: Yup.string().matches(
+      /^\d{11}$/,
+      "Phone number must be a 11-digit number."
+    ),
+    email: Yup.string().email("Invalid email format."),
+    address: Yup.string().required("Address cannot be empty."),
+    linkedin: Yup.string(),
+    instagram: Yup.string(),
+    github: Yup.string().required("Github cannot be empty."),
     
-  }
+  });
+
 
   
-const getUploadParams = ({}) => {
-  return { url: "https://httpbin.org/post" };
-};
-const handleChangeStatus = ({ meta, file }: { meta: any, file: any }) => {
-  if (meta.status === 'done') {
-    console.log('Dosya yüklendi:', file);
-    formData.append("files", file)
 
-
-  } else if (meta.status === 'error') {
-    console.error('Dosya yüklenirken bir hata oluştu:', meta);
-
-  }
-};
 
   const getSetttings = async (id: number) => {
     await SettingsService.getById(id)
       .then((res) => {
         setSettigs(res.data.data);
+        
       })
       .catch((err) => {
         toast.error(err.response.data.message);
@@ -124,7 +116,7 @@ if(!settings) return <OverlayLoaderTest/>
         <div className="settings__wrapper">
           <div className="details__form">
             <Formik
-            validationSchema={validationSchema}
+          
             validateOnBlur={true}
               initialValues={{
                 id: settings.id ,
@@ -139,7 +131,7 @@ if(!settings) return <OverlayLoaderTest/>
                 instagram: settings.instagram,
                 github: settings.github,
               }}
-              onSubmit={onSubmit}
+              validationSchema={updateSettingsvalidationSchema} onSubmit={onSubmit}
             >
               <Form className="form">
                 <div className="row">
@@ -148,7 +140,7 @@ if(!settings) return <OverlayLoaderTest/>
                       <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
                         <div className="imgDiv">
                           <img src={settings?.logo} alt="logo" />
-                          <img src={settings?.tabLogo} alt="logo" />
+                          <img src={settings?.tabLogo} alt="tabLogo" />
                         </div>
                       </div>
                     </div>
@@ -156,8 +148,16 @@ if(!settings) return <OverlayLoaderTest/>
                   </div>
                   <div className="col-xl-8 col-l-8 col-md-12 col-sm-12">
                     <div className="row">
-                      <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
-                        <p>Logo</p>
+                    <div className="col-xl-16 col-l-6 col-md-6 col-sm-6">
+                        <p>Site Logo</p>
+                        <Dropzone
+                          getUploadParams={getUploadParams}
+                          onChangeStatus={handleChangeStatus}
+                          accept="image/*"
+                        />
+                      </div>
+                      <div className="col-xl-16 col-l-6 col-md-6 col-sm-6">
+                        <p>Tab Logo</p>
                         <Dropzone
                           getUploadParams={getUploadParams}
                           onChangeStatus={handleChangeStatus}

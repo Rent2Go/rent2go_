@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import "./userTable.css";
-import { UserModel } from "../../../models/responses/users/GetUser";
-import { Table } from "react-bootstrap";
-import UserService from "../../../services/UserService";
+import { Table, FormCheck, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaUserEdit } from "react-icons/fa";
 import { RiDeleteBin3Line } from "react-icons/ri";
-import { FormCheck } from "react-bootstrap";
-import Form from "react-bootstrap/Form";
 import { CiEdit } from "react-icons/ci";
 import { MdOutlineDeleteForever } from "react-icons/md";
 import { toast } from "react-toastify";
+
+import UserService from "../../../services/UserService";
+import { UserModel } from "../../../models/responses/users/GetUser";
+
+import "./userTable.css";
 
 type Props = {
   user: UserModel;

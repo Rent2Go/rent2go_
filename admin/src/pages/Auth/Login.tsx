@@ -1,18 +1,17 @@
 import React from "react";
-import "./auth.css";
-import { Formik, Form } from "formik";
 import { Link, useNavigate } from "react-router-dom";
-
+import { Formik, Form } from "formik";
+import FormikInput from "../../components/Formik/FormikInput";
+import { useAuth } from "../../contexts/AuthContext";
+import { SignInRequest } from "../../../../src/models/requests/auth/SignInRequest";
+import AuthService from "../../services/AuthService";
 import {
   signInValidationSchema,
   signIninitialValues,
 } from "./FormikAndYupSchema";
-import FormikInput from "../../components/Formik/FormikInput";
-import { SignInRequest } from "../../../../src/models/requests/auth/SignInRequest";
+import "./auth.css";
 import "react-toastify/dist/ReactToastify.css";
-import { useAuth } from "../../contexts/AuthContext";
 import { ToastContainer, toast } from "react-toastify";
-import AuthService from "../../services/AuthService";
 type Props = {};
 const Register = (props: Props) => {
 

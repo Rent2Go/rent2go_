@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
-
-import "./discounts.css";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import { FormikInput } from "../../components";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { Table } from "react-bootstrap";
-import { DiscountModel } from "../../models/responses/discounts/GetDiscount";
-import { AddDiscountRequest } from "../../models/requests/discounts/AddDiscountRequest";
-import DiscountService from "../../services/DiscountService";
-import * as Yup from "yup";
 import { MdOutlineDeleteForever } from "react-icons/md";
 import { ToastContainer, toast } from "react-toastify";
+import * as Yup from "yup";
+
+import { FormikInput } from "../../components";
+import DiscountService from "../../services/DiscountService";
+import { DiscountModel } from "../../models/responses/discounts/GetDiscount";
+import { AddDiscountRequest } from "../../models/requests/discounts/AddDiscountRequest";
+
+import "./discounts.css";
 
 
 type Props = {};

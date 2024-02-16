@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { IoMdSearch, IoIosNotifications } from "react-icons/io";
 
-import "./navbar.css";
 import { Link } from "react-router-dom";
 import UserService from "../../services/UserService";
 import { UserModel } from "../../models/responses/users/GetUser";
 import { useAuth } from "../../contexts/AuthContext";
+
+import "./navbar.css";
 type Props = {};
 
 const Navbar = (props: Props) => {

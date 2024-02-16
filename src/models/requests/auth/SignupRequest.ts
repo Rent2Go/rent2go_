@@ -4,6 +4,8 @@ export interface signUpRequest{
 	lastName: string;
 	phoneNumber: string;
 	email: string;
+	birthDate: Date;
+	idCardNumber: string;
 	password: string;
 	confirmpassword: string;
 
