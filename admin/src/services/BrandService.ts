@@ -6,7 +6,7 @@ import axiosInstance from "../utils/axiosInsterceptors";
 
 class BrandService{
     getAll(){
-        return axiosInstance.get<GetAllBrands>("brands")
+        return axiosInstance.get<GetAllBrands>("brands/getallisactive?isActive=true")
     }
 
     getById(id:number){
@@ -18,6 +18,9 @@ class BrandService{
         return axiosInstance.post<AddResponse>('brands', addBrandRequest)
 
 
+    }
+    deleteBrand(id:number){
+        return axiosInstance.delete<AddResponse>(`brands/${id}`)
     }
 }
     
