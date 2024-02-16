@@ -18,8 +18,10 @@ import { usePaymentContext } from "../../contexts/PaymentContext";
 
 import "./reservationPage.css";
 import { Helmet } from "react-helmet";
+import { useSelector } from "react-redux";
 
 const ReservationPage = () => {
+  const settings = useSelector((state:any)=> state.settings.setting)
   const auth = useAuth();
   console.log(auth.authInformation.user.email);
   const params = useParams<{ id: string }>();
