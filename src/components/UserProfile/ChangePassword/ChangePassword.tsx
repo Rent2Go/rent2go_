@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ChangePassword.css";
 import { useTranslation } from "react-i18next";
 import * as Yup from "yup";
 import { Form, Formik } from "formik";
 import FormikInput from "../../FormikInput/FormikInput";
+import { CityModel } from "../../../models/responses/cities/GetCity";
+import { DistrictModel } from "../../../models/responses/districts/GetDistrict";
+import CityService from "../../../services/CityService";
+import DistrictService from "../../../services/DistrictService";
 
 const ChangePassword = () => {
+
   const { t } = useTranslation();
+
 
   const initialValues: any = {
     oldPassword: "",
@@ -32,6 +38,9 @@ const ChangePassword = () => {
   });
 
   const handleSubmit = () => {};
+
+
+
 
   return (
     <div className="changePassword">
