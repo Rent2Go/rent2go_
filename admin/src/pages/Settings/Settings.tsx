@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./settings.css";
+
 import { Form, Formik } from "formik";
 import { FormikInput } from "../../components";
 import SettingsService from "../../services/SettingsService";
@@ -9,6 +9,8 @@ import { UpdateSettingsRequest } from "../../models/requests/settings/UpdateSett
 import Dropzone from "react-dropzone-uploader";
 import * as Yup from "yup";
 import OverlayLoaderTest from "../../components/OverlayLoader/OverlayLoaderTest";
+
+import "./settings.css";
 type Props = {};
 
 
@@ -24,17 +26,7 @@ const Settings = (props: Props) => {
     return { url: "https://httpbin.org/post" };
   };
 
-<<<<<<< HEAD
-=======
-  useEffect(() => {
-  
-    getSetttings(1);
-   
-  }, []);
 
-  
-
->>>>>>> yagmur
   const handleChangeStatus = ({ meta, file }: { meta: any, file: any }) => {
     if (meta.status === 'done') {
       console.log('Dosya yüklendi:', file);

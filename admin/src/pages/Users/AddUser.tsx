@@ -1,44 +1,23 @@
-<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
-import "./styles/user.css";
-<<<<<<< HEAD
-=======
 
-import React, { useEffect, useState } from "react";
-import "./styles/user.css";
-
->>>>>>> yagmur
-=======
-<<<<<<< HEAD
 import { FormikInput, FormikSelect } from "../../components";
-=======
->>>>>>> master
->>>>>>> feyza
+
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import { object, ref, string } from "yup";
 import Dropzone from "react-dropzone-uploader";
 import { ToastContainer, toast } from "react-toastify";
 
-import { FormikInput, FormikSelect } from "../../components";
 import UserService from "../../services/UserService";
 import { AddCarRequest } from "../../models/requests/cars/AddCarRequest";
 import { AddUserRequest } from "../../models/requests/users/AddUserRequest";
-<<<<<<< HEAD
-=======
-
-import "./styles/user.css";
-
->>>>>>> yagmur
 import CityService from "../../services/CityService";
 import { CityModel } from "../../models/responses/cities/GetCity";
 import { DistrictModel } from "../../models/responses/districts/GetDistrict";
 import DistrictService from "../../services/DistrictService";
 
-<<<<<<< HEAD
 import "./styles/user.css";
-=======
->>>>>>> yagmur
+
 type Props = {};
 
 const AddUser = (props: Props) => {
@@ -128,12 +107,12 @@ const AddUser = (props: Props) => {
   };
   const handleChangeStatus = ({ meta, file }: { meta: any, file: any }) => {
     if (meta.status === 'done') {
-      console.log('Dosya yüklendi:', file);
+      console.log('File uploaded:', file);
       formData.append("file", file)
 
 
     } else if (meta.status === 'error') {
-      console.error('Dosya yüklenirken bir hata oluştu:', meta);
+      console.error('An error occurred while uploading the file:', meta);
 
     }
   };
@@ -275,7 +254,7 @@ const AddUser = (props: Props) => {
                     name="address"
                     placeholder="Enter Your Address"
                     className="form-control"
-                    rows={5} // Metin alanının dikey boyutunu belirler
+                    rows={5} 
                     cols={30}
                   />
                   <ErrorMessage name="address" component="div" className="error" />
