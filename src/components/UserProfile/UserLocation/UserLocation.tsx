@@ -64,9 +64,9 @@ const UserLocation = () => {
 
   const handleCityChange = async (selectedCity: number) => {
     setCityId(selectedCity);
-    const city = cities.find((city) => city.id == cityId);
+    const city = cities.find((city) => city.id == selectedCity);
 
-    const selectedCityDistrict = districts.filter((district: DistrictModel) => district.city.id == city?.id)
+    const selectedCityDistrict = districts.filter((district: DistrictModel) => district.city.id == selectedCity)
     setSelectedFilter(selectedCityDistrict)
   }
 
