@@ -1,0 +1,60 @@
+.discountContainer{
+display: flex;
+flex-direction: row;
+justify-content: end;
+align-items: center;
+margin:0 0 1rem 0;
+gap:0.2rem;
+input{
+    border:2px dashed var(--textColor);
+    background: var(--fifthColor);
+    color:var(--textColor);
+    font-weight: 500;
+    outline: none;
+    width: 50%;
+    font-size: 12px;
+    &::placeholder{
+        text-align: center;
+        color: var(--focusColor);
+        letter-spacing: 0.025em;
+    }
+    &:focus{
+        outline: none;
+        border: none;
+    }
+    &::selection, :active, ::after{
+        outline: none;
+        border: none;
+    }
+    &:hover{
+        background: var(--pureWhiteColor);
+        transition: 0.3s ease-in-out;
+    }
+}
+.btn{
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    &:hover{
+        transition: 0.3sn ease-in-out;
+        background: none;
+       
+       
+    }
+  
+}
+.btn-apply{
+    background: var(--color-success);
+    color: var(--pureWhiteColor);
+    border:3px dashed var(--color-success);
+    &:hover{color: var(--color-success);}
+}
+.btn-cancel{
+    background: var(--color-danger);
+    color: var(--pureWhiteColor);
+    border:3px dashed var(--color-danger);
+    &:hover{color: var(--color-danger);}
+}
+}
