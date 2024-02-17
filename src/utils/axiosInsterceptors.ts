@@ -13,7 +13,7 @@ import { string, number } from 'yup';
 const axiosInstance = axios.create({
 
 
-	baseURL: "https://api.rentogo.com.tr/api",
+	baseURL: "http://localhost:8080/api",
 
 });
 
