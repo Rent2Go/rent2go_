@@ -44,10 +44,10 @@ const PriceCard = (props: Props) => {
 
   return (
     <div className='priceCard'>
-      <p><span><b>Unit Price : </b></span>₺ {props.cars?.dailyPrice},00</p>
-      <p><span><b>Tax : </b></span>% 20 - ₺ {totalKdv}</p>
+      <p><span><b>Unit Price : </b></span>₺ {props.cars?.dailyPrice.toFixed(2)}</p>
+      <p><span><b>Tax : </b></span>% 20 - ₺ {totalKdv.toFixed(2)}</p>
       { discount &&  <p><span><b>Discount : </b></span>% {discount.percentage * 100} - ₺ {discountRate.toFixed(2)}</p>}
-      <p><span><b>Total Price : </b></span>₺ {totalPrice}</p>
+      <p><span><b>Total Price : </b></span>₺ {totalPrice.toFixed(2)}</p>
     
     
     </div>

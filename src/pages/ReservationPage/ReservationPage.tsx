@@ -168,14 +168,13 @@ const ReservationPage = () => {
           </div>
          
           <div className="secHeading">
-            <h5 className="text-center">Reservation Detail</h5>
+            <h5>Reservation Detail</h5>
           </div>
           <div className="secContent">
             <div className="topContent">
               <div className="customerCardContainer">
                 <CustomerCard />
               </div>
-              <DiscountCode  />
               <div className="dateContentContainer">
              
                 <p>
