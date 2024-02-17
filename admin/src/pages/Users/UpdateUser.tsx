@@ -1,22 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-<<<<<<< Updated upstream
 import { Link, useNavigate, useParams } from 'react-router-dom';
-=======
-import { FormikInput, FormikSelect } from '../../components';
->>>>>>> Stashed changes
 import Dropzone from 'react-dropzone-uploader';
-import { toast } from 'react-toastify';
-import { object, ref, string } from "yup";
-
 import { FormikInput } from '../../components';
 import UserService from '../../services/UserService';
 import { UserModel } from '../../models/responses/users/GetUser';
-<<<<<<< Updated upstream
-=======
 import { ToastContainer, toast } from 'react-toastify';
 import { object, ref, string } from "yup";
->>>>>>> Stashed changes
 import { UpdateUserRequest } from '../../models/requests/users/UpdateUserRequest';
 import DistrictService from '../../services/DistrictService';
 import CityService from '../../services/CityService';
@@ -175,8 +165,7 @@ const UpdateUser = (props: Props) => {
             active: user.active,
             imageUrl: user.imageUrl,
             address: user.address,
-
-            districtId: user.district.id,
+            districtId:  user.district ? user.district.id : 1,
           }} onSubmit={onSubmit} validateOnBlur={true} >
             <Form className="Form">
               <div className="row">
@@ -230,7 +219,7 @@ const UpdateUser = (props: Props) => {
                 <div className="col-xl-4 col-l-4 col-md-12 col-sm-12">
                   <label className="form-label">City</label>
                   <Field name="cityId" as="select" value={resultCity?.id} className="form-control" onChange={(e: any) => handleCityChange(e.target.value)}>
-                  <option key={user.city.id} value={user.city.id}>{user.city.name.toUpperCase()}</option>
+                  {user.district &&  <option key={user.city.id} value={user.city.id}>{user.city.name.toUpperCase()}</option>}
                     {cities.map((value: CityModel) => (
                       <option key={value.id} value={value.id}>{value.name.toUpperCase()}</option>)
                     )}
@@ -241,7 +230,7 @@ const UpdateUser = (props: Props) => {
                   <label className="form-label">District</label>
                   <Field name="districtId" as="select" className="form-control">
 
-                    <option key={user.district.id} value={user.district.id}>{user.district.districtName.toUpperCase()}</option>
+                  {user.district &&  <option key={user.district.id} value={user.district.id}>{user.district.districtName.toUpperCase()}</option>}
 
                     {selectedFilter.map((value: DistrictModel) => (
                       <option key={value.id} value={value.id}>{value.districtName.toUpperCase()}</option>)

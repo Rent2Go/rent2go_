@@ -7,7 +7,7 @@ import FormControl from "@mui/material/FormControl";
 import { Unstable_Popup as BasePopup } from "@mui/base/Unstable_Popup";
 import { CiCircleInfo } from "react-icons/ci";
 
-import { Navbar, Footer, CustomerCard, PriceCard } from "../../components";
+import { Navbar, Footer, CustomerCard, PriceCard, DiscountCode } from "../../components";
 
 import { CarModel } from "../../models/responses/cars/GetCar";
 
@@ -18,21 +18,36 @@ import { usePaymentContext } from "../../contexts/PaymentContext";
 
 import "./reservationPage.css";
 import { Helmet } from "react-helmet";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { differenceInDays } from "date-fns";
+import { setAction } from "../../store/slices/rentalSlice";
+import UserService from "../../services/UserService";
+import { UserModel } from "../../models/user/UserModel";
+
 
 const ReservationPage = () => {
-  const settings = useSelector((state:any)=> state.settings.setting)
+  const settings = useSelector((state:any)=> state.settings.setting);
+
   const auth = useAuth();
   const navigate = useNavigate()
+  const dispatch = useDispatch();
+
+
   console.log(auth.authInformation.user.email);
   const params = useParams<{ id: string }>();
   const [rentals, setRentals] = useState<CarModel>();
+  const [user, setUser] = useState<UserModel>();
   const { startDate, endDate } = useSelector((state:any) => state.rentalDate);
+
+
   useEffect(() => {
-    if (params.id) {
+    if (params.id ) {
       getRentals(params.id);
     }
+    if(auth.authInformation.user.email){
+      getUsersByEmail(auth.authInformation.user.email!)
+    }
+   
   }, [params.id]);
 
   const getRentals = async (id: string) => {
@@ -43,6 +58,17 @@ const ReservationPage = () => {
       console.error("Error fetching rentals:", error);
     }
   };
+
+  const getUsersByEmail = async (email: string) => {
+    try {
+      const response = await UserService.getByEmail(email);
+      setUser(response.data.data);
+    } catch (error) {
+      console.error("Error fetching rentals:", error);
+    }
+  };
+    
+    
   {
     /*POPUP*/
   }
@@ -101,6 +127,16 @@ const ReservationPage = () => {
  const rentStartDate= new Date(startDate);
  const rentEndDate= new Date(endDate);
  const rentDay = (differenceInDays(endDate, startDate)+1);
+
+ dispatch(setAction({
+  startDate: rentStartDate,
+  endDate: rentEndDate,
+  day: rentDay,
+  car: rentals,
+  user: user
+ }))
+
+ 
 
 
 
@@ -268,6 +304,7 @@ const ReservationPage = () => {
                   </div>
                 </div>
               </form>
+              <DiscountCode  />
             </div>
             <div className="noteContainer"></div>
           </div>
