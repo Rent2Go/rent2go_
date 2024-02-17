@@ -44,15 +44,15 @@ console.log(date);
 
   const handleSubmitSearch = async () => {
     if (selectedStartDate && selectedEndDate) {
-      const startDateTimestamp = selectedStartDate.getTime(); // Başlangıç tarihinin zaman damgası
-      const endDateTimestamp = selectedEndDate.getTime(); // Bitiş tarihinin zaman damgası
-      dispatch(setStartDate(startDateTimestamp)); // Redux'a zaman damgasını gönder
-      dispatch(setEndDate(endDateTimestamp)); // Redux'a zaman damgasını gönder
+      const startDateTimestamp = selectedStartDate.getTime(); 
+      const endDateTimestamp = selectedEndDate.getTime(); 
+      dispatch(setStartDate(startDateTimestamp)); 
+      dispatch(setEndDate(endDateTimestamp)); 
     
-      console.log(  differenceInDays(endDateTimestamp, startDateTimestamp) ); // Zaman damgalarını konsola yazdır
+      console.log(  differenceInDays(endDateTimestamp, startDateTimestamp) ); 
       navigate("/cars");
     } else {
-      alert(t("pleaseSelectStartDateAndEndDate")); // Başlangıç ve bitiş tarihlerini seçmemişse uyarı ver
+      alert(t("pleaseSelectStartDateAndEndDate")); 
     }
   }
   useEffect(() => {
