@@ -10,6 +10,7 @@ import * as Yup from "yup";
 import { useAuth } from "../../contexts/AuthContext";
 
 import "./payment.css";
+import { useSelector } from "react-redux";
 
 type Props = {};
 
@@ -17,13 +18,14 @@ const BankTransfer = (props: Props) => {
   const { selectedPaymentMethod } = useParams<{
     selectedPaymentMethod: string;
   }>();
-
+  const {priceCard} = useSelector((state:any)=> state.rental)
   const getCurrentDate = (): string => {
     const currentDate = new Date();
     const day = currentDate.getDate().toString().padStart(2, "0");
     const month = (currentDate.getMonth() + 1).toString().padStart(2, "0");
     const year = currentDate.getFullYear();
     return `${day}.${month}.${year}`;
+    
   };
   const currentDate = getCurrentDate();
 
@@ -157,7 +159,7 @@ const BankTransfer = (props: Props) => {
                             </p>
                           </div>
                           <div className="col-xl-3 col-l-3 col-md-6 col-sm-6">
-                            <p>1500 ₺</p>
+                            <p>{priceCard.totalPrice} ₺</p>
                           </div>
                         </div>
                       </div>
@@ -170,7 +172,7 @@ const BankTransfer = (props: Props) => {
                             </p>
                           </div>
                           <div className="col-xl-3 col-l-3 col-md-6 col-sm-6">
-                            <p>150 ₺</p>
+                            <p>{priceCard.discountRate}</p>
                           </div>
                         </div>
                       </div>
@@ -183,7 +185,7 @@ const BankTransfer = (props: Props) => {
                             </p>
                           </div>
                           <div className="col-xl-3 col-l-3 col-md-6 col-sm-6">
-                            <p>1350 ₺</p>
+                            <p> {priceCard.totalPrice - priceCard.discountRate}₺</p>
                           </div>
                         </div>
                       </div>

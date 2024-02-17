@@ -1,5 +1,5 @@
-import React from "react";
-import { Footer, Navbar } from "../../components";
+import React, { useEffect } from "react";
+import { Footer, Navbar, PriceCard } from "../../components";
 import { Link, useParams } from "react-router-dom";
 import "./payment.css";
 import { Form, Formik } from "formik";
@@ -12,8 +12,8 @@ type Props = {};
 
 const Cash = (props: Props) => {
 
-  const {car,startDate,endDate,user} = useSelector((state:any)=> state.rental)
-  console.log(user,car);
+  const {priceCard} = useSelector((state:any)=> state.rental)
+  console.log(priceCard);
   
   const auth = useAuth();
   const getCurrentDate = (): string => {
@@ -24,6 +24,16 @@ const Cash = (props: Props) => {
 
     return `${day}.${month}.${year}`;
   };
+
+  const rentalInfo = useSelector((state:any) => state).rental; // redux store'daki rentalInfo state'ine erişim
+
+  useEffect(() => {
+    // rentalInfo state'i her güncellendiğinde sessionStorage'e kaydet
+    sessionStorage.setItem('rentalInfo', JSON.stringify(rentalInfo));
+  }, [rentalInfo]); // rentalInfo state'i değiştiğinde useEffect tekrar çalışacak
+
+
+ 
   const currentDate = getCurrentDate();
   const { selectedPaymentMethod } = useParams<{
     selectedPaymentMethod: string;
@@ -84,7 +94,7 @@ const Cash = (props: Props) => {
                       </p>
                     </div>
                     <div className="col-xl-3 col-l-3 col-md-6 col-sm-6">
-                      <p>1500 ₺</p>
+                      <p>{priceCard.totalPrice.toFixed(2)} ₺</p>
                     </div>
                   </div>
                 </div>
@@ -97,7 +107,7 @@ const Cash = (props: Props) => {
                       </p>
                     </div>
                     <div className="col-xl-3 col-l-3 col-md-6 col-sm-6">
-                      <p>150 ₺</p>
+                      <p>{priceCard.discountRate.toFixed(2)} ₺</p>
                     </div>
                   </div>
                 </div>
@@ -106,11 +116,11 @@ const Cash = (props: Props) => {
                   <div className="row">
                     <div className="col-xl-5 col-l-5 col-md-6 col-sm-6">
                       <p>
-                        <b>Total Amount : </b>
+                        <b>Total Amount :  </b>
                       </p>
                     </div>
                     <div className="col-xl-3 col-l-3 col-md-6 col-sm-6">
-                      <p>1350 ₺</p>
+                      <p>{(priceCard.totalPrice - priceCard.discountRate).toFixed(2)} ₺</p>
                     </div>
                   </div>
                 </div>
