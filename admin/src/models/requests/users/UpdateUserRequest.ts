@@ -11,7 +11,7 @@ export interface UpdateUserRequest {
 	address?: string;
 	imageUrl:string;
 	active:boolean;
-	districtId: number;
+	districtId: number|undefined;
 
 
 }
