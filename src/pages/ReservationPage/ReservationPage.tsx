@@ -27,7 +27,7 @@ import { UserModel } from "../../models/user/UserModel";
 
 const ReservationPage = () => {
   const settings = useSelector((state:any)=> state.settings.setting);
-
+  const { startDate, endDate} = useSelector((state:any) => state.rentalDate);
   const auth = useAuth();
   const navigate = useNavigate()
   const dispatch = useDispatch();
@@ -37,7 +37,15 @@ const ReservationPage = () => {
   const params = useParams<{ id: string }>();
   const [rentals, setRentals] = useState<CarModel>();
   const [user, setUser] = useState<UserModel>();
-  const { startDate, endDate } = useSelector((state:any) => state.rentalDate);
+  
+
+  //const result = useSelector((state:any) => state);
+    //console.log(result);
+    
+  // useEffect(() => {
+  //   // rentalInfo state'i her güncellendiğinde sessionStorage'e kaydet
+  //   sessionStorage.setItem('rentalInfoSlice', JSON.stringify(car));
+  // }, [car])
 
 
   useEffect(() => {
@@ -114,9 +122,6 @@ const ReservationPage = () => {
         alert("You have to be authenticated before you can  make a reservation.");
         navigate("/sign-up")        
     }
-
-
-
   }
 
 
@@ -129,8 +134,8 @@ const ReservationPage = () => {
  const rentDay = (differenceInDays(endDate, startDate)+1);
 
  dispatch(setAction({
-  startDate: rentStartDate,
-  endDate: rentEndDate,
+  startDate: startDate,
+  endDate: endDate,
   day: rentDay,
   car: rentals,
   user: user
@@ -154,19 +159,23 @@ const ReservationPage = () => {
 
       </Helmet>
       <Navbar />
+      
       <div className="reservation ">
         <div className="secContainer">
+          
           <div className="imgContainer">
             <img src={rentals?.imageUrl} alt="carImage" />
           </div>
+         
           <div className="secHeading">
-            <h5>Reservation Detail</h5>
+            <h5 className="text-center">Reservation Detail</h5>
           </div>
           <div className="secContent">
             <div className="topContent">
               <div className="customerCardContainer">
                 <CustomerCard />
               </div>
+              <DiscountCode  />
               <div className="dateContentContainer">
                 <p>
                   
@@ -304,11 +313,12 @@ const ReservationPage = () => {
                   </div>
                 </div>
               </form>
-              <DiscountCode  />
+              
             </div>
             <div className="noteContainer"></div>
           </div>
         </div>
+       
       </div>
       <Footer />
     </>
