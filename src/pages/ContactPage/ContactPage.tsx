@@ -12,15 +12,17 @@ import axios from 'axios';
 import Aos from "aos";
 
 import { useTranslation } from "react-i18next";
-
 import "./contactPage.css";
+
+import { Helmet } from 'react-helmet';
+
 
 
 const ContactPage = () => {
-  const settings = useSelector((state:any) => state.settings.setting )
-  const {t} = useTranslation();
+  const settings = useSelector((state: any) => state.settings.setting)
+  const { t } = useTranslation();
 
-  function formatPhoneNumber(phoneNumber:string) {
+  function formatPhoneNumber(phoneNumber: string) {
     const regex = /(\d{4})(\d{3})(\d{2})(\d{2})/;
     const formattedPhoneNumber = phoneNumber.replace(regex, '$1 $2 $3 $4');
     return formattedPhoneNumber;
@@ -60,6 +62,10 @@ const ContactPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{settings.title} - Contact Page</title>
+
+      </Helmet>
       <Navbar />
       <div className='contact'>
         <div className='contact-entry'>
@@ -72,7 +78,7 @@ const ContactPage = () => {
           <h1>{t("contactUs")}</h1>
           <div id='contact-container'>
             <div className='contact-info'>
-            <h4>{t("contactInformation")}</h4>
+              <h4>{t("contactInformation")}</h4>
               <p>{t("callUsSendUsAnEmail")}</p>
               <div className='icon-text'>
                 <i className='icon' aria-hidden="true"><CiPhone /></i>
@@ -132,7 +138,7 @@ const ContactPage = () => {
               </div>
               <div className='col-2'>
                 <div className='form-group right'>
-                <Button type='submit' className='primary' data-aos="zoom-in">{t("sendMessage")}</Button>
+                  <Button type='submit' className='primary' data-aos="zoom-in">{t("sendMessage")}</Button>
                 </div>
               </div>
             </form>

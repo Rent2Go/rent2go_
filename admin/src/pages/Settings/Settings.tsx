@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./settings.css";
+
 import { Form, Formik } from "formik";
 import { FormikInput } from "../../components";
 import SettingsService from "../../services/SettingsService";
@@ -9,41 +9,43 @@ import { UpdateSettingsRequest } from "../../models/requests/settings/UpdateSett
 import Dropzone from "react-dropzone-uploader";
 import * as Yup from "yup";
 import OverlayLoaderTest from "../../components/OverlayLoader/OverlayLoaderTest";
+
+import "./settings.css";
 type Props = {};
 
 
 
 const Settings = (props: Props) => {
-
-
   useEffect(() => {
-  
+
     getSetttings(1);
-   
+
   }, []);
   const formData = new FormData();
-  const getUploadParams = ({}) => {
+  const getUploadParams = ({ }) => {
     return { url: "https://httpbin.org/post" };
   };
+
+
   const handleChangeStatus = ({ meta, file }: { meta: any, file: any }) => {
     if (meta.status === 'done') {
       console.log('Dosya yüklendi:', file);
       formData.append("files[]", file)
-    
-  
+
+
     } else if (meta.status === 'error') {
       console.error('Dosya yüklenirken bir hata oluştu:', meta);
-  
+
     }
   };
 
- 
+
   const [settings, setSettigs] = useState<SettingsModel>();
 
   const onSubmit = async (values: UpdateSettingsRequest) => {
-   
-    
-    
+
+
+
     if (formData.get("files[]")) {
       formData.append(
         "settings",
@@ -52,7 +54,7 @@ const Settings = (props: Props) => {
       await SettingsService.updateSettingsAndImage(formData)
         .then((res: any) => {
           toast.success(res.data.message);
-         window.location.reload();
+          window.location.reload();
         })
         .catch((err) => {
           toast.error(err.response.data.message);
@@ -85,18 +87,18 @@ const Settings = (props: Props) => {
     linkedin: Yup.string(),
     instagram: Yup.string(),
     github: Yup.string().required("Github cannot be empty."),
-    
+
   });
 
 
-  
+
 
 
   const getSetttings = async (id: number) => {
     await SettingsService.getById(id)
       .then((res) => {
         setSettigs(res.data.data);
-        
+
       })
       .catch((err) => {
         toast.error(err.response.data.message);
@@ -104,8 +106,8 @@ const Settings = (props: Props) => {
   };
 
 
-if(!settings) return <OverlayLoaderTest/>
-  
+  if (!settings) return <OverlayLoaderTest />
+
 
   return (
     <div className="settings container">
@@ -116,14 +118,14 @@ if(!settings) return <OverlayLoaderTest/>
         <div className="settings__wrapper">
           <div className="details__form">
             <Formik
-          
-            validateOnBlur={true}
+
+              validateOnBlur={true}
               initialValues={{
-                id: settings.id ,
+                id: settings.id,
                 title: settings.title,
                 url: settings.url,
                 logo: settings.logo,
-                tabLogo:settings.tabLogo,
+                tabLogo: settings.tabLogo,
                 phoneNumber: settings.phoneNumber,
                 email: settings.email,
                 address: settings.address,
@@ -144,11 +146,11 @@ if(!settings) return <OverlayLoaderTest/>
                         </div>
                       </div>
                     </div>
-                   
+
                   </div>
                   <div className="col-xl-8 col-l-8 col-md-12 col-sm-12">
                     <div className="row">
-                    <div className="col-xl-16 col-l-6 col-md-6 col-sm-6">
+                      <div className="col-xl-16 col-l-6 col-md-6 col-sm-6">
                         <p>Site Logo</p>
                         <Dropzone
                           getUploadParams={getUploadParams}

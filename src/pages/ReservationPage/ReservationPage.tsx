@@ -7,7 +7,7 @@ import FormControl from "@mui/material/FormControl";
 import { Unstable_Popup as BasePopup } from "@mui/base/Unstable_Popup";
 import { CiCircleInfo } from "react-icons/ci";
 
-import { Navbar, Footer, CustomerCard, PriceCard } from "../../components";
+import { Navbar, Footer, CustomerCard, PriceCard, DiscountCode } from "../../components";
 
 import { CarModel } from "../../models/responses/cars/GetCar";
 
@@ -17,17 +17,45 @@ import { useAuth } from "../../contexts/AuthContext";
 import { usePaymentContext } from "../../contexts/PaymentContext";
 
 import "./reservationPage.css";
+import { Helmet } from "react-helmet";
+import { useDispatch, useSelector } from "react-redux";
+import { differenceInDays } from "date-fns";
+import { setAction } from "../../store/slices/rentalSlice";
+import UserService from "../../services/UserService";
+import { UserModel } from "../../models/user/UserModel";
+
 
 const ReservationPage = () => {
+  const settings = useSelector((state:any)=> state.settings.setting);
+  const { startDate, endDate} = useSelector((state:any) => state.rentalDate);
   const auth = useAuth();
+  const navigate = useNavigate()
+  const dispatch = useDispatch();
+
+
   console.log(auth.authInformation.user.email);
   const params = useParams<{ id: string }>();
   const [rentals, setRentals] = useState<CarModel>();
+  const [user, setUser] = useState<UserModel>();
+  
+
+  //const result = useSelector((state:any) => state);
+    //console.log(result);
+    
+  // useEffect(() => {
+  //   // rentalInfo state'i her güncellendiğinde sessionStorage'e kaydet
+  //   sessionStorage.setItem('rentalInfoSlice', JSON.stringify(car));
+  // }, [car])
+
 
   useEffect(() => {
-    if (params.id) {
+    if (params.id ) {
       getRentals(params.id);
     }
+    if(auth.authInformation.user.email){
+      getUsersByEmail(auth.authInformation.user.email!)
+    }
+   
   }, [params.id]);
 
   const getRentals = async (id: string) => {
@@ -38,6 +66,17 @@ const ReservationPage = () => {
       console.error("Error fetching rentals:", error);
     }
   };
+
+  const getUsersByEmail = async (email: string) => {
+    try {
+      const response = await UserService.getByEmail(email);
+      setUser(response.data.data);
+    } catch (error) {
+      console.error("Error fetching rentals:", error);
+    }
+  };
+    
+    
   {
     /*POPUP*/
   }
@@ -68,13 +107,44 @@ const ReservationPage = () => {
   }
 
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("cash");
-  const navigate = useNavigate();
 
   const handlePaymentMethodChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     setSelectedPaymentMethod(event.target.value);
   };
+
+
+
+  const isAuthenticated = ()=> {
+
+    if  ((auth.authInformation.user.email === '' || null || undefined) ){
+        alert("You have to be authenticated before you can  make a reservation.");
+        navigate("/sign-up")        
+    }
+  }
+
+
+
+
+
+
+ const rentStartDate= new Date(startDate);
+ const rentEndDate= new Date(endDate);
+ const rentDay = (differenceInDays(endDate, startDate)+1);
+
+ dispatch(setAction({
+  startDate: startDate,
+  endDate: endDate,
+  day: rentDay,
+  car: rentals,
+  user: user
+ }))
+
+ 
+
+
+
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -84,12 +154,19 @@ const ReservationPage = () => {
   };
   return (
     <>
+      <Helmet >
+        <title>{settings.title} - Reservation </title>
+
+      </Helmet>
       <Navbar />
+      
       <div className="reservation ">
         <div className="secContainer">
+          
           <div className="imgContainer">
             <img src={rentals?.imageUrl} alt="carImage" />
           </div>
+         
           <div className="secHeading">
             <h5>Reservation Detail</h5>
           </div>
@@ -99,16 +176,18 @@ const ReservationPage = () => {
                 <CustomerCard />
               </div>
               <div className="dateContentContainer">
+             
                 <p>
-                  <span>
-                    <b>Start Date : </b> 19 February, 2024
-                  </span>
+                  
+                    <b>Start Date : </b> {rentStartDate.toDateString()}
+                  
                 </p>
                 <p>
                   <span>
-                    <b>End Date : </b> 24 February, 2024
+                    <b>End Date : </b> {rentEndDate.toDateString()}
                   </span>
                 </p>
+                <DiscountCode  />
               </div>
             </div>
             <div className="middleContent">
@@ -128,6 +207,7 @@ const ReservationPage = () => {
                   </span>
                 </p>
 
+
                 <p>
                   <span>
                     <b>Type :</b>{" "}
@@ -141,11 +221,11 @@ const ReservationPage = () => {
                   <span>
                     <b>Rental : </b>{" "}
                   </span>
-                  <span>7 Days</span>
+                  <span>{rentDay == 0 ? 1 : rentDay } - Days</span>
                 </p>
               </div>
               <div className="priceCardContainer">
-                <PriceCard cars={rentals} />
+                <PriceCard cars={rentals} day={rentDay == 0 ? 1 : rentDay} />
               </div>
             </div>
             <div className="bottomContainer">
@@ -217,15 +297,16 @@ const ReservationPage = () => {
                   </div>
                   <div className="btnContainer">
                     <button
-                      className="btn btn-secondary btn-sm"
+                      className="btn btn-apply btn-sm"
                       type="submit"
                       title="Send"
+                      onClick={isAuthenticated}
                     >
                       Reservation
                     </button>
                     <Link
                       to="/cars"
-                      className="btn btn-dark btn-sm"
+                      className="btn btn-cancel btn-sm"
                       title="Send"
                     >
                       Cancel
@@ -233,14 +314,17 @@ const ReservationPage = () => {
                   </div>
                 </div>
               </form>
+              
             </div>
             <div className="noteContainer"></div>
           </div>
         </div>
+       
       </div>
       <Footer />
     </>
   );
 };
 
-export default ReservationPage;
+export default ReservationPage; 
+

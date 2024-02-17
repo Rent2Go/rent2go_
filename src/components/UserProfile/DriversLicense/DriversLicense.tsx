@@ -42,8 +42,8 @@ const DriversLicense = () => {
       <div className='form'>
         <Formik initialValues={driversLicenseInitialValues} validationSchema={driversLicenseSchema} onSubmit={handleSubmit}>
           <Form>
-            <div  className='col-xl-12 col-l-12 col-md-12 col-sm-12'>
-              <div className='row form-group'>
+            <div  className='row form-group'>
+              <div className='col-xl-12 col-l-12 col-md-12 col-sm-12'>
                 <FormikInput
                   name="drivingLicenseDate"
                   type="date"

@@ -1,0 +1,70 @@
+.discountContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  margin: 0 0 1rem 0;
+  gap: 0.2rem;
+}
+.discountContainer input {
+  border: 2px dashed var(--textColor);
+  background: var(--fifthColor);
+  color: var(--textColor);
+  font-weight: 500;
+  outline: none;
+  width: 50%;
+  font-size: 12px;
+}
+.discountContainer input::-moz-placeholder {
+  text-align: center;
+  color: var(--focusColor);
+  letter-spacing: 0.025em;
+}
+.discountContainer input::placeholder {
+  text-align: center;
+  color: var(--focusColor);
+  letter-spacing: 0.025em;
+}
+.discountContainer input:focus {
+  outline: none;
+  border: none;
+}
+.discountContainer input::-moz-selection {
+  outline: none;
+  border: none;
+}
+.discountContainer input::selection, .discountContainer input :active, .discountContainer input ::after {
+  outline: none;
+  border: none;
+}
+.discountContainer input:hover {
+  background: var(--pureWhiteColor);
+  transition: 0.3s ease-in-out;
+}
+.discountContainer .btn {
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+.discountContainer .btn:hover {
+  transition: 0.3sn ease-in-out;
+  background: none;
+}
+.discountContainer .btn-apply {
+  background: var(--color-success);
+  color: var(--pureWhiteColor);
+  border: 3px dashed var(--color-success);
+}
+.discountContainer .btn-apply:hover {
+  color: var(--color-success);
+}
+.discountContainer .btn-cancel {
+  background: var(--color-danger);
+  color: var(--pureWhiteColor);
+  border: 3px dashed var(--color-danger);
+}
+.discountContainer .btn-cancel:hover {
+  color: var(--color-danger);
+}/*# sourceMappingURL=discount.css.map */

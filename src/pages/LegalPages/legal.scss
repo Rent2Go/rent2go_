@@ -4,6 +4,17 @@
     margin: 4rem 0;
     padding: 2rem 4rem;
     .headingDiv {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      img{
+        width: 150px;
+        background: transparent;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        border:2px dashed #ff0000;
+      }
       h2 {
         color: var(--primaryColor);
       }
@@ -73,4 +84,8 @@
       }
     }
   }
+}
+.nonNavbar{
+ grid-template-columns: repeat(1,1fr)!important; 
+ column-gap: 0!important;
 }

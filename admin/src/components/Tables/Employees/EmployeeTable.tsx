@@ -40,6 +40,9 @@ const EmployeeTable = (props: Props) => {
             <th>Last Name</th>
             <th>Mail Address</th>
             <th>Phone Number</th>
+            <th>Job Titles</th>
+            <th>Department</th>
+            <th>Salary</th>
             <th>Status</th>
             <th>Actions</th>
           </tr>
@@ -51,10 +54,13 @@ const EmployeeTable = (props: Props) => {
               <td>
                 <img src="/assets/images/profile.png" alt="employee-img" />
               </td>
-              <td>{employee.name}</td>
-              <td>{employee.surname}</td>
-              <td>{employee.email}</td>
-              <td>{employee.phoneNumber}</td>
+              <td>{employee.user.name}</td>
+              <td>{employee.user.name}</td>
+              <td>{employee.user.email}</td>
+              <td>{employee.user.phoneNumber}</td>
+              <td>{employee.jobTitle.name}</td>
+              <td>{employee.jobTitle.departmentName}</td>
+              <td>{employee.salary}  ₺</td>
               <td>
                 <Form>
                   <Form.Check

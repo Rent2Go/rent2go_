@@ -4,7 +4,7 @@ import { ErrorMessage, Form, Formik } from "formik";
 import { number, object, string } from "yup";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
-import { error } from "console";
+import { error, log } from "console";
 
 import { useAuth } from "../../contexts/AuthContext";
 
@@ -26,6 +26,11 @@ import {
 
 import "./register.css";
 
+import { useSelector } from "react-redux";
+import { Helmet } from "react-helmet";
+import CustomerService from "../../services/CustomerService";
+
+
 type Props = {
   name?: string;
   type?: string;
@@ -33,6 +38,7 @@ type Props = {
 };
 
 const Register: React.FC<Props> = (props: Props) => {
+  const settings = useSelector((state: any) => state.settings.setting);
 
   const authContext: any = useAuth();
   const [isActive, setIsActive] = useState(false);
@@ -67,14 +73,25 @@ const Register: React.FC<Props> = (props: Props) => {
   const signUpHandleSubmit = async (values: signUpRequest) => {
     const response = await AuthService.signUp(values)
       .then((resolve) => {
+        const userId = parseInt(resolve.data.data);
         toast.success("Success! Please, check your email to confirm your account.")
-        setTimeout(() => { navigate("/sign-up") }, 2000);
+         CustomerService.createCustomer({userId:userId})
+         .then()
+         .catch((err)=>console.log(userId)
+         )
+         setTimeout(() => navigate("/sign-up"),2000 )
+        
+        
        
       })
       .catch((error) => toast.error(error.response.data.message));
   };
 
   return (
+    <>
+  <Helmet>
+  <title>{settings.title} - Register </title>
+  </Helmet>
     <div className={`register ${isActive ? "active" : ""}`} ref={containerRef}>
 
 
@@ -271,6 +288,7 @@ const Register: React.FC<Props> = (props: Props) => {
       </div>
       <ToastContainer position="top-center" />
     </div>
+    </>
   );
 };
 

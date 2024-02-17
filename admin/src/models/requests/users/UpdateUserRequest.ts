@@ -1,11 +1,17 @@
 export interface UpdateUserRequest {
-
-    id:number;  
+	id:number;
 	name: string;
 	surname: string;
 	phoneNumber: string;
 	email: string;
-    role: string;
+	password:string;
+	idCardNumber: string;
+	birthDate: string;
+	role: string;
+	address?: string;
+	imageUrl:string;
+	active:boolean;
+	districtId: number|undefined;
 
 
 }

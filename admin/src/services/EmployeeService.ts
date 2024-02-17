@@ -9,7 +9,7 @@ class EmployeeService{
     }
 
     getById(id:number){
-        return axiosInstance.get<EmployeeModel>(`employee/${id}`);
+        return axiosInstance.get<EmployeeModel>(`employees/${id}`);
     }
 }
     

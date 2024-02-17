@@ -29,6 +29,7 @@ const UpdateCar = () => {
   const [car, setCar] = useState<CarModel>();
   const [colors, setColors] = useState<ColorModel[]>([]);
   const [brands, setBrands] = useState<BrandModel[]>([]);
+  const [resultBrand, setResultBrand] = useState<BrandModel>();
   const [models, setModels] = useState<ModelModel[]>([]);
   const [filterModels, setFilterModels] = useState<ModelModel[]>([]);
   const [isSubmited, setIsSubmited] = useState<Boolean>(false);
@@ -38,9 +39,9 @@ const UpdateCar = () => {
       fetchData();
       setIsSubmited(false);
     }
-    else  
-     fetchData();
-  
+    else
+      fetchData();
+
   }, [id, isSubmited]);
 
   const fetchData = async () => {
@@ -62,6 +63,8 @@ const UpdateCar = () => {
   };
 
   const handleSubmit = async (values: UpdateCarRequest) => {
+
+
     try {
       await CarService.updateCar(values);
       toast.success("Car updated successfully");
@@ -71,7 +74,7 @@ const UpdateCar = () => {
     }
   };
 
-  
+
 
 
 
@@ -117,41 +120,35 @@ const UpdateCar = () => {
   const handleChangeStatus = ({ meta, file }: { meta: any, file: any }) => {
     if (meta.status === 'done') {
       console.log('Dosya yüklendi:', file);
-      formData.append("file",file)
-   
-  
+      formData.append("file", file)
+
+
     } else if (meta.status === 'error') {
       console.error('Dosya yüklenirken bir hata oluştu:', meta);
-   
+
     }
   };
 
-  const imageHandleSubmit = async (values:any) => {
-    formData.append("plate",values.plate)
+  const imageHandleSubmit = async (values: any) => {
+    formData.append("plate", values.plate)
     await CarService.updateImage(formData)
-    .then((res)=>{
-      setIsSubmited(true);
-      toast.success(res.data.message);
-    })
-    .catch((error) => {
-      toast.error(error.response.data.message);
-      formData.delete("plate")
-    })
+      .then((res) => {
+        setIsSubmited(true);
+        toast.success(res.data.message);
+      })
+      .catch((error) => {
+        toast.error(error.response.data.message);
+        formData.delete("plate")
+      })
 
   }
 
   const handleBrandChange = async (selectedBrand: number) => {
-
     const brand = brands.find((brand) => brand.id == selectedBrand);
-    console.log(brand?.name);
-
-
-
     const selectedBrandModels = models.filter((model: ModelModel) => model.brandName == brand?.name) // Bu fonksiyonun gerçek uygulamada nasıl yapıldığına bağlı olarak değişir
-    console.log(selectedBrandModels);
+    setFilterModels(selectedBrandModels);
+    setResultBrand(brand);
 
-    // Alınan alt modelleri FormikSelect bileşenine aktar
-    setFilterModels(selectedBrandModels); // Örneğin, useState hook ile models state'ini güncelleyin
   }
 
 
@@ -177,7 +174,7 @@ const UpdateCar = () => {
     { id: 4, name: "Hybrıd" }
   ];
 
-  if(!car) return <OverlayLoaderTest/>
+  if (!car) return <OverlayLoaderTest />
 
   return (
     <div className="cars container">
@@ -228,7 +225,8 @@ const UpdateCar = () => {
               <div className="row">
                 <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
                   <label htmlFor="brandId" className="form-label">Brand</label>
-                  <Field as="select" name="brandId" className="form-control"  onChange={(e: any) => handleBrandChange(e.target.value)}>
+                  <Field as="select" name="brandId" value={resultBrand?.id} className="form-control" onChange={(e: any) => handleBrandChange(e.target.value)}>
+                    <option key={car.model.brand.id} value={car.model.brand.id}>{car.model.brand.name}  </option>
                     {brands.map((brand: any) => (
                       <option key={brand.id} value={brand.id}>{brand.name}  </option>
                     ))}
@@ -237,8 +235,9 @@ const UpdateCar = () => {
                 </div>
                 <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
                   <label htmlFor="modelId" className="form-label">Model</label>
-                  <Field as="select" name="modelId" className="form-control">
-                    {models.map((model: any) => (
+                  <Field as="select" name="modelId" className="form-control" >
+                    <option key={car.model.id} value={car.model.id}>{car.model.name}</option>
+                    {filterModels.map((model: any) => (
                       <option key={model.id} value={model.id}>{model.name}</option>
                     ))}
                   </Field>
@@ -320,7 +319,7 @@ const UpdateCar = () => {
                 </div>
                 <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
 
-                  <FormikInput disabled   style={{ display: 'none' }} name="imageUrl" type="text"  />
+                  <FormikInput disabled style={{ display: 'none' }} name="imageUrl" type="text" />
 
                 </div>
               </div>
@@ -343,7 +342,7 @@ const UpdateCar = () => {
             <img className='show-image' src={car.imageUrl} alt={car.model.brand.name} />
           </div>
           <div className="formContainer">
-            <Formik initialValues={{ plate: car.plate}}onSubmit={imageHandleSubmit}>
+            <Formik initialValues={{ plate: car.plate }} onSubmit={imageHandleSubmit}>
               <Form>
                 <div className="row">
                   <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">

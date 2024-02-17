@@ -37,6 +37,10 @@ class UserService extends BaseService<GetAllUserResponse, GetByIdUserResponse, A
             }
         );
     }
+    getByEmail(email:string){
+        return axiosInstance.get<GetByIdUserResponse>('users/email?email='+email);
+    }
+   
 }
 
 export default new UserService()

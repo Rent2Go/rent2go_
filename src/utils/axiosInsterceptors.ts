@@ -11,11 +11,10 @@ import TokenService from '../services/TokenService';
 import { string, number } from 'yup';
 
 const axiosInstance = axios.create({
-<<<<<<< HEAD
-	baseURL: "https://api.rentogo.com.tr/api",
-=======
+
+
 	baseURL: "http://localhost:8080/api/",
->>>>>>> sehmus
+
 });
 
 
