@@ -1,42 +1,56 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.css'
 import DiscountService from '../../services/DiscountService';
 import { DiscountModel } from '../../models/responses/discounts/DiscountModel';
 import { ToastContainer, toast } from 'react-toastify';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { setAction } from '../../store/slices/rentalSlice';
 
 interface DiscountCodeProps {
 
 }
 
 const DiscountCode: React.FC<DiscountCodeProps> = (props:DiscountCodeProps) => {
+  const {discount} = useSelector((state:any) => state.rental)
   const [discountCode, setDiscountCode] = useState<DiscountModel>();
   const [inputCode, setInputCode] = useState('');
   const dispatch = useDispatch()
-  console.log(discountCode);
+  
   
   const handleApplyDiscount = (e:any) => {
-   setInputCode(e.target.value);
+   setInputCode(e.target.value.toUpperCase());
+   console.log(e.target.value.toUpperCase());
+   
   };
+
+  const cancelDiscountCode = async() => {
+    setDiscountCode(undefined)
+ 
+  }
+
+  useEffect(() => {
+    dispatch(setAction({ discount: discountCode }));
+  }, [discountCode]);
 
   
 
   const getByDiscountCode = async(discountCode: string) => {
+    if(discountCode){
     await DiscountService.getByDiscountCode(discountCode)
       .then((response) => {
-        if (response.data.data) {
-          if (!response.data.data.isActive ) {
-            throw new Error('Discount is not active');
-          }
+       
           setDiscountCode(response.data.data);
-          toast.success(response.data.data.discountCode)
-        }
+          dispatch(setAction({  discount: response.data.data}))
+          console.log(discountCode);
+       
+        
       })
       .catch((error) => {
         console.error('Error:', error);
       });
+    }
   }
-
+  console.log(discountCode);
 
   return (
     <div className="discount-code">
@@ -50,6 +64,9 @@ const DiscountCode: React.FC<DiscountCodeProps> = (props:DiscountCodeProps) => {
       />
       <button onClick={()=> getByDiscountCode(inputCode)} >
         Apply
+      </button>
+      <button onClick={cancelDiscountCode} >
+        Cancel
       </button>
       <ToastContainer position='bottom-center' />
     </div>
