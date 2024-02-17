@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "./styles/user.css";
+<<<<<<< HEAD
 import { FormikInput, FormikSelect } from "../../components";
+=======
+>>>>>>> master
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import { object, ref, string } from "yup";
 import Dropzone from "react-dropzone-uploader";
 import { ToastContainer, toast } from "react-toastify";
 
+import { FormikInput, FormikSelect } from "../../components";
 import UserService from "../../services/UserService";
 import { AddCarRequest } from "../../models/requests/cars/AddCarRequest";
 import { AddUserRequest } from "../../models/requests/users/AddUserRequest";
@@ -14,6 +18,8 @@ import CityService from "../../services/CityService";
 import { CityModel } from "../../models/responses/cities/GetCity";
 import { DistrictModel } from "../../models/responses/districts/GetDistrict";
 import DistrictService from "../../services/DistrictService";
+
+import "./styles/user.css";
 type Props = {};
 
 const AddUser = (props: Props) => {

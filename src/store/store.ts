@@ -4,6 +4,7 @@ import { loadingReducer } from "./slices/loadingSlice";
 import { filterReducer } from "./slices/filterSlice";
 import { settingsReducer } from "./slices/settingsSlice";
 import { dateReducer } from "./slices/dateSlice";
+import { rentalReducer } from "./slices/rentalSlice";
 
 
 const rootReducer = combineReducers({
@@ -11,7 +12,8 @@ const rootReducer = combineReducers({
     loading:loadingReducer,
     filters:filterReducer,
     settings:settingsReducer,
-    rentalDate:dateReducer
+    rentalDate:dateReducer,
+    rental:rentalReducer
 
 });
 

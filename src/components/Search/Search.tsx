@@ -49,7 +49,7 @@ console.log(date);
       dispatch(setStartDate(startDateTimestamp)); // Redux'a zaman damgasını gönder
       dispatch(setEndDate(endDateTimestamp)); // Redux'a zaman damgasını gönder
     
-      console.log(  differenceInDays(endDateTimestamp, startDateTimestamp)* 950 ); // Zaman damgalarını konsola yazdır
+      console.log(  differenceInDays(endDateTimestamp, startDateTimestamp) ); // Zaman damgalarını konsola yazdır
       navigate("/cars");
     } else {
       alert(t("pleaseSelectStartDateAndEndDate")); // Başlangıç ve bitiş tarihlerini seçmemişse uyarı ver

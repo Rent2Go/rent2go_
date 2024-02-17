@@ -6,10 +6,15 @@ import { Form, Formik } from "formik";
 import FormikInput from "../../components/FormikInput/FormikInput";
 import { useAuth } from "../../contexts/AuthContext";
 import ReceiptPDF from "./Receipt";
+import { useSelector } from "react-redux";
 
 type Props = {};
 
 const Cash = (props: Props) => {
+
+  const {car,startDate,endDate,user} = useSelector((state:any)=> state.rental)
+  console.log(user,car);
+  
   const auth = useAuth();
   const getCurrentDate = (): string => {
     const currentDate = new Date();

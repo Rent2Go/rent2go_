@@ -5,12 +5,15 @@ import { FaUserEdit } from "react-icons/fa";
 import { RiDeleteBin3Line } from "react-icons/ri";
 import { CiEdit } from "react-icons/ci";
 import { MdOutlineDeleteForever } from "react-icons/md";
+
+import EmployeeService from "../../../services/EmployeeService";
 import { EmployeeModel } from "../../../models/responses/employees/GetEmployee";
 import EmployeeService from "../../../services/EmployeeService";
 
-type Props = {
-  
-};
+import "./employeeTable.css";
+
+type Props = {};
+
 
 const EmployeeTable = (props: Props) => {
   const [employees, setEmployees] = useState<EmployeeModel[]>([]);
