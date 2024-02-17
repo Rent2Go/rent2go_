@@ -1,34 +1,42 @@
+
+import { PriceCardModel } from '../../models/requests/reservation/PriceCardModel';
+import { DiscountModel } from '../../models/responses/discounts/DiscountModel';
+import { UserModel } from '../../models/user/UserModel';
 import { CarModel } from './../../models/responses/cars/GetCar';
 import { createSlice } from '@reduxjs/toolkit';
 
-// Yukarıda oluşturduğumuz initialState objesi
+
 const initialState = {
-  name: '',
-  email: '',
-  phone: '',
+  user: {} as UserModel,
   startDate: null,
   endDate: null,
   car: {} as CarModel,
   rentalDays: 0,
-  discount: '',
-  tax: '',
-  totalPrice: '',
+  discount:{} as DiscountModel,
+  priceCard: {} as PriceCardModel,
+ 
 };
 
-const sliceName = 'rentalInfoSlice';
 
+const sliceName = 'rentalInfoSlice';
 const rentalInfoSlice = createSlice({
   name: sliceName,
   initialState,
   reducers: {
     setAction: (state, action) => {
-    
+     
       return {
+        
         ...state,
         ...action.payload,
+        
+       
       };
+    
     },
+   
   },
+  
 });
 
 export const { setAction } = rentalInfoSlice.actions;
