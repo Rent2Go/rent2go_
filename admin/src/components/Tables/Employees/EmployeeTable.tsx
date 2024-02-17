@@ -13,7 +13,6 @@ import "./employeeTable.css";
 
 type Props = {};
 
-
 const EmployeeTable = (props: Props) => {
   const [employees, setEmployees] = useState<EmployeeModel[]>([]);
 

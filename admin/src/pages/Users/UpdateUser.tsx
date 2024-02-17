@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
+<<<<<<< HEAD
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import Dropzone from 'react-dropzone-uploader';
 import { FormikInput } from '../../components';
@@ -7,6 +8,20 @@ import UserService from '../../services/UserService';
 import { UserModel } from '../../models/responses/users/GetUser';
 import { ToastContainer, toast } from 'react-toastify';
 import { object, ref, string } from "yup";
+=======
+
+import { Link, useNavigate, useParams } from 'react-router-dom';
+
+import { FormikInput, FormikSelect } from '../../components';
+
+import Dropzone from 'react-dropzone-uploader';
+import { ToastContainer, toast } from 'react-toastify';
+import { object, ref, string } from "yup";
+
+import UserService from '../../services/UserService';
+import { UserModel } from '../../models/responses/users/GetUser';
+
+>>>>>>> yagmur
 import { UpdateUserRequest } from '../../models/requests/users/UpdateUserRequest';
 import DistrictService from '../../services/DistrictService';
 import CityService from '../../services/CityService';

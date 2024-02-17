@@ -24,6 +24,17 @@ const Settings = (props: Props) => {
     return { url: "https://httpbin.org/post" };
   };
 
+<<<<<<< HEAD
+=======
+  useEffect(() => {
+  
+    getSetttings(1);
+   
+  }, []);
+
+  
+
+>>>>>>> yagmur
   const handleChangeStatus = ({ meta, file }: { meta: any, file: any }) => {
     if (meta.status === 'done') {
       console.log('Dosya yüklendi:', file);

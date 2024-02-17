@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import "./styles/user.css";
+=======
+
+import React, { useEffect, useState } from "react";
+import "./styles/user.css";
+
+>>>>>>> yagmur
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import { object, ref, string } from "yup";
@@ -10,12 +17,21 @@ import { FormikInput, FormikSelect } from "../../components";
 import UserService from "../../services/UserService";
 import { AddCarRequest } from "../../models/requests/cars/AddCarRequest";
 import { AddUserRequest } from "../../models/requests/users/AddUserRequest";
+<<<<<<< HEAD
+=======
+
+import "./styles/user.css";
+
+>>>>>>> yagmur
 import CityService from "../../services/CityService";
 import { CityModel } from "../../models/responses/cities/GetCity";
 import { DistrictModel } from "../../models/responses/districts/GetDistrict";
 import DistrictService from "../../services/DistrictService";
 
+<<<<<<< HEAD
 import "./styles/user.css";
+=======
+>>>>>>> yagmur
 type Props = {};
 
 const AddUser = (props: Props) => {
