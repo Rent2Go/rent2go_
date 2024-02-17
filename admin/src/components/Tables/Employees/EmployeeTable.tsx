@@ -8,6 +8,7 @@ import { MdOutlineDeleteForever } from "react-icons/md";
 
 import EmployeeService from "../../../services/EmployeeService";
 import { EmployeeModel } from "../../../models/responses/employees/GetEmployee";
+import EmployeeService from "../../../services/EmployeeService";
 
 import "./employeeTable.css";
 

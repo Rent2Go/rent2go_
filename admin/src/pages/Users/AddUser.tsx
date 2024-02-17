@@ -1,12 +1,19 @@
 <<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import "./styles/user.css";
+<<<<<<< HEAD
 =======
 
 import React, { useEffect, useState } from "react";
 import "./styles/user.css";
 
 >>>>>>> yagmur
+=======
+<<<<<<< HEAD
+import { FormikInput, FormikSelect } from "../../components";
+=======
+>>>>>>> master
+>>>>>>> feyza
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import { object, ref, string } from "yup";

@@ -177,6 +177,7 @@ const ReservationPage = () => {
               </div>
               <DiscountCode  />
               <div className="dateContentContainer">
+             
                 <p>
                   
                     <b>Start Date : </b> {rentStartDate.toDateString()}
@@ -187,6 +188,7 @@ const ReservationPage = () => {
                     <b>End Date : </b> {rentEndDate.toDateString()}
                   </span>
                 </p>
+                <DiscountCode  />
               </div>
             </div>
             <div className="middleContent">
@@ -296,7 +298,7 @@ const ReservationPage = () => {
                   </div>
                   <div className="btnContainer">
                     <button
-                      className="btn btn-secondary btn-sm"
+                      className="btn btn-apply btn-sm"
                       type="submit"
                       title="Send"
                       onClick={isAuthenticated}
@@ -305,7 +307,7 @@ const ReservationPage = () => {
                     </button>
                     <Link
                       to="/cars"
-                      className="btn btn-dark btn-sm"
+                      className="btn btn-cancel btn-sm"
                       title="Send"
                     >
                       Cancel
