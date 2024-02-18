@@ -116,5 +116,8 @@
   "oldPassword": "Old Password",
   "newPassword": "New Password",
   "passwordConfirm": "Confirm Password",
-  "saveNewPassword": "Save New Password"
+  "saveNewPassword": "Save New Password",
+  "driversLicense": "Driver's License",
+  "driversLicenseDate": "Driver's License Date",
+  "driversLicenseImage": "Driver's License Image"
 }

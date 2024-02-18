@@ -5,8 +5,10 @@ import * as Yup from "yup"
 import Dropzone from "react-dropzone-uploader";
 import "react-dropzone-uploader/dist/styles.css";
 import FormikInput from '../../FormikInput/FormikInput'
+import { useTranslation } from "react-i18next";
 
 const DriversLicense = () => {
+  const { t } = useTranslation();
     
   const driversLicenseInitialValues: any = {
     drivingLicenseDate: ""
@@ -38,7 +40,7 @@ const DriversLicense = () => {
 
   return (
     <div className='driversLicense container'>
-      <h2 className='mainHead1'>Driver's License</h2>
+      <h2 className='mainHead1'>{t("driversLicense")}</h2>
       <div className='form'>
         <Formik initialValues={driversLicenseInitialValues} validationSchema={driversLicenseSchema} onSubmit={handleSubmit}>
           <Form>
@@ -47,13 +49,13 @@ const DriversLicense = () => {
                 <FormikInput
                   name="drivingLicenseDate"
                   type="date"
-                  label="Driver's License Date"
+                  label={t("driversLicenseDate")}
                 ></FormikInput>
               </div>
             </div>
             <div className='row'>
               <div className='col-xl-12 col-l-12 col-md-12 col-sm-12'>
-                <label className='mt-3'>Driver's License Image</label>
+                <label className='mt-3'>{t("driversLicenseImage")}</label>
                 <Dropzone
                     getUploadParams={getUploadParams}
                     onChangeStatus={handleChangeStatus}
@@ -65,7 +67,7 @@ const DriversLicense = () => {
         </Formik>
       </div>
 
-      <button className='mainButton1'>Save Changes</button>
+      <button className='mainButton1'>{t("saveChanges")}</button>
     </div>
   )
 }

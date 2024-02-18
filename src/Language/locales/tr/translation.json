@@ -115,5 +115,8 @@
   "oldPassword": "Eski Şifre",
   "newPassword": "Yeni Şifre",
   "passwordConfirm": "Şifreyi Onayla",
-  "saveNewPassword": "Yeni Şifreyi Kaydet"
+  "saveNewPassword": "Yeni Şifreyi Kaydet",
+  "driversLicense": "Sürücü Belgesi",
+  "driversLicenseDate": "Sürücü Belgesi Tarihi",
+  "driversLicenseImage": "Sürücü Belgesi Resmi"
 }
