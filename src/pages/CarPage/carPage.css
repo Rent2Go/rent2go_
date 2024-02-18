@@ -217,6 +217,7 @@
   justify-content: center;
   align-items: center;
   gap: 0;
+  margin-bottom: 1.5rem;
 }
 .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv .actionRow span {
   padding-bottom: 4rem;
@@ -244,20 +245,27 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 420px) {
   .carPage {
     padding: 1rem 2rem;
   }
   .carPage .secContainer {
     padding: 0;
     justify-content: center;
-    margin: 2rem 1rem;
+    margin: 2rem 0rem;
+    gap: 1rem;
+  }
+  .carPage .secContainer .secHeading {
+    margin: 4rem 0 0 0;
   }
   .carPage .secContainer .secHeading .search {
     width: 100%;
   }
   .carPage .secContainer .secHeading .search .searchDiv {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
   }
   .carPage .secContainer .secContent {
     grid-template-columns: repeat(1, 1fr);
@@ -267,15 +275,263 @@
     grid-column-start: 1;
     grid-column-end: 2;
   }
-  .carPage .secContainer .carContainer {
+  .carPage .secContainer .secContent .filterContainer .filter {
+    flex-direction: column;
+    align-items: normal;
+  }
+  .carPage .secContainer .secContent .filterContainer .filter .filterRow {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+    margin: 0.5rem 0.5rem !important;
+    padding: 0.25rem;
+    min-width: 33.33%;
+    font-size: 8px !important;
+  }
+  .carPage .secContainer .secContent .filterContainer .filter .filterRow .rowHead {
+    margin-bottom: 0;
+  }
+  .carPage .secContainer .secContent .filterContainer .filter .filterRow .rowHead h6 {
+    font-size: 12px;
+  }
+  .carPage .secContainer .secContent .filterContainer .filter .filterRow .checkBoxRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+  }
+  .carPage .secContainer .secContent .carContainer {
     grid-column-start: 1 !important;
     grid-column-end: 1 !important;
   }
-  .carPage .secContainer .carContainer .singleCar div {
+  .carPage .secContainer .secContent .carContainer .searchDiv {
+    margin: 1rem 0 !important;
+    text-align: center;
+    padding: 0.25rem;
+  }
+  .carPage .secContainer .secContent .carContainer .searchDiv .searchInput {
+    width: 55%;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar {
+    margin: 1rem 0rem;
+    padding: 0.5rem 1rem;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div {
     grid-template-columns: repeat(1, 1fr) !important;
   }
-  .carPage .secContainer .carContainer .singleCar div .imgDiv {
+  .carPage .secContainer .secContent .carContainer .singleCar div .imgDiv {
     width: 100% !important;
     height: auto !important;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv {
+    flex-direction: row;
+    font-size: 10px;
+    margin-bottom: -2rem;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv .actionRow {
+    margin-bottom: 0 !important;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv .actionRow span {
+    padding-bottom: 0;
+  }
+  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+    font-size: 0.5rem !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .carPage {
+    padding: 1rem 2rem;
+  }
+  .carPage .secContainer {
+    padding: 0;
+    justify-content: center;
+    margin: 2rem 0rem;
+    gap: 1rem;
+  }
+  .carPage .secContainer .secHeading {
+    margin: 4rem 0 0 0;
+  }
+  .carPage .secContainer .secHeading .search {
+    width: 100%;
+  }
+  .carPage .secContainer .secHeading .search .searchDiv {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .carPage .secContainer .secContent {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: flex-start;
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+  }
+  .carPage .secContainer .secContent .filterContainer {
+    grid-column-start: 1;
+    grid-column-end: 1;
+  }
+  .carPage .secContainer .secContent .filterContainer .filter {
+    flex-direction: column;
+    align-items: normal;
+  }
+  .carPage .secContainer .secContent .filterContainer .filter .filterRow {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+    margin: 0.5rem 0.2rem;
+    padding: 2rem 0.5rem;
+    min-width: 100%;
+    font-size: 12px;
+  }
+  .carPage .secContainer .secContent .filterContainer .filter .filterRow .rowHead {
+    margin-bottom: 0;
+  }
+  .carPage .secContainer .secContent .filterContainer .filter .filterRow .rowHead h6 {
+    font-size: 12px;
+  }
+  .carPage .secContainer .secContent .filterContainer .filter .filterRow .checkBoxRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    align-items: flex-start;
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+  }
+  .carPage .secContainer .secContent .carContainer {
+    grid-column-start: 2 !important;
+    grid-column-end: 2 !important;
+  }
+  .carPage .secContainer .secContent .carContainer .searchDiv {
+    margin: 0.5rem 0 !important;
+    text-align: center;
+    padding: 0.25rem;
+  }
+  .carPage .secContainer .secContent .carContainer .searchDiv .searchInput {
+    width: 55%;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar {
+    margin: 1rem 0rem;
+    padding: 0.5rem 1rem;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .imgDiv {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv {
+    flex-direction: row;
+    font-size: 10px;
+    margin-bottom: -2rem;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv .actionRow {
+    margin-bottom: 0 !important;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv .actionRow span {
+    padding-bottom: 0;
+  }
+  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+    font-size: 0.5rem !important;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .carPage {
+    padding: 1rem 2rem;
+  }
+  .carPage .secContainer {
+    padding: 0;
+    justify-content: center;
+    margin: 2rem 0rem;
+    gap: 1rem;
+  }
+  .carPage .secContainer .secHeading {
+    margin: 6rem 0 0 0;
+  }
+  .carPage .secContainer .secHeading .search {
+    width: 100%;
+  }
+  .carPage .secContainer .secHeading .search .searchDiv {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .carPage .secContainer .secHeading .search .searchDiv .searchInput {
+    width: 100%;
+  }
+  .carPage .secContainer .secContent {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: flex-start;
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+  }
+  .carPage .secContainer .secContent .filterContainer {
+    grid-column-start: 1;
+    grid-column-end: 1;
+  }
+  .carPage .secContainer .secContent .filterContainer .filter {
+    flex-direction: column;
+    align-items: normal;
+  }
+  .carPage .secContainer .secContent .filterContainer .filter .filterRow {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+    margin: 1rem 0.2rem;
+    padding: 2rem 2rem;
+    min-width: 100%;
+    font-size: 14px;
+  }
+  .carPage .secContainer .secContent .filterContainer .filter .filterRow .rowHead {
+    margin-bottom: 0;
+  }
+  .carPage .secContainer .secContent .filterContainer .filter .filterRow .rowHead h6 {
+    font-size: 14px;
+  }
+  .carPage .secContainer .secContent .filterContainer .filter .filterRow .checkBoxRow {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    align-items: flex-start;
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+  }
+  .carPage .secContainer .secContent .carContainer {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  .carPage .secContainer .secContent .carContainer .searchDiv .searchInput {
+    width: 80%;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .imgDiv {
+    width: 200px !important;
+    height: auto !important;
+  }
+  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+    font-size: 1rem !important;
   }
 }/*# sourceMappingURL=carPage.css.map */

@@ -204,6 +204,7 @@
                 justify-content: center;
                 align-items: center;
                 gap: 0;
+                margin-bottom: 1.5rem;
                 span {
                   padding-bottom: 4rem;
                   margin-left: 0.25rem;
@@ -236,18 +237,24 @@
     }
   }
 }
-@media screen and (max-width: 520px) {
+
+@media screen and (max-width: 420px) {
   .carPage {
     padding: 1rem 2rem;
     .secContainer {
       padding: 0;
       justify-content: center;
-      margin: 2rem 1rem;
+      margin: 2rem 0rem;
+      gap: 1rem;
       .secHeading {
+        margin: 4rem 0 0 0;
         .search {
           width: 100%;
           .searchDiv {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            align-items: center;
+            justify-content: center;
           }
         }
       }
@@ -257,21 +264,270 @@
         .filterContainer {
           grid-column-start: 1;
           grid-column-end: 2;
+
+          .filter {
+            flex-direction: column;
+            align-items: normal;
+            .filterRow {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              column-gap: 1rem;
+              margin: 0.5rem 0.5rem!important;
+              padding: 0.25rem;
+              min-width: 33.33%;
+              font-size: 8px!important;
+              .rowHead {
+                margin-bottom: 0;
+                h6 {
+                  font-size: 12px;
+                }
+              }
+              .checkBoxRow {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                text-align: center;
+                align-items: center;
+                column-gap: 1rem;
+              }
+            }
+          }
         }
-      }
-      .carContainer {
-        grid-column-start: 1 !important;
-        grid-column-end: 1 !important;
-        .singleCar {
-          div {
-            grid-template-columns: repeat(1, 1fr) !important;
-            .imgDiv {
-              width: 100% !important;
-              height: auto !important;
+        .carContainer {
+          grid-column-start: 1 !important;
+          grid-column-end: 1 !important;
+          .searchDiv {
+            margin: 1rem 0 !important;
+            text-align: center;
+            padding: 0.25rem;
+            .searchInput {
+              width: 55%;
+            }
+          }
+          .singleCar {
+            margin: 1rem 0rem;
+            padding: 0.5rem 1rem;
+            div {
+              grid-template-columns: repeat(1, 1fr) !important;
+              .imgDiv {
+                width: 100% !important;
+                height: auto !important;
+              }
+              .descriptionDiv {
+                flex-direction: row;
+                font-size: 10px;
+                margin-bottom: -2rem;
+              }
+              .actionDiv {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                .actionRow {
+                  margin-bottom: 0 !important;
+                  span {
+                    padding-bottom: 0;
+                  }
+                }
+              }
             }
           }
         }
       }
     }
+  }
+  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+    font-size: 0.5rem !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .carPage {
+    padding: 1rem 2rem;
+    .secContainer {
+      padding: 0;
+      justify-content: center;
+      margin: 2rem 0rem;
+      gap: 1rem;
+      .secHeading {
+        margin: 4rem 0 0 0;
+        .search {
+          width: 100%;
+          .searchDiv {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+      .secContent {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: flex-start;
+        column-gap: 2rem;
+        .filterContainer {
+          grid-column-start: 1;
+          grid-column-end: 1;
+
+          .filter {
+            flex-direction: column;
+            align-items: normal;
+            .filterRow {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              justify-content: flex-start;
+              column-gap: 1rem;
+              margin: 0.5rem 0.2rem;
+              padding: 2rem 0.5rem;
+              min-width: 100%;
+              font-size: 12px;
+              .rowHead {
+                margin-bottom: 0;
+                h6 {
+                  font-size: 12px;
+                }
+              }
+              .checkBoxRow {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: center;
+                align-items: flex-start;
+                column-gap: 1rem;
+              }
+            }
+          }
+        }
+        .carContainer {
+          grid-column-start: 2 !important;
+          grid-column-end: 2 !important;
+          .searchDiv {
+            margin: 0.5rem 0 !important;
+            text-align: center;
+            padding: 0.25rem;
+            .searchInput {
+              width: 55%;
+            }
+          }
+          .singleCar {
+            margin: 1rem 0rem;
+            padding: 0.5rem 1rem;
+            div {
+              grid-template-columns: repeat(1, 1fr) !important;
+              .imgDiv {
+                width: 100% !important;
+                height: auto !important;
+              }
+              .descriptionDiv {
+                flex-direction: row;
+                font-size: 10px;
+                margin-bottom: -2rem;
+              }
+              .actionDiv {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                .actionRow {
+                  margin-bottom: 0 !important;
+                  span {
+                    padding-bottom: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+    font-size: 0.5rem !important;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .carPage {
+    padding: 1rem 2rem;
+    .secContainer {
+      padding: 0;
+      justify-content: center;
+      margin: 2rem 0rem;
+      gap: 1rem;
+      .secHeading {
+        margin: 6rem 0 0 0;
+        .search {
+          width: 100%;
+          .searchDiv {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            align-items: center;
+            justify-content: center;
+            .searchInput{
+              width: 100%;
+            }
+          }
+        }
+      }
+      .secContent {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: flex-start;
+        column-gap: 2rem;
+        .filterContainer {
+          grid-column-start: 1;
+          grid-column-end: 1;
+
+          .filter {
+            flex-direction: column;
+            align-items: normal;
+            .filterRow {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              justify-content: flex-start;
+              column-gap: 2rem;
+              margin: 1rem 0.2rem;
+              padding: 2rem 2rem;
+              min-width: 100%;
+              font-size: 14px;
+              .rowHead {
+                margin-bottom: 0;
+                h6 {
+                  font-size: 14px;
+                }
+              }
+              .checkBoxRow {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                text-align: center;
+                align-items: flex-start;
+                column-gap: 1rem;
+              }
+            }
+          }
+        }
+        .carContainer {
+          grid-column-start: 2;
+          grid-column-end: 3;
+          .searchDiv{
+            .searchInput{
+              width: 80%;
+            }
+          }
+          .singleCar {
+          
+            div {
+              
+              .imgDiv {
+                width: 200px !important;
+                height: auto !important;
+              }
+            }}
+        }
+        
+      }
+    }
+  }
+  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+    font-size: 1rem !important;
   }
 }
