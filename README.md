@@ -4,7 +4,7 @@
 Rent2Go is an administration client built with React for managing rental-related tasks. This application provides a user-friendly interface for handling various aspects of a rental service, including managing users, rentals, and other relevant data.
 
 
-![Logo](https://res-console.cloudinary.com/dmusx2nmy/media_explorer_thumbnails/ab50c12a881cb3c0e98e762dd77955b1/detailed)
+![Logo](https://rentogo.com.tr/screenshoots/logo-dark.png)
 
 
 ## Authors
@@ -14,13 +14,13 @@ Rent2Go is an administration client built with React for managing rental-related
 - [Şeyhmus EROL](https://www.github.com/ShmsErl)
 - [Soner ŞEYLAN](https://www.github.com/sonersyln)
 
-![App Screenshot](https://res-console.cloudinary.com/dmusx2nmy/media_explorer_thumbnails/ff013416225ddcb2f32b4dcefa7de8d5/detailed)
+![App Screenshot](https://rentogo.com.tr/screenshoots/Screenshot_3.png)
 
 ## Demo
 
 https://rentogo.com.tr
 
-![App Screenshot](https://res-console.cloudinary.com/dmusx2nmy/media_explorer_thumbnails/af3cfc3906565e56a9569c07c4d25b69/detailed)
+![App Screenshot](https://rentogo.com.tr/screenshoots/Screenshot_2.png)
 
 
 ## Documentation
@@ -37,7 +37,7 @@ https://rentogo.com.tr
 
 
 
-![App Screenshot](https://res-console.cloudinary.com/dmusx2nmy/media_explorer_thumbnails/64975067258bfb9058948d20f6d77901/detailed)
+![App Screenshot](https://rentogo.com.tr/screenshoots/Screenshot_4.png)
 ## Installation
 
 Install my-project with npm
