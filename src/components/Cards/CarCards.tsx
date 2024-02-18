@@ -57,7 +57,7 @@ const CarCards = (props: Props) => {
               <span className="carLabel">
                 <GrMoney />
               </span>
-              <span className="price">{props.car.dailyPrice} ₺</span>
+              <span className="price">{props.car.dailyPrice.toFixed(2)} ₺</span>
             </div>
             <div className="actionRow">
               <Link
