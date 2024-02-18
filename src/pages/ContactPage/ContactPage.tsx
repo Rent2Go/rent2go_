@@ -15,6 +15,8 @@ import { useTranslation } from "react-i18next";
 import "./contactPage.css";
 
 import { Helmet } from 'react-helmet';
+import axiosInstance from '../../utils/axiosInsterceptors';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 
@@ -52,8 +54,8 @@ const ContactPage = () => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:8080/api/send-contact-email', formData);
-      alert('Your message has been sent successfully!');
+      await axiosInstance.post('send-contact-email', formData);
+      toast.success('Your message has been sent successfully!');
     } catch (error) {
       console.error('Error sending email:', error);
       alert('There was an error while sending your message. Please try again later.');
@@ -144,6 +146,7 @@ const ContactPage = () => {
             </form>
           </div>
         </div>
+        <ToastContainer position='bottom-center' />
       </div>
       <Footer />
     </>

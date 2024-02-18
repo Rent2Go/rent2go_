@@ -9,6 +9,7 @@ import { object, string } from "yup";
 import { AddBrandRequest } from "../../models/requests/brands/AddBrandRequest";
 import { ToastContainer, toast } from "react-toastify";
 import "./brands.css";
+import { MdOutlineDeleteForever } from "react-icons/md";
 type Props = {};
 {
   /* Add Form */
@@ -51,6 +52,16 @@ const Brands = (props: Props) => {
     }
     catch (error){
       console.log("Error fetching brands", error)
+    }
+  }
+
+  const deleteBrand = async (id:number) => {
+    try{
+      await BrandService.deleteBrand(id);
+      setIsSubmit(true);
+    }
+    catch (error){
+      console.log("Error deleting brand", error)
     }
   }
 
@@ -109,6 +120,17 @@ const Brands = (props: Props) => {
                 <tr key={brand.id}>
                   <th>{brand.id}</th>
                   <td>{brand.name.toUpperCase()}</td>
+                  <td>
+                        <Link
+                          to={`/brands`} onClick={
+                            () => deleteBrand(brand.id)
+                          }
+                          className="btn btn-sm btn-cancel"
+                          title="Delete"
+                        >
+                          <MdOutlineDeleteForever />
+                        </Link>
+                      </td>
                 </tr>
               ))}
               

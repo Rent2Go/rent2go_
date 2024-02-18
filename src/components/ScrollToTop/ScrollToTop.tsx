@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { SlArrowUp } from "react-icons/sl";
 import "./scrollToTop.css";
+import { useLocation } from "react-router-dom";
 
 const ScrollToTop: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { pathname } = useLocation();
 
   const handleScroll = () => {
     const scrollY = window.scrollY || document.documentElement.scrollTop;
@@ -23,6 +25,10 @@ const ScrollToTop: React.FC = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <button

@@ -1,5 +1,6 @@
 export {default as Login} from "./Login/Login"
 export {default as Register} from "./RegisterPage/Register"
+export {default as EmailVerificationSuccess} from "./Login/EmailVerificationSuccess"
 export {default as HomePage} from "./Homepage/Homepage"
 export {default as CarPage} from "./CarPage/CarPage"
 export {default as BrandPage} from "./BrandPage/BrandPage"
@@ -31,3 +32,4 @@ export {default as SecurityNotices} from "./LegalPages/SecurityNotices"
 export {default as TermsAndConditions} from "./LegalPages/TermsAndConditions"
 export {default as TermsOfUse} from "./LegalPages/TermsOfUse"
 export {default as VehicleConditionReports} from "./LegalPages/VehicleConditionReports"
+

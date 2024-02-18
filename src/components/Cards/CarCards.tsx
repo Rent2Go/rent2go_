@@ -52,7 +52,7 @@ const CarCards = (props: Props) => {
             </div>
           </div>
           <div className="actionDiv">
-            <div className="actionRow mb-4">
+            <div className="actionRow">
               {" "}
               <span className="carLabel">
                 <GrMoney />

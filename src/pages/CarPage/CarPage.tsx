@@ -18,6 +18,7 @@ import { CarModel } from "../../models/responses/cars/GetCar";
 
 // Translation imports
 import { useTranslation } from "react-i18next";
+import { resetFilters } from "../../store/slices/filterSlice";
 
 
 type Props = {};
@@ -34,6 +35,7 @@ const CarPage: React.FC<Props> = (props) => {
 
   useEffect(() => {
     dispatch(fetchCarData());
+    dispatch(resetFilters());
   }, [dispatch]);
 
   const paginate = (event: React.ChangeEvent<unknown>, page: number) => {

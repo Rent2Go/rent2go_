@@ -30,11 +30,17 @@ const filtersSlice = createSlice({
             state.fuel = state.fuel.filter((item) => item !== action.payload);
         },
 
+        resetFilters: (state) => {
+            state.body = [];
+            state.gear = [];
+            state.fuel = [];
+        },
+
     },
 });
 
 export const filterReducer = filtersSlice.reducer;
-export const { setBodyFilter, removeBodyFilter, setGearFilter,removeGearFilter, setFuelFilter,removeFuelFilter} = filtersSlice.actions;
+export const { setBodyFilter, removeBodyFilter, setGearFilter,removeGearFilter, setFuelFilter,removeFuelFilter,resetFilters} = filtersSlice.actions;
 
 // ...
 
