@@ -12,6 +12,6 @@ export interface UserModel {
     district: string | null;
     role: string;
     imageUrl: string;
-    employeeId: number;
+    customerId: number;
     active: boolean;
   }
