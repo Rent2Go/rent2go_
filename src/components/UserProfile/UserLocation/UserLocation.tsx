@@ -101,7 +101,7 @@ const UserLocation = () => {
                     <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
                         <label className="form-label">District</label>
                         <Field
-                          name="districtId"
+                          name="district"
                           as="select"
                           className="form-control"
                         >
