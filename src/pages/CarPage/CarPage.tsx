@@ -8,8 +8,17 @@ import { fetchCarData } from "../../store/slices/carSlice";
 import { AppDispatch } from "../../store/store";
 
 // Component imports
-import { CarList, Navbar, Footer, FilterCard, GetDateFilter, Search } from "../../components";
+import {
+  CarList,
+  Navbar,
+  Footer,
+  FilterCard,
+  GetDateFilter,
+  Search,
+} from "../../components";
 import { FaSearch } from "react-icons/fa";
+import { PiSortDescending, PiSortAscending } from "react-icons/pi"; 
+
 import Pagination from "@mui/material/Pagination";
 import { Stack } from "@mui/material";
 
@@ -19,18 +28,19 @@ import { CarModel } from "../../models/responses/cars/GetCar";
 // Translation imports
 import { useTranslation } from "react-i18next";
 import { resetFilters } from "../../store/slices/filterSlice";
-
+import { Link } from "react-router-dom";
 
 type Props = {};
 
 const CarPage: React.FC<Props> = (props) => {
-  const settings = useSelector((state:any)=> state.settings.setting);
-  const {t} = useTranslation();
+  const settings = useSelector((state: any) => state.settings.setting);
+  const { t } = useTranslation();
   const dispatch = useDispatch<AppDispatch>();
   const { cars } = useSelector((state: any) => state.car);
   const filters = useSelector((state: any) => state.filters);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [sortType, setSortType] = useState<"asc" | "desc">("asc"); // Sıralama türü durum değişkeni
   const itemsPerPage = 5;
 
   useEffect(() => {
@@ -46,12 +56,13 @@ const CarPage: React.FC<Props> = (props) => {
     setCurrentPage(1);
   };
 
-  // Filtrelenmiş araçları al
+  const toggleSortType = () => {
+    setSortType(sortType === "asc" ? "desc" : "asc");
+  };
+
   const filteredCars = cars.filter((car: CarModel) => {
-    // Filtreleme koşullarını başlangıçta true olarak ayarla
     let passesFilters = true;
 
-    // Filtreleme koşulları
     if (filters.body && filters.body.length > 0) {
       passesFilters =
         passesFilters &&
@@ -94,12 +105,10 @@ const CarPage: React.FC<Props> = (props) => {
 
   return (
     <>
-
-
       <Helmet>
-      <title>{settings.title} - Car Page </title>
-      <meta name="description" content="car page description" />
-    </Helmet>
+        <title>{settings.title} - Car Page </title>
+        <meta name="description" content="car page description" />
+      </Helmet>
       <Navbar />
       <div className="carPage container">
         <div className="secContainer ">
@@ -117,17 +126,33 @@ const CarPage: React.FC<Props> = (props) => {
                   name="search"
                   className="searchInput"
                   type="text"
-                  value={searchTerm }
+                  value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   placeholder={t("searchByModelBrand..")}
                 />
+                <button
+                  type="button"
+                  className="btn btn-sm"
+                  title="order"
+                  onClick={toggleSortType}
+                >
+                  {sortType === "asc" ? (
+                    <PiSortAscending />
+                  ) : (
+                    <PiSortDescending />
+                  )}
+                </button>
               </div>
 
-              {currentCars.map((car: CarModel) => (
-                <div className="singleCar grid" key={car.id}>
-                  <CarList car={car} />
-                </div>
-              ))}
+              {currentCars
+                .sort((a: CarModel, b: CarModel) =>
+                  sortType === "asc" ? a.id - b.id : b.id - a.id
+                )
+                .map((car: CarModel) => (
+                  <div className="singleCar grid" key={car.id}>
+                    <CarList car={car} />
+                  </div>
+                ))}
 
               <div className="paginationContainer flex justify-flex-end">
                 <Stack spacing={5}>

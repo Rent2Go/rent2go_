@@ -144,18 +144,31 @@
   font-size: 12px;
   color: var(--placeHolderColor);
 }
+.carPage .secContainer .secContent .carContainer .searchDiv button {
+  font-size: 25px;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  color: var(--primaryColor);
+}
+.carPage .secContainer .secContent .carContainer .searchDiv button:hover {
+  color: var(--blackColor);
+  transition: 0.3s ease-in-out;
+  font-size: 28px;
+}
 .carPage .secContainer .secContent .carContainer .singleCar {
   background: var(--pureWhiteColor);
   border-radius: 0.5rem;
-  padding: 1rem 2rem;
-  margin: 1rem 2rem;
+  padding: 1.5rem 2rem;
+  margin: 2rem 2rem;
   text-align: left;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 .carPage .secContainer .secContent .carContainer .singleCar div {
   grid-template-columns: repeat(3, 1fr);
-  -moz-column-gap: 1rem;
-       column-gap: 1rem;
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
   align-items: flex-end;
   justify-content: flex-end;
 }
@@ -166,14 +179,14 @@
   padding: 0;
   border-radius: 0.5rem;
   border: none;
-  width: 350px;
-  height: 120px;
+  width: 340px;
+  height: 100px;
 }
 .carPage .secContainer .secContent .carContainer .singleCar div .imgDiv img {
   -o-object-fit: contain;
      object-fit: contain;
   width: 100%;
-  max-width: 350px;
+  max-width: 340px;
 }
 .carPage .secContainer .secContent .carContainer .singleCar div .carLabel {
   font-weight: 600;
@@ -189,7 +202,7 @@
 }
 .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv .carTitle {
   color: var(--primaryColor);
-  font-size: 16px;
+  font-size: 24px;
   margin-bottom: 4rem;
   width: -moz-max-content;
   width: max-content;
@@ -201,6 +214,7 @@
 }
 .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv span {
   color: var(--textColor);
+  font-size: 16px;
 }
 .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv .price_seller {
   flex-direction: column;
@@ -210,6 +224,7 @@
   flex-direction: column;
   align-items: self-end;
   justify-content: center;
+  row-gap: 5rem;
 }
 .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv .actionRow {
   display: flex;
@@ -217,13 +232,12 @@
   justify-content: center;
   align-items: center;
   gap: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv .actionRow span {
-  padding-bottom: 4rem;
   margin-left: 0.25rem;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 18px;
 }
 .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv a,
 .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv button {

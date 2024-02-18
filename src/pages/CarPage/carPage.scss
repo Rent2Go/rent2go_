@@ -133,19 +133,33 @@
               color: var(--placeHolderColor);
             }
           }
+          button {
+            font-size: 25px;
+            margin: 0;
+            padding: 0;
+            outline: none;
+            border: none;
+            color: var(--primaryColor);
+            &:hover {
+              color: var(--blackColor);
+              transition: 0.3s ease-in-out;
+              font-size: 28px;
+            }
+          }
         }
 
         .singleCar {
           background: var(--pureWhiteColor);
           border-radius: 0.5rem;
-          padding: 1rem 2rem;
-          margin: 1rem 2rem;
+          padding: 1.5rem 2rem;
+          margin: 2rem 2rem;
           text-align: left;
           box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
             rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
           div {
             grid-template-columns: repeat(3, 1fr);
-            column-gap: 1rem;
+            column-gap: 4rem;
+
             align-items: flex-end;
             justify-content: flex-end;
             .imgDiv {
@@ -155,12 +169,12 @@
               padding: 0;
               border-radius: 0.5rem;
               border: none;
-              width: 350px;
-              height: 120px;
+              width: 340px;
+              height: 100px;
               img {
                 object-fit: contain;
                 width: 100%;
-                max-width: 350px;
+                max-width: 340px;
               }
             }
             .carLabel {
@@ -176,7 +190,7 @@
               font-size: 13px;
               .carTitle {
                 color: var(--primaryColor);
-                font-size: 16px;
+                font-size: 24px;
                 margin-bottom: 4rem;
                 width: max-content;
                 font-weight: 600;
@@ -187,6 +201,7 @@
               }
               span {
                 color: var(--textColor);
+                font-size: 16px;
               }
 
               .price_seller {
@@ -198,18 +213,19 @@
               flex-direction: column;
               align-items: self-end;
               justify-content: center;
+              row-gap: 5rem;
               .actionRow {
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
+
                 gap: 0;
-                margin-bottom: 1.5rem;
+                margin-bottom: 0.5rem;
                 span {
-                  padding-bottom: 4rem;
                   margin-left: 0.25rem;
                   font-weight: 500;
-                  font-size: 14px;
+                  font-size: 18px;
                 }
               }
               a,
@@ -273,10 +289,10 @@
               align-items: center;
               justify-content: flex-start;
               column-gap: 1rem;
-              margin: 0.5rem 0.5rem!important;
+              margin: 0.5rem 0.5rem !important;
               padding: 0.25rem;
               min-width: 33.33%;
-              font-size: 8px!important;
+              font-size: 8px !important;
               .rowHead {
                 margin-bottom: 0;
                 h6 {
@@ -461,7 +477,7 @@
             gap: 0.5rem;
             align-items: center;
             justify-content: center;
-            .searchInput{
+            .searchInput {
               width: 100%;
             }
           }
@@ -508,22 +524,20 @@
         .carContainer {
           grid-column-start: 2;
           grid-column-end: 3;
-          .searchDiv{
-            .searchInput{
+          .searchDiv {
+            .searchInput {
               width: 80%;
             }
           }
           .singleCar {
-          
             div {
-              
               .imgDiv {
                 width: 200px !important;
                 height: auto !important;
               }
-            }}
+            }
+          }
         }
-        
       }
     }
   }
