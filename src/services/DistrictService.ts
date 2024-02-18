@@ -4,7 +4,7 @@ import axiosInstance from "../utils/axiosInsterceptors";
 
 class DistrictService{
     getAll(){
-        return axiosInstance.get<GettAllDistrictModel>("district");
+        return axiosInstance.get<GettAllDistrictModel>("districts");
     }
 
     getById(id:number){
