@@ -15,6 +15,7 @@ import { useTranslation } from "react-i18next";
 import "./contactPage.css";
 
 import { Helmet } from 'react-helmet';
+import axiosInstance from '../../utils/axiosInsterceptors';
 
 
 
@@ -52,7 +53,7 @@ const ContactPage = () => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:8080/api/send-contact-email', formData);
+      await axiosInstance.post('send-contact-email', formData);
       alert('Your message has been sent successfully!');
     } catch (error) {
       console.error('Error sending email:', error);
