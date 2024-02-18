@@ -1,4 +1,52 @@
-# Getting Started with Create React App
+
+# Rent2Go
+
+Rent2Go is an administration client built with React for managing rental-related tasks. This application provides a user-friendly interface for handling various aspects of a rental service, including managing users, rentals, and other relevant data.
+
+
+![Logo](https://res-console.cloudinary.com/dmusx2nmy/media_explorer_thumbnails/ab50c12a881cb3c0e98e762dd77955b1/detailed)
+
+
+## Authors
+
+- [Feyza KARANFİL ERAT](https://www.github.com/feyzaerat)
+- [Yağmur ÇURKU](https://www.github.com/yagmurcurku)
+- [Şeyhmus EROL](https://www.github.com/ShmsErl)
+- [Soner ŞEYLAN](https://www.github.com/sonersyln)
+
+![App Screenshot](https://res-console.cloudinary.com/dmusx2nmy/media_explorer_thumbnails/ff013416225ddcb2f32b4dcefa7de8d5/detailed)
+
+## Demo
+
+https://rentogo.com.tr
+
+![App Screenshot](https://res-console.cloudinary.com/dmusx2nmy/media_explorer_thumbnails/af3cfc3906565e56a9569c07c4d25b69/detailed)
+
+
+## Documentation
+
+[Documentation](https://linktodocumentation)
+
+
+## Features
+
+- Switch Language
+- Cross platform
+- Admin Dashboard
+- Three Payment Methods
+
+
+
+![App Screenshot](https://res-console.cloudinary.com/dmusx2nmy/media_explorer_thumbnails/64975067258bfb9058948d20f6d77901/detailed)
+## Installation
+
+Install my-project with npm
+
+```bash
+  npm install my-project
+  cd my-project
+```
+    # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
