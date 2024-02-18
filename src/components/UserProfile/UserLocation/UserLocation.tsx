@@ -84,7 +84,7 @@ const UserLocation = () => {
                 <div className="row">
                     <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
                       <div>
-                        <label className="form-label">City</label>
+                        <label className="form-label">{t("city")}</label>
                         <Field
                           name="city"
                           as="select"
@@ -99,7 +99,7 @@ const UserLocation = () => {
                       </div>
                     </div>
                     <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                        <label className="form-label">District</label>
+                        <label className="form-label">{t("district")}</label>
                         <Field
                           name="district"
                           as="select"
