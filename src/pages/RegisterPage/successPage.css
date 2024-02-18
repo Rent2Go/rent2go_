@@ -1,0 +1,30 @@
+.secContainer {
+  padding: 4rem 2rem;
+}
+.secContainer .contentContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  background: var(--pureWhiteColor);
+  padding: 2rem 4rem;
+}
+.secContainer .contentContainer button {
+  background: var(--primaryColor);
+  color: var(--pureWhiteColor);
+  border: 3px dashed var(--primaryColor);
+  padding: 0.5 2rem;
+  font-weight: 500;
+}
+.secContainer .contentContainer button:hover {
+  background: var(--pureWhiteColor);
+  color: var(--primaryColor);
+  transition: 0.3s ease-in-out;
+  letter-spacing: 0.05em;
+}
+.secContainer .contentContainer p:hover, .secContainer .contentContainer h2:hover {
+  color: var(--textColor);
+  transition: 0.3s ease-in-out;
+  letter-spacing: 0.05em;
+}/*# sourceMappingURL=successPage.css.map */
