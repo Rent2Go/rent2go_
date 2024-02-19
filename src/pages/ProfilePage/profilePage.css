@@ -22,4 +22,53 @@
   border: 1px solid var(--secondaryColor);
   background-color: var(--backGroundColor);
   min-height: 10rem;
+}
+
+@media screen and (max-width: 520px) {
+  .userProfile .userProfileIn {
+    gap: 5px;
+  }
+  .userProfile .userProfileIn .left {
+    font-size: 0.8rem;
+    width: 28%;
+  }
+  .userProfile .userProfileIn .right {
+    width: 69%;
+  }
+}
+@media screen and (min-width: 520px) and (max-width: 770px) {
+  .userProfile .userProfileIn {
+    gap: 7px;
+  }
+  .userProfile .userProfileIn .left {
+    font-size: 0.9rem;
+    width: 28%;
+  }
+  .userProfile .userProfileIn .right {
+    width: 69%;
+  }
+}
+@media screen and (min-width: 770px) and (max-width: 996px) {
+  .userProfile .userProfileIn {
+    gap: 15px;
+  }
+  .userProfile .userProfileIn .left {
+    font-size: 1rem;
+    width: 25%;
+  }
+  .userProfile .userProfileIn .right {
+    width: 65%;
+  }
+}
+@media screen and (min-width: 996px) and (max-width: 1200px) {
+  .userProfile .userProfileIn {
+    gap: 18px;
+  }
+  .userProfile .userProfileIn .left {
+    font-size: 1rem;
+    width: 25%;
+  }
+  .userProfile .userProfileIn .right {
+    width: 65%;
+  }
 }/*# sourceMappingURL=profilePage.css.map */
