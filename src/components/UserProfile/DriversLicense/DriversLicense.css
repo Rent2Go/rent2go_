@@ -75,6 +75,9 @@
     font-size: 1rem;
     margin-top: 15px;
   }
+  .dzu-dropzone {
+    border: 3px dashed var(--primaryColor) !important;
+  }
 }
 @media screen and (min-width: 520px) and (max-width: 770px) {
   .driversLicense .mainHead1 {
@@ -89,6 +92,9 @@
   .driversLicense .form label {
     font-size: 1.1rem;
     margin-top: 17px;
+  }
+  .dzu-dropzone {
+    border: 0.22rem dashed var(--primaryColor) !important;
   }
 }
 @media screen and (min-width: 770px) and (max-width: 996px) {

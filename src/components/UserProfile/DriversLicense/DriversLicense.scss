@@ -81,6 +81,9 @@
             }
         }
     }
+    .dzu-dropzone {
+        border: 3px dashed var(--primaryColor) !important;
+    }
 }
 
 @media screen and (min-width: 520px) and (max-width: 770px) {
@@ -98,6 +101,9 @@
                 margin-top: 17px;
             }
         }
+    }
+    .dzu-dropzone {
+        border: 0.22rem dashed var(--primaryColor) !important;
     }
 }
 
