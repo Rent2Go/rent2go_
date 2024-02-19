@@ -25,4 +25,25 @@
 .userSidebar .s2 {
   background-color: var(--backGroundColor2);
   cursor: pointer;
+}
+
+@media screen and (max-width: 520px) {
+  .userSidebar .s1, .userSidebar .s2 {
+    gap: 7px;
+    padding: 15px;
+  }
+  .userSidebar .img {
+    width: 19px;
+    height: 19px;
+  }
+}
+@media screen and (min-width: 520px) and (max-width: 770px) {
+  .userSidebar .s1, .userSidebar .s2 {
+    gap: 10px;
+    padding: 18px;
+  }
+  .userSidebar .img {
+    width: 22px;
+    height: 22px;
+  }
 }/*# sourceMappingURL=userSidebar.css.map */
