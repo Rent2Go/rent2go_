@@ -15,14 +15,14 @@ interface DiscountCodeProps {}
 const DiscountCode: React.FC<DiscountCodeProps> = (
   props: DiscountCodeProps
 ) => {
-  const { discount } = useSelector((state: any) => state.rental);
+  const { discount,user } = useSelector((state: any) => state.rental);
   const [discountCode, setDiscountCode] = useState<DiscountModel>();
   const [inputCode, setInputCode] = useState("");
   const dispatch = useDispatch();
 
   const handleApplyDiscount = (e: any) => {
     setInputCode(e.target.value.toUpperCase());
-    console.log(e.target.value.toUpperCase());
+  
   };
 
   const cancelDiscountCode = async () => {
@@ -33,15 +33,29 @@ const DiscountCode: React.FC<DiscountCodeProps> = (
     dispatch(setAction({ discount: discountCode }));
   }, [discountCode]);
 
-  const getByDiscountCode = async (discountCode: string) => {
-    if (discountCode) {
-      await DiscountService.getByDiscountCode(discountCode).then((response) => {
-        setDiscountCode(response.data.data);
-        dispatch(setAction({ discount: response.data.data }));
-        console.log(discountCode);
+  const getByDiscountCode = async(discountCode: string) => {
+    if(discountCode){
+    const response = await DiscountService.getByDiscountCode(discountCode)
+      .then((response) => {
+
+           DiscountService.getByUniqueDiscount(user.customer.id, response.data.data.id)
+           .then((res) => { 
+              setDiscountCode(response.data.data);
+              dispatch(setAction({  discount: response.data.data}))
+             
+              toast.success("Code applied successfully")
+          
+           })
+           .catch((error) => {
+            toast.error(error.response.data.message)
+           })
+      })
+      .catch((error) => {
+        toast.error("Disount Code" + error.response.data.message)
       });
     }
-  };
+  }
+
 
   return (
     <div className="discountContainer">
@@ -63,7 +77,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = (
         <FiPlus />
       </button>
 
-      <ToastContainer position="bottom-center" />
+      
       <button
         type="button"
         title="."

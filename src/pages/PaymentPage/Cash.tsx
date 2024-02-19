@@ -25,12 +25,12 @@ const Cash = (props: Props) => {
     return `${day}.${month}.${year}`;
   };
 
-  const rentalInfo = useSelector((state:any) => state).rental; // redux store'daki rentalInfo state'ine erişim
+  const rentalInfo = useSelector((state:any) => state.rental); 
 
   useEffect(() => {
-    // rentalInfo state'i her güncellendiğinde sessionStorage'e kaydet
+
     sessionStorage.setItem('rentalInfo', JSON.stringify(rentalInfo));
-  }, [rentalInfo]); // rentalInfo state'i değiştiğinde useEffect tekrar çalışacak
+  }, [rentalInfo]); 
 
 
  
