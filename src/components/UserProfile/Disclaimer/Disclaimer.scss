@@ -35,3 +35,48 @@
         }
     }
 }
+
+
+@media screen and (max-width: 520px) {
+    .disclaimer {
+        .mainHead1 {
+            font-size: 24px;
+        }
+        .disclaimerPage {
+            h3 {
+                font-size: 19px;
+            }
+            h5 {
+                font-size: 17px;
+            }
+            #par1 {
+                font-size: 15px;
+            }
+            ul {
+                font-size: 15px;
+            }
+        } 
+    }
+}
+
+@media screen and (min-width: 520px) and (max-width: 770px) {
+    .disclaimer {
+        .mainHead1 {
+            font-size: 27px;
+        }
+        .disclaimerPage {
+            h3 {
+                font-size: 20px;
+            }
+            h5 {
+                font-size: 20px;
+            }
+            #par1 {
+                font-size: 16px;
+            }
+            ul {
+                font-size: 16px;
+            }
+        } 
+    }
+}

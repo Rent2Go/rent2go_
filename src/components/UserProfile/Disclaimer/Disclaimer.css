@@ -34,4 +34,39 @@
 .disclaimer .disclaimerPage li strong {
   font-weight: 430;
   color: var(--primaryColor);
+}
+
+@media screen and (max-width: 520px) {
+  .disclaimer .mainHead1 {
+    font-size: 24px;
+  }
+  .disclaimer .disclaimerPage h3 {
+    font-size: 19px;
+  }
+  .disclaimer .disclaimerPage h5 {
+    font-size: 17px;
+  }
+  .disclaimer .disclaimerPage #par1 {
+    font-size: 15px;
+  }
+  .disclaimer .disclaimerPage ul {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 520px) and (max-width: 770px) {
+  .disclaimer .mainHead1 {
+    font-size: 27px;
+  }
+  .disclaimer .disclaimerPage h3 {
+    font-size: 20px;
+  }
+  .disclaimer .disclaimerPage h5 {
+    font-size: 20px;
+  }
+  .disclaimer .disclaimerPage #par1 {
+    font-size: 16px;
+  }
+  .disclaimer .disclaimerPage ul {
+    font-size: 16px;
+  }
 }/*# sourceMappingURL=Disclaimer.css.map */
