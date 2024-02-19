@@ -12,6 +12,8 @@ export interface UserModel {
     district: string | null;
     role: string;
     imageUrl: string;
-    customerId: number;
+    customer:{
+      id:number
+    } ;
     active: boolean;
   }
