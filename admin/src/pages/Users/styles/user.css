@@ -30,4 +30,20 @@
 .users .formContainer {
   margin: 0.5rem;
   padding: 1rem 2rem;
+}
+
+.dropzoneContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+.dropzoneContainer .imgContainerDetail {
+  width: 100%;
+  height: 240px;
+}
+.dropzoneContainer .imgContainerDetail img {
+  border-radius: 0.5rem;
+  width: 240px;
+  height: 240px;
 }/*# sourceMappingURL=user.css.map */

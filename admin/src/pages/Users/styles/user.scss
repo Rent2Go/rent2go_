@@ -22,12 +22,27 @@
       }
     }
   }
-  .titleContainer{
-    margin:0.5rem;
+  .titleContainer {
+    margin: 0.5rem;
     padding: 1rem 2rem;
   }
-  .formContainer{
-    margin:0.5rem;
+  .formContainer {
+    margin: 0.5rem;
     padding: 1rem 2rem;
+  }
+}
+.dropzoneContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  .imgContainerDetail {
+    width: 100%;
+    height: 240px;
+    img {
+      border-radius: 0.5rem;
+      width: 240px;
+      height: 240px;
+    }
   }
 }
