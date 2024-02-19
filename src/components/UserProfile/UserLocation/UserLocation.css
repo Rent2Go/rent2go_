@@ -43,4 +43,29 @@
 }
 .userLocation textarea:focus {
   border: 1px solid var(--primaryColor);
+}
+
+@media screen and (max-width: 520px) {
+  .userLocation .mainHead1 {
+    font-size: 24px;
+  }
+  .userLocation .mainButton1 {
+    font-size: 1rem;
+  }
+  .userLocation .form label {
+    font-size: 1rem;
+    margin-top: 15px;
+  }
+}
+@media screen and (min-width: 520px) and (max-width: 770px) {
+  .userLocation .mainHead1 {
+    font-size: 27px;
+  }
+  .userLocation .mainButton1 {
+    font-size: 1.2rem;
+  }
+  .userLocation .form label {
+    font-size: 1.1rem;
+    margin-top: 17px;
+  }
 }/*# sourceMappingURL=UserLocation.css.map */
