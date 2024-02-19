@@ -28,6 +28,7 @@ const CarCards = (props: Props) => {
               {props.car.model.brand.name} {props.car.model.name}{" "}
               {props.car.year}
             </p>
+            <div className="contentDiv">
             <div>
               <span className="carLabel">
                 <BiTachometer />{" "}
@@ -49,6 +50,7 @@ const CarCards = (props: Props) => {
                 <IoIosColorPalette />{" "}
               </span>
               <span className="miles">{props.car.color.name}</span>
+            </div>
             </div>
           </div>
           <div className="actionDiv">

@@ -373,11 +373,14 @@
             gap: 0.5rem;
             align-items: center;
             justify-content: center;
+            .searchInput {
+              width: 60%;
+            }
           }
         }
       }
       .secContent {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr) !important;
         align-items: flex-start;
         column-gap: 2rem;
         .filterContainer {
@@ -409,44 +412,85 @@
                 justify-content: space-between;
                 text-align: center;
                 align-items: flex-start;
-                column-gap: 1rem;
+                column-gap: 0;
               }
             }
           }
         }
         .carContainer {
-          grid-column-start: 2 !important;
-          grid-column-end: 2 !important;
+          display: grid;
+          grid-column-start: 2;
+          grid-column-end: 4 !important;
           .searchDiv {
-            margin: 0.5rem 0 !important;
+            margin: 1rem 0 !important;
             text-align: center;
-            padding: 0.25rem;
+            padding: 0.25rem 1rem;
+            justify-content: center;
+            align-items: center;
+            label {
+              font-size: 12px;
+            }
             .searchInput {
-              width: 55%;
+              width: 66% !important;
             }
           }
           .singleCar {
             margin: 1rem 0rem;
             padding: 0.5rem 1rem;
             div {
-              grid-template-columns: repeat(1, 1fr) !important;
+              display: flex;
+              flex-direction: column;
+              column-gap: 0.5rem;
+              row-gap: 2rem;
+              justify-content: center;
+              align-items: center;
+              padding: 0 0.9rem;
               .imgDiv {
                 width: 100% !important;
                 height: auto !important;
               }
               .descriptionDiv {
-                flex-direction: row;
+                flex-direction: column;
+                row-gap: 0;
                 font-size: 10px;
                 margin-bottom: -2rem;
+                span {
+                  font-size: 15px;
+                }
+                .miles,
+                .AWD {
+                  margin-right: 1rem;
+                }
+                .carTitle {
+                  font-size: 20px;
+                  margin-bottom: 0;
+                }
+                .contentDiv {
+                  display: flex;
+                  flex-direction: row;
+                  margin: 1rem 0;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 0;
+                  div {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    padding: 0;
+                  }
+                }
               }
               .actionDiv {
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
+                margin: 0 0 2rem 0;
                 .actionRow {
                   margin-bottom: 0 !important;
                   span {
                     padding-bottom: 0;
+                    font-size: 15px;
                   }
                 }
               }
