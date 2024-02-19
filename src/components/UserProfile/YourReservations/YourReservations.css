@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .yourReservations {
   display: flex;
   flex-direction: column;
@@ -17,6 +18,12 @@
   color: var(--primaryColor);
   line-height: initial;
   margin-bottom: 0px;
+}
+.yourReservations .p1 .icon2 {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: chartreuse;
 }
 .yourReservations table {
   width: 100%;
@@ -52,17 +59,73 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  padding-left: 1rem;
 }
-.yourReservations table tr td p .greendot {
-  width: 10px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: greenyellow;
+.yourReservations .information {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 50px;
 }
-.yourReservations table tr td p .reddot {
-  width: 10px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: red;
+.yourReservations .information .inUse, .yourReservations .information .delivered {
+  color: var(--primaryColor);
+}
+.yourReservations .information > div {
+  margin-left: 10px; /* İçerikler arasında bir boşluk bırakır */
+}
+
+@media screen and (max-width: 520px) {
+  .yourReservations .mainHead1 {
+    font-size: 24px;
+  }
+  .yourReservations .p1 .icon2 {
+    height: 15px;
+    width: 15px;
+  }
+  .yourReservations table {
+    font-size: 10px;
+  }
+  .yourReservations table tr th {
+    padding: 10px 5px;
+  }
+  .yourReservations table tr td {
+    padding: 20px 5px;
+  }
+  .yourReservations .information .inUse, .yourReservations .information .delivered {
+    font-size: 13px;
+  }
+}
+@media screen and (min-width: 520px) and (max-width: 770px) {
+  .yourReservations .mainHead1 {
+    font-size: 27px;
+  }
+  .yourReservations .p1 .icon2 {
+    height: 15px;
+    width: 15px;
+  }
+  .yourReservations table {
+    font-size: 11px;
+  }
+  .yourReservations table tr th {
+    padding: 10px 10px;
+  }
+  .yourReservations table tr td {
+    padding: 20px 10px;
+  }
+  .yourReservations .information .inUse, .yourReservations .information .delivered {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 770px) and (max-width: 996px) {
+  .yourReservations .p1 .icon2 {
+    height: 16px;
+    width: 16px;
+  }
+  .yourReservations table {
+    font-size: 13px;
+  }
+  .yourReservations table tr th {
+    padding: 10px 15px;
+  }
+  .yourReservations table tr td {
+    padding: 20px 20px;
+  }
 }/*# sourceMappingURL=YourReservations.css.map */
