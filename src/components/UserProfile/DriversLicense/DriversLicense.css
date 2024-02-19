@@ -59,4 +59,40 @@
 }
 .dzu-dropzone:hover {
   background: var(--pureWhiteColor) !important;
+}
+
+@media screen and (max-width: 520px) {
+  .driversLicense .mainHead1 {
+    font-size: 24px;
+  }
+  .driversLicense .mainButton1 {
+    font-size: 1rem;
+  }
+  .driversLicense .form {
+    padding: 10px 12px;
+  }
+  .driversLicense .form label {
+    font-size: 1rem;
+    margin-top: 15px;
+  }
+}
+@media screen and (min-width: 520px) and (max-width: 770px) {
+  .driversLicense .mainHead1 {
+    font-size: 27px;
+  }
+  .driversLicense .mainButton1 {
+    font-size: 1.2rem;
+  }
+  .driversLicense .form {
+    padding: 10px 30px;
+  }
+  .driversLicense .form label {
+    font-size: 1.1rem;
+    margin-top: 17px;
+  }
+}
+@media screen and (min-width: 770px) and (max-width: 996px) {
+  .driversLicense .form {
+    padding: 10px 40px;
+  }
 }/*# sourceMappingURL=DriversLicense.css.map */
