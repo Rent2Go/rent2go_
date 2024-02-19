@@ -34,4 +34,29 @@
   font-size: 1.2rem;
   font-weight: 300;
   margin-top: 20px;
+}
+
+@media screen and (max-width: 520px) {
+  .accountSettings .mainHead1 {
+    font-size: 24px;
+  }
+  .accountSettings .mainButton1 {
+    font-size: 1rem;
+  }
+  .accountSettings .form label {
+    font-size: 1rem;
+    margin-top: 15px;
+  }
+}
+@media screen and (min-width: 520px) and (max-width: 770px) {
+  .accountSettings .mainHead1 {
+    font-size: 27px;
+  }
+  .accountSettings .mainButton1 {
+    font-size: 1.2rem;
+  }
+  .accountSettings .form label {
+    font-size: 1.1rem;
+    margin-top: 17px;
+  }
 }/*# sourceMappingURL=accountSettings.css.map */
