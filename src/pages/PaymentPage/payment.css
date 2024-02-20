@@ -134,6 +134,10 @@
 }
 .success .secContainer .titleContainer h2 {
   color: var(--primaryColor);
+  text-transform: uppercase;
+}
+.success .secContainer .titleContainer .text-alert {
+  color: var(--color-danger);
 }
 .success .secContainer .contentContainer {
   display: flex;
@@ -147,8 +151,8 @@
 }
 .success .secContainer .actionContainer {
   display: flex;
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
 }
 .success .secContainer .actionContainer .btn {
   color: var(--pureWhiteColor);
