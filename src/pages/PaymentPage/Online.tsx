@@ -10,6 +10,8 @@ import { CreditCardModel } from "../../models/requests/payment/CreditCardModel";
 import PaymentService from "../../services/PaymentService";
 import RentalService from "../../services/RentalService";
 import CarService from "../../services/CarService";
+import { MailInfoModel } from "../../models/mail/MailInfıModel";
+import MailService from "../../services/emailService/MailService";
 import { ToastContainer, toast } from "react-toastify";
 import { AddRentalRequest } from "../../models/requests/rental/AddRentalRequest";
 
@@ -51,8 +53,23 @@ const Online = (props: Props) => {
     discount: rentalInfo?.discount || { id: 0, discountCode: 'BOSS' }
   };
 
+  const mailInfo:MailInfoModel = {
+    name: rentalInfo.user.name + ' ' + rentalInfo.user.surname,
+    email: rentalInfo.user.email,
+    phone: rentalInfo.user.phoneNumber,
+    startDate: new Date(rentalInfo.startDate),
+    endDate: new Date(rentalInfo.endDate),
+    totalDay: rentalInfo.day,
+    plate: rentalInfo.car.plate,
+    carInfo: rentalInfo.car.model.brand.name + ' ' + rentalInfo.car.model.name,
+    totalPrice: rentalInfo.priceCard.totalPrice
 
-  console.log(addRental);
+  }
+  console.log(mailInfo);
+  
+
+
+ 
 
 
 
@@ -69,6 +86,9 @@ const Online = (props: Props) => {
                 sessionStorage.removeItem('rentalInfo')
                 toast.success("Ödeme Başarıyla Alındı.")
                 CarService.updateIsActive(addRental.carId,false);
+                MailService.reservationSuccessful(mailInfo);
+                console.log(mailInfo);
+                
                 setTimeout(() => {
                   navigate("/payment-successful")
                 },2000)

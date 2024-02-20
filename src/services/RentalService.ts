@@ -23,6 +23,10 @@ class RentalService{
 
         return axiosInstance.delete<UpdateResponse>(`rentals/${id}`)
     }
+    getCustomerRentalsById(id:number){
+
+        return axiosInstance.get<GetAllRentalsModel>(`rentals/getCustomerrentals?id=${id}`)
+    }
 
 
 }

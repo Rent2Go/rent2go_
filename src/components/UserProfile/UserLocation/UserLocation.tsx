@@ -9,24 +9,33 @@ import { CityModel } from "../../../models/responses/cities/GetCity";
 import { DistrictModel } from "../../../models/responses/districts/GetDistrict";
 import CityService from "../../../services/CityService";
 import { onChange } from "react-toastify/dist/core/store";
+import UserService from "../../../services/UserService";
+import { UserModel } from "../../../models/user/UserModel";
+import OverlayLoaderLoad from "../../OverlayLoader/OverlayLoaderLoad";
+import { useAuth } from "../../../contexts/AuthContext";
 
 const UserLocation = () => {
 
   const { t } = useTranslation();
 
-    
+  const auth = useAuth()
   const [cities, setCities] = useState<CityModel[]>([]);
   const [districts, setDistricts] = useState<DistrictModel[]>([]);
-  const [cityId, setCityId] = useState<number>(0)
+  const [city, setCity] = useState<CityModel>()
   const [selectedFilter, setSelectedFilter] = useState<DistrictModel[]>([])
+  const [user, setUser] = useState<UserModel>();
+
+
+  const getUser = async (id: number) => {
+    await UserService.getById(id)
+      .then((res: any) => {
+        setUser(res.data.data)
+      })
+  }
 
 
 
-  const initialValues: any = {
-    city: "",
-    district: "",
-    address: "",
-  };
+
 
   const UserLocationSchema = Yup.object().shape({
     city: Yup.string().required("City field cannot be empty"),
@@ -34,101 +43,121 @@ const UserLocation = () => {
     address: Yup.string().required("Address field cannot be empty"),
   });
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => { };
 
-  
+
   const getCities = async () => {
     await CityService.getAll()
-    .then((res) => {
-      setCities(res.data.data)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
+      .then((res) => {
+        setCities(res.data.data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
   const getDistricts = async () => {
     await DistrictService.getAll()
-    .then((res) => {
-      setDistricts(res.data.data)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
+      .then((res) => {
+        setDistricts(res.data.data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
   useEffect(() => {
+    getUser(auth.authInformation.user.id)
     getCities()
     getDistricts()
-  },[])
+  }, [user?.id])
 
   const handleCityChange = async (selectedCity: number) => {
-    setCityId(selectedCity);
+
     const city = cities.find((city) => city.id == selectedCity);
 
     const selectedCityDistrict = districts.filter((district: DistrictModel) => district.city.id == selectedCity)
     setSelectedFilter(selectedCityDistrict)
+    setCity(city);
   }
 
-
+  if (!user) return <OverlayLoaderLoad />
   return (
     <div className="userLocation">
       <h2 className="mainHead1 text-center">{t("locationInformation")}</h2>
       <div className="form">
         <Formik
-          initialValues={initialValues}
+          initialValues={{
+            city: user.city,
+            district: user.district,
+            address: user.address,
+          }}
           validationSchema={UserLocationSchema}
           onSubmit={handleSubmit}
         >
-            <Form>
-                <div className="row">
-                    <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                      <div>
-                        <label className="form-label">{t("city")}</label>
-                        <Field
-                          name="city"
-                          as="select"
-                          className="form-control"
-                          onChange={(e: any) => handleCityChange(e.target.value)}
-                          value={cityId}
-                        >
-                        {cities.map((value:any) => (
-                          <option key={value.id} value={value.id}>{value.name.toUpperCase()}</option>
-                        ))}
-                        </Field>
-                      </div>
-                    </div>
-                    <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                        <label className="form-label">{t("district")}</label>
-                        <Field
-                          name="district"
-                          as="select"
-                          className="form-control"
-                        >
-                        {selectedFilter.map((value: DistrictModel) => (
-                          <option key={value.id} value={value.id}>{value.districtName.toUpperCase()}</option>
-                        ))}
-                        </Field>
-                    </div>
+          <Form>
+            <div className="row">
+              <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
+                <div>
+                  <label className="form-label">{t("city")}</label>
+                  <Field
+                    name="city"
+                    as="select"
+                    className="form-control"
+                    onChange={(e: any) => handleCityChange(e.target.value)}
+                    value={city?.id}
+                  >
+                    {user.district && (
+                      <option key={user.city.id} value={user.city.id}>
+                        {user.city.name.toUpperCase()}
+                      </option>
+                    )}
+                    {cities.map((value: any) => (
+                      <option key={value.id} value={value.id}>{value.name.toUpperCase()}</option>
+                    ))}
+                  </Field>
                 </div>
-                <div className="row">
-                    <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
-                        <FormikInput
-                            name="address"
-                            type="textarea"
-                            label={t("address")}
-                        ></FormikInput>
-                    </div>
-                </div>
-            </Form>
+              </div>
+              <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
+                <label className="form-label">{t("district")}</label>
+                <Field
+                  name="district"
+                  as="select"
+                  className="form-control"
+                >
+                  {user.city && (
+                    <option key={user.district.id} value={user.district.id}>
+                      {user.district.districtName}
+                    </option>
+                  )}
+
+                  {selectedFilter.map((value: DistrictModel) => (
+                    <option key={value.id} value={value.id}>
+                      {value.districtName.toUpperCase()}
+                    </option>
+                  ))}
+                </Field>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
+                <FormikInput
+                  name="address"
+                  type="textarea"
+
+                  label={t("address")}
+                ></FormikInput>
+              </div>
+            </div>
+          </Form>
         </Formik>
       </div>
       <div className="row text-center">
         <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
-        <button className="mainButton1">{t("saveLocationChanges")}</button>
+          <button className="mainButton1">{t("saveLocationChanges")}</button>
         </div>
       </div>
-      
+
     </div>
   );
 };
