@@ -84,7 +84,7 @@ const AccountSettings = () => {
                 <div className="imgDiv">
                   {user?.imageUrl ? (
                     <img
-                      src={`/assets/img/userImages/${user.imageUrl}`}
+                      src={`${user.imageUrl}`}
                       alt="profile"
                     />
                   ) : (
