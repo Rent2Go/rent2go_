@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Footer, Navbar } from "../../../components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../payment.css";
 type Props = {};
 
 const Successful = (props: Props) => {
+
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Geri düğmesinin tıklandığında önceki sayfaya dönmesini engelle
+    const handleBackButton = (e:any) => {
+      e.preventDefault();
+      navigate("/"); // Başka bir yere yönlendirebilirsiniz
+    };
+
+    window.history.pushState(null, "", window.location.pathname);
+    window.addEventListener('popstate', handleBackButton);
+
+    return () => {
+      window.removeEventListener('popstate', handleBackButton);
+    };
+  }, [navigate]);
+
   return (
     <>
       <Navbar />
