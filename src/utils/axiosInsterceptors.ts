@@ -50,7 +50,7 @@ axiosInstance.interceptors.request.use(
 					localStorage.removeItem("refreshToken")
 					toast.warn("Session has expired, log in again...")
 					setTimeout(() => {
-						window.location.href = "/sign-up";
+						window.location.href = "/sign-in";
 					}, 2000)
 
 				}
