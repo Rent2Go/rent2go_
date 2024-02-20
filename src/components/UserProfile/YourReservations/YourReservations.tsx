@@ -4,23 +4,39 @@ import { RentalModel } from '../../../models/responses/rentals/GetRental';
 import RentalService from '../../../services/RentalService';
 import { useTranslation } from "react-i18next";
 import { RiUserFollowLine, RiUserLocationLine } from "react-icons/ri";
+import { useAuth } from '../../../contexts/AuthContext';
+import UserService from '../../../services/UserService';
+import { UserModel } from '../../../models/user/UserModel';
 
 
 const YourReservations = () => {
+  const auth = useAuth()
   const { t } = useTranslation();
-
-
   const [rentals, setRentals] = useState<RentalModel[]>([]);
+  const [user, setUser] = useState<UserModel>();
 
-  useEffect(() => {
-    getRentals();
-  },[])
+
+  const getUser = async (id: number) =>{
+    await UserService.getById(id)
+    .then((res:any)=>{
+      setUser(res.data.data)
+    })
+  }
+
 
   const getRentals = () => {
-    RentalService.getAll()
+    if(user){
+    RentalService.getCustomerRentalsById(user.customer.id)
     .then((res) => { setRentals(res.data.data) })
     .catch((err) => { console.log(err) })
   }
+}
+
+useEffect(() => {
+  getUser(auth.authInformation.user.id)
+  getRentals();
+},[user?.id])
+
 
 
   return (
