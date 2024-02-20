@@ -3,7 +3,7 @@ import { Footer, Navbar, PriceCard } from "../../components";
 import { Link, useParams } from "react-router-dom";
 import "./payment.css";
 import { Form, Formik } from "formik";
-import FormikInput from "../../components/FormikInput/FormikInput";
+
 import { useAuth } from "../../contexts/AuthContext";
 import ReceiptPDF from "./Receipt";
 import { useSelector } from "react-redux";

@@ -43,11 +43,11 @@ const Search = (props: Props) => {
   const handleSubmitSearch = async () => {
     if (selectedStartDate && selectedEndDate) {
       const today = new Date();
-      today.setHours(0, 0, 0, 0); // Reset hours, minutes, seconds and milliseconds to compare only the dates
+      today.setHours(0, 0, 0, 0); 
       
       if (selectedStartDate < today) {
         alert(t("startDateInPast"));
-        return; // Arama işlemi gerçekleştirilmez
+        return; 
       }
 
       const startDateTimestamp = selectedStartDate.getTime(); 

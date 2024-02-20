@@ -5,59 +5,46 @@ import { object, string } from "yup";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 
-import { useAuth } from "../../contexts/AuthContext";
+import { useAuth } from "../../../contexts/AuthContext";
 
-import FormikInput from "../../components/FormikInput/FormikInput";
+import UserService from "../../../services/UserService";
 
-import UserService from "../../services/UserService";
+import { ResetPasswordRequest } from "../../../models/requests/user/ResetPasswordRequest";
 
-import { ResetPasswordRequest } from "../../models/requests/user/ResetPasswordRequest";
-
-import "./auth.css";
-
+import { FormikInput } from "../../../components";
+import "../styles/auth.css";
 type Props = {};
 const ResetPassword = (props: Props) => {
+  const authContext = useAuth();
+  const navigate = useNavigate();
 
-  const authContext = useAuth()
-  const navigate = useNavigate()
-
-  const resetPasswordInitialValues:ResetPasswordRequest =  {
-    email:'',
-    firstname:'',
-
-  }
-   const resetPasswordValidationSchema = object({
+  const resetPasswordInitialValues: ResetPasswordRequest = {
+    email: "",
+    firstname: "",
+  };
+  const resetPasswordValidationSchema = object({
     email: string()
       .required("Email field is required.")
       .email("Invalid email format."),
-    firstname: string()
-      .required("first Name field is required.")
+    firstname: string().required("first Name field is required."),
   });
 
-  const resetPasswordHandleSubmit = async (values:ResetPasswordRequest) => {
-
+  const resetPasswordHandleSubmit = async (values: ResetPasswordRequest) => {
     const response = await UserService.resetPassword(values)
-    .then((resolve) => {
-      navigate("/success");
-    })
-    .catch((error) => toast.error(error.response.data.message));
-};
+      .then((resolve) => {
+        navigate("/reset-password-successful");
+      })
+      .catch((error) => toast.error(error.response.data.message));
+  };
 
-
-  
-  
-
-   
   return (
     <div className="auth">
-
       <div className="secContainer">
-        <div className="headingDiv text-center">
-          <h2>Password Reset</h2>
-        </div>
         <div className="contentDiv">
           <div className="formContainer">
-
+            <div className="headingDiv text-center">
+              <h2>Reset Password</h2>
+            </div>
             <Formik
               initialValues={resetPasswordInitialValues}
               onSubmit={resetPasswordHandleSubmit}
@@ -89,25 +76,24 @@ const ResetPassword = (props: Props) => {
                     <button className="btn-login btn-sm" type="submit">
                       Submit
                     </button>
-                   
-                    {/* Same as */}
 
+                    {/* Same as */}
                   </div>
                   <ToastContainer
-                      position="top-center"
-                      autoClose={5000}
-                      hideProgressBar={false}
-                      newestOnTop={false}
-                      closeOnClick
-                      rtl={false}
-                      pauseOnFocusLoss
-                      draggable
-                      pauseOnHover
-                      theme="light"
-                    />
+                    position="top-center"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="light"
+                  />
 
                   <div className="col-md-12 col-sm-12">
-                   <span>Rent2Go Business</span>
+                    <span>Rent2Go Business</span>
                   </div>
                 </div>
               </Form>
@@ -115,7 +101,6 @@ const ResetPassword = (props: Props) => {
           </div>
         </div>
       </div>
-
     </div>
   );
 };

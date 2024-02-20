@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import { Footer, Navbar } from "../../components";
-import FormikInput from "../../components/FormikInput/FormikInput";
+import { Footer, FormikInput, Navbar } from "../../components";
+
 
 import { Formik, Form } from "formik";
 import * as Yup from "yup";

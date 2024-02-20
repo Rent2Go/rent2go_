@@ -5,29 +5,27 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 // Formik imports
 import { Formik, Form } from "formik";
 import { object, ref, string } from "yup";
-
-// Component imports
-import FormikInput from "../../components/FormikInput/FormikInput";
-
+import { FormikInput } from "../../../components";
 // Context imports
-import { useAuth } from "../../contexts/AuthContext";
+import { useAuth } from "../../../contexts/AuthContext";
 
 // Toast imports
 import "react-toastify/dist/ReactToastify.css";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 
 // Service imports
-import UserService from "../../services/UserService";
+import UserService from "../../../services/UserService";
 
 // Model imports
-import { ChangePasswordRequest } from "../../models/requests/user/ChangePasswordRequest";
-import { TokenUser } from "../../models/token/TokenUser";
+import { ChangePasswordRequest } from "../../../models/requests/user/ChangePasswordRequest";
+import { TokenUser } from "../../../models/token/TokenUser";
 
 // Utility imports
 import { jwtDecode } from "jwt-decode";
 
 // Style imports
-import "./auth.css";
+import "../styles/auth.css"
+
 
 type Props = {};
 const ChangePassword = (props: Props) => {
@@ -98,12 +96,12 @@ const ChangePassword = (props: Props) => {
     <div className="auth">
 
       <div className="secContainer">
-        <div className="headingDiv text-center">
-          <h2>Change Password</h2>
-        </div>
+       
         <div className="contentDiv">
           <div className="formContainer">
-
+          <div className="headingDiv text-center">
+          <h2>Change Password</h2>
+        </div>
             <Formik
               initialValues={changePasswordInitialValues}
               onSubmit={changePasswordHandleSubmit}

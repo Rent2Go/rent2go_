@@ -77,17 +77,18 @@
     font-weight: 600;
     color: var(--primaryColor);
     border-radius: 3px;
+    font-size: 14px;
   }
   .search .searchDiv .btn {
     justify-content: center;
     width: 100%;
     align-items: center;
     gap: 0.3rem;
-    font-size: 16px;
+    font-size: 14px;
     border-radius: 3px;
   }
   .search .searchDiv .btn .icon {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 770px) {

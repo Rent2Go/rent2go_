@@ -1,3 +1,5 @@
+![roadmap](https://rentogo.com.tr/screenshoots/roadmap.jpg)
+
 
 # Rent2Go
 
@@ -26,17 +28,6 @@ Rent2Go is an administration client built with React for managing rental-related
 
 ![App Screenshot](https://rentogo.com.tr/screenshoots/Screenshot_3.png)
 
-## Demo
-
-https://rentogo.com.tr
-
-![App Screenshot](https://rentogo.com.tr/screenshoots/Screenshot_2.png)
-
-
-## Documentation
-
-[Documentation](https://linktodocumentation)
-
 
 ## Features
 
@@ -46,8 +37,33 @@ https://rentogo.com.tr
 - Three Payment Methods
 
 
-
 ![App Screenshot](https://rentogo.com.tr/screenshoots/Screenshot_4.png)
+
+
+## Languages & Tools
+
+![languagesAndTools](https://rentogo.com.tr/screenshoots/languages.png) 
+
+
+## Database - ER Diagram
+![ERDiagram](https://rentogo.com.tr/screenshoots/Rent2Go-ERDiagram.png) 
+
+
+
+## Demo
+
+https://rentogo.com.tr
+
+![App Screenshot](https://rentogo.com.tr/screenshoots/Screenshot_2.png)
+
+
+
+## Documentation
+
+[Documentation](https://linktodocumentation)
+
+
+
 ## Installation
 
 Install my-project with npm

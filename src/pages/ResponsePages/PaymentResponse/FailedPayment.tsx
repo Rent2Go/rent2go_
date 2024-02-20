@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Footer, Navbar } from '../../../components'
-
+import "../response.css"
 type Props = {}
 
-const Failed = (props: Props) => {
+const FailedPayment = (props: Props) => {
   return (
     <>
     <Navbar />
-    <div className="success">
+    <div className="response">
       <div className="secContainer shadow-rounded-box">
         <div className="titleContainer">
           <h2 className='text-alert'>Payment Failed !</h2>
@@ -43,4 +43,4 @@ const Failed = (props: Props) => {
   )
 }
 
-export default Failed
+export default FailedPayment

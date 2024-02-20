@@ -5,9 +5,7 @@ import { PaymentProvider } from "../contexts/PaymentContext";
 import {
   CarPage,
   HomePage,
-  Login,
   Register,
-  BrandPage,
   OurTeamPage,
   ContactPage,
   PrivacyPolicy,
@@ -30,10 +28,11 @@ import {
   VehicleConditionReports,
   ResetPassword,
   ChangePassword,
-  SuccessPage,
-  EmailVerificationSuccess,
-  Successful,
-  Failed,
+  VerificationSuccessful,
+  SuccessfulPayment,
+  SuccessfulResetPassword,
+  FailedPayment,
+  VerificationFailed,
 } from "../pages";
 
 const Router = () => {
@@ -41,30 +40,23 @@ const Router = () => {
     <PaymentProvider>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="*" element={<NotFoundPage />} />
+
+        {/*auth pages */}
         <Route path="/sign-in/reset-password" element={<ResetPassword />} />
         <Route path="/sign-in/change-password" element={<ChangePassword />} />
         <Route path="/sign-in" element={<Register />} />
 
-        {
-          /*Backent mail doğrulama sayfası*/
-        }
-        <Route path="/email-verification-successful" element={<EmailVerificationSuccess />} />
-        
-        
+        {/*navbar pages */}
         <Route path="/profile/:activepage" element={<ProfilePage />} />
-
-
         <Route path="/cars" element={<CarPage />} />
-        <Route path="/brands" element={<BrandPage />} />
         <Route path="/our-team" element={<OurTeamPage />} />
         <Route path="/contact" element={<ContactPage />} />
-
+        
+        {/*legal pages */}
         <Route path="/cookie-policy" element={<CookiePolicy />} />
         <Route path="/copyright-notice" element={<CopyrightNotice />} />
-        <Route
-          path="/cr-complaint-procedures"
-          element={<CRandComplaintProcedures />}
-        />
+        <Route path="/cr-complaint-procedures" element={<CRandComplaintProcedures />}/>
         <Route path="/insurance" element={<InsuranceInformation />} />
         <Route path="/legal-notices" element={<LegalNotices />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
@@ -73,20 +65,20 @@ const Router = () => {
         <Route path="/security-notices" element={<SecurityNotices />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/terms-of-use" element={<TermsOfUse />} />
-        <Route
-          path="/vehicle-condition-reports"
-          element={<VehicleConditionReports />}
-        />
+        <Route path="/vehicle-condition-reports" element={<VehicleConditionReports />}/>
 
+        {/*payment & reservation pages */}
         <Route path="/reservation/:id" element={<ReservationPage />} />
         <Route path="/payment/cash" element={<Cash />} />
         <Route path="/payment/online" element={<Online />} />
         <Route path="/payment/bankTransfer" element={<BankTransfer />} />
-        <Route path="/payment-successful" element={<Successful />} />
-        <Route path="/payment-failed" element={<Failed />} />
 
-        <Route path="/success" element={<SuccessPage />} />
-        <Route path="*" element={<NotFoundPage />} />
+        {/*response pages */}
+        <Route path="/payment-successful" element={<SuccessfulPayment />} />
+        <Route path="/payment-failed" element={<FailedPayment />} />
+        <Route path="/reset-password-successful" element={<SuccessfulResetPassword />}/>
+        <Route path="/email-verification-successful" element={<VerificationSuccessful />}/>
+        <Route path="/email-verification-failed" element={<VerificationFailed />}/>
       </Routes>
     </PaymentProvider>
   );
