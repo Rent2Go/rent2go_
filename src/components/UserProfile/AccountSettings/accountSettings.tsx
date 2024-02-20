@@ -1,23 +1,47 @@
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./accountSettings.css";
 import { useTranslation } from "react-i18next";
 import { Form, Formik } from "formik";
 import FormikInput from "../../FormikInput/FormikInput";
 import * as Yup from "yup";
+import UserService from "../../../services/UserService";
+import { UserModel } from "../../../models/user/UserModel";
+import { useAuth } from "../../../contexts/AuthContext";
+import OverlayLoaderLoad from "../../OverlayLoader/OverlayLoaderLoad";
 
 
 const AccountSettings = () => {
+  const auth = useAuth()
   const { t } = useTranslation();
 
-  const initialValues: any = {
-    name: "",
-    surname: "",
-    phone: "",
-    email: "",
-    nationalityId: "",
-    dateOfBirth: "",
-  };
+
+  const [user, setUser] = useState<UserModel>();
+
+
+  useEffect(() => {
+    getUser(auth.authInformation.user.id)
+
+  },[user?.id])
+
+
+  const getUser = async (id: number) =>{
+    await UserService.getById(id)
+    .then((res:any)=>{
+      setUser(res.data.data)
+    })
+  }
+
+
+
+  // const initialValues: any = {
+  //   name: user.name,
+  //   surname: user.surname,
+  //   phone: user.phoneNumber,
+  //   email: user.email,
+  //   nationalityId: user.idCardNumber,
+  //   dateOfBirth: user.birthDate,
+  // };
 
   const AccountSettingsSchema = Yup.object().shape({
     name: Yup.string()
@@ -40,13 +64,22 @@ const AccountSettings = () => {
   });
 
   const handleSubmit = () => {};
-
+  if(!user)return <OverlayLoaderLoad/>
   return (
     <div className="accountSettings">
       <h2 className="mainHead1 text-center">{t("personalInformations")}</h2>
       <div className="form">
         <Formik
-          initialValues={initialValues}
+          initialValues={
+            {
+              name: user.name,
+              surname: user.surname,
+              phone: user.phoneNumber,
+              email: user.email,
+              nationalityId: user.idCardNumber,
+              dateOfBirth: user.birthDate,
+            }
+          }
           validationSchema={AccountSettingsSchema}
           onSubmit={handleSubmit}
         >
