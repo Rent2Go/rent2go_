@@ -70,7 +70,7 @@ const Online = (props: Props) => {
                 toast.success("Ödeme Başarıyla Alındı.")
                 CarService.updateIsActive(addRental.carId,false);
                 setTimeout(() => {
-                  navigate("/email-verification-successful")
+                  navigate("/payment-successful")
                 },2000)
               
               }
