@@ -32,6 +32,8 @@ import {
   ChangePassword,
   SuccessPage,
   EmailVerificationSuccess,
+  Successful,
+  Failed,
 } from "../pages";
 
 const Router = () => {
@@ -80,6 +82,8 @@ const Router = () => {
         <Route path="/payment/cash" element={<Cash />} />
         <Route path="/payment/online" element={<Online />} />
         <Route path="/payment/bankTransfer" element={<BankTransfer />} />
+        <Route path="/payment-successful" element={<Successful />} />
+        <Route path="/payment-failed" element={<Failed />} />
 
         <Route path="/success" element={<SuccessPage />} />
         <Route path="*" element={<NotFoundPage />} />

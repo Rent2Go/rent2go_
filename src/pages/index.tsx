@@ -18,6 +18,8 @@ export {default as NotFoundPage} from "./NotFoundPage/PageNotFound"
 export {default as Online} from "./PaymentPage/Online"
 export {default as Cash} from "./PaymentPage/Cash"
 export {default as BankTransfer} from "./PaymentPage/BankTransfer"
+export {default as Successful} from "./PaymentPage/payment-response/Successful"
+export {default as Failed} from "./PaymentPage/payment-response/Failed"
 
 
 export {default as CookiePolicy} from "./LegalPages/CookiePolicy"
