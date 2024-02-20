@@ -33,15 +33,10 @@ const AccountSettings = () => {
   }
 
 
-
-  // const initialValues: any = {
-  //   name: user.name,
-  //   surname: user.surname,
-  //   phone: user.phoneNumber,
-  //   email: user.email,
-  //   nationalityId: user.idCardNumber,
-  //   dateOfBirth: user.birthDate,
-  // };
+  const updateUser = () => {
+    // UserService.update("aa",ad)
+  
+  }
 
   const AccountSettingsSchema = Yup.object().shape({
     name: Yup.string()
