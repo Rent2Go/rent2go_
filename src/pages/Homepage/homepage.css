@@ -35,7 +35,7 @@
   color: var(--whiteColor);
 }
 .homeText .btns .btn:nth-child(1) {
-  background: var(--whiteColor);
+  background: var(--pureWhiteColor);
   color: var(--textColor);
 }
 .homeText .btns .btn:nth-child(2) {
