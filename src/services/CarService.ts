@@ -22,7 +22,7 @@ class CarService extends BaseService<GetAllCarsModel,GetByCarIdModel,AddCarReque
 
     getAllActiveCars(){
 
-            return axiosInstance.get<GetAllCarsModel>('cars/getallisactive?active='+true);
+            return axiosInstance.get<GetAllCarsModel>('cars/getallisactive?isActive='+true);
 
     }
     
