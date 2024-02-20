@@ -8,8 +8,20 @@ export interface UserModel {
     birthDate: string;
     idCardNumber: string;
     address: string | null;
-    city: string | null;
-    district: string | null;
+    city:{
+      id: number,
+      name: string,
+
+    };
+    district:{
+      id: number,
+      districtName:string,
+      city:{
+        id: number,
+        name: string,
+  
+      };
+    } ;
     role: string;
     imageUrl: string;
     customer:{
