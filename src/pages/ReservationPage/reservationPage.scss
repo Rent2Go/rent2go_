@@ -11,9 +11,10 @@
       position: absolute;
       left: 25%;
       right: 25%;
+      top:0;
       text-align: center;
       z-index: 0;
-      padding: 0rem 2rem;
+      padding: 6rem 9rem;
       margin:0 auto;
       img {
         width: 100%;
@@ -222,4 +223,80 @@
 }
 #simple-popper-assistance {
   left: 30% !important;
+}
+
+@media screen and (min-width:420px) {
+  .reservation{
+    padding: 4rem 0;
+    .secContainer{
+      padding: 2rem 1rem;
+      margin: 0;
+      .secContent{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .topContent{
+          flex-direction: column;
+          align-items: flex-start;
+          margin-bottom: 0.5rem;
+          .dateContentContainer{
+            align-items: flex-start;
+          }
+        }
+        .middleContent{
+          flex-direction: column;
+          align-items: flex-start;
+          .priceCardContainer{
+            .priceCard{
+              align-items: flex-start;
+              p{
+                gap:0 0.5rem;
+                text-align: left;
+              }
+            }
+          }
+        }
+        .bottomContainer{
+          flex-direction: column;
+          align-items: flex-start;
+          .packageContainer{
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            row-gap: 1rem;
+            div{
+              column-gap: 0;
+            }
+            
+          }
+          .actionContainer{
+            flex-direction: column;
+            align-items: flex-start;
+            .radioContainer{
+              margin: 1rem 0;
+              flex-direction: column;
+              align-items: flex-start;
+              .css-j204z7-MuiFormControlLabel-root {
+               margin-right: 5px;
+            }
+            .css-ahj2mt-MuiTypography-root {
+              font-size: 10px !important;
+          }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width:640px) {
+}
+@media screen and (min-width:770px) {
+}
+@media screen and (min-width:940px) {
+}
+@media screen and (min-width:1024px) {
+}
+@media screen and (min-width:1440px) {
 }

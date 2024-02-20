@@ -167,7 +167,7 @@ const ReservationPage = () => {
       </Helmet>
       <Navbar />
 
-      <div className="reservation ">
+      <div className="reservation">
         <div className="secContainer">
 
           <div className="imgContainer">
