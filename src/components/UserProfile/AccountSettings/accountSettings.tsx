@@ -1,11 +1,10 @@
-
-import React from "react";
+import React, { useState } from "react";
 import "./accountSettings.css";
 import { useTranslation } from "react-i18next";
-import { Form, Formik } from "formik";
+import { Field, Form, Formik } from "formik";
 import FormikInput from "../../FormikInput/FormikInput";
 import * as Yup from "yup";
-
+import { UserModel } from "../../../models/user/UserModel";
 
 const AccountSettings = () => {
   const { t } = useTranslation();
@@ -38,7 +37,7 @@ const AccountSettings = () => {
       .required("Nationality Id field cannot be empty"),
     dateOfBirth: Yup.date().required("Date of Birth field cannot be empty"),
   });
-
+  const [user, setUser] = useState<UserModel>();
   const handleSubmit = () => {};
 
   return (
@@ -51,6 +50,26 @@ const AccountSettings = () => {
           onSubmit={handleSubmit}
         >
           <Form>
+            <div className="row">
+              <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
+                <div className="imgDiv">
+                  {user?.imageUrl ? (
+                    <img
+                      src={`/assets/img/userImages/${user.imageUrl}`}
+                      alt="profile"
+                    />
+                  ) : (
+                    <img
+                      src="/assets/img/userImages/user-default.jpg"
+                      alt="default-img"
+                    />
+                  )}
+                </div>
+              </div>
+              <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
+                <FormikInput type="file" name="imgUrl" />
+              </div>
+            </div>
             <div className="row">
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
                 <FormikInput

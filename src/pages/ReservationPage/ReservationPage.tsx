@@ -7,7 +7,13 @@ import FormControl from "@mui/material/FormControl";
 import { Unstable_Popup as BasePopup } from "@mui/base/Unstable_Popup";
 import { CiCircleInfo } from "react-icons/ci";
 
-import { Navbar, Footer, CustomerCard, PriceCard, DiscountCode } from "../../components";
+import {
+  Navbar,
+  Footer,
+  CustomerCard,
+  PriceCard,
+  DiscountCode,
+} from "../../components";
 
 import { CarModel } from "../../models/responses/cars/GetCar";
 
@@ -24,20 +30,17 @@ import { setAction } from "../../store/slices/rentalSlice";
 import UserService from "../../services/UserService";
 import { UserModel } from "../../models/user/UserModel";
 
-
 const ReservationPage = () => {
   const settings = useSelector((state: any) => state.settings.setting);
   const { startDate, endDate } = useSelector((state: any) => state.rentalDate);
   const auth = useAuth();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-
 
   console.log(auth.authInformation.user.email);
   const params = useParams<{ id: string }>();
   const [rentals, setRentals] = useState<CarModel>();
   const [user, setUser] = useState<UserModel>();
-
 
   //const result = useSelector((state:any) => state);
   //console.log(result);
@@ -47,25 +50,20 @@ const ReservationPage = () => {
   //   sessionStorage.setItem('rentalInfoSlice', JSON.stringify(car));
   // }, [car])
 
-
-
-
   useEffect(() => {
     if (params.id) {
       getRentals(params.id);
     }
     if (auth.authInformation.user.email) {
-      getUsersByEmail(auth.authInformation.user.email!)
+      getUsersByEmail(auth.authInformation.user.email!);
     }
-
   }, [params.id]);
 
   const getRentals = async (id: string) => {
     try {
       const response = await CarService.getById(parseInt(id));
       setRentals(response.data.data);
-      dispatch(setAction({car:response.data.data}))
-
+      dispatch(setAction({ car: response.data.data }));
     } catch (error) {
       console.error("Error fetching rentals:", error);
     }
@@ -74,13 +72,13 @@ const ReservationPage = () => {
   const getUsersByEmail = async (email: string) => {
     try {
       const response = await UserService.getByEmail(email);
-      setUser(response.data.data); console.log(response.data.data)
-      dispatch(setAction({user:response.data.data}))
+      setUser(response.data.data);
+      console.log(response.data.data);
+      dispatch(setAction({ user: response.data.data }));
     } catch (error) {
       console.error("Error fetching rentals:", error);
     }
   };
-
 
   {
     /*POPUP*/
@@ -119,39 +117,28 @@ const ReservationPage = () => {
     setSelectedPaymentMethod(event.target.value);
   };
 
-
-
   const isAuthenticated = () => {
-
-    if (((auth.authInformation.user.email === '' || null || undefined))) {
+    if (auth.authInformation.user.email === "" || null || undefined) {
       alert("You have to be authenticated before you can  make a reservation.");
-      navigate("/sign-up")
+      navigate("/sign-up");
     }
-    if(user?.district===null){
+    if (user?.district === null) {
       alert("Your user information is missing, please fill it in!!!");
-      navigate("/profile/location-settings")
+      navigate("/profile/location-settings");
     }
-  }
-
-
-
-
-
+  };
 
   const rentStartDate = new Date(startDate);
   const rentEndDate = new Date(endDate);
-  const rentDay = (differenceInDays(endDate, startDate) + 1);
+  const rentDay = differenceInDays(endDate, startDate) + 1;
 
-  dispatch(setAction({
-    startDate: startDate,
-    endDate: endDate,
-    day: rentDay,
-  }))
-
-
-
-
-
+  dispatch(
+    setAction({
+      startDate: startDate,
+      endDate: endDate,
+      day: rentDay,
+    })
+  );
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -161,15 +148,13 @@ const ReservationPage = () => {
   };
   return (
     <>
-      <Helmet >
+      <Helmet>
         <title>{settings.title} - Reservation </title>
-
       </Helmet>
       <Navbar />
 
-      <div className="reservation ">
+      <div className="reservation">
         <div className="secContainer">
-
           <div className="imgContainer">
             <img src={rentals?.imageUrl} alt="carImage" />
           </div>
@@ -183,11 +168,8 @@ const ReservationPage = () => {
                 <CustomerCard />
               </div>
               <div className="dateContentContainer">
-
                 <p>
-
                   <b>Start Date : </b> {rentStartDate.toDateString()}
-
                 </p>
                 <p>
                   <span>
@@ -213,7 +195,6 @@ const ReservationPage = () => {
                     {rentals?.model?.brand.name} {rentals?.model?.name}
                   </span>
                 </p>
-
 
                 <p>
                   <span>
@@ -321,12 +302,10 @@ const ReservationPage = () => {
                   </div>
                 </div>
               </form>
-
             </div>
             <div className="noteContainer"></div>
           </div>
         </div>
-
       </div>
       <Footer />
     </>
@@ -334,4 +313,3 @@ const ReservationPage = () => {
 };
 
 export default ReservationPage;
-

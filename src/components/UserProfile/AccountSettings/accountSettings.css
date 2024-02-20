@@ -29,6 +29,13 @@
 }
 .accountSettings .form {
   padding: 10px 30px;
+  .imgDiv {
+    text-align: center;
+    img {
+      width: 128px;
+      border-radius: 0.5rem;
+    }
+  }
 }
 .accountSettings .form label {
   font-size: 1.2rem;
@@ -59,4 +66,4 @@
     font-size: 1.1rem;
     margin-top: 17px;
   }
-}/*# sourceMappingURL=accountSettings.css.map */
+} /*# sourceMappingURL=accountSettings.css.map */
