@@ -3,6 +3,7 @@ import './YourReservations.css'
 import { RentalModel } from '../../../models/responses/rentals/GetRental';
 import RentalService from '../../../services/RentalService';
 import { useTranslation } from "react-i18next";
+import { RiUserFollowLine, RiUserLocationLine } from "react-icons/ri";
 
 
 const YourReservations = () => {
@@ -47,8 +48,8 @@ const YourReservations = () => {
                 <td>{item.car.model.name}</td>
                 <td>
                   <p className='p1'>
-                    {item.returnDate == null && <span className='reddot'>{t("inUse")}</span>}
-                    {item.returnDate != null && <span className='greendot'>{t("delivered")}</span>}
+                    {item.returnDate == null && <div className='icon1'><RiUserLocationLine /></div>}
+                    {item.returnDate != null && <div className='icon2'><RiUserFollowLine /></div>}
                   </p>
                 </td>
               </tr>
@@ -56,6 +57,16 @@ const YourReservations = () => {
           })}
         </tbody>
       </table>
+      <div className='information'>
+        <div className='inUse'>
+          <RiUserLocationLine />
+          <span>{" : " + t("inUse")}</span>
+        </div>
+        <div className='delivered'>
+          <RiUserFollowLine />
+          <span>{" : " + t("delivered")}</span>
+        </div>
+      </div>
     </div>
   )
 }

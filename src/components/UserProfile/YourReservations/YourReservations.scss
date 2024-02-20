@@ -16,6 +16,12 @@
         color: var(--primaryColor);
         line-height: initial;
         margin-bottom: 0px;
+        .icon2 {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: chartreuse;
+        }
     }
     table {
         width: 100%;
@@ -47,23 +53,104 @@
                         display: flex;
                         align-items: center;
                         gap: 5px;
-                        padding-left: 1rem;
-                    }
-                    .greendot {
-                        width: 10px;
-                        height: 15px;
-                        border-radius: 50%;
-                        background-color: greenyellow;
-                    }
-                    .reddot {
-                        width: 10px;
-                        height: 15px;
-                        border-radius: 50%;
-                        background-color: red;
+                        
                     }
                 }
             }
         }
     }
+    .information {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 50px;
+        .inUse, .delivered {
+            color: var(--primaryColor);
+        }
+    }
+    .information > div {
+        margin-left: 10px; /* İçerikler arasında bir boşluk bırakır */
+      }
+}
 
+
+@media screen and (max-width: 520px) {
+    .yourReservations {
+        .mainHead1 {
+            font-size: 24px;
+        }
+        .p1 {
+            .icon2 {
+                height: 15px;
+                width: 15px;
+            }
+        }
+        table {
+            font-size: 10px;
+            tr {
+                th {
+                    padding: 10px 5px;
+                }
+                td {
+                    padding: 20px 5px;
+                }
+            }
+        }
+        .information {
+            .inUse, .delivered {
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 520px) and (max-width: 770px) {
+    .yourReservations {
+        .mainHead1 {
+            font-size: 27px;
+        }
+        .p1 {
+            .icon2 {
+                height: 15px;
+                width: 15px;
+            }
+        }
+        table {
+            font-size: 11px;
+            tr {
+                th {
+                    padding: 10px 10px;
+                }
+                td {
+                    padding: 20px 10px;
+                }
+            }
+        }
+        .information {
+            .inUse, .delivered {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 770px) and (max-width: 996px) {
+    .yourReservations {
+        .p1 {
+            .icon2 {
+                height: 16px;
+                width: 16px;
+            }
+        }
+        table {
+            font-size: 13px;
+            tr {
+                th {
+                    padding: 10px 15px;
+                }
+                td {
+                    padding: 20px 20px;
+                }
+            }
+        }
+    }
 }
