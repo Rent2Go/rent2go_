@@ -1,4 +1,4 @@
-![Logo](https://rentogo.com.tr/screenshoots/roadmap.png)
+![roadmap](https://rentogo.com.tr/screenshoots/roadmap.jpg)
 
 
 # Rent2Go
