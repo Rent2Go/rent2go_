@@ -104,7 +104,7 @@ const Navbar = (props: Props) => {
                 </Link>
                 <Link
                   className="text textAction btn"
-                  to="/sign-up"
+                  to="/sign-in"
                   onClick={logout}
                 >
                   {t("logout")}
