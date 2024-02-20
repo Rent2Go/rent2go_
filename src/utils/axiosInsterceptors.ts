@@ -35,7 +35,9 @@ axiosInstance.interceptors.request.use(
 			//----------------------------------------------------------------
 			const refreshToken = TokenService.getRefreshToken()
 			const decodeRefreshToken = jwtDecode<TokenUser>(refreshToken || '');
-			const expirationDateRef = new Date(decode.exp).getTime() * x;
+			console.log(decodeRefreshToken);
+			
+			const expirationDateRef = new Date(decodeRefreshToken.exp).getTime() * x;
 			const nowDateRef = new Date().getTime();
 
 
@@ -44,7 +46,7 @@ axiosInstance.interceptors.request.use(
 			if (expirationDate <= nowDate) {
 
 
-				if (expirationDateRef <= nowDate) {
+				if (expirationDateRef <= nowDateRef) {
 
 					localStorage.removeItem("token")
 					localStorage.removeItem("refreshToken")
