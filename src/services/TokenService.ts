@@ -20,9 +20,9 @@ class TokenService {
     //------------------------------------------------------------------------------------------------//
     // refreshToken Service Methods
 
-    getRefreshToken(refreshToken: string) {
+    getRefreshToken() {
 
-       return localStorage.getItem(refreshToken)
+       return localStorage.getItem('refreshToken')
     }
 
     setrefreshToken(refreshToken: string) {

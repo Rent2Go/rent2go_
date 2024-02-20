@@ -1,6 +1,6 @@
 import { AddRentalRequest } from "../models/requests/rental/AddRentalRequest";
-import { AddResponse } from "../models/responses/AddResponse";
-import { CarModel } from "../models/responses/cars/GetCar";
+import { UpdateResponse } from "../models/responses/UpdateResponse";
+import { AddRentalResponse } from "../models/responses/rentals/AddRentalResponse";
 import { GetAllRentalsModel } from "../models/responses/rentals/GetAllRentals";
 import { RentalModel } from "../models/responses/rentals/GetRental";
 import axiosInstance from "../utils/axiosInsterceptors";
@@ -15,9 +15,15 @@ class RentalService{
     }
     addRental(rental:AddRentalRequest){
 
-        return axiosInstance.post<AddResponse>('rentals',rental);
+        return axiosInstance.post<AddRentalResponse>('rentals',rental);
 
     }
+    deleteById(id:number){
+    
+
+        return axiosInstance.delete<UpdateResponse>(`rentals/${id}`)
+    }
+
 
 }
     

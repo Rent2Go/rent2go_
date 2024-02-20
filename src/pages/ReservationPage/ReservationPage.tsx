@@ -64,6 +64,7 @@ const ReservationPage = () => {
     try {
       const response = await CarService.getById(parseInt(id));
       setRentals(response.data.data);
+      dispatch(setAction({car:response.data.data}))
 
     } catch (error) {
       console.error("Error fetching rentals:", error);
@@ -74,6 +75,7 @@ const ReservationPage = () => {
     try {
       const response = await UserService.getByEmail(email);
       setUser(response.data.data); console.log(response.data.data)
+      dispatch(setAction({user:response.data.data}))
     } catch (error) {
       console.error("Error fetching rentals:", error);
     }
@@ -144,8 +146,6 @@ const ReservationPage = () => {
     startDate: startDate,
     endDate: endDate,
     day: rentDay,
-    car: rentals,
-    user: user
   }))
 
 
