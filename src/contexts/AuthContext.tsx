@@ -25,6 +25,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         return {
           isAuthenticated: true,
           user: {
+            id:decoded.id,
             firstname: decoded.firstname,
             phoneNumber: decoded.phoneNumber,
             lastname: decoded.lastname,
@@ -39,6 +40,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     return {
       isAuthenticated: false,
       user: {
+        id:0,
         firstname:'',
         phoneNumber: '',
         lastname: '',
