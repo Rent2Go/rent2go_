@@ -24,7 +24,7 @@ const SuccessPage = (props: Props) => {
         </div>
         <div className="actionContainer">
           <Link
-            to="/profile/your-reservation"
+            to="/sign-in"
             type="button"
             className="btn btn-profile"
           >
