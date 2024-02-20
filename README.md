@@ -14,6 +14,12 @@ Rent2Go is an administration client built with React for managing rental-related
 - [Şeyhmus EROL](https://www.github.com/ShmsErl)
 - [Soner ŞEYLAN](https://www.github.com/sonersyln)
 
+![Feyza KARANFİL ERAT](https://github.com/Rent2Go/rent2go_/blob/feyza/authors/2n.png)
+![Yağmur ÇURKU](https://github.com/Rent2Go/rent2go_/blob/feyza/authors/1n.png)
+![Şeyhmus EROL](https://github.com/Rent2Go/rent2go_/blob/feyza/authors/4n.png)
+![Soner ŞEYLAN](https://github.com/Rent2Go/rent2go_/blob/feyza/authors/3n.png)
+
+
 ![App Screenshot](https://rentogo.com.tr/screenshoots/Screenshot_3.png)
 
 ## Demo
