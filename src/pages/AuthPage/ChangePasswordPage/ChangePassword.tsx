@@ -1,5 +1,5 @@
 // React imports
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 // Formik imports
@@ -76,6 +76,21 @@ const ChangePassword = (props: Props) => {
         }
       });
   };
+
+  useEffect(() => {
+    // Geri düğmesinin tıklandığında önceki sayfaya dönmesini engelle
+    const handleBackButton = (e:any) => {
+      e.preventDefault();
+      navigate("/"); 
+    };
+
+    window.history.pushState(null, "", window.location.pathname);
+    window.addEventListener('popstate', handleBackButton);
+
+    return () => {
+      window.removeEventListener('popstate', handleBackButton);
+    };
+  }, [navigate]);
 
   return (
     <div className="auth">
