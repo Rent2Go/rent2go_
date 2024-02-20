@@ -34,48 +34,48 @@ axiosInstance.interceptors.request.use(
 
 			//----------------------------------------------------------------
 			const refreshToken = TokenService.getRefreshToken()
-				const decodeRefreshToken = jwtDecode<TokenUser>(refreshToken ||'');
-				const expirationDateRef = new Date(decode.exp).getTime() * x;
-				const nowDateRef = new Date().getTime();
-		
+			const decodeRefreshToken = jwtDecode<TokenUser>(refreshToken || '');
+			const expirationDateRef = new Date(decode.exp).getTime() * x;
+			const nowDateRef = new Date().getTime();
+
 
 
 
 			if (expirationDate <= nowDate) {
-				
 
-				if(expirationDateRef <= nowDate){
-					
+
+				if (expirationDateRef <= nowDate) {
+
 					localStorage.removeItem("token")
 					localStorage.removeItem("refreshToken")
 					toast.warn("Oturum süresi doldu tekrar giriş yapın.")
-					setTimeout(() =>{
+					setTimeout(() => {
 						window.location.href = "/sign-up";
-					},2000)
+					}, 2000)
 
 				}
-				else{
-				
-				try {
-					const localRefreshToken = TokenService.getRefreshToken()
-					const RefreshTokenRequest = {
-						token: localRefreshToken
+				else {
+
+					try {
+						const localRefreshToken = TokenService.getRefreshToken()
+						const RefreshTokenRequest = {
+							token: localRefreshToken
+						}
+						const response = await axios.post('http://localhost:8080/api/refreshtoken', RefreshTokenRequest);
+						const { token, refreshToken } = response.data;
+
+
+						TokenService.setToken(token);
+						TokenService.setrefreshToken(refreshToken);
+
+
+						config.headers.Authorization = `Bearer ${token}`;
+					} catch (error) {
+
+						console.error('Error refreshing token:', error);
+
 					}
-					const response = await axios.post('http://localhost:8080/api/refreshtoken', RefreshTokenRequest);
-					const { token, refreshToken } = response.data;
-				
-
-					TokenService.setToken(token);
-					TokenService.setrefreshToken(refreshToken);
-
-
-					config.headers.Authorization = `Bearer ${token}`;
-				} catch (error) {
-
-					console.error('Error refreshing token:', error);
-
 				}
-			}
 			}
 			else {
 
