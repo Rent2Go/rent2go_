@@ -254,7 +254,7 @@
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 425px) {
   .carPage {
     padding: 1rem 2rem;
     .secContainer {
@@ -275,15 +275,17 @@
         }
       }
       .secContent {
-        grid-template-columns: repeat(1, 1fr);
-        align-items: flex-start;
+       display: flex!important;
+       flex-direction: column;
         .filterContainer {
           grid-column-start: 1;
           grid-column-end: 2;
 
           .filter {
-            flex-direction: column;
-            align-items: normal;
+           display: grid;
+           grid-template-columns: 33% 33% 33%;
+           align-items: center!important;
+           column-gap: 0.5rem;
             .filterRow {
               display: flex;
               align-items: center;
@@ -373,14 +375,14 @@
             gap: 0.5rem;
             align-items: center;
             justify-content: center;
-            .searchInput {
+            .searchInput{
               width: 60%;
             }
           }
         }
       }
       .secContent {
-        grid-template-columns: repeat(3, 1fr) !important;
+        grid-template-columns: repeat(3, 1fr)!important;
         align-items: flex-start;
         column-gap: 2rem;
         .filterContainer {
@@ -418,20 +420,20 @@
           }
         }
         .carContainer {
-          display: grid;
-          grid-column-start: 2;
-          grid-column-end: 4 !important;
+         display: grid;
+         grid-column-start: 2;
+         grid-column-end: 4!important;
           .searchDiv {
             margin: 1rem 0 !important;
             text-align: center;
             padding: 0.25rem 1rem;
             justify-content: center;
             align-items: center;
-            label {
+            label{
               font-size: 12px;
             }
             .searchInput {
-              width: 66% !important;
+              width: 66%!important;
             }
           }
           .singleCar {
@@ -454,30 +456,31 @@
                 row-gap: 0;
                 font-size: 10px;
                 margin-bottom: -2rem;
-                span {
+                span{
                   font-size: 15px;
+                  
                 }
-                .miles,
-                .AWD {
-                  margin-right: 1rem;
+                .miles, .AWD{
+                  margin-right:1rem;
                 }
-                .carTitle {
+                .carTitle{
                   font-size: 20px;
                   margin-bottom: 0;
                 }
-                .contentDiv {
+                .contentDiv{
                   display: flex;
                   flex-direction: row;
-                  margin: 1rem 0;
+                  margin:1rem 0;
                   justify-content: center;
                   align-items: center;
                   padding: 0;
-                  div {
+                  div{
                     display: flex;
                     flex-direction: row;
                     justify-content: flex-start;
                     align-items: center;
                     padding: 0;
+                   
                   }
                 }
               }

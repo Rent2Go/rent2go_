@@ -10,7 +10,7 @@ import { GetSettingsResponse } from '../models/responses/settings/GetSettingsRes
 
 class SettingsService{
     getAll(){
-        return axiosInstance.get<GetAllUsersModel>("users")
+        return axiosInstance.get<GetSettingsResponse>("settings")
     }
 
     getById(id:number){

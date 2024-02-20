@@ -259,7 +259,7 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 425px) {
   .carPage {
     padding: 1rem 2rem;
   }
@@ -282,16 +282,19 @@
     justify-content: center;
   }
   .carPage .secContainer .secContent {
-    grid-template-columns: repeat(1, 1fr);
-    align-items: flex-start;
+    display: flex !important;
+    flex-direction: column;
   }
   .carPage .secContainer .secContent .filterContainer {
     grid-column-start: 1;
     grid-column-end: 2;
   }
   .carPage .secContainer .secContent .filterContainer .filter {
-    flex-direction: column;
-    align-items: normal;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    align-items: center !important;
+    -moz-column-gap: 0.5rem;
+         column-gap: 0.5rem;
   }
   .carPage .secContainer .secContent .filterContainer .filter .filterRow {
     display: flex;
@@ -473,8 +476,7 @@
   .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv span {
     font-size: 15px;
   }
-  .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv .miles,
-  .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv .AWD {
+  .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv .miles, .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv .AWD {
     margin-right: 1rem;
   }
   .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv .carTitle {
