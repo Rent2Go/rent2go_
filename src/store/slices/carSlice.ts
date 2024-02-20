@@ -12,7 +12,7 @@ export const fetchCarData = createAsyncThunk("fetchCarData", async (args, thunkA
     return state.car.cars;
   }
 
-  const response = await CarService.getAll();
+  const response = await CarService.getAllActiveCars();
 
   return response.data.data;
 
