@@ -1,6 +1,7 @@
 
 export {default as Register} from "./AuthPage/Register/Register"
 export {default as VerificationSuccessful} from "./ResponsePages/EmailVerification/VerificationSuccessful"
+export {default as VerificationFailed} from "./ResponsePages/EmailVerification/VerificationFailed"
 export {default as HomePage} from "./Homepage/Homepage"
 export {default as CarPage} from "./CarPage/CarPage"
 export {default as BrandPage} from "./BrandPage/BrandPage"

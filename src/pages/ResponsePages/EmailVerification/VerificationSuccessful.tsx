@@ -5,7 +5,7 @@ const VerificationSuccessful: FC = () => {
   const history = useNavigate();
 
   const handleButtonClick = () => {
-    window.location.href = "https://rentogo.com.tr/sign-up";
+    window.location.href = "https://rentogo.com.tr/sign-in";
   };
 
   return (

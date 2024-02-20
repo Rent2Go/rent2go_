@@ -6,7 +6,6 @@ import {
   CarPage,
   HomePage,
   Register,
-  BrandPage,
   OurTeamPage,
   ContactPage,
   PrivacyPolicy,
@@ -33,6 +32,7 @@ import {
   SuccessfulPayment,
   SuccessfulResetPassword,
   FailedPayment,
+  VerificationFailed,
 } from "../pages";
 
 const Router = () => {
@@ -78,6 +78,7 @@ const Router = () => {
         <Route path="/payment-failed" element={<FailedPayment />} />
         <Route path="/reset-password-successful" element={<SuccessfulResetPassword />}/>
         <Route path="/email-verification-successful" element={<VerificationSuccessful />}/>
+        <Route path="/email-verification-failed" element={<VerificationFailed />}/>
       </Routes>
     </PaymentProvider>
   );
