@@ -9,7 +9,7 @@ export {default as ContactPage} from "./ContactPage/ContactPage"
 export {default as ProfilePage} from "./ProfilePage/ProfilePage"
 export {default as ResetPassword} from "./ResetPasswordPage/ResetPassword"
 export {default as ChangePassword} from "./ChangePasswordPage/ChangePassword"
-export {default as SuccessPage} from "./messagepage/SuccessPage"
+export {default as SuccessPage} from "./MessagePages/SuccessPage"
 
 
 export {default as ReservationPage} from "./ReservationPage/ReservationPage"
