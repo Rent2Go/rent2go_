@@ -48,7 +48,7 @@ axiosInstance.interceptors.request.use(
 
 					localStorage.removeItem("token")
 					localStorage.removeItem("refreshToken")
-					toast.warn("Oturum süresi doldu tekrar giriş yapın.")
+					toast.warn("Session has expired, log in again...")
 					setTimeout(() => {
 						window.location.href = "/sign-up";
 					}, 2000)
@@ -61,7 +61,7 @@ axiosInstance.interceptors.request.use(
 						const RefreshTokenRequest = {
 							token: localRefreshToken
 						}
-						const response = await axios.post('http://localhost:8080/api/refreshtoken', RefreshTokenRequest);
+						const response = await axios.post('https://api.rentogo.com.tr/api/refreshtoken', RefreshTokenRequest);
 						const { token, refreshToken } = response.data;
 
 
@@ -75,18 +75,6 @@ axiosInstance.interceptors.request.use(
 						console.error('Error refreshing token:', error);
 
 					}
-					const response = await axios.post('https://api.rentogo.com.tr/api/refreshtoken', RefreshTokenRequest);
-					const { token, refreshToken } = response.data;
-				
-
-					TokenService.setToken(token);
-					TokenService.setrefreshToken(refreshToken);
-
-
-					config.headers.Authorization = `Bearer ${token}`;
-				} catch (error) {
-
-					console.error('Error refreshing token:', error);
 
 				}
 			}
