@@ -16,7 +16,7 @@ import "./search.css";
 type Props = {};
 
 const Search = (props: Props) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
@@ -37,24 +37,35 @@ const Search = (props: Props) => {
       alert(t("theEndDateCannotBe"));
     } else {
       setSelectedEndDate(newEndDate);
-      const date = new Date(1707931742109);
-console.log(date);
     }
   };
 
   const handleSubmitSearch = async () => {
     if (selectedStartDate && selectedEndDate) {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0); // Reset hours, minutes, seconds and milliseconds to compare only the dates
+      
+      if (selectedStartDate < today) {
+        alert(t("startDateInPast"));
+        return; // Arama işlemi gerçekleştirilmez
+      }
+
       const startDateTimestamp = selectedStartDate.getTime(); 
       const endDateTimestamp = selectedEndDate.getTime(); 
+      
+      if (differenceInDays(endDateTimestamp, startDateTimestamp) > 6) {
+        alert(t("dateDifferenceExceedsLimit"));
+        return; // Arama işlemi gerçekleştirilmez
+      }
+      
       dispatch(setStartDate(startDateTimestamp)); 
       dispatch(setEndDate(endDateTimestamp)); 
-    
-      console.log(  differenceInDays(endDateTimestamp, startDateTimestamp) ); 
       navigate("/cars");
     } else {
       alert(t("pleaseSelectStartDateAndEndDate")); 
     }
-  }
+  };
+
   useEffect(() => {
 
   }, [selectedStartDate, selectedEndDate]);
