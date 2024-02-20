@@ -333,11 +333,11 @@ const UpdateCar = () => {
           <ToastContainer position="bottom-right" />
         </div>
 
-
-        <div className="secContainer">
-          <div className="titleContainer">
+        <div className="titleContainer">
             <h2>Update Car Image</h2>
           </div>
+        <div className="secContainer dropzoneContainer">
+         
           <div className="imgContainerDetail ">
             <img className='show-image' src={car.imageUrl} alt={car.model.brand.name} />
           </div>
@@ -346,7 +346,6 @@ const UpdateCar = () => {
               <Form>
                 <div className="row">
                   <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
-                    <label className="mb-3 mt-5">Images</label>
                     <Dropzone
 
                       getUploadParams={getUploadParams}

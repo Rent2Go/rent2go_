@@ -1,28 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AiOutlineLogout } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 import sidebarLinks from "./sidebarLinks";
 
 import "react-toastify/dist/ReactToastify.css";
 import "./sidebar.css";
+
 type Props = {};
 
 const Sidebar = (props: Props) => {
-
   const logout = () => {
     localStorage.removeItem("token");
+  };
 
-  }
   return (
     <div className="sidebar">
       <div className="sidebar__top">
         <h2>
-          <img src="assets/images/logo-dark.png" alt="logo" /> Rent2go
+          <img
+            src="https://rentogo.com.tr/screenshoots/logo-dark.png"
+            alt="logo"
+          />{" "}
+          Rent2go <button type="button" className="btn"><GiHamburgerMenu /></button>
         </h2>
+        
       </div>
       <div className="sidebar__content">
+     
+
         <div className="menu">
           <ul className="nav__list">
             {sidebarLinks.map((item, index) => (
@@ -47,8 +55,7 @@ const Sidebar = (props: Props) => {
         <div className="sidebar__bottom">
           <span>
             <Link to="/login" onClick={logout}>
-              <AiOutlineLogout />
-               {" "}Logout
+              <AiOutlineLogout /> Logout
             </Link>
             <ToastContainer position="top-center" closeButton />
           </span>

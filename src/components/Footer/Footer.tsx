@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./footer.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-
+import Aos from "aos";
+import i18n from "../../Language/language";
 const currentDate = new Date();
 const currentYear = currentDate.getFullYear();
+
 type Props = {};
 
 const Footer = (props: Props) => {
   const { t } = useTranslation();
+  useEffect(() => {
+    if (i18n.isInitialized) {
+      Aos.init({ duration: 3000, offset: 20 });
+    } else {
+      i18n.on("initialized", () => {
+        Aos.init({ duration: 3000, offset: 20 });
+      });
+    }
+  }, []);
   return (
     <div className="footer">
       <div className="footerContainer container">

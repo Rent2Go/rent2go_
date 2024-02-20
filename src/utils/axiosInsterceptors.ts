@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 const axiosInstance = axios.create({
 
 
-	baseURL: "http://localhost:8080/api/",
+	baseURL: "https://api.rentogo.com.tr/api/",
 
 });
 
@@ -75,6 +75,19 @@ axiosInstance.interceptors.request.use(
 						console.error('Error refreshing token:', error);
 
 					}
+					const response = await axios.post('https://api.rentogo.com.tr/api/refreshtoken', RefreshTokenRequest);
+					const { token, refreshToken } = response.data;
+				
+
+					TokenService.setToken(token);
+					TokenService.setrefreshToken(refreshToken);
+
+
+					config.headers.Authorization = `Bearer ${token}`;
+				} catch (error) {
+
+					console.error('Error refreshing token:', error);
+
 				}
 			}
 			else {

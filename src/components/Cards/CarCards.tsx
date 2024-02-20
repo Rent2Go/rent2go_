@@ -28,6 +28,7 @@ const CarCards = (props: Props) => {
               {props.car.model.brand.name} {props.car.model.name}{" "}
               {props.car.year}
             </p>
+            <div className="contentDiv">
             <div>
               <span className="carLabel">
                 <BiTachometer />{" "}
@@ -50,6 +51,7 @@ const CarCards = (props: Props) => {
               </span>
               <span className="miles">{props.car.color.name}</span>
             </div>
+            </div>
           </div>
           <div className="actionDiv">
             <div className="actionRow">
@@ -57,7 +59,7 @@ const CarCards = (props: Props) => {
               <span className="carLabel">
                 <GrMoney />
               </span>
-              <span className="price">{props.car.dailyPrice} ₺</span>
+              <span className="price">{props.car.dailyPrice.toFixed(2)} ₺</span>
             </div>
             <div className="actionRow">
               <Link

@@ -1,4 +1,62 @@
-# Getting Started with Create React App
+
+# Rent2Go
+
+Rent2Go is an administration client built with React for managing rental-related tasks. This application provides a user-friendly interface for handling various aspects of a rental service, including managing users, rentals, and other relevant data.
+
+
+![Logo](https://rentogo.com.tr/screenshoots/logo-dark.png)
+
+
+## Authors
+
+- [Feyza KARANFİL ERAT](https://www.github.com/feyzaerat)
+- [Yağmur ÇURKU](https://www.github.com/yagmurcurku)
+- [Şeyhmus EROL](https://www.github.com/ShmsErl)
+- [Soner ŞEYLAN](https://www.github.com/sonersyln)
+
+<div style="display:flex;">
+    <img src="https://github.com/Rent2Go/rent2go_/blob/feyza/authors/2n.png" alt="Feyza KARANFİL ERAT" style="width:200px;height:200px;">
+    <img src="https://github.com/Rent2Go/rent2go_/blob/feyza/authors/1n.png" alt="Yağmur ÇURKU" style="width:200px;height:200px;">
+    <img src="https://github.com/Rent2Go/rent2go_/blob/feyza/authors/4n.png" alt="Şeyhmus EROL" style="width:200px;height:200px;">
+    <img src="https://github.com/Rent2Go/rent2go_/blob/feyza/authors/3n.png" alt="Soner ŞEYLAN" style="width:200px;height:200px;">
+</div>
+<br>
+
+
+
+![App Screenshot](https://rentogo.com.tr/screenshoots/Screenshot_3.png)
+
+## Demo
+
+https://rentogo.com.tr
+
+![App Screenshot](https://rentogo.com.tr/screenshoots/Screenshot_2.png)
+
+
+## Documentation
+
+[Documentation](https://linktodocumentation)
+
+
+## Features
+
+- Switch Language
+- Cross platform
+- Admin Dashboard
+- Three Payment Methods
+
+
+
+![App Screenshot](https://rentogo.com.tr/screenshoots/Screenshot_4.png)
+## Installation
+
+Install my-project with npm
+
+```bash
+  npm install my-project
+  cd my-project
+```
+    # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

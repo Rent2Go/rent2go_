@@ -3,7 +3,7 @@ import store from "../store/store";
 import { decreaseRequestCount, increaseRequestCount } from "../store/slices/loadingSlice";
 
 const axiosInstance = axios.create({
-	baseURL: "http://localhost:8080/api/",
+	baseURL: "https://api.rentogo.com.tr/api/",
 });
 
 axiosInstance.interceptors.request.use(
