@@ -14,10 +14,10 @@ Rent2Go is an administration client built with React for managing rental-related
 - [Şeyhmus EROL](https://www.github.com/ShmsErl)
 - [Soner ŞEYLAN](https://www.github.com/sonersyln)
 
-<img src="https://github.com/Rent2Go/rent2go_/blob/feyza/authors/2n.png" alt="Feyza KARANFİL ERAT" style="width:150px;height:150px;">
-<img src="https://github.com/Rent2Go/rent2go_/blob/feyza/authors/1n.png" alt="Yağmur ÇURKU" style="width:250px;height:250px;">
-<img src="https://github.com/Rent2Go/rent2go_/blob/feyza/authors/4n.png" alt="Şeyhmus EROL" style="width:250px;height:250px;">
-<img src="https://github.com/Rent2Go/rent2go_/blob/feyza/authors/3n.png" alt="Soner ŞEYLAN" style="width:250px;height:250px;">
+<img src="https://github.com/Rent2Go/rent2go_/blob/feyza/authors/2n.png" alt="Feyza KARANFİL ERAT" style="width:200px;height:200px;">
+<img src="https://github.com/Rent2Go/rent2go_/blob/feyza/authors/1n.png" alt="Yağmur ÇURKU" style="width:200px;height:200px;">
+<img src="https://github.com/Rent2Go/rent2go_/blob/feyza/authors/4n.png" alt="Şeyhmus EROL" style="width:200px;height:200px;">
+<img src="https://github.com/Rent2Go/rent2go_/blob/feyza/authors/3n.png" alt="Soner ŞEYLAN" style="width:200px;height:200px;">
 
 
 
