@@ -1,15 +1,14 @@
 import React from 'react'
-import './success.css'
 import { Link } from 'react-router-dom'
-import { Footer, Navbar } from '../../components'
-
+import { Footer, Navbar } from '../../../components'
+import "../response.css"
 type Props = {}
 
-const SuccessPage = (props: Props) => {
+const SuccessfulReset = (props: Props) => {
   return (
     <>
     <Navbar />
-    <div className="success">
+    <div className="response">
       <div className="secContainer shadow-rounded-box">
         <div className="titleContainer">
           <h2>Reset Password Successful !</h2>
@@ -38,4 +37,4 @@ const SuccessPage = (props: Props) => {
   )
 }
 
-export default SuccessPage
+export default SuccessfulReset

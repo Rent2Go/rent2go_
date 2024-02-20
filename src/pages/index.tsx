@@ -1,15 +1,15 @@
-export {default as Login} from "./Login/Login"
-export {default as Register} from "./RegisterPage/Register"
-export {default as EmailVerificationSuccess} from "./RegisterPage/EmailVerificationSuccess"
+
+export {default as Register} from "./AuthPage/Register/Register"
+export {default as VerificationSuccessful} from "./ResponsePages/EmailVerification/VerificationSuccessful"
 export {default as HomePage} from "./Homepage/Homepage"
 export {default as CarPage} from "./CarPage/CarPage"
 export {default as BrandPage} from "./BrandPage/BrandPage"
 export {default as OurTeamPage} from "./OurTeamPage/OurTeamPage"
 export {default as ContactPage} from "./ContactPage/ContactPage"
 export {default as ProfilePage} from "./ProfilePage/ProfilePage"
-export {default as ResetPassword} from "./ResetPasswordPage/ResetPassword"
-export {default as ChangePassword} from "./ChangePasswordPage/ChangePassword"
-export {default as SuccessPage} from "./MessagePages/SuccessPage"
+export {default as ResetPassword} from "./AuthPage/ResetPassword/ResetPassword"
+export {default as ChangePassword} from "./AuthPage/ChangePasswordPage/ChangePassword"
+export {default as SuccessfulResetPassword} from "./ResponsePages/ResetPasswordResponse/SuccessfulReset"
 
 
 export {default as ReservationPage} from "./ReservationPage/ReservationPage"
@@ -18,8 +18,8 @@ export {default as NotFoundPage} from "./NotFoundPage/PageNotFound"
 export {default as Online} from "./PaymentPage/Online"
 export {default as Cash} from "./PaymentPage/Cash"
 export {default as BankTransfer} from "./PaymentPage/BankTransfer"
-export {default as Successful} from "./PaymentPage/payment-response/Successful"
-export {default as Failed} from "./PaymentPage/payment-response/Failed"
+export {default as SuccessfulPayment} from "./ResponsePages/PaymentResponse/SuccessfulPayment"
+export {default as FailedPayment} from "./ResponsePages/PaymentResponse/FailedPayment"
 
 
 export {default as CookiePolicy} from "./LegalPages/CookiePolicy"

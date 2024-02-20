@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Formik, Form } from "formik";
-import FormikInput from "../../components/Formik/FormikInput";
+
 import { useAuth } from "../../contexts/AuthContext";
 import { SignInRequest } from "../../../../src/models/requests/auth/SignInRequest";
 import AuthService from "../../services/AuthService";
@@ -12,6 +12,7 @@ import {
 import "./auth.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
+import { FormikInput } from "../../components";
 type Props = {};
 const Register = (props: Props) => {
 

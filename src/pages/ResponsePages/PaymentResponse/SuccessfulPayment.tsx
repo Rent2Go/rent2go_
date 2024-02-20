@@ -1,14 +1,14 @@
 import React from "react";
 import { Footer, Navbar } from "../../../components";
 import { Link } from "react-router-dom";
-import "../payment.css";
+import "../response.css"
 type Props = {};
 
-const Successful = (props: Props) => {
+const SuccessfulPayment = (props: Props) => {
   return (
     <>
       <Navbar />
-      <div className="success">
+      <div className="response">
         <div className="secContainer shadow-rounded-box">
           <div className="titleContainer">
             <h2>Payment Successful !</h2>
@@ -44,4 +44,4 @@ const Successful = (props: Props) => {
   );
 };
 
-export default Successful;
+export default SuccessfulPayment;

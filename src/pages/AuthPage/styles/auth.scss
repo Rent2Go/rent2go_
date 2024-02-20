@@ -10,10 +10,7 @@
       padding: 0em 1rem;
       .headingDiv {
         h2 {
-          font-weight: 800;
-          font-size: 30px;
-          line-height: 40px;
-          letter-spacing: 0.01rem;
+         
         }
       }
       .contentDiv {
@@ -60,10 +57,7 @@
       padding: 4rem 1rem;
       .headingDiv {
         h2 {
-          font-weight: 800;
-          font-size: 36px;
-          line-height: 40px;
-          letter-spacing: 0.01rem;
+      
         }
       }
       .contentDiv {
@@ -107,10 +101,7 @@
       padding: 2rem 6rem;
       .headingDiv {
         h2 {
-          font-weight: 800;
-          font-size: 40px;
-          line-height: 40px;
-          letter-spacing: 0.01rem;
+       
           margin-bottom: 2rem;
         }
       }
@@ -139,8 +130,7 @@
       padding: 4rem 6rem;
       .headingDiv {
         h2 {
-          font-size: 45px;
-          line-height: 50px;
+      
         }
       }
     }
@@ -160,21 +150,19 @@
     .headingDiv {
       text-align: center;
       text-transform: uppercase;
-      color: var(--primary-color);
       h2 {
-        font-weight: 800;
-        font-size: 40px;
-        line-height: 40px;
-        letter-spacing: 0.01rem;
+        color:var(--primaryColor);
+        font-size: 1.5rem;
+
       }
     }
     .contentDiv {
       .formContainer {
-        background: var(--recommend-car02-bg);
+        background: var(--pureWhiteColor);
         border-radius: 0.5rem;
         box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
         .form-label {
-          color: var(--small-text-color);
+          color: var(--primaryColor);
           font-weight: 500;
           font-size: 13px;
           line-height: 32px;
@@ -184,7 +172,7 @@
           input {
             outline: none;
             margin: 0.5rem 0;
-            color: var(--primary-color);
+            color: var(--primaryColor);
             font-weight: 500;
             font-size: 14px;
             &:focus {
@@ -193,7 +181,7 @@
               border-color: transparent !important;
             }
             &::placeholder {
-              color: var(--primary-color);
+              color: var(--primaryColor);
               font-weight: 500;
             }
           }
@@ -207,15 +195,16 @@
           }
           button {
             background: var(--focusColor);
-            color: var(--heading-color);
+            color: var(--pureWhiteColor);
             font-size: 16px;
             font-weight: 600;
             padding: 0.5rem 5rem;
             margin: 1rem 0;
             border: 2px solid var(--focusColor);
+            border-radius: 0.5rem;
           }
-          a {
-            color: var(--primary-color);
+          a,span {
+            color: var(--primaryColor);
             font-size: 14px;
             font-weight: 500;
           }

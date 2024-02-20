@@ -1,18 +1,18 @@
 import React, { useEffect } from "react";
-import { Footer, Navbar } from "../../components";
+import { Footer, FormikInput, Navbar } from "../../components";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import "./payment.css";
 import { Form, Formik } from "formik";
 import * as Yup from 'yup';
-import FormikInput from "../../components/FormikInput/FormikInput";
 import { useAuth } from "../../contexts/AuthContext";
 import { useSelector } from "react-redux";
 import { CreditCardModel } from "../../models/requests/payment/CreditCardModel";
 import PaymentService from "../../services/PaymentService";
-import { ToastContainer, toast } from "react-toastify";
 import RentalService from "../../services/RentalService";
-import { AddRentalRequest } from "../../models/requests/rental/AddRentalRequest";
 import CarService from "../../services/CarService";
+import { ToastContainer, toast } from "react-toastify";
+import { AddRentalRequest } from "../../models/requests/rental/AddRentalRequest";
+
 type Props = {};
 
 const Online = (props: Props) => {
