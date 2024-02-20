@@ -20,7 +20,7 @@ Rent2Go is an administration client built with React for managing rental-related
     <img src="https://github.com/Rent2Go/rent2go_/blob/feyza/authors/4n.png" alt="Şeyhmus EROL" style="width:200px;height:200px;">
     <img src="https://github.com/Rent2Go/rent2go_/blob/feyza/authors/3n.png" alt="Soner ŞEYLAN" style="width:200px;height:200px;">
 </div>
-
+<br>
 
 
 
