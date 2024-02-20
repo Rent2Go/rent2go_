@@ -113,8 +113,8 @@ const Navbar = (props: Props) => {
             </>
           ) : (
             <>
-              <Link className="text btn" to={"/sign-up"}>
-                {t("signUp")}
+              <Link className="text btn" to={"/sign-in"}>
+                {t("signIn")}
               </Link>
             </>
           )}

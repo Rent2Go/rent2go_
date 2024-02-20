@@ -39,10 +39,9 @@ const Router = () => {
     <PaymentProvider>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/sign-in" element={<Login />} />
         <Route path="/sign-in/reset-password" element={<ResetPassword />} />
         <Route path="/sign-in/change-password" element={<ChangePassword />} />
-        <Route path="/sign-up" element={<Register />} />
+        <Route path="/sign-in" element={<Register />} />
 
         {
           /*Backent mail doğrulama sayfası*/
