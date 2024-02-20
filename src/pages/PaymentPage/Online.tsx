@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Footer, Navbar } from "../../components";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "./payment.css";
 import { Form, Formik } from "formik";
 import * as Yup from 'yup';
@@ -12,10 +12,12 @@ import PaymentService from "../../services/PaymentService";
 import { ToastContainer, toast } from "react-toastify";
 import RentalService from "../../services/RentalService";
 import { AddRentalRequest } from "../../models/requests/rental/AddRentalRequest";
+import CarService from "../../services/CarService";
 type Props = {};
 
 const Online = (props: Props) => {
   const auth = useAuth();
+  const navigate = useNavigate();
   const getCurrentDate = (): string => {
     const currentDate = new Date();
     const day = currentDate.getDate().toString().padStart(2, "0");
@@ -40,47 +42,61 @@ const Online = (props: Props) => {
   }, [rentalInfo]);
 
 
-  let addRental:AddRentalRequest;
-  const rentalInfoString = sessionStorage.getItem('rentalInfo'); // sessionStorage'den veriyi al
-  if (rentalInfoString) { // Eğer veri varsa devam et
-    const rentalInfo = JSON.parse(rentalInfoString); // JSON verisini JavaScript nesnesine dönüştür
 
-    addRental = {
-      startDate: new Date(rentalInfo.startDate),
-      endDate: new Date(rentalInfo.endDate),
-      carId: rentalInfo.car.id,
-      customerId: rentalInfo.user.customer.id,
-      discount: rentalInfo?.discount || {id:0 ,discountCode:'BOSS'}
-    };
+  const addRental: AddRentalRequest = {
+    startDate: new Date(rentalInfo.startDate),
+    endDate: new Date(rentalInfo.endDate),
+    carId: rentalInfo.car.id,
+    customerId: rentalInfo.user.customer.id,
+    discount: rentalInfo?.discount || { id: 0, discountCode: 'BOSS' }
+  };
 
-    console.log(addRental);
-  } else {
-    console.log('sessionStorage\'da rentalInfo bulunamadı!');
-  }
+
+  console.log(addRental);
+
+
 
   const onSubmit = async (values: CreditCardModel) => {
-    await PaymentService.checkCreditCard(values)
-      .then((res) => {
-        toast.success(res.data)
-        if (res.data) {
+    await RentalService.addRental(addRental)
+      .then((rest) => {
 
-          RentalService.addRental(addRental)
-          .then(() => {
-            sessionStorage.removeItem('rentalInfo')
-            toast.success(res.data)
-          })
+        if (rest.data.result) {
+          console.log(addRental);
+
+          PaymentService.checkCreditCard(values)
+            .then((res) => {
+              if (res.data == true) {
+                sessionStorage.removeItem('rentalInfo')
+                toast.success("Ödeme Başarıyla Alındı.")
+                CarService.updateIsActive(addRental.carId,false);
+                setTimeout(() => {
+                  navigate("/email-verification-successful")
+                },2000)
+              
+              }
+              else {
+                RentalService.deleteById(rest.data.data)
+                toast.warn("Ödeme Başarısız")
+              }
+
+            })
+            .catch((err) => {
+              RentalService.deleteById(rest.data.data)
+              toast.error(`Please check the Card Information.`)
+              console.log(err)
+            })
         }
-
 
       })
       .catch((err) => {
+        toast.error(err.response.data.message)
         console.log(err)
       })
 
   };
 
 
-  const paymentSchema = Yup.object().shape({
+  const paymentSchema = Yup.object({
     cardNumber: Yup.string()
       .required('Card number is required')
       .matches(/^\d{16}$/, 'Card number must be 16 digits'),
@@ -94,16 +110,12 @@ const Online = (props: Props) => {
 
     expirationYear: Yup.string()
       .required('Expiration year is required')
-      .matches(/^(20)\d{2}$/, 'Expiration year must be in format YYYY'),
+      .matches(/^(20|\d{2})$/, 'Expiration year must be in format YY'),
 
     cvv: Yup.string()
       .required('CVV is required')
       .matches(/^\d{3}$/, 'CVV must be 3 digits'),
 
-    amount: Yup.number()
-      .min(0.01, 'Amount must be greater than 0')
-      .required('Amount is required')
-      .typeError('Amount must be a number')
   });
 
 
@@ -125,7 +137,7 @@ const Online = (props: Props) => {
           </div>
           <div className="contentDiv">
             <div className="formContainer">
-              <Formik initialValues={initialValues} onSubmit={onSubmit}>
+              <Formik initialValues={initialValues} validateOnBlur={true} validationSchema={paymentSchema} onSubmit={onSubmit}>
                 <Form className="form">
                   <div className="row infoRow">
                     <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
@@ -167,7 +179,7 @@ const Online = (props: Props) => {
                         name="cardHolderName"
                         type="text"
                         label="Card Holder Name"
-                        placeHolder="Enter Card Holder Name"
+                        placeholder="Enter Card Holder Name"
                       ></FormikInput>
                     </div>
                     <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
@@ -175,7 +187,7 @@ const Online = (props: Props) => {
                         name="cardNumber"
                         type="text"
                         label="Card No"
-                        placeHolder="Enter Card Number as 16 Digits"
+                        placeholder="Enter Card Number as 16 Digits"
                       ></FormikInput>
                     </div>
                   </div>
@@ -193,7 +205,7 @@ const Online = (props: Props) => {
                         name="expirationYear"
                         type="text"
                         label="Expiration Year"
-                        placeHolder="Enter Expiration Date"
+                        placeholder="Enter Expiration Date"
                       ></FormikInput>
                     </div>
 
@@ -203,7 +215,7 @@ const Online = (props: Props) => {
                         name="cvv"
                         type="number"
                         label="CVV No"
-                        placeHolder="Enter CVV No"
+                        placeholder="Enter CVV No"
                       ></FormikInput>
                     </div>
                   </div>
@@ -266,11 +278,12 @@ const Online = (props: Props) => {
                   </div>
                 </Form>
               </Formik>
-              <ToastContainer position="bottom-center" />
+
             </div>
           </div>
         </div>
       </div>
+      <ToastContainer position="bottom-center" />
       <Footer />
     </>
   );
