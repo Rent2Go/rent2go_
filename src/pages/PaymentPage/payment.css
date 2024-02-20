@@ -118,4 +118,60 @@
   background: var(--blackColor);
   color: var(--pureWhiteColor);
   transition: 0.3ms ease-in;
-}/*# sourceMappingURL=payment.css.map */
+}
+
+/*success-page*/
+.success {
+  padding: 8rem 8rem;
+}
+.success .secContainer {
+  margin: 2rem 8rem;
+  padding: 2rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.success .secContainer .titleContainer h2 {
+  color: var(--primaryColor);
+}
+.success .secContainer .contentContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+}
+.success .secContainer .contentContainer p {
+  display: flex;
+  flex-direction: column;
+}
+.success .secContainer .actionContainer {
+  display: flex;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+.success .secContainer .actionContainer .btn {
+  color: var(--pureWhiteColor);
+  padding: 0.5rem 2rem;
+  font-weight: 500;
+}
+.success .secContainer .actionContainer .btn-profile {
+  background: var(--textColor);
+  border: 3px dashed var(--textColor);
+}
+.success .secContainer .actionContainer .btn-profile:hover {
+  transition: 0.3s ease-in-out;
+  background: var(--pureWhiteColor);
+  color: var(--textColor);
+}
+.success .secContainer .actionContainer .btn-home {
+  background: var(--primaryColor);
+  border: 3px dashed var(--primaryColor);
+}
+.success .secContainer .actionContainer .btn-home:hover {
+  transition: 0.3s ease-in-out;
+  background: var(--pureWhiteColor);
+  color: var(--primaryColor);
+}
+
+/*success-page*//*# sourceMappingURL=payment.css.map */
