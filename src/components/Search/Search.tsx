@@ -55,7 +55,11 @@ const Search = (props: Props) => {
       
       if (differenceInDays(endDateTimestamp, startDateTimestamp) > 6) {
         alert(t("dateDifferenceExceedsLimit"));
-        return; // Arama işlemi gerçekleştirilmez
+        return; 
+      }
+      if (startDateTimestamp === endDateTimestamp) {
+        alert(t("Same day car hire is not available."));
+        return; 
       }
       
       dispatch(setStartDate(startDateTimestamp)); 
