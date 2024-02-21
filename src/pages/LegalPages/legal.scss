@@ -89,3 +89,24 @@
  grid-template-columns: repeat(1,1fr)!important; 
  column-gap: 0!important;
 }
+
+@media screen and (max-width:425px) {
+  .legal{
+    .secContainer{
+      .headingDiv{
+        text-align: left;
+        img{
+          width: 96px;
+        }
+      }
+      .contentContainer{
+        .letterContainer{
+          h2{
+            font-size: 1em;
+          }
+        }
+      }
+    }
+  }
+  
+}
