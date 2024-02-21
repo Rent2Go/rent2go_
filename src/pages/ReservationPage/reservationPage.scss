@@ -1,6 +1,4 @@
-.secContainer {
-  background-color: var(--whiteColor);
-}
+
 .btnContainer {
   display: flex;
   flex-direction: row;
@@ -329,9 +327,11 @@
     p {
       color: var(--grayColor);
     }
-
-    .secContainer {
+     .bgWhite{
       background-color: var(--whiteColor);
+     }
+    .secContainer {
+    
 
       .imgContainer {
         opacity: 1;

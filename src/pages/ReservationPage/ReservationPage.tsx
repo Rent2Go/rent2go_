@@ -156,7 +156,7 @@ const ReservationPage = () => {
       <Navbar />
 
       <div className="reservation">
-        <div className="secContainer">
+        <div className="secContainer bgWhite">
           <div className="imgContainer">
             <img src={rentals?.imageUrl} alt="carImage" />
           </div>

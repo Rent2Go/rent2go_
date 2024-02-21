@@ -1,7 +1,3 @@
-.secContainer {
-  background-color: var(--whiteColor);
-}
-
 .btnContainer {
   display: flex;
   flex-direction: row;
@@ -328,7 +324,7 @@
   .reservation p {
     color: var(--grayColor);
   }
-  .reservation .secContainer {
+  .reservation .bgWhite {
     background-color: var(--whiteColor);
   }
   .reservation .secContainer .imgContainer {
