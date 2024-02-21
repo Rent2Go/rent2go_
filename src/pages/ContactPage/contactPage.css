@@ -209,6 +209,7 @@ p.sub-title {
         width: 470px;
         padding: 5px;
         .contact-info {
+          padding: 2rem 1rem;
           h4 {
             font-size: 1.4rem;
           }
@@ -229,8 +230,10 @@ p.sub-title {
           }
         }
         form {
-          padding: 20px;
-          width: 50%;
+          padding: 10px;
+          padding-top: 2rem;
+          padding-right: 0px;
+          width: 70%;
           .col-2 {
             width: 100%;
           }
@@ -254,6 +257,15 @@ p.sub-title {
             height: 40px;
           }
         }
+        .contact-info {
+          .social-media {
+            .icon-circle {
+              .fa {
+                font-size: 20px;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -273,11 +285,13 @@ p.sub-title {
         margin-bottom: 3rem;
       }
       #contact-container {
-        width: 600px;
+        width: 100%;
         padding: 6px;
         .contact-info {
+          width: 20%;
+          padding: 3rem 1rem;
           h4 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
           }
           p {
             font-size: 0.9rem;
@@ -296,7 +310,9 @@ p.sub-title {
           }
         }
         form {
-          padding: 25px;
+          padding: 10px;
+          padding-top: 3rem;
+          padding-left: 1rem;
           width: 60%;
           .col-2 {
             width: 100%;
@@ -340,7 +356,7 @@ p.sub-title {
         margin-bottom: 3rem;
       }
       #contact-container {
-        width: 800px;
+        width: 780px;
         padding: 7px;
         .contact-info {
           h4 {
@@ -406,7 +422,7 @@ p.sub-title {
         margin-bottom: 3rem;
       }
       #contact-container {
-        width: 1000px;
+        width: 950px;
         padding: 8px;
         .contact-info {
           h4 {
