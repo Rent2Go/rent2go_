@@ -102,7 +102,7 @@ const AccountSettings = () => {
                       onClick={handleImageClick}
                     
                     />
-                <input type="file"   ref={fileInputRef} style={{ display: 'none' }}  alt="Profil image" name="imgUrl" />
+                <input type="file"   ref={fileInputRef} style={{ display: 'none' }} onChange={()=> }  alt="Profil image" name="imgUrl" />
                 </div>
               </div>
            
