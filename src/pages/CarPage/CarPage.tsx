@@ -106,7 +106,7 @@ const CarPage: React.FC<Props> = (props) => {
   return (
     <>
       <Helmet>
-        <title>{settings.title} - Car Page </title>
+        <title>{settings.title} - {t("cars")} </title>
         <meta name="description" content="car page description" />
       </Helmet>
       <Navbar />

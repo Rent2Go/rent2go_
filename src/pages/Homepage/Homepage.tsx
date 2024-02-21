@@ -39,7 +39,7 @@ const Homepage = (props: Props) => {
   return (
     <>
       <Helmet>
-        <title>{settings.title} - HomePage </title>
+        <title>{settings.title} - {t("home")} </title>
       </Helmet>
       <Navbar />
 

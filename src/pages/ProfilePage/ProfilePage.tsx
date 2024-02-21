@@ -14,18 +14,19 @@ import { Helmet } from "react-helmet";
 import { useSelector } from "react-redux";
 import "./profilePage.css";
 import { Footer, Navbar } from "../../components";
-
+import { useTranslation } from "react-i18next";
+import i18n from "../../Language/language";
 type Props = {};
 
 const ProfilePage = (props: Props) => {
   const settings = useSelector((state: any) => state.settings.setting);
-
+  const { t } = useTranslation();
   const { activepage } = useParams();
 
   return (
     <>
       <Helmet>
-        <title>{settings.title} - Profile </title>
+        <title>{settings.title} - {t("profile")} </title>
       </Helmet>
 
       <div className="userProfile">

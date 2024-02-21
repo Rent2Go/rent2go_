@@ -35,7 +35,7 @@ const OurTeamPage = (props: Props) => {
   return (
     <>
       <Helmet>
-        <title>{settings.title} - Our Team</title>
+        <title>{settings.title} - {t("ourTeam")}</title>
 
       </Helmet>
       <Navbar />
