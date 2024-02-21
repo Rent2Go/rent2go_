@@ -1,6 +1,8 @@
 import { AddUserRequest } from "../models/requests/user/AddUserRequest";
 import { ChangePasswordRequest } from "../models/requests/user/ChangePasswordRequest";
 import { ResetPasswordRequest } from "../models/requests/user/ResetPasswordRequest";
+import { UpdateUserAccountSettingsRequest } from "../models/requests/user/UpdateUserAccountSettings";
+import { UpdateUserLocationRequest } from "../models/requests/user/UpdateUserLocation";
 import { UpdateUserRequest } from "../models/requests/user/UpdateUserRequest";
 import { AddResponse } from "../models/responses/AddResponse";
 import { UpdateResponse } from "../models/responses/UpdateResponse";
@@ -40,6 +42,25 @@ class UserService extends BaseService<GetAllUserResponse, GetByIdUserResponse, A
     getByEmail(email:string){
         return axiosInstance.get<GetByIdUserResponse>('users/email?email='+email);
     }
+
+    updateUserAccountSettings(id:number , userAccountSettings:UpdateUserAccountSettingsRequest){
+
+        return axiosInstance.patch<UpdateResponse>('users/accountsettings/'+id,userAccountSettings)
+    }
+
+    
+    updateUserLocation(id:number , userLocation:UpdateUserLocationRequest){
+
+        return axiosInstance.patch<UpdateResponse>('users/updatelocation/'+id,userLocation)
+    }
+
+    profilPageChangePassword(id:number, profilChangePassword:any){
+
+        return axiosInstance.patch<UpdateResponse>('users/profilchangepassword/'+id,profilChangePassword)
+        
+    }
+
+
    
 }
 

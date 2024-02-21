@@ -9,6 +9,8 @@ import UserService from "../../../services/UserService";
 import { UserModel } from "../../../models/user/UserModel";
 import { useAuth } from "../../../contexts/AuthContext";
 import OverlayLoaderLoad from "../../OverlayLoader/OverlayLoaderLoad";
+import { UpdateUserAccountSettingsRequest } from "../../../models/requests/user/UpdateUserAccountSettings";
+import { ToastContainer, toast } from "react-toastify";
 
 
 const AccountSettings = () => {
@@ -22,30 +24,30 @@ const AccountSettings = () => {
   useEffect(() => {
     getUser(auth.authInformation.user.id)
 
-  },[user?.id])
+  }, [user?.id])
 
 
-  const getUser = async (id: number) =>{
+  const getUser = async (id: number) => {
     await UserService.getById(id)
-    .then((res:any)=>{
-      setUser(res.data.data)
-    })
+      .then((res: any) => {
+        setUser(res.data.data)
+      })
   }
+  const fileInputRef = React.createRef<HTMLInputElement>();
+  const handleImageClick = () => {
+    // Resim üzerine tıklandığında veya üzerine gelindiğinde
+    // file input'un click olayını tetikle
+    fileInputRef.current?.click();
+  };
 
-
-  const updateUser = () => {
-    // UserService.update("aa",ad)
-  
-  }
-
-  const AccountSettingsSchema = Yup.object().shape({
+  const AccountSettingsSchema = Yup.object({
     name: Yup.string()
       .min(2, "Name must be at least 2 character long.")
       .required("Name field cannot be empty"),
     surname: Yup.string()
       .min(3, "Surnamemust be at least 3 character long.")
       .required("Surname field cannot be empty"),
-    phone: Yup.string()
+    phoneNumber: Yup.string()
       .min(11, "Phone number must contain 11 characters")
       .max(11, "Phone number must contain 11 characters")
       .required("Phone field cannot be empty"),
@@ -55,11 +57,20 @@ const AccountSettings = () => {
     nationalityId: Yup.string()
       .min(10)
       .required("Nationality Id field cannot be empty"),
-    dateOfBirth: Yup.date().required("Date of Birth field cannot be empty"),
+    birthDate: Yup.date().required("Date of Birth field cannot be empty"),
   });
 
-  const handleSubmit = () => {};
-  if(!user)return <OverlayLoaderLoad/>
+  const handleSubmit = async (id: number, values: any) => {
+    await UserService.updateUserAccountSettings(id, values)
+      .then((res: any) => {
+        toast.success(res.data.message)
+      })
+      .catch((err) => {
+        toast.warn(err.response.data.message)
+      })
+
+  };
+  if (!user) return <OverlayLoaderLoad />
   return (
     <div className="accountSettings">
       <h2 className="mainHead1 text-center">{t("personalInformations")}</h2>
@@ -69,36 +80,32 @@ const AccountSettings = () => {
             {
               name: user.name,
               surname: user.surname,
-              phone: user.phoneNumber,
+              phoneNumber: user.phoneNumber,
               email: user.email,
               nationalityId: user.idCardNumber,
-              dateOfBirth: user.birthDate,
+              birthDate: user.birthDate,
             }
           }
           validationSchema={AccountSettingsSchema}
-          onSubmit={handleSubmit}
+          onSubmit={(values) => handleSubmit(user.id, values)}
         >
           <Form>
             <div className="row">
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                <div className="imgDiv">
-                  {user?.imageUrl ? (
+               
+              </div>
+              <div className="col-xl-12 col-l-12 col-md-12 col-sm-12 imgDiv">
+              
                     <img
                       src={`${user.imageUrl}`}
                       alt="profile"
+                      onClick={handleImageClick}
+                    
                     />
-                  ) : (
-                    <img
-                      src="/assets/img/userImages/user-default.jpg"
-                      alt="default-img"
-                    />
-                  )}
+                <input type="file"   ref={fileInputRef} style={{ display: 'none' }} onChange={()=> }  alt="Profil image" name="imgUrl" />
                 </div>
               </div>
-              <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                <FormikInput type="file" name="imgUrl" />
-              </div>
-            </div>
+           
             <div className="row">
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
                 <FormikInput
@@ -115,45 +122,55 @@ const AccountSettings = () => {
                 ></FormikInput>
               </div>
             </div>
+
             <div className="row">
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
                 <FormikInput
-                  name="phone"
+                  name="phoneNumber"
                   type="text"
-                  label={t("phone")}
+                  label={t("phoneNumber")}
                 ></FormikInput>
               </div>
-              <div className="col-xl-6 col-l-6 col-md-12- col-sm-12">
+              <div className="col-xl-6 col-l-6 col-md-12- col-sm-12" >
                 <FormikInput
-                  name="email"
-                  type="email"
-                  label={t("email")}
+                  name="birthDate"
+                  type="date"
+                  label={t("birthDate")}
                 ></FormikInput>
               </div>
+
             </div>
 
             <div className="form-group">
               <FormikInput
+                disabled
+                name="email"
+                type="email"
+                label={t("email")}
+              ></FormikInput>
+
+            </div>
+            <div className="form-group" >
+              <FormikInput
+                disabled
                 name="nationalityId"
                 type="text"
                 label={t("nationalityId")}
               ></FormikInput>
+
             </div>
-            <div className="form-group">
-              <FormikInput
-                name="dateOfBirth"
-                type="date"
-                label={t("dateOfBirth")}
-              ></FormikInput>
+
+            <div className="row text-center">
+              <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
+                <button className="mainButton1">{t("saveChanges")}</button>
+              </div>
             </div>
+
           </Form>
         </Formik>
+       <ToastContainer position="bottom-center" />
       </div>
-      <div className="row text-center">
-        <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
-          <button className="mainButton1">{t("saveChanges")}</button>
-        </div>
-      </div>
+
     </div>
   );
 };

@@ -66,9 +66,17 @@ const UpdateCar = () => {
 
 
     try {
-      await CarService.updateCar(values);
-      toast.success("Car updated successfully");
-      navigate("/cars");
+      await CarService.updateCar(values)
+      .then(()=>{
+        toast.success("Car updated successfully");
+        setTimeout(() => {
+          navigate("/cars");
+        },1500)
+      })
+      .catch((err)=>{
+        toast.error(err.response.data.message);
+      })
+      
     } catch (error: any) {
       toast.error(error.response?.data?.message || "An error occurred");
     }
@@ -78,7 +86,7 @@ const UpdateCar = () => {
 
 
 
-  const AddCarRequestSchema = Yup.object().shape({
+  const UpdateCarRequestSchema = Yup.object({
     kilometer: Yup.number()
       .required('Kilometer field cannot be empty.')
       .min(0, 'Kilometer must be greater than or equal to 0.'),
@@ -145,7 +153,7 @@ const UpdateCar = () => {
 
   const handleBrandChange = async (selectedBrand: number) => {
     const brand = brands.find((brand) => brand.id == selectedBrand);
-    const selectedBrandModels = models.filter((model: ModelModel) => model.brandName == brand?.name) // Bu fonksiyonun gerçek uygulamada nasıl yapıldığına bağlı olarak değişir
+    const selectedBrandModels = models.filter((model: ModelModel) => model.brand.name == brand?.name) // Bu fonksiyonun gerçek uygulamada nasıl yapıldığına bağlı olarak değişir
     setFilterModels(selectedBrandModels);
     setResultBrand(brand);
 
@@ -184,7 +192,7 @@ const UpdateCar = () => {
         </div>
         <div className="formContainer">
           <Formik
-            validationSchema={AddCarRequestSchema}
+            validationSchema={UpdateCarRequestSchema}
             validateOnBlur={true}
             initialValues={{
               id: carId,
