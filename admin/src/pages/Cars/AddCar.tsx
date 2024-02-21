@@ -62,7 +62,7 @@ const AddCar = (props: Props) => {
     getBrands()
     getColors()
     getModels()
-  }, [])
+  }, [filterModels])
 
   const addCarInitialValues: AddCarRequest = {
     kilometer: 0,
@@ -79,7 +79,7 @@ const AddCar = (props: Props) => {
 
   }
 
-  const AddCarRequestSchema = Yup.object().shape({
+  const AddCarRequestSchema = Yup.object({
     kilometer: Yup.number()
       .required('Kilometer field cannot be empty.')
       .min(0, 'Kilometer must be greater than or equal to 0.'),
@@ -91,18 +91,18 @@ const AddCar = (props: Props) => {
       .required('Daily price field cannot be empty.')
       .min(0, 'Daily price must be greater than 0.'),
     plate: Yup.string()
-      // .matches(
-      //   /^(0[1-9]|[1-7][0-9]|8[01])/,
-      //   'Invalid licence plate: Plate must start with a number between 01 and 81.'
-      // )
-      // .matches(
-      //   /[A-Z]{1,3}/,
-      //   'Invalid licence plate: Plate must consist of 1-3 uppercase letters after the first part.'
-      // )
-      // .matches(
-      //   /[0-9]{4}$/,
-      //   'Invalid licence plate: Plate must end with 4 numbers.'
-      // )
+      .matches(
+        /^(0[1-9]|[1-7][0-9]|8[01])/,
+        'Invalid licence plate: Plate must start with a number between 01 and 81.'
+      )
+      .matches(
+        /[A-Z]{1,3}/,
+        'Invalid licence plate: Plate must consist of 1-3 uppercase letters after the first part.'
+      )
+      .matches(
+        /[0-9]{4}$/,
+        'Invalid licence plate: Plate must end with 4 numbers.'
+      )
 
       .required('Plate field cannot be empty.')
       .min(5, 'Licence plate must be at least 5 characters long.')
@@ -160,8 +160,12 @@ const AddCar = (props: Props) => {
 
   }
   const handleBrandChange =  (selectedBrand: number) => {
+    console.log(selectedBrand);
+    
     const brand = brands.find((brand) => brand.id == selectedBrand);
-    const selectedBrandModels = models.filter((model: ModelModel) => model.brandName == brand?.name) // Bu fonksiyonun gerçek uygulamada nasıl yapıldığına bağlı olarak değişir
+    const selectedBrandModels = models.filter((model: ModelModel) => model.brand.name === brand!.name) // Bu fonksiyonun gerçek uygulamada nasıl yapıldığına bağlı olarak değişir
+    console.log("asdasd",selectedBrandModels);
+    
     setFilterModels(selectedBrandModels); 
   }
 
@@ -201,7 +205,7 @@ const AddCar = (props: Props) => {
           <h2>Add New Car</h2>
         </div>
         <div className="formContainer">
-          <Formik initialValues={addCarInitialValues} validateOnBlur={true}  onSubmit={handleSubmit}>
+          <Formik initialValues={addCarInitialValues} validationSchema={AddCarRequestSchema} validateOnBlur={true}  onSubmit={handleSubmit}>
             <Form>
               <div className="row">
                 <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
@@ -213,17 +217,26 @@ const AddCar = (props: Props) => {
                   ></FormikInput>
                 </div>
                 <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                  <label className="form-label">Model</label>
-                  <Field name="colorId" as="select" className="form-control" >
-                    {colors.map((value: any) => (
-                      <option key={value.id} value={value.id}>{value.name.toUpperCase()}</option>)
-                    )}
+                  <label htmlFor="colorId" className="form-label">Color</label>
+                  <Field as="select" name="colorId"  className="form-control" >
+                
+                    {colors.map((color: any) => (
+                      <option key={color.id} value={color.id}>{color.name}  </option>
+                    ))}
                   </Field>
+                  <ErrorMessage name="colorId" component="div" className="alert-text" />
                 </div>
               </div>
               <div className="row">
-                <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                  <FormikSelect name="brandId" label="Brand" values={brands} onChange={async(e: any) => await handleBrandChange(e.target.value)} ></FormikSelect>
+              <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
+                  <label htmlFor="brandId" className="form-label">Brand</label>
+                  <Field as="select" name="brandId"  className="form-control" onChange={(e: any) => handleBrandChange(e.target.value)}>
+                
+                    {brands.map((brand: any) => (
+                      <option key={brand.id} value={brand.id}>{brand.name}  </option>
+                    ))}
+                  </Field>
+                  <ErrorMessage name="brandId" component="div" className="alert-text" />
                 </div>
                 <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
                   <label htmlFor="modelId" className="form-label">Model</label>
