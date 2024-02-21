@@ -21,7 +21,8 @@ import CarService from "../../services/CarService";
 
 import { useAuth } from "../../contexts/AuthContext";
 import { usePaymentContext } from "../../contexts/PaymentContext";
-
+import { useTranslation } from "react-i18next";
+import i18n from "../../Language/language";
 import "./reservationPage.css";
 import { Helmet } from "react-helmet";
 import { useDispatch, useSelector } from "react-redux";
@@ -31,6 +32,7 @@ import UserService from "../../services/UserService";
 import { UserModel } from "../../models/user/UserModel";
 
 const ReservationPage = () => {
+  const { t } = useTranslation();
   const settings = useSelector((state: any) => state.settings.setting);
   const { startDate, endDate } = useSelector((state: any) => state.rentalDate);
   const auth = useAuth();
@@ -149,7 +151,7 @@ const ReservationPage = () => {
   return (
     <>
       <Helmet>
-        <title>{settings.title} - Reservation </title>
+        <title>{settings.title} - {t("reservation")} </title>
       </Helmet>
       <Navbar />
 
@@ -160,7 +162,7 @@ const ReservationPage = () => {
           </div>
 
           <div className="secHeading">
-            <h5>Reservation Detail</h5>
+            <h5>{t("reservationDetail")}</h5>
           </div>
           <div className="secContent">
             <div className="topContent">
@@ -169,11 +171,11 @@ const ReservationPage = () => {
               </div>
               <div className="dateContentContainer">
                 <p>
-                  <b>Start Date : </b> {rentStartDate.toDateString()}
+                  <b>{t("startDate")} : </b> {rentStartDate.toDateString()}
                 </p>
                 <p>
                   <span>
-                    <b>End Date : </b> {rentEndDate.toDateString()}
+                    <b>{t("endDate")} : </b> {rentEndDate.toDateString()}
                   </span>
                 </p>
                 <DiscountCode />
@@ -183,7 +185,7 @@ const ReservationPage = () => {
               <div className="rentalCard" key={rentals?.id}>
                 <p>
                   <span>
-                    <b>Plate :</b>{" "}
+                    <b>{t("plate")} :</b>{" "}
                   </span>
                   <span>{rentals?.plate}</span>
                 </p>
@@ -209,7 +211,7 @@ const ReservationPage = () => {
                   <span>
                     <b>Rental : </b>{" "}
                   </span>
-                  <span>{rentDay == 0 ? 1 : rentDay} - Days</span>
+                  <span>{rentDay == 0 ? 1 : rentDay} - {t("days")}</span>
                 </p>
               </div>
               <div className="priceCardContainer">
@@ -290,14 +292,14 @@ const ReservationPage = () => {
                       title="Send"
                       onClick={isAuthenticated}
                     >
-                      Reservation
+                      {t("reservation")}
                     </button>
                     <Link
                       to="/cars"
                       className="btn btn-cancel btn-sm"
                       title="Send"
                     >
-                      Cancel
+                      {t("cancel")}
                     </Link>
                   </div>
                 </div>
