@@ -26,6 +26,11 @@
 .users .titleContainer {
   margin: 0.5rem;
   padding: 1rem 2rem;
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  align-items: flex-start;
 }
 .users .formContainer {
   margin: 0.5rem;
