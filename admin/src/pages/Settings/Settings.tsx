@@ -151,7 +151,7 @@ const Settings = (props: Props) => {
                   <div className="col-xl-8 col-l-8 col-md-12 col-sm-12">
                     <div className="row">
                       <div className="col-xl-16 col-l-6 col-md-6 col-sm-6">
-                        <p>Site Logo</p>
+                        <p>Site Logo (Please upload this logo firstly)</p>
                         <Dropzone
                           getUploadParams={getUploadParams}
                           onChangeStatus={handleChangeStatus}
