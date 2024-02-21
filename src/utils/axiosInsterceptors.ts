@@ -30,8 +30,6 @@ axiosInstance.interceptors.request.use(
 			//----------------------------------------------------------------
 			const refreshToken = TokenService.getRefreshToken()
 			const decodeRefreshToken = jwtDecode<TokenUser>(refreshToken || '');
-			console.log(decodeRefreshToken);
-			
 			const expirationDateRef = new Date(decodeRefreshToken.exp).getTime() * x;
 			const nowDateRef = new Date().getTime();
 
