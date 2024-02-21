@@ -25,6 +25,13 @@
   border-radius: 50%;
   background-color: chartreuse;
 }
+
+.yourReservations .p1 .icon1 {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: rgba(240, 37, 15, 0.5);
+}
 .yourReservations table {
   width: 100%;
   border-collapse: collapse;
@@ -80,6 +87,10 @@
     height: 15px;
     width: 15px;
   }
+  .yourReservations .p1 .icon1 {
+    height: 15px;
+    width: 15px;
+  }
   .yourReservations table {
     font-size: 10px;
   }
@@ -98,6 +109,10 @@
     font-size: 27px;
   }
   .yourReservations .p1 .icon2 {
+    height: 15px;
+    width: 15px;
+  }
+  .yourReservations .p1 .icon1 {
     height: 15px;
     width: 15px;
   }
