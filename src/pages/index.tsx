@@ -4,7 +4,6 @@ export {default as VerificationSuccessful} from "./ResponsePages/EmailVerificati
 export {default as VerificationFailed} from "./ResponsePages/EmailVerification/VerificationFailed"
 export {default as HomePage} from "./Homepage/Homepage"
 export {default as CarPage} from "./CarPage/CarPage"
-export {default as BrandPage} from "./BrandPage/BrandPage"
 export {default as OurTeamPage} from "./OurTeamPage/OurTeamPage"
 export {default as ContactPage} from "./ContactPage/ContactPage"
 export {default as ProfilePage} from "./ProfilePage/ProfilePage"
