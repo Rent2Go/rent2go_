@@ -123,5 +123,27 @@
   "saveNewPassword": "Yeni Şifreyi Kaydet",
   "driversLicense": "Sürücü Belgesi",
   "driversLicenseDate": "Sürücü Belgesi Tarihi",
-  "driversLicenseImage": "Sürücü Belgesi Resmi"
+  "driversLicenseImage": "Sürücü Belgesi Resmi",
+
+  "reservationDetail": "Rezervasyon Detayı",
+  "name": "İsim",
+  "enterDiscount": "İndirim Kodu Girin",
+  "plate": "Plaka",
+  "rental": "Kiralama",
+  "days": "gün",
+  "youHaveToBeAuthenticatedBeforeYouCanMakeAReservation": "Rezervasyon yapmadan önce kimliğinizi doğrulamalısınız.",
+  "yourUserInformationIsMissingPleaseFillItIn": "Kullanıcı bilgileriniz eksik, lütfen doldurunuz!!!",
+  "unitPrice": "Birim Fiyat",
+  "tax": "Vergi",
+  "pleaseChooseCar": "Lütfen araç seçin",
+  "whatsIncludedInThePackage": "Pakete neler dahil ?",
+  "insurance": "Sigorta",
+  "insuranceDescription": "Polis Raporunun verildiği tüm kazalar ve hırsızlıklar sigorta kapsamındadır.",
+  "roadsideAssistance": "Yol Yardımı",
+  "roadsideAssistanceDescription": "Haftanın 7 günü, günün 24 saati yol yardımı ve destek için bizi arayabilirsiniz.",
+  "choosePaymentMethod": "Ödeme Yöntemini Seçin",
+  "cash": "Nakit",
+  "online": "Çevrimiçi",
+  "bankTransfer": "Banka Transferi",
+  "cancel": "İptal Et"
 }

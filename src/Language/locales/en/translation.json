@@ -124,5 +124,27 @@
   "saveNewPassword": "Save New Password",
   "driversLicense": "Driver's License",
   "driversLicenseDate": "Driver's License Date",
-  "driversLicenseImage": "Driver's License Image"
+  "driversLicenseImage": "Driver's License Image",
+
+  "reservationDetail": "Reservation Detail",
+  "name": "Name",
+  "enterDiscount": "Enter Discount",
+  "plate": "Plate",
+  "rental": "Rental",
+  "days": "days",
+  "youHaveToBeAuthenticatedBeforeYouCanMakeAReservation": "You have to be authenticated before you can  make a reservation.",
+  "yourUserInformationIsMissingPleaseFillItIn": "Your user information is missing, please fill it in!!!",
+  "unitPrice": "Unit Price",
+  "tax": "Tax",
+  "pleaseChooseCar": "Please choose a car",
+  "whatsIncludedInThePackage": "What's included in the package ?",
+  "insurance": "Insurance",
+  "insuranceDescription": "All accidents and thefts for which a Police Report has been filed are covered by insurance.",
+  "roadsideAssistance": "Roadside Assistance",
+  "roadsideAssistanceDescription": "You can call us for roadside assistance and support 24 hours a day, 7 days a week.",
+  "choosePaymentMethod": "Choose Payment Method",
+  "cash": "Cash",
+  "online": "Online",
+  "bankTransfer": "Bank Transfer",
+  "cancel": "Cancel"
 }
