@@ -5,7 +5,6 @@ import "../response.css";
 type Props = {};
 
 const VerificationExpired = (props: Props) => {
-
   return (
     <div className="response">
       <div className="secContainer shadow-rounded-box">
@@ -14,18 +13,19 @@ const VerificationExpired = (props: Props) => {
         </div>
         <div className="contentContainer ">
           <p>
-          Your required time for email verification has expired. Please try to register again..
-             You can contact us to report a problem.
+            The mail verification has been failed. The token has
+            expired. Please register again in few minutes... You can contact us
+            to report a problem.
           </p>
         </div>
         <div className="actionContainer">
           <Link
-            to="mailto:support@rentogo.com.tr"
-            className="btn btn-md btn-profile"
+            to="/sign-in"
+            className="btn btn-md btn-home"
           >
-            Send Mail
+            Register
           </Link>
-          <Link to="/contact" className="btn btn-md btn-home">
+          <Link to="/contact" className="btn btn-md btn-profile">
             Contact
           </Link>
         </div>
