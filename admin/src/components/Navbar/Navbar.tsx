@@ -29,16 +29,11 @@ const Navbar = (props: Props) => {
   return (
     <div className="navbar">
       <div className="navbar__wrapper">
-        <div className="search__box">
-          <input
-            type="search"
-            className="form-control"
-            placeholder="search or type"
-          />
-          <span>
-            <IoMdSearch />
-          </span>
-        </div>
+       <div className="authContainer">
+       <span>{auth.authInformation.user.firstname} {auth.authInformation.user.lastname}</span>
+       
+       </div>
+        
         <div className="navbar__right">
           <span className="notification">
             <IoIosNotifications />
