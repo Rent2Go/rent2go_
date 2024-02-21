@@ -6,7 +6,7 @@ const dateSlice = createSlice({
   name: 'dates',
   initialState: {
       startDate: new Date().getTime(), 
-      endDate: new Date().getTime(), 
+      endDate:   new Date(Date.now() + 86400000).getTime(), 
    
     
   },
