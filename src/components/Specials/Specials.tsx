@@ -17,14 +17,10 @@ const Specials = (props: Props) => {
               <img src="/assets/img/specials/insurance.png" alt="specials" />
             </div>
             <div className="titleContent">
-              <p>Advanced Insurance</p>
+              <p>{t("advancedInsurance")}</p>
             </div>
             <div className="descriptionContent">
-              <p>
-                Our advanced insurance package offers comprehensive coverage for
-                your rental car, including protection against theft, damage, and
-                more. Drive with peace of mind knowing you're fully covered.
-              </p>
+              <p>{t("aboutAdvancedInsurance")}</p>
             </div>
           </div>
 
@@ -33,15 +29,10 @@ const Specials = (props: Props) => {
               <img src="/assets/img/specials/navigation.png" alt="specials" />
             </div>
             <div className="titleContent">
-              <p>Advanced Navigation</p>
+              <p>{t("advancedNavigation")}</p>
             </div>
             <div className="descriptionContent">
-              <p>
-                Upgrade your driving experience with our advanced navigation
-                system. Enjoy features such as real-time traffic updates,
-                voice-guided directions, and points of interest along your
-                route. Never get lost again!
-              </p>
+              <p>{t("aboutAdvancedNavigation")}</p>
             </div>
           </div>
           <div className="singleContent">
@@ -49,15 +40,10 @@ const Specials = (props: Props) => {
               <img src="/assets/img/specials/support.png" alt="specials" />
             </div>
             <div className="titleContent">
-              <p>Contact Every Moment</p>
+              <p>{t("contactEveryMoment")}</p>
             </div>
             <div className="descriptionContent">
-              <p>
-                Our dedicated customer support team is available around the
-                clock to assist you with any inquiries, reservations, or issues
-                you may have. Feel free to contact us anytime for prompt and
-                reliable assistance.
-              </p>
+              <p>{t("aboutContactEveryMoment")}</p>
             </div>
           </div>
         </div>
