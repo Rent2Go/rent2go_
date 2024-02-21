@@ -26,15 +26,23 @@ const Search = (props: Props) => {
   const [selectedEndDate, setSelectedEndDate] = useState<Date | null>(new Date(endDate));
 
   const handleStartDateChange = (newStartDate: Date | null) => {
-    if (newStartDate && newStartDate < new Date()) {
-      alert(t("theStartDateCannotBe"));
+    const today = new Date();
+    const sevenDaysLater = new Date(today.getTime() + 2 * 24 * 60 * 60 * 1000); // Güncel tarihin 7 gün sonrası
+    
+    if (newStartDate) {
+      if (newStartDate < today) {
+        alert(t("theStartDateCannotBe"));
+      } else if (newStartDate > sevenDaysLater) {
+        alert(t("theStartDateCannotBeMoreThanSevenDaysLater"));
+      } else {
+        setSelectedStartDate(newStartDate);
+      }
     }
-    setSelectedStartDate(newStartDate);
   };
 
   const handleEndDateChange = (newEndDate: Date | null) => {
-    if (newEndDate && selectedStartDate && newEndDate < selectedStartDate) {
-      alert(t("theEndDateCannotBe"));
+    if (newEndDate && selectedStartDate && newEndDate <= selectedStartDate) {
+      alert(t("The end date cannot be less than or equal to the start date"));
     } else {
       setSelectedEndDate(newEndDate);
     }
@@ -44,21 +52,32 @@ const Search = (props: Props) => {
     if (selectedStartDate && selectedEndDate) {
       const today = new Date();
       today.setHours(0, 0, 0, 0); 
-      
+  
       if (selectedStartDate < today) {
         alert(t("startDateInPast"));
         return; 
       }
-
+      if(selectedEndDate < today){
+        alert(t("startDateInPast"));
+        return; 
+      }
+  
       const startDateTimestamp = selectedStartDate.getTime(); 
       const endDateTimestamp = selectedEndDate.getTime(); 
-      
+  
+      // Başlangıç ve bitiş tarihinin aynı gün olmamasını kontrol eden ifade
+      if (startDateTimestamp === endDateTimestamp) {
+        alert(t("Start date and end date cannot be the same day."));
+        return;
+      }
+  
       if (differenceInDays(endDateTimestamp, startDateTimestamp) > 6) {
         alert(t("dateDifferenceExceedsLimit"));
         return; 
       }
-      if (startDateTimestamp === endDateTimestamp) {
-        alert(t("Same day car hire is not available."));
+      
+      if(endDateTimestamp < startDateTimestamp){
+        alert(t("The end date cannot be less than the start date"));
         return; 
       }
       
@@ -69,7 +88,6 @@ const Search = (props: Props) => {
       alert(t("pleaseSelectStartDateAndEndDate")); 
     }
   };
-
   useEffect(() => {
 
   }, [selectedStartDate, selectedEndDate]);
