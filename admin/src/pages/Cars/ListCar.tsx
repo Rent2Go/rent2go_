@@ -73,9 +73,7 @@ const ListCar: React.FC<Props> = (props) => {
   };
   return (
     <div className="cars ">
-      <div className="titleContainer">
-        <h2>Cars</h2>
-      </div>
+      
       <div className="secContainer">
         <div className="headerContainer">
           <div className="pageTitle">
