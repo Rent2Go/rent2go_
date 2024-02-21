@@ -334,13 +334,14 @@
       background-color: var(--whiteColor);
 
       .imgContainer {
+        opacity: 1;
         position: absolute;
         left: 25%;
         right: 25%;
         top: 0;
         text-align: center;
         z-index: 0;
-        padding: 6rem 9rem;
+        padding: 10rem 8rem!important;
         margin: 0 auto;
         img {
           width: 100%;
@@ -360,7 +361,7 @@
         align-items: normal !important;
         row-gap: 2rem;
         z-index: 1;
-        padding: 4rem 6rem;
+        padding: 0 6rem;
         .topContent {
           display: flex;
           flex-direction: row;
@@ -436,7 +437,8 @@
           display: flex;
           flex-direction: row;
           justify-content: space-between;
-          align-items: center;
+          align-items: baseline;
+          gap: 4rem;
           .packageContainer {
             display: flex;
             flex-direction: row;
