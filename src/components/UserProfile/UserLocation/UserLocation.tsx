@@ -26,6 +26,8 @@ const UserLocation = () => {
   const [city, setCity] = useState<CityModel>()
   const [selectedFilter, setSelectedFilter] = useState<DistrictModel[]>([])
   const [user, setUser] = useState<UserModel>();
+  const [cityId, setCityId] = useState<number | null>(null);
+
 
 
   const getUser = async (id: number) => {
@@ -47,7 +49,12 @@ const UserLocation = () => {
 
   const handleSubmit = async (id: number, values: UpdateUserLocationRequest) => {
 
-    await UserService.updateUserLocation(id, values)
+    const payload = {
+      ...values,
+      cityId,
+    };
+
+    await UserService.updateUserLocation(id, payload)
       .then((res) => {
         toast.success(res.data.message);
       })
@@ -91,6 +98,8 @@ const UserLocation = () => {
     const selectedCityDistrict = districts.filter((district: DistrictModel) => district.city.id == selectedCity)
     setSelectedFilter(selectedCityDistrict)
     setCity(city);
+
+    setCityId(selectedCity);
   }
 
   if (!user) return <OverlayLoaderLoad />
@@ -104,7 +113,7 @@ const UserLocation = () => {
             districtId: user.district?.id,
             address: user?.address,
           }}
-          validationSchema={UserLocationSchema}
+          //validationSchema={UserLocationSchema}
           onSubmit={(values) => handleSubmit(user?.id, values)}
         >
           <Form>
@@ -117,7 +126,7 @@ const UserLocation = () => {
                     as="select"
                     className="form-control"
                     onChange={(e: any) => handleCityChange(e.target.value)}
-                    value={city?.id}
+                    value={user?.city?.id}
                   >
                     {user.district && (
                       <option key={user?.city?.id} value={user.city.id}>
@@ -136,6 +145,7 @@ const UserLocation = () => {
                   name="districtId"
                   as="select"
                   className="form-control"
+                  value={user.district?.id} 
                 >
                   {user.city && (
                     <option key={user?.district?.id} value={user?.district?.id}>
