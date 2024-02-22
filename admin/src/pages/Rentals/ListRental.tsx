@@ -42,7 +42,7 @@ const ListRental = (props: Props) => {
             
               <select name="." title="." >
               {rentals.map((rental: RentalModel) => (
-                <option key={rental.id} value={rental.startDate.toString()}>{formatDate(rental.startDate)}</option>
+                <option key={rental.id} value={rental.startDate.toString()}>{formatDate(new Date(rental.startDate))}</option>
                 ))}
               </select>
           

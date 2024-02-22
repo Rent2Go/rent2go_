@@ -37,9 +37,8 @@ const DiscountCode: React.FC<DiscountCodeProps> = (
 
   const getByDiscountCode = async(discountCode: string) => {
     if(discountCode){
-    const response = await DiscountService.getByDiscountCode(discountCode)
+       await DiscountService.getByDiscountCode(discountCode)
       .then((response) => {
-
            DiscountService.getByUniqueDiscount(user.customer.id, response.data.data.id)
            .then((res) => { 
               setDiscountCode(response.data.data);

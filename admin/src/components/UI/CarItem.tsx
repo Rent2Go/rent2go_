@@ -29,7 +29,7 @@ const CarItem = (props: Props) => {
       </div>
 
       <div className="car__img">
-        <img src={props.rental.car.imageUrl} alt={props.rental.car.colorName} />
+        <img src={props.rental.car.imageUrl} alt={props.rental.car.color.name} />
       </div>
 
       <div className="car__item-bottom">
