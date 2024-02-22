@@ -35,6 +35,15 @@
   font-weight: 300;
   margin-top: 20px;
 }
+.accountSettings .form img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 350px;
+}
+.accountSettings .form .img-fluid {
+  max-width: 100%;
+  height: auto;
+}
 
 @media screen and (max-width: 520px) {
   .accountSettings .mainHead1 {

@@ -33,6 +33,15 @@
             font-weight: 300;
             margin-top: 20px;
         }
+        img {
+            object-fit: contain;
+            width: 350px;
+        }
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+        
     }
     
 }
