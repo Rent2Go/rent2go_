@@ -8,11 +8,13 @@ import DistrictService from "../../../services/DistrictService";
 import { CityModel } from "../../../models/responses/cities/GetCity";
 import { DistrictModel } from "../../../models/responses/districts/GetDistrict";
 import CityService from "../../../services/CityService";
-import { onChange } from "react-toastify/dist/core/store";
 import UserService from "../../../services/UserService";
 import { UserModel } from "../../../models/user/UserModel";
 import OverlayLoaderLoad from "../../OverlayLoader/OverlayLoaderLoad";
 import { useAuth } from "../../../contexts/AuthContext";
+import { ToastContainer, toast } from "react-toastify";
+import { UpdateUserLocationRequest } from "../../../models/requests/user/UpdateUserLocation";
+import { resolve } from "path";
 
 const UserLocation = () => {
 
@@ -37,13 +39,23 @@ const UserLocation = () => {
 
 
 
-  const UserLocationSchema = Yup.object().shape({
-    city: Yup.string().required("City field cannot be empty"),
-    district: Yup.string().required("District field cannot be empty"),
+  const UserLocationSchema = Yup.object({
+    cityId: Yup.number().required("City field cannot be empty"),
+    districtId: Yup.number().required("District field cannot be empty"),
     address: Yup.string().required("Address field cannot be empty"),
   });
 
-  const handleSubmit = () => { };
+  const handleSubmit = async (id: number, values: UpdateUserLocationRequest) => {
+
+    await UserService.updateUserLocation(id, values)
+      .then((res) => {
+        toast.success(res.data.message);
+      })
+      .catch((err: any) => {
+        toast.error(err.response.data.message);
+      })
+
+  };
 
 
   const getCities = async () => {
@@ -88,12 +100,12 @@ const UserLocation = () => {
       <div className="form">
         <Formik
           initialValues={{
-            city: user.city,
-            district: user.district,
+            cityId: user.city.id,
+            districtId: user.district.id,
             address: user.address,
           }}
           validationSchema={UserLocationSchema}
-          onSubmit={handleSubmit}
+          onSubmit={(values) => handleSubmit(user.id, values)}
         >
           <Form>
             <div className="row">
@@ -101,7 +113,7 @@ const UserLocation = () => {
                 <div>
                   <label className="form-label">{t("city")}</label>
                   <Field
-                    name="city"
+                    name="cityId"
                     as="select"
                     className="form-control"
                     onChange={(e: any) => handleCityChange(e.target.value)}
@@ -121,7 +133,7 @@ const UserLocation = () => {
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
                 <label className="form-label">{t("district")}</label>
                 <Field
-                  name="district"
+                  name="districtId"
                   as="select"
                   className="form-control"
                 >
@@ -149,14 +161,16 @@ const UserLocation = () => {
                 ></FormikInput>
               </div>
             </div>
+            <div className="row text-center">
+              <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
+                <button type="submit" className="mainButton1">{t("saveLocationChanges")}</button>
+              </div>
+            </div>
           </Form>
         </Formik>
+        <ToastContainer position="bottom-center" />
       </div>
-      <div className="row text-center">
-        <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
-          <button className="mainButton1">{t("saveLocationChanges")}</button>
-        </div>
-      </div>
+
 
     </div>
   );

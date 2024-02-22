@@ -64,8 +64,8 @@ useEffect(() => {
                 <td>{item.car.model.name}</td>
                 <td>
                   <p className='p1'>
-                    {item.returnDate == null && <div className='icon1'><RiUserLocationLine /></div>}
-                    {item.returnDate != null && <div className='icon2'><RiUserFollowLine /></div>}
+                    {item.returnDate == null && <div className='icon1'><RiUserLocationLine title={t("inUse")} /></div>}
+                    {item.returnDate != null && <div className='icon2'><RiUserFollowLine title={t("delivered")} /></div>}
                   </p>
                 </td>
               </tr>
@@ -74,12 +74,12 @@ useEffect(() => {
         </tbody>
       </table>
       <div className='information'>
-        <div className='inUse'>
-          <RiUserLocationLine />
+        <div className='inUse p1 '>
+          <RiUserLocationLine className='icon2' title={t("inUse")}  />
           <span>{" : " + t("inUse")}</span>
         </div>
-        <div className='delivered'>
-          <RiUserFollowLine />
+        <div className='delivered p1'>
+          <RiUserFollowLine className='icon1'  title={t("delivered")} />
           <span>{" : " + t("delivered")}</span>
         </div>
       </div>

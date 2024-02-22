@@ -8,21 +8,36 @@ import { CityModel } from "../../../models/responses/cities/GetCity";
 import { DistrictModel } from "../../../models/responses/districts/GetDistrict";
 import CityService from "../../../services/CityService";
 import DistrictService from "../../../services/DistrictService";
+import { UserModel } from "../../../models/user/UserModel";
+import { useAuth } from "../../../contexts/AuthContext";
+import UserService from "../../../services/UserService";
+import { ToastContainer, toast } from "react-toastify";
 
 const ChangePassword = () => {
-
+  const auth = useAuth()
   const { t } = useTranslation();
+
+
+  const [user, setUser] = useState<UserModel>();
 
 
   const initialValues: any = {
     oldPassword: "",
-    newPassword: "",
+    password: "",
     passwordConfirm: "",
   };
 
-  const changePasswordSchema = Yup.object().shape({
+
+  const getUser = async (id: number) => {
+    await UserService.getById(id)
+      .then((res: any) => {
+        setUser(res.data.data)
+      })
+  }
+
+  const changePasswordSchema = Yup.object({
     oldPassword: Yup.string().required("Old password field cannot be empty"),
-    newPassword: Yup.string()
+     password: Yup.string()
       .matches(/[A-Z]/, "Must contain at least one uppercase letter")
       .matches(/[a-z]/, "Must contain at least one lowercase letter")
       .matches(/[0-9]/, "Must contain at least one digit")
@@ -37,10 +52,22 @@ const ChangePassword = () => {
       .required("Please confirm your password"),
   });
 
-  const handleSubmit = () => {};
+  const handleSubmit = async (id: number, values: any) => {
+    await UserService.profilPageChangePassword(id, values)
+      .then((res) => {
+        toast.success(res.data.message)
+      })
+      .catch((err: any) => {
 
+        toast.error(err.response.data.message)
+      })
 
+  };
 
+  useEffect(() => {
+    getUser(auth.authInformation.user.id)
+
+  }, [user?.id])
 
   return (
     <div className="changePassword">
@@ -48,8 +75,8 @@ const ChangePassword = () => {
       <div className="form">
         <Formik
           initialValues={initialValues}
-          validationSchema={changePasswordSchema}
-          onSubmit={handleSubmit}
+          //validationSchema={changePasswordSchema}
+          onSubmit={(values)=> handleSubmit(auth.authInformation.user.id,values)}
         >
           <Form>
             <div className="row">
@@ -64,9 +91,9 @@ const ChangePassword = () => {
             <div className="row">
               <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
                 <FormikInput
-                  name="newPassword"
+                  name="password"
                   type="password"
-                  label={t("newPassword")}
+                  label={t("password")}
                 ></FormikInput>
               </div>
             </div>
@@ -79,15 +106,17 @@ const ChangePassword = () => {
                 ></FormikInput>
               </div>
             </div>
+            <div className="row text-center">
+              <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
+                <button type="submit" className="mainButton1">{t("savepassword")}</button>
+              </div>
+            </div>
           </Form>
         </Formik>
+        <ToastContainer position="bottom-center" />
       </div>
-      <div className="row text-center">
-        <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
-          <button className="mainButton1">{t("saveNewPassword")}</button>
-        </div>
-      </div>
-      
+
+
     </div>
   );
 };

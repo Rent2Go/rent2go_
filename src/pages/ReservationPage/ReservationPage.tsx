@@ -121,11 +121,11 @@ const ReservationPage = () => {
 
   const isAuthenticated = () => {
     if (auth.authInformation.user.email === "" || null || undefined) {
-      alert("You have to be authenticated before you can  make a reservation.");
+      alert(t("youHaveToBeAuthenticatedBeforeYouCanMakeAReservation"));
       navigate("/sign-up");
     }
     if (user?.district === null) {
-      alert("Your user information is missing, please fill it in!!!");
+      alert(t("yourUserInformationIsMissingPleaseFillItIn"));
       navigate("/profile/location-settings");
     }
   };
@@ -191,7 +191,7 @@ const ReservationPage = () => {
                 </p>
                 <p>
                   <span>
-                    <b>Model :</b>{" "}
+                    <b>{t("model")} :</b>{" "}
                   </span>
                   <span>
                     {rentals?.model?.brand.name} {rentals?.model?.name}
@@ -200,7 +200,7 @@ const ReservationPage = () => {
 
                 <p>
                   <span>
-                    <b>Type :</b>{" "}
+                    <b>{t("type")} :</b>{" "}
                   </span>
                   <span>
                     {rentals?.fuelType.toLowerCase()},{" "}
@@ -209,7 +209,7 @@ const ReservationPage = () => {
                 </p>
                 <p>
                   <span>
-                    <b>Rental : </b>{" "}
+                    <b>{t("rental")} : </b>{" "}
                   </span>
                   <span>{rentDay == 0 ? 1 : rentDay} - {t("days")}</span>
                 </p>
@@ -220,7 +220,7 @@ const ReservationPage = () => {
             </div>
             <div className="bottomContainer">
               <div className="packageContainer">
-                <p>What's included in the package ?</p>
+                <p>{t("whatsIncludedInThePackage")}</p>
                 <div>
                   <span>
                     <button title="."
@@ -230,11 +230,10 @@ const ReservationPage = () => {
                     >
                       <CiCircleInfo />
                     </button>{" "}
-                    Insurance
+                    {t("insurance")}
                     <BasePopup id={popInsurance} open={openInsurance}>
                       <div>
-                        All accidents and thefts for which a Police Report has
-                        been filed are covered by insurance.
+                        {t("insuranceDescription")}
                       </div>
                     </BasePopup>
                   </span>
@@ -246,11 +245,10 @@ const ReservationPage = () => {
                     >
                       <CiCircleInfo />
                     </button>{" "}
-                    Roadside Assistance
+                    {t("roadsideAssistance")}
                     <BasePopup id={popAssistance} open={openAssistance}>
                       <div>
-                        You can call us for roadside assistance and support 24
-                        hours a day, 7 days a week.
+                        {t("roadsideAssistanceDescription")}
                       </div>
                     </BasePopup>
                   </span>
@@ -259,7 +257,7 @@ const ReservationPage = () => {
               <form onSubmit={handleSubmit}>
                 <div className="actionContainer">
                   <div className="radioContainer">
-                    <p>Choose Payment Method : </p>
+                    <p>{t("choosePaymentMethod")} : </p>
                     <FormControl>
                       <RadioGroup
                         aria-labelledby="demo-radio-buttons-group-label"
@@ -270,17 +268,17 @@ const ReservationPage = () => {
                         <FormControlLabel
                           value="cash"
                           control={<Radio />}
-                          label="Cash"
+                          label={t("cash")}
                         />
                         <FormControlLabel
                           value="online"
                           control={<Radio />}
-                          label="Online"
+                          label={t("online")}
                         />
                         <FormControlLabel
                           value="bankTransfer"
                           control={<Radio />}
-                          label="Bank Transfer"
+                          label={t("bankTransfer")}
                         />
                       </RadioGroup>
                     </FormControl>

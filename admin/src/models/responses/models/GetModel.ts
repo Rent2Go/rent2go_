@@ -1,5 +1,8 @@
 export interface ModelModel {
     id: number;
 	name: string;
-	brandName: string;
+	brand:{
+		id:number,
+		name:string
+	}
 }
