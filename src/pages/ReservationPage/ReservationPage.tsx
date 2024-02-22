@@ -122,7 +122,7 @@ const ReservationPage = () => {
   const isAuthenticated = () => {
     if (auth.authInformation.user.email === "" || null || undefined) {
       alert(t("youHaveToBeAuthenticatedBeforeYouCanMakeAReservation"));
-      navigate("/sign-up");
+      navigate("/sign-in");
     }
     if (user?.district === null) {
       alert(t("yourUserInformationIsMissingPleaseFillItIn"));

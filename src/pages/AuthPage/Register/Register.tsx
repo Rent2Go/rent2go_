@@ -10,13 +10,9 @@ import { useAuth } from "../../../contexts/AuthContext";
 
 import AuthService from "../../../services/authService/AuthService";
 import TokenService from "../../../services/TokenService";
-
 import Field from "../../../components/FormikInput/FormikInput";
-
-import { TokenResponse } from "../../../models/responses/auth/LoginResponse";
 import { SignInRequest } from "../../../models/requests/auth/SignInRequest";
 import { signUpRequest } from "../../../models/requests/auth/SignupRequest";
-
 import {
   signInValidationSchema,
   signIninitialValues,
@@ -25,7 +21,6 @@ import {
 } from "../FormikAndYupSchema";
 
 import "../styles/register.css";
-
 import { useSelector } from "react-redux";
 import { Helmet } from "react-helmet";
 import CustomerService from "../../../services/CustomerService";
