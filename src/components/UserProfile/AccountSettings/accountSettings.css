@@ -52,6 +52,9 @@
   .accountSettings .mainButton1 {
     font-size: 1rem;
   }
+  .accountSettings .form {
+    padding: 10px 20px;
+  }
   .accountSettings .form label {
     font-size: 1rem;
     margin-top: 15px;

@@ -30,10 +30,10 @@
   }
   .userProfile .userProfileIn .left {
     font-size: 0.8rem;
-    width: 28%;
+    width: 27%;
   }
   .userProfile .userProfileIn .right {
-    width: 69%;
+    width: 68%;
   }
 }
 @media screen and (min-width: 520px) and (max-width: 770px) {
