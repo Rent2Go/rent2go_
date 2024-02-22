@@ -206,12 +206,13 @@ p.sub-title {
         margin-bottom: 3.2rem;
       }
       #contact-container {
-        width: 470px;
+        width: 400px;
         padding: 5px;
         .contact-info {
-          padding: 2rem 1rem;
+          padding: 2rem 0.7rem;
+          width: 43%;
           h4 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
           }
           p {
             font-size: 0.9rem;
@@ -219,7 +220,9 @@ p.sub-title {
           }
           .icon-text {
             .icon {
-              font-size: 1.2rem;
+              font-size: 1rem;
+              margin-right: 1px;
+              margin-left: -3px;
             }
             span {
               font-size: 0.8rem;
@@ -233,7 +236,7 @@ p.sub-title {
           padding: 10px;
           padding-top: 2rem;
           padding-right: 0px;
-          width: 70%;
+          width: 60%;
           .col-2 {
             width: 100%;
           }
@@ -300,6 +303,7 @@ p.sub-title {
           .icon-text {
             .icon {
               font-size: 1.3rem;
+              margin-right: 5px;
             }
             span {
               font-size: 0.9rem;
