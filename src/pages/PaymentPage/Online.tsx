@@ -248,7 +248,7 @@ const Online = (props: Props) => {
                           </p>
                         </div>
                         <div className="col-xl-4 col-l-4 col-md-6 col-sm-6">
-                          <p>{priceCard.totalPrice.toFixed(2)} ₺</p>
+                          <p>{(priceCard.totalPrice + priceCard.discountRate).toFixed()} ₺</p>
                         </div>
                       </div>
                     </div>
@@ -274,7 +274,7 @@ const Online = (props: Props) => {
                           </p>
                         </div>
                         <div className="col-xl-5 col-l-5 col-md-6 col-sm-6">
-                          <p>{(priceCard.totalPrice - priceCard.discountRate).toFixed(2)} ₺</p>
+                          <p>{(priceCard.totalPrice).toFixed(2)} ₺</p>
                         </div>
                       </div>
                     </div>

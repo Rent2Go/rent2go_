@@ -36,6 +36,7 @@ import {
   VerificationExpired,
   VerificationAlreadyVerified,
 } from "../pages";
+import PrivateRoute from "../utils/PrivateRoute";
 
 const Router = () => {
   return (
@@ -50,7 +51,7 @@ const Router = () => {
         <Route path="/sign-in" element={<Register />} />
 
         {/*navbar pages */}
-        <Route path="/profile/:activepage" element={<ProfilePage />} />
+        <Route path="/profile/:activepage" element={<PrivateRoute element={<ProfilePage/>}/>} />
         <Route path="/cars" element={<CarPage />} />
         <Route path="/our-team" element={<OurTeamPage />} />
         <Route path="/contact" element={<ContactPage />} />
@@ -71,9 +72,9 @@ const Router = () => {
 
         {/*payment & reservation pages */}
         <Route path="/reservation/:id" element={<ReservationPage />} />
-        <Route path="/payment/cash" element={<Cash />} />
-        <Route path="/payment/online" element={<Online />} />
-        <Route path="/payment/bankTransfer" element={<BankTransfer />} />
+        <Route path="/payment/cash" element={<PrivateRoute element={<Cash/>}/>} />
+        <Route path="/payment/online" element={<PrivateRoute element={<Online/>}/>} />
+        <Route path="/payment/bankTransfer" element={<PrivateRoute element={<BankTransfer/>}/>} />
 
         {/*response pages */}
         <Route path="/payment-successful" element={<SuccessfulPayment />} />

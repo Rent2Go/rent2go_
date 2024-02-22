@@ -94,7 +94,7 @@ const Cash = (props: Props) => {
                       </p>
                     </div>
                     <div className="col-xl-3 col-l-3 col-md-6 col-sm-6">
-                      <p>{priceCard.totalPrice.toFixed(2)} ₺</p>
+                      <p>{(priceCard.totalPrice + priceCard.discountRate).toFixed(2)} ₺</p>
                     </div>
                   </div>
                 </div>
@@ -120,7 +120,7 @@ const Cash = (props: Props) => {
                       </p>
                     </div>
                     <div className="col-xl-3 col-l-3 col-md-6 col-sm-6">
-                      <p>{(priceCard.totalPrice - priceCard.discountRate).toFixed(2)} ₺</p>
+                      <p>{priceCard.totalPrice.toFixed(2)} ₺</p>
                     </div>
                   </div>
                 </div>
@@ -128,7 +128,12 @@ const Cash = (props: Props) => {
 
               <div className="row btnRow">
                 <div className="col-xl-7 col-l-7 col-md-12 col-sm-12">
-                  <ReceiptPDF auth={auth} currentDate={currentDate} />
+                  <ReceiptPDF
+                   auth={auth}
+                    currentDate={currentDate}
+                    amount={(priceCard.totalPrice + priceCard.discountRate).toFixed(2)} 
+                    discountRate={priceCard.discountRate.toFixed(2)} 
+                    totalAmount ={priceCard.totalPrice.toFixed(2)}/>
                 </div>
                 <div className="col-xl-4 col-l-4 col-md-12 col-sm-12">
                   <Link

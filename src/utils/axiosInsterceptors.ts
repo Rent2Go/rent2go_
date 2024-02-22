@@ -56,7 +56,12 @@ axiosInstance.interceptors.request.use(
 						const RefreshTokenRequest = {
 							token: localRefreshToken
 						}
-						const response = await axios.post('http://localhost:8080/api/refreshtoken', RefreshTokenRequest);
+						const response = await axios.post('http://localhost:8080/api/refreshtoken', RefreshTokenRequest,{
+							headers: {
+								'Authorization': `Bearer ${localRefreshToken}`
+							  }
+						
+						});
 						const { token, refreshToken } = response.data;
 
 
