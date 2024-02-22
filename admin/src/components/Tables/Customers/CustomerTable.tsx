@@ -49,16 +49,23 @@ const CustomerTable = (props: Props) => {
             <tr key={customer.id}>
                 <td>{customer.id}</td>
               <td>
-                <img src="/assets/images/profile.png" alt="customer-img" />
+              {customer.user.imageUrl ? (
+              <img
+                src={`${customer.user.imageUrl}`}
+                alt="user-img"
+              />
+            ) : (
+              <img src="/assets/images/userImages/user-default.jpg" alt="default-img" />
+            )}
               </td>
               <td>{customer.user.name}</td>
               <td>{customer.user.surname}</td>
               <td>{customer.user.email}</td>
               <td>{customer.user.phoneNumber}</td>
-              <td>{customer.nationalityId}</td>
-              <td>{customer.city}</td>
-              <td>{customer.district}</td>
-              <td>{customer.address}</td>
+              <td>{customer.user.idCardNumber}</td>
+              <td>{customer.user.city.cityName}</td>
+              <td>{customer.user.district.districtName}</td>
+              <td>{customer.user.address}</td>
               <td>
                 <Form>
                   <Form.Check

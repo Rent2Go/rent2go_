@@ -11,7 +11,7 @@ export interface EmployeeModel {
     password: string;
     birthDate: string;
     idCardNumber: string;
-    address: string;
+    address?: string;
     role: string;
     imageUrl: string;
     active: boolean;
