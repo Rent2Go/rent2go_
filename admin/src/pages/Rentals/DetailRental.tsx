@@ -3,6 +3,9 @@ import "./styles/rentals.css";
 import { RentalModel } from "../../models/responses/rentals/GetRental";
 import { useParams } from "react-router-dom";
 import RentalService from "../../services/RentalService";
+import { differenceInDays } from "date-fns";
+import { parseISO } from "date-fns/esm";
+import OverlayLoaderTest from "../../components/OverlayLoader/OverlayLoaderTest";
 
 type Props = {};
 
@@ -11,14 +14,16 @@ const DetailRental = (props: Props) => {
   const params = useParams<{ id: string }>();
 
   const getRentalDetail = async (id: string) => {
-    try {
-      const response = await RentalService.getById(parseInt(id));
-      setRentalDetail(response.data.data);
-      console.log(response.data.message);
-      console.log(response.data.data.car);
-    } catch (error) {
-      console.log("There is an error : ", error);
-    }
+   
+       await RentalService.getById(parseInt(id))
+      .then((res)=> {
+        setRentalDetail(res.data.data);
+        console.log(res.data.data.customer);
+        
+      })
+      .catch((err)=>{
+        console.log(err.response.data.message);
+      })
   };
 
   useEffect(() => {
@@ -46,28 +51,34 @@ const DetailRental = (props: Props) => {
     }
     return null;
   };
+  if(rentalDetail){
 
+     console.log(parseISO(rentalDetail.endDate).getDay());
+  }
+ 
+  
+  if(!rentalDetail) return <OverlayLoaderTest />
   return (
     <div className="booking container">
       <div className="secContainer shadow-rounded-box">
         <div className="titleContainer">
-          <h2>Rental Details of : {rentalDetail?.car.plate}</h2>
+          <h2>Rental Details of : {rentalDetail.car.plate}</h2>
         </div>
         <div className="contentContainer">
           <div className="customerContainer">
-            <p>ID : {rentalDetail?.customer.nationalityId}</p>
+            <p>ID : {rentalDetail?.customer.user.id}</p>
             <p>
               Customer : {rentalDetail?.customer.user.name}{" "}
-              {rentalDetail?.customer.user.surname}
+              {rentalDetail?.customer.id}
             </p>
 
-            <p>Email : {rentalDetail?.customer.user.email}</p>
-            <p>Phone : {rentalDetail?.customer.user.phoneNumber}</p>
+            <p>Email : {rentalDetail?.customer?.user?.email}</p>
+            <p>Phone : {rentalDetail?.customer?.user?.phoneNumber}</p>
           </div>
           <div className="rentalDateContainer">
             <p>Start Date : {rentalDetail?.startDate.toString()}</p>
             <p>End Date : {rentalDetail?.endDate.toString()}</p>
-            <p>Day : {calculateDayCount()} Days</p>
+            <p>Day : {differenceInDays(parseISO(rentalDetail.endDate),parseISO(rentalDetail.startDate))== 0 ? 1:differenceInDays(parseISO(rentalDetail.endDate),parseISO(rentalDetail.startDate)) } Days</p>
             <p>Daily Price : {formatPrice(rentalDetail?.car.dailyPrice)} </p>
             <p>Total Price : {formatPrice(rentalDetail?.totalPrice)}   </p>
            

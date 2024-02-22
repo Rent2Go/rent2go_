@@ -16,7 +16,7 @@ const Settings = (props: Props) => {
  const auth =  useAuth()
  const email = auth.authInformation.user.email;
  const [user,setUser] = useState<UserModel>();
- console.log(user?.imageUrl);
+ 
  
 
  const getUserByEmail = async(email:string)=>{
@@ -53,10 +53,10 @@ const Settings = (props: Props) => {
                   <div className="col-xl-4 col-l-4 col-md-12 col-sm-12">
                     <div className="row">
                       <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
-                        <div className="imgDiv">
+                        <div className="imgDiv ">
                         {user?.imageUrl ? (
                 <img
-                  src={`/assets/images/userImages/${user.imageUrl}`}
+                  src={user.imageUrl}
                   alt="profile"
                 />
               ) : (

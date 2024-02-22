@@ -24,8 +24,10 @@ const Navbar = (props: Props) => {
     if(email ){
       getUserByEmail(email)
     }
+   
+    
   }, []);
-
+  console.log(user);
   return (
     <div className="navbar">
       <div className="navbar__wrapper">
@@ -48,7 +50,7 @@ const Navbar = (props: Props) => {
             <Link to="/profile">
               {user?.imageUrl ? (
                 <img
-                  src={`${user.imageUrl}`}
+                  src={user?.imageUrl}
                   alt="profile"
                 />
               ) : (

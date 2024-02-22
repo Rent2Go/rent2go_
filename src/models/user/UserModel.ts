@@ -25,7 +25,7 @@ export interface UserModel {
     role: string;
     imageUrl: string;
     customer:{
-      id:number
-    } ;
+      id:number;
+    } 
     active: boolean;
   }

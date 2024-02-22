@@ -21,9 +21,11 @@ const AccountSettings = () => {
 
 
   const [user, setUser] = useState<UserModel>();
+  
   useEffect(() => {
     getUser(auth.authInformation.user.id)
-
+      console.log(user);
+      
   }, [user?.id])
 
 
@@ -94,7 +96,7 @@ const AccountSettings = () => {
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
                
               </div>
-              <div className="col-xl-12 col-l-12 col-md-12 col-sm-12 imgDiv">
+              <div className="col-xl-6 col-l-6 col-md-12 col-sm-12 imgDiv">
               
                     <img
                       src={`${user.imageUrl}`}
@@ -102,7 +104,7 @@ const AccountSettings = () => {
                       onClick={handleImageClick}
                     
                     />
-                <input type="file"   ref={fileInputRef} style={{ display: 'none' }} alt="Profil image" name="imgUrl" />
+                <input type="file"   ref={fileInputRef} style={{ display: 'none' }}  alt="Profil image" name="imgUrl" />
                 </div>
               </div>
            
