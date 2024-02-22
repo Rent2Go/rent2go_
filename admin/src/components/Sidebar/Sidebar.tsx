@@ -8,12 +8,14 @@ import sidebarLinks from "./sidebarLinks";
 
 import "react-toastify/dist/ReactToastify.css";
 import "./sidebar.css";
+import TokenService from "../../services/TokenService";
 
 type Props = {};
 
 const Sidebar = (props: Props) => {
   const logout = () => {
-    localStorage.removeItem("token");
+    TokenService.removeToken("token");
+    TokenService.removerefreshToken("refreshToken");
   };
 
   return (

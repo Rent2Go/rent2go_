@@ -13,6 +13,7 @@ import "./auth.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import { FormikInput } from "../../components";
+import TokenService from "../../services/TokenService";
 type Props = {};
 const Register = (props: Props) => {
 
@@ -27,7 +28,8 @@ const Register = (props: Props) => {
       .then((resolve) => {
 
         console.log("Sign-in successful:", resolve);
-        localStorage.setItem("token", resolve?.data?.token);
+        TokenService.setToken(resolve?.data?.token);
+        TokenService.setrefreshToken(resolve.data.refreshToken)
         toast.success("Giriş Başarılı")
         authContext.refreshUser();
         setTimeout(() => { navigate("/dashboard") }, 1500);
@@ -36,7 +38,7 @@ const Register = (props: Props) => {
       })
 
       .catch((error) =>
-        toast.error(error.response.data.message))
+        toast.warn(error.response.data.message))
   }
   return (
     <div className="auth">
