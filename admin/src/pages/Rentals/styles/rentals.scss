@@ -25,7 +25,7 @@
       }
       .booking__car-list {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         column-gap: 2rem;
         row-gap: 2rem;
         .car__item {
@@ -33,6 +33,10 @@
           border-radius: 5px;
           background: var(--primary-color);
           cursor: pointer;
+          display: flex;
+          flex-direction: column;
+          justify-content:space-around ;
+          align-items: stretch;
 
           .car__item-top {
             margin-bottom: 15px;
@@ -69,11 +73,12 @@
           }
           .car__item-bottom {
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             justify-content: space-between;
             .car__bottom-left {
               display: flex;
-              align-items: center;
+              flex-direction: column;
+              align-items: flex-start;
               column-gap: 1.5rem;
               p {
                 display: flex;
