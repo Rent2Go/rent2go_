@@ -83,7 +83,7 @@ const ChangePassword = () => {
               <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
                 <FormikInput
                   name="oldPassword"
-                  type="text"
+                  type="password"
                   label={t("oldPassword")}
                 ></FormikInput>
               </div>
