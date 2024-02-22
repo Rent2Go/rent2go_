@@ -10,6 +10,7 @@ import { FiPlus } from "react-icons/fi";
 import { FaMinus } from "react-icons/fa";
 
 import "./discount.css";
+import { useTranslation } from "react-i18next";
 interface DiscountCodeProps {}
 
 const DiscountCode: React.FC<DiscountCodeProps> = (
@@ -19,6 +20,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = (
   const [discountCode, setDiscountCode] = useState<DiscountModel>();
   const [inputCode, setInputCode] = useState("");
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const handleApplyDiscount = (e: any) => {
     setInputCode(e.target.value.toUpperCase());
@@ -50,7 +52,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = (
            })
       })
       .catch((error) => {
-        toast.error("Disount Code" + error)
+        toast.error("Discount Code" + error.response.data.message)
       });
     }
   }
@@ -64,7 +66,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = (
         className="form-control"
         name="discount-code"
         value={inputCode}
-        placeholder="Enter Discount"
+        placeholder={t("enterDiscount")}
         onChange={(e) => handleApplyDiscount(e)}
       />
       <button

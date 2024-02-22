@@ -5,10 +5,12 @@ import UserService from "../../services/UserService";
 import { useSelector } from "react-redux";
 import { useAuth } from "../../contexts/AuthContext";
 import { UserAuthModel } from "../../models/user/UserAuth";
+import { useTranslation } from "react-i18next";
 
 type Props = {};
 
 const CustomerCard = (props: Props) => {
+  const { t } = useTranslation();
   const customer = useAuth();
   console.log(customer.authInformation.user.firstname);
   return (
@@ -16,7 +18,7 @@ const CustomerCard = (props: Props) => {
       <div className="rowInfo">
         <p>
           <span>
-            <b>Name : </b>{" "}
+            <b>{t("name")} : </b>{" "}
           </span>
           <span>
             {customer.authInformation.user.firstname}{" "}
@@ -27,7 +29,7 @@ const CustomerCard = (props: Props) => {
       <div className="rowInfo">
         <p>
           <span>
-            <b>Email : </b>{" "}
+            <b>{t("email")} : </b>{" "}
           </span>
           <span>{customer.authInformation.user.email}</span>
         </p>
@@ -35,7 +37,7 @@ const CustomerCard = (props: Props) => {
       <div className="rowInfo">
         <p>
           <span>
-            <b>Phone : </b>{" "}
+            <b>{t("phone")} : </b>{" "}
           </span>
           <span>{customer.authInformation.user.phoneNumber}</span>
         </p>
