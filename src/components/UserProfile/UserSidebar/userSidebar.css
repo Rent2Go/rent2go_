@@ -30,11 +30,12 @@
 @media screen and (max-width: 520px) {
   .userSidebar .s1, .userSidebar .s2 {
     gap: 7px;
-    padding: 15px;
+    padding: 15px 10px;
+    padding-left: 10px;
   }
   .userSidebar .img {
-    width: 19px;
-    height: 19px;
+    width: 15px;
+    height: 15px;
   }
 }
 @media screen and (min-width: 520px) and (max-width: 770px) {

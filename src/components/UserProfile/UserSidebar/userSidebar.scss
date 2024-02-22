@@ -32,11 +32,12 @@
     .userSidebar{
         .s1, .s2{
             gap: 7px;
-            padding: 15px;
+            padding: 15px 10px;
+            padding-left: 10px;
         }
         .img{
-            width: 19px;
-            height: 19px;
+            width: 15px;
+            height: 15px;
         }
     }
 }

@@ -93,35 +93,43 @@ const AccountSettings = () => {
         >
           <Form>
             <div className="row">
-              <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-               
-              </div>
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12 imgDiv">
-              
+                <div className="row">
                     <img
-                      src={`${user.imageUrl}`}
-                      alt="profile"
-                      onClick={handleImageClick}
-                    
-                    />
-                <input type="file"   ref={fileInputRef} style={{ display: 'none' }}  alt="Profil image" name="imgUrl" />
+                        src={`${user.imageUrl}`}
+                        alt="profile"
+                        onClick={handleImageClick}
+                        className="img-fluid text-center mx-auto"
+                      />
+                  
+                    <input type="file"   ref={fileInputRef} style={{ display: 'none' }}  alt="Profil image" name="imgUrl" />
                 </div>
               </div>
-           
-            <div className="row">
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                <FormikInput
-                  name="name"
-                  type="text"
-                  label={t("firstName")}
-                ></FormikInput>
-              </div>
-              <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
-                <FormikInput
-                  name="surname"
-                  type="text"
-                  label={t("lastName")}
-                ></FormikInput>
+                <div className="row">
+                  <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
+                    <FormikInput
+                      name="name"
+                      type="text"
+                      label={t("firstName")}
+                    ></FormikInput>
+                  </div>
+                  <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
+                    <FormikInput
+                      name="surname"
+                      type="text"
+                      label={t("lastName")}
+                    ></FormikInput>
+                  </div>
+                  <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
+                    <FormikInput
+                      disabled
+                      name="email"
+                      type="email"
+                      label={t("email")}
+                    ></FormikInput>
+                   </div>
+                </div>
               </div>
             </div>
 
@@ -130,28 +138,20 @@ const AccountSettings = () => {
                 <FormikInput
                   name="phoneNumber"
                   type="text"
-                  label={t("phoneNumber")}
+                  label={t("phone")}
                 ></FormikInput>
               </div>
               <div className="col-xl-6 col-l-6 col-md-12- col-sm-12" >
                 <FormikInput
                   name="birthDate"
                   type="date"
-                  label={t("birthDate")}
+                  label={t("dateOfBirth")}
                 ></FormikInput>
               </div>
 
             </div>
 
-            <div className="form-group">
-              <FormikInput
-                disabled
-                name="email"
-                type="email"
-                label={t("email")}
-              ></FormikInput>
-
-            </div>
+            
             <div className="form-group" >
               <FormikInput
                 disabled

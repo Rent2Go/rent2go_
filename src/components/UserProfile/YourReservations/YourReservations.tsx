@@ -75,11 +75,11 @@ useEffect(() => {
       </table>
       <div className='information'>
         <div className='inUse p1 '>
-          <RiUserLocationLine className='icon2' title={t("inUse")}  />
+          <RiUserLocationLine className='icon1' title={t("inUse")}  />
           <span>{" : " + t("inUse")}</span>
         </div>
         <div className='delivered p1'>
-          <RiUserFollowLine className='icon1'  title={t("delivered")} />
+          <RiUserFollowLine className='icon2'  title={t("delivered")} />
           <span>{" : " + t("delivered")}</span>
         </div>
       </div>
