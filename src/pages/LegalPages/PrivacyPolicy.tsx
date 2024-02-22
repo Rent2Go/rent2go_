@@ -9,7 +9,7 @@ const PrivacyPolicy = (props: Props) => {
   return (
     <>
       <Navbar />
-      <div className="legalPages">
+      <div className="legalPages container-fluid">
         <div className="secContainer">
           <div className="tabs_list">
             <ul>

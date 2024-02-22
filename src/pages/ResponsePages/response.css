@@ -17,6 +17,9 @@
 .response .secContainer .titleContainer .text-alert {
   color: var(--color-danger);
 }
+.response .secContainer .titleContainer .text-warning {
+  color: var(--color-warning);
+}
 .response .secContainer .contentContainer {
   display: flex;
   justify-content: flex-start;

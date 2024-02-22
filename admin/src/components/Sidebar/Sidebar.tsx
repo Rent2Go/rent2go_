@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AiOutlineLogout } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
-import { GiHamburgerMenu } from "react-icons/gi";
 
 import sidebarLinks from "./sidebarLinks";
 
@@ -13,6 +12,7 @@ import TokenService from "../../services/TokenService";
 type Props = {};
 
 const Sidebar = (props: Props) => {
+  
   const logout = () => {
     TokenService.removeToken("token");
     TokenService.removerefreshToken("refreshToken");
@@ -26,7 +26,7 @@ const Sidebar = (props: Props) => {
             src="https://rentogo.com.tr/screenshoots/logo-dark.png"
             alt="logo"
           />{" "}
-          Rent2go <button type="button" className="btn"><GiHamburgerMenu /></button>
+          Rent2go
         </h2>
         
       </div>

@@ -24,7 +24,7 @@ const CRandComplaintProcedures = (props: Props) => {
               </Link>
             </div>
           </div>
-          <div className="imgContainer">
+          <div className="imgContainers">
             <img src="/assets/img/coming-soon.png" alt="not-found" />
           </div>
         </div>

@@ -223,7 +223,7 @@ const ReservationPage = () => {
                 <p>{t("whatsIncludedInThePackage")}</p>
                 <div>
                   <span>
-                    <button
+                    <button title="."
                       aria-describedby={popInsurance}
                       type="button"
                       onMouseEnter={handleClickInsurance}
@@ -238,7 +238,7 @@ const ReservationPage = () => {
                     </BasePopup>
                   </span>
                   <span>
-                    <button
+                    <button title="."
                       aria-describedby={popAssistance}
                       type="button"
                       onMouseEnter={handleClickAssistance}

@@ -33,6 +33,8 @@ import {
   SuccessfulResetPassword,
   FailedPayment,
   VerificationFailed,
+  VerificationExpired,
+  VerificationAlreadyVerified,
 } from "../pages";
 
 const Router = () => {
@@ -79,6 +81,8 @@ const Router = () => {
         <Route path="/reset-password-successful" element={<SuccessfulResetPassword />}/>
         <Route path="/email-verification-successful" element={<VerificationSuccessful />}/>
         <Route path="/email-verification-failed" element={<VerificationFailed />}/>
+        <Route path="/email-verification-expired" element={<VerificationExpired />}/>
+        <Route path="/email-verification-already-verified" element={<VerificationAlreadyVerified />}/>
       </Routes>
     </PaymentProvider>
   );

@@ -19,5 +19,16 @@ export interface CustomerModel {
     enabled: boolean;
     username: string;
     active: boolean;
+    idCardNumber:string;
+    address: string;
+    city: {
+      id: number;
+      cityName: string;
+    };
+    district: {
+      id: number;
+      districtName: string;
+      cityId: number;
+    };
   };
 }

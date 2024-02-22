@@ -88,4 +88,16 @@
   grid-template-columns: repeat(1, 1fr) !important;
   -moz-column-gap: 0 !important;
        column-gap: 0 !important;
+}
+
+@media screen and (max-width: 425px) {
+  .legal .secContainer .headingDiv {
+    text-align: left;
+  }
+  .legal .secContainer .headingDiv img {
+    width: 96px;
+  }
+  .legal .secContainer .contentContainer .letterContainer h2 {
+    font-size: 1em;
+  }
 }/*# sourceMappingURL=legal.css.map */

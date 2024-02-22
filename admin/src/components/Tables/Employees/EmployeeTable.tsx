@@ -38,8 +38,12 @@ const EmployeeTable = (props: Props) => {
             <th>Photo</th>
             <th>First Name</th>
             <th>Last Name</th>
+            <th>Role</th>
             <th>Mail Address</th>
             <th>Phone Number</th>
+            <th>City</th>
+            <th>District</th>
+            <th>Address</th>
             <th>Job Titles</th>
             <th>Department</th>
             <th>Salary</th>
@@ -50,14 +54,25 @@ const EmployeeTable = (props: Props) => {
         <tbody>
           {employees.map((employee: EmployeeModel) => (
             <tr key={employee.id}>
-              <td>{employee.id}</td>
+              <td width="10%">{employee.id}</td>
               <td>
-                <img src="/assets/images/profile.png" alt="employee-img" />
+              {employee.user.imageUrl ? (
+              <img
+                src={`${employee.user.imageUrl}`}
+                alt="user-img"
+              />
+            ) : (
+              <img src="/assets/images/userImages/user-default.jpg" alt="default-img" />
+            )}
               </td>
               <td>{employee.user.name}</td>
-              <td>{employee.user.name}</td>
+              <td>{employee.user.surname}</td>
+              <td>{employee.user.role}</td>
               <td>{employee.user.email}</td>
               <td>{employee.user.phoneNumber}</td>
+              <td>{employee.user.city.cityName}</td>
+              <td>{employee.user.district.districtName}</td>
+              <td>{employee.user.address}</td>
               <td>{employee.jobTitle.name}</td>
               <td>{employee.jobTitle.departmentName}</td>
               <td>{employee.salary}  ₺</td>
