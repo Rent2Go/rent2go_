@@ -43,7 +43,7 @@ axiosInstance.interceptors.request.use(
 					TokenService.removerefreshToken("refreshToken")
 					toast.warn("Session has expired, log in again...")
 					setTimeout(() => {
-						window.location.href = "/sign-in";
+						window.location.href = "/login";
 					}, 2000)
 
 				}
@@ -54,7 +54,11 @@ axiosInstance.interceptors.request.use(
 						const RefreshTokenRequest = {
 							token: localRefreshToken
 						}
-						const response = await axios.post('http://localhost:8080/api/refreshtoken', RefreshTokenRequest);
+						const response = await axios.post('http://localhost:8080/api/refreshtoken', RefreshTokenRequest,{
+							headers: {
+								'Authorization': `Bearer ${localRefreshToken}`
+							  }
+						});
 						const { token, refreshToken } = response.data;
 
 

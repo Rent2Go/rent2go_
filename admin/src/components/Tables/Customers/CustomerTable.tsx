@@ -63,9 +63,9 @@ const CustomerTable = (props: Props) => {
               <td>{customer.user.email}</td>
               <td>{customer.user.phoneNumber}</td>
               <td>{customer.user.idCardNumber}</td>
-              <td>{customer.user.city.cityName}</td>
-              <td>{customer.user.district.districtName}</td>
-              <td>{customer.user.address}</td>
+              <td>{customer?.user?.city?.cityName}</td>
+              <td>{customer?.user?.district?.districtName}</td>
+              <td>{customer?.user?.address}</td>
               <td>
                 <Form>
                   <Form.Check

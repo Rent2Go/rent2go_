@@ -65,17 +65,17 @@ const EmployeeTable = (props: Props) => {
               <img src="/assets/images/userImages/user-default.jpg" alt="default-img" />
             )}
               </td>
-              <td>{employee.user.name}</td>
-              <td>{employee.user.surname}</td>
-              <td>{employee.user.role}</td>
-              <td>{employee.user.email}</td>
-              <td>{employee.user.phoneNumber}</td>
-              <td>{employee.user.city.cityName}</td>
-              <td>{employee.user.district.districtName}</td>
-              <td>{employee.user.address}</td>
-              <td>{employee.jobTitle.name}</td>
-              <td>{employee.jobTitle.departmentName}</td>
-              <td>{employee.salary}  ₺</td>
+              <td>{employee?.user?.name}</td>
+              <td>{employee?.user?.surname}</td>
+              <td>{employee?.user?.role}</td>
+              <td>{employee?.user?.email}</td>
+              <td>{employee?.user?.phoneNumber}</td>
+              <td>{employee?.user?.city?.cityName}</td>
+              <td>{employee?.user?.district?.districtName}</td>
+              <td>{employee?.user?.address}</td>
+              <td>{employee?.jobTitle?.name}</td>
+              <td>{employee.jobTitle?.departmentName}</td>
+              <td>{employee?.salary}  ₺</td>
               <td>
                 <Form>
                   <Form.Check

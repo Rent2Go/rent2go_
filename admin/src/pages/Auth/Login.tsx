@@ -81,25 +81,14 @@ const Register = (props: Props) => {
                     <button className="btn-login btn-sm" type="submit">
                       Submit
                     </button>
-                   
+
                     {/* Same as */}
 
                   </div>
-                  <ToastContainer
-                      position="top-center"
-                      autoClose={5000}
-                      hideProgressBar={false}
-                      newestOnTop={false}
-                      closeOnClick
-                      rtl={false}
-                      pauseOnFocusLoss
-                      draggable
-                      pauseOnHover
-                      theme="light"
-                    />
+
 
                   <div className="col-md-12 col-sm-12">
-                    <Link to="reset-password">Forget Your Password ? </Link>
+
                   </div>
                 </div>
               </Form>
@@ -108,6 +97,20 @@ const Register = (props: Props) => {
         </div>
       </div>
 
+    
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        style={{ padding: '1px' }} // Padding eklenmesi
+      />
     </div>
   );
 };

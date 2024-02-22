@@ -8,10 +8,13 @@ import sidebarLinks from "./sidebarLinks";
 import "react-toastify/dist/ReactToastify.css";
 import "./sidebar.css";
 import TokenService from "../../services/TokenService";
+import { useSelector } from "react-redux";
 
 type Props = {};
 
 const Sidebar = (props: Props) => {
+
+  const settings = useSelector((state: any) => state.settings.setting);
   
   const logout = () => {
     TokenService.removeToken("token");
@@ -23,10 +26,10 @@ const Sidebar = (props: Props) => {
       <div className="sidebar__top">
         <h2>
           <img
-            src="https://rentogo.com.tr/screenshoots/logo-dark.png"
+            src={settings?.logo}
             alt="logo"
           />{" "}
-          Rent2go
+          {settings?.title}
         </h2>
         
       </div>

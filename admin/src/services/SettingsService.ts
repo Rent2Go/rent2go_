@@ -1,11 +1,5 @@
 import { UpdateSettingsRequest } from './../models/requests/settings/UpdateSettingsRequest';
-import { UpdateResponse } from './../../../src/models/responses/UpdateResponse';
-import { AddResponse } from './../../../src/models/responses/AddResponse';
-import { GetAllUsersModel } from "../models/responses/users/GetAllUsers";
-import { GetByUserIdModel } from "../models/responses/users/GetByUserId";
-import { UserModel } from "../models/responses/users/GetUser";
 import axiosInstance from "../utils/axiosInsterceptors";
-import { UpdateUserRequest } from '../models/requests/users/UpdateUserRequest';
 import { GetSettingsResponse } from '../models/responses/settings/GetSettingsResponse';
 
 class SettingsService{
