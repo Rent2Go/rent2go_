@@ -100,12 +100,12 @@ const UserLocation = () => {
       <div className="form">
         <Formik
           initialValues={{
-            cityId: user.city.id,
-            districtId: user.district.id,
-            address: user.address,
+            cityId: user?.city?.id,
+            districtId: user.district?.id,
+            address: user?.address,
           }}
           validationSchema={UserLocationSchema}
-          onSubmit={(values) => handleSubmit(user.id, values)}
+          onSubmit={(values) => handleSubmit(user?.id, values)}
         >
           <Form>
             <div className="row">
@@ -120,7 +120,7 @@ const UserLocation = () => {
                     value={city?.id}
                   >
                     {user.district && (
-                      <option key={user.city.id} value={user.city.id}>
+                      <option key={user?.city?.id} value={user.city.id}>
                         {user.city.name.toUpperCase()}
                       </option>
                     )}
@@ -138,7 +138,7 @@ const UserLocation = () => {
                   className="form-control"
                 >
                   {user.city && (
-                    <option key={user.district.id} value={user.district.id}>
+                    <option key={user?.district?.id} value={user?.district?.id}>
                       {user.district.districtName}
                     </option>
                   )}

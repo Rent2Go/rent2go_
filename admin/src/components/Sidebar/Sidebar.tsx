@@ -2,18 +2,23 @@ import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AiOutlineLogout } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
-import { GiHamburgerMenu } from "react-icons/gi";
 
 import sidebarLinks from "./sidebarLinks";
 
 import "react-toastify/dist/ReactToastify.css";
 import "./sidebar.css";
+import TokenService from "../../services/TokenService";
+import { useSelector } from "react-redux";
 
 type Props = {};
 
 const Sidebar = (props: Props) => {
+
+  const settings = useSelector((state: any) => state.settings.setting);
+  
   const logout = () => {
-    localStorage.removeItem("token");
+    TokenService.removeToken("token");
+    TokenService.removerefreshToken("refreshToken");
   };
 
   return (
@@ -21,10 +26,10 @@ const Sidebar = (props: Props) => {
       <div className="sidebar__top">
         <h2>
           <img
-            src="https://rentogo.com.tr/screenshoots/logo-dark.png"
+            src={settings?.logo}
             alt="logo"
           />{" "}
-          Rent2go <button type="button" className="btn"><GiHamburgerMenu /></button>
+          {settings?.title}
         </h2>
         
       </div>

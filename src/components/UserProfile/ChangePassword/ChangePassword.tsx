@@ -93,7 +93,7 @@ const ChangePassword = () => {
                 <FormikInput
                   name="password"
                   type="password"
-                  label={t("password")}
+                  label={t("newPassword")}
                 ></FormikInput>
               </div>
             </div>
@@ -108,7 +108,7 @@ const ChangePassword = () => {
             </div>
             <div className="row text-center">
               <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
-                <button type="submit" className="mainButton1">{t("savepassword")}</button>
+                <button type="submit" className="mainButton1">{t("saveNewPassword")}</button>
               </div>
             </div>
           </Form>

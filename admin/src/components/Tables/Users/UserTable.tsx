@@ -54,6 +54,7 @@ const UserTable = (props: Props) => {
       <tbody>
         <tr key={props.user.id}>
           <td>{props.user.id}</td>
+          <td>{props.user.role}</td>
           <td>
             {props.user.imageUrl ? (
               <img

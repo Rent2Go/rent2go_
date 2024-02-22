@@ -3,9 +3,10 @@ import React from 'react';
 type Props = {
   item: {
     title: string;
-    totalNumber: string;
+    totalNumber: number;
     icon: string;
   };
+ 
 };
 
 const SingleCard = (props: Props) => {

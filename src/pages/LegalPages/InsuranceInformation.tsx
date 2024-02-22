@@ -10,7 +10,7 @@ const InsuranceInformation = (props: Props) => {
       <Navbar />
       <div className="notFound container">
         <div className="secContent grid">
-          <div className="descriptionContainer">
+          <div className="descriptionContainers">
             <div className="titleContainer">
               <img
                 src="/assets/img/comingSoonText.png"
@@ -24,7 +24,7 @@ const InsuranceInformation = (props: Props) => {
               </Link>
             </div>
           </div>
-          <div className="imgContainer">
+          <div className="imgContainers">
             <img src="/assets/img/coming-soon.png" alt="not-found" />
           </div>
         </div>

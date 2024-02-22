@@ -122,7 +122,7 @@ const ReservationPage = () => {
   const isAuthenticated = () => {
     if (auth.authInformation.user.email === "" || null || undefined) {
       alert(t("youHaveToBeAuthenticatedBeforeYouCanMakeAReservation"));
-      navigate("/sign-up");
+      navigate("/sign-in");
     }
     if (user?.district === null) {
       alert(t("yourUserInformationIsMissingPleaseFillItIn"));
@@ -223,7 +223,7 @@ const ReservationPage = () => {
                 <p>{t("whatsIncludedInThePackage")}</p>
                 <div>
                   <span>
-                    <button
+                    <button title="."
                       aria-describedby={popInsurance}
                       type="button"
                       onMouseEnter={handleClickInsurance}
@@ -238,7 +238,7 @@ const ReservationPage = () => {
                     </BasePopup>
                   </span>
                   <span>
-                    <button
+                    <button title="."
                       aria-describedby={popAssistance}
                       type="button"
                       onMouseEnter={handleClickAssistance}

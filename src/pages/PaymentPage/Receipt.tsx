@@ -10,7 +10,8 @@ import {
   Image,
 } from "@react-pdf/renderer";
 
-// Font'u Google Fonts'tan yükleyin
+
+
 Font.register({
   family: "Roboto",
   src: "/assets/fonts/Roboto-Regular.ttf",
@@ -70,9 +71,14 @@ const styles = StyleSheet.create({
 interface ReceiptProps {
   auth: any;
   currentDate: string;
+  amount:string;
+  discountRate: string;
+  totalAmount: string;
 }
 
-const Receipt: React.FC<ReceiptProps> = ({ auth, currentDate }) => (
+const Receipt: React.FC<ReceiptProps> = ({amount,discountRate,totalAmount, auth, currentDate }) => (
+
+
   <Document>
     <Page style={styles.body}>
       <View>
@@ -87,9 +93,9 @@ const Receipt: React.FC<ReceiptProps> = ({ auth, currentDate }) => (
         </Text>
         <Text style={styles.author}>Date: {currentDate}</Text>
         <Text style={styles.author}>Payment Method: CASH</Text>
-        <Text style={styles.author}>Amount: 1.500,00 ₺</Text>
-        <Text style={styles.author}>Discount: 150,00 ₺</Text>
-        <Text style={styles.author}>Total: 1.350,00 ₺</Text>
+        <Text style={styles.author}>Amount: {amount} ₺</Text>
+        <Text style={styles.author}>Discount: {discountRate} ₺</Text>
+        <Text style={styles.author}>Total: {totalAmount} ₺</Text>
         <Text style={styles.author2}>
           Your payment information is as above. Please have this receipt with
           you when you come to pick up the vehicle.
@@ -109,9 +115,9 @@ const Receipt: React.FC<ReceiptProps> = ({ auth, currentDate }) => (
   </Document>
 );
 
-const ReceiptPDF: React.FC<ReceiptProps> = ({ auth, currentDate }) => (
+const ReceiptPDF: React.FC<ReceiptProps> = ({amount,discountRate,totalAmount, auth, currentDate }) => (
   <PDFDownloadLink
-    document={<Receipt auth={auth} currentDate={currentDate} />}
+    document={<Receipt amount={amount} discountRate={discountRate} totalAmount={totalAmount} auth={auth} currentDate={currentDate} />}
     fileName="receipt.pdf"
     className="btn btn-submit"
   >

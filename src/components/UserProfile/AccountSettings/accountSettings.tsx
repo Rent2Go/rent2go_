@@ -130,14 +130,14 @@ const AccountSettings = () => {
                 <FormikInput
                   name="phoneNumber"
                   type="text"
-                  label={t("phoneNumber")}
+                  label={t("phone")}
                 ></FormikInput>
               </div>
               <div className="col-xl-6 col-l-6 col-md-12- col-sm-12" >
                 <FormikInput
                   name="birthDate"
                   type="date"
-                  label={t("birthDate")}
+                  label={t("dateOfBirth")}
                 ></FormikInput>
               </div>
 

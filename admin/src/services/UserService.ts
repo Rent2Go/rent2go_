@@ -27,7 +27,7 @@ class UserService{
     }
 
     updateUser(updateUserRequest:UpdateUserRequest){
-        return axiosInstance.patch<UpdateResponse>("users", updateUserRequest)
+        return axiosInstance.put<UpdateResponse>("users", updateUserRequest)
     }
 
     

@@ -11,7 +11,10 @@ export interface EmployeeModel {
     password: string;
     birthDate: string;
     idCardNumber: string;
-    address: string;
+    address?: string;
+    role: string;
+    imageUrl: string;
+    active: boolean;
     city: {
       id: number;
       cityName: string;
@@ -21,9 +24,6 @@ export interface EmployeeModel {
       districtName: string;
       cityId: number;
     };
-    role: string;
-    imageUrl: string;
-    active: boolean;
   };
   jobTitle: {
     id: number;

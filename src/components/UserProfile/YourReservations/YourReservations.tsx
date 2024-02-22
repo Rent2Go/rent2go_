@@ -26,14 +26,14 @@ const YourReservations = () => {
 
   const getRentals = () => {
     if(user){
-    RentalService.getCustomerRentalsById(user.customer.id)
+    RentalService.getCustomerRentalsById(user?.customer?.id)
     .then((res) => { setRentals(res.data.data) })
     .catch((err) => { console.log(err) })
   }
 }
 
 useEffect(() => {
-  getUser(auth.authInformation.user.id)
+  getUser(auth?.authInformation?.user?.id)
   getRentals();
 },[user?.id])
 
@@ -57,11 +57,11 @@ useEffect(() => {
           {rentals.map((item,index)=>{
             return (
               <tr key={index}>
-                <td>{item.startDate}</td>
-                <td>{item.endDate}</td>
-                <td>{item.totalPrice}₺</td>
-                <td>{item.car.model.brand.name}</td>
-                <td>{item.car.model.name}</td>
+                <td>{item?.startDate}</td>
+                <td>{item?.endDate}</td>
+                <td>{item?.totalPrice}₺</td>
+                <td>{item?.car?.model?.brand?.name}</td>
+                <td>{item?.car?.model?.name}</td>
                 <td>
                   <p className='p1'>
                     {item.returnDate == null && <div className='icon1'><RiUserLocationLine title={t("inUse")} /></div>}
@@ -75,11 +75,11 @@ useEffect(() => {
       </table>
       <div className='information'>
         <div className='inUse p1 '>
-          <RiUserLocationLine className='icon2' title={t("inUse")}  />
+          <RiUserLocationLine className='icon1' title={t("inUse")}  />
           <span>{" : " + t("inUse")}</span>
         </div>
         <div className='delivered p1'>
-          <RiUserFollowLine className='icon1'  title={t("delivered")} />
+          <RiUserFollowLine className='icon2'  title={t("delivered")} />
           <span>{" : " + t("delivered")}</span>
         </div>
       </div>
