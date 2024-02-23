@@ -69,7 +69,7 @@ const Register: React.FC<Props> = (props: Props) => {
         CustomerService.createCustomer({ userId: userId })
           .then()
           .catch((err) => console.log(userId));
-        setTimeout(() => navigate("/sign-in"), 2000);
+        setTimeout(() => window.location.reload(), 2000);
       })
       .catch((error) => toast.error(error.response.data.message));
   };
