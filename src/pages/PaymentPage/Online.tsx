@@ -14,10 +14,12 @@ import { MailInfoModel } from "../../models/mail/MailInfıModel";
 import MailService from "../../services/emailService/MailService";
 import { ToastContainer, toast } from "react-toastify";
 import { AddRentalRequest } from "../../models/requests/rental/AddRentalRequest";
+import { useTranslation } from "react-i18next";
 
 type Props = {};
 
 const Online = (props: Props) => {
+  const { t } = useTranslation();
   const auth = useAuth();
   const navigate = useNavigate();
   const getCurrentDate = (): string => {
@@ -84,7 +86,7 @@ const Online = (props: Props) => {
             .then((res) => {
               if (res.data == true) {
                 sessionStorage.removeItem('rentalInfo')
-                toast.success("Ödeme Başarıyla Alındı.")
+                toast.success(t("paymentSuccess"))
                 CarService.updateIsActive(addRental.carId,false);
                 MailService.reservationSuccessful(mailInfo);
                 console.log(mailInfo);
@@ -96,13 +98,13 @@ const Online = (props: Props) => {
               }
               else {
                 RentalService.deleteById(rest.data.data)
-                toast.warn("Ödeme Başarısız")
+                toast.warn(t("paymentFailed"))
               }
 
             })
             .catch((err) => {
               RentalService.deleteById(rest.data.data)
-              toast.error(`Please check the Card Information.`)
+              toast.error(t("paymentError"))
               console.log(err)
             })
         }
@@ -118,23 +120,23 @@ const Online = (props: Props) => {
 
   const paymentSchema = Yup.object({
     cardNumber: Yup.string()
-      .required('Card number is required')
-      .matches(/^(?:5[1-5][0-9]{14})$/, 'Card number must be a valid MasterCard number'),
+      .required(t("cardNumberIsRequired"))
+      .matches(/^(?:5[1-5][0-9]{14})$/, (t("cardNumberMustBeAValidMasterCardNumber"))),
       
     cardHolderName: Yup.string()
-      .required('Card holder name is required'),
+      .required(t("cardHolderNameIsRequired")),
 
     expirationMonth: Yup.string()
-      .required('Expiration month is required')
-      .matches(/^(0[1-9]|1[0-2])$/, 'Expiration month must be between 01 and 12'),
+      .required(t("expirationMonthIsRequired"))
+      .matches(/^(0[1-9]|1[0-2])$/, (t("expirationMonthMustBeBetween01And12"))),
 
     expirationYear: Yup.string()
-      .required('Expiration year is required')
-      .matches(/^(20|\d{2})$/, 'Expiration year must be in format YY'),
+      .required(t("expirationYearIsRequired"))
+      .matches(/^(20|\d{2})$/, (t("expirationYearMustBeInFormatYY"))),
 
     cvv: Yup.string()
-      .required('CVV is required')
-      .matches(/^\d{3}$/, 'CVV must be 3 digits'),
+      .required(t("cvvIsRequired"))
+      .matches(/^\d{3}$/, (t("cvvMustBe3Digits"))),
 
   });
 
@@ -147,13 +149,15 @@ const Online = (props: Props) => {
     cvv: ''
   };
 
+
+
   return (
     <>
       <Navbar />
       <div className="payment container">
         <div className="secContainer shadow-rounded-box">
           <div className="headingDiv">
-            <h2>Online Payment {selectedPaymentMethod}</h2>
+            <h2>{t("onlinePayment")} {selectedPaymentMethod}</h2>
           </div>
           <div className="contentDiv">
             <div className="formContainer">
@@ -164,14 +168,14 @@ const Online = (props: Props) => {
                       <div className="row ">
                         <div className="col-12">
                           <p>
-                            <b>Name : </b>
+                            <b>{t("name")} : </b>
                             {auth.authInformation.user.firstname}{" "}
                             {auth.authInformation.user.lastname}
                           </p>
                         </div>
                         <div className="col-12">
                           <p>
-                            <b>Address : </b> Ataevler Mh. Öztürkler Sk. No:52/3
+                            <b>{t("address")} : </b> Ataevler Mh. Öztürkler Sk. No:52/3
                           </p>
                         </div>
                       </div>
@@ -180,13 +184,13 @@ const Online = (props: Props) => {
                       <div className="row">
                         <div className="col-12">
                           <p>
-                            <b>Date : </b>
+                            <b>{t("date")} : </b>
                             {currentDate}
                           </p>
                         </div>
                         <div className="col-12">
                           <p>
-                            <b>Email : </b>
+                            <b>{t("email")} : </b>
                             {auth.authInformation.user.email}
                           </p>
                         </div>
@@ -198,16 +202,16 @@ const Online = (props: Props) => {
                       <FormikInput
                         name="cardHolderName"
                         type="text"
-                        label="Card Holder Name"
-                        placeholder="Enter Card Holder Name"
+                        label={t("cardHolderName")}
+                        placeholder={t("enterCardHolderName")}
                       ></FormikInput>
                     </div>
                     <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
                       <FormikInput
                         name="cardNumber"
                         type="text"
-                        label="Card No"
-                        placeholder="Enter Card Number as 16 Digits"
+                        label={t("cardNo")}
+                        placeholder={t("enterCardNumber")}
                       ></FormikInput>
                     </div>
                   </div>
@@ -216,16 +220,16 @@ const Online = (props: Props) => {
                       <FormikInput
                         name="expirationMonth"
                         type="text"
-                        label="Expiration Month"
-                        placeHolder="MM"
+                        label={t("expirationMonth")}
+                        placeHolder={t("mm")}
                       ></FormikInput>
                     </div>
                     <div className="col-xl-4 col-l-4 col-md-12 col-sm-12">
                       <FormikInput
                         name="expirationYear"
                         type="text"
-                        label="Expiration Year"
-                        placeholder="YY"
+                        label={t("expirationYear")}
+                        placeholder={t("yy")}
                       ></FormikInput>
                     </div>
 
@@ -234,7 +238,7 @@ const Online = (props: Props) => {
                       <FormikInput
                         name="cvv"
                         type="number"
-                        label="CVV No"
+                        label={t("cvvNo")}
                         placeholder="CVV"
                       ></FormikInput>
                     </div>
@@ -244,7 +248,7 @@ const Online = (props: Props) => {
                       <div className="row ">
                         <div className="col-xl-5 col-l-5 col-md-6 col-sm-6">
                           <p>
-                            <b>Amount : </b>
+                            <b>{t("amount")} : </b>
                           </p>
                         </div>
                         <div className="col-xl-4 col-l-4 col-md-6 col-sm-6">
@@ -257,7 +261,7 @@ const Online = (props: Props) => {
                       <div className="row">
                         <div className="col-xl-5 col-l-5 col-md-6 col-sm-6">
                           <p>
-                            <b>Discount : </b>
+                            <b>{t("discount")} : </b>
                           </p>
                         </div>
                         <div className="col-xl-4 col-l-4 col-md-6 col-sm-6">
@@ -270,7 +274,7 @@ const Online = (props: Props) => {
                       <div className="row">
                         <div className="col-xl-5 col-l-5 col-md-6 col-sm-6">
                           <p>
-                            <b>Total Amount : </b>
+                            <b>{t("totalAmount")} : </b>
                           </p>
                         </div>
                         <div className="col-xl-5 col-l-5 col-md-6 col-sm-6">
@@ -283,7 +287,7 @@ const Online = (props: Props) => {
                   <div className="row btnRow">
                     <div className="col-3">
                       <button type="submit" className="btn btn-submit">
-                        Payment
+                        {t("payment")}
                       </button>
                     </div>
                     <div className="col-3">
@@ -292,7 +296,7 @@ const Online = (props: Props) => {
                         to="/reservation/:id"
                         className="btn btn-cancel"
                       >
-                        Cancel
+                        {t("cancel")}
                       </Link>
                     </div>
                   </div>

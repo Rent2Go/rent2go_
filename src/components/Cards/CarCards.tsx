@@ -49,7 +49,7 @@ const CarCards = (props: Props) => {
               <span className="carLabel">
                 <IoIosColorPalette />{" "}
               </span>
-              <span className="miles">{props.car.color.name}</span>
+              <span className="miles">{t(props.car.color.name.toLowerCase())}</span> 
             </div>
             </div>
           </div>

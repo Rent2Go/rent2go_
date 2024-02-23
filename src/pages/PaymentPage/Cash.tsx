@@ -7,10 +7,12 @@ import { Form, Formik } from "formik";
 import { useAuth } from "../../contexts/AuthContext";
 import ReceiptPDF from "./Receipt";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 type Props = {};
 
 const Cash = (props: Props) => {
+  const { t } = useTranslation();
 
   const {priceCard} = useSelector((state:any)=> state.rental)
   console.log(priceCard);
@@ -46,7 +48,7 @@ const Cash = (props: Props) => {
       <div className="payment container">
         <div className="secContainer shadow-rounded-box">
           <div className="headingDiv">
-            <h2>Cash Payment {selectedPaymentMethod}</h2>
+            <h2>{t("cashPayment")} {selectedPaymentMethod}</h2>
           </div>
           <div className="contentDiv">
             <div className="formContainer">
@@ -55,7 +57,7 @@ const Cash = (props: Props) => {
                   <div className="row ">
                     <div className="col-12">
                       <p>
-                        <b>Name : </b>
+                        <b>{t("name")} : </b>
                         {auth.authInformation.user.firstname}{" "}
                         {auth.authInformation.user.lastname}
                       </p>
@@ -72,13 +74,13 @@ const Cash = (props: Props) => {
                   <div className="row">
                     <div className="col-12">
                       <p>
-                        <b>Date : </b>
+                        <b>{t("date")} : </b>
                         {currentDate}
                       </p>
                     </div>
                     <div className="col-12">
                       <p>
-                        <b>Email : </b>
+                        <b>{t("email")} : </b>
                         {auth.authInformation.user.email}
                       </p>
                     </div>
@@ -91,7 +93,7 @@ const Cash = (props: Props) => {
                   <div className="row ">
                     <div className="col-xl-5 col-l-5 col-md-6 col-sm-6">
                       <p>
-                        <b>Amount : </b>
+                        <b>{t("amount")} : </b>
                       </p>
                     </div>
                     <div className="col-xl-3 col-l-3 col-md-6 col-sm-6">
@@ -104,7 +106,7 @@ const Cash = (props: Props) => {
                   <div className="row">
                     <div className="col-xl-5 col-l-5 col-md-6 col-sm-6">
                       <p>
-                        <b>Discount : </b>
+                        <b>{t("discount")} : </b>
                       </p>
                     </div>
                     <div className="col-xl-3 col-l-3 col-md-6 col-sm-6">
@@ -117,7 +119,7 @@ const Cash = (props: Props) => {
                   <div className="row">
                     <div className="col-xl-5 col-l-5 col-md-6 col-sm-6">
                       <p>
-                        <b>Total Amount :  </b>
+                        <b>{t("totalAmount")} :  </b>
                       </p>
                     </div>
                     <div className="col-xl-3 col-l-3 col-md-6 col-sm-6">
@@ -142,7 +144,7 @@ const Cash = (props: Props) => {
                     to="/reservation/:id"
                     className="btn btn-cancel"
                   >
-                    Cancel
+                    {t("cancel")}
                   </Link>
                 </div>
               </div>

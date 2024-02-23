@@ -11,10 +11,12 @@ import { useAuth } from "../../contexts/AuthContext";
 
 import "./payment.css";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 type Props = {};
 
 const BankTransfer = (props: Props) => {
+  const { t } = useTranslation();
   const { selectedPaymentMethod } = useParams<{
     selectedPaymentMethod: string;
   }>();
@@ -39,14 +41,14 @@ const BankTransfer = (props: Props) => {
   };
 
   const validationSchema = Yup.object().shape({
-    bankName: Yup.string().required("Bank Name is required"),
-    fullName: Yup.string().required("IBAN Holder Name is required"),
+    bankName: Yup.string().required(t("bankNameIsRequired")),
+    fullName: Yup.string().required(t("ibanHolderNameIsRequired")),
     iban: Yup.string()
       .matches(
         /^TR\d{2}\s\d{4}\s\d{4}\s\d{4}\s\d{4}\s\d{4}\s\d{2}$/,
-        "Invalid IBAN format"
+        (t("invalidIbanFormat"))
       )
-      .required("IBAN NO is required"),
+      .required(t("ibanNoIsRequired")),
 
   });
 
@@ -60,7 +62,7 @@ const BankTransfer = (props: Props) => {
       <div className="payment container">
         <div className="secContainer shadow-rounded-box">
           <div className="headingDiv">
-            <h2>Bank Transfer {selectedPaymentMethod}</h2>
+            <h2>{t("bankTranfer")} {selectedPaymentMethod}</h2>
           </div>
           <div className="contentDiv">
             <div className="formContainer">
@@ -76,7 +78,7 @@ const BankTransfer = (props: Props) => {
                         <div className="row ">
                           <div className="col-12">
                             <p>
-                              <b>Name : </b>
+                              <b>{t("name")} : </b>
                               {auth.authInformation.user.firstname}{" "}
                               {auth.authInformation.user.lastname}
                             </p>
@@ -93,13 +95,13 @@ const BankTransfer = (props: Props) => {
                         <div className="row">
                           <div className="col-12">
                             <p>
-                              <b>Date : </b>
+                              <b>{t("date")} : </b>
                               {currentDate}
                             </p>
                           </div>
                           <div className="col-12">
                             <p>
-                              <b>Email : </b>
+                              <b>{t("email")} : </b>
                               {auth.authInformation.user.email}
                             </p>
                           </div>
@@ -111,16 +113,16 @@ const BankTransfer = (props: Props) => {
                         <FormikInput
                           name="fullName"
                           type="text"
-                          label="IBAN Holder Name"
-                          placeholder="Enter IBAN Holder Name"
+                          label={t("ibanHolderName")}
+                          placeholder={t("enterIbanHolderName")}
                         />
                       </div>
                       <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
                         <FormikInput
                           name="bankName"
                           type="text"
-                          label="Bank Name"
-                          placeholder="Enter Bank Name"
+                          label={t("bankName")}
+                          placeholder={t("enterBankName")}
                         />
                       </div>
                       <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
@@ -129,7 +131,7 @@ const BankTransfer = (props: Props) => {
                           type="text"
                           label={(
                             <span>
-                              IBAN NO - <small><i>Please Just Enter Number, Without <strong>TR</strong></i></small>
+                              {t("ibanNo")} - <small><i>{t("pleaseJustEnterNumberWithout")} <strong>TR</strong></i></small>
                             </span>
                           )}
                           placeholder="TR00 0000 0000 0000 0000 0000 00"
@@ -155,7 +157,7 @@ const BankTransfer = (props: Props) => {
                         <div className="row ">
                           <div className="col-xl-5 col-l-5 col-md-6 col-sm-6">
                             <p>
-                              <b>Amount : </b>
+                              <b>{t("amount")} : </b>
                             </p>
                           </div>
                           <div className="col-xl-3 col-l-3 col-md-6 col-sm-6">
@@ -168,7 +170,7 @@ const BankTransfer = (props: Props) => {
                         <div className="row">
                           <div className="col-xl-5 col-l-5 col-md-6 col-sm-6">
                             <p>
-                              <b>Discount : </b>
+                              <b>{t("discount")} : </b>
                             </p>
                           </div>
                           <div className="col-xl-3 col-l-3 col-md-6 col-sm-6">
@@ -181,7 +183,7 @@ const BankTransfer = (props: Props) => {
                         <div className="row">
                           <div className="col-xl-5 col-l-5 col-md-6 col-sm-6">
                             <p>
-                              <b>Total Amount : </b>
+                              <b>{t("totalAmount")} : </b>
                             </p>
                           </div>
                           <div className="col-xl-3 col-l-3 col-md-6 col-sm-6">
@@ -198,7 +200,7 @@ const BankTransfer = (props: Props) => {
                           className="btn btn-submit"
                           disabled={!dirty || !isValid}
                         >
-                          Payment
+                          {t("payment")}
                         </button>
                       </div>
                       <div className="col-xl-3 col-l-3 col-md-12 col-sm-12">
@@ -207,7 +209,7 @@ const BankTransfer = (props: Props) => {
                           to="/reservation/:id"
                           className="btn btn-cancel"
                         >
-                          Cancel
+                          {t("cancel")}
                         </Link>
                       </div>
                     </div>
