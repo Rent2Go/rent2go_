@@ -7,6 +7,7 @@ export {default as VerificationAlreadyVerified} from "./ResponsePages/EmailVerif
 export {default as HomePage} from "./Homepage/Homepage"
 export {default as CarPage} from "./CarPage/CarPage"
 export {default as OurTeamPage} from "./OurTeamPage/OurTeamPage"
+export {default as TutorialPage} from "./TutorialPage/TutorialPage"
 export {default as ContactPage} from "./ContactPage/ContactPage"
 export {default as ProfilePage} from "./ProfilePage/ProfilePage"
 export {default as ResetPassword} from "./AuthPage/ResetPassword/ResetPassword"

@@ -35,6 +35,7 @@ import {
   VerificationFailed,
   VerificationExpired,
   VerificationAlreadyVerified,
+  TutorialPage,
 } from "../pages";
 import PrivateRoute from "../utils/PrivateRoute";
 
@@ -55,6 +56,7 @@ const Router = () => {
         <Route path="/cars" element={<CarPage />} />
         <Route path="/our-team" element={<OurTeamPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/tutorial" element={<TutorialPage />} />
         
         {/*legal pages */}
         <Route path="/cookie-policy" element={<CookiePolicy />} />
