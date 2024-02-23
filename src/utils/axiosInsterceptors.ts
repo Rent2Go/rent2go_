@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 const axiosInstance = axios.create({
 
 
-	baseURL: "https://api.rentogo.com.tr/api/",
+	baseURL: "https://localhost:8080/api/",
 
 });
 
