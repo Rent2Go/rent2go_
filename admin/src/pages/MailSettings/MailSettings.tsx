@@ -7,30 +7,37 @@ import { UpdateMailSettingsRequest } from "../../models/requests/mailSettings/Up
 import { MailSettingsModel } from "../../models/responses/mailSettings/GetMailSettingsModel";
 import { ToastContainer, toast } from "react-toastify";
 import * as yup from 'yup';
+import OverlayLoaderTest from "../../components/OverlayLoader/OverlayLoaderTest";
 
 type Props = {};
 
-const initialValues: UpdateMailSettingsRequest = {
-  id: 1,
-  host: "",
-  port: 0,
-  username: "",
-  password: "",
-};
+
 
 const MailSettings: React.FC<Props> = () => {
   const [mailSettings, setMailSettings] = useState<MailSettingsModel>();
+  const [isLoading, setIsLoading] = useState(true);
+
+  const initialValues: UpdateMailSettingsRequest = {
+    id: mailSettings?.id || 1,
+    host: mailSettings?.host || "",
+    port: mailSettings?.port || 0,
+    username: mailSettings?.username || "",
+    password: mailSettings?.password || "",
+  };
 
   useEffect(() => {
     fetchMailSettings();
   }, []);
 
   const fetchMailSettings = async () => {
+    setIsLoading(true);
     try {
       const response = await MailSettingsService.getById();
-      setMailSettings(response.data);
+      setMailSettings(response.data.data);
     } catch (error) {
       console.error("Error fetching mail settings:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -61,13 +68,15 @@ const MailSettings: React.FC<Props> = () => {
 
   const onSubmit = (values: UpdateMailSettingsRequest) => {
     updateMailSetting(values);
-    console.log(values);
+    
   };
 
   
 
 
-  
+  if (isLoading) {
+    return <OverlayLoaderTest/>;
+  }
   return (
     <div className="mailSettings container">
       <div className="secContainer">
@@ -156,7 +165,7 @@ const MailSettings: React.FC<Props> = () => {
               <td>{mailSettings.host}</td>
               <td>{mailSettings.port}</td>
               <td>{mailSettings.username}</td>
-              <td>{mailSettings.password}</td>
+              <td>{mailSettings.password.replace(/./g, '*')}</td>
             </tr>
           </tbody>
         </table>
