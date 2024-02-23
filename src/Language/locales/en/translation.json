@@ -146,5 +146,10 @@
   "cash": "Cash",
   "online": "Online",
   "bankTransfer": "Bank Transfer",
-  "cancel": "Cancel"
+  "cancel": "Cancel",
+
+  "GASOLINE": "Gasoline",
+  "DIESEL": "Diesel",
+  "AUTOMATIC": "Automatic",
+  "MANUAL": "Manual"
 }
