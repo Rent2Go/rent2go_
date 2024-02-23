@@ -39,6 +39,8 @@
   color: var(--pureWhiteColor);
   padding: 0.5rem 2rem;
   font-weight: 500;
+  width: -moz-max-content;
+  width: max-content;
 }
 .response .secContainer .actionContainer .btn-profile {
   background: var(--textColor);
