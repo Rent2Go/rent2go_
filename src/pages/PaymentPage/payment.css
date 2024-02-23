@@ -118,4 +118,22 @@
   background: var(--blackColor);
   color: var(--pureWhiteColor);
   transition: 0.3ms ease-in;
+}
+
+@media screen and (max-width: 1720px) {
+  .payment .secContainer {
+    margin: 0;
+    padding: 0;
+  }
+  .payment .secContainer .contentDiv {
+    padding: 0;
+  }
+  .payment .secContainer .contentDiv .formContainer {
+    margin: 0;
+    padding: 2rem;
+  }
+  .payment .secContainer .contentDiv .formContainer .form .btnRow {
+    -moz-column-gap: 2.5rem;
+         column-gap: 2.5rem;
+  }
 }/*# sourceMappingURL=payment.css.map */

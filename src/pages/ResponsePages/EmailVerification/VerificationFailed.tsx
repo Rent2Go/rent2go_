@@ -7,7 +7,7 @@ type Props = {};
 const VerificationFailed = (props: Props) => {
 
   return (
-    <div className="response">
+    <div className="response container">
       <div className="secContainer shadow-rounded-box">
         <div className="titleContainer secTitle">
           <h2 className="text-alert">Email Verification Failed!</h2>

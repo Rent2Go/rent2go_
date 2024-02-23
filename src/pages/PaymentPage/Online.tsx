@@ -281,12 +281,12 @@ const Online = (props: Props) => {
                   </div>
 
                   <div className="row btnRow">
-                    <div className="col-xl-3 col-l-3 col-md-12 col-sm-12">
+                    <div className="col-3">
                       <button type="submit" className="btn btn-submit">
                         Payment
                       </button>
                     </div>
-                    <div className="col-xl-3 col-l-3 col-md-12 col-sm-12">
+                    <div className="col-3">
                       <Link
                         type="button"
                         to="/reservation/:id"

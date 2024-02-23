@@ -7,7 +7,7 @@ type Props = {};
 const VerificationAlreadyVerified = (props: Props) => {
 
   return (
-    <div className="response">
+    <div className="response container">
       <div className="secContainer shadow-rounded-box">
         <div className="titleContainer secTitle">
           <h2 className="text-warning">Email Verification Already Verified!</h2>
