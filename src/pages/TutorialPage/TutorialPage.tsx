@@ -1,7 +1,6 @@
 import React from "react";
 import { Footer, Navbar } from "../../components";
 import { Link } from "react-router-dom";
-import ReactPlayer from 'react-player'
 import "./tutorial.css";
 type Props = {};
 
