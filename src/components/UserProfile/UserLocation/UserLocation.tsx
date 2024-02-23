@@ -173,7 +173,7 @@ const UserLocation = () => {
             </div>
             <div className="row text-center">
               <div className="col-xl-12 col-l-12 col-md-12 col-sm-12">
-                <button type="submit" className="mainButton1">{t("saveLocationChanges")}</button>
+                <button type="submit" className="mainButton1 btn">{t("saveLocationChanges")}</button>
               </div>
             </div>
           </Form>
