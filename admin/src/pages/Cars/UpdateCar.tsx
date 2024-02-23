@@ -15,12 +15,13 @@ import BrandService from '../../services/BrandService';
 import ModelService from '../../services/ModelService';
 
 import { CarModel } from '../../models/responses/cars/GetCar';
-import { UpdateCarRequest } from '../../models/requests/cars/UpdateCarRequest';
+
 import { ColorModel } from '../../models/responses/colors/ColorModel';
 import { BrandModel } from '../../models/responses/brands/GetBrand';
 import { ModelModel } from '../../models/responses/models/GetModel';
 
 import 'react-toastify/dist/ReactToastify.css';
+import { UpdateCarRequest } from '../../models/requests/cars/UpdateCarRequest';
 
 const UpdateCar = () => {
   const { id } = useParams();

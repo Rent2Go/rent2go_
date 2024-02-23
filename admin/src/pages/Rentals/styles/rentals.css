@@ -107,7 +107,54 @@
 }
 .booking .secContainer .contentContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
-  padding: 0.5rem;
+  padding: 2rem 4rem;
+}
+.booking .secContainer .contentContainer .topContent,
+.booking .secContainer .contentContainer .middleContent,
+.booking .secContainer .contentContainer .bottomContent {
+  display: flex;
+  flex-direction: row;
+}
+.booking .secContainer .contentContainer .topContent {
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.booking .secContainer .contentContainer .topContent .rentalDateContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+}
+.booking .secContainer .contentContainer .middleContent {
+  justify-content: center;
+}
+.booking .secContainer .contentContainer .bottomContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: end;
+}
+.booking .secContainer .actionContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+.booking .secContainer .actionContainer button {
+  padding: 0.5rem 2rem;
+  background-color: var(--text-alert);
+  border: 3px dashed var(--text-alert);
+  color: var(--pureWhiteColor);
+  font-weight: 500;
+}
+.booking .secContainer .actionContainer button:hover {
+  transition: 0.3 sn ease-in-out;
+  color: var(--text-alert);
+  background-color: var(--pureWhiteColor);
+}
+
+.formContainer {
+  margin: 2rem 4rem;
 }/*# sourceMappingURL=rentals.css.map */

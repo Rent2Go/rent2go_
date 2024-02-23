@@ -35,7 +35,7 @@
           cursor: pointer;
           display: flex;
           flex-direction: column;
-          justify-content:space-around ;
+          justify-content: space-around;
           align-items: stretch;
 
           .car__item-top {
@@ -101,17 +101,63 @@
     }
 
     /*Detail Page*/
-    .titleContainer{
-      padding: 0.5rem;
-    }
-.contentContainer{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding:0.5rem;
-}
+  
+     .titleContainer {
+        padding: 0.5rem;
+      }
+      .contentContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding:2rem 4rem;
+        .topContent,
+        .middleContent,
+        .bottomContent {
+          display: flex;
+          flex-direction: row;
+        }
+        .topContent {
+          align-items: flex-start;
+          justify-content: space-between;
+          .rentalDateContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: normal;
+          }
+        }
+        .middleContent {
+          justify-content: center;
+        }
+        .bottomContent {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: end;
+        }
+      }
+      .actionContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin:1.5rem 0;
+        button{
+         padding: 0.5rem 2rem;
+         background-color: var(--text-alert);
+         border:3px dashed var(--text-alert);
+         color:var(--pureWhiteColor);
+         font-weight: 500;
+         &:hover{
+          transition: 0.3 sn ease-in-out;
+          color:var(--text-alert);
+          background-color: var(--pureWhiteColor);
+         }
+        }
+      }
+    
     /*Detail Page*/
   }
 }
-
-
+.formContainer{
+  margin:2rem 4rem;
+}
