@@ -1,9 +1,8 @@
 export interface RentalModel {
-
   id: number;
-  startDate: string;
-  endDate: string;
-  returnDate: string;
+  startDate: Date;
+  endDate: Date;
+  returnDate: Date;
   startKilometer: number;
   endKilometer: number;
   totalPrice: number;
@@ -36,32 +35,7 @@ export interface RentalModel {
   };
   customer: {
     id: number;
-    user: {
-      id: number;
-      name: string;
-      surname: string;
-      phoneNumber: string;
-      email: string;
-      password: string;
-      birthDate: string;
-      idCardNumber: string;
-      address: string;
-      city: {
-        id: number;
-        name: string;
-      };
-      district: {
-        id: number;
-        districtName: string;
-        city: {
-          id: number;
-          name: string;
-        };
-      };
-      role: string;
-      imageUrl: string;
-      active: boolean;
-    };
+    userId: number | undefined;
   };
   employee: {
     id: number;
@@ -73,7 +47,7 @@ export interface RentalModel {
       phoneNumber: string;
       email: string;
       password: string;
-      birthDate: string;
+      birthDate: Date;
       idCardNumber: string;
       address: string;
       city: {
@@ -103,6 +77,4 @@ export interface RentalModel {
     discountCode: string;
     percentage: number;
   };
-};
-
-
+}
