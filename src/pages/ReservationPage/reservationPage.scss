@@ -582,9 +582,12 @@
       }
     }
   }
-
+  .css-1nrlq1o-MuiFormControl-root{
+    width: -webkit-fill-available;
+  }
   .css-dmmspl-MuiFormGroup-root {
     flex-direction: row !important;
+    width: -webkit-fill-available;
   }
   .css-ahj2mt-MuiTypography-root {
     font-size: 14px !important;
