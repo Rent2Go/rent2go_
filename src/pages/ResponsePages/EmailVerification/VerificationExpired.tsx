@@ -6,7 +6,7 @@ type Props = {};
 
 const VerificationExpired = (props: Props) => {
   return (
-    <div className="response">
+    <div className="response container">
       <div className="secContainer shadow-rounded-box">
         <div className="titleContainer secTitle">
           <h2 className="text-warning">Email Verification Expired!</h2>

@@ -8,7 +8,7 @@ const SuccessfulReset = (props: Props) => {
   return (
     <>
     <Navbar />
-    <div className="response">
+    <div className="response container">
       <div className="secContainer shadow-rounded-box">
         <div className="titleContainer">
           <h2>Reset Password Successful !</h2>
