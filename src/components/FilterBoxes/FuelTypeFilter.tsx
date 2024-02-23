@@ -47,7 +47,7 @@ const FuelTypeFilter = (props: Props) => {
             key={index}
             id={`flexCheckDefault-${fuelType}`}
             checked={checkedStates[fuelType] || false}
-            label={fuelType}
+            label={t(fuelType).toUpperCase()}
             value={fuelType}
             onChange={(event) => handleBodyChange(event, fuelType)}
           />
