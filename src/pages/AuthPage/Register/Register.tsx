@@ -69,7 +69,7 @@ const Register: React.FC<Props> = (props: Props) => {
         CustomerService.createCustomer({ userId: userId })
           .then()
           .catch((err) => console.log(userId));
-        setTimeout(() => navigate("/sign-up"), 2000);
+        setTimeout(() => navigate("/sign-in"), 2000);
       })
       .catch((error) => toast.error(error.response.data.message));
   };
@@ -288,9 +288,8 @@ const Register: React.FC<Props> = (props: Props) => {
                 </button>
               </div>
               <div
-                className={`toggle-panel toggle-right ${
-                  isActive ? "active" : ""
-                }`}
+                className={`toggle-panel toggle-right ${isActive ? "active" : ""
+                  }`}
               >
                 <h1>Hello, Friend!</h1>
                 <p>
