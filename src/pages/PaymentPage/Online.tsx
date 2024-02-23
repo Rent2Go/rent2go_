@@ -119,8 +119,8 @@ const Online = (props: Props) => {
   const paymentSchema = Yup.object({
     cardNumber: Yup.string()
       .required('Card number is required')
-      .matches(/^\d{16}$/, 'Card number must be 16 digits'),
-
+      .matches(/^(?:5[1-5][0-9]{14})$/, 'Card number must be a valid MasterCard number'),
+      
     cardHolderName: Yup.string()
       .required('Card holder name is required'),
 
@@ -217,7 +217,7 @@ const Online = (props: Props) => {
                         name="expirationMonth"
                         type="text"
                         label="Expiration Month"
-                        placeHolder="Enter Expiration Date"
+                        placeHolder="MM"
                       ></FormikInput>
                     </div>
                     <div className="col-xl-4 col-l-4 col-md-12 col-sm-12">
@@ -225,7 +225,7 @@ const Online = (props: Props) => {
                         name="expirationYear"
                         type="text"
                         label="Expiration Year"
-                        placeholder="Enter Expiration Date"
+                        placeholder="YY"
                       ></FormikInput>
                     </div>
 
@@ -235,7 +235,7 @@ const Online = (props: Props) => {
                         name="cvv"
                         type="number"
                         label="CVV No"
-                        placeholder="Enter CVV No"
+                        placeholder="CVV"
                       ></FormikInput>
                     </div>
                   </div>
