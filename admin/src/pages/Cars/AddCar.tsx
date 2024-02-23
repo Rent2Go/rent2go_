@@ -100,7 +100,7 @@ const AddCar = (props: Props) => {
         'Invalid licence plate: Plate must consist of 1-3 uppercase letters after the first part.'
       )
       .matches(
-        /[0-9]{4}$/,
+        /[0-9]{2,4}$/,
         'Invalid licence plate: Plate must end with 4 numbers.'
       )
 
