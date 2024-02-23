@@ -6,10 +6,14 @@ import { TokenUser } from "../../../src/models/token/TokenUser";
 import { toast } from "react-toastify";
 
 const axiosInstance = axios.create({
+<<<<<<< HEAD
 
 
 	baseURL: "http://localhost:8080/api/",
 
+=======
+	baseURL: "https://api.rentogo.com.tr/api/",
+>>>>>>> feyza
 });
 
 

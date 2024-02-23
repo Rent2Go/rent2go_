@@ -64,6 +64,16 @@
 .containers .form h1 {
   color: var(--primaryColor);
 }
+.containers .sign-in-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.containers .sign-in-form .row {
+  padding: 0 1rem;
+}
 .containers .input {
   background-color: #eee;
   border: none;
@@ -256,4 +266,7 @@
     padding: 10px 15px;
     margin: 8px 0;
   }
+}
+.inline-flex {
+  display: inline-flex !important;
 }/*# sourceMappingURL=register.css.map */

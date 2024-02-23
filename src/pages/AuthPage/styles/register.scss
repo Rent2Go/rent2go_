@@ -70,8 +70,18 @@
     h1{
       color:var(--primaryColor)
     }
+   
   }
-
+  .sign-in-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:0 auto;
+    .row{
+     padding:0 1rem;
+    }
+  }
   .input {
     background-color: #eee;
     border: none;
@@ -293,4 +303,8 @@
       }
   }
 }
+}
+
+.inline-flex{
+  display: inline-flex!important;
 }

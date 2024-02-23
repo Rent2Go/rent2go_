@@ -186,9 +186,14 @@
   opacity: 95%;
 }
 
+@media screen and (max-width: 510px) {
+  .header .logoDiv img {
+    width: 80px;
+  }
+}
 @media screen and (min-width: 520px) {
   .header .logoDiv img {
-    width: 30px;
+    width: 75px;
   }
   .header .signUp .languageBtnContainer {
     padding: 0;
