@@ -162,7 +162,6 @@ const DetailRental = (props: Props) => {
                     name="endKilometer"
                     label="End Kilometer"
                     type="number"
-                    
                   />
                 </div>
                 <div className="col-xl-4 col-l-4 col-md-12 col-sm-12">

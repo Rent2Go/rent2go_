@@ -151,7 +151,9 @@ const ReservationPage = () => {
   return (
     <>
       <Helmet>
-        <title>{settings.title} - {t("reservation")} </title>
+        <title>
+          {settings.title} - {t("reservation")}{" "}
+        </title>
       </Helmet>
       <Navbar />
 
@@ -171,12 +173,17 @@ const ReservationPage = () => {
               </div>
               <div className="dateContentContainer">
                 <p>
-                  <b>{t("startDate")} : </b> {rentStartDate.toDateString()}
+                  <span>
+                    {" "}
+                    <b>{t("startDate")} : </b>
+                  </span>
+                  <span>{rentStartDate.toDateString()}</span>
                 </p>
                 <p>
                   <span>
-                    <b>{t("endDate")} : </b> {rentEndDate.toDateString()}
+                    <b>{t("endDate")} : </b>{" "}
                   </span>
+                  <span>{rentEndDate.toDateString()}</span>
                 </p>
                 <DiscountCode />
               </div>
@@ -211,7 +218,9 @@ const ReservationPage = () => {
                   <span>
                     <b>{t("rental")} : </b>{" "}
                   </span>
-                  <span>{rentDay == 0 ? 1 : rentDay} - {t("days")}</span>
+                  <span>
+                    {rentDay == 0 ? 1 : rentDay} - {t("days")}
+                  </span>
                 </p>
               </div>
               <div className="priceCardContainer">
@@ -223,7 +232,8 @@ const ReservationPage = () => {
                 <p>{t("whatsIncludedInThePackage")}</p>
                 <div>
                   <span>
-                    <button title="."
+                    <button
+                      title="."
                       aria-describedby={popInsurance}
                       type="button"
                       onMouseEnter={handleClickInsurance}
@@ -232,13 +242,12 @@ const ReservationPage = () => {
                     </button>{" "}
                     {t("insurance")}
                     <BasePopup id={popInsurance} open={openInsurance}>
-                      <div>
-                        {t("insuranceDescription")}
-                      </div>
+                      <div>{t("insuranceDescription")}</div>
                     </BasePopup>
                   </span>
                   <span>
-                    <button title="."
+                    <button
+                      title="."
                       aria-describedby={popAssistance}
                       type="button"
                       onMouseEnter={handleClickAssistance}
@@ -247,9 +256,7 @@ const ReservationPage = () => {
                     </button>{" "}
                     {t("roadsideAssistance")}
                     <BasePopup id={popAssistance} open={openAssistance}>
-                      <div>
-                        {t("roadsideAssistanceDescription")}
-                      </div>
+                      <div>{t("roadsideAssistanceDescription")}</div>
                     </BasePopup>
                   </span>
                 </div>
