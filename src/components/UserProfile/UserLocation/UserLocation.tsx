@@ -27,6 +27,8 @@ const UserLocation = () => {
   const [selectedFilter, setSelectedFilter] = useState<DistrictModel[]>([])
   const [user, setUser] = useState<UserModel>();
   const [cityId, setCityId] = useState<number | null>(null);
+  const [districtId, setDistrictId] = useState<number | null>(null);
+
 
 
 
@@ -92,14 +94,12 @@ const UserLocation = () => {
   }, [user?.id])
 
   const handleCityChange = async (selectedCity: number) => {
-
     const city = cities.find((city) => city.id == selectedCity);
-
     const selectedCityDistrict = districts.filter((district: DistrictModel) => district.city.id == selectedCity)
     setSelectedFilter(selectedCityDistrict)
     setCity(city);
-
     setCityId(selectedCity);
+    setDistrictId(null); 
   }
 
   if (!user) return <OverlayLoaderLoad />
@@ -126,7 +126,7 @@ const UserLocation = () => {
                     as="select"
                     className="form-control"
                     onChange={(e: any) => handleCityChange(e.target.value)}
-                    value={user?.city?.id}
+                    value={cityId}
                   >
                     {user.district && (
                       <option key={user?.city?.id} value={user.city.id}>
@@ -145,7 +145,7 @@ const UserLocation = () => {
                   name="districtId"
                   as="select"
                   className="form-control"
-                  value={user.district?.id} 
+                  value={districtId} 
                 >
                   {user.city && (
                     <option key={user?.district?.id} value={user?.district?.id}>

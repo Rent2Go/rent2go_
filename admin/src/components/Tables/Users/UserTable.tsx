@@ -62,7 +62,7 @@ const UserTable = (props: Props) => {
                 alt="user-img"
               />
             ) : (
-              <img src="/assets/images/userImages/user-default.jpg" alt="default-img" />
+              <img src="/assets/ima ges/userImages/user-default.png" alt="default-img" />
             )}
           </td>
           <td>{props.user.name}</td>
