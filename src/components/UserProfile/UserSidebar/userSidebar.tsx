@@ -101,13 +101,13 @@ const UserSidebar: React.FC<UserSidebarProps> = ({activepage}) => {
         activepage === 'disclaimer' 
         ? 
         <div className='s2'>
-          <BsJournalBookmark  className='img'/>
+          <BsJournalBookmark  className='img dis'/>
           <span>{t("disclaimer")}</span>
         </div> 
         : 
         <Link to="/profile/disclaimer">
           <div className='s1'>
-            <BsJournalBookmark  className='img'/>
+            <BsJournalBookmark  className='img dis'/>
             <span>{t("disclaimer")}</span>
           </div>
         </Link>
