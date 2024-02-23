@@ -148,6 +148,10 @@ const ReservationPage = () => {
 
     navigate(`/payment/${selectedPaymentMethod}`);
   };
+
+  const translateFuelTypeKey = rentals?.fuelType.toUpperCase();
+  const translateGearTypeKey = rentals?.gearType.toUpperCase();
+
   return (
     <>
       <Helmet>
@@ -203,8 +207,8 @@ const ReservationPage = () => {
                     <b>{t("type")} :</b>{" "}
                   </span>
                   <span>
-                    {rentals?.fuelType.toLowerCase()},{" "}
-                    {rentals?.gearType.toLowerCase()}
+                    {translateFuelTypeKey && t(translateFuelTypeKey)}, {" "}
+                    {translateGearTypeKey && t(translateGearTypeKey)}
                   </span>
                 </p>
                 <p>

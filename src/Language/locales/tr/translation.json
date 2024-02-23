@@ -145,5 +145,10 @@
   "cash": "Nakit",
   "online": "Çevrimiçi",
   "bankTransfer": "Banka Transferi",
-  "cancel": "İptal Et"
+  "cancel": "İptal Et",
+
+  "GASOLINE": "Benzin",
+  "DIESEL": "Dizel",
+  "AUTOMATIC": "Otomatik",
+  "MANUAL": "Manuel"
 }

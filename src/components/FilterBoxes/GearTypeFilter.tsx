@@ -47,7 +47,7 @@ const GearTypeFilter = (props: Props) => {
             key={index}
             id={`flexCheckDefault-${gearType}`}
             checked={checkedStates[gearType] || false}
-            label={gearType}
+            label={t(gearType).toUpperCase()}
             value={gearType}
             onChange={(event) => handleBodyChange(event, gearType)}
           />
