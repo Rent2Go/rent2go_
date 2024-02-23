@@ -62,7 +62,8 @@ const Cash = (props: Props) => {
                     </div>
                     <div className="col-12">
                       <p>
-                        <b>Address : </b> Ataevler Mh. Öztürkler Sk. No:52/3
+                        <b>Phone : </b>
+                        {auth.authInformation.user.phoneNumber}
                       </p>
                     </div>
                   </div>
