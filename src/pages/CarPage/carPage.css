@@ -202,11 +202,11 @@
 }
 .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv .carTitle {
   color: var(--primaryColor);
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 4rem;
-  width: -moz-max-content;
-  width: max-content;
+  width: -webkit-fill-available;
   font-weight: 600;
+  text-transform: capitalize;
 }
 .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv .carLabel {
   font-weight: 600;
@@ -237,7 +237,7 @@
 .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv .actionRow span {
   margin-left: 0.25rem;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
 }
 .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv a,
 .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv button {
@@ -327,14 +327,178 @@
   }
   .carPage .secContainer .secContent .carContainer {
     grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column-end: 16;
   }
   .carPage .secContainer .secContent .carContainer .searchDiv .searchInput {
-    width: 80%;
+    width: 75%;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div {
+    align-items: center;
+    -moz-column-gap: 0.75rem;
+         column-gap: 0.75rem;
   }
   .carPage .secContainer .secContent .carContainer .singleCar div .imgDiv {
     width: 200px !important;
     height: auto !important;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv {
+    row-gap: 3rem;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv .carTitle {
+    font-size: 18px;
+    margin-bottom: 5rem;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv {
+    row-gap: 10rem;
+  }
+}
+@media screen and (max-width: 991px) {
+  .carPage {
+    padding: 1rem 2rem;
+  }
+  .carPage .secContainer {
+    padding: 0;
+    justify-content: center;
+    margin: 2rem 0rem;
+    gap: 1rem;
+  }
+  .carPage .secContainer .secHeading {
+    margin: 4rem 0 0 0;
+  }
+  .carPage .secContainer .secHeading .search {
+    width: 100%;
+  }
+  .carPage .secContainer .secHeading .search .searchDiv {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .carPage .secContainer .secHeading .search .searchDiv .searchInput {
+    width: 60%;
+  }
+  .carPage .secContainer .secContent {
+    grid-template-columns: repeat(3, 1fr) !important;
+    align-items: flex-start;
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+    justify-content: center;
+  }
+  .carPage .secContainer .secContent .filterContainer {
+    grid-column-start: 1;
+    grid-column-end: 1;
+  }
+  .carPage .secContainer .secContent .filterContainer .filter {
+    flex-direction: column;
+    align-items: normal;
+  }
+  .carPage .secContainer .secContent .filterContainer .filter .filterRow {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+    margin: 1rem 0.2rem;
+    padding: 2rem 0.5rem;
+    min-width: 100%;
+    font-size: 10px;
+  }
+  .carPage .secContainer .secContent .filterContainer .filter .filterRow .rowHead {
+    margin-bottom: 0;
+  }
+  .carPage .secContainer .secContent .filterContainer .filter .filterRow .rowHead h6 {
+    font-size: 12px;
+  }
+  .carPage .secContainer .secContent .filterContainer .filter .filterRow .checkBoxRow {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    align-items: flex-start;
+    -moz-column-gap: 0;
+         column-gap: 0;
+  }
+  .carPage .secContainer .secContent .carContainer {
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 4 !important;
+  }
+  .carPage .secContainer .secContent .carContainer .searchDiv {
+    margin: 1rem 0;
+    text-align: center;
+    padding: 0.25rem 0.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .carPage .secContainer .secContent .carContainer .searchDiv label {
+    font-size: 12px;
+  }
+  .carPage .secContainer .secContent .carContainer .searchDiv .searchInput {
+    width: 66%;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar {
+    margin: 1rem 0rem;
+    padding: 0.5rem 1rem;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div {
+    display: flex;
+    flex-direction: column;
+    -moz-column-gap: 0.5rem;
+         column-gap: 0.5rem;
+    row-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.9rem;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .imgDiv {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv {
+    flex-direction: column;
+    row-gap: 0;
+    font-size: 10px;
+    margin-bottom: -2rem;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv span {
+    font-size: 15px;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv .miles,
+  .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv .AWD {
+    margin-right: 1rem;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv .carTitle {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv .contentDiv {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 0;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv .contentDiv div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 2rem 0;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv .actionRow {
+    margin-bottom: 0 !important;
+  }
+  .carPage .secContainer .secContent .carContainer .singleCar div .actionDiv .actionRow span {
+    padding-bottom: 0;
+    font-size: 15px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -449,7 +613,8 @@
   .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv span {
     font-size: 15px;
   }
-  .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv .miles, .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv .AWD {
+  .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv .miles,
+  .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv .AWD {
     margin-right: 1rem;
   }
   .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv .carTitle {
@@ -485,7 +650,7 @@
     font-size: 15px;
   }
 }
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 560px) {
   .carPage {
     padding: 1rem 2rem;
   }
@@ -674,7 +839,7 @@
   }
   .carPage .secContainer .secContent .carContainer .singleCar {
     margin: 1rem 0rem;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0;
     border-radius: 0;
   }
   .carPage .secContainer .secContent .carContainer .singleCar div {
@@ -688,6 +853,8 @@
     flex-direction: row;
     font-size: 10px;
     margin-bottom: -2rem;
+    display: flex;
+    flex-direction: column;
   }
   .carPage .secContainer .secContent .carContainer .singleCar div .descriptionDiv span {
     font-size: 12px !important;
