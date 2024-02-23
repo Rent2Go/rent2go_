@@ -26,18 +26,7 @@ const Search = (props: Props) => {
   const [selectedEndDate, setSelectedEndDate] = useState<Date | null>(new Date(endDate));
 
   const handleStartDateChange = (newStartDate: Date | null) => {
-    const today = new Date();
-    const sevenDaysLater = new Date(today.getTime() + 2 * 24 * 60 * 60 * 1000); // Güncel tarihin 7 gün sonrası
-    
-    if (newStartDate) {
-      if (newStartDate < today) {
-        alert(t("theStartDateCannotBe"));
-      } else if (newStartDate > sevenDaysLater) {
-        alert(t("theStartDateCannotBeMoreThanSevenDaysLater"));
-      } else {
         setSelectedStartDate(newStartDate);
-      }
-    }
   };
 
   const handleEndDateChange = (newEndDate: Date | null) => {
@@ -48,19 +37,15 @@ const Search = (props: Props) => {
     }
   };
 
+  const disablePastDates = (date:any) => {
+    return date < new Date();
+  };
+
   const handleSubmitSearch = async () => {
     if (selectedStartDate && selectedEndDate) {
       const today = new Date();
       today.setHours(0, 0, 0, 0); 
-  
-      if (selectedStartDate < today) {
-        alert(t("startDateInPast"));
-        return; 
-      }
-      if(selectedEndDate < today){
-        alert(t("startDateInPast"));
-        return; 
-      }
+
   
       const startDateTimestamp = selectedStartDate.getTime(); 
       const endDateTimestamp = selectedEndDate.getTime(); 
@@ -71,21 +56,17 @@ const Search = (props: Props) => {
         return;
       }
   
-      if (differenceInDays(endDateTimestamp, startDateTimestamp) > 6) {
+      if (differenceInDays(endDateTimestamp, startDateTimestamp) > 25) {
         alert(t("dateDifferenceExceedsLimit"));
         return; 
       }
       
-      if(endDateTimestamp < startDateTimestamp){
-        alert(t("The end date cannot be less than the start date"));
-        return; 
-      }
       
       dispatch(setStartDate(startDateTimestamp)); 
       dispatch(setEndDate(endDateTimestamp)); 
       navigate("/cars");
     } else {
-      alert(t("pleaseSelectStartDateAndEndDate")); 
+      alert(t("Please Select Start Date And EndDate")); 
     }
   };
   useEffect(() => {
@@ -105,12 +86,15 @@ const Search = (props: Props) => {
               label={t("startDate")}
               value={startDate}
               onChange={handleStartDateChange}
+              disablePast
               data-aos="fade-right"
             />
             <DatePicker
               label={t("endDate")}
               value={endDate}
               onChange={handleEndDateChange}
+              shouldDisableDate={disablePastDates}
+              disablePast
               data-aos="fade-left"
             />
           </LocalizationProvider>
