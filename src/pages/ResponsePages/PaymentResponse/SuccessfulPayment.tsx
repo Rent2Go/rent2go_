@@ -46,7 +46,7 @@ const SuccessfulPayment = (props: Props) => {
           </div>
           <div className="actionContainer">
             <Link
-              to="/profile/your-reservation"
+              to="/profile/your-reservations"
               type="button"
               className="btn btn-profile"
             >

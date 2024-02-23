@@ -1,5 +1,5 @@
 .scroll-to-top-btn {
-    display: none;
+  display: none;
   position: fixed;
   bottom: 45px;
   right: 45px;
@@ -11,13 +11,13 @@
   cursor: pointer;
   color: var(--primaryColor);
   transition: 0.3s;
-  
-  &:hover{
+  z-index: 99;
+
+  &:hover {
     color: var(--secondaryColor);
     transition: 0.3s;
   }
 }
 .visible {
-    display: inline-block;
-    
+  display: inline-block;
 }
