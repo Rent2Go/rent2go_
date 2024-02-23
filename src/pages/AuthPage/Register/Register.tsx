@@ -169,7 +169,7 @@ const Register: React.FC<Props> = (props: Props) => {
                   <div className="col-md-6 col-sm-12">
                     <Field
                       name="birthDate"
-                      className="input"
+                      className="input form-control inline-flex"
                       type="date"
                       placeholder="Birthdate"
                     />
@@ -219,7 +219,7 @@ const Register: React.FC<Props> = (props: Props) => {
               validateOnBlur={true}
               validateOnChange={false}
             >
-              <Form className="form" action="">
+              <Form className="form sign-in-form" action="">
                 <h1>Sign In</h1>
                 <div className="social-icons">
                   <Link to="https://github.com/sonersyln" className="icon">
@@ -248,22 +248,34 @@ const Register: React.FC<Props> = (props: Props) => {
                   </Link>
                 </div>
                 <span>or use your email password</span>
-                <Field
-                  name="email"
-                  className="input"
-                  type="email"
-                  placeholder="Email"
-                />
-                <Field
-                  name="password"
-                  className="input"
-                  type="password"
-                  placeholder="Password"
-                />
-                <Link to="/sign-in/reset-password">Forget Your Password?</Link>
-                <button className="btn" type="submit">
-                  Sign In
-                </button>
+                <div className="row text-center">
+                  <div className="col-12 text-center">
+                    <Field
+                      name="email"
+                      className="input"
+                      type="email"
+                      placeholder="Email"
+                    />
+                  </div>
+                  <div className="col-12 text-center">
+                    <Field
+                      name="password"
+                      className="input"
+                      type="password"
+                      placeholder="Password"
+                    />
+                  </div>
+                  <div className="col-12 text-center">
+                    <Link to="/sign-in/reset-password">
+                      Forget Your Password?
+                    </Link>
+                  </div>
+                  <div className="col-12 text-center">
+                    <button className="btn" type="submit">
+                      Sign In
+                    </button>
+                  </div>
+                </div>
               </Form>
             </Formik>
           </div>
