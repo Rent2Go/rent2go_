@@ -1,14 +1,13 @@
 // store.js
-import { getTodayDate } from '@mui/x-date-pickers/internals';
-import { configureStore, createSlice } from '@reduxjs/toolkit';
+
+import {createSlice } from '@reduxjs/toolkit';
 
 const dateSlice = createSlice({
   name: 'dates',
   initialState: {
       startDate: new Date().getTime(), 
-      endDate:   new Date().getTime(), 
-   
-    
+      endDate:  new Date((new Date()).getTime() + 24 * 60 * 60 * 1000) 
+
   },
   reducers: {
     setStartDate: (state, action) => {
@@ -23,7 +22,7 @@ const dateSlice = createSlice({
     },
     clearDates: (state:any) => {
      state.startDate = new Date().getTime();
-      state.endDate=  new Date().getTime();
+      state.endDate=  new Date((new Date()).getTime() + 24 * 60 * 60 * 1000) ;
     },
   },
 });

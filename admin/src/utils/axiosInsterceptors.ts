@@ -6,7 +6,10 @@ import { TokenUser } from "../../../src/models/token/TokenUser";
 import { toast } from "react-toastify";
 
 const axiosInstance = axios.create({
+
+
 	baseURL: "http://localhost:8080/api/",
+
 });
 
 

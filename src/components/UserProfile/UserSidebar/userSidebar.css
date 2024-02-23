@@ -34,8 +34,8 @@
     padding-left: 10px;
   }
   .userSidebar .img {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: auto;
   }
 }
 @media screen and (min-width: 520px) and (max-width: 770px) {
