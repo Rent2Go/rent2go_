@@ -157,7 +157,7 @@ const ReservationPage = () => {
       </Helmet>
       <Navbar />
 
-      <div className="reservation">
+      <div className="reservation container-fluid">
         <div className="secContainer bgWhite">
           <div className="imgContainer">
             <img src={rentals?.imageUrl} alt="carImage" />
