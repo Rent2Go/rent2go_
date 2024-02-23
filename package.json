@@ -78,6 +78,7 @@
   "devDependencies": {
     "@types/aos": "^3.0.7",
     "@types/react-helmet": "^6.1.11",
-    "@types/react-scroll": "^1.8.10"
+    "@types/react-scroll": "^1.8.10",
+    "cross-env": "^7.0.3"
   }
 }
