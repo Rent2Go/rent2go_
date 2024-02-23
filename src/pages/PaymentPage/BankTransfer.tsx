@@ -85,7 +85,7 @@ const BankTransfer = (props: Props) => {
                           </div>
                           <div className="col-12">
                             <p>
-                              <b>Phone : </b> 
+                              <b>{t("phone")} : </b> 
                               {auth.authInformation.user.phoneNumber}
                             </p>
                           </div>

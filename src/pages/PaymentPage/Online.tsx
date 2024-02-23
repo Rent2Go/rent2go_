@@ -175,7 +175,8 @@ const Online = (props: Props) => {
                         </div>
                         <div className="col-12">
                           <p>
-                            <b>{t("address")} : </b> Ataevler Mh. Öztürkler Sk. No:52/3
+                            <b>{t("phone")} : </b> 
+                            {auth.authInformation.user.phoneNumber}
                           </p>
                         </div>
                       </div>
