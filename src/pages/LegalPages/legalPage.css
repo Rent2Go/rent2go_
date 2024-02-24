@@ -99,7 +99,7 @@
                 width: 200px;
             }
             .tabs_content{
-                margin-left: 13rem;
+                margin-left: 1rem;
             }
         }
     }
@@ -127,7 +127,7 @@
                 width: 180px;
             }
             .tabs_content{
-                margin-left: 12rem;
+                margin-left: 1rem;
             }
         }
     }
@@ -135,7 +135,7 @@
 
 @media screen and (min-width: 520px) and (max-width: 770px) {
     .legalPages{
-        padding-top: 5rem;
+        padding-top: 8rem;
         h1{
             font-size: 2rem;
         }
@@ -153,13 +153,19 @@
             margin-left: 3rem;
             margin-right: 0rem;
             .tabs_list{
-                width: 145px;
-                font-size: 0.9rem;
+                width: 25%;
+                font-size: 0.8rem;
+                a{
+                    &:hover {
+                        font-size: 0.95rem;
+                    }
+                }
             }
             .tabs_content{
-                margin-left: 0;
+                margin-left: -1rem;
+                margin-right: -1rem;
                 font-size: 0.9rem;
-                width: 100%;
+                width: 75%;
             }
         }
     }
@@ -167,9 +173,9 @@
 
 @media screen and (max-width: 520px) {
     .legalPages{
-        padding-top: 4.5rem;
+        padding-top: 8rem;
         h1{
-            font-size: 1.9rem;
+            font-size: 1.6rem;
         }
         h2{
             font-size: 1.4rem;
@@ -184,13 +190,20 @@
             margin-left: -1rem;
             margin-right: -1rem;
             .tabs_list{
-                width: 135px;
-                font-size: 0.9rem;
+                width: 28%;
+                font-size: 0.7rem;
+                margin-left: -2rem;
+                a {
+                    &:hover {
+                        font-size: 0.75rem;
+                    }
+                }
             }
             .tabs_content{
-                margin-left: -1rem;
-                font-size: 0.9rem;
-                width: 100%;
+                margin-left: -2rem;
+                margin-right: -2rem;
+                font-size: 0.8rem;
+                width: 90%;
             }
         }
     }

@@ -202,6 +202,56 @@
   "bankNameIsRequired": "Banka Adı gerekli",
   "ibanHolderNameIsRequired": "IBAN Sahibinin Adı gerekli",
   "invalidIbanFormat": "Geçersiz IBAN biçimi",
-  "ibanNoIsRequired": "IBAN Numarası gerekli"
-  
+  "ibanNoIsRequired": "IBAN Numarası gerekli",
+  "paymentSuccessful": "Ödeme Başarılı",
+  "yourPaymentHasBeenSuccessfully": "Ödemeniz başarıyla gerçekleşti",
+  "yourReservationRequestHasBeenReceived": "Rezervasyon talebiniz alınmıştır. Lütfen posta kutunuzu kontrol edin.",
+  "youCanViewYourReservationRequestFromYourProfilePage": "Rezervasyon talebinizi profil sayfanızdan görüntüleyebilirsiniz.",
+  "downloadPdf": "PDF İndir",
+  "creatingPdf": "PDF Oluşturuluyor",
+  "receipt": "DEKONT",
+  "paymentMethod": "Ödeme Yöntemi",
+  "yourPaymentInformationIsAsAbove": "Ödeme bilgileriniz yukarıdaki gibidir. Lütfen aracınızı almaya geldiğinizde bu makbuzu yanınızda bulundurun.",
+
+
+
+
+
+
+
+
+
+  "interpretationAndDefinitions": "Yorum ve Tanımlar",
+  "typeOfCookiesWeUse": "Kullandığımız Çerezlerin Türü",
+  "yourChoicesRegardingCookies": "Çerezlere İlişkin Seçimleriniz",
+  "moreInformationAboutCookies": "Çerezler Hakkında Daha Fazla Bilgi",
+  "cookiesPolicy": "Çerez Politikası",
+  "lastUpdate": "Son güncelleme: 26 Ocak 2024",
+  "thisCookiesPolicyExplains": "Bu Çerez Politikası, Çerezlerin ne olduğunu ve bunları nasıl kullandığımızı açıklamaktadır. Ne tür çerezler kullandığımızı veya Çerezleri kullanarak topladığımız bilgileri ve bu bilgilerin nasıl kullanıldığını anlayabilmek için bu politikayı okumalısınız. Bu Çerez Politikası aşağıdakilerin yardımıyla oluşturulmuştur:",
+  "freeCookiesPolicyGenerator": "Ücretsiz Çerez Politikası Oluşturucu",
+  "cookiesDoNotTypicallyContainAnyInformation": "Çerezler genellikle bir kullanıcıyı kişisel olarak tanımlayan herhangi bir bilgi içermez, ancak Sizin hakkınızda sakladığımız kişisel bilgiler, Çerezlerde saklanan ve Çerezlerden elde edilen bilgilerle bağlantılı olabilir. Kişisel verilerinizi nasıl kullandığımız, sakladığımız ve güvende tuttuğumuz hakkında daha fazla bilgi için Gizlilik Politikamıza bakın.",
+  "weDoNotStoreSensitivePersonalInformation": "Kullandığımız Çerezlerde posta adresleri, hesap şifreleri vb. gibi hassas kişisel bilgileri saklamayız.",
+  "interpretation": "Yorum",
+  "theWordsOfWhichTheInitialLetter": "Baş harfi büyük olan kelimeler aşağıdaki şartlarda tanımlanan anlamlara sahiptir. Aşağıdaki tanımlar tekil veya çoğul olmasına bakılmaksızın aynı anlama gelecektir.",
+  "definitions": "Tanımlar",
+  "forThePurposesOfThisCookiesPolicy": "Bu Çerez Politikasının amaçları doğrultusunda",
+  "company": "Şirket",
+  "referredToAsEither": "(bu Çerez Politikasında \"Şirket\", \"Biz\", \"Bize\" veya \"Bizim\" olarak anılacaktır) Rent2Go'yu ifade eder.",
+  "meansSmallFilesThatArePlaced": "Bir web sitesi tarafından bilgisayarınıza, mobil cihazınıza veya başka herhangi bir cihazınıza yerleştirilen ve o web sitesindeki pek çok kullanımın yanı sıra tarama geçmişinizin ayrıntılarını içeren küçük dosyalar anlamına gelir.",
+  "website": "Web Sitesi",
+  "refersToRent2Go": "Şu adresten erişilebilen Rent2Go'yu ifade eder",
+  "you": "Sen",
+  "meansTheIndividualAccessingOrUsing": "Web Sitesine erişen veya Web Sitesini kullanan kişi veya bu kişinin adına Web Sitesine erişen veya Web Sitesini kullanan bir şirket veya herhangi bir tüzel kişilik anlamına gelir.",
+  "theUseOfTheCookies": "Çerezlerin Kullanımı",
+  "cookiesCanBePersistentOrSessionCookies": "Çerezler \"Kalıcı\" veya \"Oturum\" Çerezleri olabilir. Kalıcı Çerezler, çevrimdışı olduğunuzda kişisel bilgisayarınızda veya mobil cihazınızda kalır, Oturum Çerezleri ise web tarayıcınızı kapattığınızda silinir.",
+  "weUseBothSessionAndPersistentCookies": "Aşağıda belirtilen amaçlar doğrultusunda hem oturum hem de kalıcı Çerezleri kullanıyoruz.",
+  "necessaryEssentialCookies": "Gerekli / Temel Çerezler",
+  "typeSessionCookies": "Tür: Oturum Çerezleri",
+  "administeredByUs": "Yöneten: Biz",
+  "purposeTheseCookies": "Amaç: Bu Çerezler, Size Web Sitesi aracılığıyla sunulan hizmetleri sağlamak ve Web Sitesinin bazı özelliklerini kullanmanızı sağlamak için gereklidir. Kullanıcıların kimliğinin doğrulanmasına ve kullanıcı hesaplarının hileli kullanımını önlemeye yardımcı olurlar. Bu Çerezler olmadan talep ettiğiniz hizmetler sağlanamaz ve bu Çerezleri yalnızca Size bu hizmetleri sağlamak için kullanırız.",
+  "functionalCookies": "İşlevsellik Çerezleri",
+  "typePersistentCookies": "Tür: Kalıcı Çerezler",
+  "purposeTheseCookiesAllowUsTo": "Amaç: Bu Çerezler, Web Sitesini kullanırken giriş bilgilerinizi veya dil tercihinizi hatırlamak gibi yaptığınız seçimleri hatırlamamıza olanak tanır. Bu Çerezlerin amacı Size daha kişisel bir deneyim sunmak ve Web Sitesini her kullandığınızda tercihlerinizi yeniden girmek zorunda kalmanızı önlemektir.",
+  "": ""
+
 }

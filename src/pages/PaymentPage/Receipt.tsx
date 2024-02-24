@@ -9,6 +9,7 @@ import {
   Font,
   Image,
 } from "@react-pdf/renderer";
+import { useTranslation } from "react-i18next";
 
 
 
@@ -16,6 +17,8 @@ Font.register({
   family: "Roboto",
   src: "/assets/fonts/Roboto-Regular.ttf",
 });
+
+
 
 const styles = StyleSheet.create({
   body: {
@@ -76,29 +79,29 @@ interface ReceiptProps {
   totalAmount: string;
 }
 
-const Receipt: React.FC<ReceiptProps> = ({amount,discountRate,totalAmount, auth, currentDate }) => (
+const Receipt: React.FC<ReceiptProps> = ({amount,discountRate,totalAmount, auth, currentDate }) => {
+  const { t } = useTranslation();
 
-
+  return(
   <Document>
     <Page style={styles.body}>
       <View>
         <Text style={styles.title}>
           {" "}
-          <Image style={styles.image} src="/assets/logo.png" /> RECEIPT{" "}
+          <Image style={styles.image} src="/assets/logo.png" /> {t("receipt")}{" "}
         </Text>
 
         <Text style={styles.author}>
-          Name: {auth.authInformation.user.firstname}{" "}
+          {t("name")}: {auth.authInformation.user.firstname}{" "}
           {auth.authInformation.user.lastname}
         </Text>
-        <Text style={styles.author}>Date: {currentDate}</Text>
-        <Text style={styles.author}>Payment Method: CASH</Text>
-        <Text style={styles.author}>Amount: {amount} ₺</Text>
-        <Text style={styles.author}>Discount: {discountRate} ₺</Text>
-        <Text style={styles.author}>Total: {totalAmount} ₺</Text>
+        <Text style={styles.author}>{t("date")}: {currentDate}</Text>
+        <Text style={styles.author}>{t("paymentMethod")}: {t("cash")}</Text>
+        <Text style={styles.author}>{t("amount")}: {amount} ₺</Text>
+        <Text style={styles.author}>{t("discount")}: {discountRate} ₺</Text>
+        <Text style={styles.author}>{t("totalAmount")}: {totalAmount} ₺</Text>
         <Text style={styles.author2}>
-          Your payment information is as above. Please have this receipt with
-          you when you come to pick up the vehicle.
+          {t("yourPaymentInformationIsAsAbove")}
         </Text>
         <Text style={styles.authors}>
           {" "}
@@ -113,18 +116,23 @@ const Receipt: React.FC<ReceiptProps> = ({amount,discountRate,totalAmount, auth,
       />
     </Page>
   </Document>
-);
+)};
 
-const ReceiptPDF: React.FC<ReceiptProps> = ({amount,discountRate,totalAmount, auth, currentDate }) => (
+
+
+const ReceiptPDF: React.FC<ReceiptProps> = ({amount,discountRate,totalAmount, auth, currentDate }) => {
+  const { t } = useTranslation();
+  
+  return(
   <PDFDownloadLink
     document={<Receipt amount={amount} discountRate={discountRate} totalAmount={totalAmount} auth={auth} currentDate={currentDate} />}
     fileName="receipt.pdf"
     className="btn btn-submit"
   >
     {({ blob, url, loading, error }) =>
-      loading ? "Creating PDF..." : "Download PDF"
+      loading ? "Creating PDF..." : t("downloadPdf")
     }
-  </PDFDownloadLink>
-);
+  </PDFDownloadLink>  
+)};
 
 export default ReceiptPDF;

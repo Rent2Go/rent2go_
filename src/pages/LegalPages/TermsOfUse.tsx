@@ -17,9 +17,6 @@ const TermsOfUse = (props: Props) => {
                 <a href="#item-1">Interpretation and Definitions</a>
               </li>
               <li>
-                <a href="#item-2">Acknowledgment</a>
-              </li>
-              <li>
                 <a href="#item-3">Links to Other Websites</a>
               </li>
               <li>
@@ -27,6 +24,9 @@ const TermsOfUse = (props: Props) => {
               </li>
               <li>
                 <a href="#item-5">Governing Law</a>
+              </li>
+              <li>
+                <a href="#item-2">Severability and Waiver</a>
               </li>
               <li>
                 <a href="#item-6">Changes to These Terms and Conditions</a>
@@ -126,7 +126,7 @@ const TermsOfUse = (props: Props) => {
                   </p>
                 </li>
                 <li>
-                  <p id="item-2">
+                  <p>
                     <strong>You</strong> means the individual accessing or using
                     the Service, or the company, or other legal entity on behalf
                     of which such individual is accessing or using the Service,
@@ -276,7 +276,7 @@ const TermsOfUse = (props: Props) => {
                 national, or international laws.
               </p>
               <h2>Disputes Resolution</h2>
-              <p>
+              <p id="item-2">
                 If You have any concern or dispute about the Service, You agree
                 to first try to resolve the dispute informally by contacting the
                 Company.
