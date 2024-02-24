@@ -37,6 +37,8 @@ const Search = (props: Props) => {
     }
   };
 
+
+
   const disablePastDates = (date:any) => {
     return date < new Date();
   };

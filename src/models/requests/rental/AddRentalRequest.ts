@@ -5,5 +5,6 @@ export interface AddRentalRequest {
 	endDate: Date;
 	carId: number;
 	customerId: number;
+	employeeId: number;
 	discount: DiscountModel;
 }

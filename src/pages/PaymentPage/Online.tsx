@@ -53,6 +53,7 @@ const Online = (props: Props) => {
     endDate: new Date(rentalInfo.endDate),
     carId: rentalInfo.car.id,
     customerId: rentalInfo.user.customer.id,
+    employeeId: 1,
     discount: rentalInfo?.discount || { id: 0, discountCode: 'BOSS' }
   };
 
