@@ -127,7 +127,7 @@ const CarPage: React.FC<Props> = (props) => {
           <div className="col-xl-3 col-xs-12 col-md-4 mt-2">
             <FilterCard />
           </div>
-          <div className=" offset-xl-0  offset-xs-0 col-xs-12 col-xl-9 col-md-8 mt-3">
+          <div className=" offset-xl-0  offset-xs-0 col-xs-12 col-xl-9 col-md-8 mt-4">
             <div className="row container-fluid shadow-rounded-box searchBoxContainer mb-3">
               <div className="col-11">
                 <input
