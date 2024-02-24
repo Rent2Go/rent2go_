@@ -198,9 +198,10 @@
   "bankName": "Banka Adı",
   "enterBankName": "Banka Adını Girin",
   "ibanNo": "IBAN NUMARASI",
-  "pleaseJustEnterNumberWithout": "Lütfen Numarayı Girin",
+  "pleaseJustEnterNumberWithout": "Lütfen Numarayı Girin, Hariç",
   "bankNameIsRequired": "Banka Adı gerekli",
   "ibanHolderNameIsRequired": "IBAN Sahibinin Adı gerekli",
   "invalidIbanFormat": "Geçersiz IBAN biçimi",
   "ibanNoIsRequired": "IBAN Numarası gerekli"
+  
 }

@@ -20,6 +20,7 @@ type Props = {};
 
 const Online = (props: Props) => {
   const { t } = useTranslation();
+  const {car} = useSelector((state:any) => state.rental);
   const auth = useAuth();
   const navigate = useNavigate();
   const getCurrentDate = (): string => {
@@ -294,7 +295,7 @@ const Online = (props: Props) => {
                     <div className="col-3">
                       <Link
                         type="button"
-                        to="/reservation/:id"
+                        to={`/reservation/${car.id}`}
                         className="btn btn-cancel"
                       >
                         {t("cancel")}
