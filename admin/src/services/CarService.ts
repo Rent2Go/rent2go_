@@ -10,6 +10,12 @@ class CarService {
         return axiosInstance.get<GetAllCarsModel>("cars")
     }
 
+    getAllActiveCars(){
+
+        return axiosInstance.get<GetAllCarsModel>('cars/getallisactive?isActive='+true);
+
+    }
+
     getById(id: number) {
         return axiosInstance.get<GetByCarIdModel>(`cars/${id}`);
     }

@@ -1,4 +1,6 @@
+import { AddRentalResponse } from './../../../src/models/responses/rentals/AddRentalResponse';
 import { AddResponse } from "../../../src/models/responses/AddResponse";
+import { AddRentalRequest } from "../models/requests/rentals/AddRentalRequest";
 import { UpdateRentalRequest } from "../models/requests/rentals/UpdateRentalRequest";
 import { GetAllRentalsModel } from "../models/responses/rentals/GetAllRentals";
 import { GetByRentalIDModel } from "../models/responses/rentals/GetByIdRental";
@@ -9,9 +11,17 @@ class RentalService{
     getAll(){
         return axiosInstance.get<GetAllRentalsModel>("rentals")
     }
+    getAllPageable(pageNo:number, pageSize:number){
+        return axiosInstance.get<GetAllRentalsModel>("rentals/getallpageable/"+pageNo + "?size=" + pageSize)
+    }
 
     getById(id:number){
         return axiosInstance.get<GetByRentalIDModel>(`rentals/${id}`);
+    }
+    addRental(rental:AddRentalRequest){
+
+        return axiosInstance.post<AddResponse>('rentals',rental);
+
     }
     updateRental(updateRentalRequest: UpdateRentalRequest) {
         return axiosInstance.put<AddResponse>(`rentals`, updateRentalRequest);

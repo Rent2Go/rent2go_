@@ -1,4 +1,5 @@
 
+import { AddResponse } from "../../../src/models/responses/AddResponse";
 import { GetAllCustomerModel } from "../models/responses/customers/GetAllCustomers";
 import { CustomerModel } from "../models/responses/customers/GetCustomer";
 import axiosInstance from "../utils/axiosInsterceptors";
@@ -9,7 +10,12 @@ class UserService{
     }
 
     getById(id:number){
-        return axiosInstance.get<CustomerModel>(`customer/${id}`);
+        return axiosInstance.get<CustomerModel>(`customers/${id}`);
+    }
+    
+    createCustomer(customer:any){
+
+        return axiosInstance.post<AddResponse>('customers',customer)
     }
 }
     

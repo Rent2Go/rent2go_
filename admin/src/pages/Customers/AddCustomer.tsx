@@ -1,13 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/customers.css";
 import { Field, Form, Formik } from "formik";
 import { FormikInput } from "../../components";
 import { Link } from "react-router-dom";
+import UserService from "../../services/UserService";
+import { UserModel } from "../../models/responses/users/GetUser";
+import CustomerService from "../../services/CustomerService";
+import { ToastContainer, toast } from "react-toastify";
 type Props = {};
 
 const AddCustomer = (props: Props) => {
-  const initialValues = () => {};
-  const onSubmit = () => {};
+
+  const [user, setUser] = useState<UserModel[]>()
+  const getUsers = async()=>{
+    await UserService.getAll()
+    .then((res:any)=> {
+      setUser(res.data.data)
+    })
+  }
+
+  useEffect(() => {
+     getUsers()
+  },[])
+
+  const onSubmit = async (values:any) => {
+
+    await CustomerService.createCustomer(values)
+    .then((res) => {
+      toast.success(res.data.message)
+    })
+    .catch((err) => {
+      toast.error(err.response.data.message)
+    })
+
+  };
+
+
   return (
     <div className="customers">
       <div className="secContainer shadow-rounded-box">
@@ -15,64 +43,28 @@ const AddCustomer = (props: Props) => {
           <h2>Add New Customer</h2>
         </div>
         <div className="formContainer">
-          <Formik initialValues={initialValues} onSubmit={onSubmit}>
+          <Formik initialValues={{
+            userId:0
+          }} onSubmit={onSubmit}>
             <Form className="form">
-              <div className="row">
+              <div className="row justify-content-center">          
                 <div className="col-xl-6 col-l-6 col-md-12 col-sm-12 col-xs-12">
-                  <FormikInput
-                    name="nn"
-                    label="Nationality Id"
-                    placeHolder="Enter Nationality Id"
-                  ></FormikInput>
-                </div>
-                <div className="col-xl-6 col-l-6 col-md-12 col-sm-12 col-xs-12">
-                  <label className="form-label">UserName</label>
+                  <label className="form-label">User</label>
                   <Field
                     as="select"
-                    name="nn"
-                    title=""
-                    placeholder="User Id"
+                    name="userId"
+                    placeholder="User"
                     className="form-control"
                   >
-                    <option></option>
+                   {user?.map((user:UserModel) =>(
+                      <option key={user.id} value={user.id}>{user.name + " " + user.surname}</option>
+                   ))}
                   </Field>
                 </div>
               </div>
-              <div className="row">
-                <div className="col-xl-6 col-l-6 col-md-12 col-sm-12 col-xs-12">
-                  <label className="form-label">City</label>
-                  <Field
-                    as="select"
-                    name="nn"
-                    title=""
-                    placeholder="City"
-                    className="form-control"
-                  >
-                    <option></option>
-                  </Field>
-                </div>
-                <div className="col-xl-6 col-l-6 col-md-12 col-sm-12 col-xs-12">
-                  <label className="form-label">District</label>
-                  <Field
-                    as="select"
-                    name="nn"
-                    title=""
-                    placeholder="District"
-                    className="form-control"
-                  >
-                    <option></option>
-                  </Field>
-                </div>
+              <div className="row">              
               </div>
-              <div className="row mt-4">
-                <div className="col-xl-12 col-l-12 col-md-12 col-sm-12 col-xs-12">
-                  <FormikInput
-                    name="nn"
-                    label="Address"
-                    placeHolder="Address"
-                  ></FormikInput>
-                </div>
-              </div>
+            
               <div className="btnContainer">
                 <button
                   title="Save"
@@ -87,6 +79,7 @@ const AddCustomer = (props: Props) => {
               </div>
             </Form>
           </Formik>
+          <ToastContainer position="bottom-center"/>
         </div>
       </div>
     </div>
