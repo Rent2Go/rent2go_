@@ -2,10 +2,11 @@ import React, { useEffect } from "react";
 import { Footer, Navbar } from "../../../components";
 import { Link, useNavigate } from "react-router-dom";
 import "../response.css"
+import { useTranslation } from "react-i18next";
 type Props = {};
 
 const SuccessfulPayment = (props: Props) => {
-
+  const { t } = useTranslation();
 
   const navigate = useNavigate();
 
@@ -30,17 +31,16 @@ const SuccessfulPayment = (props: Props) => {
       <div className="response container">
         <div className="secContainer shadow-rounded-box">
           <div className="titleContainer">
-            <h2>Payment Successful !</h2>
+            <h2>{t("paymentSuccessful")} !</h2>
           </div>
           <div className="contentContainer">
             <p>
-              <span>Your payment has been successfully.. </span><br></br>
+              <span>{t("yourPaymentHasBeenSuccessfully")}.. </span><br></br>
               <span>
-                Your reservation request has been received. Please check your
-                mailbox.
+                {t("yourReservationRequestHasBeenReceived")}
               </span>
               <span>
-                You can view your reservation request from your profile page.
+                {t("youCanViewYourReservationRequestFromYourProfilePage")}
               </span>
             </p>
           </div>
@@ -50,10 +50,10 @@ const SuccessfulPayment = (props: Props) => {
               type="button"
               className="btn btn-profile"
             >
-              Profile
+              {t("profile")}
             </Link>
             <Link to="/" type="button" className="btn btn-home">
-              Home
+              {t("home")}
             </Link>
           </div>
         </div>

@@ -1,10 +1,13 @@
 import React from "react";
 import { Navbar, Footer } from "../../components";
 import { Link } from "react-scroll";
+import { useTranslation } from "react-i18next";
 
 type Props = {};
 
 const CookiePolicy = (props: Props) => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Navbar />
@@ -14,86 +17,69 @@ const CookiePolicy = (props: Props) => {
             <ul>
               <li>
                 <Link to="item-1" smooth={true} duration={400}>
-                  Interpretation and Definitions
+                  {t("interpretationAndDefinitions")}
                 </Link>
               </li>
               <li>
                 <Link to="item-2" smooth={true} duration={400}>
-                  Type of Cookies We Use
+                  {t("typeOfCookiesWeUse")}
                 </Link>
               </li>
               <li>
                 <Link to="item-3" smooth={true} duration={400}>
-                  Your Choices Regarding Cookies
+                  {t("yourChoicesRegardingCookies")}
                 </Link>
               </li>
               <li>
                 <Link to="item-4" smooth={true} duration={400}>
-                  More Information about Cookies
+                  {t("moreInformationAboutCookies")}
                 </Link>
               </li>
               <li>
                 <Link to="item-5" smooth={true} duration={400}>
-                  Contact Us
+                  {t("contactUs")}
                 </Link>
               </li>
             </ul>
           </div>
           <div className="tabs_content">
             <div className="tab_head">
-              <h1>Cookies Policy</h1>
+              <h1>{t("cookiesPolicy")}</h1>
             </div>
             <div className="tab_body">
-              <p>Last updated: January 26, 2024</p>
+              <p>{t("lastUpdate")}</p>
               <p>
-                This Cookies Policy explains what Cookies are and how We use
-                them. You should read this policy so You can understand what
-                type of cookies We use, or the information We collect using
-                Cookies and how that information is used. This Cookies Policy
-                has been created with the help of the{" "}
+                {t("thisCookiesPolicyExplains")}{" "}
                 <a
                   href="https://www.freeprivacypolicy.com/free-cookies-policy-generator/"
                   target="_blank"
                 >
-                  Free Cookies Policy Generator
+                  {t("freeCookiesPolicyGenerator")}
                 </a>
                 .
               </p>
               <p>
-                Cookies do not typically contain any information that personally
-                identifies a user, but personal information that we store about
-                You may be linked to the information stored in and obtained from
-                Cookies. For further information on how We use, store and keep
-                your personal data secure, see our Privacy Policy.
+                {t("cookiesDoNotTypicallyContainAnyInformation")}
               </p>
               <p id="item-1">
-                We do not store sensitive personal information, such as mailing
-                addresses, account passwords, etc. in the Cookies We use.
+                {t("weDoNotStoreSensitivePersonalInformation")}
               </p>
-              <h2>Interpretation and Definitions</h2>
-              <h3>Interpretation</h3>
+              <h2>{t("interpretationAndDefinitions")}</h2>
+              <h3>{t("interpretation")}</h3>
               <p>
-                The words of which the initial letter is capitalized have
-                meanings defined under the following conditions. The following
-                definitions shall have the same meaning regardless of whether
-                they appear in singular or in plural.
+                {t("theWordsOfWhichTheInitialLetter")}
               </p>
-              <h3>Definitions</h3>
-              <p>For the purposes of this Cookies Policy:</p>
+              <h3>{t("definitions")}</h3>
+              <p>{t("forThePurposesOfThisCookiesPolicy")}:</p>
               <ul>
                 <li>
-                  <strong>Company</strong> (referred to as either &quot;the
-                  Company&quot;, &quot;We&quot;, &quot;Us&quot; or
-                  &quot;Our&quot; in this Cookies Policy) refers to Rent2Go.
+                  <strong>{t("company")}</strong> {t("referredToAsEither")}
                 </li>
                 <li>
-                  <strong>Cookies</strong> means small files that are placed on
-                  Your computer, mobile device or any other device by a website,
-                  containing details of your browsing history on that website
-                  among its many uses.
+                  <strong>{t("cookies")}</strong> {t("meansSmallFilesThatArePlaced")}
                 </li>
                 <li>
-                  <strong>Website</strong> refers to Rent2Go, accessible from{" "}
+                  <strong>{t("website")}</strong> {t("refersToRent2Go")}{" "}
                   <a
                     href="https://rentogo.com.tr/"
                     rel="external nofollow noopener"
@@ -103,54 +89,36 @@ const CookiePolicy = (props: Props) => {
                   </a>
                 </li>
                 <li id="item-2">
-                  <strong>You</strong> means the individual accessing or using
-                  the Website, or a company, or any legal entity on behalf of
-                  which such individual is accessing or using the Website, as
-                  applicable.
+                  <strong>{t("you")}</strong> {t("meansTheIndividualAccessingOrUsing")}
                 </li>
               </ul>
-              <h2>The use of the Cookies</h2>
-              <h3>Type of Cookies We Use</h3>
+              <h2>{t("theUseOfTheCookies")}</h2>
+              <h3>{t("typeOfCookiesWeUse")}</h3>
               <p>
-                Cookies can be &quot;Persistent&quot; or &quot;Session&quot;
-                Cookies. Persistent Cookies remain on your personal computer or
-                mobile device when You go offline, while Session Cookies are
-                deleted as soon as You close your web browser.
+                {t("cookiesCanBePersistentOrSessionCookies")}
               </p>
               <p>
-                We use both session and persistent Cookies for the purposes set
-                out below:
+                {t("weUseBothSessionAndPersistentCookies")}:
               </p>
               <ul>
                 <li>
                   <p>
-                    <strong>Necessary / Essential Cookies</strong>
+                    <strong>{t("necessaryEssentialCookies")}</strong>
                   </p>
-                  <p>Type: Session Cookies</p>
-                  <p>Administered by: Us</p>
+                  <p>{t("typeSessionCookies")}</p>
+                  <p>{t("administeredByUs")}</p>
                   <p>
-                    Purpose: These Cookies are essential to provide You with
-                    services available through the Website and to enable You to
-                    use some of its features. They help to authenticate users
-                    and prevent fraudulent use of user accounts. Without these
-                    Cookies, the services that You have asked for cannot be
-                    provided, and We only use these Cookies to provide You with
-                    those services.
+                    {t("purposeTheseCookies")}
                   </p>
                 </li>
                 <li>
                   <p>
-                    <strong>Functionality Cookies</strong>
+                    <strong>{t("functionalCookies")}</strong>
                   </p>
-                  <p>Type: Persistent Cookies</p>
-                  <p id="item-3">Administered by: Us</p>
+                  <p>{t("typePersistentCookies")}</p>
+                  <p id="item-3">{t("administeredByUs")}</p>
                   <p>
-                    Purpose: These Cookies allow us to remember choices You make
-                    when You use the Website, such as remembering your login
-                    details or language preference. The purpose of these Cookies
-                    is to provide You with a more personal experience and to
-                    avoid You having to re-enter your preferences every time You
-                    use the Website.
+                    {t("purposeTheseCookiesAllowUsTo")}
                   </p>
                 </li>
               </ul>
