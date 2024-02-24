@@ -14,6 +14,9 @@
     .filterBoxContainer {
       padding: 1rem 1rem;
       min-height: 140px;
+      .row{
+        margin:0 auto;
+      }
       h6 {
         color: var(--grayColor);
       }
