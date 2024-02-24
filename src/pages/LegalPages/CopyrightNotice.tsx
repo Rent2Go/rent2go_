@@ -1,55 +1,48 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Footer, Navbar } from "../../components";
+import { useTranslation } from "react-i18next";
 
 type Props = {};
 
-const companyName = "Ren2Go Araç Kiralama Hizmetleri Ticaret Limited Şirketi";
+const companyName = "Rent2Go Araç Kiralama Hizmetleri Ticaret Limited Şirketi";
 const currentDate = new Date();
 const year = currentDate.getFullYear();
 const CopyrightNotice = (props: Props) => {
+  const { t } = useTranslation();
+  
   return (
     <>
       <Navbar />
       <div className="legal container">
         <div className="secContainer shadow-rounded-box">
           <div className="headingDiv">
-            <h2>Copyright Notice</h2>
+            <h2>{t("copyrightNotice")}</h2>
             <img src="/assets/img/example.png" alt="example-text" />
           </div>
           <div className="contentContainer nonNavbar">
             <div className="letterContainer ">
               <p>
-                <small>Last updated: February 15, 2024</small>
+                <small>{t("lastUpdatedFebruary")}</small>
               </p>
 
               <h2 id="interpretation">
-                Copyright © 2024 {companyName}. All rights reserved.
+                {t("copyright")} {companyName}. {t("allRightsReserved")}
               </h2>
 
               <p>
-                All text, graphics, logos, audio files, and videos contained in
-                this document are the property of <strong>{companyName}</strong>{" "}
-                and are protected by applicable copyright laws and international
-                agreements. Unauthorized use, copying, or distribution of these
-                contents is prohibited. The contents of this document are
-                intended solely for a specific project or product and may not be
-                used or distributed for any other purpose without the written
-                permission of <strong>{companyName}</strong>. While{" "}
-                <strong>{companyName}</strong> makes reasonable efforts to
-                ensure the accuracy of the contents in this document, it does
-                not guarantee that these contents are complete, accurate, or
-                up-to-date. <strong>{companyName}</strong> is not liable for any
-                damages resulting from the use of the contents in this document.
+                {t("allTextGraphicsLogosAudioFiles")} <strong>{companyName}</strong>{" "}
+                {t("andAreProtectedBy")} <strong>{companyName}</strong>. {t("while")}{" "}
+                <strong>{companyName}</strong> {t("makesReasonableEffortsToEnsure")} <strong>{companyName}</strong> 
+                {t("isNotLiableForAnyDamages")}
               </p>
 
-              <h2 id="contact">Contact Us</h2>
+              <h2 id="contact">{t("isNotLiableForAnyDamages")}</h2>
               <p>
-                If you have any questions about these Terms and Conditions, You
-                can contact us:
+                {t("ifYouHaveAny")}
               </p>
 
-              <h4>By visiting this page on our website: </h4>
+              <h4>{t("byVisitingThisPageOnOurWebsite")}: </h4>
               <Link
                 to="/contact"
                 rel="external nofollow noopener"
