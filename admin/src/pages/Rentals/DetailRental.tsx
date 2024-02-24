@@ -144,6 +144,7 @@ const DetailRental = (props: Props) => {
               startDate: rentalDetail.startDate,
               endDate: rentalDetail.endDate,
               returnDate: rentalDetail.returnDate,
+              carId:rentalDetail.car.id,
             }}
             onSubmit={handleSubmit}
           >
