@@ -13,7 +13,7 @@ type Props = {};
 
 const Cash = (props: Props) => {
   const { t } = useTranslation();
-
+  const {car} = useSelector((state:any) => state.rental);
   const {priceCard} = useSelector((state:any)=> state.rental)
   console.log(priceCard);
   
@@ -141,7 +141,7 @@ const Cash = (props: Props) => {
                 <div className="col-xl-4 col-l-4 col-md-12 col-sm-12">
                   <Link
                     type="button"
-                    to="/reservation/:id"
+                    to={`/reservation/${car.id}`}
                     className="btn btn-cancel"
                   >
                     {t("cancel")}
