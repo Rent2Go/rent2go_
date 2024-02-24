@@ -48,6 +48,17 @@ class UserService extends BaseService<GetAllUserResponse, GetByIdUserResponse, A
         return axiosInstance.patch<UpdateResponse>('users/accountsettings/'+id,userAccountSettings)
     }
 
+    updateUserAccountSettingsAndImage(id:number , formData:FormData){
+
+        return axiosInstance.patch<UpdateResponse>('users/accountsettingsandimage/'+id,formData,
+            {
+                headers: {
+                    "Content-Type": "applications/json",
+                }
+                ,});
+        
+    }
+
     
     updateUserLocation(id:number , userLocation:UpdateUserLocationRequest){
 

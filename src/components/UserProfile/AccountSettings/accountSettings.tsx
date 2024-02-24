@@ -9,23 +9,22 @@ import UserService from "../../../services/UserService";
 import { UserModel } from "../../../models/user/UserModel";
 import { useAuth } from "../../../contexts/AuthContext";
 import OverlayLoaderLoad from "../../OverlayLoader/OverlayLoaderLoad";
-import { UpdateUserAccountSettingsRequest } from "../../../models/requests/user/UpdateUserAccountSettings";
 import { ToastContainer, toast } from "react-toastify";
 
 
 const AccountSettings = () => {
   const auth = useAuth()
   const { t } = useTranslation();
-
+  const [uploadPercentage, setUploadPercentage] = useState(0);
 
 
 
   const [user, setUser] = useState<UserModel>();
-  
+
   useEffect(() => {
     getUser(auth.authInformation.user.id)
-      console.log(user);
-      
+    console.log(user);
+
   }, [user?.id])
 
 
@@ -35,12 +34,24 @@ const AccountSettings = () => {
         setUser(res.data.data)
       })
   }
+
+
+
+
+
+  let formData = new FormData();
+  const handleImage = async (e: any) => {
+    formData.append("file", e.target.files[0]);
+  };
+
+
+
+
   const fileInputRef = React.createRef<HTMLInputElement>();
   const handleImageClick = () => {
-    // Resim üzerine tıklandığında veya üzerine gelindiğinde
-    // file input'un click olayını tetikle
     fileInputRef.current?.click();
   };
+
 
   const AccountSettingsSchema = Yup.object({
     name: Yup.string()
@@ -62,14 +73,35 @@ const AccountSettings = () => {
     birthDate: Yup.date().required("Date of Birth field cannot be empty"),
   });
 
+
+
   const handleSubmit = async (id: number, values: any) => {
-    await UserService.updateUserAccountSettings(id, values)
-      .then((res: any) => {
-        toast.success(res.data.message)
-      })
-      .catch((err) => {
-        toast.warn(err.response.data.message)
-      })
+ 
+
+    if (!formData.get("file")) {
+      await UserService.updateUserAccountSettings(id, values)
+        .then((res: any) => {
+          toast.success(res.data.message)
+        })
+        .catch((err) => {
+          toast.warn(err.response.data.message)
+        })
+    }
+    else {
+
+      formData.append('request', new Blob([JSON.stringify(values)], { type: "application/json" }))
+      await UserService.updateUserAccountSettingsAndImage(id, formData)
+        .then((res: any) => {
+          toast.success(res.data.message)
+          window.location.reload()
+        })
+        .catch((err) => {
+          toast.warn(err.response.data.message)
+          formData.delete("request")
+
+        })
+    }
+
 
   };
   if (!user) return <OverlayLoaderLoad />
@@ -86,6 +118,7 @@ const AccountSettings = () => {
               email: user.email,
               nationalityId: user.idCardNumber,
               birthDate: user.birthDate,
+              imageUrl: user.imageUrl
             }
           }
           validationSchema={AccountSettingsSchema}
@@ -95,14 +128,21 @@ const AccountSettings = () => {
             <div className="row">
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12 imgDiv">
                 <div className="row">
-                    <img
-                        src={`${user.imageUrl}`}
-                        alt="profile"
-                        onClick={handleImageClick}
-                        className="img-fluid text-center mx-auto"
-                      />
-                  
-                    <input type="file"   ref={fileInputRef} style={{ display: 'none' }}  alt="Profil image" name="imgUrl" />
+                  <img
+                    src={`${user.imageUrl}`}
+                    alt="profile"
+                    onClick={handleImageClick}
+                    className="img-fluid text-center mx-auto"
+                  />
+
+                  <input type="file"
+                    ref={fileInputRef}
+                    style={{ display: 'none' }}
+                    alt="Profil image"
+                    name="imgUrl"
+                    onChange={handleImage} />
+
+
                 </div>
               </div>
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
@@ -128,7 +168,7 @@ const AccountSettings = () => {
                       type="email"
                       label={t("email")}
                     ></FormikInput>
-                   </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -151,7 +191,7 @@ const AccountSettings = () => {
 
             </div>
 
-            
+
             <div className="form-group" >
               <FormikInput
                 disabled
@@ -170,7 +210,7 @@ const AccountSettings = () => {
 
           </Form>
         </Formik>
-       <ToastContainer position="bottom-center" />
+        <ToastContainer position="bottom-center" />
       </div>
 
     </div>
