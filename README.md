@@ -33,6 +33,7 @@ Rent2Go is an administration client built with React for managing rental-related
 - Cross platform
 - Admin Dashboard
 - Three Payment Methods
+- Auto Mail System
 
 
 ![App Screenshot](https://rentogo.com.tr/screenshoots/Screenshot_4.png)
