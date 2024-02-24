@@ -17,6 +17,7 @@ type Props = {};
 
 const BankTransfer = (props: Props) => {
   const { t } = useTranslation();
+  const {car} = useSelector((state:any) => state.rental);
   const { selectedPaymentMethod } = useParams<{
     selectedPaymentMethod: string;
   }>();
@@ -206,7 +207,7 @@ const BankTransfer = (props: Props) => {
                       <div className="col-xl-3 col-l-3 col-md-12 col-sm-12">
                         <Link
                           type="button"
-                          to="/reservation/:id"
+                          to={`/reservation/${car.id}`}
                           className="btn btn-cancel"
                         >
                           {t("cancel")}
