@@ -1,3 +1,4 @@
+import { date } from 'yup';
 export interface UserModel {
     id: number;
     name: string;
@@ -26,8 +27,8 @@ export interface UserModel {
     imageUrl: string;
     customer:{
       id:number,
-      issueDate: string,
-      expiryDate: string,
+      issueDate: Date,
+      expiryDate: Date,
     } 
     active: boolean;
   }
