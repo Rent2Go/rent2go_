@@ -18,6 +18,15 @@
        column-gap: 1.5rem;
 }
 .booking .secContainer .booking__wrapper .filter__widget-wrapper .filter__widget-01 select,
+.booking .secContainer .booking__wrapper .filter__widget-wrapper .filter__widget-01 input[type=date] {
+  border: none;
+  padding: 7px 20px;
+  border-radius: 50px;
+  background: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
 .booking .secContainer .booking__wrapper .filter__widget-wrapper .filter__widget-02 select {
   border: none;
   padding: 7px 20px;
@@ -157,4 +166,35 @@
 
 .formContainer {
   margin: 2rem 4rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Dikey olarak ortalar */
+  margin: 20px 0;
+}
+.pagination button {
+  margin: 0 15px;
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+}
+.pagination button:hover {
+  background-color: #45a049;
+}
+.pagination button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+}
+.pagination span {
+  font-size: 18px;
+  margin: 0 10px;
 }/*# sourceMappingURL=rentals.css.map */

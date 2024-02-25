@@ -12,7 +12,18 @@
         display: flex;
         align-items: center;
         column-gap: 1.5rem;
-        .filter__widget-01 select,
+        .filter__widget-01 {
+          select,
+          input[type="date"] {
+            border: none;
+            padding: 7px 20px;
+            border-radius: 50px;
+            background: var(--primary-color);
+            color: #fff;
+            cursor: pointer;
+            margin-bottom: 2rem;
+          }
+        }
         .filter__widget-02 select {
           border: none;
           padding: 7px 20px;
@@ -160,4 +171,39 @@
 }
 .formContainer{
   margin:2rem 4rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Dikey olarak ortalar */
+  margin: 20px 0;
+
+  button {
+    margin: 0 15px;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #45a049;
+    }
+
+    &:disabled {
+      background-color: #cccccc;
+      color: #666666;
+    }
+  }
+
+  span {
+    font-size: 18px;
+    margin: 0 10px;
+  }
 }

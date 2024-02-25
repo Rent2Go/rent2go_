@@ -14,6 +14,7 @@ const ListRental: React.FC<Props> = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [pageSize, setPageSize] = useState<number>(3);
   const [totalPages, setTotalPages] = useState<number>(2);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
   const getRentals = async () => {
     try {
@@ -25,7 +26,14 @@ const ListRental: React.FC<Props> = () => {
       } else {
         response = await RentalService.getAll();
       }
-      const allRentals = response.data.data;
+      let allRentals = response.data.data;
+      if (selectedDate) {
+        allRentals = allRentals.filter(
+          (rental) =>
+            new Date(rental.startDate).toDateString() ===
+            selectedDate.toDateString()
+        );
+      }
       const startIndex = (currentPage - 1) * pageSize;
       const endIndex = startIndex + pageSize;
       const pageRentals = allRentals.slice(startIndex, endIndex);
@@ -46,7 +54,7 @@ const ListRental: React.FC<Props> = () => {
 
   useEffect(() => {
     getRentals();
-  }, [currentPage, filterStatus]); // currentPage ve filterStatus durumlarını bağımlılıklara ekle
+  }, [currentPage, filterStatus, selectedDate]);
 
   return (
     <div className="booking container">
@@ -79,13 +87,19 @@ const ListRental: React.FC<Props> = () => {
             </div>
 
             <div className="filter__widget-01">
-              <select name="." title=".">
-                {rentals.map((rental: RentalModel) => (
-                  <option key={rental.id} value={rental.startDate.toString()}>
-                    {formatDate(new Date(rental.startDate))}
-                  </option>
-                ))}
-              </select>
+              <input
+                type="date"
+                value={
+                  selectedDate
+                    ? selectedDate.toISOString().substring(0, 10)
+                    : ""
+                }
+                onChange={(e) =>
+                  setSelectedDate(
+                    e.target.value ? new Date(e.target.value) : null
+                  )
+                }
+              />
             </div>
           </div>
 
