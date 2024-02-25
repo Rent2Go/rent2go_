@@ -40,7 +40,7 @@ const CarPage: React.FC<Props> = (props) => {
   const filters = useSelector((state: any) => state.filters);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [sortType, setSortType] = useState<"asc" | "desc">("asc"); // Sıralama türü durum değişkeni
+  const [sortType, setSortType] = useState<"desc" | "asc">("desc"); // Sıralama türü durum değişkeni
   const itemsPerPage = 4;
 
   useEffect(() => {
@@ -57,7 +57,7 @@ const CarPage: React.FC<Props> = (props) => {
   };
 
   const toggleSortType = () => {
-    setSortType(sortType === "asc" ? "desc" : "asc");
+    setSortType(sortType === "desc" ? "asc" : "desc");
   };
 
   const filteredCars = cars.filter((car: CarModel) => {
