@@ -165,7 +165,7 @@ const ReservationPage = () => {
 
       <div className="reservation container">
         <div className="row">
-          <div className="col-3">
+          <div className="col-xl-3 col-md-4">
             <div className="row">
               <div className="col-12">
                 <div className="container-fluid shadow-rounded-box">
@@ -218,7 +218,7 @@ const ReservationPage = () => {
               </div>
             </div>
           </div>
-          <div className="col-9">
+          <div className="col-xl-9 col-md-8">
             <div className="row">
               <div className="col-12">
                 <div className="container shadow-rounded-box">
