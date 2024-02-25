@@ -38,6 +38,8 @@ import {
   TutorialPage,
 } from "../pages";
 import PrivateRoute from "../utils/PrivateRoute";
+import Successful from "../pages/ResponsePages/ResetPasswordResponse/Successful";
+import BeforeCash from "../pages/PaymentPage/BeforeCash";
 
 const Router = () => {
   return (
@@ -74,6 +76,7 @@ const Router = () => {
 
         {/*payment & reservation pages */}
         <Route path="/reservation/:id" element={<ReservationPage />} />
+        <Route path="/payment/cash-payment-confirmation" element={<PrivateRoute element={<BeforeCash/>}/>} />
         <Route path="/payment/cash" element={<PrivateRoute element={<Cash/>}/>} />
         <Route path="/payment/online" element={<PrivateRoute element={<Online/>}/>} />
         <Route path="/payment/bankTransfer" element={<PrivateRoute element={<BankTransfer/>}/>} />
@@ -82,6 +85,7 @@ const Router = () => {
         <Route path="/payment-successful" element={<SuccessfulPayment />} />
         <Route path="/payment-failed" element={<FailedPayment />} />
         <Route path="/reset-password-successful" element={<SuccessfulResetPassword />}/>
+        <Route path="/password-change-successful" element={<Successful/>}/>
         <Route path="/email-verification-successful" element={<VerificationSuccessful />}/>
         <Route path="/email-verification-failed" element={<VerificationFailed />}/>
         <Route path="/email-verification-expired" element={<VerificationExpired />}/>

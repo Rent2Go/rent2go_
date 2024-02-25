@@ -41,8 +41,11 @@
   width: 350px;
 }
 .accountSettings .form .img-fluid {
-  max-width: 100%;
-  height: auto;
+  width: 400px;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
 }
 
 @media screen and (max-width: 520px) {

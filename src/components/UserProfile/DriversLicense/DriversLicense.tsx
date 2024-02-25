@@ -37,16 +37,16 @@ const DriversLicense = () => {
 
   const driversLicenseSchema = Yup.object().shape({
     issueDate: Yup.date()
-      .max(new Date(), t('Issue date must be in the past'))
+      .max(new Date(), t('Issuedatemustbeinthepast'))
       .required(t("Required")),
     expiryDate: Yup.date()
-      .min(new Date(), t('Expiry date must be in the future'))
+      .min(new Date(), t('Expirydatemustbeinthefuture'))
       .required(t("Required"))
       .when(
         'issueDate',
-        (issueDate, schema) => issueDate && schema.min(issueDate, t('Expiry date must be after issue date'))
+        (issueDate, schema) => issueDate && schema.min(issueDate, t('Expirydatemustbeafterissuedate'))
       )
-      .test('is-10-years-later', t('Expiry date must be exactly 10 years after issue date'), function(value) {
+      .test('is-10-years-later', t('Expirydatemustbeexactly10yearsafterissuedate'), function(value) {
         const issueDate:any = this.resolve(Yup.ref('issueDate'));
         const expiryDate = new Date(value);
         const diffInYears = expiryDate.getFullYear() - issueDate.getFullYear();
@@ -75,7 +75,7 @@ console.log(user?.customer);
   return (
     <div className='driversLicense container'>
       <h2 className='mainHead1'>{t("driversLicense")}</h2>
-      <div className='form'>
+      <div className='form row'>
       <Formik initialValues={{
           id:user.customer.id,
           issueDate:user.customer.issueDate == null ? new Date() : user.customer.issueDate,
@@ -83,19 +83,20 @@ console.log(user?.customer);
 
         }} validationSchema={driversLicenseSchema} onSubmit={handleSubmit}>
           <Form>
-            <div  className='row form-group g-5'>
+            <div  className='row form-group g-5 '>
               <div className='col-xl-12 col-l-12 col-md-12 col-sm-12'>
                 <FormikInput
                   name="issueDate"
                   type="date"
-                  label={t("Driver Issue Date")}
+                  label={t("driverIssueDate")}
                 ></FormikInput>
               </div>
+              <span className='text-danger fs-10 text-center'> {t("driverCardAgeAlert")}</span>
               <div className='col-xl-12 col-l-12 col-md-12 col-sm-12'>
                 <FormikInput
                   name="expiryDate"
                   type="date"
-                  label={t("Driver Expiry Date")}
+                  label={t("driverExpiryDate")}
                 ></FormikInput>
               </div>
             </div>
