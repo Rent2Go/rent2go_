@@ -30,12 +30,8 @@ import { differenceInDays, differenceInYears } from "date-fns";
 import { setAction } from "../../store/slices/rentalSlice";
 import UserService from "../../services/UserService";
 import { UserModel } from "../../models/user/UserModel";
-<<<<<<< HEAD
 import { IoCalendarClearOutline } from "react-icons/io5";
 import { GiDuration } from "react-icons/gi";
-=======
-import { log } from "console";
->>>>>>> master
 
 const ReservationPage = () => {
   const { t } = useTranslation();
