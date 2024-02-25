@@ -23,18 +23,55 @@
   padding: 7px 20px;
   border-radius: 50px;
   background: var(--primary-color);
-  color: #fff;
+  color: var(--pureWhiteColor);
   cursor: pointer;
   margin-bottom: 2rem;
+}
+.booking .secContainer .booking__wrapper .filter__widget-wrapper .filter__widget-01 input[type=text] {
+  border: none;
+  padding: 7px 20px;
+  border-radius: 50px;
+  background: var(--pureWhiteColor);
+  color: var(--textColor);
+  cursor: text;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.booking .secContainer .booking__wrapper .filter__widget-wrapper .filter__widget-01 input[type=text]:focus {
+  outline: none;
+}
+.booking .secContainer .booking__wrapper .filter__widget-wrapper .filter__widget-01 input[type=text]::-moz-placeholder {
+  color: --textColor;
+}
+.booking .secContainer .booking__wrapper .filter__widget-wrapper .filter__widget-01 input[type=text]::placeholder {
+  color: --textColor;
 }
 .booking .secContainer .booking__wrapper .filter__widget-wrapper .filter__widget-02 select {
   border: none;
   padding: 7px 20px;
   border-radius: 50px;
   background: var(--primary-color);
-  color: #fff;
+  color: var(--pureWhiteColor);
   cursor: pointer;
   margin-bottom: 2rem;
+}
+.booking .secContainer .booking__wrapper .filter__widget-wrapper .clear-all {
+  padding: 7px 20px;
+  background-color: var(--text-alert);
+  border: 3px solid var(--text-alert);
+  color: var(--textColor);
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 50px;
+  margin-bottom: 2rem;
+  box-sizing: border-box;
+}
+.booking .secContainer .booking__wrapper .filter__widget-wrapper .clear-all:hover {
+  border: 3px solid var(--card-04-bg);
 }
 .booking .secContainer .booking__wrapper .booking__car-list {
   display: grid;
@@ -171,13 +208,13 @@
 .pagination {
   display: flex;
   justify-content: center;
-  align-items: center; /* Dikey olarak ortalar */
+  align-items: center;
   margin: 20px 0;
 }
 .pagination button {
   margin: 0 15px;
   padding: 10px 20px;
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;
   border: none;
   color: white;
   text-align: center;

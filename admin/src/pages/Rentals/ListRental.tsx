@@ -14,7 +14,8 @@ const ListRental: React.FC<Props> = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [pageSize, setPageSize] = useState<number>(3);
   const [totalPages, setTotalPages] = useState<number>(2);
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
+  const [plateNumber, setPlateNumber] = useState<string>("");
 
   const getRentals = async () => {
     try {
@@ -34,27 +35,31 @@ const ListRental: React.FC<Props> = () => {
             selectedDate.toDateString()
         );
       }
+      if (plateNumber) {
+        allRentals = allRentals.filter((rental) =>
+          rental.car.plate.includes(plateNumber)
+        );
+      }
+      let totalPageCount = Math.ceil(allRentals.length / pageSize);
+      if (totalPageCount === 0) {
+        totalPageCount = 1;
+      }
+      if (currentPage > totalPageCount) {
+        setCurrentPage(totalPageCount);
+      }
       const startIndex = (currentPage - 1) * pageSize;
       const endIndex = startIndex + pageSize;
       const pageRentals = allRentals.slice(startIndex, endIndex);
       setRentals(pageRentals);
-      setTotalPages(Math.ceil(allRentals.length / pageSize));
+      setTotalPages(totalPageCount);
     } catch (error) {
       console.log("Error fetching rentals", error);
     }
   };
 
-  const formatDate = (date: Date) => {
-    return new Date(date).toLocaleDateString("en-US", {
-      month: "long",
-      day: "numeric",
-      year: "numeric",
-    });
-  };
-
   useEffect(() => {
     getRentals();
-  }, [currentPage, filterStatus, selectedDate]);
+  }, [currentPage, plateNumber, filterStatus, selectedDate]);
 
   return (
     <div className="booking container">
@@ -78,6 +83,7 @@ const ListRental: React.FC<Props> = () => {
               <select
                 name="status"
                 title="Status"
+                value={filterStatus ?? ""}
                 onChange={(e) => setFilterStatus(e.target.value)}
               >
                 <option value="">All</option>
@@ -101,6 +107,29 @@ const ListRental: React.FC<Props> = () => {
                 }
               />
             </div>
+
+            <div className="filter__widget-01">
+              <input
+                type="text"
+                placeholder="Plaka girin"
+                value={plateNumber}
+                onChange={(e) => {
+                  setPlateNumber(e.target.value.toUpperCase());
+                  getRentals();
+                }}
+              />
+            </div>
+
+            <button
+              className="clear-all"
+              onClick={() => {
+                setFilterStatus("");
+                setSelectedDate(null);
+                setPlateNumber("");
+              }}
+            >
+              Tümünü Temizle
+            </button>
           </div>
 
           <div className="booking__car-list">
@@ -112,7 +141,9 @@ const ListRental: React.FC<Props> = () => {
           <div className="pagination d-flex justify-content-center w-0 my-5">
             <button
               className="mx-3 px-5"
-              onClick={() => setCurrentPage(currentPage - 1)}
+              onClick={() =>
+                setCurrentPage(currentPage > 1 ? currentPage - 1 : 1)
+              }
               disabled={currentPage === 1}
             >
               Previous
