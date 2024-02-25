@@ -29,6 +29,7 @@ export interface UserModel {
       id:number,
       issueDate: Date,
       expiryDate: Date,
+      driverLicenceAge: number,
     } 
     active: boolean;
   }
