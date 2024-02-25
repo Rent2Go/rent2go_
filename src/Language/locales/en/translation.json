@@ -396,7 +396,23 @@
 
 
 
-  "takeMeBack": "Take Me Back"
+  "takeMeBack": "Take Me Back",
+
+
+
+  "securityNotice": "Security Notice",
+  "importantInformationForRentogoUsers": "Important Information for Rentogo Users",
+  "dearRentogoUsers": "Dear Rentogo Users, We would like to inform you about the security of your accounts and personal information on our platform. Recently, there have been growing concerns about certain security threats targeting rental platforms on the internet. Therefore, we recommend taking the following measures to ensure the security of your account:",
+  "bewareOfSuspiciousEmails": "Beware of Suspicious Emails:",
+  "beCautiousOfEmailsRequesting": "Be cautious of emails requesting your account information or personal details claiming to be from Rentogo. Rentogo never requests sensitive information via email.",
+  "useStrongPassword": "Use Strong Passwords:",
+  "ensureThatYouUseUnique": "Ensure that you use unique, complex passwords for your Rentogo account. Avoid easily guessable passwords or reusing passwords from other accounts.",
+  "verifyWebsiteUrl": "Verify Website URLs:",
+  "doubleCheckTheUrl": "Double-check the URL of the website you are visiting to ensure it is the official Rentogo website (https://rentogo.com.tr). Avoid clicking on links from suspicious sources.",
+  "keepYourDevicesSecure": "Keep Your Devices Secure:",
+  "regularlyUpdateYourDevices": "Regularly update your devices (computers, smartphones, tablets) with the latest security patches and antivirus software to protect against malware and other cyber threats.",
+  "atRentogoWeAreCommitted": "At Rentogo, we are committed to ensuring the security of our users. If you have any security concerns or notice any suspicious activity, please do not hesitate to contact us. Thank you for your vigilance regarding security. Best regards, The Rentogo Team.",
+  "ifYouHaveAnyQuestion": "If you have any questions about these Terms and Conditions, You can contact us:"
 
 
 

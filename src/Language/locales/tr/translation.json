@@ -395,7 +395,23 @@
   
 
 
-  "takeMeBack": "Geri Götür"
+  "takeMeBack": "Geri Götür",
+
+
+  
+  "securityNotice": "Güvenlik Bildirimi",
+  "importantInformationForRentogoUsers": "Rentogo Kullanıcıları için Önemli Bilgiler",
+  "dearRentogoUsers": "Sayın Rentogo Kullanıcıları, Platformumuzdaki hesaplarınızın ve kişisel bilgilerinizin güvenliği konusunda sizi bilgilendirmek istiyoruz. Son zamanlarda internetteki kiralık platformları hedef alan bazı güvenlik tehditleri konusunda artan endişeler var. Bu nedenle hesabınızın güvenliğini sağlamak için aşağıdaki önlemleri almanızı öneririz:",
+  "bewareOfSuspiciousEmails": "Şüpheli E-postalara Dikkat Edin:",
+  "beCautiousOfEmailsRequesting": "Rentogo'dan geldiğini iddia eden, hesap bilgilerinizi veya kişisel bilgilerinizi isteyen e-postalara karşı dikkatli olun. Rentogo hiçbir zaman hassas bilgileri e-posta yoluyla talep etmez.",
+  "useStrongPassword": "Güçlü Şifreler Kullanın:",
+  "ensureThatYouUseUnique": "Rentogo hesabınız için benzersiz, karmaşık şifreler kullandığınızdan emin olun. Kolayca tahmin edilebilecek şifrelerden veya başka hesaplardaki şifreleri tekrar kullanmaktan kaçının.",
+  "verifyWebsiteUrl": "Web Sitesi URL'lerini Doğrulayın:",
+  "doubleCheckTheUrl": "Ziyaret ettiğiniz web sitesinin URL'sini resmi Rentogo web sitesi (https://rentogo.com.tr) olduğundan emin olmak için bir kez daha kontrol edin. Şüpheli kaynaklardan gelen bağlantılara tıklamaktan kaçının.",
+  "keepYourDevicesSecure": "Cihazlarınızı Güvende Tutun:",
+  "regularlyUpdateYourDevices": "Kötü amaçlı yazılımlara ve diğer siber tehditlere karşı koruma sağlamak için cihazlarınızı (bilgisayarlar, akıllı telefonlar, tabletler) en son güvenlik yamaları ve antivirüs yazılımıyla düzenli olarak güncelleyin.",
+  "atRentogoWeAreCommitted": "Rentogo olarak kullanıcılarımızın güvenliğini sağlamaya kendimizi adadık. Herhangi bir güvenlik endişeniz varsa veya herhangi bir şüpheli etkinlik fark ederseniz, lütfen bizimle iletişime geçmekten çekinmeyin. Güvenlik konusundaki duyarlılığınız için teşekkür ederiz. Saygılarımızla, Rentogo Ekibi.",
+  "ifYouHaveAnyQuestion": "Bu Şartlar ve Koşullar hakkında herhangi bir sorunuz varsa bizimle iletişime geçebilirsiniz:"
 
 
 }
