@@ -25,7 +25,9 @@ export interface UserModel {
     role: string;
     imageUrl: string;
     customer:{
-      id:number;
+      id:number,
+      issueDate: string,
+      expiryDate: string,
     } 
     active: boolean;
   }
