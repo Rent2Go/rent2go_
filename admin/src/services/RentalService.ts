@@ -14,6 +14,12 @@ class RentalService{
     getAllPageable(pageNo:number, pageSize:number){
         return axiosInstance.get<GetAllRentalsModel>("rentals/getallpageable/"+pageNo + "?size=" + pageSize)
     }
+    getAllActive(){
+        return axiosInstance.get<GetAllRentalsModel>("rentals/getallisactive?isActive=true")
+    }
+    getAllPassive(){
+        return axiosInstance.get<GetAllRentalsModel>("rentals/getallisactive?isActive=false")
+    }
 
     getById(id:number){
         return axiosInstance.get<GetByRentalIDModel>(`rentals/${id}`);
