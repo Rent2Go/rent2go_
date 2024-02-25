@@ -35,13 +35,13 @@ const CarCards = (props: Props) => {
 
             </div>
             <div className="row">
-              <div className="col-xl-12 col-4">
+              <div className="col-xl-12 col-4 col-sm-12">
                 <span className="carIcons">
                   <BiTachometer />{" "}
                 </span>
                 <span className="carSubText">{props.car.kilometer} km</span>
               </div>
-              <div className="col-xl-12 col-4">
+              <div className="col-xl-12 col-4 col-sm-12">
                 <span className="carIcons">
                   <PiEngine />{" "}
                 </span>
@@ -49,7 +49,7 @@ const CarCards = (props: Props) => {
                   {props.car.enginePower} / {props.car.cylinderCount}
                 </span>
               </div>
-              <div className="col-xl-12 col-4">
+              <div className="col-xl-12 col-4 col-sm-12">
                 <span className="carIcons">
                   <IoIosColorPalette />{" "}
                 </span>

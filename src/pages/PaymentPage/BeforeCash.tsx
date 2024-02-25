@@ -2,18 +2,16 @@ import React, { useEffect } from "react";
 import { Footer, Navbar, PriceCard } from "../../components";
 import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import "./payment.css";
-import { Form, Formik } from "formik";
-
 import { useAuth } from "../../contexts/AuthContext";
-import ReceiptPDF from "./Receipt";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { MailInfoModel } from "../../models/mail/MailInfıModel";
 import MailService from "../../services/emailService/MailService";
-import axios from "axios";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
-type Props = {};
+type Props = {
+
+};
 
 const BeforeCash = (props: Props) => {
   const { t } = useTranslation();
@@ -45,10 +43,12 @@ const BeforeCash = (props: Props) => {
       carInfo:
         rentalInfo.car.model.brand.name + " " + rentalInfo.car.model.name,
       totalPrice: rentalInfo.priceCard.totalPrice,
-    };
+    };  //support@rentogo.com.tr
     try {
       await MailService.cashSuccessful(mailInfo);
-      toast.success("Mail sent successfully");
+      toast.success("Your reservation has been created, please check your mailbox.");
+       mailInfo.email = 'support@rentogo.com.tr';
+        MailService.cashSuccessful(mailInfo)
       setTimeout(() => {
         navigate("/payment/cash");
       }, 3000);
@@ -65,8 +65,7 @@ const BeforeCash = (props: Props) => {
   const { selectedPaymentMethod } = useParams<{
     selectedPaymentMethod: string;
   }>();
-  const initialValues = () => {};
-  const onSubmit = () => {};
+
   return (
     <>
       <Navbar />
@@ -78,9 +77,31 @@ const BeforeCash = (props: Props) => {
             </h2>
           </div>
           <div className="contentDiv">
+
+          <div className="formContainer m-0 bg-warning" >
+          <div className="row infoRow">
+          <div className="row">
+          <div className="row">
+          <div className="col-12">
+              <h2 className="text-primary ">Sevgili Müşterimiz,</h2>
+              <p className="text-warning  ">Rezervasyon işleminizi nakit ödeme seçeneği ile gerçekleştirmeyi seçtiniz. Lütfen aşağıdaki bilgileri dikkatlice okuyunuz:</p>
+
+              <ol >
+                <li>Rezervasyonunuz, seçtiğiniz araç ve belirttiğiniz tarihler için geçerlidir.</li>
+                <li>Ödemenizi, rezervasyonun başlangıç tarihinden önce şirketimizin ofisine gelerek gerçekleştirmeniz gerekmektedir.</li>
+                <li>Ödemenizi yapmadan önce lütfen rezervasyon bilgilerinizi kontrol edin ve onaylayın.</li>
+                <li>Ödeme yapılmadan araç teslimi gerçekleştirilmeyecektir.</li>
+                <li>Rezervasyonunuz ve ödemeniz hakkında herhangi bir sorunuz olursa, lütfen bizimle iletişime geçiniz.</li>
+              </ol>
+              <p className="text-warning">Bu bilgilendirme mesajını okuduğunuzu ve anladığınızı onaylamak için 'Kabul Et' butonuna tıklayınız. Kabul ettiğinizde, rezervasyon detaylarınızı içeren bir e-posta alacaksınız.</p>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
             <div className="formContainer">
               <div className="row infoRow">
-                <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
+                <div className="row">
                   <div className="row ">
                     <div className="col-12">
                       <p>
@@ -161,22 +182,24 @@ const BeforeCash = (props: Props) => {
                 </div>
               </div>
 
-              <div className="row btnRow">
-                <div className="col-xl-7 col-l-7 col-md-12 col-sm-12 scsBtn">
-                  <button onClick={handleButtonClick}>Onaylıyorum</button>
+              <div className="row btnRow my-3 ">
+                <div className="col-xl-7 col-l-7 col-md-12 col-sm-12 ">
+                  <button className="btn btn-warning" onClick={handleButtonClick}>Accept </button>
                 </div>
 
                 <div className="col-xl-4 col-l-4 col-md-12 col-sm-12">
                   <Link
                     type="button"
                     to={`/reservation/${car.id}`}
-                    className="btn btn-cancel"
+                    className="btn btn-danger"
                   >
                     {t("cancel")}
                   </Link>
                 </div>
               </div>
+              <ToastContainer position="bottom-center" />
             </div>
+            
           </div>
         </div>
       </div>

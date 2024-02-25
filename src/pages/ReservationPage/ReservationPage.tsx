@@ -31,6 +31,8 @@ import { setAction } from "../../store/slices/rentalSlice";
 import UserService from "../../services/UserService";
 import { UserModel } from "../../models/user/UserModel";
 import { log } from "console";
+import { IoCalendarClearOutline } from "react-icons/io5";
+import { GiDuration } from "react-icons/gi";
 
 const ReservationPage = () => {
   const { t } = useTranslation();
@@ -111,9 +113,9 @@ const ReservationPage = () => {
   {
     /*POPUP*/
   }
-  console.log(user?.customer.driverLicenceAge);
-  
+
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("cash-payment-confirmation");
+
   const handlePaymentMethodChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -178,160 +180,211 @@ const ReservationPage = () => {
       </Helmet>
       <Navbar />
 
-      <div className="reservation container-fluid">
-        <div className="secContainer bgWhite">
-          <div className="imgContainer">
-            <img src={rentals?.imageUrl} alt="carImage" />
-          </div>
-
-          <div className="secHeading">
-            <h5>{t("reservationDetail")}</h5>
-          </div>
-          <div className="secContent">
-            <div className="topContent">
-              <div className="customerCardContainer">
-                <CustomerCard />
-              </div>
-              <div className="dateContentContainer">
-                <p>
-                  <span>
-                    {" "}
-                    <b>{t("startDate")} : </b>
-                  </span>
-                  <span>{rentStartDate.toDateString()}</span>
-                </p>
-                <p>
-                  <span>
-                    <b>{t("endDate")} : </b>{" "}
-                  </span>
-                  <span>{rentEndDate.toDateString()}</span>
-                </p>
-                <DiscountCode />
-              </div>
-            </div>
-            <div className="middleContent">
-              <div className="rentalCard" key={rentals?.id}>
-                <p>
-                  <span>
-                    <b>{t("plate")} :</b>{" "}
-                  </span>
-                  <span>{rentals?.plate}</span>
-                </p>
-                <p>
-                  <span>
-                    <b>{t("model")} :</b>{" "}
-                  </span>
-                  <span>
-                    {rentals?.model?.brand.name} {rentals?.model?.name}
-                  </span>
-                </p>
-
-                <p>
-                  <span>
-                    <b>{t("type")} :</b>{" "}
-                  </span>
-                  <span>
-                    {translateFuelTypeKey && t(translateFuelTypeKey)}, {" "}
-                    {translateGearTypeKey && t(translateGearTypeKey)}
-                  </span>
-                </p>
-                <p>
-                  <span>
-                    <b>{t("rental")} : </b>{" "}
-                  </span>
-                  <span>
-                    {rentDay == 0 ? 1 : rentDay} - {t("days")}
-                  </span>
-                </p>
-              </div>
-              <div className="priceCardContainer">
-                <PriceCard cars={rentals} day={rentDay == 0 ? 1 : rentDay} />
-              </div>
-            </div>
-            <div className="bottomContainer">
-              <div className="packageContainer">
-                <p>{t("whatsIncludedInThePackage")}</p>
-                <div>
-                  <span>
-                    <button
-                      title="."
-                      aria-describedby={popInsurance}
-                      type="button"
-                      onMouseEnter={handleClickInsurance}
-                    >
-                      <CiCircleInfo />
-                    </button>{" "}
-                    {t("insurance")}
-                    <BasePopup id={popInsurance} open={openInsurance}>
-                      <div>{t("insuranceDescription")}</div>
-                    </BasePopup>
-                  </span>
-                  <span>
-                    <button
-                      title="."
-                      aria-describedby={popAssistance}
-                      type="button"
-                      onMouseEnter={handleClickAssistance}
-                    >
-                      <CiCircleInfo />
-                    </button>{" "}
-                    {t("roadsideAssistance")}
-                    <BasePopup id={popAssistance} open={openAssistance}>
-                      <div>{t("roadsideAssistanceDescription")}</div>
-                    </BasePopup>
-                  </span>
+      <div className="reservation container">
+        <div className="row">
+          <div className="col-xl-3 col-md-4">
+            <div className="row">
+              <div className="col-12">
+                <div className="container-fluid shadow-rounded-box">
+                  <CustomerCard />
                 </div>
               </div>
-              <form onSubmit={handleSubmit}>
-                <div className="actionContainer">
-                  <div className="radioContainer">
-                    <p>{t("choosePaymentMethod")} : </p>
-                    <FormControl>
-                      <RadioGroup
-                        aria-labelledby="demo-radio-buttons-group-label"
-                        value={selectedPaymentMethod}
-                        name="radio-buttons-group"
-                        onChange={handlePaymentMethodChange}
-                      >
-                        <FormControlLabel
-                          value="cash-payment-confirmation"
-                          control={<Radio />}
-                          label={t("cash")}
-                        />
-                        <FormControlLabel
-                          value="online"
-                          control={<Radio />}
-                          label={t("online")}
-                        />
-                        <FormControlLabel
-                          value="bankTransfer"
-                          control={<Radio />}
-                          label={t("bankTransfer")}
-                        />
-                      </RadioGroup>
-                    </FormControl>
-                  </div>
-                  <div className="btnContainer">
-                    <button
-                      className="btn btn-apply btn-sm"
-                      type="submit"
-                      title="Send"
-                      onClick={isAuthenticated}
-                    >
-                      {t("reservation")}
-                    </button>
-                    <Link
-                      to="/cars"
-                      className="btn btn-cancel btn-sm"
-                      title="Send"
-                    >
-                      {t("cancel")}
-                    </Link>
+              <div className="col-12">
+                <div className="container-fluid shadow-rounded-box">
+                  <div className="row">
+                    <div className="col-12">
+                      <p>
+                        <span>
+                          {" "}
+                          <b>
+                            <IoCalendarClearOutline />
+                          </b>
+                        </span>
+                        <span>{rentStartDate.toDateString()}</span>
+                      </p>
+                    </div>
+                    <div className="col-12">
+                      <p>
+                        <span>
+                          <b>
+                            <IoCalendarClearOutline />
+                          </b>{" "}
+                        </span>
+                        <span>{rentEndDate.toDateString()}</span>
+                      </p>
+                    </div>
+                    <div className="col-12">
+                      <p>
+                        <span>
+                          <b>
+                            <GiDuration />
+                          </b>{" "}
+                        </span>
+                        <span>
+                          {rentDay == 0 ? 1 : rentDay} - {t("days")}
+                        </span>
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </form>
+              </div>
+              <div className="col-12">
+                <div className="container-fluid shadow-rounded-box">
+                  <PriceCard cars={rentals} day={rentDay == 0 ? 1 : rentDay} />
+                </div>
+              </div>
             </div>
-            <div className="noteContainer"></div>
+          </div>
+          <div className="col-xl-9 col-md-8">
+            <div className="row">
+              <div className="col-12">
+                <div className="container shadow-rounded-box">
+                  <div className="row">
+                    <div className="col-4 offset-1">
+                      <div className="imgContainer">
+                        <img src={rentals?.imageUrl} alt="carImage" />
+                      </div>
+                    </div>
+                    <div className="col-6 offset-1 vehicleCardContainer">
+                      <div className="" key={rentals?.id}>
+                        <div className="row">
+                          <div className="col-12">
+                            <p>
+                              <span>
+                                <b>{t("plate")} :</b>{" "}
+                              </span>
+                              <span>{rentals?.plate}</span>
+                            </p>
+                          </div>
+                          <div className="col-12">
+                            <p>
+                              <span>
+                                <b>{t("model")} :</b>{" "}
+                              </span>
+                              <span>
+                                {rentals?.model?.brand.name}{" "}
+                                {rentals?.model?.name} {rentals?.year}
+                              </span>
+                            </p>
+                          </div>
+                          <div className="col-12">
+                            <p>
+                              <span>
+                                <b>{t("type")} :</b>{" "}
+                              </span>
+                              <span>
+                                {translateFuelTypeKey &&
+                                  t(translateFuelTypeKey)}
+                                ,{" "}
+                                {translateGearTypeKey &&
+                                  t(translateGearTypeKey)}
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-12">
+                <div className="container shadow-rounded-box">
+                  <div className="col-12">
+                    <DiscountCode />
+                  </div>
+                </div>
+              </div>
+              <div className="col-12">
+                <div className="container shadow-rounded-box">
+                  <div className="packageContainer">
+                    <p>{t("whatsIncludedInThePackage")}</p>
+                    <div>
+                      <span>
+                        <button
+                          title="."
+                          aria-describedby={popInsurance}
+                          type="button"
+                          onMouseEnter={handleClickInsurance}
+                        >
+                          <CiCircleInfo />
+                        </button>{" "}
+                        {t("insurance")}
+                        <BasePopup id={popInsurance} open={openInsurance}>
+                          <div>{t("insuranceDescription")}</div>
+                        </BasePopup>
+                      </span>
+                      <span>
+                        <button
+                          title="."
+                          aria-describedby={popAssistance}
+                          type="button"
+                          onMouseEnter={handleClickAssistance}
+                        >
+                          <CiCircleInfo />
+                        </button>{" "}
+                        {t("roadsideAssistance")}
+                        <BasePopup id={popAssistance} open={openAssistance}>
+                          <div>{t("roadsideAssistanceDescription")}</div>
+                        </BasePopup>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12">
+                <div className="container shadow-rounded-box">
+                  <form onSubmit={handleSubmit}>
+                    <div className="actionContainer">
+                      <div className="radioContainer">
+                        <p>{t("choosePaymentMethod")} : </p>
+                        <FormControl>
+                          <RadioGroup
+                            aria-labelledby="demo-radio-buttons-group-label"
+                            value={selectedPaymentMethod}
+                            name="radio-buttons-group"
+                            onChange={handlePaymentMethodChange}
+                          >
+                            <FormControlLabel
+                              value="cash-payment-confirmation"
+                              control={<Radio />}
+                              label={t("cash")}
+                            />
+                            <FormControlLabel
+                              value="online"
+                              control={<Radio />}
+                              label={t("online")}
+                            />
+                            <FormControlLabel
+                              value="bankTransfer"
+                              control={<Radio />}
+                              label={t("bankTransfer")}
+                            />
+                          </RadioGroup>
+                        </FormControl>
+                      </div>
+                      <div className="btnContainer">
+                        <button
+                          className="btn btn-apply btn-sm"
+                          type="submit"
+                          title="Send"
+                          onClick={isAuthenticated}
+                        >
+                          {t("reservation")}
+                        </button>
+                        <Link
+                          to="/cars"
+                          className="btn btn-cancel btn-sm"
+                          title="Send"
+                        >
+                          {t("cancel")}
+                        </Link>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -14,8 +14,8 @@
     .filterBoxContainer {
       padding: 1rem 1rem;
       min-height: 140px;
-      .row{
-        margin:0 auto;
+      .row {
+        margin: 0 auto;
       }
       h6 {
         color: var(--grayColor);
@@ -105,6 +105,10 @@
         }
       }
       .actionDiv {
+        .actionDiv {
+          margin: 2rem 0rem;
+          
+      }
         .row {
           /*display: flex;
           flex-direction: column;*/
@@ -150,7 +154,39 @@
     }
   }
 }
+@media screen and (min-width: 320px) {
+  .contentContainer {
+    .filterBoxContainer {
+      height: 150px !important;
+      max-height: 150px !important;
+      min-height: 150px !important;
+      padding: 1rem 1rem;
+    }
+  }
+  .form-check {
+    padding-left: 0.5rem;
+    margin-bottom: 0;
+  }
+  .carPage .contentContainer .singleCarContainer .descriptionDiv .carSubText {
+    font-size: 10px;
+    line-height: 2px;
+  }
+  .carPage .contentContainer .singleCarContainer .actionDiv .actionRow {
+    column-gap: 0.5rem;
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 505px) {
 
+  .carPage .contentContainer .singleCarContainer .descriptionDiv .carSubText {
+    font-size: 15px;
+    line-height: 2px;
+  }
+  .carPage .contentContainer .singleCarContainer .actionDiv .actionRow {
+    column-gap: 0.5rem;
+    font-size: 16px;
+  }
+}
 @media screen and (max-width: 488px) {
   .carPage {
     .search {
@@ -341,7 +377,43 @@
     }
   }
 }
+@media screen and (min-width:1025px) {
+.contentContainer .filterBoxContainer {
+    height: 160px !important;
+    max-height: 160px !important;
+    min-height: 160px !important;
+   
+}
+.actionDiv {
+    margin: 2rem 0rem!important;
+   
+    justify-content: center;
+    display: flex;
 
+}
+.carPage .contentContainer .singleCarContainer .row {
+    align-items: center;
+    margin: 1rem;
+}
+  
+}
+@media screen and (min-width:1201px){
+
+.descriptionDiv{
+margin-left: 3.2rem;
+}}
+@media screen and (max-width:1420px){
+.imgDiv{
+img{
+margin: 0!important;}}
+.descriptionDiv{
+margin-left: 3rem;
+.carSubText{
+font-size: 10px;
+}
+}
+
+}
 @media screen and (max-width: 1200px) {
   .carPage {
     padding: 8rem 0;

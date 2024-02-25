@@ -15,10 +15,10 @@ type Props = {};
 
 const Cash = (props: Props) => {
   const { t } = useTranslation();
-  const {car} = useSelector((state:any) => state.rental);
-  const {priceCard} = useSelector((state:any)=> state.rental)
+  const { car } = useSelector((state: any) => state.rental);
+  const { priceCard } = useSelector((state: any) => state.rental)
   console.log(priceCard);
-  
+
   const auth = useAuth();
   const getCurrentDate = (): string => {
     const currentDate = new Date();
@@ -29,41 +29,22 @@ const Cash = (props: Props) => {
     return `${day}.${month}.${year}`;
   };
 
-  const rentalInfo = useSelector((state:any) => state.rental); 
+  const rentalInfo = useSelector((state: any) => state.rental);
+
   
-  const handleButtonClick = async () => {
-  const mailInfo:MailInfoModel = {
-    name: rentalInfo.user.name + ' ' + rentalInfo.user.surname,
-    email: rentalInfo.user.email,
-    phone: rentalInfo.user.phoneNumber,
-    startDate: new Date(rentalInfo.startDate),
-    endDate: new Date(rentalInfo.endDate),
-    totalDay: rentalInfo.day,
-    plate: rentalInfo.car.plate,
-    carInfo: rentalInfo.car.model.brand.name + ' ' + rentalInfo.car.model.name,
-    totalPrice: rentalInfo.priceCard.totalPrice
-
-  }
-  try {
-    await MailService.cashSuccessful(mailInfo);
-    console.log('Mail sent successfully');
-  } catch (error) {
-    console.error('Mail post error', error);
-  }};
-
   useEffect(() => {
 
     sessionStorage.setItem('rentalInfo', JSON.stringify(rentalInfo));
-  }, [rentalInfo]); 
+  }, [rentalInfo]);
 
 
- 
+
   const currentDate = getCurrentDate();
   const { selectedPaymentMethod } = useParams<{
     selectedPaymentMethod: string;
   }>();
-  const initialValues = () => {};
-  const onSubmit = () => {};
+  const initialValues = () => { };
+  const onSubmit = () => { };
   return (
     <>
       <Navbar />
@@ -152,19 +133,15 @@ const Cash = (props: Props) => {
               </div>
 
               <div className="row btnRow">
-              
-
-<div className="col-xl-7 col-l-7 col-md-12 col-sm-12">
-  <button onClick={handleButtonClick}>
-    <ReceiptPDF
-      auth={auth}
-      currentDate={currentDate}
-      amount={(priceCard.totalPrice + priceCard.discountRate).toFixed(2)} 
-      discountRate={priceCard.discountRate.toFixed(2)} 
-      totalAmount={priceCard.totalPrice.toFixed(2)}
-    />
-  </button>
-</div>
+                <div className="col-xl-7 col-l-7 col-md-12 col-sm-12">
+                    <ReceiptPDF
+                      auth={auth}
+                      currentDate={currentDate}
+                      amount={(priceCard.totalPrice + priceCard.discountRate).toFixed(2)}
+                      discountRate={priceCard.discountRate.toFixed(2)}
+                      totalAmount={priceCard.totalPrice.toFixed(2)}
+                    />
+                </div>
 
                 <div className="col-xl-4 col-l-4 col-md-12 col-sm-12">
                   <Link
