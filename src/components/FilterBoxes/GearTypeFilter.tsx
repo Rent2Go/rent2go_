@@ -36,11 +36,12 @@ const GearTypeFilter = (props: Props) => {
   const allGearType = props.cars.map((car) => car.gearType);
   const uniqueGearTypes = Array.from(new Set(allGearType));
   return (
-    <div className="filterRow shadow-rounded-box">
-      <div className="rowHead">
+    <div className="container-fluid shadow-rounded-box filterBoxContainer">
+     <div className="row">
+     <div className="col-12">
         <h6>{t("gearType")}</h6>
       </div>
-      <div className="checkBoxRow">
+      <div className="col-12">
         {uniqueGearTypes.map((gearType, index) => (
 
           <CFormCheck
@@ -54,6 +55,7 @@ const GearTypeFilter = (props: Props) => {
 
         ))}
       </div>
+     </div>
     </div>
   );
 };

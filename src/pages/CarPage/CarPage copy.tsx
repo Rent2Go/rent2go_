@@ -17,7 +17,7 @@ import {
   Search,
 } from "../../components";
 import { FaSearch } from "react-icons/fa";
-import { PiSortDescending, PiSortAscending } from "react-icons/pi";
+import { PiSortDescending, PiSortAscending } from "react-icons/pi"; 
 
 import Pagination from "@mui/material/Pagination";
 import { Stack } from "@mui/material";
@@ -41,7 +41,7 @@ const CarPage: React.FC<Props> = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [sortType, setSortType] = useState<"asc" | "desc">("asc"); // Sıralama türü durum değişkeni
-  const itemsPerPage = 4;
+  const itemsPerPage = 5;
 
   useEffect(() => {
     dispatch(fetchCarData());
@@ -80,7 +80,6 @@ const CarPage: React.FC<Props> = (props) => {
         passesFilters &&
         filters.fuel.some((filter: string) => car.fuelType.includes(filter));
     }
-
     if (searchTerm) {
       const searchTermLower = searchTerm.toLowerCase();
       passesFilters =
@@ -98,48 +97,39 @@ const CarPage: React.FC<Props> = (props) => {
     return passesFilters;
   });
 
-  const sortedCars = filteredCars
-    .slice()
-    .sort((a: CarModel, b: CarModel) =>
-      sortType === "asc" ? a.id - b.id : b.id - a.id
-    );
-
-  const totalFilteredCars = sortedCars.length;
+  const totalFilteredCars = filteredCars.length;
   const totalPages = Math.ceil(totalFilteredCars / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const currentCars = sortedCars.slice(startIndex, endIndex);
+  const currentCars = filteredCars.slice(startIndex, endIndex);
 
   return (
     <>
       <Helmet>
-        <title>
-          {settings.title} - {t("cars")}{" "}
-        </title>
+        <title>{settings.title} - {t("cars")} </title>
         <meta name="description" content="car page description" />
       </Helmet>
       <Navbar />
-      <div className="carPage container mx-auto">
-        <div className="row container-fluid shadow-rounded-box mx-auto">
-          <Search />
-        </div>
-        <div className="row contentContainer mx-auto ">
-          <div className="col-xl-3 col-xs-12 col-md-4 mt-2">
-            <FilterCard />
+      <div className="carPage container">
+        <div className="secContainer ">
+          <div className="secHeading shadow-rounded-box">
+            <Search />
           </div>
-          <div className=" offset-xl-0  offset-xs-0 col-xs-12 col-xl-9 col-md-8 mt-4">
-            <div className="row container-fluid shadow-rounded-box searchBoxContainer mb-3">
-              <div className="col-11">
+          <div className="secContent grid">
+            <div className="filterContainer">
+              <FilterCard />
+            </div>
+            <div className="carContainer grid">
+              <div className="shadow-rounded-box searchDiv">
+                <label htmlFor="search">{t("search")}:</label>
                 <input
                   name="search"
                   className="searchInput"
                   type="text"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  placeholder={t("search") + "..."}
+                  placeholder={t("search")+"..."}
                 />
-              </div>
-              <div className="col-1">
                 <button
                   type="button"
                   className="btn btn-sm"
@@ -153,33 +143,26 @@ const CarPage: React.FC<Props> = (props) => {
                   )}
                 </button>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-12">
-                <div className="row">
-                  {currentCars.map((car: CarModel) => (
-                    <div
-                      className="singleCarContainer col-12 container-fluid shadow-rounded-box"
-                      key={car.id}
-                    >
-                      <CarList car={car} />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className="row container-fluid shadow-rounded-box mostBottom">
-              <div className="col-12">
-                <div className="paginationContainer flex">
-                  <Stack spacing={5}>
-                    <Pagination
-                      count={totalPages}
-                      color="standard"
-                      onChange={paginate}
-                      page={currentPage}
-                    />
-                  </Stack>
-                </div>
+
+              {currentCars
+                .sort((a: CarModel, b: CarModel) =>
+                  sortType === "asc" ? a.id - b.id : b.id - a.id
+                )
+                .map((car: CarModel) => (
+                  <div className="singleCar grid" key={car.id}>
+                    <CarList car={car} />
+                  </div>
+                ))}
+
+              <div className="paginationContainer flex justify-flex-end">
+                <Stack spacing={5}>
+                  <Pagination
+                    count={totalPages}
+                    color="standard"
+                    onChange={paginate}
+                    page={currentPage}
+                  />
+                </Stack>
               </div>
             </div>
           </div>

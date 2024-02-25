@@ -1,255 +1,324 @@
-/**select box**/
-.form-check-input {
-  width: 1.25em;
-  height: 1.25em;
-  margin-right: 0.5em;
-  margin-top: 0.1em;
-  background-color: var(--bs-form-check-bg);
-  border: 2px solid var(--textColor);
-}
-.form-check-input:checked {
-  background-color: var(--primaryColor);
-  border-color: var(--blackColor);
-}
-.form-check-input:focus {
-  border-color: var(--secondaryColor);
-  outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(36, 1, 27, 0.25);
-}
-
-.form-check-label {
-  color: var(--blackColor);
-}
-/**select box**/
-/**ant-d**/
-.ant-space {
-  padding: 0 2rem;
-}
-
-/**ant-d**/
-
-.shadow-rounded-box {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  border-radius: 0.5rem;
-  background-color: var(--pureWhiteColor);
-}
 .carPage {
-  padding: 4rem 8rem;
-  .secContainer {
-    padding: 0;
-    justify-content: center;
-    margin: 2rem 1rem;
-    .secHeading {
-      margin: 2rem 0;
-      justify-content: center;
-      align-items: center;
-      display: flex;
-      flex-direction: row;
-      .search {
-        width: 100%;
-        .searchDiv {
-          grid-template-columns: repeat(3, 1fr);
+  padding: 6rem 0;
 
-          .primaryBtn {
-            transform: none !important;
-            opacity: 1 !important;
-          }
-        }
-        .title {
+  .container-fluid {
+    .search {
+      .secContainer {
+        h3 {
           display: none;
         }
       }
-
-      .btnPrimary {
-        background: var(--primaryColor);
-        color: var(--pureWhiteColor);
-        border: none;
-        padding: 0.5rem 0.75rem;
-        font-weight: 500;
-        transition: 0.3s ease-in-out;
-        &:hover {
-          background: var(--secondaryColor);
-          color: var(--blackColor);
-          border: 1.5px solid var(--secondaryColor);
+    }
+  }
+  .contentContainer {
+    .filterBoxContainer {
+      padding: 1rem 1rem;
+      min-height: 140px;
+      .row{
+        margin:0 auto;
+      }
+      h6 {
+        color: var(--grayColor);
+      }
+      .form-check {
+        color: var(--grayColor);
+        label {
+          font-size: 14px;
+        }
+        .form-check-input {
+          border: 2px solid var(--textColor);
+          &:checked {
+            background: var(--primaryColor);
+            border-color: var(--primaryColor);
+          }
         }
       }
     }
-    .secContent {
-      grid-template-columns: repeat(4, 1fr);
-      align-items: flex-start;
-      .filterContainer {
-        grid-column-start: 1;
-        grid-column-end: 1;
-        .filter {
-          flex-direction: column;
-          align-items: flex-start;
-          text-align: left;
-          .filterRow {
-            min-width: 250px;
-            padding: 2rem 2rem;
-            margin: 1rem 1rem;
-            .rowHead {
-              margin-bottom: 1rem;
-              h6 {
-                color: var(--blackColor);
-              }
-            }
+    .searchBoxContainer {
+      padding: 1rem 2rem;
+      width: -webkit-fill-available;
+      align-items: center;
+      input {
+        font-size: 14px;
+        color: var(--grayColor);
+        width: -webkit-fill-available;
+        padding: 0.5rem 1rem;
+        border: none;
+        outline: none;
+        background: var(--greyColor);
+        border-radius: 0.25rem;
+        &:active {
+          color: var(--color-danger);
+        }
+      }
+      button {
+        font-size: 28px;
+        margin: 0;
+        padding: 0;
+        outline: none;
+        background: none;
+        color: var(--grayColor);
+        &:hover {
+          transition: 0.5s ease-in-out;
+          color: var(--color-danger);
+        }
+      }
+    }
+    .singleCarContainer {
+      margin: 0.75rem 0;
+
+      .row {
+        align-items: center;
+      }
+      .imgDiv {
+        padding: 0.25rem;
+        text-align: center;
+        img {
+          width: 100%;
+          min-width: 320px;
+          max-width: 320px;
+          height: auto;
+          object-fit: cover;
+          margin: 0 1.5rem;
+        }
+      }
+      .descriptionDiv {
+        row-gap: 5rem;
+        display: flex;
+        flex-direction: column;
+
+        .carTitle {
+          font-size: 20px;
+          font-weight: 500;
+          color: var(--primaryColor);
+          text-transform: capitalize;
+        }
+        .carIcons {
+          color: var(--primaryColor);
+        }
+        .carSubText {
+          font-size: 14px;
+          line-height: 42px;
+          font-weight: 500;
+          color: var(--grayColor);
+          text-transform: capitalize;
+        }
+      }
+      .actionDiv {
+        .row {
+          /*display: flex;
+          flex-direction: column;*/
+          row-gap: 12rem;
+        }
+        .actionRow {
+          display: flex;
+          column-gap: 0.5rem;
+          font-size: 18px;
+          font-weight: 500;
+          color: var(--textColor);
+        }
+        .reservationBtn {
+          border: 2px solid var(--primaryColor);
+          background: transparent;
+          color: var(--textColor);
+          border-radius: 0.5rem;
+          font-size: 14px;
+          font-weight: 500;
+          &:hover {
+            border: 2px dashed var(--pureWhiteColor);
+            background: var(--secondaryColor);
+            color: var(--grayColor);
+            transition: 0.3s ease-in-out;
           }
         }
       }
-      .carContainer {
-        grid-column-start: 2;
-        grid-column-end: 5;
-        .searchDiv {
-          margin: 1rem 2rem;
-          text-align: left;
-          padding: 0 2rem;
-          gap: 1rem;
-          label {
-            font-weight: 500;
-            color: var(--textColor);
-            margin-right: 0.55rem;
-          }
-          .searchInput {
-            text-align: center;
-            width: 85%;
-            border: none;
-            border-radius: 0.2rem;
-            outline: none;
-            background: var(--whiteColor);
-            margin: 1rem 0.5rem;
-            padding: 0.5rem 0.75rem;
-
-            &:focus {
-              border: none;
-              outline: none;
-              color: var(--primaryColor);
-              background: var(--whiteColor);
-            }
-            &::placeholder {
-              letter-spacing: 0.05rem;
-              text-align: left;
-              font-size: 12px;
-              color: var(--placeHolderColor);
-            }
-          }
-          button {
-            font-size: 25px;
-            margin: 0;
-            padding: 0;
-            outline: none;
-            border: none;
-            color: var(--primaryColor);
-            &:hover {
-              color: var(--blackColor);
-              transition: 0.3s ease-in-out;
-              font-size: 28px;
-            }
-          }
-        }
-
-        .singleCar {
-          background: var(--pureWhiteColor);
+    }
+    .mostBottom {
+      width: -webkit-fill-available;
+      .paginationContainer {
+        padding: 0.75rem 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        button {
+          font-weight: 500;
+          padding: 1rem;
           border-radius: 0.5rem;
-          padding: 1.5rem 2rem;
-          margin: 2rem 2rem;
-          text-align: left;
-          box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-            rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-          div {
-            grid-template-columns: repeat(3, 1fr);
-            column-gap: 4rem;
-
-            align-items: flex-end;
-            justify-content: flex-end;
-            .imgDiv {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              padding: 0;
-              border-radius: 0.5rem;
-              border: none;
-              width: 340px;
-              height: 100px;
-              img {
-                object-fit: contain;
-                width: 100%;
-                max-width: 340px;
-              }
-            }
-            .carLabel {
-              font-weight: 600;
-              color: var(--primaryColor);
-            }
-            .descriptionDiv {
-              text-align: left;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: last baseline;
-              font-size: 13px;
-              .carTitle {
-                color: var(--primaryColor);
-                font-size: 20px;
-                margin-bottom: 4rem;
-                width: -webkit-fill-available;
-                font-weight: 600;
-                text-transform: capitalize;
-              }
-              .carLabel {
-                font-weight: 600;
-                color: var(--primaryColor);
-              }
-              span {
-                color: var(--textColor);
-                font-size: 16px;
-              }
-
-              .price_seller {
-                flex-direction: column;
-              }
-            }
-            .actionDiv {
-              display: flex;
-              flex-direction: column;
-              align-items: self-end;
-              justify-content: center;
-              row-gap: 5rem;
-              .actionRow {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-
-                gap: 0;
-                margin-bottom: 0.5rem;
-                span {
-                  margin-left: 0.25rem;
-                  font-weight: 500;
-                  font-size: 16px;
-                }
-              }
-              a,
-              button {
-                background: var(--pureWhiteColor);
-                color: var(--primaryColor);
-                border: 2.5px solid var(--primaryColor);
-                padding: 0.5rem 0.75rem;
-                font-weight: 600;
-                font-size: 10px;
-                transition: 0.3s ease-in-out;
-                &:hover {
-                  background: var(--secondaryColor);
-                  color: var(--blackColor);
-                  border: 2.5px dashed var(--pureWhiteColor);
-                }
-              }
-            }
-          }
+          color: var(--primaryColor);
         }
-        .paginationContainer {
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 488px) {
+  .carPage {
+    .search {
+      .secContainer {
+        width: 100%;
+        .searchDiv {
+          display: flex;
+          gap: 1.5rem;
+        }
+      }
+    }
+  }
+  .contentContainer {
+    .filterBoxContainer {
+      height: 140px;
+      max-height: 140px;
+      min-height: 140px;
+      padding: 1rem 0.25rem !important;
+      h6 {
+        font-size: 0.75rem;
+      }
+      input,
+      .form-check label {
+        font-size: 12px;
+      }
+      .form-check {
+        label {
+          font-size: 12px !important;
+        }
+      }
+    }
+    .singleCarContainer {
+      .imgDiv {
+        padding: 0.25rem;
+        margin: 0 auto;
+        text-align: center;
+
+        img {
+          max-width: 320px;
+          margin: 0;
+          object-fit: contain;
+        }
+      }
+      .descriptionDiv {
+        row-gap: 0;
+        padding: 0 2rem;
+      }
+      .actionDiv {
+        .row {
+          flex-direction: row;
+          row-gap: 1rem;
           justify-content: center;
+          align-items: center;
+          margin: 0 auto;
+          padding: 2rem 0.5rem;
+        }
+      }
+    }
+    .mostBottom {
+      .paginationContainer {
+        button {
+          font-size: 15px;
+          margin: 0 0.5rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 567px) {
+  .carPage {
+    .search {
+      .secContainer {
+        width: 100%;
+        .searchDiv {
+          display: flex;
+          gap: 1.5rem;
+        }
+      }
+    }
+  }
+  .contentContainer {
+    .filterBoxContainer {
+      height: 140px;
+      max-height: 140px;
+      min-height: 140px;
+      padding: 1rem 1rem;
+    }
+    .singleCarContainer {
+      .imgDiv {
+        padding: 0.25rem;
+        margin: 0 auto;
+        text-align: center;
+
+        img {
+          max-width: 320px;
+          margin: 0;
+          object-fit: contain;
+        }
+      }
+      .descriptionDiv {
+        row-gap: 0;
+        padding: 0 2rem;
+      }
+      .actionDiv {
+        .row {
+          flex-direction: row;
+          row-gap: 1rem;
+          justify-content: center;
+          align-items: center;
+          margin: 0 auto;
+          padding: 2rem 0.5rem;
+        }
+      }
+    }
+    .mostBottom {
+      .paginationContainer {
+        button {
+          font-size: 15px;
+          margin: 0 0.5rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .contentContainer {
+    .singleCarContainer {
+      .imgDiv {
+        text-align: center;
+        padding: 0;
+        img {
+          max-width: 275px;
+          min-width: 275px;
+          margin: 0;
+        }
+      }
+      .descriptionDiv {
+        row-gap: 0 !important;
+      }
+      .actionDiv {
+        .row {
+          margin: 2rem 4rem;
+        }
+      }
+    }
+    .mostBottom {
+      width: -webkit-fill-available;
+      .paginationContainer {
+        button {
+          font-size: 15px !important;
+          margin: 0 0.5rem !important;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 940px) {
+  .carPage {
+    padding: 8rem 0;
+    .contentContainer {
+      .singleCarContainer {
+        .descriptionDiv {
+          row-gap: 1rem !important;
+        }
+        .actionDiv {
+          .row {
+            margin: 2rem 4rem;
+          }
         }
       }
     }
@@ -257,617 +326,62 @@
 }
 @media screen and (max-width: 1024px) {
   .carPage {
-    padding: 1rem 2rem;
-    .secContainer {
-      padding: 0;
-      justify-content: center;
-      margin: 2rem 0rem;
-      gap: 1rem;
-      .secHeading {
-        margin: 6rem 0 0 0;
-        .search {
-          width: 100%;
-          .searchDiv {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.5rem;
-            align-items: center;
-            justify-content: center;
-            .searchInput {
-              width: 100%;
-            }
-          }
+    padding: 8rem 0;
+    .contentContainer {
+      .singleCarContainer {
+        .descriptionDiv {
+          row-gap: 1rem !important;
         }
-      }
-      .secContent {
-        grid-template-columns: repeat(2, 1fr);
-        align-items: flex-start;
-        column-gap: 2rem;
-        .filterContainer {
-          grid-column-start: 1;
-          grid-column-end: 1;
-
-          .filter {
-            flex-direction: column;
-            align-items: normal;
-            .filterRow {
-              display: flex;
-              flex-direction: column;
-              align-items: flex-start;
-              justify-content: flex-start;
-              column-gap: 2rem;
-              margin: 1rem 0.2rem;
-              padding: 2rem 2rem;
-              min-width: 100%;
-              font-size: 14px;
-              .rowHead {
-                margin-bottom: 0;
-                h6 {
-                  font-size: 14px;
-                }
-              }
-              .checkBoxRow {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                text-align: center;
-                align-items: flex-start;
-                column-gap: 1rem;
-              }
-            }
-          }
-        }
-        .carContainer {
-          grid-column-start: 2;
-          grid-column-end: 16;
-          .searchDiv {
-            .searchInput {
-              width: 75%;
-            }
-          }
-          .singleCar {
-            div {
-              align-items: center;
-              column-gap: 0.75rem;
-              .imgDiv {
-                width: 200px !important;
-                height: auto !important;
-              }
-              .descriptionDiv {
-                row-gap: 3rem;
-                .carTitle {
-                  font-size: 18px;
-                  margin-bottom: 5rem;
-                }
-              }
-              .actionDiv {
-                row-gap: 10rem;
-              }
-            }
+        .actionDiv {
+          .row {
+            margin: 2rem 4rem;
           }
         }
       }
     }
-  }
-  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
-  }
-}
-@media screen and (max-width: 991px) {
-  .carPage {
-    padding: 1rem 2rem;
-    .secContainer {
-      padding: 0;
-      justify-content: center;
-      margin: 2rem 0rem;
-      gap: 1rem;
-      .secHeading {
-        margin: 4rem 0 0 0;
-        .search {
-          width: 100%;
-          .searchDiv {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.5rem;
-            align-items: center;
-            justify-content: center;
-            .searchInput {
-              width: 60%;
-            }
-          }
-        }
-      }
-      .secContent {
-        grid-template-columns: repeat(3, 1fr) !important;
-        align-items: flex-start;
-        column-gap: 2rem;
-        justify-content: center;
-        .filterContainer {
-          grid-column-start: 1;
-          grid-column-end: 1;
-
-          .filter {
-            flex-direction: column;
-            align-items: normal;
-            .filterRow {
-              display: flex;
-              flex-direction: column;
-              align-items: flex-start;
-              justify-content: flex-start;
-              column-gap: 1rem;
-              margin: 1rem 0.2rem;
-              padding: 2rem 0.5rem;
-              min-width: 100%;
-              font-size: 10px;
-              .rowHead {
-                margin-bottom: 0;
-                h6 {
-                  font-size: 12px;
-                }
-              }
-              .checkBoxRow {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                text-align: center;
-                align-items: flex-start;
-                column-gap: 0;
-              }
-            }
-          }
-        }
-        .carContainer {
-          display: grid;
-          grid-column-start: 2;
-          grid-column-end: 4 !important;
-          .searchDiv {
-            margin: 1rem 0;
-            text-align: center;
-            padding: 0.25rem 0.5rem;
-            justify-content: center;
-            align-items: center;
-            label {
-              font-size: 12px;
-            }
-            .searchInput {
-              width: 66%;
-            }
-          }
-          .singleCar {
-            margin: 1rem 0rem;
-            padding: 0.5rem 1rem;
-            div {
-              display: flex;
-              flex-direction: column;
-              column-gap: 0.5rem;
-              row-gap: 2rem;
-              justify-content: center;
-              align-items: center;
-              padding: 0 0.9rem;
-              .imgDiv {
-                width: 100% !important;
-                height: auto !important;
-              }
-              .descriptionDiv {
-                flex-direction: column;
-                row-gap: 0;
-                font-size: 10px;
-                margin-bottom: -2rem;
-                span {
-                  font-size: 15px;
-                }
-                .miles,
-                .AWD {
-                  margin-right: 1rem;
-                }
-                .carTitle {
-                  font-size: 20px;
-                  margin-bottom: 0;
-                }
-                .contentDiv {
-                  display: flex;
-                  flex-direction: row;
-                  margin: 1rem 0;
-                  justify-content: center;
-                  align-items: center;
-                  padding: 0;
-                  div {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: flex-start;
-                    align-items: center;
-                    padding: 0;
-                  }
-                }
-              }
-              .actionDiv {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                margin: 0 0 2rem 0;
-                .actionRow {
-                  margin-bottom: 0 !important;
-                  span {
-                    padding-bottom: 0;
-                    font-size: 15px;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
   .carPage {
-    padding: 1rem 2rem;
-    .secContainer {
-      padding: 0;
-      justify-content: center;
-      margin: 2rem 0rem;
-      gap: 1rem;
-      .secHeading {
-        margin: 4rem 0 0 0;
-        .search {
-          width: 100%;
-          .searchDiv {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.5rem;
-            align-items: center;
-            justify-content: center;
-            .searchInput {
-              width: 60%;
-            }
+    padding: 8rem 0;
+    .contentContainer {
+      .singleCarContainer {
+        .imgDiv {
+          img {
+            min-width: 240px;
           }
         }
-      }
-      .secContent {
-        grid-template-columns: repeat(3, 1fr) !important;
-        align-items: flex-start;
-        column-gap: 2rem;
-        justify-content: center;
-        .filterContainer {
-          grid-column-start: 1;
-          grid-column-end: 1;
-
-          .filter {
-            flex-direction: column;
-            align-items: normal;
-            .filterRow {
-              display: flex;
-              flex-direction: column;
-              align-items: flex-start;
-              justify-content: flex-start;
-              column-gap: 1rem;
-              margin: 1rem 0.2rem;
-              padding: 2rem 0.5rem;
-              min-width: 100%;
-              font-size: 10px;
-              .rowHead {
-                margin-bottom: 0;
-                h6 {
-                  font-size: 12px;
-                }
-              }
-              .checkBoxRow {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                text-align: center;
-                align-items: flex-start;
-                column-gap: 0;
-              }
-            }
-          }
+        .descriptionDiv {
+          row-gap: 2rem;
         }
-        .carContainer {
-          display: grid;
-          grid-column-start: 2;
-          grid-column-end: 4 !important;
-          .searchDiv {
-            margin: 1rem 0;
-            text-align: center;
-            padding: 0.25rem 0.5rem;
-            justify-content: center;
-            align-items: center;
-            label {
-              font-size: 12px;
-            }
-            .searchInput {
-              width: 66%;
-            }
-          }
-          .singleCar {
-            margin: 1rem 0rem;
-            padding: 0.5rem 1rem;
-            div {
-              display: flex;
-              flex-direction: column;
-              column-gap: 0.5rem;
-              row-gap: 2rem;
-              justify-content: center;
-              align-items: center;
-              padding: 0 0.9rem;
-              .imgDiv {
-                width: 100% !important;
-                height: auto !important;
-              }
-              .descriptionDiv {
-                flex-direction: column;
-                row-gap: 0;
-                font-size: 10px;
-                margin-bottom: -2rem;
-                span {
-                  font-size: 15px;
-                }
-                .miles,
-                .AWD {
-                  margin-right: 1rem;
-                }
-                .carTitle {
-                  font-size: 20px;
-                  margin-bottom: 0;
-                }
-                .contentDiv {
-                  display: flex;
-                  flex-direction: row;
-                  margin: 1rem 0;
-                  justify-content: center;
-                  align-items: center;
-                  padding: 0;
-                  div {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: flex-start;
-                    align-items: center;
-                    padding: 0;
-                  }
-                }
-              }
-              .actionDiv {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                margin: 0 0 2rem 0;
-                .actionRow {
-                  margin-bottom: 0 !important;
-                  span {
-                    padding-bottom: 0;
-                    font-size: 15px;
-                  }
-                }
-              }
-            }
+        .actionDiv {
+          .row {
+            row-gap: 8rem;
           }
         }
       }
     }
-  }
-  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
   }
 }
-
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 1480px) {
   .carPage {
-    padding: 1rem 2rem;
-    .secContainer {
-      padding: 0;
-      justify-content: center;
-      margin: 2rem 0rem;
-      gap: 1rem;
-      .secHeading {
-        margin: 4rem 0.75rem 0 0.75rem;
-        .search {
-          width: 100%;
-          .searchDiv {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.5rem;
-            align-items: center;
-            justify-content: center;
+    .contentContainer {
+      .singleCarContainer {
+        .imgDiv {
+          img {
+            min-width: 275px;
           }
         }
-      }
-      .secContent {
-        display: flex !important;
-        flex-direction: column;
-        .filterContainer {
-          grid-column-start: 1;
-          grid-column-end: 2;
-
-          .filter {
-            display: grid;
-            grid-template-columns: 33% 33% 33%;
-            align-items: flex-start !important;
-            column-gap: 0.5rem;
-            .filterRow {
-              display: flex;
-              align-items: center;
-              justify-content: flex-start;
-              column-gap: 1rem;
-              margin: 0.5rem 0.5rem !important;
-              padding: 1rem !important;
-              min-width: 33.33%;
-              font-size: 8px !important;
-              height: -webkit-fill-available;
-              .rowHead {
-                margin-bottom: 0;
-                h6 {
-                  font-size: 12px;
-                }
-              }
-              .checkBoxRow {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                text-align: center;
-                align-items: flex-start;
-                column-gap: 1rem;
-              }
-            }
-          }
+        .descriptionDiv {
+          row-gap: 2rem;
         }
-        .carContainer {
-          grid-column-start: 1 !important;
-          grid-column-end: 1 !important;
-          .searchDiv {
-            margin: 1rem 0.75rem 0 0.75rem;
-            text-align: center;
-            padding: 0.25rem;
-            .searchInput {
-              width: 55%;
-            }
-          }
-          .singleCar {
-            margin: 1rem 0rem;
-            padding: 0.5rem 1rem;
-            div {
-              grid-template-columns: repeat(1, 1fr) !important;
-              .imgDiv {
-                width: 100% !important;
-                height: auto !important;
-              }
-              .descriptionDiv {
-                flex-direction: row;
-                font-size: 10px;
-                margin-bottom: -2rem;
-                span {
-                  font-size: 12px !important;
-                }
-              }
-              .actionDiv {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                .actionRow {
-                  margin-bottom: 0 !important;
-                  span {
-                    padding-bottom: 0;
-                  }
-                }
-              }
-            }
+        .actionDiv {
+          .row {
+            row-gap: 8rem;
           }
         }
       }
     }
-  }
-  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
-  }
-}
-@media screen and (max-width: 425px) {
-  .carPage {
-    padding: 1rem 2rem;
-    .secContainer {
-      padding: 0;
-      justify-content: center;
-      margin: 2rem 0rem;
-      gap: 1rem;
-      .secHeading {
-        margin: 4rem 0 0 0;
-        border-radius: 0;
-        .search {
-          width: 100%;
-          .searchDiv {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.5rem;
-            align-items: center;
-            justify-content: center;
-          }
-        }
-      }
-      .secContent {
-        display: flex !important;
-        flex-direction: column;
-        align-items: center;
-        .filterContainer {
-          grid-column-start: 1;
-          grid-column-end: 2;
-
-          .filter {
-            display: grid;
-            grid-template-columns: 33% 33% 33%;
-            align-items: flex-start !important;
-            column-gap: 0.5rem;
-            .filterRow {
-              display: flex;
-              align-items: center;
-              justify-content: flex-start;
-              column-gap: 1rem;
-              margin: 0.5rem 0.5rem !important;
-              padding: 1rem !important;
-              min-width: 33.33%;
-              font-size: 8px !important;
-              height: -webkit-fill-available;
-              .rowHead {
-                margin-bottom: 0;
-                h6 {
-                  font-size: 12px;
-                }
-              }
-              .checkBoxRow {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                text-align: center;
-                align-items: flex-start;
-                column-gap: 1rem;
-                padding: 0 0.5rem;
-              }
-            }
-          }
-        }
-        .carContainer {
-          grid-column-start: 1 !important;
-          grid-column-end: 1 !important;
-          .searchDiv {
-            margin: 1rem 0 0 0;
-            text-align: center;
-            padding: 0.25rem;
-            border-radius: 0;
-            .searchInput {
-              width: 55%;
-            }
-          }
-          .singleCar {
-            margin: 1rem 0rem;
-            padding: 0.5rem 0;
-            border-radius: 0;
-            div {
-              grid-template-columns: repeat(1, 1fr) !important;
-              .imgDiv {
-                width: 100% !important;
-                height: auto !important;
-              }
-              .descriptionDiv {
-                flex-direction: row;
-                font-size: 10px;
-                margin-bottom: -2rem;
-                display: flex;
-                flex-direction: column;
-                span {
-                  font-size: 12px !important;
-                }
-              }
-              .actionDiv {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                .actionRow {
-                  margin-bottom: 0 !important;
-                  span {
-                    padding-bottom: 0;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
-    font-size: 0.5rem !important;
   }
 }

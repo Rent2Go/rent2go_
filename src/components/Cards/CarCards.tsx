@@ -19,55 +19,65 @@ const CarCards = (props: Props) => {
   return (
     <>
       {
-        <div className="grid">
-          <div className="imgDiv">
+        <div className="row">
+          <div className="imgDiv  col-xl-4 col-12">
             <img src={props.car.imageUrl} alt="carImage" />
           </div>
-          <div className="descriptionDiv">
-            <p className="carTitle">
-              {props.car.model.brand.name} {props.car.model.name}{" "}
-              {props.car.year}
-            </p>
-            <div className="contentDiv">
-            <div>
-              <span className="carLabel">
-                <BiTachometer />{" "}
-              </span>
-              <span className="miles">{props.car.kilometer} km</span>
-            </div>
 
-            <div>
-              <span className="carLabel">
-                <PiEngine />{" "}
-              </span>
-              <span className="AWD">
-                {props.car.enginePower} / {props.car.cylinderCount}
-              </span>
-            </div>
+          <div className="descriptionDiv offset-xl-1  col-xl-4 col-12">
+            <div className="row">
+              <div className="col-12">
+                <p className="carTitle">
+                  {props.car.model.brand.name} {props.car.model.name}{" "}
+                  {props.car.year}
+                </p>
+              </div>
 
-            <div>
-              <span className="carLabel">
-                <IoIosColorPalette />{" "}
-              </span>
-              <span className="miles">{t(props.car.color.name.toLowerCase())}</span> 
             </div>
+            <div className="row">
+              <div className="col-xl-12 col-4">
+                <span className="carIcons">
+                  <BiTachometer />{" "}
+                </span>
+                <span className="carSubText">{props.car.kilometer} km</span>
+              </div>
+              <div className="col-xl-12 col-4">
+                <span className="carIcons">
+                  <PiEngine />{" "}
+                </span>
+                <span className="carSubText">
+                  {props.car.enginePower} / {props.car.cylinderCount}
+                </span>
+              </div>
+              <div className="col-xl-12 col-4">
+                <span className="carIcons">
+                  <IoIosColorPalette />{" "}
+                </span>
+                <span className="carSubText">{props.car.color.name}</span>
+              </div>
             </div>
           </div>
-          <div className="actionDiv">
-            <div className="actionRow">
-              {" "}
-              <span className="carLabel">
-                <GrMoney />
-              </span>
-              <span className="price">{props.car.dailyPrice.toFixed(2)} ₺</span>
-            </div>
-            <div className="actionRow">
-              <Link
-                to={`/reservation/${props.car.id}`}
-                className="btn text btnPrimary"
-              >
-                {t("reservation")}
-              </Link>
+          <div className="actionDiv  col-xl-3 col-12 ">
+            <div className="row">
+              <div className="col-xl-12 col-7">
+                <div className="actionRow">
+                  {" "}
+                  <span className="priceIcon">
+                    <GrMoney />
+                  </span>
+                  <span className="priceText">
+                    {props.car.dailyPrice.toFixed(2)} ₺
+                  </span>
+                </div>
+              </div>
+              <div className="col-xl-12 col-5">
+                <Link
+                  to={`/reservation/${props.car.id}`}
+                  className="btn reservationBtn"
+                >
+                  {t("reservation")}
+                </Link>
+              </div>
             </div>
           </div>
         </div>
