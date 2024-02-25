@@ -240,7 +240,7 @@
   "meansSmallFilesThatArePlaced": "Bir web sitesi tarafından bilgisayarınıza, mobil cihazınıza veya başka herhangi bir cihazınıza yerleştirilen ve o web sitesindeki pek çok kullanımın yanı sıra tarama geçmişinizin ayrıntılarını içeren küçük dosyalar anlamına gelir.",
   "website": "Web Sitesi",
   "refersToRent2Go": "Şu adresten erişilebilen Rent2Go'yu ifade eder",
-  "you": "Sen",
+  "you": "Siz",
   "meansTheIndividualAccessingOrUsing": "Web Sitesine erişen veya Web Sitesini kullanan kişi veya bu kişinin adına Web Sitesine erişen veya Web Sitesini kullanan bir şirket veya herhangi bir tüzel kişilik anlamına gelir.",
   "theUseOfTheCookies": "Çerezlerin Kullanımı",
   "cookiesCanBePersistentOrSessionCookies": "Çerezler \"Kalıcı\" veya \"Oturum\" Çerezleri olabilir. Kalıcı Çerezler, çevrimdışı olduğunuzda kişisel bilgisayarınızda veya mobil cihazınızda kalır, Oturum Çerezleri ise web tarayıcınızı kapattığınızda silinir.",
@@ -493,7 +493,40 @@
   "thereTermsAndConditions": "Bu Şartlar ve Koşullar, bunları Hizmetimizde Sizin kullanımınıza sunduysak tercüme edilmiş olabilir. Bir anlaşmazlık durumunda orijinal İngilizce metnin geçerli olacağını kabul edersiniz.",
   "weReserveTheRight": "Tamamen Kendi takdirimize bağlı olarak, bu Şartları herhangi bir zamanda değiştirme veya değiştirme hakkını saklı tutuyoruz. Bir revizyonun önemli olması halinde Yeni şartların yürürlüğe girmesinden en az 30 gün önce bildirimde bulunmak için makul çabayı göstereceğiz. Önemli bir değişikliği neyin oluşturduğu tamamen bizim takdirimize bağlı olarak belirlenecektir.",
   "byContinuingToAccessOrUseOurService": "Bu revizyonlar yürürlüğe girdikten sonra Hizmetimize erişmeye veya Hizmetimizi kullanmaya devam ederek, revize edilen şartlara bağlı kalmayı kabul edersiniz. Yeni şartları tamamen veya kısmen kabul etmiyorsanız, lütfen web sitesini ve Hizmeti kullanmayı bırakın.",
-  "ifYouHaveAnyQuestionsAbout": "Bu Şartlar ve Koşullar hakkında herhangi bir sorunuz varsa bizimle iletişime geçebilirsiniz:"
+  "ifYouHaveAnyQuestionsAbout": "Bu Şartlar ve Koşullar hakkında herhangi bir sorunuz varsa bizimle iletişime geçebilirsiniz:",
+
+
+
+  "lastUpdatedFebruary14": "Son güncelleme: 14 Şubat 2024",
+  "interpretationAndDefinition": "Yorum ve Tanımlar",
+  "forThePurposesOfThisDisclaimer": "Bu Sorumluluk Reddinin amaçları doğrultusunda:",
+  "referredToAsEitherTheCompany": "(bu Sorumluluk Reddi Beyanında \"Şirket\", \"Biz\", \"Bize\" veya \"Bizim\" olarak anılacaktır) Rent2Go'yu ifade eder.",
+  "theInformationContained": "Hizmette yer alan bilgiler yalnızca genel bilgilendirme amaçlıdır.",
+  "thecompanyAssumes": "Şirket, Hizmetin içeriğindeki hata veya eksikliklerden dolayı hiçbir sorumluluk kabul etmez.",
+  "inNoEventShallTheCompany": "Şirket hiçbir durumda, Hizmetin kullanımından kaynaklanan veya bununla bağlantılı olarak ortaya çıkan, sözleşmeden kaynaklanan bir eylem, ihmal veya başka bir haksız fiilden kaynaklanan hiçbir özel, doğrudan, dolaylı, sonuç olarak ortaya çıkan veya tesadüfi zarar veya zarardan sorumlu olmayacaktır. veya Hizmetin içeriği. Şirket, önceden bildirimde bulunmaksızın herhangi bir zamanda Hizmetin içeriğine ekleme, silme veya değişiklik yapma hakkını saklı tutar. Bu Sorumluluk Reddi beyanı aşağıdakilerin yardımıyla oluşturulmuştur:",
+  "freeDisclaimerGenerator": "Ücretsiz Sorumluluk Reddi Oluşturucu",
+  "theCompanyDoesNotWarrant": "Şirket, Hizmetin virüs veya diğer zararlı bileşenlerden arınmış olduğunu garanti etmez.",
+  "externalLinksDisclaimer": "Dış Bağlantılar Sorumluluk Reddi",
+  "theServiceMayContainLinksToExternal": "Hizmet, Şirket tarafından sağlanmayan veya sürdürülmeyen veya herhangi bir şekilde Şirketle bağlantısı olmayan harici web sitelerine bağlantılar içerebilir.",
+  "pleaseNoteThatTheCompanyDoesNotGuarantee": "Şirketin bu harici web sitelerindeki herhangi bir bilginin doğruluğunu, ilgililiğini, güncelliğini veya eksiksizliğini garanti etmediğini lütfen unutmayın.",
+  "errorsAndOmissionsDisclaimer": "Hatalar ve Eksiklikler Sorumluluk Reddi",
+  "theInformationGivenByTheService": "Hizmet tarafından verilen bilgiler yalnızca ilgi duyulan konularda genel rehberlik amaçlıdır. Şirket, Hizmet içeriğinin hem güncel hem de doğru olmasını sağlamak için her türlü önlemi alsa bile hatalar meydana gelebilir. Ayrıca yasaların, kuralların ve düzenlemelerin değişen doğası göz önüne alındığında, Hizmette yer alan bilgilerde gecikmeler, eksiklikler veya yanlışlıklar olabilir.",
+  "theCompanyIsNotResponsible": "Şirket, herhangi bir hata veya eksiklikten veya bu bilgilerin kullanımından elde edilen sonuçlardan sorumlu değildir.",
+  "fairUseDisclaimer": "Adil Kullanım Sorumluluk Reddi Beyanı",
+  "theCompanyMayUseCopyrighted": "Şirket, telif hakkı sahibi tarafından her zaman özel olarak yetkilendirilmemiş, telif hakkıyla korunan materyalleri kullanabilir. Şirket bu tür materyalleri eleştiri, yorum, habercilik, öğretim, burs veya araştırma amacıyla kullanıma sunmaktadır.",
+  "theCompanyBelievesThisConstitutes": "Şirket, bunun, Amerika Birleşik Devletleri Telif Hakkı Yasası'nın 107. bölümünde belirtildiği gibi telif hakkıyla korunan herhangi bir materyalin \"adil kullanımını\" teşkil ettiğine inanmaktadır.",
+  "ifYouWishToUseCopyrighted": "Hizmetteki telif hakkıyla korunan materyali, adil kullanımın ötesindeki kendi amaçlarınız için kullanmak istiyorsanız, telif hakkı sahibinden izin almanız gerekir.",
+  "viewsExpressedDisclaimer": "İfade Edilen Görüntülemeler",
+  "theServiceMayContainViews": "Hizmet, yazarlara ait olan ve Şirket de dahil olmak üzere başka herhangi bir yazarın, ajansın, kuruluşun, işverenin veya şirketin resmi politikasını veya konumunu yansıtmayan görüş ve görüşler içerebilir.",
+  "commentsPublishedByUsers": "Kullanıcılar tarafından yayınlanan yorumların sorumluluğu tamamen kendilerine aittir ve kullanıcılar, bir yorumda yazılan bir şeyden veya yorumda yazılan bir şeyin doğrudan sonucu olarak ortaya çıkan her türlü iftira veya davanın tüm sorumluluğunu, sorumluluğunu ve suçlamasını üstlenecektir. Şirket, kullanıcılar tarafından yayınlanan hiçbir yorumdan sorumlu değildir ve her ne sebeple olursa olsun herhangi bir yorumu silme hakkını saklı tutar.",
+  "noResponsibilityDisclaimer": "Sorumluluk Reddi Yok",
+  "theInformationOnTheService": "Hizmete ilişkin bilgiler, Şirketin burada hukuk, muhasebe, vergi veya diğer profesyonel tavsiye ve hizmetleri sağlama faaliyetinde olmadığı anlayışıyla sağlanmaktadır. Bu nedenle, profesyonel muhasebe, vergi, hukuk veya diğer yetkili danışmanlara danışma yerine kullanılmamalıdır.",
+  "inNoEventShallTheCompanyOrIts": "Şirket veya tedarikçileri, Hizmete erişiminiz veya Hizmeti kullanımınız veya erişememeniz veya Hizmeti kullanamamanızdan kaynaklanan veya bunlarla bağlantılı olarak ortaya çıkan hiçbir özel, arızi, dolaylı veya sonuç olarak ortaya çıkan zararlardan hiçbir durumda sorumlu tutulamaz.",
+  "useAtYourOwnRiskDisclaimer": "\"Kullanımın Riski Size Aittir\" Sorumluluk Reddi Beyanı",
+  "allInformationInTheService": "Hizmetteki tüm bilgiler, eksiksizlik, doğruluk, güncellik veya bu bilgilerin kullanımından elde edilen sonuçlara ilişkin hiçbir garanti olmaksızın ve aşağıdakiler dahil ancak bunlarla sınırlı olmamak üzere açık veya zımni herhangi bir türde garanti olmaksızın \"olduğu gibi\" sağlanmaktadır. performans, ticari elverişlilik ve belirli bir amaca uygunluk garantileriyle sınırlıdır.",
+  "theCompanyWillNotBeLiableToYou": "Şirket, Hizmet tarafından verilen bilgilere dayanarak alınan herhangi bir karar veya eylemden veya bunun sonucunda ortaya çıkan, özel veya benzer zararlardan, bu tür zararların olasılığı önceden bildirilmiş olsa bile, Size veya başka birine karşı sorumlu olmayacaktır.",
+  "ifYouHaveAnyQuestionsAboutThisDisclaimer": "Bu Sorumluluk Reddi Beyanı ile ilgili herhangi bir sorunuz varsa, Bizimle iletişime geçebilirsiniz:"
+
 
 
 }
