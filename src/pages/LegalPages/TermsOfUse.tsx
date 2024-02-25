@@ -2,10 +2,13 @@ import React from "react";
 import { Footer, Navbar } from "../../components";
 import "./legalPage.css";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 type Props = {};
 
 const TermsOfUse = (props: Props) => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Navbar />
@@ -14,48 +17,44 @@ const TermsOfUse = (props: Props) => {
           <div className="tabs_list">
             <ul>
               <li>
-                <a href="#item-1">Interpretation and Definitions</a>
+                <a href="#item-1">{t("interpretationAndDefinitions")}</a>
               </li>
               <li>
-                <a href="#item-3">Links to Other Websites</a>
+                <a href="#item-3">{t("linksToOtherWebsites")}</a>
               </li>
               <li>
-                <a href="#item-4">"AS IS" and "AS AVAILABLE" Disclaimer</a>
+                <a href="#item-4">{t("asIsAndAsAvailableDisclaimer")}</a>
               </li>
               <li>
-                <a href="#item-5">Governing Law</a>
+                <a href="#item-5">{t("governingLaw")}</a>
               </li>
               <li>
-                <a href="#item-2">Severability and Waiver</a>
+                <a href="#item-2">{t("severabilityAndWaiver")}</a>
               </li>
               <li>
-                <a href="#item-6">Changes to These Terms and Conditions</a>
+                <a href="#item-6">{t("changesToTheseTermsAndConditions")}</a>
               </li>
               <li>
-                <a href="#item-7">Contact Us</a>
+                <a href="#item-7">{t("contactUs")}</a>
               </li>
             </ul>
           </div>
           <div className="tabs_content">
             <div className="tab_head">
-              <h1>Terms & Conditions</h1>
+              <h1>{t("termsConditions")}</h1>
             </div>
             <div className="tab_body">
-              <p>Last updated: February 14, 2024</p>
+              <p>{t("lastUpdated")}</p>
               <p id="item-1">
-                Please read these terms and conditions carefully before using
-                Our Service.
+                {t("pleaseReadTheseTerms")}
               </p>
-              <h2>Interpretation and Definitions</h2>
-              <h3>Interpretation</h3>
+              <h2>{t("interpretationAndDefinitions")}</h2>
+              <h3>{t("interpretation")}</h3>
               <p>
-                The words of which the initial letter is capitalized have
-                meanings defined under the following conditions. The following
-                definitions shall have the same meaning regardless of whether
-                they appear in singular or in plural.
+                {t("theWordsOfWhich")}
               </p>
-              <h3>Definitions</h3>
-              <p>For the purposes of these Terms and Conditions:</p>
+              <h3>{t("definitions")}</h3>
+              <p>{t("forThePurposesOfThese")}</p>
               <ul>
                 <li>
                   <p>
@@ -166,7 +165,7 @@ const TermsOfUse = (props: Props) => {
                 You. Please read Our Privacy Policy carefully before using Our
                 Service.
               </p>
-              <h2>Links to Other Websites</h2>
+              <h2>{t("linksToOtherWebsites")}</h2>
               <p>
                 Our Service may contain links to third-party web sites or
                 services that are not owned or controlled by the Company.
@@ -226,7 +225,7 @@ const TermsOfUse = (props: Props) => {
                 these states, each party's liability will be limited to the
                 greatest extent permitted by law.
               </p>
-              <h2>&quot;AS IS&quot; and &quot;AS AVAILABLE&quot; Disclaimer</h2>
+              <h2>{t("asIsAndAsAvailableDisclaimer")}</h2>
               <p>
                 The Service is provided to You &quot;AS IS&quot; and &quot;AS
                 AVAILABLE&quot; and with all faults and defects without warranty
@@ -268,7 +267,7 @@ const TermsOfUse = (props: Props) => {
                 limitations set forth in this section shall be applied to the
                 greatest extent enforceable under applicable law.
               </p>
-              <h2>Governing Law</h2>
+              <h2>{t("governingLaw")}</h2>
               <p>
                 The laws of the Country, excluding its conflicts of law rules,
                 shall govern this Terms and Your use of the Service. Your use of
@@ -281,7 +280,7 @@ const TermsOfUse = (props: Props) => {
                 to first try to resolve the dispute informally by contacting the
                 Company.
               </p>
-              <h2>Severability and Waiver</h2>
+              <h2>{t("severabilityAndWaiver")}</h2>
               <h3>Severability</h3>
               <p>
                 If any provision of these Terms is held to be unenforceable or
@@ -304,7 +303,7 @@ const TermsOfUse = (props: Props) => {
                 made them available to You on our Service. You agree that the
                 original English text shall prevail in the case of a dispute.
               </p>
-              <h2>Changes to These Terms and Conditions</h2>
+              <h2>{t("changesToTheseTermsAndConditions")}</h2>
               <p>
                 We reserve the right, at Our sole discretion, to modify or
                 replace these Terms at any time. If a revision is material We

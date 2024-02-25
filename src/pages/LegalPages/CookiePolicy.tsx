@@ -122,29 +122,20 @@ const CookiePolicy = (props: Props) => {
                   </p>
                 </li>
               </ul>
-              <h3>Your Choices Regarding Cookies</h3>
+              <h3>{t("youChoicesRegardingCookies")}</h3>
               <p>
-                If You prefer to avoid the use of Cookies on the Website, first
-                You must disable the use of Cookies in your browser and then
-                delete the Cookies saved in your browser associated with this
-                website. You may use this option for preventing the use of
-                Cookies at any time.
+                {t("ifYouPreferToAvoid")}
               </p>
               <p>
-                If You do not accept Our Cookies, You may experience some
-                inconvenience in your use of the Website and some features may
-                not function properly.
+                {t("ifYouDoNotAcceptOurCookies")}
               </p>
               <p>
-                If You'd like to delete Cookies or instruct your web browser to
-                delete or refuse Cookies, please visit the help pages of your
-                web browser.
+                {t("ifYouWouldLikeToDeleteCookies")}
               </p>
               <ul>
                 <li>
                   <p>
-                    For the Chrome web browser, please visit this page from
-                    Google:{" "}
+                    {t("forTheChrome")}:{" "}
                     <Link
                       to="https://support.google.com/accounts/answer/32050"
                       rel="external nofollow noopener"
@@ -156,8 +147,7 @@ const CookiePolicy = (props: Props) => {
                 </li>
                 <li>
                   <p>
-                    For the Internet Explorer web browser, please visit this
-                    page from Microsoft:{" "}
+                    {t("forTheInternetExplorer")}:{" "}
                     <Link
                       to="http://support.microsoft.com/kb/278835"
                       rel="external nofollow noopener"
@@ -169,8 +159,7 @@ const CookiePolicy = (props: Props) => {
                 </li>
                 <li>
                   <p>
-                    For the Firefox web browser, please visit this page from
-                    Mozilla:{" "}
+                    {t("forTheFirefox")}:{" "}
                     <Link
                       to="https://support.mozilla.org/en-US/kb/delete-cookies-remove-info-websites-stored"
                       rel="external nofollow noopener"
@@ -182,8 +171,7 @@ const CookiePolicy = (props: Props) => {
                 </li>
                 <li>
                   <p>
-                    For the Safari web browser, please visit this page from
-                    Apple:{" "}
+                    {t("forTheSafari")}:{" "}
                     <Link
                       to="https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac"
                       rel="external nofollow noopener"
@@ -195,28 +183,26 @@ const CookiePolicy = (props: Props) => {
                 </li>
               </ul>
               <p id="item-4">
-                For any other web browser, please visit your web browser's
-                official web pages.
+                {t("forAnyOtherWebBrowser")}
               </p>
-              <h2>More Information about Cookies</h2>
+              <h2>{t("moreInformationAboutCookies")}</h2>
               <p id="item-5">
-                You can learn more about cookies:{" "}
+                {t("youCanLearnMoreAboutCookies")}:{" "}
                 <Link
                   to="https://www.freeprivacypolicy.com/blog/cookies/"
                   target="_blank"
                 >
-                  Cookies: What Do They Do?
+                  {t("cookiesWhatDoTheyDo")}?
                 </Link>
                 .
               </p>
-              <h2>Contact Us</h2>
+              <h2>{t("contactUs")}</h2>
               <p>
-                If you have any questions about this Cookies Policy, You can
-                contact us:
+                {t("ifYouHaveAnyQuestions")}:
               </p>
               <ul>
                 <li>
-                  By visiting this page on our website:{" "}
+                  {t("byVisitingThisPageOnOurWebsite")}:{" "}
                   <Link
                     to="https://rentogo.com.tr/contact"
                     rel="external nofollow noopener"

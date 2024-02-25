@@ -1,10 +1,13 @@
 import React from 'react'
 import { Footer, Navbar } from '../../components';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 type Props = {}
 
 const VehicleConditionReports = (props: Props) => {
+  const { t } = useTranslation();
+  
   return (
     <>
       <Navbar />
@@ -20,7 +23,7 @@ const VehicleConditionReports = (props: Props) => {
 
             <div className="btnContainer">
               <Link to="/" type="button" className="btn">
-                Take Me Back
+                {t("takeMeBack")}
               </Link>
             </div>
           </div>
