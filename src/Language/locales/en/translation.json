@@ -412,7 +412,42 @@
   "keepYourDevicesSecure": "Keep Your Devices Secure:",
   "regularlyUpdateYourDevices": "Regularly update your devices (computers, smartphones, tablets) with the latest security patches and antivirus software to protect against malware and other cyber threats.",
   "atRentogoWeAreCommitted": "At Rentogo, we are committed to ensuring the security of our users. If you have any security concerns or notice any suspicious activity, please do not hesitate to contact us. Thank you for your vigilance regarding security. Best regards, The Rentogo Team.",
-  "ifYouHaveAnyQuestion": "If you have any questions about these Terms and Conditions, You can contact us:"
+  "ifYouHaveAnyQuestion": "If you have any questions about these Terms and Conditions, You can contact us:",
+
+
+
+  "carRentalAgreement": "CAR RENTAL AGREEMENT",
+  "lessor": "Lessor:",
+  "lessorsName": "[Lessor's Name and Address]",
+  "lessee": "Lessee:",
+  "lesseesAdress": "Lessee's Address:",
+  "thisAgreementIsMade": "This agreement is made between the Lessee specified above and the Lessor specified above concerning the rental of a vehicle.",
+  "1.details": "1. Details of the Leased Vehicle:",
+  "vehicleMakeAndModel": "Vehicle Make and Model: [Vehicle Make and Model]",
+  "licensePlateNumber": "License Plate Number: [License Plate Number]",
+  "chassisNumber": "Chassis Number: [Chassis Number]",
+  "rentalStartDate": "Rental Start Date: [Start Date of Rental]",
+  "return": "Return Date: [End Date of Rental]",
+  "rentalPeriod": "Rental Period: [Rental Period]",
+  "2.rental": "2. Rental Fee and Payment Conditions:",
+  "rentalFee": "Rental Fee: [Rental Fee]",
+  "paymentMethod2": "Payment Method: [Payment Method]",
+  "depositAmount": "Deposit Amount: [Deposit Amount]",
+  "depositRefund": "Deposit Refund: The deposit will be refunded at the end of the rental period if the vehicle incurs no damage.",
+  "3.rental": "3. Rental Terms and Conditions:",
+  "theLesseeMay": "The Lessee may not transfer or sublease the vehicle to any third party without the Lessor's permission.",
+  "theLesseeMust": "The Lessee must use the vehicle responsibly throughout the specified rental period.",
+  "theLesseeMustReturn": "The Lessee must return the vehicle promptly on the specified return date. Delays may incur additional charges.",
+  "theLesseeIs": "The Lessee is responsible for adhering to the specified traffic rules and regulations while using the vehicle.",
+  "4.insurance": "4. Insurance and Damages:",
+  "theLeasedVehicle": "The leased vehicle is covered by comprehensive insurance. However, the Lessee may opt for additional insurance covering any damages to the vehicle.",
+  "theLesseeMustImmiadiately": "The Lessee must immediately inform the Lessor upon identifying any damage to the vehicle.",
+  "5.cancellation": "5. Cancellation Conditions:",
+  "theLesseeMustCancel": "The Lessee must cancel the reservation at least 24 hours before the start of the rental period. Otherwise, cancellation fees may apply.",
+  "thisAgreement": "This agreement is signed as evidence of the agreement between the parties:",
+  "lessorsSignature": "Lessor's Signature:",
+  "lesseesSignature": "Lessee's Signature:",
+  "ifYouHave": "If you have any questions about these Terms and Conditions, You can contact us:"
 
 
 

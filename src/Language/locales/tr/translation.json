@@ -411,7 +411,42 @@
   "keepYourDevicesSecure": "Cihazlarınızı Güvende Tutun:",
   "regularlyUpdateYourDevices": "Kötü amaçlı yazılımlara ve diğer siber tehditlere karşı koruma sağlamak için cihazlarınızı (bilgisayarlar, akıllı telefonlar, tabletler) en son güvenlik yamaları ve antivirüs yazılımıyla düzenli olarak güncelleyin.",
   "atRentogoWeAreCommitted": "Rentogo olarak kullanıcılarımızın güvenliğini sağlamaya kendimizi adadık. Herhangi bir güvenlik endişeniz varsa veya herhangi bir şüpheli etkinlik fark ederseniz, lütfen bizimle iletişime geçmekten çekinmeyin. Güvenlik konusundaki duyarlılığınız için teşekkür ederiz. Saygılarımızla, Rentogo Ekibi.",
-  "ifYouHaveAnyQuestion": "Bu Şartlar ve Koşullar hakkında herhangi bir sorunuz varsa bizimle iletişime geçebilirsiniz:"
+  "ifYouHaveAnyQuestion": "Bu Şartlar ve Koşullar hakkında herhangi bir sorunuz varsa bizimle iletişime geçebilirsiniz:",
+
+
+
+  "carRentalAgreement": "ARAÇ KİRALAMA SÖZLEŞMESİ",
+  "lessor": "Kiralayan:",
+  "lessorsName": "[Kiralayanın Adı ve Adresi]",
+  "lessee": "Kiracı:",
+  "lesseesAdress": "Kiracının Adresi:",
+  "thisAgreementIsMade": "Bu sözleşme yukarıda belirtilen Kiracı ile yukarıda belirtilen Kiralayan arasında araç kiralamaya ilişkin olarak yapılmıştır.",
+  "1.details": "1. Kiralanan Aracın Detayları:",
+  "vehicleMakeAndModel": "Araç Markası ve Modeli: [Araç Markası ve Modeli]",
+  "licensePlateNumber": "Plaka Numarası: [Plaka Numarası]",
+  "chassisNumber": "Şasi Numarası: [Şasi Numarası]",
+  "rentalStartDate": "Kiralama Başlangıç Tarihi: [Kiralama Başlangıç Tarihi]",
+  "return": "İade Tarihi: [Kiralama Bitiş Tarihi]",
+  "rentalPeriod": "Kiralama Süresi: [Kiralama Süresi]",
+  "2.rental": "2. Kira Ücreti ve Ödeme Koşulları:",
+  "rentalFee": "Kiralama Ücreti: [Kiralama Ücreti]",
+  "paymentMethod2": "Ödeme Yöntemi: [Ödeme Yöntemi]",
+  "depositAmount": "Yatırılan Tutar: [Yatırılan Tutar]",
+  "depositRefund": "Depozito İadesi: Araçta herhangi bir hasar olmaması durumunda depozito kiralama süresi sonunda iade edilecektir.",
+  "3.rental": "3. Kiralama Hüküm ve Koşulları:",
+  "theLesseeMay": "Kiracı, Kiralayanın izni olmadan aracı üçüncü kişilere devredemez veya alt kiraya veremez.",
+  "theLesseeMust": "Kiracı, belirtilen kiralama süresi boyunca aracı sorumlu bir şekilde kullanmalıdır.",
+  "theLesseeMustReturn": "Kiracı, aracı belirtilen iade tarihinde derhal iade etmelidir. Gecikmeler ek ücrete neden olabilir.",
+  "theLesseeIs": "Aracı kullanırken belirtilen trafik kural ve yönetmeliklerine uymak Kiracının sorumluluğundadır.",
+  "4.insurance": "4. Sigorta ve Hasarlar:",
+  "theLeasedVehicle": "Kiralanan araç kapsamlı sigorta kapsamındadır. Ancak Kiracı, araca gelebilecek hasarları kapsayan ek sigortayı tercih edebilir.",
+  "theLesseeMustImmiadiately": "Kiracı, araçta herhangi bir hasar tespit ettiğinde derhal Kiralayanı bilgilendirmelidir.",
+  "5.cancellation": "5. İptal Koşulları:",
+  "theLesseeMustCancel": "Kiracı, kiralama süresinin başlamasından en az 24 saat önce rezervasyonu iptal etmelidir. Aksi takdirde iptal ücretleri geçerli olabilir.",
+  "thisAgreement": "Bu sözleşme taraflar arasındaki anlaşmanın kanıtı olarak imzalanmıştır:",
+  "lessorsSignature": "Kiralayanın İmzası:",
+  "lesseesSignature": "Kiracının İmzası:",
+  "ifYouHave": "Bu Şartlar ve Koşullar hakkında herhangi bir sorunuz varsa bizimle iletişime geçebilirsiniz:"
 
 
 }
