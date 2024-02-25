@@ -39,6 +39,7 @@ import {
 } from "../pages";
 import PrivateRoute from "../utils/PrivateRoute";
 import Successful from "../pages/ResponsePages/ResetPasswordResponse/Successful";
+import BeforeCash from "../pages/PaymentPage/BeforeCash";
 
 const Router = () => {
   return (
@@ -75,6 +76,7 @@ const Router = () => {
 
         {/*payment & reservation pages */}
         <Route path="/reservation/:id" element={<ReservationPage />} />
+        <Route path="/payment/cash-payment-confirmation" element={<PrivateRoute element={<BeforeCash/>}/>} />
         <Route path="/payment/cash" element={<PrivateRoute element={<Cash/>}/>} />
         <Route path="/payment/online" element={<PrivateRoute element={<Online/>}/>} />
         <Route path="/payment/bankTransfer" element={<PrivateRoute element={<BankTransfer/>}/>} />

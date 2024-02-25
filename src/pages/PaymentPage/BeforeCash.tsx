@@ -13,7 +13,7 @@ import MailService from "../../services/emailService/MailService";
 
 type Props = {};
 
-const Cash = (props: Props) => {
+const BeforeCash = (props: Props) => {
   const { t } = useTranslation();
   const {car} = useSelector((state:any) => state.rental);
   const {priceCard} = useSelector((state:any)=> state.rental)
@@ -156,13 +156,6 @@ const Cash = (props: Props) => {
 
 <div className="col-xl-7 col-l-7 col-md-12 col-sm-12">
   <button onClick={handleButtonClick}>
-    <ReceiptPDF
-      auth={auth}
-      currentDate={currentDate}
-      amount={(priceCard.totalPrice + priceCard.discountRate).toFixed(2)} 
-      discountRate={priceCard.discountRate.toFixed(2)} 
-      totalAmount={priceCard.totalPrice.toFixed(2)}
-    />
     Onaylıyorum
   </button>
 </div>
@@ -186,4 +179,4 @@ const Cash = (props: Props) => {
   );
 };
 
-export default Cash;
+export default BeforeCash;
