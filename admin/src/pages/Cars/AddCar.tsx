@@ -159,14 +159,17 @@ const AddCar = (props: Props) => {
       })
 
   }
-  const handleBrandChange =  (selectedBrand: number) => {
-    console.log(selectedBrand);
-    
+  const handleBrandChange =  (selectedBrand: number, setFieldValue: any) => {
     const brand = brands.find((brand) => brand.id == selectedBrand);
-    const selectedBrandModels = models.filter((model: ModelModel) => model.brand.name === brand!.name) // Bu fonksiyonun gerçek uygulamada nasıl yapıldığına bağlı olarak değişir
-    console.log("asdasd",selectedBrandModels);
-    
+    const selectedBrandModels = models.filter((model: ModelModel) => model.brand.name === brand!.name)
     setFilterModels(selectedBrandModels); 
+  
+    
+    if (selectedBrandModels.length > 0) {
+      setFieldValue('modelId', selectedBrandModels[0].id);
+    } else {
+      setFieldValue('modelId', '');
+    }
   }
 
 
@@ -205,7 +208,8 @@ const AddCar = (props: Props) => {
           <h2>Add New Car</h2>
         </div>
         <div className="formContainer">
-          <Formik initialValues={addCarInitialValues} validationSchema={AddCarRequestSchema} validateOnBlur={true}  onSubmit={handleSubmit}>
+        <Formik initialValues={addCarInitialValues} validationSchema={AddCarRequestSchema} validateOnBlur={true}  onSubmit={handleSubmit}>
+            {({ setFieldValue }) => (
             <Form>
               <div className="row">
                 <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
@@ -230,7 +234,7 @@ const AddCar = (props: Props) => {
               <div className="row">
               <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
                   <label htmlFor="brandId" className="form-label">Brand</label>
-                  <Field as="select" name="brandId"  className="form-control" onChange={(e: any) => handleBrandChange(e.target.value)}>
+                  <Field as="select" name="brandId"  className="form-control" onChange={(e: any) => handleBrandChange(e.target.value, setFieldValue)}>
                 
                     {brands.map((brand: any) => (
                       <option key={brand.id} value={brand.id}>{brand.name}  </option>
@@ -349,7 +353,7 @@ const AddCar = (props: Props) => {
                 <button title="Save" type="submit" className="btn btn-sm btn-submit">Save</button>
                 <Link to="/cars" className="btn btn-sm btn-cancel">Cancel</Link>
               </div>
-            </Form>
+            </Form>)}
 
           </Formik>
           <ToastContainer position="top-center" />
