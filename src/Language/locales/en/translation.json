@@ -222,6 +222,17 @@
   "yourPaymentInformationIsAsAbove": "Your payment information is as above. Please have this receipt with you when you come to pick up the vehicle.",
 
 
+  "oldPasswordFieldCannotBeEmpty": "Old password field cannot be empty",
+  "mustContainAtLeastOneUppercaseLetter": "Must contain at least one uppercase letter",
+  "mustContainAtLeastOneLowercaseLetter": "Must contain at least one lowercase letter",
+  "mustContainAtLeastOneDigit": "Must contain at least one digit",
+  "mustContainAtLeastOnePunctuationMark": "Must contain at least one punctuation mark",
+  "passwordBeAtLeast8CharacterLong": "Password be at least 8 character long",
+  "passwordFieldCannotBeEmpty": "Password field cannot be empty",
+  "passwordsMustMatch": "Passwords must match",
+  "pleaseConfirmYourPassword": "Please confirm your password",
+
+
 
 
 

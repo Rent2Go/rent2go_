@@ -220,6 +220,17 @@
   "yourPaymentInformationIsAsAbove": "Ödeme bilgileriniz yukarıdaki gibidir. Lütfen aracınızı almaya geldiğinizde bu makbuzu yanınızda bulundurun.",
 
 
+  "oldPasswordFieldCannotBeEmpty": "Eski şifre alanı boş olamaz",
+  "mustContainAtLeastOneUppercaseLetter": "En az bir büyük harf içermelidir",
+  "mustContainAtLeastOneLowercaseLetter": "En az bir küçük harf içermelidir",
+  "mustContainAtLeastOneDigit": "En az bir rakam içermelidir",
+  "mustContainAtLeastOnePunctuationMark": "En az bir noktalama işareti içermelidir",
+  "passwordBeAtLeast8CharacterLong": "Şifre en az 8 karakter uzunluğunda olmalıdır",
+  "passwordFieldCannotBeEmpty": "Şifre alanı boş olamaz",
+  "passwordsMustMatch": "Şifreler aynı olmalıdır",
+  "pleaseConfirmYourPassword": "Lütfen şifrenizi doğrulayınız",
+
+
 
 
 
