@@ -6,6 +6,12 @@ import { useSelector } from "react-redux";
 import { useAuth } from "../../contexts/AuthContext";
 import { UserAuthModel } from "../../models/user/UserAuth";
 import { useTranslation } from "react-i18next";
+import {
+  IoPersonOutline,
+  IoMailOutline,
+  IoPhonePortraitOutline,
+  IoCalendarClearOutline 
+} from "react-icons/io5";
 
 type Props = {};
 
@@ -14,33 +20,44 @@ const CustomerCard = (props: Props) => {
   const customer = useAuth();
   console.log(customer.authInformation.user.firstname);
   return (
-    <div className="customerCard">
-      <div className="rowInfo">
-        <p>
-          <span>
-            <b>{t("name")} : </b>{" "}
-          </span>
-          <span>
-            {customer.authInformation.user.firstname}{" "}
-            {customer.authInformation.user.lastname}
-          </span>
-        </p>
-      </div>
-      <div className="rowInfo">
-        <p>
-          <span>
-            <b>{t("email")} : </b>{" "}
-          </span>
-          <span>{customer.authInformation.user.email}</span>
-        </p>
-      </div>
-      <div className="rowInfo">
-        <p>
-          <span>
-            <b>{t("phone")} : </b>{" "}
-          </span>
-          <span>{customer.authInformation.user.phoneNumber}</span>
-        </p>
+    <div className="customerCardContainer">
+      <div className="row">
+        <div className="col-12">
+          <h6>Personal Information</h6>
+        </div>
+        <div className="col-12">
+          <p>
+            <span>
+              <b>
+                <IoPersonOutline />
+              </b>
+            </span>
+            <span>
+              {customer.authInformation.user.firstname}{" "}
+              {customer.authInformation.user.lastname}
+            </span>
+          </p>
+        </div>
+        <div className="col-12">
+          <p>
+            <span>
+              <b>
+                <IoMailOutline />
+              </b>{" "}
+            </span>
+            <span>{customer.authInformation.user.email}</span>
+          </p>
+        </div>
+        <div className="col-12">
+          <p>
+            <span>
+              <b>
+                <IoPhonePortraitOutline />
+              </b>{" "}
+            </span>
+            <span>{customer.authInformation.user.phoneNumber}</span>
+          </p>
+        </div>
       </div>
     </div>
   );
