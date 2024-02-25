@@ -76,10 +76,10 @@ console.log(user?.customer);
     <div className='driversLicense container'>
       <h2 className='mainHead1'>{t("driversLicense")}</h2>
       <div className='form'>
-        <Formik initialValues={{
+      <Formik initialValues={{
           id:user.customer.id,
-          issueDate:user.customer.issueDate,
-          expiryDate:user.customer.expiryDate
+          issueDate:user.customer.issueDate == null ? new Date() : user.customer.issueDate,
+          expiryDate:user.customer.expiryDate || new Date(),
 
         }} validationSchema={driversLicenseSchema} onSubmit={handleSubmit}>
           <Form>
