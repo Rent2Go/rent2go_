@@ -69,7 +69,7 @@ const Online = (props: Props) => {
     totalPrice: rentalInfo.priceCard.totalPrice
 
   }
-  console.log(mailInfo);
+ 
   
 
 

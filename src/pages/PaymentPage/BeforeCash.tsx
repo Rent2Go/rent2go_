@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Footer, Navbar, PriceCard } from "../../components";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import "./payment.css";
 import { Form, Formik } from "formik";
 
@@ -10,15 +10,17 @@ import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { MailInfoModel } from "../../models/mail/MailInfıModel";
 import MailService from "../../services/emailService/MailService";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 type Props = {};
 
-const Cash = (props: Props) => {
+const BeforeCash = (props: Props) => {
   const { t } = useTranslation();
-  const {car} = useSelector((state:any) => state.rental);
-  const {priceCard} = useSelector((state:any)=> state.rental)
-  console.log(priceCard);
-  
+  const { car } = useSelector((state: any) => state.rental);
+  const { priceCard } = useSelector((state: any) => state.rental);
+  const navigate = useNavigate();
+
   const auth = useAuth();
   const getCurrentDate = (): string => {
     const currentDate = new Date();
@@ -29,35 +31,36 @@ const Cash = (props: Props) => {
     return `${day}.${month}.${year}`;
   };
 
-  const rentalInfo = useSelector((state:any) => state.rental); 
-  
-  const handleButtonClick = async () => {
-  const mailInfo:MailInfoModel = {
-    name: rentalInfo.user.name + ' ' + rentalInfo.user.surname,
-    email: rentalInfo.user.email,
-    phone: rentalInfo.user.phoneNumber,
-    startDate: new Date(rentalInfo.startDate),
-    endDate: new Date(rentalInfo.endDate),
-    totalDay: rentalInfo.day,
-    plate: rentalInfo.car.plate,
-    carInfo: rentalInfo.car.model.brand.name + ' ' + rentalInfo.car.model.name,
-    totalPrice: rentalInfo.priceCard.totalPrice
+  const rentalInfo = useSelector((state: any) => state.rental);
 
-  }
-  try {
-    await MailService.cashSuccessful(mailInfo);
-    console.log('Mail sent successfully');
-  } catch (error) {
-    console.error('Mail post error', error);
-  }};
+  const handleButtonClick = async () => {
+    const mailInfo: MailInfoModel = {
+      name: rentalInfo.user.name + " " + rentalInfo.user.surname,
+      email: rentalInfo.user.email,
+      phone: rentalInfo.user.phoneNumber,
+      startDate: new Date(rentalInfo.startDate),
+      endDate: new Date(rentalInfo.endDate),
+      totalDay: rentalInfo.day,
+      plate: rentalInfo.car.plate,
+      carInfo:
+        rentalInfo.car.model.brand.name + " " + rentalInfo.car.model.name,
+      totalPrice: rentalInfo.priceCard.totalPrice,
+    };
+    try {
+      await MailService.cashSuccessful(mailInfo);
+      toast.success("Mail sent successfully");
+      setTimeout(() => {
+        navigate("/payment/cash");
+      }, 3000);
+    } catch (error) {
+      console.error("Mail post error", error);
+    }
+  };
 
   useEffect(() => {
+    sessionStorage.setItem("rentalInfo", JSON.stringify(rentalInfo));
+  }, [rentalInfo]);
 
-    sessionStorage.setItem('rentalInfo', JSON.stringify(rentalInfo));
-  }, [rentalInfo]); 
-
-
- 
   const currentDate = getCurrentDate();
   const { selectedPaymentMethod } = useParams<{
     selectedPaymentMethod: string;
@@ -70,7 +73,9 @@ const Cash = (props: Props) => {
       <div className="payment container">
         <div className="secContainer shadow-rounded-box">
           <div className="headingDiv">
-            <h2>{t("cashPayment")} {selectedPaymentMethod}</h2>
+            <h2>
+              {t("cashPayment")} {selectedPaymentMethod}
+            </h2>
           </div>
           <div className="contentDiv">
             <div className="formContainer">
@@ -119,7 +124,12 @@ const Cash = (props: Props) => {
                       </p>
                     </div>
                     <div className="col-xl-3 col-l-3 col-md-6 col-sm-6">
-                      <p>{(priceCard.totalPrice + priceCard.discountRate).toFixed(2)} ₺</p>
+                      <p>
+                        {(
+                          priceCard.totalPrice + priceCard.discountRate
+                        ).toFixed(2)}{" "}
+                        ₺
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -141,7 +151,7 @@ const Cash = (props: Props) => {
                   <div className="row">
                     <div className="col-xl-5 col-l-5 col-md-6 col-sm-6">
                       <p>
-                        <b>{t("totalAmount")} :  </b>
+                        <b>{t("totalAmount")} : </b>
                       </p>
                     </div>
                     <div className="col-xl-3 col-l-3 col-md-6 col-sm-6">
@@ -152,19 +162,9 @@ const Cash = (props: Props) => {
               </div>
 
               <div className="row btnRow">
-              
-
-<div className="col-xl-7 col-l-7 col-md-12 col-sm-12">
-  <button onClick={handleButtonClick}>
-    <ReceiptPDF
-      auth={auth}
-      currentDate={currentDate}
-      amount={(priceCard.totalPrice + priceCard.discountRate).toFixed(2)} 
-      discountRate={priceCard.discountRate.toFixed(2)} 
-      totalAmount={priceCard.totalPrice.toFixed(2)}
-    />
-  </button>
-</div>
+                <div className="col-xl-7 col-l-7 col-md-12 col-sm-12 scsBtn">
+                  <button onClick={handleButtonClick}>Onaylıyorum</button>
+                </div>
 
                 <div className="col-xl-4 col-l-4 col-md-12 col-sm-12">
                   <Link
@@ -185,4 +185,4 @@ const Cash = (props: Props) => {
   );
 };
 
-export default Cash;
+export default BeforeCash;

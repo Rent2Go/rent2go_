@@ -113,7 +113,7 @@ const ReservationPage = () => {
   }
   console.log(user?.customer.driverLicenceAge);
   
-  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("cash");
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("cash-payment-confirmation");
   const handlePaymentMethodChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -294,7 +294,7 @@ const ReservationPage = () => {
                         onChange={handlePaymentMethodChange}
                       >
                         <FormControlLabel
-                          value="cash"
+                          value="cash-payment-confirmation"
                           control={<Radio />}
                           label={t("cash")}
                         />
