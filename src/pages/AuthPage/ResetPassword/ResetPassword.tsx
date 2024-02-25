@@ -13,6 +13,7 @@ import { ResetPasswordRequest } from "../../../models/requests/user/ResetPasswor
 
 import { FormikInput } from "../../../components";
 import "../styles/auth.css";
+import { AiOutlineClose } from "react-icons/ai";
 type Props = {};
 const ResetPassword = (props: Props) => {
   const authContext = useAuth();
@@ -20,13 +21,13 @@ const ResetPassword = (props: Props) => {
 
   const resetPasswordInitialValues: ResetPasswordRequest = {
     email: "",
-    firstname: "",
+    idCardNumber: "",
   };
   const resetPasswordValidationSchema = object({
     email: string()
       .required("Email field is required.")
       .email("Invalid email format."),
-    firstname: string().required("first Name field is required."),
+    idCardNumber: string().required("Id Card Number field is required."),
   });
 
   const resetPasswordHandleSubmit = async (values: ResetPasswordRequest) => {
@@ -64,10 +65,10 @@ const ResetPassword = (props: Props) => {
                   </div>
                   <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
                     <FormikInput
-                      name="firstname"
+                      name="idCardNumber"
                       type="text"
-                      label="First Name"
-                      placeHolder="Enter Your First Name"
+                      label="Id Card Number"
+                      placeHolder="Enter Your Id Card Number"
                     />
                   </div>
                 </div>
@@ -80,17 +81,18 @@ const ResetPassword = (props: Props) => {
                     {/* Same as */}
                   </div>
                   <ToastContainer
-                    position="top-center"
-                    autoClose={5000}
-                    hideProgressBar={false}
-                    newestOnTop={false}
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                    theme="light"
-                  />
+  position="top-center"
+  autoClose={5000}
+  hideProgressBar={false}
+  newestOnTop={false}
+  closeOnClick
+  rtl={false}
+  pauseOnFocusLoss
+  draggable
+  pauseOnHover
+  theme="light"
+  style={{ padding: "1px" }}
+  closeButton={<AiOutlineClose size={20} />}/>
 
                   <div className="col-md-12 col-sm-12">
                     <span>Rent2Go Business</span>

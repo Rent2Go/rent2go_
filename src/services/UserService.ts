@@ -29,7 +29,7 @@ class UserService extends BaseService<GetAllUserResponse, GetByIdUserResponse, A
         changePasswordRequest: ChangePasswordRequest,
         accessToken:any
     ) {
-        return axiosInstance.post<string>(
+        return axiosInstance.patch<string>(
             `${this.apiUrl}/changepassword`,
             changePasswordRequest,
             {

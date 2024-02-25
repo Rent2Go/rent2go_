@@ -38,6 +38,7 @@ import {
   TutorialPage,
 } from "../pages";
 import PrivateRoute from "../utils/PrivateRoute";
+import Successful from "../pages/ResponsePages/ResetPasswordResponse/Successful";
 
 const Router = () => {
   return (
@@ -82,6 +83,7 @@ const Router = () => {
         <Route path="/payment-successful" element={<SuccessfulPayment />} />
         <Route path="/payment-failed" element={<FailedPayment />} />
         <Route path="/reset-password-successful" element={<SuccessfulResetPassword />}/>
+        <Route path="/password-change-successful" element={<Successful/>}/>
         <Route path="/email-verification-successful" element={<VerificationSuccessful />}/>
         <Route path="/email-verification-failed" element={<VerificationFailed />}/>
         <Route path="/email-verification-expired" element={<VerificationExpired />}/>
