@@ -14,8 +14,9 @@ const ListRental: React.FC<Props> = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [pageSize, setPageSize] = useState<number>(3);
   const [totalPages, setTotalPages] = useState<number>(2);
-  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [plateNumber, setPlateNumber] = useState<string>("");
+  const [displayDate, setDisplayDate] = useState(new Date());
 
   const getRentals = async () => {
     try {
@@ -56,6 +57,16 @@ const ListRental: React.FC<Props> = () => {
       console.log("Error fetching rentals", error);
     }
   };
+  const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newDate = e.target.value ? new Date(e.target.value) : null;
+    setDisplayDate(newDate || new Date());
+    setSelectedDate(newDate);
+  };
+  const handleClearAll = () => {
+    setFilterStatus("");
+    setSelectedDate(null);
+    setPlateNumber("");
+  };
 
   useEffect(() => {
     getRentals();
@@ -95,16 +106,8 @@ const ListRental: React.FC<Props> = () => {
             <div className="filter__widget-01">
               <input
                 type="date"
-                value={
-                  selectedDate
-                    ? selectedDate.toISOString().substring(0, 10)
-                    : ""
-                }
-                onChange={(e) =>
-                  setSelectedDate(
-                    e.target.value ? new Date(e.target.value) : null
-                  )
-                }
+                value={displayDate.toISOString().substring(0, 10)}
+                onChange={handleDateChange}
               />
             </div>
 
@@ -120,14 +123,7 @@ const ListRental: React.FC<Props> = () => {
               />
             </div>
 
-            <button
-              className="clear-all"
-              onClick={() => {
-                setFilterStatus("");
-                setSelectedDate(null);
-                setPlateNumber("");
-              }}
-            >
+            <button className="clear-all" onClick={handleClearAll}>
               Tümünü Temizle
             </button>
           </div>
