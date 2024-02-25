@@ -38,9 +38,11 @@
             width: 350px;
         }
         .img-fluid {
-            max-width: 100%;
-            height: auto;
-        }
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 50%;
+          }
         
     }
     
