@@ -163,7 +163,6 @@ const Cash = (props: Props) => {
       discountRate={priceCard.discountRate.toFixed(2)} 
       totalAmount={priceCard.totalPrice.toFixed(2)}
     />
-    Onaylıyorum
   </button>
 </div>
 
