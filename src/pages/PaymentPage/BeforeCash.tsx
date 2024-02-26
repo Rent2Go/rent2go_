@@ -70,7 +70,7 @@ const BeforeCash = (props: Props) => {
   return (
     <>
       <Navbar />
-      <div className="payment container">
+      <div className="payment container-fluid">
         <div className="secContainer shadow-rounded-box">
           <div className="headingDiv">
             <h2>
@@ -78,7 +78,36 @@ const BeforeCash = (props: Props) => {
             </h2>
           </div>
           <div className="contentDiv">
-            <div className="formContainer">
+            <div className="informationContainer shadow-rounded-box">
+              <h2>Sevgili Müşterimiz,</h2>
+              <p>
+                Rezervasyon işleminizi nakit ödeme seçeneği ile gerçekleştirmeyi
+                seçtiniz. Lütfen aşağıdaki bilgileri dikkatlice okuyunuz:
+              </p>
+
+              <p>
+                Rezervasyonunuz, seçtiğiniz araç ve belirttiğiniz tarihler için
+                geçerlidir.
+                <br />
+                Ödemenizi, rezervasyonun başlangıç tarihinden önce şirketimizin
+                ofisine gelerek gerçekleştirmeniz gerekmektedir.
+                <br />
+                Ödemenizi yapmadan önce lütfen rezervasyon bilgilerinizi kontrol
+                edin ve onaylayın.
+                <br />
+                Ödeme yapılmadan araç teslimi gerçekleştirilmeyecektir.
+                <br />
+                Rezervasyonunuz ve ödemeniz hakkında herhangi bir sorunuz
+                olursa, lütfen bizimle iletişime geçiniz.
+              </p>
+
+              <p>
+                Bu bilgilendirme mesajını okuduğunuzu ve anladığınızı onaylamak
+                için 'Kabul Et' butonuna tıklayınız. Kabul ettiğinizde,
+                rezervasyon detaylarınızı içeren bir e-posta alacaksınız.
+              </p>
+            </div>
+            <div className="formContainer shadow-rounded-box">
               <div className="row infoRow">
                 <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
                   <div className="row ">
@@ -116,65 +145,54 @@ const BeforeCash = (props: Props) => {
               </div>
 
               <div className="row amountRow">
-                <div className="col-8">
-                  <div className="row ">
-                    <div className="col-xl-5 col-l-5 col-md-6 col-sm-6">
-                      <p>
-                        <b>{t("amount")} : </b>
-                      </p>
-                    </div>
-                    <div className="col-xl-3 col-l-3 col-md-6 col-sm-6">
-                      <p>
-                        {(
-                          priceCard.totalPrice + priceCard.discountRate
-                        ).toFixed(2)}{" "}
-                        ₺
-                      </p>
+                <div className="row">
+                  <div className="col-xl-6 col-8">
+                    <div className="row">
+                      <div className="col-12 subAmountRow">
+                        <p>
+                          <b>{t("amount")} : </b>
+                          {(
+                            priceCard.totalPrice + priceCard.discountRate
+                          ).toFixed(2)}{" "}
+                          ₺
+                        </p>
+                      </div>
+                      <div className="col-12 subAmountRow">
+                        {" "}
+                        <p>
+                          <b>{t("discount")} : </b>
+                          {priceCard.discountRate.toFixed(2)} ₺
+                        </p>
+                      </div>
+                      <div className="col-12 subAmountRow">
+                        {" "}
+                        <p>
+                          <b>{t("totalAmount")} : </b>
+                          {priceCard.totalPrice.toFixed(2)} ₺
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="col-8">
-                  {" "}
-                  <div className="row">
-                    <div className="col-xl-5 col-l-5 col-md-6 col-sm-6">
-                      <p>
-                        <b>{t("discount")} : </b>
-                      </p>
-                    </div>
-                    <div className="col-xl-3 col-l-3 col-md-6 col-sm-6">
-                      <p>{priceCard.discountRate.toFixed(2)} ₺</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-8">
-                  {" "}
-                  <div className="row">
-                    <div className="col-xl-5 col-l-5 col-md-6 col-sm-6">
-                      <p>
-                        <b>{t("totalAmount")} : </b>
-                      </p>
-                    </div>
-                    <div className="col-xl-3 col-l-3 col-md-6 col-sm-6">
-                      <p>{priceCard.totalPrice.toFixed(2)} ₺</p>
+                  <div className="col-xl-5 col-4 mt-3">
+                    <div className="logoRow">
+                      <img src="/assets/logo.png" alt="logo"/>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="row btnRow">
-                <div className="col-xl-7 col-l-7 col-md-12 col-sm-12 scsBtn">
-                  <button onClick={handleButtonClick}>Onaylıyorum</button>
-                </div>
+              <div className="btnRow">
+                <button className="btn btn-warning" onClick={handleButtonClick}>
+                  Accept
+                </button>
 
-                <div className="col-xl-4 col-l-4 col-md-12 col-sm-12">
-                  <Link
-                    type="button"
-                    to={`/reservation/${car.id}`}
-                    className="btn btn-cancel"
-                  >
-                    {t("cancel")}
-                  </Link>
-                </div>
+                <Link
+                  type="button"
+                  to={`/reservation/${car.id}`}
+                  className="btn btn-cancel"
+                >
+                  {t("cancel")}
+                </Link>
               </div>
             </div>
           </div>

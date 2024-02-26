@@ -345,7 +345,7 @@ const ReservationPage = () => {
                             onChange={handlePaymentMethodChange}
                           >
                             <FormControlLabel
-                              value="cash"
+                              value="cash-payment-confirmation"
                               control={<Radio />}
                               label={t("cash")}
                             />

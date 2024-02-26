@@ -1,3 +1,8 @@
+.subAmountRow p {
+  display: grid;
+  grid-template-columns: 25% 25%;
+}
+
 .payment {
   padding: 4rem 2rem;
 }
@@ -18,13 +23,25 @@
   margin: 0.5rem;
   padding: 0 4rem 2rem 4rem;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+.payment .secContainer .contentDiv .informationContainer {
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  padding: 1.8rem;
+  text-align: left;
+  color: var(--blackColor);
+}
+.payment .secContainer .contentDiv .informationContainer p {
+  font-size: 0.96rem;
 }
 .payment .secContainer .contentDiv .formContainer {
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  padding: 2rem 8rem 4rem 8rem;
+  padding: 4rem 2rem 6.5rem 2rem;
   margin: 0 6rem 4rem 6rem;
   display: flex;
   flex-direction: column;
@@ -50,6 +67,10 @@
 }
 .payment .secContainer .contentDiv .formContainer .form .btnRow {
   gap: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .payment .secContainer .contentDiv .formContainer .form .btnRow .btn {
   padding: 0.5rem 2rem;
@@ -95,6 +116,11 @@
 }
 .payment .secContainer .contentDiv .btnRow {
   gap: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem 0;
 }
 .payment .secContainer .contentDiv .btnRow .btn {
   padding: 0.5rem 2rem;
@@ -127,6 +153,24 @@
   }
   .payment .secContainer .contentDiv {
     padding: 0;
+  }
+  .payment .secContainer .contentDiv .formContainer {
+    margin: 0;
+    padding: 2rem;
+  }
+  .payment .secContainer .contentDiv .formContainer .form .btnRow {
+    -moz-column-gap: 2.5rem;
+         column-gap: 2.5rem;
+  }
+}
+@media screen and (max-width: 1020px) {
+  .payment .secContainer {
+    margin: 0;
+    padding: 0;
+  }
+  .payment .secContainer .contentDiv {
+    flex-direction: column;
+    row-gap: 1rem;
   }
   .payment .secContainer .contentDiv .formContainer {
     margin: 0;
