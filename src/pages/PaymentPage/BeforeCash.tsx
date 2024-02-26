@@ -79,32 +79,27 @@ const BeforeCash = (props: Props) => {
           </div>
           <div className="contentDiv">
             <div className="informationContainer shadow-rounded-box">
-              <h2>Sevgili Müşterimiz,</h2>
+              <h2 className="infoTitle">{t("informationRowTitle")}{" "}
+              {auth.authInformation.user.firstname }{" "}
+              {auth.authInformation.user.lastname.toUpperCase()}</h2>
               <p>
-                Rezervasyon işleminizi nakit ödeme seçeneği ile gerçekleştirmeyi
-                seçtiniz. Lütfen aşağıdaki bilgileri dikkatlice okuyunuz:
+              {t("informationRowP1")}
               </p>
 
               <p>
-                Rezervasyonunuz, seçtiğiniz araç ve belirttiğiniz tarihler için
-                geçerlidir.
+              {t("informationRowP21")}
                 <br />
-                Ödemenizi, rezervasyonun başlangıç tarihinden önce şirketimizin
-                ofisine gelerek gerçekleştirmeniz gerekmektedir.
+                {t("informationRowP22")}
                 <br />
-                Ödemenizi yapmadan önce lütfen rezervasyon bilgilerinizi kontrol
-                edin ve onaylayın.
+                {t("informationRowP23")}
                 <br />
-                Ödeme yapılmadan araç teslimi gerçekleştirilmeyecektir.
+                {t("informationRowP24")}
                 <br />
-                Rezervasyonunuz ve ödemeniz hakkında herhangi bir sorunuz
-                olursa, lütfen bizimle iletişime geçiniz.
+                {t("informationRowP25")}
               </p>
 
               <p>
-                Bu bilgilendirme mesajını okuduğunuzu ve anladığınızı onaylamak
-                için 'Kabul Et' butonuna tıklayınız. Kabul ettiğinizde,
-                rezervasyon detaylarınızı içeren bir e-posta alacaksınız.
+              {t("informationRowP4")}
               </p>
             </div>
             <div className="formContainer shadow-rounded-box">

@@ -542,8 +542,16 @@
   "useAtYourOwnRiskDisclaimer": "\"Kullanımın Riski Size Aittir\" Sorumluluk Reddi Beyanı",
   "allInformationInTheService": "Hizmetteki tüm bilgiler, eksiksizlik, doğruluk, güncellik veya bu bilgilerin kullanımından elde edilen sonuçlara ilişkin hiçbir garanti olmaksızın ve aşağıdakiler dahil ancak bunlarla sınırlı olmamak üzere açık veya zımni herhangi bir türde garanti olmaksızın \"olduğu gibi\" sağlanmaktadır. performans, ticari elverişlilik ve belirli bir amaca uygunluk garantileriyle sınırlıdır.",
   "theCompanyWillNotBeLiableToYou": "Şirket, Hizmet tarafından verilen bilgilere dayanarak alınan herhangi bir karar veya eylemden veya bunun sonucunda ortaya çıkan, özel veya benzer zararlardan, bu tür zararların olasılığı önceden bildirilmiş olsa bile, Size veya başka birine karşı sorumlu olmayacaktır.",
-  "ifYouHaveAnyQuestionsAboutThisDisclaimer": "Bu Sorumluluk Reddi Beyanı ile ilgili herhangi bir sorunuz varsa, Bizimle iletişime geçebilirsiniz:"
+  "ifYouHaveAnyQuestionsAboutThisDisclaimer": "Bu Sorumluluk Reddi Beyanı ile ilgili herhangi bir sorunuz varsa, Bizimle iletişime geçebilirsiniz:",
 
 
+  "informationRowTitle" : "Sevgili",
+  "informationRowP1" : "Rezervasyon işleminizi nakit ödeme seçeneği ile gerçekleştirmeyi seçtiniz. Lütfen aşağıdaki bilgileri dikkatlice okuyunuz:",
+  "informationRowP4" : "Bu bilgilendirme mesajını okuduğunuzu ve anladığınızı onaylamak için 'Kabul Et' butonuna tıklayınız. Kabul ettiğinizde, rezervasyon detaylarınızı içeren bir e-posta alacaksınız.",
+  "informationRowP21":"Rezervasyonunuz, seçtiğiniz araç ve belirttiğiniz tarihler için geçerlidir.",
+  "informationRowP22":"Ödemenizi, rezervasyonun başlangıç tarihinden önce şirketimizin ofisine gelerek gerçekleştirmeniz gerekmektedir.",
+  "informationRowP23":"Ödemenizi yapmadan önce lütfen rezervasyon bilgilerinizi kontrol edin ve onaylayın.",
+  "informationRowP24":" Ödeme yapılmadan araç teslimi gerçekleştirilmeyecektir.",
+  "informationRowP25":" Rezervasyonunuz ve ödemeniz hakkında herhangi bir sorunuz olursa, lütfen bizimle iletişime geçiniz."
 
 }
