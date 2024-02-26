@@ -1,5 +1,7 @@
 .search {
   padding: 2rem 0;
+  justify-content: center;
+  display: flex;
 }
 .search .secContainer {
   width: 75%;

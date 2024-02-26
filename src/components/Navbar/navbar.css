@@ -1,3 +1,14 @@
+.langDropDownA a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.1rem;
+  color: var(--textColor);
+  font-weight: 500;
+  -moz-column-gap: 0.25rem;
+       column-gap: 0.25rem;
+}
+
 .header {
   position: fixed;
   display: flex;
@@ -18,6 +29,7 @@
   gap: 2px;
   width: 60px;
   border-radius: 0.15rem;
+  padding: 0.5rem 3rem;
 }
 .header .signUp .languageDropdown:hover {
   background: var(--secondaryColor);
@@ -36,7 +48,7 @@
   width: 50px !important;
   transform: translate(88px, -5px) !important;
   padding: 0 0;
-  margin: 3rem -1.5rem;
+  margin: 4.25rem -5.5rem;
   width: 10px;
 }
 .header .signUp .languageDropdown .dropdown-menu a {

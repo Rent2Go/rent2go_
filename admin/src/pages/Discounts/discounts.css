@@ -2,27 +2,16 @@
   margin-top: 100px;
 }
 .discounts .secContainer {
-  margin: 1rem 2rem;
-  padding: 2rem 2rem;
-  gap: 4rem;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: flex-end;
 }
-.discounts .secContainer .formContainer {
-  border: 5px double var(--primary-color);
-  border-radius: 0.5rem;
-  min-height: 450px;
-  min-width: 750px;
-  padding: 2rem;
-  background: var(--recommend-car02-bg);
-}
+.discounts .secContainer .formContainer,
 .discounts .secContainer .tableContainer {
   border: 5px double var(--primary-color);
   border-radius: 0.5rem;
   min-height: 450px;
-  min-width: 750px;
+  margin: 2rem 4rem;
   padding: 2rem;
   background: var(--recommend-car02-bg);
 }

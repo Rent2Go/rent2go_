@@ -1,10 +1,17 @@
 .userTableCard {
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
+  height: 65vh;
 }
 .userTableCard table {
   align-items: center;
   border-radius: 0.5rem !important;
   vertical-align: middle;
+}
+.userTableCard table thead {
+  position: sticky;
+  z-index: 999;
+  top: 0;
+  background-color: var(--pureWhiteColor);
 }
 .userTableCard table th {
   text-align: left;

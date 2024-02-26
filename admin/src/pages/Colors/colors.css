@@ -86,6 +86,7 @@
   justify-content: flex-start;
   align-items: flex-end;
   gap: 1rem 2rem;
+  margin-bottom: 3rem;
 }
 .colors .secContainer .bottomContainer .colorListContainer table tr {
   border-bottom: 1px solid var(--heading-color);

@@ -13,7 +13,6 @@ import { AddDiscountRequest } from "../../models/requests/discounts/AddDiscountR
 
 import "./discounts.css";
 
-
 type Props = {};
 
 const Discounts = (props: Props) => {
@@ -21,8 +20,6 @@ const Discounts = (props: Props) => {
     discountCode: "",
     percentage: 0,
   };
-
-  
 
   const validationSchema = Yup.object({
     discountCode: Yup.string().required("Required"),
@@ -32,19 +29,15 @@ const Discounts = (props: Props) => {
 
   const navigation = useNavigate();
   const onSubmit = async (values: AddDiscountRequest) => {
-  
-      await DiscountService.create(values)
-        .then((response) => {
-          setIsSubmitting(true);
-          toast.success(response.data.message)
-        })
-        .catch((error) => {
-          toast.error(error.response.data.message.percentage)
-          console.log(error.response.data.message.percentage);
-          
-
-        });
-     
+    await DiscountService.create(values)
+      .then((response) => {
+        setIsSubmitting(true);
+        toast.success(response.data.message);
+      })
+      .catch((error) => {
+        toast.error(error.response.data.message.percentage);
+        console.log(error.response.data.message.percentage);
+      });
   };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -60,16 +53,14 @@ const Discounts = (props: Props) => {
     }
   };
   const deleteDiscount = async (id: number) => {
-
-      await DiscountService.delete(id)
-        .then((response) => {
-          setIsSubmitting(true);
-          toast.success(response.data.message)
-        })
-        .catch((error) => {
-         toast.error(error.response.data.message.name)
-        });
-     
+    await DiscountService.delete(id)
+      .then((response) => {
+        setIsSubmitting(true);
+        toast.success(response.data.message);
+      })
+      .catch((error) => {
+        toast.error(error.response.data.message.name);
+      });
   };
 
   useEffect(() => {
@@ -83,12 +74,17 @@ const Discounts = (props: Props) => {
 
   return (
     <div className="discounts">
-      <div className="titleContainer">
-        <h2>Discounts</h2>
+      <div className="row text-center m-5">
+        <div className="col-12">
+          {" "}
+          <div className="titleContainer">
+            <h2>Discounts</h2>
+          </div>
+        </div>
       </div>
       <div className="secContainer shadow-rounded-box">
         <div className="row">
-          <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
+          <div className="col-6">
             <div className="formContainer">
               <Formik
                 initialValues={initialValues}
@@ -133,7 +129,7 @@ const Discounts = (props: Props) => {
               <ToastContainer position="bottom-center" />
             </div>
           </div>
-          <div className="col-xl-6 col-l-6 col-md-12 col-sm-12">
+          <div className="col-6">
             <div className="tableContainer">
               <Table className="table table-rounded table-borderless table-hover">
                 <thead>
@@ -152,9 +148,8 @@ const Discounts = (props: Props) => {
                       <td>{discount.percentage}</td>
                       <td>
                         <Link
-                          to={`/discounts`} onClick={
-                            () => deleteDiscount(discount.id)
-                          }
+                          to={`/discounts`}
+                          onClick={() => deleteDiscount(discount.id)}
                           className="btn btn-sm btn-cancel"
                           title="Delete"
                         >
@@ -169,7 +164,6 @@ const Discounts = (props: Props) => {
           </div>
         </div>
       </div>
-  
     </div>
   );
 };

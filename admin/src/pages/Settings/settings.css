@@ -2,6 +2,9 @@
   padding: 0px 50px;
   padding-bottom: 50px;
 }
+.settings p {
+  color: var(--pureWhiteColor);
+}
 .settings .secContainer .settings__wrapper {
   padding: 2rem 6rem;
   border-radius: 5px;

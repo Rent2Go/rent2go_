@@ -102,36 +102,45 @@ const DetailRental = (props: Props) => {
 
   return (
     <div className="booking container">
-      <div className="secContainer shadow-rounded-box mb-2">
-        <div className="customerContainer">
-          <p>
-            Name:{" "}
-            <span>
-              {user?.name} {user?.surname}
-            </span>
-          </p>
-          <p>
-            ID No: <span>{user?.idCardNumber}</span>
-          </p>
-          <p>
-            Email: <span>{user?.email}</span>
-          </p>
-          <p>
-            Phone: <span>{user?.phoneNumber}</span>
-          </p>
-        </div>
-        <div className="carContainer">
-          <p>
-            Car Model:{" "}
-            <span>
-              {rentalDetail.car?.model.brand.name}{" "}
-              {rentalDetail.car?.model.name} {rentalDetail.car?.year}
-            </span>
-          </p>
-          <p>Plate: {rentalDetail.car.plate}</p>
-        </div>
-      </div>
+      <div className="secContainer shadow-rounded-box mb-2"></div>
       <div className="secContainer shadow-rounded-box">
+        <div className="titleDiv">
+          <h2>Rental Detail</h2>
+        </div>
+        <div className="informationContainer container">
+        <div className="row">
+          <div className="col-4">
+            <p className="form-control">
+              Name:{" "}
+              <span>
+                {user?.name} {user?.surname}
+              </span>
+            </p>
+            <p className="form-control">
+              ID No: <span>{user?.idCardNumber}</span>
+            </p>
+          </div>
+          <div className="col-4">
+            <p className="form-control">
+              Email: <span>{user?.email}</span>
+            </p>
+            <p className="form-control">
+              Phone: <span>{user?.phoneNumber}</span>
+            </p>
+          </div>
+          <div className="col-4">
+            <p className="form-control">
+              Car Model:{" "}
+              <span>
+                {rentalDetail.car?.model.brand.name}{" "}
+                {rentalDetail.car?.model.name} {rentalDetail.car?.year}
+              </span>
+            </p>
+            <p className="form-control">Plate: {rentalDetail.car.plate}</p>
+          </div>
+        </div>
+        </div>
+        
         <div className="formContainer">
           <Formik
             validationSchema={UpdateRentalRequestSchema}
@@ -144,7 +153,7 @@ const DetailRental = (props: Props) => {
               startDate: rentalDetail.startDate,
               endDate: rentalDetail.endDate,
               returnDate: rentalDetail.returnDate,
-              carId:rentalDetail.car.id,
+              carId: rentalDetail.car.id,
             }}
             onSubmit={handleSubmit}
           >
