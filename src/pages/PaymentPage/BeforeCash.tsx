@@ -146,7 +146,7 @@ const BeforeCash = (props: Props) => {
                         <p>
                           <b>{t("amount")} : </b>
                           {(
-                            priceCard.totalPrice + priceCard.discountRate
+                            priceCard?.totalPrice + priceCard?.discountRate
                           ).toFixed(2)}{" "}
                           ₺
                         </p>
@@ -155,14 +155,14 @@ const BeforeCash = (props: Props) => {
                         {" "}
                         <p>
                           <b>{t("discount")} : </b>
-                          {priceCard.discountRate.toFixed(2)} ₺
+                          {priceCard?.discountRate?.toFixed(2)} ₺
                         </p>
                       </div>
                       <div className="col-12 subAmountRow">
                         {" "}
                         <p>
                           <b>{t("totalAmount")} : </b>
-                          {priceCard.totalPrice.toFixed(2)} ₺
+                          {priceCard?.totalPrice?.toFixed(2)} ₺
                         </p>
                       </div>
                     </div>

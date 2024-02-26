@@ -52,20 +52,20 @@ const Online = (props: Props) => {
     startDate: new Date(rentalInfo.startDate),
     endDate: new Date(rentalInfo.endDate),
     carId: rentalInfo.car.id,
-    customerId: rentalInfo.user.customer.id,
+    customerId: rentalInfo.user?.customer?.id,
     employeeId: 1,
     discount: rentalInfo?.discount || { id: 0, discountCode: 'BOSS' }
   };
 
   const mailInfo:MailInfoModel = {
-    name: rentalInfo.user.name + ' ' + rentalInfo.user.surname,
+    name: rentalInfo?.user?.name + ' ' + rentalInfo?.user?.surname,
     email: rentalInfo.user.email,
     phone: rentalInfo.user.phoneNumber,
     startDate: new Date(rentalInfo.startDate),
     endDate: new Date(rentalInfo.endDate),
     totalDay: rentalInfo.day,
     plate: rentalInfo.car.plate,
-    carInfo: rentalInfo.car.model.brand.name + ' ' + rentalInfo.car.model.name,
+    carInfo: rentalInfo?.car?.model?.brand?.name + ' ' + rentalInfo.car?.model?.name,
     totalPrice: rentalInfo.priceCard.totalPrice
 
   }
@@ -255,7 +255,7 @@ const Online = (props: Props) => {
                           </p>
                         </div>
                         <div className="col-xl-4 col-l-4 col-md-6 col-sm-6">
-                          <p>{(priceCard.totalPrice + priceCard.discountRate).toFixed()} ₺</p>
+                          <p>{(priceCard?.totalPrice + priceCard?.discountRate).toFixed()} ₺</p>
                         </div>
                       </div>
                     </div>
@@ -268,7 +268,7 @@ const Online = (props: Props) => {
                           </p>
                         </div>
                         <div className="col-xl-4 col-l-4 col-md-6 col-sm-6">
-                          <p>{priceCard.discountRate.toFixed(2)} ₺</p>
+                          <p>{priceCard?.discountRate?.toFixed(2)} ₺</p>
                         </div>
                       </div>
                     </div>
@@ -281,7 +281,7 @@ const Online = (props: Props) => {
                           </p>
                         </div>
                         <div className="col-xl-5 col-l-5 col-md-6 col-sm-6">
-                          <p>{(priceCard.totalPrice).toFixed(2)} ₺</p>
+                          <p>{(priceCard?.totalPrice)?.toFixed(2)} ₺</p>
                         </div>
                       </div>
                     </div>
