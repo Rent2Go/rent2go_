@@ -36,20 +36,20 @@ const ChangePassword = () => {
   }
 
   const changePasswordSchema = Yup.object({
-    oldPassword: Yup.string().required("Old password field cannot be empty"),
+    oldPassword: Yup.string().required(t("oldPasswordFieldCannotBeEmpty")),
      password: Yup.string()
-      .matches(/[A-Z]/, "Must contain at least one uppercase letter")
-      .matches(/[a-z]/, "Must contain at least one lowercase letter")
-      .matches(/[0-9]/, "Must contain at least one digit")
+      .matches(/[A-Z]/, (t("mustContainAtLeastOneUppercaseLetter")))
+      .matches(/[a-z]/, (t("mustContainAtLeastOneLowercaseLetter")))
+      .matches(/[0-9]/, (t("mustContainAtLeastOneDigit")))
       .matches(
         /[!@#$%^&*(),.?":{}|<>\_-]/,
-        "Must contain at least one punctuation mark"
+        t("mustContainAtLeastOnePunctuationMark")
       )
-      .min(8, "Password be at least 8 character long")
-      .required("Password field cannot be empty"),
+      .min(8, (t("passwordBeAtLeast8CharacterLong")))
+      .required(t("passwordFieldCannotBeEmpty")),
     passwordConfirm: Yup.string()
-      .oneOf([Yup.ref("newPassword"), undefined], "Passwords must match")
-      .required("Please confirm your password"),
+      .oneOf([Yup.ref("password"), undefined], (t("passwordsMustMatch")))
+      .required(t("pleaseConfirmYourPassword")),
   });
 
   const handleSubmit = async (id: number, values: any) => {
@@ -75,7 +75,7 @@ const ChangePassword = () => {
       <div className="form">
         <Formik
           initialValues={initialValues}
-          //validationSchema={changePasswordSchema}
+          validationSchema={changePasswordSchema}
           onSubmit={(values)=> handleSubmit(auth.authInformation.user.id,values)}
         >
           <Form>

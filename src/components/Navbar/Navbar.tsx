@@ -23,10 +23,14 @@ type Props = {};
 
 const Navbar = (props: Props) => {
   const settings = useSelector((state: any) => state.settings.setting);
-  const { t, i18n } = useTranslation();
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-  };
+  
+    const { t, i18n } = useTranslation();
+    const [selectedLanguage, setSelectedLanguage] = useState('EN');
+  
+    const changeLanguage = ( lng: string) => {
+      i18n.changeLanguage(lng);
+      setSelectedLanguage(lng.toUpperCase());
+    };
   const [navbar, setNavbar] = useState("navbar");
 
   const showNavbar = () => {
@@ -119,8 +123,8 @@ const Navbar = (props: Props) => {
             </>
           )}
           <NavDropdown
-            className="languageDropdown"
-            title={<MdLanguage />}
+            className="languageDropdown langDropDownA"
+            title={<>{selectedLanguage} {" "}<MdLanguage /> </>}
             id="basic-nav-dropdown"
           >
             <NavDropdown.Item

@@ -1,7 +1,17 @@
+.employeeTableCard {
+  margin-bottom: 5rem;
+  height: 65vh;
+}
 .employeeTableCard table {
   align-items: center;
   border-radius: 0.5rem !important;
   vertical-align: middle;
+}
+.employeeTableCard table thead {
+  position: sticky;
+  z-index: 999;
+  top: 0;
+  background-color: var(--pureWhiteColor);
 }
 .employeeTableCard table a {
   margin: 0 0.5rem;

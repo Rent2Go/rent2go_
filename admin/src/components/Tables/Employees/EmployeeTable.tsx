@@ -30,7 +30,7 @@ const EmployeeTable = (props: Props) => {
   },[]);
 
   return (
-    <div className="employeeTableCard shadow-rounded-box">
+    <div className="employeeTableCard shadow-rounded-box table-responsive">
       <Table className="table table-rounded table-hover table-borderless">
         <thead>
           <tr>

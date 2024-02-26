@@ -8,6 +8,8 @@ import { useAuth } from "../../contexts/AuthContext";
 import ReceiptPDF from "./Receipt";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { MailInfoModel } from "../../models/mail/MailInfıModel";
+import MailService from "../../services/emailService/MailService";
 
 type Props = {};
 
@@ -28,6 +30,26 @@ const Cash = (props: Props) => {
   };
 
   const rentalInfo = useSelector((state:any) => state.rental); 
+  
+  const handleButtonClick = async () => {
+  const mailInfo:MailInfoModel = {
+    name: rentalInfo.user.name + ' ' + rentalInfo.user.surname,
+    email: rentalInfo.user.email,
+    phone: rentalInfo.user.phoneNumber,
+    startDate: new Date(rentalInfo.startDate),
+    endDate: new Date(rentalInfo.endDate),
+    totalDay: rentalInfo.day,
+    plate: rentalInfo.car.plate,
+    carInfo: rentalInfo.car.model.brand.name + ' ' + rentalInfo.car.model.name,
+    totalPrice: rentalInfo.priceCard.totalPrice
+
+  }
+  try {
+    await MailService.cashSuccessful(mailInfo);
+    console.log('Mail sent successfully');
+  } catch (error) {
+    console.error('Mail post error', error);
+  }};
 
   useEffect(() => {
 
@@ -130,14 +152,20 @@ const Cash = (props: Props) => {
               </div>
 
               <div className="row btnRow">
-                <div className="col-xl-7 col-l-7 col-md-12 col-sm-12">
-                  <ReceiptPDF
-                   auth={auth}
-                    currentDate={currentDate}
-                    amount={(priceCard.totalPrice + priceCard.discountRate).toFixed(2)} 
-                    discountRate={priceCard.discountRate.toFixed(2)} 
-                    totalAmount ={priceCard.totalPrice.toFixed(2)}/>
-                </div>
+              
+
+<div className="col-xl-7 col-l-7 col-md-12 col-sm-12">
+  <button onClick={handleButtonClick}>
+    <ReceiptPDF
+      auth={auth}
+      currentDate={currentDate}
+      amount={(priceCard.totalPrice + priceCard.discountRate).toFixed(2)} 
+      discountRate={priceCard.discountRate.toFixed(2)} 
+      totalAmount={priceCard.totalPrice.toFixed(2)}
+    />
+  </button>
+</div>
+
                 <div className="col-xl-4 col-l-4 col-md-12 col-sm-12">
                   <Link
                     type="button"

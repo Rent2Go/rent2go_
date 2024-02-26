@@ -2,6 +2,18 @@
   padding: 0px 30px;
   padding-bottom: 50px;
   .secContainer {
+    .titleDiv{
+      color: var(--primary-color);
+      text-align: center;
+      padding: 2rem 0;
+    }
+    .informationContainer{
+      padding: 3rem 4rem;
+      .form-control{
+        border:none;
+        background: var(--body-bg);
+      }
+    }
     .booking__wrapper {
       .booking__title {
         font-size: 1.5rem;

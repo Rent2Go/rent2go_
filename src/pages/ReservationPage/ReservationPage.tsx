@@ -26,7 +26,7 @@ import i18n from "../../Language/language";
 import "./reservationPage.css";
 import { Helmet } from "react-helmet";
 import { useDispatch, useSelector } from "react-redux";
-import { differenceInDays } from "date-fns";
+import { differenceInDays, differenceInYears } from "date-fns";
 import { setAction } from "../../store/slices/rentalSlice";
 import UserService from "../../services/UserService";
 import { UserModel } from "../../models/user/UserModel";
@@ -112,9 +112,9 @@ const ReservationPage = () => {
   {
     /*POPUP*/
   }
-
-  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("cash");
-
+  console.log(user?.customer.driverLicenceAge);
+  
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("cash-payment-confirmation");
   const handlePaymentMethodChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -122,14 +122,30 @@ const ReservationPage = () => {
   };
 
   const isAuthenticated = () => {
+  
     if (auth.authInformation.user.email === "" || null || undefined) {
       alert(t("youHaveToBeAuthenticatedBeforeYouCanMakeAReservation"));
       navigate("/sign-in");
     }
-    if (user?.district === null) {
+    else if (user?.district === null) {
       alert(t("yourUserInformationIsMissingPleaseFillItIn"));
       navigate("/profile/location-settings");
     }
+   else if(user?.customer.issueDate === null) {
+      alert(t("drivinglicenceinformation"));
+      navigate("/profile/drivers-license");
+
+    }
+   else if(user){
+      if(user?.customer.driverLicenceAge < 2 ){
+        alert(t("DrivingLicenceAgemustbeatleast2yearsold"));
+        navigate("/");
+    }
+    
+
+    }
+  
+  
   };
 
   const rentStartDate = new Date(startDate);
@@ -329,7 +345,7 @@ const ReservationPage = () => {
                             onChange={handlePaymentMethodChange}
                           >
                             <FormControlLabel
-                              value="cash"
+                              value="cash-payment-confirmation"
                               control={<Radio />}
                               label={t("cash")}
                             />

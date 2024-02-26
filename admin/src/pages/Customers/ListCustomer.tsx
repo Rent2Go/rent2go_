@@ -19,10 +19,10 @@ const ListCustomer = (props: Props) => {
           </Link>
         </div>
       </div>
-      <div className="secContainer table-responsive">
-        <div className="customerContainer ">
+      <div className="secContainer ">
+       
           <CustomerTable />
-        </div>
+        
       </div>
     </div>
   )
