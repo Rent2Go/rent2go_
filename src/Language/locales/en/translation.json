@@ -544,8 +544,16 @@
   "useAtYourOwnRiskDisclaimer": "\"Use at Your Own Risk\" Disclaimer",
   "allInformationInTheService": "All information in the Service is provided \"as is\", with no guarantee of completeness, accuracy, timeliness or of the results obtained from the use of this information, and without warranty of any kind, express or implied, including, but not limited to warranties of performance, merchantability and fitness for a particular purpose.",
   "theCompanyWillNotBeLiableToYou": "The Company will not be liable to You or anyone else for any decision made or action taken in reliance on the information given by the Service or for any consequential, special or similar damages, even if advised of the possibility of such damages.",
-  "ifYouHaveAnyQuestionsAboutThisDisclaimer": "If you have any questions about this Disclaimer, You can contact Us:"
+  "ifYouHaveAnyQuestionsAboutThisDisclaimer": "If you have any questions about this Disclaimer, You can contact Us:",
 
+  "informationRowTitle" : "Dear",
+  "informationRowP1" : "You have chosen to make your reservation with the cash payment option. Please read the following information carefully:",
+  "informationRowP4" : "Click the 'Accept' button to confirm that you have read and understood this information message. Once you accept, you will receive an email with your booking details.",
+  "informationRowP21" :"For your reservation, the vehicle you choose and the dates you specifyvalid.",
+  "informationRowP22" :"You must make your payment to our company before the start date of the reservation. You need to come to the office and do it.",
+  "informationRowP23" :"Please check your reservation information before making your payment. check and confirm.",
+  "informationRowP24" :"Vehicle delivery will not be made without payment.",
+  "informationRowP25" :"Any questions about your reservation and payment. If so, please contact us."
 
 
 }

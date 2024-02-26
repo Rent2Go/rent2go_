@@ -1,3 +1,13 @@
+.infoTitle{
+  color: var(--primaryColor);
+}
+
+.subAmountRow {
+  p {
+    display: grid;
+    grid-template-columns: 25% 25% %50;
+  }
+}
 .payment {
   padding: 4rem 2rem;
   .secContainer {
@@ -16,13 +26,24 @@
       margin: 0.5rem;
       padding: 0 4rem 2rem 4rem;
       display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      column-gap: 1.5rem;
+      .informationContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 1.8rem;
+        text-align: left;
+        color: var(--blackColor);
+      
+        p {
+          font-size: 0.96rem;
+        }
+      }
       .formContainer {
-        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-          rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-        padding: 2rem 8rem 4rem 8rem;
+        padding: 4rem 2rem 6.5rem 2rem;
         margin: 0 6rem 4rem 6rem;
         display: flex;
         flex-direction: column;
@@ -48,6 +69,10 @@
           }
           .btnRow {
             gap: 0.5rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
             .btn {
               padding: 0.5rem 2rem;
               font-size: 16px;
@@ -92,6 +117,11 @@
 
       .btnRow {
         gap: 0.5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0.5rem 0;
         .btn {
           padding: 0.5rem 2rem;
           font-size: 16px;
@@ -120,7 +150,7 @@
   }
 }
 
-@media screen and (max-width:1720px) {
+@media screen and (max-width: 1720px) {
   .payment {
     .secContainer {
       margin: 0;
@@ -130,8 +160,30 @@
         .formContainer {
           margin: 0;
           padding: 2rem;
-          .form{
-            .btnRow{
+          .form {
+            .btnRow {
+              column-gap: 2.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1020px) {
+  .payment {
+    .secContainer {
+      margin: 0;
+      padding: 0;
+      .contentDiv {
+        flex-direction: column;
+        row-gap: 1rem;
+      
+        .formContainer {
+          margin: 0;
+          padding: 2rem;
+          .form {
+            .btnRow {
               column-gap: 2.5rem;
             }
           }
