@@ -6,6 +6,18 @@
   /*Detail Page*/
   /*Detail Page*/
 }
+.booking .secContainer .titleDiv {
+  color: var(--primary-color);
+  text-align: center;
+  padding: 2rem 0;
+}
+.booking .secContainer .informationContainer {
+  padding: 3rem 4rem;
+}
+.booking .secContainer .informationContainer .form-control {
+  border: none;
+  background: var(--body-bg);
+}
 .booking .secContainer .booking__wrapper .booking__title {
   font-size: 1.5rem;
   color: var(--primary-color);
