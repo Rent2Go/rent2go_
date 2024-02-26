@@ -162,7 +162,7 @@
   }
   
   label {
-    color: var(--small-text-color);
+    color: var(--pureWhiteColor);
     font-size: 14px;
     font-weight: 500;
   }

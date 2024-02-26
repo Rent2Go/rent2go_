@@ -1,6 +1,9 @@
 .settings {
   padding: 0px 50px;
   padding-bottom: 50px;
+  p{
+    color: var(--pureWhiteColor);
+  }
   .secContainer {
     .settings__wrapper {
       padding: 2rem 6rem;

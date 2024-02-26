@@ -1,6 +1,13 @@
 .employeeTableCard{
-   
+  margin-bottom: 5rem;
+  height: 65vh;
     table {
+      thead{
+        position: sticky;
+        z-index: 999;
+        top:0;
+        background-color: var(--pureWhiteColor);
+      }
         align-items: center;
         border-radius: 0.5rem !important;
         vertical-align: middle;

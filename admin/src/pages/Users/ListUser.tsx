@@ -59,8 +59,8 @@ const ListUser = (props: Props) => {
             <div className="col-4"></div>
           </div>
 
-          <div className="userTableCard shadow-rounded-box">
-            <div className="userTableCard shadow-rounded-box">
+         
+            <div className="userTableCard shadow-rounded-box table-responsive">
               <Table className="table table-rounded table-hover table-borderless">
                 <thead>
                   <tr>
@@ -80,7 +80,7 @@ const ListUser = (props: Props) => {
                 ))}
               </Table>
             </div>
-          </div>
+        
         </div>
       </div>
     </div>

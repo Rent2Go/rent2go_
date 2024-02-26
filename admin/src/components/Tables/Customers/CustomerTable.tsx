@@ -26,8 +26,8 @@ const CustomerTable = (props: Props) => {
     getCustomers();
   }, []);
   return (
-    <div className="customerTableCard shadow-rounded-box">
-      <Table className="table table-rounded table-hover table-borderless">
+    <div className="customerTableCard  shadow-rounded-box table-responsive ">
+      <Table className="table table-rounded table-hover table-borderless ">
         <thead>
           <tr>
             <th>ID</th>
@@ -47,25 +47,25 @@ const CustomerTable = (props: Props) => {
         <tbody>
           {customers.map((customer: CustomerModel) => (
             <tr key={customer.id}>
-                <td>{customer.id}</td>
+              <td>{customer.id}</td>
               <td>
-              {customer.userImageUrl ? (
-              <img
-                src={`${customer.userImageUrl}`}
-                alt="user-img"
-              />
-            ) : (
-              <img src="/assets/images/userImages/user-default.jpg" alt="default-img" />
-            )}
+                {customer.userImageUrl ? (
+                  <img src={`${customer.userImageUrl}`} alt="user-img" />
+                ) : (
+                  <img
+                    src="/assets/images/userImages/user-default.jpg"
+                    alt="default-img"
+                  />
+                )}
               </td>
-               <td>{customer.userName}</td>
+              <td>{customer.userName}</td>
               <td>{customer.userSurname}</td>
-             <td>{customer.userEmail}</td>
+              <td>{customer.userEmail}</td>
               <td>{customer.userPhoneNumber}</td>
               <td>{customer.userIdCardNumber}</td>
               <td>{customer?.userCityName}</td>
               <td>{customer?.userDistrictName}</td>
-              <td>{customer?.userAddress}</td> 
+              <td>{customer?.userAddress}</td>
               <td>
                 <Form>
                   <Form.Check
@@ -79,7 +79,10 @@ const CustomerTable = (props: Props) => {
                 </Form>
               </td>
               <td className="actionRow">
-                <Link to={`/update-customer/${customer.id}`} className="btn btn-sm btn-update">
+                <Link
+                  to={`/update-customer/${customer.id}`}
+                  className="btn btn-sm btn-update"
+                >
                   <FaUserEdit />
                 </Link>
                 <Link to="/" className="btn btn-sm btn-delete">
