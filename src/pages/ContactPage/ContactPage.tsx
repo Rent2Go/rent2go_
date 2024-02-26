@@ -115,32 +115,32 @@ const ContactPage = () => {
               <div className='col'>
                 <div className='form-group'>
                   <label>{t("firstName")}</label>
-                  <input type='text' name='firstName' value={formData.firstName} onChange={handleChange}></input>
+                  <input placeholder=' ' type='text' name='firstName' value={formData.firstName} onChange={handleChange}/>
                 </div>
                 <div className='form-group'>
                   <label>{t("lastName")}</label>
-                  <input type='text' name='lastName' value={formData.lastName} onChange={handleChange}></input>
+                  <input placeholder=' ' type='text' name='lastName' value={formData.lastName} onChange={handleChange}/>
                 </div>
               </div>
               <div className='col'>
                 <div className='form-group'>
                   <label>{t("email")}</label>
-                  <input type='email' name='email' value={formData.email} onChange={handleChange}></input>
+                  <input placeholder=' ' type='email' name='email' value={formData.email} onChange={handleChange}/>
                 </div>
                 <div className='form-group'>
                   <label>{t("phone")}</label>
-                  <input type='tel' name='phone' value={formData.phone} onChange={handleChange}></input>
+                  <input placeholder=' ' type='tel' name='phone' value={formData.phone} onChange={handleChange}/>
                 </div>
               </div>
               <div className='col-2'>
                 <div className='form-group'>
                   <label>{t("message")}</label>
-                  <textarea name='message' value={formData.message} onChange={handleChange}></textarea>
+                  <textarea placeholder=' ' name='message' value={formData.message} onChange={handleChange}/>
                 </div>
               </div>
               <div className='col-2'>
                 <div className='form-group right'>
-                  <Button type='submit' className='primary' data-aos="zoom-in">{t("sendMessage")}</Button>
+                  <button type='submit' className='primary' data-aos="zoom-in">{t("sendMessage")}</button>
                 </div>
               </div>
             </form>
