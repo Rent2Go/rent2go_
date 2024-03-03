@@ -2,9 +2,13 @@ import React from "react";
 import "./notFound.css";
 import { Footer, Navbar } from "../../components";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 type Props = {};
 
 const PageNotFound = (props: Props) => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Navbar />
@@ -20,7 +24,7 @@ const PageNotFound = (props: Props) => {
 
             <div className="btnContainer">
               <Link to="/" type="button" className="btn">
-                Take Me Back
+                {t("takeMeBack")}
               </Link>
             </div>
           </div>

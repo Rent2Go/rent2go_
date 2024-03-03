@@ -261,8 +261,8 @@ const ReservationPage = () => {
                                 <b>{t("model")} :</b>{" "}
                               </span>
                               <span>
-                                {rentals?.model?.brand.name}{" "}
-                                {rentals?.model?.name} {rentals?.year}
+                                {rentals?.model?.brand.name.toUpperCase()}{" "}
+                                {rentals?.model?.name.toUpperCase()} {rentals?.year}
                               </span>
                             </p>
                           </div>

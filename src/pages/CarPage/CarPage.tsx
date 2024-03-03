@@ -143,7 +143,7 @@ const CarPage: React.FC<Props> = (props) => {
                 <button
                   type="button"
                   className="btn btn-sm"
-                  title="order"
+                  title={t("order")}
                   onClick={toggleSortType}
                 >
                   {sortType === "asc" ? (
