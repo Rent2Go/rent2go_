@@ -53,8 +53,7 @@ const CarCards = (props: Props) => {
                 <span className="carIcons">
                   <IoIosColorPalette />{" "}
                 </span>
-                <span className="carSubText">{props.car.color.name}</span>
-              </div>
+                <span className="carSubText">{t(`${props.car.color.name}`)}</span>              </div>
             </div>
           </div>
           <div className="actionDiv  col-xl-3 col-12 ">

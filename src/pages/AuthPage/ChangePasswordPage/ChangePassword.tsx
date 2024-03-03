@@ -12,6 +12,7 @@ import { useAuth } from "../../../contexts/AuthContext";
 // Toast imports
 import "react-toastify/dist/ReactToastify.css";
 import { Bounce, ToastContainer, toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 // Service imports
 import UserService from "../../../services/UserService";
@@ -29,6 +30,8 @@ import { AiOutlineClose } from "react-icons/ai";
 
 type Props = {};
 const ChangePassword = (props: Props) => {
+  const { t } = useTranslation();
+
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const token = searchParams.get("token");
@@ -47,22 +50,19 @@ const ChangePassword = (props: Props) => {
   };
   const changePasswordValidationSchema = object({
     email: string()
-      .required("Email field is required.")
-      .email("Invalid email format."),
+      .required(t("emailRequired"))
+      .email(t("invalidEmail")),
     password: string()
-      .required("Password field is required.")
-      .min(8, "Password must be at least 8 characters.")
-      .matches(/[a-z]/, "Password must include at least one lowercase letter.")
-      .matches(/[A-Z]/, "Password must include at least one uppercase letter.")
-      .matches(/\d/, "Password must include at least one number.")
-      .matches(
-        /[!@#$%^&*()_+{}|:;<>,.?/~`]/,
-        "Password must include at least one punctuation mark."
-      ),
+      .required(t("passwordRequired"))
+      .min(8, t("passwordMin"))
+      .matches(/[a-z]/, t("passwordLowercase"))
+      .matches(/[A-Z]/, t("passwordUppercase"))
+      .matches(/\d/, t("passwordNumber"))
+      .matches(/[!@#$%^&*()_+{}|:;<>,.?/~`]/, t("passwordPunctuation")),
     confirmpassword: string()
-      .required("Password field is required.")
-      .oneOf([ref("password")], "Passwords do not match"),
-  });
+      .required(t("passwordRequired"))
+      .oneOf([ref("password")], t("passwordsNotMatch")),
+});
 
   const changePasswordHandleSubmit = async (values: ChangePasswordRequest) => {
     const response = await UserService.changePassword(values, token)
@@ -71,9 +71,7 @@ const ChangePassword = (props: Props) => {
       })
       .catch((error) => {
         if (error.response.status === 403) {
-          toast.error(
-            "Your transaction has expired! Please request a password reset again.!! "
-          );
+          toast.error(t("transactionExpired"));
         }
       });
   };

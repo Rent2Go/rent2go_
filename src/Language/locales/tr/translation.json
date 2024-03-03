@@ -587,5 +587,72 @@
   "invalidEmailFormat" :"Geçersiz e-posta formatı.",
   "idCardRequired" :"Kimlik numarası gereklidir.",
   "codeApplied" : "İndirim Kodu Başarıyla uygulandı!",
-  "exitSuccessful" : "Çıkış Başarılı"
+  "exitSuccessful" : "Çıkış Başarılı",
+  "img10mb" : "Resim 10mb'dan büyük olamaz",
+
+    "red": "Kırmızı",
+    "blue": "Mavi",
+    "green": "Yeşil",
+    "black": "Siyah",
+    "white": "Beyaz",
+    "yellow": "Sarı",
+    "gray": "Gri",
+    "silver": "Gümüş",
+    "purple": "Mor",
+    "orange": "Turuncu",
+    "brown": "Kahverengi",
+    "pink": "Pembe",
+    "gold": "Altın",
+    "beige":  "Bej",
+    "light blue": "Açık Mavi",
+
+  "order" : "Sırala",
+  "personalInformation" : "Kişisel Bilgiler",
+
+  "nameMin": "İsim en az 2 karakter uzunluğunda olmalıdır.",
+  "nameRequired": "İsim alanı boş bırakılamaz",
+  "surnameMin": "Soyisim en az 3 karakter uzunluğunda olmalıdır.",
+  "surnameRequired": "Soyisim alanı boş bırakılamaz",
+  "phoneNumberLength": "Telefon numarası 11 karakter içermelidir",
+  "phoneNumberRequired": "Telefon alanı boş bırakılamaz",
+  "invalidEmail": "Geçersiz e-posta formatı",
+  "emailRequired": "E-posta alanı boş bırakılamaz",
+  "nationalityIdMin": "Kimlik numarası en az 10 karakter olmalıdır",
+  "nationalityIdRequired": "Kimlik numarası alanı boş bırakılamaz",
+  "birthDateRequired": "Doğum tarihi alanı boş bırakılamaz",
+  "customerDriverLicenseUpdatedSuccessfully" : "Müşteri sürücü belgesi başarıyla güncellendi",
+
+  "cityRequired": "Şehir alanı boş bırakılamaz",
+  "districtRequired": "İlçe alanı boş bırakılamaz",
+  "addressRequired": "Adres alanı boş bırakılamaz",
+  "transactionExpired": "İşleminiz süresi doldu! Lütfen şifre sıfırlama talebinde bulunun.",
+
+  "passwordRequired": "Şifre alanı gereklidir.",
+  "passwordMin": "Şifre en az 8 karakter olmalıdır.",
+  "passwordLowercase": "Şifre en az bir küçük harf içermelidir.",
+  "passwordUppercase": "Şifre en az bir büyük harf içermelidir.",
+  "passwordNumber": "Şifre en az bir rakam içermelidir.",
+  "passwordPunctuation": "Şifre en az bir noktalama işareti içermelidir.",
+  "passwordsNotMatch": "Şifreler eşleşmiyor",
+  "loginSuccessful" : "Giriş Başarılı",
+  "accountConfirmation": "Başarılı! Lütfen, hesabınızı onaylamak için e-postanızı kontrol edin.",
+  "messageSent": "Mesajınız başarıyla gönderildi!",
+  "messageError": "Mesajınız gönderilirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.",
+  "reservationCreated": "Rezervasyonunuz oluşturuldu, lütfen posta kutunuzu kontrol edin.",
+  "sessionExpired": "Oturum süresi doldu, tekrar giriş yapın...",
+
+  "firstNameRequired": "İsim alanı gereklidir.",
+  "firstNameMin": "İsim alanı en az 2 karakter olmalıdır.",
+  "firstNameMax": "İsim 20 karakteri geçemez.",
+  "lastNameRequired": "Soyad alanı gereklidir.",
+  "lastNameMin": "Soyad alanı en az 2 karakter olmalıdır.",
+  "lastNameMax": "Soyad 20 karakteri geçemez.",
+  "phoneNumberFormat": "Telefon numarası 05xxxxxxxxx formatında olmalıdır.",
+  "birthdateRequired": "Doğum tarihi alanı gereklidir.",
+  "birthdateMax": "Doğum tarihi gelecekte olamaz.",
+  "idCardFormat": "Kimlik Kartı numarası tam olarak 11 hane olmalıdır."
+
+
+
+
 }

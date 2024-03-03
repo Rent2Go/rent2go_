@@ -624,5 +624,74 @@
   "invalidEmailFormat" :"Invalid email format.",
   "idCardRequired": "Id Card Number field is required.",
   "codeApplied":"Code applied successfully",
-  "exitSuccessful":"Successful Exit"
+  "exitSuccessful":"Successful Exit",
+  "img10mb" : "Image size cannot be larger than 10MB",
+
+  
+    "red": "Red",
+    "blue": "Blue",
+    "green": "Green",
+    "black": "Black",
+    "white": "White",
+    "yellow": "Yellow",
+    "gray": "Gray",
+    "silver": "Silver",
+    "purple": "Purple",
+    "orange": "Orange",
+    "brown": "Brown",
+    "pink": "Pink",
+    "gold": "Gold",
+    "beige":  "Beige",
+    "light blue": "Light Blue",
+
+ "order" : "Order",
+ "personalInformation" : "Personal Information",
+
+  "nameMin": "Name must be at least 2 character long.",
+  "nameRequired": "Name field cannot be empty",
+  "surnameMin": "Surname must be at least 3 character long.",
+  "surnameRequired": "Surname field cannot be empty",
+  "phoneNumberLength": "Phone number must contain 11 characters",
+  "phoneNumberRequired": "Phone field cannot be empty",
+  "invalidEmail": "Invalid email format",
+  "emailRequired": "Email field cannot be empty",
+  "nationalityIdMin": "Nationality Id must be at least 10 characters",
+  "nationalityIdRequired": "Nationality Id field cannot be empty",
+  "birthDateRequired": "Date of Birth field cannot be empty",
+  "customerDriverLicenseUpdatedSuccessfully": "Customer Driver License Updated Successfully",
+
+  "cityRequired": "City field cannot be empty",
+  "districtRequired": "District field cannot be empty",
+  "addressRequired": "Address field cannot be empty",
+  "transactionExpired": "Your transaction has expired! Please request a password reset again.",
+
+  "passwordRequired": "Password field is required.",
+  "passwordMin": "Password must be at least 8 characters.",
+  "passwordLowercase": "Password must include at least one lowercase letter.",
+  "passwordUppercase": "Password must include at least one uppercase letter.",
+  "passwordNumber": "Password must include at least one number.",
+  "passwordPunctuation": "Password must include at least one punctuation mark.",
+  "passwordsNotMatch": "Passwords do not match",
+  "loginSuccessful" : "Login successful",
+  "accountConfirmation": "Success! Please, check your email to confirm your account.",
+  "messageSent": "Your message has been sent successfully!",
+  "messageError": "There was an error while sending your message. Please try again later.",
+  "reservationCreated": "Your reservation has been created, please check your mailbox.",
+  "sessionExpired": "Session has expired, log in again...",
+  
+  "firstNameRequired": "First Name field is required.",
+  "firstNameMin": "First Name field must be at least 2 characters.",
+  "firstNameMax": "The field cannot exceed 20 characters.",
+  "lastNameRequired": "Last Name field is required.",
+  "lastNameMin": "Last Name field must be at least 2 characters.",
+  "lastNameMax": "The field cannot exceed 20 characters.",
+  "phoneNumberFormat": "Phone number must be in the format 05xxxxxxxxx.",
+  "birthdateRequired": "Birthdate field is required.",
+  "birthdateMax": "Birthdate cannot be in the future.",
+  "idCardFormat": "ID Card number must be exactly 11 digits."
+
+
+
+
+
 }

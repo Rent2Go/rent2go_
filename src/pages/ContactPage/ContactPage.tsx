@@ -55,12 +55,12 @@ const ContactPage = () => {
 
     try {
       await axiosInstance.post('send-contact-email', formData);
-      toast.success('Your message has been sent successfully!');
+      toast.success(t("messageSent"));
     } catch (error) {
       console.error('Error sending email:', error);
-      alert('There was an error while sending your message. Please try again later.');
+      alert(t("messageError"));
     }
-  };
+};
 
   return (
     <>

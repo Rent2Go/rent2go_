@@ -15,11 +15,11 @@ import Field from "../../../components/FormikInput/FormikInput";
 import { SignInRequest } from "../../../models/requests/auth/SignInRequest";
 import { signUpRequest } from "../../../models/requests/auth/SignupRequest";
 import {
-  signInValidationSchema,
   signIninitialValues,
   signUpinitialValues,
-  signupValidationSchema,
 } from "../FormikAndYupSchema";
+import { useSignupValidationSchema, useSigninValidationSchema } from "../FormikAndYupSchema";
+
 
 import "../styles/register.css";
 import { useSelector } from "react-redux";
@@ -51,7 +51,7 @@ const Register: React.FC<Props> = (props: Props) => {
         console.log("Sign-in successful:", resolve);
         TokenService.setToken(resolve?.data?.token);
         TokenService.setrefreshToken(resolve?.data?.refreshToken);
-        toast.success("Login successful");
+        toast.success(t("loginSuccessful"));
         authContext.refreshUser();
         setTimeout(() => {
           navigate("/");
@@ -70,9 +70,7 @@ const Register: React.FC<Props> = (props: Props) => {
     const response = await AuthService.signUp(values)
       .then((resolve) => {
         const userId = parseInt(resolve.data.data);
-        toast.success(
-          "Success! Please, check your email to confirm your account."
-        );
+        toast.success(t("accountConfirmation"));
         CustomerService.createCustomer({ userId: userId })
           .then()
           .catch((err) => console.log(userId));
@@ -84,6 +82,10 @@ const Register: React.FC<Props> = (props: Props) => {
         toast.error(errorMessage);
       });
   };
+
+  const signupValidationSchema = useSignupValidationSchema();
+  const signinValidationSchema = useSigninValidationSchema();
+  
 
   return (
     <>
@@ -221,7 +223,7 @@ const Register: React.FC<Props> = (props: Props) => {
             <Formik
               initialValues={signIninitialValues}
               onSubmit={signInhandleSubmit}
-              validationSchema={signInValidationSchema}
+              validationSchema={signinValidationSchema}
               validateOnBlur={true}
               validateOnChange={false}
             >

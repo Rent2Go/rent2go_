@@ -55,11 +55,11 @@ const ChangePassword = () => {
   const handleSubmit = async (id: number, values: any) => {
     await UserService.profilPageChangePassword(id, values)
       .then((res) => {
-        toast.success(res.data.message)
+        toast.success(t(res.data.message))
       })
       .catch((err: any) => {
 
-        toast.error(err.response.data.message)
+        toast.error(t(err.response.data.message))
       })
 
   };

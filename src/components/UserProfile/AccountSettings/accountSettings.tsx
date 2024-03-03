@@ -34,7 +34,7 @@ const AccountSettings = () => {
   const handleImage = async (e: any) => {
     const file = e.target.files[0];
     if (file.size > 10 * 1024 * 1024) {
-      toast.error("Image size cannot be larger than 10MB");
+      toast.error(t("img10mb"));
       formData.delete("file");
     } else {
       formData.append("file", file);
@@ -48,32 +48,32 @@ const AccountSettings = () => {
 
   const AccountSettingsSchema = Yup.object({
     name: Yup.string()
-      .min(2, "Name must be at least 2 character long.")
-      .required("Name field cannot be empty"),
+      .min(2, t("nameMin"))
+      .required(t("nameRequired")),
     surname: Yup.string()
-      .min(3, "Surnamemust be at least 3 character long.")
-      .required("Surname field cannot be empty"),
+      .min(3, t("surnameMin"))
+      .required(t("surnameRequired")),
     phoneNumber: Yup.string()
-      .min(11, "Phone number must contain 11 characters")
-      .max(11, "Phone number must contain 11 characters")
-      .required("Phone field cannot be empty"),
+      .min(11, t("phoneNumberLength"))
+      .max(11, t("phoneNumberLength"))
+      .required(t("phoneNumberRequired")),
     email: Yup.string()
-      .email("Invalid email format")
-      .required("Email field cannot be empty"),
+      .email(t("invalidEmail"))
+      .required(t("emailRequired")),
     nationalityId: Yup.string()
-      .min(10)
-      .required("Nationality Id field cannot be empty"),
-    birthDate: Yup.date().required("Date of Birth field cannot be empty"),
-  });
+      .min(10, t("nationalityIdMin"))
+      .required(t("nationalityIdRequired")),
+    birthDate: Yup.date().required(t("birthDateRequired")),
+});
 
   const handleSubmit = async (id: number, values: any) => {
     if (!formData.get("file")) {
       await UserService.updateUserAccountSettings(id, values)
         .then((res: any) => {
-          toast.success(res.data.message);
+          toast.success(t(res.data.message));
         })
         .catch((err) => {
-          toast.warn(err.response.data.message);
+          toast.warn(t(err.response.data.message));
         });
     } else {
       formData.append(
@@ -82,11 +82,11 @@ const AccountSettings = () => {
       );
       await UserService.updateUserAccountSettingsAndImage(id, formData)
         .then((res: any) => {
-          toast.success(res.data.message);
+          toast.success(t(res.data.message));
           window.location.reload();
         })
         .catch((err) => {
-          toast.warn(err.response.data.message);
+          toast.warn(t(err.response.data.message));
           formData.delete("request");
         });
     }
