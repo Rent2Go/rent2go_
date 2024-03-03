@@ -44,12 +44,14 @@ const DiscountCode: React.FC<DiscountCodeProps> = (
               setDiscountCode(response.data.data);
               dispatch(setAction({  discount: response.data.data}))
              
-              toast.success("Code applied successfully")
+              toast.success(t("codeApplied"))
           
            })
            .catch((error) => {
-            toast.error(error.response.data.message)
-           })
+      
+            const errorMessage = t(`${error.response.data.message}`);
+            toast.error(errorMessage);
+          })
       })
       .catch((error) => {
         toast.error("Discount Code" + error.response.data.message)

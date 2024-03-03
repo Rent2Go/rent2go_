@@ -44,10 +44,10 @@ const UserLocation = () => {
 
 
   const UserLocationSchema = Yup.object({
-    cityId: Yup.number().required("City field cannot be empty"),
-    districtId: Yup.number().required("District field cannot be empty"),
-    address: Yup.string().required("Address field cannot be empty"),
-  });
+    cityId: Yup.number().required(t("cityRequired")),
+    districtId: Yup.number().required(t("districtRequired")),
+    address: Yup.string().required(t("addressRequired")),
+});
 
   const handleSubmit = async (id: number, values: UpdateUserLocationRequest) => {
 
@@ -58,10 +58,10 @@ const UserLocation = () => {
 
     await UserService.updateUserLocation(id, payload)
       .then((res) => {
-        toast.success(res.data.message);
+        toast.success(t(res.data.message));
       })
       .catch((err: any) => {
-        toast.error(err.response.data.message);
+        toast.error(t(err.response.data.message));
       })
 
   };

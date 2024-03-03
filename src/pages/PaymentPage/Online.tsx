@@ -113,8 +113,8 @@ const Online = (props: Props) => {
 
       })
       .catch((err) => {
-        toast.error(err.response.data.message)
-        console.log(err)
+        toast.error(t(err.response.data.message))
+      
       })
 
   };

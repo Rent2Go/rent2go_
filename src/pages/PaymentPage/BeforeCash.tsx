@@ -46,7 +46,7 @@ const BeforeCash = (props: Props) => {
     };  //support@rentogo.com.tr
     try {
       await MailService.cashSuccessful(mailInfo);
-      toast.success("Your reservation has been created, please check your mailbox.");
+      toast.success(t("reservationCreated"));
        mailInfo.email = 'contact.rent2go@gmail.com';
         MailService.cashSuccessful(mailInfo)
       setTimeout(() => {

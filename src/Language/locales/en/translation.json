@@ -22,6 +22,7 @@
   "price": "Price",
   "search": "Search",
   "trendingNearYou": "Trending Near You",
+  "kilometer": "Kilometer",
   "howDoWeMakeDifference": "How Do We Make a Difference?",
   "advancedInsurance": "Advanced Insurance",
   "aboutAdvancedInsurance": "Our advanced insurance package offers comprehensive coverage for your rental car, including protection against theft, damage, and more. Drive with peace of mind knowing you're fully covered.",
@@ -94,7 +95,7 @@
   "message": "Message",
   "sendMessage": "Send Message",
 
-
+ 
   "accountSettings": "Account Settings",
   "locationSettings": "Location Settings",
   "yourReservations": "Reservations",
@@ -553,7 +554,146 @@
   "informationRowP22" :"You must make your payment to our company before the start date of the reservation. You need to come to the office and do it.",
   "informationRowP23" :"Please check your reservation information before making your payment. check and confirm.",
   "informationRowP24" :"Vehicle delivery will not be made without payment.",
-  "informationRowP25" :"Any questions about your reservation and payment. If so, please contact us."
+  "informationRowP25" :"Any questions about your reservation and payment. If so, please contact us.",
+
+  
+  "ForgetYourPassword" :"Forget Your Password ? ",
+  "password" :"Password",
+  "confirmPassword" :"Confirm Password",
+  "register" :"Register",
+  "createAccount" :"Create Account",
+  "createAccountSubText" :"Use your email for registration",
+  "welcomeBack" :"Welcome Back!",
+  "helloFriend" :"Hello Friend!",
+  "welcomeBackSubText" :"Enter your personal details to use all site features",
+  "useYourEmailForRegistration" :"Use your email for registration",
+  "useYourEmailPassword" :"Use your email & Password",
+  "name" :"Name",
+  "surname" :"Surname",
+  "phone" :"Phone",
+  "email" :"Email",
+  "idCardNumber" :"Id Card Number",
+
+
+
+  "emailNotFound" :"Email Not Found : {{email}}",
+  "Invalid Password" :"Invalid Password!!",
+  "The addition operation was successful!" : "The addition operation was successful!",
+  "The update operation was successful!":"The update operation was successful!",
+  "The deletion operation was successful!":"The deletion operation was successful!",
+  "All records were listed!" :"All records were listed!",
+  "The record was found!" :"The record was found!",
+
+  "Id not found!" : "Id not found!",
+  " not found" : " not found",
+  " already exists" : " already exists",
+
+  " Email already exists" : " Email already exists",
+  " Id card number already exists" : " Id card number already exists",
+
+  " Authentication is used in our system. Please enter your information correctly ! - :)- !" : " Authentication is used in our system. Please enter your information correctly ! - :)- !",
+
+  " Phone number already exists" : " Phone number already exists",
+
+  "The last kilometer of the vehicle cannot be lower than the delivered mileage." : "The last kilometer of the vehicle cannot be lower than the delivered mileage.",
+  "Start date must be before rental end date" : "Start date must be before rental end date",
+  "Car can be rented for a maximum of 25 days.!" : "Car can be rented for a maximum of 25 days.!",
+  "Password changed successfully" : "Password changed successfully",
+  "File uploaded successfully" : "File uploaded successfully",
+  "Please verify your account with your email address  " : "Please verify your account with your email address  ",
+  "Token not found!"  : "Token not found!",
+  "Your email address has already been verified, please log in." : "Your email address has already been verified, please log in.",
+  "Your email verification link is invalid or has expired. Please, sign up again." : "Your email verification link is invalid or has expired. Please, sign up again.",
+  "Email verification successful! Now you can log in to your account." : "Email verification successful! Now you can log in to your account.",
+  "Success! Please, check your email to confirm your account." : "Success! Please, check your email to confirm your account.",
+  "The discount code entered has been used before." : "The discount code entered has been used before.",
+
+  "Brand not found" : "Brand not found",
+  "Model not found" : "Model not found",
+  "Color not found" : "Color not found",
+  "Car not found" : "Car not found",
+  "Customer not found" : "Customer not found",
+  "Rental not found" : "Rental not found",
+  "Discount not found" : "Discount not found",
+  "Employee not found" : "Employee not found",
+  "User not found" : "User not found",
+  "Bill not found" : "Bill not found",
+  "Payment not found" : "Payment not found",
+
+  "emailRequired" :"Email field is required.",
+  "invalidEmailFormat" :"Invalid email format.",
+  "idCardRequired": "Id Card Number field is required.",
+  "codeApplied":"Code applied successfully",
+  "exitSuccessful":"Successful Exit",
+  "img10mb" : "Image size cannot be larger than 10MB",
+
+  
+    "red": "Red",
+    "blue": "Blue",
+    "green": "Green",
+    "black": "Black",
+    "white": "White",
+    "yellow": "Yellow",
+    "gray": "Gray",
+    "silver": "Silver",
+    "purple": "Purple",
+    "orange": "Orange",
+    "brown": "Brown",
+    "pink": "Pink",
+    "gold": "Gold",
+    "beige":  "Beige",
+    "light blue": "Light Blue",
+
+ "order" : "Order",
+ "personalInformation" : "Personal Information",
+
+  "nameMin": "Name must be at least 2 character long.",
+  "nameRequired": "Name field cannot be empty",
+  "surnameMin": "Surname must be at least 3 character long.",
+  "surnameRequired": "Surname field cannot be empty",
+  "phoneNumberLength": "Phone number must contain 11 characters",
+  "phoneNumberRequired": "Phone field cannot be empty",
+  "invalidEmail": "Invalid email format",
+  "emailRequired": "Email field cannot be empty",
+  "nationalityIdMin": "Nationality Id must be at least 10 characters",
+  "nationalityIdRequired": "Nationality Id field cannot be empty",
+  "birthDateRequired": "Date of Birth field cannot be empty",
+  "customerDriverLicenseUpdatedSuccessfully": "Customer Driver License Updated Successfully",
+
+  "cityRequired": "City field cannot be empty",
+  "districtRequired": "District field cannot be empty",
+  "addressRequired": "Address field cannot be empty",
+  "transactionExpired": "Your transaction has expired! Please request a password reset again.",
+
+  "passwordRequired": "Password field is required.",
+  "passwordMin": "Password must be at least 8 characters.",
+  "passwordLowercase": "Password must include at least one lowercase letter.",
+  "passwordUppercase": "Password must include at least one uppercase letter.",
+  "passwordNumber": "Password must include at least one number.",
+  "passwordPunctuation": "Password must include at least one punctuation mark.",
+  "passwordsNotMatch": "Passwords do not match",
+  "loginSuccessful" : "Login successful",
+  "accountConfirmation": "Success! Please, check your email to confirm your account.",
+  "messageSent": "Your message has been sent successfully!",
+  "messageError": "There was an error while sending your message. Please try again later.",
+  "reservationCreated": "Your reservation has been created, please check your mailbox.",
+  "sessionExpired": "Session has expired, log in again...",
+  
+  "firstNameRequired": "First Name field is required.",
+  "firstNameMin": "First Name field must be at least 2 characters.",
+  "firstNameMax": "The field cannot exceed 20 characters.",
+  "lastNameRequired": "Last Name field is required.",
+  "lastNameMin": "Last Name field must be at least 2 characters.",
+  "lastNameMax": "The field cannot exceed 20 characters.",
+  "phoneNumberFormat": "Phone number must be in the format 05xxxxxxxxx.",
+  "birthdateRequired": "Birthdate field is required.",
+  "birthdateMax": "Birthdate cannot be in the future.",
+  "idCardFormat": "ID Card number must be exactly 11 digits.",
+  "phoneRequired": "Phone field cannot be empty",
+  "messageRequired": "Message field cannot be empty"
+
+
+
 
 
 }

@@ -5,6 +5,7 @@ import { number, object, string } from "yup";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import { error, log } from "console";
+import { useTranslation } from "react-i18next";
 
 import { useAuth } from "../../../contexts/AuthContext";
 
@@ -14,11 +15,11 @@ import Field from "../../../components/FormikInput/FormikInput";
 import { SignInRequest } from "../../../models/requests/auth/SignInRequest";
 import { signUpRequest } from "../../../models/requests/auth/SignupRequest";
 import {
-  signInValidationSchema,
   signIninitialValues,
   signUpinitialValues,
-  signupValidationSchema,
 } from "../FormikAndYupSchema";
+import { useSignupValidationSchema, useSigninValidationSchema } from "../FormikAndYupSchema";
+
 
 import "../styles/register.css";
 import { useSelector } from "react-redux";
@@ -32,6 +33,7 @@ type Props = {
 };
 
 const Register: React.FC<Props> = (props: Props) => {
+  const { t } = useTranslation();
   const settings = useSelector((state: any) => state.settings.setting);
 
   const authContext: any = useAuth();
@@ -49,35 +51,46 @@ const Register: React.FC<Props> = (props: Props) => {
         console.log("Sign-in successful:", resolve);
         TokenService.setToken(resolve?.data?.token);
         TokenService.setrefreshToken(resolve?.data?.refreshToken);
-        toast.success("Login successful");
+        toast.success(t("loginSuccessful"));
         authContext.refreshUser();
         setTimeout(() => {
           navigate("/");
         }, 1500);
       })
 
-      .catch((error) => toast.error(error.response.data.message));
+      .catch((error) => {
+      
+        const errorMessage = t(`${error.response.data.message}`, { email: values.email});
+        toast.error(errorMessage);
+      });
   };
+
 
   const signUpHandleSubmit = async (values: signUpRequest) => {
     const response = await AuthService.signUp(values)
       .then((resolve) => {
         const userId = parseInt(resolve.data.data);
-        toast.success(
-          "Success! Please, check your email to confirm your account."
-        );
+        toast.success(t("accountConfirmation"));
         CustomerService.createCustomer({ userId: userId })
           .then()
           .catch((err) => console.log(userId));
         setTimeout(() => window.location.reload(), 2000);
       })
-      .catch((error) => toast.error(error.response.data.message));
+      .catch((error) => {
+      
+        const errorMessage = t(`${error.response.data.message}`);
+        toast.error(errorMessage);
+      });
   };
+
+  const signupValidationSchema = useSignupValidationSchema();
+  const signinValidationSchema = useSigninValidationSchema();
+  
 
   return (
     <>
       <Helmet>
-        <title>{settings.title} - Register </title>
+        <title>{settings.title} - {t("register")} </title>
       </Helmet>
       <div
         className={`register ${isActive ? "active" : ""}`}
@@ -96,7 +109,7 @@ const Register: React.FC<Props> = (props: Props) => {
               validateOnChange={true}
             >
               <Form className="form">
-                <h1>Create Account</h1>
+                <h1>{t("createAccount")}</h1>
                 <div className="social-icons">
                   <Link to="https://github.com/sonersyln" className="icon">
                     <img
@@ -123,14 +136,14 @@ const Register: React.FC<Props> = (props: Props) => {
                     />
                   </Link>
                 </div>
-                <span>or use your email for registration</span>
+                <span>{t("useYourEmailForRegistration")}</span>
                 <div className="row">
                   <div className="col-md-6 col-sm-12">
                     <Field
                       name="firstName"
                       className="input"
                       type="text"
-                      placeholder="Name"
+                      placeholder={t("name")}
                     />
                   </div>
                   <div className="col-md-6 col-sm-12">
@@ -138,7 +151,7 @@ const Register: React.FC<Props> = (props: Props) => {
                       name="lastName"
                       className="input"
                       type="text"
-                      placeholder="Surname"
+                      placeholder={t("surname")}
                     />
                   </div>
                 </div>
@@ -148,7 +161,7 @@ const Register: React.FC<Props> = (props: Props) => {
                       name="email"
                       className="input"
                       type="email"
-                      placeholder="Email"
+                      placeholder={t("email")}
                     />
                   </div>
                   <div className="col-md-6 col-sm-12">
@@ -156,7 +169,7 @@ const Register: React.FC<Props> = (props: Props) => {
                       name="phoneNumber"
                       className="input"
                       type="text"
-                      placeholder="Phone"
+                      placeholder={t("phone")}
                     />
                   </div>
                 </div>
@@ -174,7 +187,7 @@ const Register: React.FC<Props> = (props: Props) => {
                       name="idCardNumber"
                       className="input"
                       type="text"
-                      placeholder="Id Card Number"
+                      placeholder={t("idCardNumber")}
                     />
                   </div>
                 </div>
@@ -184,7 +197,7 @@ const Register: React.FC<Props> = (props: Props) => {
                       name="password"
                       className="input"
                       type="password"
-                      placeholder="Password"
+                      placeholder={t("password")}
                     />
                   </div>
                   <div className="col-md-6 col-sm-12">
@@ -192,13 +205,13 @@ const Register: React.FC<Props> = (props: Props) => {
                       name="confirmpassword"
                       className="input"
                       type="password"
-                      placeholder="Confirm Password"
+                      placeholder={t("confirmPassword")}
                     />
                   </div>
                 </div>
 
                 <button className="btn" type="submit">
-                  Sign Up
+                {t("signUp")}
                 </button>
               </Form>
             </Formik>
@@ -210,12 +223,12 @@ const Register: React.FC<Props> = (props: Props) => {
             <Formik
               initialValues={signIninitialValues}
               onSubmit={signInhandleSubmit}
-              validationSchema={signInValidationSchema}
+              validationSchema={signinValidationSchema}
               validateOnBlur={true}
               validateOnChange={false}
             >
               <Form className="form sign-in-form" action="">
-                <h1>Sign In</h1>
+                <h1>{t("signIn")}</h1>
                 <div className="social-icons">
                   <Link to="https://github.com/sonersyln" className="icon">
                     <img
@@ -242,14 +255,14 @@ const Register: React.FC<Props> = (props: Props) => {
                     />
                   </Link>
                 </div>
-                <span>or use your email password</span>
+                <span>{t("useYourEmailPassword")}</span>
                 <div className="row text-center">
                   <div className="col-12 text-center">
                     <Field
                       name="email"
                       className="input"
                       type="email"
-                      placeholder="Email"
+                      placeholder={t("email")}
                     />
                   </div>
                   <div className="col-12 text-center">
@@ -257,17 +270,17 @@ const Register: React.FC<Props> = (props: Props) => {
                       name="password"
                       className="input"
                       type="password"
-                      placeholder="Password"
+                      placeholder= {t("password")}
                     />
                   </div>
                   <div className="col-12 text-center">
                     <Link to="/sign-in/reset-password">
-                      Forget Your Password?
+                      {t("ForgetYourPassword")}
                     </Link>
                   </div>
                   <div className="col-12 text-center">
                     <button className="btn" type="submit">
-                      Sign In
+                      {t("signIn")}
                     </button>
                   </div>
                 </div>
@@ -277,30 +290,30 @@ const Register: React.FC<Props> = (props: Props) => {
           <div className="toggle-containers">
             <div className={`toggle ${isActive ? "active" : ""}`}>
               <div className="toggle-panel toggle-left">
-                <h1>Welcome Back!</h1>
-                <p>Enter your personal details to use all site features</p>
+                <h1>{t("welcomeBack")}</h1>
+                <p>{t("welcomeBackSubText")}</p>
                 <button
                   id="login"
                   className={isActive ? "toggle-btn active" : "toggle-btn"}
                   onClick={handleClick}
                 >
-                  Sign In
+                   {t("signIn")}
                 </button>
               </div>
               <div
                 className={`toggle-panel toggle-right ${isActive ? "active" : ""
                   }`}
               >
-                <h1>Hello, Friend!</h1>
+                <h1>{t("helloFriend")}</h1>
                 <p>
-                  Register with your personal details to use all site features
+                {t("welcomeBackSubText")}
                 </p>
                 <button
                   id="register"
                   className={!isActive ? "toggle-btn active" : "toggle-btn"}
                   onClick={handleClick}
                 >
-                  Sign Up
+                   {t("signUp")}
                 </button>
               </div>
             </div>

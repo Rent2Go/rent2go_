@@ -24,7 +24,7 @@ const Sellers = (props: Props) => {
             </div>
             <span className="info">
               <h4 className="name">Toyota</h4>
-              <p>from $40k</p>
+              
             </span>
           </div>
         </div>
@@ -35,7 +35,7 @@ const Sellers = (props: Props) => {
             </div>
             <span className="info">
               <h4 className="name">Audi</h4>
-              <p>from $40k</p>
+              
             </span>
           </div>
         </div>
@@ -46,7 +46,7 @@ const Sellers = (props: Props) => {
             </div>
             <span className="info">
               <h4 className="name">Renault</h4>
-              <p>from $40k</p>
+              
             </span>
           </div>
         </div>
@@ -57,7 +57,7 @@ const Sellers = (props: Props) => {
             </div>
             <span className="info">
               <h4 className="name">Mercedes Benz</h4>
-              <p>from $40k</p>
+              
             </span>
           </div>
         </div>

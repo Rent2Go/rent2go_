@@ -1,5 +1,4 @@
 {
-
   "home": "Anasayfa",
   "cars": "Arabalar",
   "ourTeam": "Ekibimiz",
@@ -11,18 +10,18 @@
   "reservation": "Rezervasyon",
   "logout": "Çıkış Yap",
 
-  
   "meetYourNewCar": "Yeni Arabanla Tanış",
   "safeComfortableDriving": "Güvenli & Konforlu Sürüş",
   "testDrive": "Test Sürüşü",
   "moreDetails": "Detaylar...",
-  "whichVehicleYouAreLookingFor" :"Kiralamak istediğiniz tarih aralığını seçin",
+  "whichVehicleYouAreLookingFor": "Kiralamak istediğiniz tarih aralığını seçin",
   "type": "Tip",
   "year": "Yıl",
   "model": "Model",
   "price": "Fiyat",
   "search": "Ara",
   "trendingNearYou": "Yakınınızdaki Trendler",
+  "kilometer": "Kilometre",
   "howDoWeMakeDifference": "Nasıl Fark Yaratıyoruz ?",
   "advancedInsurance": "Gelişmiş Sigorta",
   "aboutAdvancedInsurance": "Gelişmiş sigorta paketimiz, kiralık aracınız için hırsızlığa, hasara ve daha fazlasına karşı koruma dahil olmak üzere kapsamlı bir teminat sunar. Tamamen güvende olduğunuzu bilerek gönül rahatlığıyla sürün.",
@@ -74,13 +73,11 @@
   "gearType": "Vites Tipi",
   "makeReservation": "Rezervasyon Yap",
 
-
   "hereAreTheLuckiestTeam": "İşte Tobeto'nun en şanslı ekibi ve üyeleri :)",
   "aboutSoner": "İstanbul Gelişim Üniversitesi Elektrik-Elektronik Mühendisliği bölümünden mezun oldu. İstanbul'da yaşıyor...",
   "aboutFeyza": "Marmara Üniversitesi Ekonometri bölümünden mezun oldu. Kocaeli'de yaşıyor...",
   "aboutSeyhmus": "Aksaray Üniversitesi Yönetim Bilişim Sistemleri bölümünden mezun oldu. İstanbul'da yaşıyor...",
   "aboutYagmur": "Düzce Üniversitesi Endüstri Mühendisliği bölümünden mezun oldu. İzmir'de yaşıyor...",
-
 
   "weAreWorking": "Sizlere sorunsuz araç kiralama hizmeti sunmak için tüm gücümüzle çalışıyoruz.",
   "ifYouHaveASituation": "Bize iletmek istediğiniz bir durum varsa lütfen iletişim kanallarımızı kullanarak veya aşağıdaki formu doldurarak bizimle iletişime geçin.",
@@ -92,7 +89,6 @@
   "phone": "Telefon",
   "message": "Mesaj",
   "sendMessage": "Mesaj Gönder",
-
 
   "accountSettings": "Hesap Ayarları",
   "locationSettings": "Konum Ayarları",
@@ -122,15 +118,15 @@
   "passwordConfirm": "Şifreyi Onayla",
   "saveNewPassword": "Yeni Şifreyi Kaydet",
   "driversLicense": "Sürücü Belgesi",
-  "driverIssueDate":"Ehliyet Kartı Düzenlenme Tarihi",
-  "driverExpiryDate":"Ehliyet Kartı Bitiş Tarihi",
-  "driverCardAgeAlert":"*Ehliyet Bilgileri araç tesliminde kontrol edilecektir.",
-  "Issuedatemustbeinthepast":"Verilme Tarihi geçmiş zaman olmalıdır.",
-  "Expirydatemustbeinthefuture":"Son Kullanma Tarihi gelecek zaman olmalıdır.",
-  "Expirydatemustbeafterissuedate":"Son kullanma tarihi düzenleme tarihinden sonra olmalıdır.",
-  "Expirydatemustbeexactly10yearsafterissuedate":"Son kullanma tarihi, ihraç tarihinden tam 10 yıl sonra olmalıdır.",
-  "drivinglicenceinformation":"Araç kiralama işlemi ehliyet bilgilerinin güncellenmesinden sonra yapılır.",
-  "DrivingLicenceAgemustbeatleast2yearsold":"Araç kiralama işlemi için ehliyet Yaşı en az 2 olmalıdır.",
+  "driverIssueDate": "Ehliyet Kartı Düzenlenme Tarihi",
+  "driverExpiryDate": "Ehliyet Kartı Bitiş Tarihi",
+  "driverCardAgeAlert": "*Ehliyet Bilgileri araç tesliminde kontrol edilecektir.",
+  "Issuedatemustbeinthepast": "Verilme Tarihi geçmiş zaman olmalıdır.",
+  "Expirydatemustbeinthefuture": "Son Kullanma Tarihi gelecek zaman olmalıdır.",
+  "Expirydatemustbeafterissuedate": "Son kullanma tarihi düzenleme tarihinden sonra olmalıdır.",
+  "Expirydatemustbeexactly10yearsafterissuedate": "Son kullanma tarihi, ihraç tarihinden tam 10 yıl sonra olmalıdır.",
+  "drivinglicenceinformation": "Araç kiralama işlemi ehliyet bilgilerinin güncellenmesinden sonra yapılır.",
+  "DrivingLicenceAgemustbeatleast2yearsold": "Araç kiralama işlemi için ehliyet Yaşı en az 2 olmalıdır.",
   "reservationDetail": "Rezervasyon Detayı",
   "name": "İsim",
   "enterDiscount": "İndirim Kodu Girin",
@@ -167,7 +163,6 @@
   "brown": "Kahverengi",
   "silver": "Gümüş",
   "yellow": "Sarı",
-  
 
   "cashPayment": "Nakit Ödeme",
   "amount": "Ücret",
@@ -219,7 +214,6 @@
   "paymentMethod": "Ödeme Yöntemi",
   "yourPaymentInformationIsAsAbove": "Ödeme bilgileriniz yukarıdaki gibidir. Lütfen aracınızı almaya geldiğinizde bu makbuzu yanınızda bulundurun.",
 
-
   "oldPasswordFieldCannotBeEmpty": "Eski şifre alanı boş olamaz",
   "mustContainAtLeastOneUppercaseLetter": "En az bir büyük harf içermelidir",
   "mustContainAtLeastOneLowercaseLetter": "En az bir küçük harf içermelidir",
@@ -229,14 +223,6 @@
   "passwordFieldCannotBeEmpty": "Şifre alanı boş olamaz",
   "passwordsMustMatch": "Şifreler aynı olmalıdır",
   "pleaseConfirmYourPassword": "Lütfen şifrenizi doğrulayınız",
-
-
-
-
-
-
-
-
 
   "interpretationAndDefinitions": "Yorum ve Tanımlar",
   "typeOfCookiesWeUse": "Kullandığımız Çerezlerin Türü",
@@ -282,8 +268,6 @@
   "cookiesWhatDoTheyDo": "Çerezler: Ne Yaparlar",
   "ifYouHaveAnyQuestions": "Bu Çerez Politikası ile ilgili herhangi bir sorunuz varsa bizimle iletişime geçebilirsiniz",
   "byVisitingThisPageOnOurWebsite": "Web sitemizdeki bu sayfayı ziyaret ederek",
-
-
 
   "collectiongAndUsingYourPersonalData": "Kişisel Verilerinizin Toplanması ve Kullanılması",
   "childrensPrivacy": "Çocukların Gizliliği",
@@ -398,8 +382,6 @@
   "weWillLetYouKnowViaEmailAnd": "Değişiklik yürürlüğe girmeden önce Sizi e-postayla ve/veya Hizmetimizde göze çarpan bir bildirimle bilgilendireceğiz ve bu Gizlilik Politikasının üst kısmındaki \"Son güncelleme\" tarihini güncelleyeceğiz.",
   "youAreAdvisedToReviewThisPrivacyPolicy": "Herhangi bir değişiklik olması durumunda bu Gizlilik Politikasını periyodik olarak gözden geçirmeniz tavsiye edilir. Bu Gizlilik Politikasında yapılan değişiklikler bu sayfada yayınlandığı anda yürürlüğe girer.",
 
-
-
   "lastUpdatedFebruary": "Son güncelleme: 15 Şubat 2024",
   "copyright": "Telif hakkı © 2024",
   "allRightsReserved": "Her hakkı saklıdır.",
@@ -409,13 +391,9 @@
   "makesReasonableEffortsToEnsure": "bu belgedeki içeriklerin doğruluğunu sağlamak için makul çabayı gösterir, bu içeriklerin tam, doğru veya güncel olduğunu garanti etmez.",
   "isNotLiableForAnyDamages": "Bu belgedeki içeriğin kullanımından kaynaklanan hiçbir zarardan sorumlu değildir.",
   "ifYouHaveAny": "Bu Şartlar ve Koşullar hakkında herhangi bir sorunuz varsa bizimle iletişime geçebilirsiniz:",
-  
-
 
   "takeMeBack": "Beni Geri Götür",
 
-
-  
   "securityNotice": "Güvenlik Bildirimi",
   "importantInformationForRentogoUsers": "Rentogo Kullanıcıları için Önemli Bilgiler",
   "dearRentogoUsers": "Sayın Rentogo Kullanıcıları, Platformumuzdaki hesaplarınızın ve kişisel bilgilerinizin güvenliği konusunda sizi bilgilendirmek istiyoruz. Son zamanlarda internetteki kiralık platformları hedef alan bazı güvenlik tehditleri konusunda artan endişeler var. Bu nedenle hesabınızın güvenliğini sağlamak için aşağıdaki önlemleri almanızı öneririz:",
@@ -429,8 +407,6 @@
   "regularlyUpdateYourDevices": "Kötü amaçlı yazılımlara ve diğer siber tehditlere karşı koruma sağlamak için cihazlarınızı (bilgisayarlar, akıllı telefonlar, tabletler) en son güvenlik yamaları ve antivirüs yazılımıyla düzenli olarak güncelleyin.",
   "atRentogoWeAreCommitted": "Rentogo olarak kullanıcılarımızın güvenliğini sağlamaya kendimizi adadık. Herhangi bir güvenlik endişeniz varsa veya herhangi bir şüpheli etkinlik fark ederseniz, lütfen bizimle iletişime geçmekten çekinmeyin. Güvenlik konusundaki duyarlılığınız için teşekkür ederiz. Saygılarımızla, Rentogo Ekibi.",
   "ifYouHaveAnyQuestion": "Bu Şartlar ve Koşullar hakkında herhangi bir sorunuz varsa bizimle iletişime geçebilirsiniz:",
-
-
 
   "carRentalAgreement": "ARAÇ KİRALAMA SÖZLEŞMESİ",
   "lessor": "Kiralayan:",
@@ -464,8 +440,6 @@
   "lessorsSignature": "Kiralayanın İmzası:",
   "lesseesSignature": "Kiracının İmzası:",
   "ifYouHave": "Bu Şartlar ve Koşullar hakkında herhangi bir sorunuz varsa bizimle iletişime geçebilirsiniz:",
-
-
 
   "asIsAndAsAvailableDisclaimer": "\"OLDUĞU GİBİ\" ve \"MEVCUT OLDUĞU GİBİ\"",
   "governingLaw": "Uygulanacak Hukuk",
@@ -512,8 +486,6 @@
   "byContinuingToAccessOrUseOurService": "Bu revizyonlar yürürlüğe girdikten sonra Hizmetimize erişmeye veya Hizmetimizi kullanmaya devam ederek, revize edilen şartlara bağlı kalmayı kabul edersiniz. Yeni şartları tamamen veya kısmen kabul etmiyorsanız, lütfen web sitesini ve Hizmeti kullanmayı bırakın.",
   "ifYouHaveAnyQuestionsAbout": "Bu Şartlar ve Koşullar hakkında herhangi bir sorunuz varsa bizimle iletişime geçebilirsiniz:",
 
-
-
   "lastUpdatedFebruary14": "Son güncelleme: 14 Şubat 2024",
   "interpretationAndDefinition": "Yorum ve Tanımlar",
   "forThePurposesOfThisDisclaimer": "Bu Sorumluluk Reddinin amaçları doğrultusunda:",
@@ -544,14 +516,145 @@
   "theCompanyWillNotBeLiableToYou": "Şirket, Hizmet tarafından verilen bilgilere dayanarak alınan herhangi bir karar veya eylemden veya bunun sonucunda ortaya çıkan, özel veya benzer zararlardan, bu tür zararların olasılığı önceden bildirilmiş olsa bile, Size veya başka birine karşı sorumlu olmayacaktır.",
   "ifYouHaveAnyQuestionsAboutThisDisclaimer": "Bu Sorumluluk Reddi Beyanı ile ilgili herhangi bir sorunuz varsa, Bizimle iletişime geçebilirsiniz:",
 
+  "informationRowTitle": "Sevgili",
+  "informationRowP1": "Rezervasyon işleminizi nakit ödeme seçeneği ile gerçekleştirmeyi seçtiniz. Lütfen aşağıdaki bilgileri dikkatlice okuyunuz:",
+  "informationRowP4": "Bu bilgilendirme mesajını okuduğunuzu ve anladığınızı onaylamak için 'Kabul Et' butonuna tıklayınız. Kabul ettiğinizde, rezervasyon detaylarınızı içeren bir e-posta alacaksınız.",
+  "informationRowP21": "Rezervasyonunuz, seçtiğiniz araç ve belirttiğiniz tarihler için geçerlidir.",
+  "informationRowP22": "Ödemenizi, rezervasyonun başlangıç tarihinden önce şirketimizin ofisine gelerek gerçekleştirmeniz gerekmektedir.",
+  "informationRowP23": "Ödemenizi yapmadan önce lütfen rezervasyon bilgilerinizi kontrol edin ve onaylayın.",
+  "informationRowP24": " Ödeme yapılmadan araç teslimi gerçekleştirilmeyecektir.",
+  "informationRowP25": " Rezervasyonunuz ve ödemeniz hakkında herhangi bir sorunuz olursa, lütfen bizimle iletişime geçiniz.",
 
-  "informationRowTitle" : "Sevgili",
-  "informationRowP1" : "Rezervasyon işleminizi nakit ödeme seçeneği ile gerçekleştirmeyi seçtiniz. Lütfen aşağıdaki bilgileri dikkatlice okuyunuz:",
-  "informationRowP4" : "Bu bilgilendirme mesajını okuduğunuzu ve anladığınızı onaylamak için 'Kabul Et' butonuna tıklayınız. Kabul ettiğinizde, rezervasyon detaylarınızı içeren bir e-posta alacaksınız.",
-  "informationRowP21":"Rezervasyonunuz, seçtiğiniz araç ve belirttiğiniz tarihler için geçerlidir.",
-  "informationRowP22":"Ödemenizi, rezervasyonun başlangıç tarihinden önce şirketimizin ofisine gelerek gerçekleştirmeniz gerekmektedir.",
-  "informationRowP23":"Ödemenizi yapmadan önce lütfen rezervasyon bilgilerinizi kontrol edin ve onaylayın.",
-  "informationRowP24":" Ödeme yapılmadan araç teslimi gerçekleştirilmeyecektir.",
-  "informationRowP25":" Rezervasyonunuz ve ödemeniz hakkında herhangi bir sorunuz olursa, lütfen bizimle iletişime geçiniz."
+  "ForgetYourPassword": "Şifreni mi Unuttun ? ",
+  "password": "Şifre",
+  "confirmPassword" :"Şifre Tekrar",
+  "register" :"Kayıt Ol",
+  "createAccount" :"Hesap Oluştur",
+  "createAccountSubText" :"Kayıt için Eposta Adresini Kullan",
+  "welcomeBack" :"Tekrar Hoşgeldin!",
+  "helloFriend" :"Merhabalar!",
+  "welcomeBacksubText" :"Tekrar Hoşgeldin!",
+  "useYourEmailForRegistration" :"Sitenin tüm özelliklerini kullanabilmek için bilgilerini gir",
+  "useYourEmailPassword" :"Eposta ve Şifreni Gir",
+  "name" :"Ad",
+  "surname" :"Soyad",
+  "phone" :"Telefon",
+  "email" :"E-Posta",
+  "idCardNumber" :"Kimlik No",
+
+
+
+  "emailNotFound": "Email Bulunamadı : {{email}}",
+  "Invalid Password": "Geçersiz Şifre!!",
+  "The addition operation was successful!": "Ekleme işlemi başarılı !",
+  "The update operation was successful!": "Güncelleme işlemi başarılı !",
+  "The deletion operation was successful!": "Silme işlemi başarılı !",
+  "All records were listed!": "Tüm kayıtlar listelendi !",
+  "The record was found!": "Kayıt bulundu!",
+  "Id not found!": "Id Bulunamadı!",
+  " not found": " bulunamadı",
+  " already exists": " zaten mevcut",
+  " Email already exists": " Email zaten mevcut",
+  " Id card number already exists": " Kimlik No zaten mevcut",
+
+  " Authentication is used in our system. Please enter your information correctly ! - :)- !": " Sistemimizde kimlik doğrulama kullanılıyor. Lütfen bilgilerinizi doğru girin ! - :)- !",
+  " Phone number already exists": " Telefon numarası zaten mevcut",
+  "The last kilometer of the vehicle cannot be lower than the delivered mileage.": "Araç kilometre sayacı, teslim edilen kilometreden düşük olamaz.",
+  "Start date must be before rental end date": "Başlangıç tarihi, kiralama bitiş tarihinden önce olmalıdır",
+  "Car can be rented for a maximum of 25 days.!": "Araç en fazla 25 gün kiralanabilir.!",
+  "Password changed successfully": "Şifre başarıyla değiştirildi",
+  "File uploaded successfully": "Dosya başarıyla yüklendi",
+  "Please verify your account with your email address  ": "Lütfen hesabınızı e-posta adresinizle doğrulayın",
+  "Token not found!": "Token bulunamadı!",
+  "Your email address has already been verified, please log in.": "E-posta adresiniz zaten doğrulanmış, lütfen giriş yapın.",
+  "Your email verification link is invalid or has expired. Please, sign up again.": "E-posta doğrulama bağlantınız geçersiz veya süresi dolmuş. Lütfen, tekrar kaydolun.",
+  "Email verification successful! Now you can log in to your account.": "E-posta doğrulama başarılı! Artık hesabınıza giriş yapabilirsiniz.",
+  "Success! Please, check your email to confirm your account.": "Başarılı! Lütfen, hesabınızı onaylamak için e-postanızı kontrol edin.",
+  "The discount code entered has been used before.": "Girilen indirim kodu daha önce kullanılmış.",
+  "Brand not found" : "Marka bulunamadı",
+  "Model not found" : "Model bulunamadı",
+  "Color not found" : "Renk bulunamadı",
+  "Car not found" : "Araba bulunamadı",
+  "Customer not found" : "Müşteri bulunamadı",
+  "Rental not found" : "Kiralama bulunamadı",
+  "Discount not found" : "İndirim bulunamadı",
+  "Employee not found" : "Çalışan bulunamadı",
+  "User not found" : "Kullanıcı bulunamadı",
+  "Bill not found" : "Fatura bulunamadı",
+  "Payment not found" : "Ödeme bulunamadı",
+
+  "emailRequired" :"E-posta gereklidir.",
+  "invalidEmailFormat" :"Geçersiz e-posta formatı.",
+  "idCardRequired" :"Kimlik numarası gereklidir.",
+  "codeApplied" : "İndirim Kodu Başarıyla uygulandı!",
+  "exitSuccessful" : "Çıkış Başarılı",
+  "img10mb" : "Resim 10mb'dan büyük olamaz",
+
+    "red": "Kırmızı",
+    "blue": "Mavi",
+    "green": "Yeşil",
+    "black": "Siyah",
+    "white": "Beyaz",
+    "yellow": "Sarı",
+    "gray": "Gri",
+    "silver": "Gümüş",
+    "purple": "Mor",
+    "orange": "Turuncu",
+    "brown": "Kahverengi",
+    "pink": "Pembe",
+    "gold": "Altın",
+    "beige":  "Bej",
+    "light blue": "Açık Mavi",
+
+  "order" : "Sırala",
+  "personalInformation" : "Kişisel Bilgiler",
+
+  "nameMin": "İsim en az 2 karakter uzunluğunda olmalıdır.",
+  "nameRequired": "İsim alanı boş bırakılamaz",
+  "surnameMin": "Soyisim en az 3 karakter uzunluğunda olmalıdır.",
+  "surnameRequired": "Soyisim alanı boş bırakılamaz",
+  "phoneNumberLength": "Telefon numarası 11 karakter içermelidir",
+  "phoneNumberRequired": "Telefon alanı boş bırakılamaz",
+  "invalidEmail": "Geçersiz e-posta formatı",
+  "emailRequired": "E-posta alanı boş bırakılamaz",
+  "nationalityIdMin": "Kimlik numarası en az 10 karakter olmalıdır",
+  "nationalityIdRequired": "Kimlik numarası alanı boş bırakılamaz",
+  "birthDateRequired": "Doğum tarihi alanı boş bırakılamaz",
+  "customerDriverLicenseUpdatedSuccessfully" : "Müşteri sürücü belgesi başarıyla güncellendi",
+
+  "cityRequired": "Şehir alanı boş bırakılamaz",
+  "districtRequired": "İlçe alanı boş bırakılamaz",
+  "addressRequired": "Adres alanı boş bırakılamaz",
+  "transactionExpired": "İşleminiz süresi doldu! Lütfen şifre sıfırlama talebinde bulunun.",
+
+  "passwordRequired": "Şifre alanı gereklidir.",
+  "passwordMin": "Şifre en az 8 karakter olmalıdır.",
+  "passwordLowercase": "Şifre en az bir küçük harf içermelidir.",
+  "passwordUppercase": "Şifre en az bir büyük harf içermelidir.",
+  "passwordNumber": "Şifre en az bir rakam içermelidir.",
+  "passwordPunctuation": "Şifre en az bir noktalama işareti içermelidir.",
+  "passwordsNotMatch": "Şifreler eşleşmiyor",
+  "loginSuccessful" : "Giriş Başarılı",
+  "accountConfirmation": "Başarılı! Lütfen, hesabınızı onaylamak için e-postanızı kontrol edin.",
+  "messageSent": "Mesajınız başarıyla gönderildi!",
+  "messageError": "Mesajınız gönderilirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.",
+  "reservationCreated": "Rezervasyonunuz oluşturuldu, lütfen posta kutunuzu kontrol edin.",
+  "sessionExpired": "Oturum süresi doldu, tekrar giriş yapın...",
+
+  "firstNameRequired": "İsim alanı gereklidir.",
+  "firstNameMin": "İsim alanı en az 2 karakter olmalıdır.",
+  "firstNameMax": "İsim 20 karakteri geçemez.",
+  "lastNameRequired": "Soyad alanı gereklidir.",
+  "lastNameMin": "Soyad alanı en az 2 karakter olmalıdır.",
+  "lastNameMax": "Soyad 20 karakteri geçemez.",
+  "phoneNumberFormat": "Telefon numarası 05xxxxxxxxx formatında olmalıdır.",
+  "birthdateRequired": "Doğum tarihi alanı gereklidir.",
+  "birthdateMax": "Doğum tarihi gelecekte olamaz.",
+  "idCardFormat": "Kimlik Kartı numarası tam olarak 11 hane olmalıdır.",
+  "phoneRequired": "Telefon numarası gereklidir.",
+  "messageRequired": "Mesaj alanı gereklidir."
+
+
+
 
 }
