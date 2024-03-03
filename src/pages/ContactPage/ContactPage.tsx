@@ -115,17 +115,17 @@ const ContactPage = () => {
               <div className='col'>
                 <div className='form-group'>
                   <label>{t("firstName")}</label>
-                  <input placeholder=' ' type='text' name='firstName' value={formData.firstName} onChange={handleChange}/>
+                  <input className="form-control" placeholder=' ' type='text' name='firstName' value={formData.firstName} onChange={handleChange}/>
                 </div>
                 <div className='form-group'>
                   <label>{t("lastName")}</label>
-                  <input placeholder=' ' type='text' name='lastName' value={formData.lastName} onChange={handleChange}/>
+                  <input className="form-control" placeholder=' ' type='text' name='lastName' value={formData.lastName} onChange={handleChange}/>
                 </div>
               </div>
               <div className='col'>
                 <div className='form-group'>
                   <label>{t("email")}</label>
-                  <input placeholder=' ' type='email' name='email' value={formData.email} onChange={handleChange}/>
+                  <input className="form-control" placeholder=' ' type='email' name='email' value={formData.email} onChange={handleChange}/>
                 </div>
                 <div className='form-group'>
                   <label>{t("phone")}</label>
@@ -135,7 +135,7 @@ const ContactPage = () => {
               <div className='col-2'>
                 <div className='form-group'>
                   <label>{t("message")}</label>
-                  <textarea placeholder=' ' name='message' value={formData.message} onChange={handleChange}/>
+                  <textarea className="form-control" placeholder=' ' name='message' value={formData.message} onChange={handleChange}/>
                 </div>
               </div>
               <div className='col-2'>
