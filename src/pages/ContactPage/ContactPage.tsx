@@ -10,9 +10,10 @@ import { FaLinkedin, FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
 
 import axios from 'axios';
 import Aos from "aos";
-
+import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { useTranslation } from "react-i18next";
 import "./contactPage.css";
+import { object, string } from 'yup';
 
 import { Helmet } from 'react-helmet';
 import axiosInstance from '../../utils/axiosInsterceptors';
@@ -30,6 +31,13 @@ const ContactPage = () => {
     return formattedPhoneNumber;
   }
 
+  const validationSchema = object({
+    firstName: string().required("First name is required"),
+    lastName: string().required("Last name is required"),
+    email: string().required("Email is required").email("Invalid email"),
+    phone: string().required("Phone number is required"),
+    message: string().required("Message is required"),
+  });
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -50,17 +58,17 @@ const ContactPage = () => {
     });
   };
 
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
-    e.preventDefault();
-
+  const handleSubmit = async (values: any, { setSubmitting }: any) => {
     try {
-      await axiosInstance.post('send-contact-email', formData);
+      await axiosInstance.post('send-contact-email', values);
       toast.success(t("messageSent"));
     } catch (error) {
       console.error('Error sending email:', error);
       alert(t("messageError"));
     }
-};
+  
+    setSubmitting(false);
+  };
 
   return (
     <>
@@ -111,46 +119,59 @@ const ContactPage = () => {
                 </Link>
               </div>
             </div>
-            <form onSubmit={handleSubmit}>
-              <div className='col'>
-                <div className='form-group'>
-                  <label>{t("firstName")}</label>
-                  <input placeholder=' ' type='text' name='firstName' value={formData.firstName} onChange={handleChange}/>
+            <Formik
+            initialValues={formData}
+            onSubmit={handleSubmit}
+            validationSchema={validationSchema}
+          >
+            {({ errors, touched }) => (
+              <Form>
+                <div className='col'>
+                  <div className='form-group'>
+                    <label>{t("firstName")}</label>
+                    <Field name='firstName' placeholder=' ' type='text' />
+                    <ErrorMessage name="firstName" component="div" className="text-danger"/>
+                  </div>
+                  <div className='form-group'>
+                    <label>{t("lastName")}</label>
+                    <Field name='lastName' placeholder=' ' type='text' />
+                    <ErrorMessage name="lastName" component="div" className="text-danger"/>
+                  </div>
                 </div>
-                <div className='form-group'>
-                  <label>{t("lastName")}</label>
-                  <input placeholder=' ' type='text' name='lastName' value={formData.lastName} onChange={handleChange}/>
+                <div className='col'>
+                  <div className='form-group'>
+                    <label>{t("email")}</label>
+                    <Field name='email' placeholder=' ' type='email' />
+                    <ErrorMessage name="email" component="div" className="text-danger"/>
+                  </div>
+                  <div className='form-group'>
+                    <label>{t("phone")}</label>
+                    <Field name='phone' placeholder=' ' type='tel' />
+                    <ErrorMessage name="phone" component="div" className="text-danger"/>
+                  </div>
                 </div>
-              </div>
-              <div className='col'>
-                <div className='form-group'>
-                  <label>{t("email")}</label>
-                  <input placeholder=' ' type='email' name='email' value={formData.email} onChange={handleChange}/>
+                <div className='col-2'>
+                  <div className='form-group'>
+                    <label>{t("message")}</label>
+                    <Field name='message' placeholder=' ' as='textarea' />
+                    <ErrorMessage name="message" component="div" className="text-danger" />
+                  </div>
                 </div>
-                <div className='form-group'>
-                  <label>{t("phone")}</label>
-                  <input placeholder=' ' type='tel' name='phone' value={formData.phone} onChange={handleChange}/>
+                <div className='col-2'>
+                  <div className='form-group right'>
+                    <button type='submit' className='primary' data-aos="zoom-in">{t("sendMessage")}</button>
+                  </div>
                 </div>
-              </div>
-              <div className='col-2'>
-                <div className='form-group'>
-                  <label>{t("message")}</label>
-                  <textarea placeholder=' ' name='message' value={formData.message} onChange={handleChange}/>
-                </div>
-              </div>
-              <div className='col-2'>
-                <div className='form-group right'>
-                  <button type='submit' className='primary' data-aos="zoom-in">{t("sendMessage")}</button>
-                </div>
-              </div>
-            </form>
-          </div>
+              </Form>
+            )}
+          </Formik>
         </div>
-        <ToastContainer position='bottom-center' />
       </div>
-      <Footer />
-    </>
-  )
+      <ToastContainer position='bottom-center' />
+    </div>
+    <Footer />
+  </>
+)
 }
 
 export default ContactPage

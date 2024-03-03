@@ -650,7 +650,9 @@
   "phoneNumberFormat": "Telefon numarası 05xxxxxxxxx formatında olmalıdır.",
   "birthdateRequired": "Doğum tarihi alanı gereklidir.",
   "birthdateMax": "Doğum tarihi gelecekte olamaz.",
-  "idCardFormat": "Kimlik Kartı numarası tam olarak 11 hane olmalıdır."
+  "idCardFormat": "Kimlik Kartı numarası tam olarak 11 hane olmalıdır.",
+  "phoneRequired": "Telefon numarası gereklidir.",
+  "messageRequired": "Mesaj alanı gereklidir."
 
 
 

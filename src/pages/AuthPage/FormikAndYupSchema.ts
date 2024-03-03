@@ -68,6 +68,18 @@ export function useSigninValidationSchema() {
 });
 }
 
+export function useContactValidationSchema() {
+  const { t } = useTranslation();
+
+  return object({
+    firstName: string().required(t("firstNameRequired")),
+    lastName: string().required(t("lastNameRequired")),
+    email: string().required(t("emailRequired")).email(t("invalidEmail")),
+    phone: string().required(t("phoneRequired")),
+    message: string().required(t("messageRequired")),
+  });
+}
+
 
 
 

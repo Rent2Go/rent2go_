@@ -688,7 +688,9 @@
   "phoneNumberFormat": "Phone number must be in the format 05xxxxxxxxx.",
   "birthdateRequired": "Birthdate field is required.",
   "birthdateMax": "Birthdate cannot be in the future.",
-  "idCardFormat": "ID Card number must be exactly 11 digits."
+  "idCardFormat": "ID Card number must be exactly 11 digits.",
+  "phoneRequired": "Phone field cannot be empty",
+  "messageRequired": "Message field cannot be empty"
 
 
 
