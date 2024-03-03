@@ -690,7 +690,16 @@
   "birthdateMax": "Birthdate cannot be in the future.",
   "idCardFormat": "ID Card number must be exactly 11 digits.",
   "phoneRequired": "Phone field cannot be empty",
-  "messageRequired": "Message field cannot be empty"
+  "messageRequired": "Message field cannot be empty",
+
+
+  "popupFirst": "Our website is published for development purposes only.",
+  "popupSecond": "No actual rental transactions are being made.",
+  "popupThird": "Thank you for your understanding...",
+
+
+
+  "accept": "Accept"
 
 
 

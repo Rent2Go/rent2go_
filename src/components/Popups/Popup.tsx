@@ -1,12 +1,14 @@
 import React from "react";
 import "./popup.css";
 import { IoMdCloseCircle } from "react-icons/io";
+import { useTranslation } from "react-i18next";
 
 interface PopupProps {
   onClose: () => void;
 }
 
 const Popup: React.FC<PopupProps> = ({ onClose }) => {
+  const { t } = useTranslation();
   return (
     <div className="popup shadow-rounded-box">
       <div className="actionContent">
@@ -16,9 +18,9 @@ const Popup: React.FC<PopupProps> = ({ onClose }) => {
         </button>
       </div>
       <div className="popup-content">
-        <p>Web Sitemiz Geliştirme Amaçlı Yayına Alınmıştır.</p>
-        <p>Hiç bir şekilde gerçek bir kiralama işlemi yapılmamaktadır.</p>
-        <p>Anlayışınız için teşekkür ederiz ...</p>
+        <p>{t("popupFirst")}</p>
+        <p>{t("popupSecond")}</p>
+        <p>{t("popupThird")}</p>
       </div>
     </div>
   );

@@ -177,7 +177,7 @@ const BeforeCash = (props: Props) => {
 
               <div className="btnRow">
                 <button className="btn btn-warning" onClick={handleButtonClick}>
-                  Accept
+                {t("accept")}
                 </button>
 
                 <Link

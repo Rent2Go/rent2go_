@@ -533,7 +533,7 @@
   "createAccountSubText" :"Kayıt için Eposta Adresini Kullan",
   "welcomeBack" :"Tekrar Hoşgeldin!",
   "helloFriend" :"Merhabalar!",
-  "welcomeBacksubText" :"Tekrar Hoşgeldin!",
+  "welcomeBackSubText" :"Tekrar Hoşgeldin!",
   "useYourEmailForRegistration" :"Sitenin tüm özelliklerini kullanabilmek için bilgilerini gir",
   "useYourEmailPassword" :"Eposta ve Şifreni Gir",
   "name" :"Ad",
@@ -652,7 +652,14 @@
   "birthdateMax": "Doğum tarihi gelecekte olamaz.",
   "idCardFormat": "Kimlik Kartı numarası tam olarak 11 hane olmalıdır.",
   "phoneRequired": "Telefon numarası gereklidir.",
-  "messageRequired": "Mesaj alanı gereklidir."
+  "messageRequired": "Mesaj alanı gereklidir.",
+
+  
+  "popupFirst": "Web Sitemiz Geliştirme Amaçlı Yayına Alınmıştır.",
+  "popupSecond": "Hiç bir şekilde gerçek bir kiralama işlemi yapılmamaktadır.",
+  "popupThird": "Anlayışınız için teşekkür ederiz ...",
+
+  "accept": "Onayla"
 
 
 
