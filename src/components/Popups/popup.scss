@@ -1,0 +1,29 @@
+.popup{
+    position: absolute;
+    z-index: 999999;
+    top:35%;
+    bottom:35%;
+    left:35%;
+    right:35%;
+    padding: 2rem 4rem 2rem 4rem;
+    p{
+        color: var(--blackColor);
+        font-weight: 500;
+    }
+    .actionContent{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        button{
+            color: var(--color-danger);
+            font-size: 36px;
+            padding: 0;
+            margin: 0;
+            &:hover{
+                transition: 0.3 s ease-in-out;
+                color: var(--color-success);
+            }
+        }
+    }
+
+}

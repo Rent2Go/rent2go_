@@ -23,7 +23,7 @@ const CustomerCard = (props: Props) => {
     <div className="customerCardContainer">
       <div className="row">
         <div className="col-12">
-          <h6>Personal Information</h6>
+          <h6>{t("personalInformation")}</h6>
         </div>
         <div className="col-12">
           <p>

@@ -2,7 +2,13 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { hasFlag } from "country-flag-icons";
 import { TR, US } from "country-flag-icons/react/3x2";
-import { IoIosCloseCircle, IoIosMenu, IoMdCart, IoMdLogIn, IoMdLogOut } from "react-icons/io";
+import {
+  IoIosCloseCircle,
+  IoIosMenu,
+  IoMdCart,
+  IoMdLogIn,
+  IoMdLogOut,
+} from "react-icons/io";
 import { FaUserCircle } from "react-icons/fa";
 import { MdLanguage } from "react-icons/md";
 import { GiCarKey } from "react-icons/gi";
@@ -11,7 +17,8 @@ import Nav from "react-bootstrap/Nav";
 import Image from "react-bootstrap/Image";
 import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { PiWarningCircleFill } from "react-icons/pi";
 
 import { useAuth } from "../../contexts/AuthContext";
 
@@ -22,9 +29,10 @@ import { useLanguage } from "../../contexts/LanguageContext";
 
 
 type Props = {};
-
-const Navbar = (props: Props) => {
+type navbarX = { onClose?: any };
+const Navbar: React.FC<navbarX> = (props: Props, { onClose }) => {
   const settings = useSelector((state: any) => state.settings.setting);
+
   const {language, updateLanguage } = useLanguage(); 
     const { t, i18n } = useTranslation();
     const [selectedLanguage, setSelectedLanguage] = useState(language.toUpperCase());
@@ -34,6 +42,7 @@ const Navbar = (props: Props) => {
       updateLanguage(lng);
       setSelectedLanguage(lng.toUpperCase());
     };
+
   const [navbar, setNavbar] = useState("navbar");
 
   const showNavbar = () => {
@@ -58,6 +67,9 @@ const Navbar = (props: Props) => {
 
   window.addEventListener("scroll", addBg);
   const authContext: any = useAuth();
+
+
+  const dispatch = useDispatch();
   return (
     <>
       <div className={header}>
@@ -101,12 +113,18 @@ const Navbar = (props: Props) => {
                 title={<GiCarKey />}
                 id="basic-nav-dropdown"
               >
-                <Link className=" text textAction btn" to="/profile/account-settings">
+                <Link
+                  className=" text textAction btn"
+                  to="/profile/account-settings"
+                >
                   {" "}
                   {t("profile")}
                 </Link>
 
-                <Link className="  btn text textAction" to="/profile/your-reservations">
+                <Link
+                  className="  btn text textAction"
+                  to="/profile/your-reservations"
+                >
                   {t("reservation")}
                 </Link>
                 <Link
@@ -127,7 +145,11 @@ const Navbar = (props: Props) => {
           )}
           <NavDropdown
             className="languageDropdown langDropDownA"
-            title={<>{selectedLanguage} {" "}<MdLanguage /> </>}
+            title={
+              <>
+                {selectedLanguage} <MdLanguage />{" "}
+              </>
+            }
             id="basic-nav-dropdown"
           >
             <NavDropdown.Item

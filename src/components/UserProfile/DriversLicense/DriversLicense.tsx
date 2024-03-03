@@ -58,7 +58,7 @@ const DriversLicense = () => {
   const handleSubmit = async (values:any) => {
     await CustomerService.updateCustomer(values)
     .then(() => {
-      toast.success(t('Customer driver licence updated successfull'))
+      toast.success(t('customerDriverLicenseUpdatedSuccessfully'))
     })
     .catch((err) => {
       toast.error(err.response.data.message.issueDate || err.response.data.message.expiryDate)
