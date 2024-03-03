@@ -10,6 +10,7 @@ import { store } from "./store/store";
 import { Provider } from "react-redux";
 
 import "./index.css";
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 
 
@@ -21,10 +22,13 @@ const root = ReactDOM.createRoot(
 root.render(
   <Provider store={store}>
   <AuthProvider >
+  <LanguageProvider> 
     <BrowserRouter>
       <App />
     
-    </BrowserRouter>
+    </BrowserRouter> 
+    </LanguageProvider> 
   </AuthProvider>
+ 
   </Provider>
 );

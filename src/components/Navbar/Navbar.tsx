@@ -18,17 +18,20 @@ import { useAuth } from "../../contexts/AuthContext";
 import TokenService from "../../services/TokenService";
 
 import "./navbar.css";
+import { useLanguage } from "../../contexts/LanguageContext";
+
 
 type Props = {};
 
 const Navbar = (props: Props) => {
   const settings = useSelector((state: any) => state.settings.setting);
-  
+  const {language, updateLanguage } = useLanguage(); 
     const { t, i18n } = useTranslation();
-    const [selectedLanguage, setSelectedLanguage] = useState('EN');
+    const [selectedLanguage, setSelectedLanguage] = useState(language.toUpperCase());
   
     const changeLanguage = ( lng: string) => {
       i18n.changeLanguage(lng);
+      updateLanguage(lng);
       setSelectedLanguage(lng.toUpperCase());
     };
   const [navbar, setNavbar] = useState("navbar");
