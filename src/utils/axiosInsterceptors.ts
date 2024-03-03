@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 const axiosInstance = axios.create({
 
 
-	baseURL: "http://localhost:8080/api/",
+	baseURL: "https://api.rentogo.com.tr/api/",
 
 });
 
@@ -57,7 +57,7 @@ axiosInstance.interceptors.request.use(
 							token: localRefreshToken
 						}
 
-						const response = await axios.post('http://localhost:8080/api/refreshtoken', RefreshTokenRequest,{
+						const response = await axios.post('https://api.rentogo.com.tr/api/refreshtoken', RefreshTokenRequest,{
 							headers: {
 								'Authorization': `Bearer ${localRefreshToken}`
 							  }
