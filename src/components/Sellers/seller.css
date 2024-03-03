@@ -106,7 +106,7 @@
     grid-template-columns: repeat(4, 1fr);
   }
   .sellers .secContainer .sellersContainer .singleSeller {
-    align-items: end;
+    align-items: center;
   }
   .sellers .secContainer .sellersContainer .singleSeller .imgDiv img {
     width: 80px;

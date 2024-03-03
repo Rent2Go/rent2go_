@@ -50,7 +50,7 @@ const Navbar = (props: Props) => {
   const logout = () => {
     TokenService.removeToken("token");
     TokenService.removerefreshToken("refreshToken");
-    toast.success("Successful Exit");
+    toast.success(t("exitSuccessful"));
   };
 
   window.addEventListener("scroll", addBg);

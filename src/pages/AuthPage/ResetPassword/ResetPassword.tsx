@@ -4,6 +4,7 @@ import { Formik, Form } from "formik";
 import { object, string } from "yup";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 import { useAuth } from "../../../contexts/AuthContext";
 
@@ -16,6 +17,7 @@ import "../styles/auth.css";
 import { AiOutlineClose } from "react-icons/ai";
 type Props = {};
 const ResetPassword = (props: Props) => {
+  const { t } = useTranslation();
   const authContext = useAuth();
   const navigate = useNavigate();
 
@@ -25,9 +27,9 @@ const ResetPassword = (props: Props) => {
   };
   const resetPasswordValidationSchema = object({
     email: string()
-      .required("Email field is required.")
-      .email("Invalid email format."),
-    idCardNumber: string().required("Id Card Number field is required."),
+      .required(t('emailRequired'))
+      .email(t('invalidEmailFormat')),
+    idCardNumber: string().required(t('idCardRequired')),
   });
 
   const resetPasswordHandleSubmit = async (values: ResetPasswordRequest) => {
@@ -35,7 +37,11 @@ const ResetPassword = (props: Props) => {
       .then((resolve) => {
         navigate("/reset-password-successful");
       })
-      .catch((error) => toast.error(error.response.data.message));
+      .catch((error) => {
+      
+        const errorMessage = t(`${error.response.data.message}`);
+        toast.error(errorMessage);
+      });
   };
 
   return (
