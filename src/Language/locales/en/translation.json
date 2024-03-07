@@ -689,8 +689,11 @@
 
 
 
-  "accept": "Accept"
+  "accept": "Accept",
 
+  
+
+  "signUpButton": "Our website is currently under development and testing, therefore new registrations are closed due to kvkk requirements.\n\nFor testing and usage, default user information is below.\n\ne-mail: default@rentogo.com.tr\npassword: password"
 
 
 

@@ -646,9 +646,9 @@
   "popupSecond": "Hiç bir şekilde gerçek bir kiralama işlemi yapılmamaktadır.",
   "popupThird": "Anlayışınız için teşekkür ederiz ...",
 
-  "accept": "Onayla"
+  "accept": "Onayla",
 
-
+  "signUpButton": "Web Sitemiz geliştirme ve test aşamasında olduğu için kvkk gereği yeni kayıtlara kapatılmıştır.\n\nTest edip kullanmanız için default user bilgileri aşağıdadır.\n\ne-mail: default@rentogo.com.tr\npassword: password"
 
 
 }

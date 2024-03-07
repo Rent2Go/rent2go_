@@ -45,6 +45,10 @@ const Register: React.FC<Props> = (props: Props) => {
     setIsActive((prevIsActive) => !prevIsActive);
   };
 
+  const fakeClick = () => {
+    alert(t("signUpButton"));
+  }
+
   const signInhandleSubmit = async (values: SignInRequest) => {
     const response = await AuthService.signIn(values)
       .then((resolve) => {
@@ -311,7 +315,7 @@ const Register: React.FC<Props> = (props: Props) => {
                 <button
                   id="register"
                   className={!isActive ? "toggle-btn active" : "toggle-btn"}
-                  onClick={handleClick}
+                  onClick={fakeClick}
                 >
                    {t("signUp")}
                 </button>
