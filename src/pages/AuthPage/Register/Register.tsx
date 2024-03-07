@@ -74,7 +74,7 @@ const Register: React.FC<Props> = (props: Props) => {
     const response = await AuthService.signUp(values)
       .then((resolve) => {
         const userId = parseInt(resolve.data.data);
-        toast.success(t("accountConfirmation"));
+        // toast.success(t("accountConfirmation"));
         CustomerService.createCustomer({ userId: userId })
           .then()
           .catch((err) => console.log(userId));
@@ -83,7 +83,7 @@ const Register: React.FC<Props> = (props: Props) => {
       .catch((error) => {
       
         const errorMessage = t(`${error.response.data.message}`);
-        toast.error(errorMessage);
+        // toast.error(errorMessage);
       });
   };
 
@@ -108,7 +108,7 @@ const Register: React.FC<Props> = (props: Props) => {
             <Formik
               initialValues={signUpinitialValues}
               onSubmit={signUpHandleSubmit}
-              validationSchema={signupValidationSchema}
+              // validationSchema={signupValidationSchema}
               validateOnBlur={true}
               validateOnChange={true}
             >
@@ -214,7 +214,8 @@ const Register: React.FC<Props> = (props: Props) => {
                   </div>
                 </div>
 
-                <button className="btn" type="submit">
+                <button className="btn" type="submit"
+                onClick={fakeClick}>
                 {t("signUp")}
                 </button>
               </Form>
@@ -315,7 +316,7 @@ const Register: React.FC<Props> = (props: Props) => {
                 <button
                   id="register"
                   className={!isActive ? "toggle-btn active" : "toggle-btn"}
-                  onClick={fakeClick}
+                  onClick={handleClick}
                 >
                    {t("signUp")}
                 </button>
