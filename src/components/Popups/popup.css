@@ -1,28 +1,65 @@
+@charset "UTF-8";
 .popup {
-  position: absolute;
+  position: fixed;
   z-index: 999999;
-  top: 35%;
-  bottom: 35%;
-  left: 35%;
-  right: 35%;
-  padding: 2rem 4rem 2rem 4rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem 3rem;
+  width: 400px;
+  max-width: 90vw;
+  max-height: 60vh;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 .popup p {
   color: var(--blackColor);
   font-weight: 500;
+  margin: 1rem 0;
+  text-align: center;
 }
 .popup .actionContent {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .popup .actionContent button {
   color: var(--color-danger);
-  font-size: 36px;
+  font-size: 28px;
   padding: 0;
   margin: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 .popup .actionContent button:hover {
-  transition: 0.3 s ease-in-out;
+  transition: 0.3s ease-in-out;
   color: var(--color-success);
+}
+
+/* Küçük ekranlar için responsive ayarlar */
+@media (max-width: 768px) {
+  .popup {
+    width: 90vw;
+    padding: 1.5rem;
+  }
+  .actionContent button {
+    font-size: 24px;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 480px) {
+  .popup {
+    width: 95vw;
+    padding: 1rem;
+  }
+  .actionContent button {
+    font-size: 20px;
+  }
+  p {
+    font-size: 0.8rem;
+  }
 }/*# sourceMappingURL=popup.css.map */
